@@ -1,0 +1,374 @@
+
+/****************************************
+ ----------------------------------------
+ * AREA UTIL *
+ ----------------------------------------
+ ****************************************/
+
+.container {
+    width: $container;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+    position: relative;
+
+    @media (max-width: $container) {
+        width: 100%;
+    }
+}
+
+#conteudo {
+	@include flex(space-between);
+	@include align-items(flex-start);
+	
+	&:not(.home) { @include flex-wrap(nowrap); padding-top: 3.5em; }
+	&.interno { 
+		@media (max-width: $tablet) { @include flex-wrap(wrap); }
+		@media (min-width: $smart-menor + 1) { margin-top: -3.5em; }
+	}
+
+	body.page-template-pagina-crua & {
+		padding-top: 0;
+	}
+
+	.colmaior {
+		width: 100%;
+		max-width: $colmaior;
+
+		@media (max-width: $tablet) {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 2em;
+		}
+	}
+
+	.colmenor {
+		width: $colmenor;
+		@include flex-shrink(0);
+		margin-left: 2em;
+		z-index: 2;
+		margin-top: -40px;
+	
+
+		@media (max-width: $tablet) {
+			width: 100%;
+			column-count: 3;
+			column-width: $colmenor;
+			column-gap: 2em;
+			margin: 0;
+
+			.afcwd {
+				width: $colmenor;
+				-webkit-column-break-inside: avoid;
+				page-break-inside: avoid;
+				break-inside: avoid;
+			}
+		}
+
+		@media (max-width: $smart-maior) {
+			width: $colmenor; margin-left: auto; margin-right: auto;
+			column-count: 1; column-gap: 0;
+		}
+	}
+
+}
+
+/****************************************
+ ----------------------------------------
+ * DEFINICOES PADRAO DE INICIO DE LAYOUT *
+ ----------------------------------------
+ ****************************************/
+// links
+a {
+	&:link, &:visited, &:active, &:focus {
+		outline: 0;
+		color: inherit;
+		@include transition(all 0.2s ease-in-out);
+		text-decoration:none;
+	}
+
+}
+b, strong {
+	font-weight: bold;
+	color: inherit;
+}
+u {
+	text-decoration: underline;
+}
+i, em {
+	color: inherit;
+	font-style: italic;
+}
+s, del {
+	text-decoration: line-through;
+}
+
+// paragrafos
+// p, ul, ol, blockquote {
+	// margin-bottom: 30px;
+// }
+
+small {
+	font-size: 80%;
+}
+
+center {
+	text-align: center;
+}
+
+// titulos
+h1, h2, h3, h4, h5 {
+	line-height: 1.2;
+	display: block;
+	color: inherit;
+    font-weight: bold;
+
+	a {
+		color: inherit !important;
+		text-decoration:none !important;
+	}
+}
+
+h1 {
+    font-size: 2.1em; 
+    @media (max-width: $smart-maior) {font-size: 2em; }
+}
+
+h2 { 
+	font-size: 1.8em; 
+	@media (max-width: $smart-maior) {font-size: 1.7em; }
+}
+h3 { 
+	font-size: 1.65em; 
+	@media (max-width: $smart-maior) {font-size: 1.4em; }
+}
+h4 { 
+	font-size: 1.45em;
+	@media (max-width: $smart-maior) {font-size: 1.3em; }
+}
+h5 { 
+	font-size: 1.15em; 
+	@media (max-width: $smart-maior) {font-size: 1.1em; }
+}
+h6 { font-size: 1em;}
+
+// quote
+blockquote {
+	font-size: 1em;
+	color: inherit;
+	padding: 20px;
+	font-style: italic;
+
+	p:last-of-type {margin-bottom: 0;}
+}
+
+// linha divisoria
+hr {
+	display: block; width: 100%; max-width: initial !important;
+	margin: 2em auto ; height: 70px;
+    border: 0; padding: 0;
+    position: relative;
+    overflow: inherit; text-align: center;
+
+	&:before, &:after { content: ""; position: absolute; top: 50%; left: 50%;}
+	&:before {
+		width: 200px; height: 4px; background: $verde-claro;
+		@include transform(translate(-50%,-50%));
+	}
+
+	&:after {
+		background-color: white; @include transform(translate(-50%,-50%) rotate(15deg) scale(0.75));
+		@include transform-origin(center center); border: 6px solid white; border-right-width: 8px;
+		@extend %sprite; width: 66px; height: 90px; background-position: -279px -10px;
+	}
+}
+
+input, button, textarea {
+	@include appearance(none);
+	border: 0;
+	outline: 0;
+	font-family: inherit;
+	background: transparent;
+	font-size: inherit;
+}
+
+// caixas de texto e selects pra contato e afins
+input[type=text], input[type=tel], input[type=email], input[type=name], input[type=password], input[type=number], input[type=search], textarea {
+	width: 100%;
+	margin-top: 20px;
+	vertical-align:middle;
+	white-space:normal;
+	display: block;
+	padding: 0 15px;
+	line-height: 40px;
+	font-size: 15px;
+	color: $texto;
+	background: white;
+    border-radius: 6px;
+    border: 2px solid $laranja-claro;
+    font-family: $fonte-padrao;
+	@include transition(background 0.3s ease-in-out);
+
+	&:focus {
+		outline:0;
+		background: white;
+	}
+}
+
+textarea {
+	height: 200px;
+	padding: 15px;
+	line-height: 1.65;
+	font-family: $fonte-padrao;
+}
+
+
+[type="radio"] {@include appearance(radio);}
+[type="checkbox"] {@include appearance(checkbox);}
+
+
+a.btn, button.btn, .btn, .enviar input[type="submit"], a.more-link {
+	display: inline-block;
+	outline: 0;
+	background: $marsala;
+	color: white;
+	letter-spacing: 0.09em;
+	line-height: 1;
+	cursor: pointer;
+	padding: .6em 1.2em;
+	position: relative;
+	font-size: .85em;
+	font-weight: 900;
+	text-transform: uppercase;
+	white-space: nowrap;
+	border-radius: 6px;
+	border: 0;
+	font-family: $fonte-padrao;
+	box-shadow: none !important;
+	@include transition(background 0.2s ease-in-out, padding 0.2s ease-in-out);
+	@extend %letterspacing;
+
+	&:hover {
+		background: $verde;
+	}
+
+	&.menor { font-size: .85em !important; padding: .4em .7em !important;}
+	&.maior { font-size: 1.4em !important; padding: .5em 1.5em !important;}
+
+	&.verde {
+		background: $verde;
+		&:hover { background: darken($verde,8%); }
+	}
+
+	&.azul {
+		background: $azul;
+		&:hover { background: darken($azul,8%); }
+	}
+
+	&.laranja {
+		background: $laranja;
+		&:hover { background: $marsala; }
+	}
+
+
+	@media (max-width: $celular) {
+		padding: 9px 15px !important;
+		font-size: 0.85em !important;
+
+		&.maior { font-size: 1.2em !important; padding: 6px 20px 8px !important;}
+	}
+}
+
+// leia mais
+a.more-link {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 200px;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	box-shadow: none;
+}
+
+
+// definicoes
+.clear {
+	clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+// alinhamentos
+.esq {text-align: left !important;}
+.dir, .has-text-align-right {text-align: right !important;}
+.center, .has-text-align-center {text-align: center !important;}
+
+
+// JANELA FANCYBOX 
+.janela {
+	max-width: $colmaior !important;
+	width: 100%;
+
+	h1 {text-align: center; margin-bottom: 35px;}
+
+	div, img {max-width: 100% !important}
+
+	@media (max-width: $smart-menor) {		
+		padding: 20px;
+	}
+}
+
+
+/****************************************
+ ----------------------------------------
+ * PADRAO ANTIGO WORDPRESS *
+ ----------------------------------------
+ ****************************************/
+
+.alignnone, a img.alignnone {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.aligncenter, a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.alignright, a img.alignright {
+    float:right;
+    margin-top: 5px;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.alignleft, a img.alignleft {
+    float: left;
+    margin-top: 5px;
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+// alinhamentos via guttenberg
+.has-text-align-center { text-align: center; }
+.has-text-align-left { text-align: left; }
+.has-text-align-right { text-align: right; }
+
+
+/****************************************
+ ----------------------------------------
+ * GOOGLE TRADUTOR *
+ ----------------------------------------
+ ****************************************/
+body{ top: 0 !important }
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+#google_translate_element2 {display:none!important;}

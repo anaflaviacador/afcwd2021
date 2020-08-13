@@ -1,0 +1,41 @@
+/////// CORES VARIAVEIS
+$texto: #555;
+$cinza: #f5f5f5;
+
+$marrom: #A99690;
+$laranja: #DCAE8A;
+$laranja-claro: #F8EEE3;
+$laranja-ultraclaro: #FDFAF7;
+$verde: #B3B087;
+$verde-claro: #EAEADA;
+$verde-ultraclaro: #FAFAF5;
+$verde-btn: #7ec440;
+$azul: #628490;
+$azul-claro: #EAEEEF;
+$azul-ultraclaro: #F9FBFC;
+$marsala: #BD8586;
+
+
+/////// FAMILIAS VARIAVEIS
+$fonte-padrao: 'MM',sans-serif;
+$fonte-cursiva: 'BM',cursive;
+$fonte-icone: 'Font Awesome 5 Pro';
+$fonte-marca: 'Font Awesome 5 Brands';
+
+/////// MEDIA QUERIES e TAMANHOS
+$container: 1180px;
+$tablet: 990px;
+$smart-maior: 680px;
+$smart-menor: 560px;
+$celular: 430px;
+
+$colmaior: 775px;
+$colmenor: 300px;
+
+$alturaMenu: 40px;
+
+/////// IMPORTACOES
+@import "../bourbon/bourbon";
+@import "../padroes/mixins";
+@import "../padroes/fontface";
+@import "../padroes/fontawesome";

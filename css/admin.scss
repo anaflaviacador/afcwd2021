@@ -1,0 +1,12 @@
+$output-bourbon-deprecation-warnings: false !default;
+@import "padroes/predefinicoes";
+
+.fa-select2.fa5, .fa-select2-drop.fa5 { 
+	font-family: inherit !important; 
+}
+
+.acf-field.sem-espaco .acf-input ul,
+.acf-field.sem-espaco .acf-input ol, {
+	padding-left: 0 !important; margin-left: 0 !important;
+	margin-bottom: 0 !important;
+}
