@@ -14,26 +14,16 @@ body, html {
 body {
 	font-weight: normal;
 	font-style: normal;
-	font-size: 17px;
+	font-size: 19px;
 	line-height: 1.7;
-	color: $texto;
+	color: var(--cor-texto);
 	font-family: $fonte-padrao;
-	letter-spacing: 0.04;
+	letter-spacing: 0.04em;
 	position: relative;
-	background-image: url('../img/fundo_top.jpg');
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: 1603px auto;
-
-	@media (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) and (min-width: $tablet) {
-		background-image: url('../img/fundo_top@2x.jpg');
-	}
 
 	@media (max-width: $smart-maior) { 
-		background-position: center 16px;
-		background-size: 1100px auto;
-		font-size: 16px;
+		font-size: 17px;
 	}
 }
 
-
+@import "layout/cabecalho";

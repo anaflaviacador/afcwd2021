@@ -1,59 +1,59 @@
-/////// FONTES
+//////////////// DEMENTOR
 @font-face {
-    font-family: 'MM';
-    src: url('fonts/subset-MazzardM-BoldItalic.woff2') format('woff2'),
-        url('fonts/subset-MazzardM-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
+    font-family: 'Dementor';
+    src: url('fonts/Dementor.woff2') format('woff2'),
+        url('fonts/Dementor.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
+//////////////// AVENIR - CYR
 @font-face {
-    font-family: 'MM';
-    src: url('fonts/subset-MazzardM-Medium.woff2') format('woff2'),
-        url('fonts/subset-MazzardM-Medium.woff') format('woff');
+    font-family: 'Avenir Medium';
+    src: url('fonts/AvenirNextCyr-Medium.woff2') format('woff2'),
+        url('fonts/AvenirNextCyr-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'MM';
-    src: url('fonts/subset-MazzardM-MediumItalic.woff2') format('woff2'),
-        url('fonts/subset-MazzardM-MediumItalic.woff') format('woff');
+    font-family: 'Avenir Medium';
+    src: url('fonts/AvenirNextCyr-MediumItalic.woff2') format('woff2'),
+        url('fonts/AvenirNextCyr-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'MM';
-    src: url('fonts/subset-MazzardM-Regular.woff2') format('woff2'),
-        url('fonts/subset-MazzardM-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'MM';
-    src: url('fonts/subset-MazzardM-Italic.woff2') format('woff2'),
-        url('fonts/subset-MazzardM-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'MM';
-    src: url('fonts/subset-MazzardM-Bold.woff2') format('woff2'),
-        url('fonts/subset-MazzardM-Bold.woff') format('woff');
+    font-family: 'Avenir Medium';
+    src: url('fonts/AvenirNextCyr-Bold.woff2') format('woff2'),
+        url('fonts/AvenirNextCyr-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
-
-////////////////
 @font-face {
-    font-family: 'BM';
-    src: url('fonts/subset-Broadcast.woff2') format('woff2'),
-        url('fonts/subset-Broadcast.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Avenir Medium';
+    src: url('fonts/AvenirNextCyr-BoldItalic.woff2') format('woff2'),
+        url('fonts/AvenirNextCyr-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+//////////////// AVENIR - ROUNDED
+@font-face {
+    font-family: 'Avenir Rounded';
+    src: url('fonts/AvenirNextRoundedStd-Med.woff2') format('woff2'),
+        url('fonts/AvenirNextRoundedStd-Med.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Rounded';
+    src: url('fonts/AvenirNextRoundedStd-Bold.woff2') format('woff2'),
+        url('fonts/AvenirNextRoundedStd-Bold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
 }
 

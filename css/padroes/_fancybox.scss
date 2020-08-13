@@ -810,7 +810,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-thumbs__list a:before {
-	border: 6px solid $marsala;
+	border: 6px solid $roxo;
 	bottom: 0;
 	content: "";
 	left: 0;
@@ -845,14 +845,6 @@ body.compensate-for-scrollbar {
 
 }
 
-.modal {
-	display: none;
-	width: $tablet;
-	max-width: 98%;
-}
-
-.modal-menor {
-	display: none;
-	width: $smart-menor;
-	max-width: 98%;
-}
+.modal { display: none; width: $tablet; max-width: 98%; }
+.modal-medio { display: none; width: $smart-menor; max-width: 98%; }
+.modal-medio { display: none; width: $celular; max-width: 98%; }

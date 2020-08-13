@@ -1,0 +1,40 @@
+#cabecalho {
+	background: white;
+	min-height: 135px;
+	position: relative;
+	@extend %sombra-leve;
+	
+	&:before { 
+		width: 1618px; height: 135px;
+		position: absolute; top: 0; left: 50%;
+		@extend %sprite; content: '';
+		background-position: 0 0;
+		@include transform(translateX(-50%));
+	}
+
+	.nav-mini {
+		width: 100%;
+		top: 10px;
+		font-size: 12px;
+		font-weight: bold;
+		text-transform: uppercase;
+		position: absolute;
+		@include flex(space-between);
+
+		.menu-loja {
+			@include flex-grow(1);
+			text-align: right;
+			font-family: $fonte-redonda;
+
+			a {
+				display: inline-block;
+				white-space: nowrap;
+				background: $grafite;
+				@extend %borda-redonda;
+				color: white;
+				margin-left: 10px;
+				padding: .2em .7em;
+			}
+		}
+	}
+}

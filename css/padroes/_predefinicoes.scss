@@ -1,26 +1,38 @@
 /////// CORES VARIAVEIS
 $texto: #555;
+$grafite: #333;
 $cinza: #f5f5f5;
 
-$marrom: #A99690;
-$laranja: #DCAE8A;
-$laranja-claro: #F8EEE3;
-$laranja-ultraclaro: #FDFAF7;
-$verde: #B3B087;
-$verde-claro: #EAEADA;
-$verde-ultraclaro: #FAFAF5;
-$verde-btn: #7ec440;
-$azul: #628490;
-$azul-claro: #EAEEEF;
-$azul-ultraclaro: #F9FBFC;
-$marsala: #BD8586;
+$rosa: #d19389; 
+$rosa-medio: #EBB7AF; 
+$rosa-claro: #FBF6F6;
+
+$roxo: #a297b3; 
+$roxo-medio: #D1C8E2;
+$roxo-claro: #F7F5FA;
+
+$verde: #9e9b80;
+$verde-medio: #DDDABD;
+$verde-claro: #F8F8F4;
+$afirmacao: #A7AF66;
+
+$bege: #D1A680; 
+$bege-medio: #F6DAC1;
+$bege-claro: #FDF9F6;
+
+$azul: #8AA8C4;
+$azul-medio: #CBD9E5;
+$azul-claro: #F7F9FB;
 
 
 /////// FAMILIAS VARIAVEIS
-$fonte-padrao: 'MM',sans-serif;
-$fonte-cursiva: 'BM',cursive;
+$fonte-padrao: 'Avenir Medium',sans-serif;
+$fonte-redonda: 'Avenir Rounded',sans-serif;
+$fonte-cursiva: 'Dementor',cursive;
 $fonte-icone: 'Font Awesome 5 Pro';
 $fonte-marca: 'Font Awesome 5 Brands';
+
+
 
 /////// MEDIA QUERIES e TAMANHOS
 $container: 1180px;
@@ -29,13 +41,38 @@ $smart-maior: 680px;
 $smart-menor: 560px;
 $celular: 430px;
 
-$colmaior: 775px;
-$colmenor: 300px;
-
-$alturaMenu: 40px;
+$colmax: 810px;
 
 /////// IMPORTACOES
 @import "../bourbon/bourbon";
 @import "../padroes/mixins";
 @import "../padroes/fontface";
 @import "../padroes/fontawesome";
+
+
+:root {
+	--cor-texto: $texto;
+	--cor-grafite: $grafite;
+	--cor-cinza: $cinza;
+
+	--cor-rosa: $rosa;
+	--cor-rosa-medio: $rosa-medio;
+	--cor-rosa-claro: $rosa-claro;
+
+	--cor-roxo: $roxo;
+	--cor-roxo-medio: $roxo-medio;
+	--cor-roxo-claro: $roxo-claro;
+
+	--cor-verde: $verde;
+	--cor-verde-medio: $verde-medio;
+	--cor-verde-claro: $verde-claro;
+
+	--cor-afirmacao: $afirmacao;
+	--cor-bege: $bege;
+	--cor-bege-medio: $bege-medio;
+	--cor-bege-claro: $bege-claro;
+	
+	--cor-azul: $azul;
+	--cor-azul-medio: $azul-medio;
+	--cor-azul-claro: $azul-claro;
+}

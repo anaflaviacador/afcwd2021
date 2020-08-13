@@ -17,62 +17,6 @@
     }
 }
 
-#conteudo {
-	@include flex(space-between);
-	@include align-items(flex-start);
-	
-	&:not(.home) { @include flex-wrap(nowrap); padding-top: 3.5em; }
-	&.interno { 
-		@media (max-width: $tablet) { @include flex-wrap(wrap); }
-		@media (min-width: $smart-menor + 1) { margin-top: -3.5em; }
-	}
-
-	body.page-template-pagina-crua & {
-		padding-top: 0;
-	}
-
-	.colmaior {
-		width: 100%;
-		max-width: $colmaior;
-
-		@media (max-width: $tablet) {
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: 2em;
-		}
-	}
-
-	.colmenor {
-		width: $colmenor;
-		@include flex-shrink(0);
-		margin-left: 2em;
-		z-index: 2;
-		margin-top: -40px;
-	
-
-		@media (max-width: $tablet) {
-			width: 100%;
-			column-count: 3;
-			column-width: $colmenor;
-			column-gap: 2em;
-			margin: 0;
-
-			.afcwd {
-				width: $colmenor;
-				-webkit-column-break-inside: avoid;
-				page-break-inside: avoid;
-				break-inside: avoid;
-			}
-		}
-
-		@media (max-width: $smart-maior) {
-			width: $colmenor; margin-left: auto; margin-right: auto;
-			column-count: 1; column-gap: 0;
-		}
-	}
-
-}
-
 /****************************************
  ----------------------------------------
  * DEFINICOES PADRAO DE INICIO DE LAYOUT *
@@ -162,26 +106,6 @@ blockquote {
 	p:last-of-type {margin-bottom: 0;}
 }
 
-// linha divisoria
-hr {
-	display: block; width: 100%; max-width: initial !important;
-	margin: 2em auto ; height: 70px;
-    border: 0; padding: 0;
-    position: relative;
-    overflow: inherit; text-align: center;
-
-	&:before, &:after { content: ""; position: absolute; top: 50%; left: 50%;}
-	&:before {
-		width: 200px; height: 4px; background: $verde-claro;
-		@include transform(translate(-50%,-50%));
-	}
-
-	&:after {
-		background-color: white; @include transform(translate(-50%,-50%) rotate(15deg) scale(0.75));
-		@include transform-origin(center center); border: 6px solid white; border-right-width: 8px;
-		@extend %sprite; width: 66px; height: 90px; background-position: -279px -10px;
-	}
-}
 
 input, button, textarea {
 	@include appearance(none);
@@ -201,22 +125,22 @@ input[type=text], input[type=tel], input[type=email], input[type=name], input[ty
 	display: block;
 	padding: 0 15px;
 	line-height: 40px;
-	font-size: 15px;
+	font-size: 1em;
 	color: $texto;
-	background: white;
-    border-radius: 6px;
-    border: 2px solid $laranja-claro;
+	background: $azul-claro;
+    border-radius: 100px;
+    border: 1px solid $azul-medio;
     font-family: $fonte-padrao;
 	@include transition(background 0.3s ease-in-out);
 
 	&:focus {
 		outline:0;
-		background: white;
+		background: $verde-claro;
+		border: 1px solid $verde-medio;
 	}
 }
 
 textarea {
-	height: 200px;
 	padding: 15px;
 	line-height: 1.65;
 	font-family: $fonte-padrao;
@@ -230,7 +154,7 @@ textarea {
 a.btn, button.btn, .btn, .enviar input[type="submit"], a.more-link {
 	display: inline-block;
 	outline: 0;
-	background: $marsala;
+	background: $roxo;
 	color: white;
 	letter-spacing: 0.09em;
 	line-height: 1;
@@ -238,38 +162,22 @@ a.btn, button.btn, .btn, .enviar input[type="submit"], a.more-link {
 	padding: .6em 1.2em;
 	position: relative;
 	font-size: .85em;
-	font-weight: 900;
+	font-weight: bold;
 	text-transform: uppercase;
 	white-space: nowrap;
 	border-radius: 6px;
 	border: 0;
-	font-family: $fonte-padrao;
+	font-family: $fonte-redonda;
 	box-shadow: none !important;
 	@include transition(background 0.2s ease-in-out, padding 0.2s ease-in-out);
 	@extend %letterspacing;
 
 	&:hover {
-		background: $verde;
+		background: darken($roxo,5%);
 	}
 
 	&.menor { font-size: .85em !important; padding: .4em .7em !important;}
 	&.maior { font-size: 1.4em !important; padding: .5em 1.5em !important;}
-
-	&.verde {
-		background: $verde;
-		&:hover { background: darken($verde,8%); }
-	}
-
-	&.azul {
-		background: $azul;
-		&:hover { background: darken($azul,8%); }
-	}
-
-	&.laranja {
-		background: $laranja;
-		&:hover { background: $marsala; }
-	}
-
 
 	@media (max-width: $celular) {
 		padding: 9px 15px !important;
@@ -277,19 +185,6 @@ a.btn, button.btn, .btn, .enviar input[type="submit"], a.more-link {
 
 		&.maior { font-size: 1.2em !important; padding: 6px 20px 8px !important;}
 	}
-}
-
-// leia mais
-a.more-link {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	width: 200px;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden; 
-	text-overflow: ellipsis;
-	box-shadow: none;
 }
 
 
@@ -306,69 +201,3 @@ a.more-link {
 .esq {text-align: left !important;}
 .dir, .has-text-align-right {text-align: right !important;}
 .center, .has-text-align-center {text-align: center !important;}
-
-
-// JANELA FANCYBOX 
-.janela {
-	max-width: $colmaior !important;
-	width: 100%;
-
-	h1 {text-align: center; margin-bottom: 35px;}
-
-	div, img {max-width: 100% !important}
-
-	@media (max-width: $smart-menor) {		
-		padding: 20px;
-	}
-}
-
-
-/****************************************
- ----------------------------------------
- * PADRAO ANTIGO WORDPRESS *
- ----------------------------------------
- ****************************************/
-
-.alignnone, a img.alignnone {
-    margin-top: 0;
-    margin-right: 0;
-    margin-left: 0;
-}
-
-.aligncenter, a img.aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.alignright, a img.alignright {
-    float:right;
-    margin-top: 5px;
-    margin-right: 0;
-    margin-left: 20px;
-}
-
-.alignleft, a img.alignleft {
-    float: left;
-    margin-top: 5px;
-    margin-left: 0;
-    margin-right: 20px;
-}
-
-// alinhamentos via guttenberg
-.has-text-align-center { text-align: center; }
-.has-text-align-left { text-align: left; }
-.has-text-align-right { text-align: right; }
-
-
-/****************************************
- ----------------------------------------
- * GOOGLE TRADUTOR *
- ----------------------------------------
- ****************************************/
-body{ top: 0 !important }
-#goog-gt-tt {display:none !important;}
-.goog-te-banner-frame {display:none !important;}
-.goog-te-menu-value:hover {text-decoration:none !important;}
-#google_translate_element2 {display:none!important;}
