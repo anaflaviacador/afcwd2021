@@ -6,10 +6,12 @@ $cinza: #f5f5f5;
 $rosa: #d19389; 
 $rosa-medio: #EBB7AF; 
 $rosa-claro: #FBF6F6;
+$negacao: #BA5040;
 
 $roxo: #a297b3; 
 $roxo-medio: #D1C8E2;
 $roxo-claro: #F7F5FA;
+$roxo-escuro: darken($roxo,30%);
 
 $verde: #9e9b80;
 $verde-medio: #DDDABD;
@@ -23,7 +25,39 @@ $bege-claro: #FDF9F6;
 $azul: #8AA8C4;
 $azul-medio: #CBD9E5;
 $azul-claro: #F7F9FB;
+$azul-escuro: darken(#8AA8C4,20%);
 
+
+:root {
+	--cor-afirmacao: #{$afirmacao};
+	--cor-negacao:#{$negacao};
+		
+	--cor-texto: #{$texto};
+	--cor-grafite: #{$grafite};
+	--cor-cinza: #{$cinza};
+
+	--cor-rosa: #{$rosa};
+	--cor-rosa-medio: #{$rosa-medio};
+	--cor-rosa-claro: #{$rosa-claro};
+
+	--cor-roxo: #{$roxo};
+	--cor-roxo-medio: #{$roxo-medio};
+	--cor-roxo-claro: #{$roxo-claro};
+	--cor-roxo-escuro: #{$roxo-escuro};
+
+	--cor-verde: #{$verde};
+	--cor-verde-medio: #{$verde-medio};
+	--cor-verde-claro: #{$verde-claro};
+
+	--cor-bege: #{$bege};
+	--cor-bege-medio: #{$bege-medio};
+	--cor-bege-claro: #{$bege-claro};
+	
+	--cor-azul: #{$azul};
+	--cor-azul-medio: #{$azul-medio};
+	--cor-azul-claro: #{$azul-claro};
+	--cor-azul-escuro: #{$azul-escuro};
+}
 
 /////// FAMILIAS VARIAVEIS
 $fonte-padrao: 'Avenir Medium',sans-serif;
@@ -31,7 +65,6 @@ $fonte-redonda: 'Avenir Rounded',sans-serif;
 $fonte-cursiva: 'Dementor',cursive;
 $fonte-icone: 'Font Awesome 5 Pro';
 $fonte-marca: 'Font Awesome 5 Brands';
-
 
 
 /////// MEDIA QUERIES e TAMANHOS
@@ -43,36 +76,10 @@ $celular: 430px;
 
 $colmax: 810px;
 
+
 /////// IMPORTACOES
 @import "../bourbon/bourbon";
 @import "../padroes/mixins";
 @import "../padroes/fontface";
 @import "../padroes/fontawesome";
 
-
-:root {
-	--cor-texto: $texto;
-	--cor-grafite: $grafite;
-	--cor-cinza: $cinza;
-
-	--cor-rosa: $rosa;
-	--cor-rosa-medio: $rosa-medio;
-	--cor-rosa-claro: $rosa-claro;
-
-	--cor-roxo: $roxo;
-	--cor-roxo-medio: $roxo-medio;
-	--cor-roxo-claro: $roxo-claro;
-
-	--cor-verde: $verde;
-	--cor-verde-medio: $verde-medio;
-	--cor-verde-claro: $verde-claro;
-
-	--cor-afirmacao: $afirmacao;
-	--cor-bege: $bege;
-	--cor-bege-medio: $bege-medio;
-	--cor-bege-claro: $bege-claro;
-	
-	--cor-azul: $azul;
-	--cor-azul-medio: $azul-medio;
-	--cor-azul-claro: $azul-claro;
-}

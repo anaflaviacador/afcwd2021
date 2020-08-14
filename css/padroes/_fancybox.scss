@@ -845,6 +845,18 @@ body.compensate-for-scrollbar {
 
 }
 
-.modal { display: none; width: $tablet; max-width: 98%; }
-.modal-medio { display: none; width: $smart-menor; max-width: 98%; }
-.modal-medio { display: none; width: $celular; max-width: 98%; }
+.modal { 
+	display: none; width: $tablet; max-width: 98%; 
+
+	&.medio { width: $smart-menor; font-size: .8em; }
+	&.pequeno { width: $celular; font-size: .8em; overflow: hidden; padding: 20px;}
+
+	&.floral {
+		&:before, &:after { content: ''; width: 175px; height: 67px; position: absolute;
+			@extend %sprite; background-position: -343px -192px;
+		}
+
+		&:before { top: -20px; left: -56px; @include transform(rotate(-31deg));}
+		&:after { bottom: -29px; right: -29px; @include transform(rotate(-31deg));}
+	}
+}

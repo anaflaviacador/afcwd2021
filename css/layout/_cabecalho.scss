@@ -1,3 +1,23 @@
+#afc-msg-login .woocommerce-notices-wrapper { 
+	& > * {
+		color: white;
+		font-size: .75em;
+		text-align: center;
+		padding: .5em 1em .8em;
+		@include expandefundo;
+	}
+
+	ul.woocommerce-error {
+		background: var(--cor-negacao);
+		&:before { background: var(--cor-negacao); }
+	}
+	.woocommerce-info, .woocommerce-message {
+		background: var(--cor-afirmacao);
+		&:before { background: var(--cor-afirmacao); }
+	}
+}
+
+
 #cabecalho {
 	background: white;
 	min-height: 135px;
@@ -13,8 +33,9 @@
 	}
 
 	.nav-mini {
-		width: 100%;
 		top: 10px;
+		left: 50%;
+		@include transform(translateX(-50%));
 		font-size: 12px;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -34,6 +55,13 @@
 				color: white;
 				margin-left: 10px;
 				padding: .2em .7em;
+				text-shadow: 0 1px 1px solid black;
+
+				i { line-height: 24px; }
+
+				&.conta i, &.conta:hover {color: var(--cor-roxo-medio);}
+				&.carrinho i, &.carrinho:hover {color: var(--cor-verde-medio);}
+				&.sair i { color: var(--cor-rosa-medio);}
 			}
 		}
 	}

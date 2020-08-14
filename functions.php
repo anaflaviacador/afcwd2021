@@ -12,7 +12,7 @@ function afc_setup() {
     add_filter( 'script_loader_src', 'afc_removequerystring', 10, 2 );
     add_filter( 'script_loader_tag', 'afc_asyncjs', 10, 2);
     add_filter( 'style_loader_tag', 'afc_cssnosync', 10, 4); 
-    add_filter( 'login_errors', 'no_wordpress_errors' );
+    // add_filter( 'login_errors', 'no_wordpress_errors' );
     add_filter('xmlrpc_enabled', '__return_false');
 
     // limpeza
@@ -115,14 +115,13 @@ function afc_load_styles() {
     $urlCDN = '//cdn.jsdelivr.net/npm';
 
     // layout
-    wp_dequeue_style( 'style' );
     wp_enqueue_style('layout', $urltheme . '/css/layout.css', array(), '', 'all', null); 
     
     // jquery
     wp_deregister_script( 'jquery-core' );
-    wp_register_script( 'jquery-core', $urlCDN . '/jquery@3.5.1/dist/jquery.min.js', array(), '', false );
+    wp_register_script( 'jquery-core', $urlCDN . '/jquery@3.4.1/dist/jquery.min.js', array(), '' );
     wp_deregister_script( 'jquery-migrate' );
-    wp_register_script( 'jquery-migrate', $urlCDN . '/jquery-migrate@3.3.1/dist/jquery-migrate.min.js', array(), '', false );
+    wp_register_script( 'jquery-migrate', $urlCDN . '/jquery-migrate@3.3.1/dist/jquery-migrate.min.js', array(), '' );
 
     // scripts
     wp_enqueue_script('ganalytics', $urlCDN . '/ga-lite@2.1.0/dist/ga-lite.min.js', array(), '', false);
@@ -135,7 +134,7 @@ function afc_load_styles() {
 
 // colocar scripts assincronos
 function afc_asyncjs($tag, $handle) {
-   $scripts_to_async = array('ganalytics','jquery-core','jquery-migrate','fancybox','scripts');
+   $scripts_to_async = array('ganalytics','fancybox','scripts');
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
          return str_replace(' src', ' async src', $tag);
@@ -167,7 +166,7 @@ function afc_load_scripts_footer() {
   // configuracoes da barra de admin, caso exista
   if (is_admin_bar_showing()) {
     echo '<style>';
-    echo '#wpadminbar {z-index: 9000; background: #6A607C}';
+    echo '#wpadminbar {z-index: 9000; background: var(--cor-roxo-escuro)}';
     echo '@media screen and (max-width: 782px) { html{ margin-top: 0 !important; } body{ margin-top: 46px !important; } }';
     echo '@media screen and (max-width: 600px) { #wpadminbar {position: fixed} }';
     echo '</style>'; 

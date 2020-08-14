@@ -42,10 +42,31 @@ function afc_removedimensoes_thumbnail( $html, $post_id, $post_image_id ) {
 	return $html;
 }
 
-
 // retirando titulo da loja principal (home)
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
+// redireciona o form de login
+function afc_redireciona_qdo_loga( $redirect, $user ) {
+    $role = $user->roles[0];
+    $redirect = '';
+    $admin = admin_url();
+    $minhaconta = wc_get_page_permalink( 'myaccount' );
+
+    if( $role == 'administrator' ) {
+        $redirect = $admin; // painel de login para admins
+    } else {
+        $redirect = $minhaconta; // painel minha conta para clientes
+    }
+
+    return $redirect;
+}
+add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 10, 3 );    
+
+add_action('wp_logout','afc_redireciona_qdo_sai');
+function afc_redireciona_qdo_sai(){
+    wp_redirect( home_url() );
+    exit;
+}
 
 // ========================================//
 // PRODUTO

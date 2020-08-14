@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
 
 
   ////////////////////////////////// fancybox
-  var abrirFancybox = $('.openwin');
+  var abrirFancybox = $('.abre-modal');
   abrirFancybox.on('click', function(event) {
     var thisTarget = $(this).data('target');
     event.preventDefault();

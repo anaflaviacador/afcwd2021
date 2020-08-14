@@ -16,10 +16,17 @@
 }
 
 @mixin expandefundo() {
-    width: 105vw; height: 100%; position: absolute;
-    top: 0; left: 50%; display: block;
-    @include transform(translateX(-50%));
+    position: relative;
+
+    & > * { position: relative; }
+
+    &:before { content: ""; 
+        width: 105vw; height: 100%; position: absolute;
+        top: 0; left: 50%; display: block;
+        @include transform(translateX(-50%));
+    }
 }
+
 
 @mixin imagemfull($size,$pos1,$pos2) {
     background-size: $size;
