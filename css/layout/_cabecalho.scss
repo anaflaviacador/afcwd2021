@@ -1,3 +1,6 @@
+// ========================================//
+// LOGIN
+// ========================================// 
 #afc-msg-login .woocommerce-notices-wrapper { 
 	& > * {
 		color: white;
@@ -17,12 +20,59 @@
 	}
 }
 
+.afc-login {
+	label[for="username"], label[for="password"] {
+		position: relative; margin-top: 12px;
+		display: block;
+		
+		input { margin-top: 0; padding-left: 42px;}
 
+		i {
+			color: var(--cor-grafite); opacity: .4; font-size: 1.3em;
+			position: absolute; top: 50%; left: 13px;
+			@include transform(translateY(-50%));
+		}
+	}
+
+	#customer_login { z-index: 2; }
+
+	.lembrar-logar {
+		margin-top: 12px;
+		@include flex(space-between);
+
+		.lembrar-login {
+			cursor: pointer; 
+			&:hover { color: var(--cor-azul-escuro); }
+			input[type="checkbox"]:checked + span { color: var(--cor-azul-escuro); }
+		}
+	}
+
+	.lost_password {
+		font-size: .8em; 
+		letter-spacing: 0;
+		a { 
+			display: inline-block; line-height: 2; color: var(--cor-negacao);
+			padding-left: 0.35em;
+			&:hover, &:focus { text-decoration: underline;  }
+		}
+	}
+}
+
+
+// ========================================//
+// CABECALHO
+// ========================================// 
 #cabecalho {
 	background: white;
-	min-height: 135px;
 	position: relative;
+	min-height: 100px;
+	z-index: 1;
 	@extend %sombra-leve;
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+
+	@media (min-width: $celular + 1px) { min-height: 135px; }
 	
 	&:before { 
 		width: 1618px; height: 135px;
@@ -32,36 +82,160 @@
 		@include transform(translateX(-50%));
 	}
 
+	// navegacao pequena
 	.nav-mini {
-		top: 10px;
 		left: 50%;
-		@include transform(translateX(-50%));
-		font-size: 12px;
 		font-weight: bold;
 		text-transform: uppercase;
 		position: absolute;
 		@include flex(space-between);
+		@include align-items(flex-end);
 
-		.menu-loja {
+		@media (min-width: $tablet) { top: 10px; @include transform(translateX(-50%)); z-index: 1;}
+		@media (max-width: $tablet - 1px) { top: 50%; @include transform(translate(-50%,-50%)); padding-top: 20px; }
+
+		a {
+			display: inline-block;
+			white-space: nowrap;
+			margin-left: 10px;
+			padding: .2em .7em;
+			font-size: 1em;
+
+			i { line-height: 24px; }
+
+			span { display: none; margin-left: 8px }
+
+			&#menu-mob { 
+				display: block; margin-left:0;
+				@media (min-width: $tablet) {display: none;}
+			}
+
+			&#menu-mob i, &#menu-mob:hover, &#menu-mob:focus,
+			&.conta i, &.conta:hover, &.conta:focus {color: var(--cor-roxo);}
+			&.carrinho i, &.carrinho:hover, &.carrinho:focus {color: var(--cor-verde);}
+			&.sair i { color: var(--cor-rosa);}
+
+			@media (min-width: $tablet) {
+				background: $grafite;
+				border-radius: 100px;
+				font-size: 12px;
+				color: white; text-shadow: 0 1px 1px solid black;
+
+				span { display: inline-block; }
+
+				&#menu-mob i, &#menu-mob:hover, &#menu-mob:focus,
+				&.conta i, &.conta:hover, &.conta:focus {color: var(--cor-roxo-medio);}
+				&.carrinho i, &.carrinho:hover, &.carrinho:focus {color: var(--cor-verde-medio);}
+				&.sair i { color: var(--cor-rosa-medio);}
+			}
+
+			@media (max-width: $celular) { font-size: 1.25em; }
+		}
+
+		.menu-mob {@include align-self(flex-end);}
+		.menu-loja {@include align-self(flex-end);
 			@include flex-grow(1);
 			text-align: right;
 			font-family: $fonte-redonda;
+		}
+	}
 
-			a {
-				display: inline-block;
+	nav.menu-site {
+		@include align-self(center);
+		padding-top: 20px;
+	}
+}
+
+// menu site
+nav.menu-site {
+	text-align: center;
+	display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+
+	@media (min-width: $container) {
+	    width: $container;
+	    padding: 0 10px;
+	    position: relative;
+	}
+
+	ul {
+		margin: 0 auto;
+		display: inline-block;
+
+		@media (min-width: $container) { padding: 0 50px; width: 100%; }
+		@media (min-width: $tablet) {
+			@include display(flex);
+			@include justify-content(space-around);
+			@include align-items(center);
+		}
+
+
+		& > li {
+			font-family: $fonte-redonda;
+			font-size: .7em;
+			font-weight: 500;
+			text-align: center;
+			@extend %textshadow-claro;
+			display: none;
+
+			@media (min-width: $tablet) {
+				&:not(.menu-item-home) { display: block }
+			}
+
+			a { 
+				display: block;
+				padding: 4px 12px;
+			}
+
+			span {
+				display: block;
 				white-space: nowrap;
-				background: $grafite;
-				@extend %borda-redonda;
-				color: white;
-				margin-left: 10px;
-				padding: .2em .7em;
-				text-shadow: 0 1px 1px solid black;
 
-				i { line-height: 24px; }
+				&.descricao { 
+					font-family: $fonte-cursiva;
+					color: var(--cor-azul-medio);
+					text-transform: lowercase;
+					font-weight: normal;
+					line-height: 0.2; font-size: 2.6em;
+				}
 
-				&.conta i, &.conta:hover {color: var(--cor-roxo-medio);}
-				&.carrinho i, &.carrinho:hover {color: var(--cor-verde-medio);}
-				&.sair i { color: var(--cor-rosa-medio);}
+				&.nome { 
+					text-transform: uppercase;
+				}
+			}
+
+			// marca
+			&.menu-item-home {
+				display: block;
+				& > a {
+					span.descricao {display: none;}
+					span.nome {
+						width: 262px; height: 49px;
+						overflow: hidden; letter-spacing: 9999px;
+						text-indent: 9999px;
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: contain;
+						background-image: url('../img/marca-afcwebdesign.svg');
+
+						@media (max-width: $celular) { @include transform(scale(0.8)); }
+					}
+
+					&:hover, &:focus {
+						span.nome {background-image: url('../img/marca-afcwebdesign-splash.svg');}
+					}
+				}
+				&.current-menu-item > a span.nome {background-image: url('../img/marca-afcwebdesign-splash.svg');}
+			}
+
+			// hover
+			&:not(.menu-item-home) > a:hover, &:not(.menu-item-home) > a:focus,
+			&:not(.menu-item-home).current-menu-item > a {
+				background: url('../img/splash.svg') no-repeat center center / 100% auto;
+
+				span.descricao { color: var(--cor-rosa-medio); }
 			}
 		}
 	}

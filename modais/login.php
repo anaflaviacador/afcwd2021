@@ -19,7 +19,7 @@ echo '<div id="customer_login">';
 
 				wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' );
 
-				echo '<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Entrar">Entrar</button>';
+				echo '<button type="submit" class="button azul" name="login" value="Entrar">Entrar</button>';
 
 			echo '</div>';
 			

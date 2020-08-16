@@ -82,6 +82,9 @@ if (class_exists('acf') && class_exists('AF')) {
 /////////////// AREA CLIENTE
 include_once(get_template_directory().'/func/config-cliente.php' );
 
+
+
+
 // ========================================//
 // CUSTOM DASHBOARD ITENS PARA LOGADOS
 // ========================================// 
@@ -126,6 +129,11 @@ function afc_load_styles() {
     // scripts
     wp_enqueue_script('ganalytics', $urlCDN . '/ga-lite@2.1.0/dist/ga-lite.min.js', array(), '', false);
     wp_enqueue_script( 'fancybox', $urlCDN . '/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
+
+    if (is_front_page()) {
+      wp_enqueue_script('typewriter', '//unpkg.com/typewriter-effect@latest/dist/core.js', array('jquery-core'), '', false);
+    }
+
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
 
     // retirando css e js indesejados
@@ -161,7 +169,12 @@ function afc_load_scripts_head() {
 
 
 function afc_load_scripts_footer() { 
-  // if(is_single()) { echo '<script async defer src="//assets.pinterest.com/js/pinit.js"></script>'; }
+  if(is_singular('etheme_portfolio')) { echo '<script async defer src="//assets.pinterest.com/js/pinit.js"></script>'; }
+  if(is_front_page()) {
+    echo '<script type="text/javascript">';
+      echo "const instance = new Typewriter('#foco-frase', { strings: ['o site','a loja','o blog'],delay: 120,autoStart: true,loop: true});";
+    echo '</script>';
+  }  
 
   // configuracoes da barra de admin, caso exista
   if (is_admin_bar_showing()) {
@@ -211,7 +224,16 @@ function afc_removequerystring( $src ) {
 // ========================================//
 // MENU
 // ========================================// 
-function afc_menu($local) { 
+function prefix_nav_description( $item_output, $item, $depth, $args ) {
+    if ( !empty( $item->description ) ) {
+        $item_output = str_replace( '">' . $args->link_before . $item->title, '">' . $args->link_before . '<span class="descricao" aria-hidden="true">' . $item->description . '</span><span class="nome">' . $item->title, $item_output.'</span>' );
+    }
+ 
+    return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
+
+function afc_menu($local) {   
   wp_nav_menu ( array( 
     'theme_location' => $local, 
     'menu' => $local, 
@@ -226,10 +248,9 @@ function afc_menu($local) {
     'link_after' => '',
     'items_wrap' => '%3$s', 
     'depth' => 0, 
-    'walker' => '' 
+    'walker' => ''
   )); 
 }
-
 
 
 

@@ -67,7 +67,7 @@
 }
 
 %textshadow { text-shadow: 1px 1px 0 transparentize(black,0.9); }
-%textshadow-claro { text-shadow: 1px 1px 0 transparentize(white,0.9); }
+%textshadow-claro { text-shadow: 1px 1px 0 transparentize(white,0.5); }
 
 %sombra-leve { box-shadow: 0 0 15px transparentize(black,0.95); }
 %sombra-forte { box-shadow: 0 0 15px transparentize(black,0.75); }

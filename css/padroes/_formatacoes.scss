@@ -35,6 +35,13 @@ a {
 b, strong {
 	font-weight: bold;
 	color: inherit;
+
+	&.grafite {color: var(--cor-grafite);}
+	&.rosa {color: var(--cor-rosa);}
+	&.roxo {color: var(--cor-roxo);}
+	&.verde {color: var(--cor-verde);}
+	&.bege {color: var(--cor-bege);}
+	&.azul {color: var(--cor-azul);}	
 }
 u {
 	text-decoration: underline;
@@ -73,7 +80,7 @@ h1, h2, h3, h4, h5 {
 	}
 
 	&.cursivo {
-		font-weight: normal; line-height: 0.9;
+		font-weight: normal; line-height: 0.6;
 		font-family: $fonte-cursiva;
 	}
 }
@@ -161,7 +168,7 @@ textarea {
 [type="checkbox"] {@include appearance(checkbox);}
 
 
-a.btn, button.btn, .btn, .enviar input[type="submit"], a.more-link {
+a.button, button.button, .button, .enviar input[type="submit"] {
 	display: inline-block;
 	outline: 0;
 	background: $roxo;
@@ -171,23 +178,31 @@ a.btn, button.btn, .btn, .enviar input[type="submit"], a.more-link {
 	cursor: pointer;
 	padding: .6em 1.2em;
 	position: relative;
-	font-size: .85em;
+	font-size: 1em;
 	font-weight: bold;
 	text-transform: uppercase;
 	white-space: nowrap;
-	border-radius: 6px;
 	border: 0;
 	font-family: $fonte-redonda;
 	box-shadow: none !important;
 	@include transition(background 0.2s ease-in-out, padding 0.2s ease-in-out);
 	@extend %letterspacing;
+	@extend %borda-redonda;
 
 	&:hover {
 		background: darken($roxo,5%);
 	}
 
-	&.menor { font-size: .85em !important; padding: .4em .7em !important;}
-	&.maior { font-size: 1.4em !important; padding: .5em 1.5em !important;}
+	&.grafite {background: var(--cor-grafite);}
+	&.rosa {background: var(--cor-rosa);}
+	&.roxo {background: var(--cor-roxo);}
+	&.verde {background: var(--cor-verde);}
+	&.bege {background: var(--cor-bege);}
+	&.azul {background: var(--cor-azul);}
+
+	&.pequeno { font-size: .85em !important; padding: .6em 1.2em .8em !important}
+	&.medio { font-size: 1.3em !important;}
+	&.grande { font-size: 1.5em !important; padding: .7em 1.5em !important;}
 
 	@media (max-width: $celular) {
 		padding: 9px 15px !important;
