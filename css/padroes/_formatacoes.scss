@@ -188,6 +188,7 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	@include transition(background 0.2s ease-in-out, padding 0.2s ease-in-out);
 	@extend %letterspacing;
 	@extend %borda-redonda;
+	@extend %textshadow;
 
 	&:hover {
 		background: darken($roxo,5%);

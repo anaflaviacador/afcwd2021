@@ -28,9 +28,21 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 		echo '<div class="apresentacao">';
 			echo '<a href="/" title="Conheça a designer" class="foto">';
 				echo '<picture role="img" aria-label="Mulher morena por volta de 30 anos, de cabelos escuros até altura dos ombros sorrindo para câmera, vestida com um vestido bege de alças finas">';
-				    echo '<source srcset="https://madlyluv.com/wp-content/uploads/2020/06/foto-perfil-mluv-200x200.png" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
-				    echo '<source srcset="https://madlyluv.com/wp-content/uploads/2020/06/foto-perfil-mluv-200x200.png" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
-				    echo '<img srcset="https://madlyluv.com/wp-content/uploads/2020/06/foto-perfil-mluv-200x200.png">';
+
+					// telas dekstop
+				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-150.png" media="(min-width: 991px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-300.png" media="(min-width: 991px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+
+				    // tablets
+				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-250.png" media="(min-width: 681px) and (max-width: 990px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-500.png" media="(min-width: 681px) and (max-width: 990px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+				    
+				    // celulares
+				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-200.png" media="(max-width: 680px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-400.png" media="(max-width: 680px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+				    
+				    // fallback
+				    echo '<img srcset="'.$urlTema.'/img/anaflaviacador-300.png">';
 				echo '</picture>';
 				echo '<h2 lang="en" class="ola cursivo">hello</h2>';
 			echo '</a>';
