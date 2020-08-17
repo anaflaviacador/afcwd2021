@@ -1,17 +1,21 @@
 jQuery(document).ready(function($) {
   ////////////////////////////////// canvas
-  $( "main" ).prepend( "<div class='canvas-overlay'></div>" );
+  var btMenu = $('#menu-mob'),
+      tagMain = $('main'),
+      tagCanvas = $('.canvas'),
+      tagOverlay = $('.canvas-overlay');
+  tagMain.prepend( "<div class='canvas-overlay'></div>" );
 
+  // menu normal
   function escondeCanvas() {
     $('.canvas, .canvas-overlay').removeClass('visivel');
     setTimeout(function(){
       $('.canvas, .canvas-overlay').removeClass('db');
     },330)
-    $('main').off('mousedown', escondeCanvas);
-    $('.canvas').off('swipeleft', escondeCanvas);
-    $('.canvas-overlay').removeClass('visivel');
+    tagMain.off('mousedown', escondeCanvas);
+    tagCanvas.off('swipeleft', escondeCanvas);
+    tagOverlay.removeClass('visivel');
     console.log('escondeu');
-    
   }
 
   function mostraCanvas() {
@@ -19,40 +23,13 @@ jQuery(document).ready(function($) {
     setTimeout(function(){
       $('.canvas, .canvas-overlay').addClass('visivel');
     },20)
-    $('main').on('mousedown', escondeCanvas);
-    $('.canvas').on('swipeleft', escondeCanvas);
+    tagMain.on('mousedown', escondeCanvas);
+    tagCanvas.on('swipeleft', escondeCanvas);
   }
-
-  function escondeCanvasCliente() {
-    $('.canvascliente, .canvas-overlay').removeClass('visivel');
-    setTimeout(function(){
-      $('.canvascliente, .canvas-overlay').removeClass('db');
-    },330)
-    $('main').off('mousedown', escondeCanvasCliente);
-    $('.canvascliente').off('swipeleft', escondeCanvasCliente);
-    $('.canvas-overlay').removeClass('visivel');
-    console.log('escondeu');
-    
-  }
-
-  function mostraCanvasCliente() {
-    $('.canvascliente, .canvas-overlay').addClass('db');
-    setTimeout(function(){
-      $('.canvascliente, .canvas-overlay').addClass('visivel');
-    },20)
-    $('main').on('mousedown', escondeCanvasCliente);
-    $('.canvascliente').on('swipeleft', escondeCanvasCliente);
-  }
-
-
-  $('.btmenucanvas').on('click', function(){
-    mostraCanvas();
-  });
-
-  $('li.area-cliente-mob > a').on('click', function(){
-    mostraCanvasCliente();
-  });
-
+  btMenu.on('click', function(){
+   mostraCanvas();
+   console.log('clicou menu');
+  }); 
 
   ////////////////////////////////// abinhas = accordion
   $('.aba').find('.aba-titulo').click(function(){
@@ -106,19 +83,43 @@ jQuery(document).ready(function($) {
 
 
   ///////////////////////////////////////// TIME ZONE - MOSTRA WHATS
-  var BRDate = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"}));
-  var BRHour = BRDate.getHours();
-  var BRDay = BRDate.getDay();
-  var btWhats = $('#btwhats');
-  var btWhatsMSG = $('#btwhats > span');
+  var afcwd_BRDate = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"}));
+  var afcwd_BRHour = afcwd_BRDate.getHours();
+  var afcwd_BRDay = afcwd_BRDate.getDay();
+  var afcwd_Whaaa = $('#afc_btwhats');
+  var afcwd_BTWhaaa = $('#afc_btwhats > button');
+  var afcwd_StatusWhaaa = $('#afc_btwhats_status');
+  var afcwd_formWhaaa = $('input#afc_btwhats_box_form_escrever');
+  var afcwd_SaudacoesWhaaa = $('#afc_btwhats_box_saudacoes');
+  var afcwd_ChamadaWhaaa = $('#afc_btwhats_box_chamada');
 
-  if (BRHour >= 14 && BRHour < 17 && BRDay > 0 && BRDay < 6) {
-      btWhatsMSG.text('Oi, estou online agora! :)');
-  } else {
-      btWhatsMSG.text('Oi, atendo das 14h às 17h!');
+  afcwd_BTWhaaa.on('click', function(event) {
+    afcwd_Whaaa.toggleClass('afc_onclick');
+  });
+  afcwd_formWhaaa.keyup(function() {
+    var value = $( this ).val();
+    $( "a#afc_btwhats_box_form_mandar" ).attr( 'href', 'https://api.whatsapp.com/send?phone=5562996269941&text=' + value );
+  }).keyup();
+
+  if (afcwd_BRHour >= 14 && afcwd_BRHour < 17 && afcwd_BRDay > 0 && afcwd_BRDay < 6) {
+      afcwd_StatusWhaaa.removeClass('off').removeClass('ocupada').addClass('on');
+      afcwd_SaudacoesWhaaa.append('Oi, <strong>Ana</strong> <u>online</u> aqui! 👩‍💻');
+      afcwd_ChamadaWhaaa.append('Está pronta para tirar do papel o projeto dos seus sonhos? 🥳');
   }
-  if (BRDay === 0 || BRDay === 6) {
-      btWhats.css('display','none');
+  else if (afcwd_BRHour >= 8 && afcwd_BRHour < 14 && afcwd_BRDay > 0 && afcwd_BRDay < 6) {
+      afcwd_StatusWhaaa.removeClass('off').removeClass('on').addClass('ocupada');
+      afcwd_SaudacoesWhaaa.append('Oi, bom dia! <em>Já já estarei de volta!</em> ✌️');
+      afcwd_ChamadaWhaaa.append('E você? Está pronta para tirar do papel o projeto dos seus sonhos? 🎉 Fale comigo, em breve te retorno!');
+  }
+  else if (afcwd_BRDay === 0 || afcwd_BRDay === 6) {
+      afcwd_StatusWhaaa.removeClass('on').removeClass('ocupada').addClass('off');
+      afcwd_SaudacoesWhaaa.append('Oi, aproveitando o <em>fim de semana</em>? 😎✨');
+      afcwd_ChamadaWhaaa.append('Deixe seu recado que na segunda te respondo. Você também pode entrar em  <a href="/contato">contato por email</a>. 💌');
+  } 
+  else {
+      afcwd_StatusWhaaa.removeClass('on').removeClass('ocupada').addClass('off');
+      afcwd_SaudacoesWhaaa.append('Oi, estou <u>offline</u> agora 🙈');
+      afcwd_ChamadaWhaaa.append('Deixe seu recado que te retornarei em breve, ou entre em <a href="/contato">contato por email</a>. 💌');
   }
 
 });

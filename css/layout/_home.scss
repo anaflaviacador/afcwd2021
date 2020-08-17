@@ -3,7 +3,7 @@
 	display: block;
 	min-height: 400px;
 	position: relative;
-	@include imagemfull(cover,center,center);
+	@include imagemfull(cover,center,top);
 
 	@media (min-width: $container) { background-attachment: fixed; }
 

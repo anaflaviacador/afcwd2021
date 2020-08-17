@@ -1,0 +1,44 @@
+{
+    "key": "group_5bc386e41fad8",
+    "title": "Info extra de produto",
+    "fields": [
+        {
+            "key": "field_5a2d17e5a5188",
+            "label": "Link demo",
+            "name": "infoproduto_linkdemo",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "AFC WD",
+    "modified": 1556213106
+}

@@ -185,13 +185,13 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	border: 0;
 	font-family: $fonte-redonda;
 	box-shadow: none !important;
-	@include transition(background 0.2s ease-in-out, padding 0.2s ease-in-out);
+	@include transition(background 0.2s ease-in-out, padding 0.2s ease-in-out, transform 0.2s ease-in-out);
 	@extend %letterspacing;
 	@extend %borda-redonda;
 	@extend %textshadow;
 
-	&:hover {
-		background: darken($roxo,5%);
+	&:hover, &:focus {
+		@include transform(scale(1.05));
 	}
 
 	&.grafite {background: var(--cor-grafite);}

@@ -1,0 +1,621 @@
+{
+    "key": "group_5cc61a7b628af",
+    "title": "Form Contato - Campos",
+    "fields": [
+        {
+            "key": "field_5cc61a97da170",
+            "label": "Nome",
+            "name": "form_nome",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cc61aadda171",
+            "label": "E-mail",
+            "name": "form_email",
+            "type": "email",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5cc61cf2c9778",
+            "label": "Assunto principal do contato",
+            "name": "form_assunto",
+            "type": "radio",
+            "instructions": "Selecione o assunto principal para seguir com as próximas opções do formulário.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "orcamento": "Pedido de orçamento",
+                "suporte": "Solicitação de suporte",
+                "duvida": "Dúvidas em geral",
+                "outro": "Outro"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "label",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5cc7084f9d78c",
+            "label": "Que tipo de projeto gostaria de orçar?",
+            "name": "form_tipo_projeto",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "==",
+                        "value": "orcamento"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "completo": "Projeto de design e desenvolvimento",
+                "design": "Apenas criação de layout (design)",
+                "dev": "Apenas programação (desenvolvimento)"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "label",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5cc74d8c5940f",
+            "label": "Trabalhamos apenas com Wordpress!",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc7084f9d78c",
+                        "operator": "==",
+                        "value": "completo"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden tipo-projeto completo",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "Quando se trata de um projeto completo, ou seja, de design e desenvolvimento, trabalhamos apenas com a plataforma Wordpress.\r\n<span>Forma de entrega: Tema em .zip e implementação do mesmo na hospedagem<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5cc74e6359410",
+            "label": "Criação de layout",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc7084f9d78c",
+                        "operator": "==",
+                        "value": "design"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden tipo-projeto design",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "Projeto de layout desenvolvido em softwares de edição de imagem, como Adobe Photoshop e Affinity Design.\r\n<span>Forma de entrega: Arquivo em .PSD, .PDF ou .AFDESIGN + imagens recortadas<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5cc74eba59411",
+            "label": "Desenvolvimento para plataforma Wordpress",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc7084f9d78c",
+                        "operator": "==",
+                        "value": "dev"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden tipo-projeto dev",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "Programação de layout pronto e enviado pelo cliente. Desenvolvido em linguagem PHP para rodar na plataforma Wordpress. <span>Forma de entrega: Tema em .zip e implementação do mesmo na hospedagem<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5cc7507859412",
+            "label": "Seria para blog ou site?",
+            "name": "form_tipo_estrutura",
+            "type": "radio",
+            "instructions": "Escolha um estrutura predominante para seu possível projeto",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc7084f9d78c",
+                        "operator": "==",
+                        "value": "completo"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5cc7084f9d78c",
+                        "operator": "==",
+                        "value": "dev"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "blog": "Blog",
+                "site": "Site"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "label",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5cc70a5fd8c3b",
+            "label": "O que é um projeto de blog?",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc7507859412",
+                        "operator": "==",
+                        "value": "blog"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden estrela",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "<strong>Estrutura BLOG:<\/strong> projeto que segue a estrutura clássica dos blogs que conhecemos <em>(coluna de posts + coluna lateral de perfil)<\/em>; a estrutura segue praticamente a mesma em todas as páginas internas, porém, com possibilidade de diversas funcionalidades e widgets extras personalizadas. \r\n<span>Ideal para quem tem um blog como hobbie ou trabalha profissionalmente com criação de conteúdo.<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5cc70b04d8c3c",
+            "label": "O que é um projeto de site?",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc7507859412",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden estrela",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "<strong>Estrutura SITE:<\/strong> com uma estrutura mais fluida; funcionalidades personalizadas permitindo criação de páginas internas de forma dinâmica e direcionada ao seu público alvo. Possui uma área de notícias (blog interno) sem custo extra.\r\n<span>Ideal para empresas, profissionais autônomos, micro-empreendedores e criadores de conteúdo que buscam divulgar serviços e\/ou produtos além de seu blog.<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5cc711dfb59ee",
+            "label": "Pretende ter uma loja virtual agregada a este projeto?",
+            "name": "form_loja",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc7084f9d78c",
+                        "operator": "==",
+                        "value": "completo"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5cc7084f9d78c",
+                        "operator": "==",
+                        "value": "dev"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Sim, pretendo ter uma loja virtual",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5cc760f9c685c",
+            "label": "Informações sobre loja",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc711dfb59ee",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden info",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "O catálogo de produtos irá respeitar a estrutura do tipo de projeto (site ou blog).\r\n<span>Tecnologia utilizada: Woocommerce.<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5cc719ee6e19f",
+            "label": "Qual será o direcionamento do suporte?",
+            "name": "form_suporte",
+            "type": "radio",
+            "instructions": "Determine a categoria de serviço do qual será direcionado o suporte",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "==",
+                        "value": "suporte"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "suporteprojeto": "Para um projeto que o studio desenvolveu para mim",
+                "suporteloja": "Para um tema e\/ou plugin que comprei na lojinha"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "label",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5cc7543f1d70a",
+            "label": "Seu blog \/ site (caso tenha)",
+            "name": "form_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cc61abada172",
+            "label": "Conte-me mais pouco sobre o que gostaria no projeto",
+            "name": "form_mensagem_orcamento",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "!=",
+                        "value": "duvida"
+                    },
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "!=",
+                        "value": "suporte"
+                    },
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "!=",
+                        "value": "outro"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5cc747d73352c",
+            "label": "Em que posso ajudar?",
+            "name": "form_mensagem_suporte",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "==",
+                        "value": "duvida"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "==",
+                        "value": "suporte"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "==",
+                        "value": "outro"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ef0ad16d71f0",
+            "label": "Por onde conheceu o studio?",
+            "name": "form_referencia",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Por indicação direta de alguém": "Por indicação direta de alguém",
+                "Por um site \/ blog que leva a marca do studio": "Por um site \/ blog que leva a marca do studio",
+                "Por uma busca no Google": "Por uma busca no Google",
+                "Por menção em redes sociais": "Por menção em redes sociais",
+                "Por um anúncio publicitário": "Por um anúncio publicitário"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "label",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ef0ae254f841",
+            "label": "Quem indicou?",
+            "name": "form_referencia_indicacao",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef0ad16d71f0",
+                        "operator": "==",
+                        "value": "Por indicação direta de alguém"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ef0ae8a4f844",
+            "label": "Qual blog \/ site?",
+            "name": "form_referencia_blogsite",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef0ad16d71f0",
+                        "operator": "==",
+                        "value": "Por um site \/ blog que leva a marca do studio"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ef0ae6f4f843",
+            "label": "Qual mídia social?",
+            "name": "form_referencia_midia",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef0ad16d71f0",
+                        "operator": "==",
+                        "value": "Por menção em redes sociais"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5efba8e2686b4",
+            "label": "de acordo com a nossa Política de Privacidade",
+            "name": "form_aceita_termos",
+            "type": "true_false",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Li e aceito a <a href=\"https:\/\/afcweb.design\/termos\/\" target=\"_blank\">política de privacidade<\/a> do site <span style=\"color:red\">*<\/span>",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "af_form",
+                "operator": "==",
+                "value": "form_5efb867474157"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "AFC WD - Formulário de contato padrão do site",
+    "modified": 1593551705
+}

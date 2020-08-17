@@ -9,6 +9,8 @@ get_template_part('inc/metatags');
 echo '</head>';
 echo '<body class="'.join(' ',get_body_class()).'">';
 
+get_template_part('inc/menu','canvas');
+
 echo '<main>';
 
 if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocommerce_before_customer_login_form' ); echo '</div>'; }
@@ -16,7 +18,7 @@ if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocom
 	echo '<header id="cabecalho">';
 		echo '<div class="nav-mini container">';
 			echo '<div class="menu-mob" aria-label="Menu de navegação. Clique para mostrar.">';
-				echo '<a href="#" id="menu-mob"><i class="fas fa-stream"></i><span> Menu</span></a>';
+				echo '<a href="#" id="menu-mob"><i class="fas fa-stream"></i></a>';
 			echo '</div>';
 
 			if (class_exists('Woocommerce')) { 
@@ -41,7 +43,7 @@ if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocom
 		echo '</div>';
 
 		echo '<nav class="menu-site" aria-label="Navegação principal do site">';
-			echo '<ul>';
+			echo '<ul id="navegacao">';
 				afc_menu('primary');
 			echo '</ul>';
 		echo '</nav>';

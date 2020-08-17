@@ -12,8 +12,7 @@ function afc_setup() {
     add_filter( 'script_loader_src', 'afc_removequerystring', 10, 2 );
     add_filter( 'script_loader_tag', 'afc_asyncjs', 10, 2);
     add_filter( 'style_loader_tag', 'afc_cssnosync', 10, 4); 
-    // add_filter( 'login_errors', 'no_wordpress_errors' );
-    add_filter('xmlrpc_enabled', '__return_false');
+    add_filter( 'xmlrpc_enabled', '__return_false');
 
     // limpeza
     remove_action( 'wp_head', 'wp_shortlink_wp_head', 10);
@@ -34,6 +33,7 @@ function afc_setup() {
       add_filter( 'jetpack_enable_open_graph', '__return_false' );
     }
 
+    // layout
     add_action( 'wp_enqueue_scripts', 'afc_load_styles', 999 );
     add_action( 'wp_head', 'afc_load_scripts_head', 999 );
     add_action( 'wp_footer', 'afc_load_scripts_footer', 999 );
@@ -224,9 +224,21 @@ function afc_removequerystring( $src ) {
 // ========================================//
 // MENU
 // ========================================// 
+remove_filter( 'nav_menu_description', 'strip_tags' );
+function afc_menu_html_enabled( $menu_item ) {
+    if ( isset( $menu_item->post_type ) ) {
+        if ( 'nav_menu_item' == $menu_item->post_type ) {
+            $menu_item->description = apply_filters( 'nav_menu_description', $menu_item->post_content );
+        }
+    }
+
+    return $menu_item;
+}
+add_filter( 'wp_setup_nav_menu_item', 'afc_menu_html_enabled' );
+
 function prefix_nav_description( $item_output, $item, $depth, $args ) {
     if ( !empty( $item->description ) ) {
-        $item_output = str_replace( '">' . $args->link_before . $item->title, '">' . $args->link_before . '<span class="descricao" aria-hidden="true">' . $item->description . '</span><span class="nome">' . $item->title, $item_output.'</span>' );
+        $item_output = str_replace( '">' . $args->link_before . $item->title, '">' . $args->link_before . '<span class="descricao" aria-hidden="true">' . $item->description . '</span><span class="nome">' . $item->title, $item_output.'</span>' ); 
     }
  
     return $item_output;
@@ -251,7 +263,6 @@ function afc_menu($local) {
     'walker' => ''
   )); 
 }
-
 
 
 // ========================================//
@@ -447,7 +458,3 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 }
 
 
-// ========================================//
-// ESCONDE ERROS DE LOGIN
-// ========================================// 
-function no_wordpress_errors(){ return 'Algo está errado. Tente novamente!'; }

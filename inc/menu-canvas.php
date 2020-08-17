@@ -1,3 +1,3 @@
 <?php
 
-echo '<div class="canvas" aria-hidden="true"><h2>Navegue pelo blog</h2><ul role="navigation">'; afc_menu('secondary'); echo '</ul></div>';
+echo '<div class="canvas"><h2><span aria-hidden="true">Navegue</span>Conheça mais</h2><ul role="navigation">'; afc_menu('secondary'); echo '</ul></div>';

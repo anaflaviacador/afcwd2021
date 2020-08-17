@@ -1,0 +1,1339 @@
+{
+    "key": "group_5cc98fa9a29c8",
+    "title": "Form Briefing - Campos",
+    "fields": [
+        {
+            "key": "field_5ccf1ab12d7bd",
+            "label": "Dados Básicos",
+            "name": "",
+            "type": "page",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": true,
+            "show_numbering": 1,
+            "previous_text": "Voltar",
+            "next_text": "Avançar"
+        },
+        {
+            "key": "field_5ccf2855a89d0",
+            "label": "Nome e slogan",
+            "name": "bform_nome",
+            "type": "text",
+            "instructions": "Nome de sua empresa ou blog + slogan (opcional)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ccf0c178fa6e",
+            "label": "Blog ou Site?",
+            "name": "bform_estr",
+            "type": "radio",
+            "instructions": "Confirme a estrutura para direcionar os devidos campos nas próximas páginas do formulário.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "blog": "Blog",
+                "site": "Site"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "label",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5ccf1b4f80511",
+            "label": "O que é um projeto de blog?",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "blog"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden info",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "<strong>Estrutura BLOG:<\/strong> projeto que segue a estrutura clássica dos blogs que conhecemos <em>(coluna de posts + coluna lateral de perfil)<\/em>; a estrutura segue praticamente a mesma em todas as páginas internas, porém, com possibilidade de diversas funcionalidades e widgets extras personalizadas. \r\n<span>Ideal para quem tem um blog como hobbie ou trabalha profissionalmente com criação de conteúdo.<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ccf1b5c80512",
+            "label": "O que é um projeto de site?",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden info",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "<strong>Estrutura SITE:<\/strong> com uma estrutura mais fluida; funcionalidades personalizadas permitindo criação de páginas internas de forma dinâmica e direcionada ao seu público alvo. Possui uma área de notícias (blog interno) sem custo extra.\r\n<span>Ideal para empresas, profissionais autônomos, micro-empreendedores e criadores de conteúdo que buscam divulgar serviços e\/ou produtos além de seu blog.<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ccf2804a89cf",
+            "label": "Domínio",
+            "name": "bform_link",
+            "type": "url",
+            "instructions": "Insira o domínio pelo qual será direcionado o projeto.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ccf28fda89d1",
+            "label": "Hospedagem",
+            "name": "bform_host",
+            "type": "radio",
+            "instructions": "Possui uma hospedagem contratada para seu domínio?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Sim": "Sim",
+                "Não": "Não"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "label",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5ccf2934a89d2",
+            "label": "Qual é a empresa de hospedagem contratada?",
+            "name": "bform_host_1",
+            "type": "text",
+            "instructions": "Informe o provedor de hospedagem do qual está vinculado ao seu domínio. Informação importante para determinar o rumo da fase de desenvolvimento (os dados serão solicitados futuramente).",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf28fda89d1",
+                        "operator": "==",
+                        "value": "Sim"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ccf2a15a89d3",
+            "label": "Não tem host",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf28fda89d1",
+                        "operator": "==",
+                        "value": "Não"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden estrela",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "O studio AFC trabalha com afiliação à <a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Nuvem Hospedagem<\/a>, uma das melhores empresas provedoras de hospedagem de websites do Brasil, com atendimento 24h por dia e um ótimo custo-benefício ao consumidor. \r\n<span><a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Clique aqui<\/a> e ganhe 50% de desconto na primeira sua mensalidade utilizando o cupom de desconto <strong>NUVEM50<\/strong>!<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ccf2eef9feaa",
+            "label": "Nome",
+            "name": "bform_nfse_2",
+            "type": "text",
+            "instructions": "Seu nome completo, por favor",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ccf2dbe7f428",
+            "label": "CPF \/ CNPJ",
+            "name": "bform_nfse_1",
+            "type": "text",
+            "instructions": "Para contrato e nota fiscal (caso solicite)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ccf2d667f427",
+            "label": "Nota fiscal",
+            "name": "bform_nfse",
+            "type": "true_false",
+            "instructions": "Deseja a emissão de nota fiscal eletrônica na entrega?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Sim, solicito NFS-e",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ccf2e187f429",
+            "label": "Endereço residencial ou empresarial",
+            "name": "bform_nfse_3",
+            "type": "textarea",
+            "instructions": "Por favor, insira seu endereço completo (logradouro, número, CEP, cidade, estado) para ser inserido na nota fiscal",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf2d667f427",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf11915dbd7",
+            "label": "Perfil",
+            "name": "",
+            "type": "page",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": true,
+            "show_numbering": 1,
+            "previous_text": "Voltar",
+            "next_text": "Avançar"
+        },
+        {
+            "key": "field_5ccf25df86650",
+            "label": "Marca ou Arte do topo?",
+            "name": "bform_marca",
+            "type": "radio",
+            "instructions": "Todo projeto de layout já vem por padrão uma arte para o cabeçalho que pode ser usado apenas para mídias sociais. Esta arte faz parte da composição do layout e é entregue separadamente em formato simples (com fundo transparente), porém, de alta qualidade. Um sistema de identidade visual é um projeto de marca projetada para ser utilizada em diversos lugares e aplicações, inclusive em papelaria, como cartões de visita.<br><br>\r\n\r\n<u>Projetos específicos de identidade visual são terceirizados. Caso tenha esta necessidade, informe abaixo que indicarei o melhor profissional para o seu perfil. <\/u><br><br>\r\n\r\n<strong>O que você deseja no seu cabeçalho?<\/strong>",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Ficarei apenas com a arte do topo que vem no layout (alego que não necessito de criação de sistema de identidade visual)": "Ficarei apenas com a arte do topo que vem no layout (alego que não necessito de criação de sistema de identidade visual)",
+                "Tenho uma identidade visual e irei no usar em meu projeto": "Tenho uma identidade visual e irei no usar em meu projeto",
+                "Preciso de uma marca, me indique um profissional": "Preciso de uma marca, me indique um profissional"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5ccf1d6d68418",
+            "label": "Público alvo",
+            "name": "bform_site_1",
+            "type": "textarea",
+            "instructions": "Qual é o perfil de pessoa (no design chamamdos de \"persona\") que você espera que interaja contigo no site e nas redes sociais?",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf1e92ff012",
+            "label": "Tarefas do site",
+            "name": "bform_site_2",
+            "type": "checkbox",
+            "instructions": "Quais são as tarefas <u>básicas e essenciais<\/u> que seu site precisa exercer assim que seu visitante entra em seu site?",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Oferecer serviços": "Oferecer serviços",
+                "Apresentar uma empresa": "Apresentar uma empresa",
+                "Promover uma figura pública": "Promover uma figura pública",
+                "Portal de notícias e artigos": "Portal de notícias e artigos",
+                "Venda de produtos (e-commerce)": "Venda de produtos (e-commerce)",
+                "Ofertar cursos e treinamentos": "Ofertar cursos e treinamentos",
+                "Captura de leads (e-mail marketing)": "Captura de leads (e-mail marketing)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "label",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5ccf20cec9da1",
+            "label": "Detalhamento",
+            "name": "bform_site_3",
+            "type": "textarea",
+            "instructions": "Por favor, explique com um pouco mais de detalhes sobre as tarefas de seu site, como os <strong>serviços<\/strong> que você oferece, os <strong>produtos<\/strong> que quer vender para o público, <strong>histórico da empresa<\/strong>, tipo de <strong>conteúdo do blog<\/strong>, o que seu cliente deve <strong>encontrar no seu site<\/strong> etc.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 10,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf211eb106a",
+            "label": "Concorrência",
+            "name": "bform_geral_1",
+            "type": "textarea",
+            "instructions": "Quais são os principais sites\/blogs que têm o mesmo perfil que o seu? <br>Liste seus principais concorrentes e\/ou colegas da área. Se possível, liste também sites estrangeiros de mesmo segmento.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf21bc2a1b3",
+            "label": "O que você ADORA nestes sites?",
+            "name": "bform_geral_2",
+            "type": "textarea",
+            "instructions": "Liste os itens que você acredita que agregara valor aos sites\/blogs concorrentes. Pode ser coisas que você consideraria implementar no seu projeto.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf21af2a1b2",
+            "label": "O que você NÃO GOSTA nestes sites?",
+            "name": "bform_geral_3",
+            "type": "textarea",
+            "instructions": "Liste os itens que você considera defeitos ou problemas que você enxerga nestes sites\/blogs informados acima.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf2255f329a",
+            "label": "Referências sensoriais e visuais",
+            "name": "bform_geral_4",
+            "type": "textarea",
+            "instructions": "Qual é o sentimento que você deseja transmitir ao seu público?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf227cf329b",
+            "label": "Quais são os sites mais lindos que você já viu?",
+            "name": "bform_geral_5",
+            "type": "textarea",
+            "instructions": "Liste aqueles sites\/blog que você aprecia esteticamente, que se sente em casa, que tem a sua cara e a sensação que você gostaria de passar ao seu público. As referências visuais engloba paleta de cores, formas e elementos, linguagem e estética.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf22acf329c",
+            "label": "Você tem preferências por ilustrações personalizadas ou imagens mais genéricas?",
+            "name": "bform_geral_6",
+            "type": "radio",
+            "instructions": "Imagens genéricas são aquelas que nós conseguimos comprar em banco de imagens, além de ícones e ilustrações prontas (na loja Creative Market há várias lindíssimas). Já ilustrações personalizadas requer a contratação de um profissional da área para trabalhar conosco.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Ilustração personalizada": "Ilustração personalizada",
+                "Imagens genéricas": "Imagens genéricas"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "label",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5ccf22eff329d",
+            "label": "Quais são suas preferências de cores?",
+            "name": "bform_geral_7",
+            "type": "text",
+            "instructions": "Há alguma cor que jamais poderá faltar em seu layout? Qual? Pode ser mais de uma.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ccf230bf329e",
+            "label": "Como você prefere a fonte de seus títulos e chamadas?",
+            "name": "bform_geral_8",
+            "type": "text",
+            "instructions": "Informe o tipo de estilo de texto que você gostaria de utilizar no seu site. Seria com ar despojado, a delicadeza de uma caligrafia ou estilo geométricas e mais sérias? Elas seriam \"finas\" e mais delicadas, ou \"grossas\"? Ou gosta de um equilíbrio entre os estilos?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ccf250f8664d",
+            "label": "Quais são os itens que você mais aprecia nos sites responsivos?",
+            "name": "bform_geral_9",
+            "type": "textarea",
+            "instructions": "Pode incluir menus, fontes, disposição de elementos, etc. Se possível, enviar exemplos.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf252b8664e",
+            "label": "E qual é a dificuldade que você tem ao acessar sites pelo celular e\/ou tablet?",
+            "name": "bform_geral_10",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf255c8664f",
+            "label": "Painel Pinterest",
+            "name": "bform_geral_11",
+            "type": "url",
+            "instructions": "Você tem um painel de inspiração que gostaria de compartilhar? Por favor, insira o link dele abaixo ou compartilhe-o com o meu perfil do pinterest @anaflaviacador caso seu painel seja privado.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "inserir url do painel"
+        },
+        {
+            "key": "field_5ccf1211113a5",
+            "label": "Layout",
+            "name": "",
+            "type": "page",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": true,
+            "show_numbering": 1,
+            "previous_text": "Voltar",
+            "next_text": "Avançar"
+        },
+        {
+            "key": "field_5ccf362b65d25",
+            "label": "Estrutura e funcionalidades",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Você pode enriquecer o seu layout com diversos detalhes e funcionalidades. Liste abaixo os itens que você deseja incluir. Caso tenha dúvida de alguma opção, não hesite em entrar em contato e solucionar sua questão.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ccf36c99cdbf",
+            "label": "Páginas internas básicas",
+            "name": "bform_site_4",
+            "type": "checkbox",
+            "instructions": "Selecione as páginas internas básicas, de conteúdos pontuais, que deverão constar no seu site. Você será livre para criar e gerenciar quantas páginas quiser em seu site, mas as páginas abaixo poderão ter uma estruturação diferente para mostrar seu conteúdo da melhor forma possível.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "PAGINA <strong>SOBRE<\/strong>: Histórico da empresa ou da figura pública que escreve o site": "PAGINA <strong>SOBRE<\/strong>: Histórico da empresa ou da figura pública que escreve o site",
+                "PAGINA DE <strong>CONTATO<\/strong>: Com formulário de envio, podendo conter outras informações como telefone, mapa do google e redes sociais)": "PAGINA DE <strong>CONTATO<\/strong>: Com formulário de envio, podendo conter outras informações como telefone, mapa do google e redes sociais)",
+                "PAGINA DE <strong>SERVIÇOS<\/strong>": "PAGINA DE <strong>SERVIÇOS<\/strong>",
+                "PÁGINA DE <strong>CLIENTES<\/strong>": "PÁGINA DE <strong>CLIENTES<\/strong>",
+                "PÁGINA DE <strong>PARCEIROS<\/strong>": "PÁGINA DE <strong>PARCEIROS<\/strong>",
+                "PAGINA DE <strong>RECURSOS:<\/strong> Como por exemplo lista de recursos e\/ou downloads de arquivos": "PAGINA DE <strong>RECURSOS:<\/strong> Como por exemplo lista de recursos e\/ou downloads de arquivos"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "label",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5ccf37c7f02a8",
+            "label": "... mais detalhes que deseja nas páginas do site",
+            "name": "bform_site_5",
+            "type": "textarea",
+            "instructions": "Selecione as páginas internas básicas, de conteúdos pontuais, que deverão constar no seu site. Você será livre para criar e gerenciar quantas páginas quiser em seu site, mas as páginas abaixo poderão ter uma estruturação diferente para mostrar seu conteúdo da melhor forma possível.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf37fcf02a9",
+            "label": "Estrutura de blog interno",
+            "name": "bform_site_6",
+            "type": "checkbox",
+            "instructions": "Itens que farão parte da composição da estrutura do seu blog.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Listagem dos posts em forma resumida (caso não seja assinalado, os posts virão com conteúdo inteiro visível)": "Listagem dos posts em forma resumida (caso não seja assinalado, os posts virão com conteúdo inteiro visível)",
+                "Coluna lateral com widgets básicas": "Coluna lateral com widgets básicas",
+                "Área de posts mais populares": "Área de posts mais populares",
+                "Twitter (últimos tweets)": "Twitter (últimos tweets)",
+                "Youtube (vídeos incorporados do canal do site)": "Youtube (vídeos incorporados do canal do site)",
+                "Caixa postal": "Caixa postal",
+                "Área para enquete": "Área para enquete"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5ccf38d4f02aa",
+            "label": "... mais detalhes que deseja no blog",
+            "name": "bform_site_7",
+            "type": "textarea",
+            "instructions": "Veja mais opções na página 6 da <a href=\"https:\/\/afcweb.design\/orcamento2020.pdf\" target=\"_blank\">tabela de orçamento<\/a> específica para blogs sem custo adicional.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf41cd99406",
+            "label": "Monte o seu layout",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "blog"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Você pode enriquecer o seu layout com diversos detalhes e funcionalidades. Liste abaixo os itens que você deseja incluir. Caso tenha dúvida de alguma opção, não hesite em entrar em contato e solucionar sua questão. Os números em negrito são referência aos respectivos números dos itens presentes na <a href=\"https:\/\/afcweb.design\/orcamento2020.pdf\" target=\"_blank\">tabela de orçamento<\/a>, página 6.<br><br><strong>Custo adicional: R$25,00 cada item.<\/strong>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ccf426699407",
+            "label": "Estrutura geral",
+            "name": "bform_blog_1",
+            "type": "checkbox",
+            "instructions": "Itens que farão parte da composição da estrutura geral do seu layout, cabeçalho e rodapé.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "blog"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "<strong>001.<\/strong> Box promocionais dinâmicos (foto, link e título)": "<strong>001.<\/strong> Box promocionais dinâmicos (foto, link e título)",
+                "<strong>002.<\/strong> Habilitar widgets no rodapé": "<strong>002.<\/strong> Habilitar widgets no rodapé",
+                "<strong>003.<\/strong> Áreas de anúncios (até 3 áreas diferentes)": "<strong>003.<\/strong> Áreas de anúncios (até 3 áreas diferentes)",
+                "<strong>004.<\/strong> Área de inserção de script adicionais (recomendado para blogs que possuem parceiros e anunciantes)": "<strong>004.<\/strong> Área de inserção de script adicionais (recomendado para blogs que possuem parceiros e anunciantes)",
+                "<strong>005.<\/strong> Áreas de conteúdo incorporado entre a diagramação de um post e outro (fotos do instagram, pinterest, youtube, anúncios, thumbnails de uma categoria específica etc)": "<strong>005.<\/strong> Áreas de conteúdo incorporado entre a diagramação de um post e outro (fotos do instagram, pinterest, youtube, anúncios, thumbnails de uma categoria específica etc)",
+                "<strong>006.<\/strong> Primeiro post completo com o restante em grid com resumo": "<strong>006.<\/strong> Primeiro post completo com o restante em grid com resumo",
+                "<strong>007.<\/strong> Layout de listagem de uma categoria ou tag específica diferente das demais": "<strong>007.<\/strong> Layout de listagem de uma categoria ou tag específica diferente das demais",
+                "<strong>008.<\/strong> Listagem de posts de colaboradores com informação de perfil e contato de cada usuário": "<strong>008.<\/strong> Listagem de posts de colaboradores com informação de perfil e contato de cada usuário",
+                "<strong>009.<\/strong> Menu de categorias (além do menu global)": "<strong>009.<\/strong> Menu de categorias (além do menu global)",
+                "<strong>010.<\/strong> Página de arquivos organizada por ano, mês, categoria e palavras-chave (tags)": "<strong>010.<\/strong> Página de arquivos organizada por ano, mês, categoria e palavras-chave (tags)",
+                "<strong>011.<\/strong> Página interna com layout personalizado": "<strong>011.<\/strong> Página interna com layout personalizado",
+                "<strong>012.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem": "<strong>012.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem",
+                "<strong>013.<\/strong> Área destaque para uma categoria ou tag específica (ex: ultimos looks, últimas resenhas etc)": "<strong>013.<\/strong> Área destaque para uma categoria ou tag específica (ex: ultimos looks, últimas resenhas etc)",
+                "<strong>014.<\/strong> Área de newsletter (feedsburner ou mailchimp)": "<strong>014.<\/strong> Área de newsletter (feedsburner ou mailchimp)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "label",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5ccf437799408",
+            "label": "Estrutura do post",
+            "name": "bform_blog_2",
+            "type": "checkbox",
+            "instructions": "Itens que farão parte do post para você utilizar como recurso para enriquecer seu conteúdo.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "blog"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "<strong>015.<\/strong> Galeria de fotos (personalização da galeria padrão do WP)": "<strong>015.<\/strong> Galeria de fotos (personalização da galeria padrão do WP)",
+                "<strong>016.<\/strong> Categoria em ícone": "<strong>016.<\/strong> Categoria em ícone",
+                "<strong>017.<\/strong> Posts relacionados": "<strong>017.<\/strong> Posts relacionados",
+                "<strong>018.<\/strong> Descrição de autor (indicado para blogs colaborativos)": "<strong>018.<\/strong> Descrição de autor (indicado para blogs colaborativos)",
+                "<strong>019.<\/strong> Abas de conteúdo interno": "<strong>019.<\/strong> Abas de conteúdo interno",
+                "<strong>020.<\/strong> Toogle (conteúdo abre\/fecha)": "<strong>020.<\/strong> Toogle (conteúdo abre\/fecha)",
+                "<strong>021.<\/strong> Ficha técnica de filme \/ série \/ livro \/ game com classificação, capa e sinopse": "<strong>021.<\/strong> Ficha técnica de filme \/ série \/ livro \/ game com classificação, capa e sinopse",
+                "<strong>022.<\/strong> Área de imagem destacada extra": "<strong>022.<\/strong> Área de imagem destacada extra",
+                "<strong>023.<\/strong> Inserção rápida de playlist spotify \/ deezer": "<strong>023.<\/strong> Inserção rápida de playlist spotify \/ deezer",
+                "<strong>024.<\/strong> Recurso de foto antes \/ depois": "<strong>024.<\/strong> Recurso de foto antes \/ depois",
+                "<strong>025.<\/strong> Área de receita com lista de ingredientes, com área de “modo de preparo” e botão de imprimir receita": "<strong>025.<\/strong> Área de receita com lista de ingredientes, com área de “modo de preparo” e botão de imprimir receita",
+                "<strong>026.<\/strong> Frase de citação (diferente da formatação de títulos e blockquote)": "<strong>026.<\/strong> Frase de citação (diferente da formatação de títulos e blockquote)",
+                "<strong>027.<\/strong> Sinalização para post patrocinado com frase customizável": "<strong>027.<\/strong> Sinalização para post patrocinado com frase customizável",
+                "<strong>028.<\/strong> Subtítulo de postagem": "<strong>028.<\/strong> Subtítulo de postagem"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "label",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5ccf443b99409",
+            "label": "Coluna lateral (widgets)",
+            "name": "bform_blog_3",
+            "type": "checkbox",
+            "instructions": "Itens para se usar na sidebar ou rodapé (caso o mesmo foi optado para ter suporte para widgets)",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "blog"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "<strong>029.<\/strong> Colaboradores com foto (via gravatar) com link para listagem de post de cada usuário": "<strong>029.<\/strong> Colaboradores com foto (via gravatar) com link para listagem de post de cada usuário",
+                "<strong>030.<\/strong> Posts mais visitados": "<strong>030.<\/strong> Posts mais visitados",
+                "<strong>031.<\/strong> Pinterest (por usuário ou por board)": "<strong>031.<\/strong> Pinterest (por usuário ou por board)",
+                "<strong>032.<\/strong> Twitter": "<strong>032.<\/strong> Twitter",
+                "<strong>033.<\/strong> Youtube (vídeo destaque e botão de inscrição)": "<strong>033.<\/strong> Youtube (vídeo destaque e botão de inscrição)",
+                "<strong>034.<\/strong> Blogroll em fotos": "<strong>034.<\/strong> Blogroll em fotos",
+                "<strong>035.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem": "<strong>035.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem",
+                "<strong>036.<\/strong> Wishlist (com cadastro de imagem + link)": "<strong>036.<\/strong> Wishlist (com cadastro de imagem + link)",
+                "<strong>037.<\/strong> Ultimos posts de uma categoria específica": "<strong>037.<\/strong> Ultimos posts de uma categoria específica",
+                "<strong>038.<\/strong> Parceiros (em listagem ou slide)": "<strong>038.<\/strong> Parceiros (em listagem ou slide)",
+                "<strong>039.<\/strong> Newsletter (feedsburner ou mailchimp)": "<strong>039.<\/strong> Newsletter (feedsburner ou mailchimp)",
+                "<strong>040.<\/strong> Caixa postal": "<strong>040.<\/strong> Caixa postal",
+                "<strong>041.<\/strong> Agenda de posts publicados e\/ou agendados e eventos personalizados": "<strong>041.<\/strong> Agenda de posts publicados e\/ou agendados e eventos personalizados",
+                "<strong>042.<\/strong> Categorias selecionadas em link ou em ícone (diferente do padrão onde a listagem é de todas as categorias utilizadas)": "<strong>042.<\/strong> Categorias selecionadas em link ou em ícone (diferente do padrão onde a listagem é de todas as categorias utilizadas)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "label",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5ccf5bd95e42a",
+            "label": "Quer algum item que não encontrou nos itens anteriores?",
+            "name": "bform_blog_4",
+            "type": "textarea",
+            "instructions": "Especifique mais ou menos como você imagina o(s) item(s) que você não encontrou acima que faço algo exclusivo pra ti! Se quiser citar exemplos e links de outros blogs, fique à vontade.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "blog"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 8,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf3909f02ab",
+            "label": "Funcionalidades específicas \/ complexas",
+            "name": "bform_geral_14",
+            "type": "checkbox",
+            "instructions": "Funcionalidades específicas são áreas de desenvolvimento de alta complexidade ou de criação de publicações independentes do blog e das páginas internas que já ofertadas originalmente no Wordpress. Geralmente tem finalidade de promover informações específicas e direcionadas que estão em constante atualização.<br><br><strong>Custo extra: R$320 cada item<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "<strong>ÁREA PORTFOLIO:<\/strong> exposição de trabalhos realizados, com galeria de fotos com descrição de cada projeto realizado": "<strong>ÁREA PORTFOLIO:<\/strong> exposição de trabalhos realizados, com galeria de fotos com descrição de cada projeto realizado",
+                "<strong>LOJA VIRTUAL NATIVA:<\/strong> significa que o e-commerce será dentro do seu site (usamos a tecnologia Woocommerce). <u>Obs:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem devido à alta requisição de servidor por parte do e-commerce": "<strong>LOJA VIRTUAL NATIVA:<\/strong> significa que o e-commerce será dentro do seu site (usamos a tecnologia Woocommerce). <u>Obs:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem devido à alta requisição de servidor por parte do e-commerce",
+                "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados como uma loja virtual, porém o botão de compra redireciona para uma plataforma externa de e-commerce, como Iluria, Loja integrada, Tanlup, Hotmart etc. Indicado para quem trabalha apenas com link de afiliado e ganha comissão por cliques.": "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados como uma loja virtual, porém o botão de compra redireciona para uma plataforma externa de e-commerce, como Iluria, Loja integrada, Tanlup, Hotmart etc. Indicado para quem trabalha apenas com link de afiliado e ganha comissão por cliques.",
+                "<strong>CATALOGO DE CURSOS \/ TREINAMENTOS:<\/strong> área com construtor de página de venda, com personalização de conteúdo e botão de matrícula direcionando para uma plataforma externa, como Hotmart ou Zoom.": "<strong>CATALOGO DE CURSOS \/ TREINAMENTOS:<\/strong> área com construtor de página de venda, com personalização de conteúdo e botão de matrícula direcionando para uma plataforma externa, como Hotmart ou Zoom.",
+                "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc": "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc",
+                "<strong>ÁRA DE ACESSO RESTRITO:<\/strong> uma área que só membros do seu site pode acessar. Pode estar associado a e-commerce, do qual só quem comprou algo no site (ou fez uma assinatura) possui acesso a conteúdos exclusivos.": "<strong>ÁRA DE ACESSO RESTRITO:<\/strong> uma área que só membros do seu site pode acessar. Pode estar associado a e-commerce, do qual só quem comprou algo no site (ou fez uma assinatura) possui acesso a conteúdos exclusivos.",
+                "<strong>GUIA DE FORNECEDORES:<\/strong> com possibilidade de funcionalidade de filtragem de busca (ideal para site de casamentos e decoração)": "<strong>GUIA DE FORNECEDORES:<\/strong> com possibilidade de funcionalidade de filtragem de busca (ideal para site de casamentos e decoração)",
+                "<strong>MIDIA KIT DINÂMICO:<\/strong> com criação de uma área específica para gerir o número de seguidores. Ideal para profissionais de geração de conteúdo. Pode conter gráficos, mapa com destaque nas regiões de maior engajamento, área de apresentação às empresas, formas de publicidade ofertadas, termos de uso e até mesmo um formulário de contato.": "<strong>MIDIA KIT DINÂMICO:<\/strong> com criação de uma área específica para gerir o número de seguidores. Ideal para profissionais de geração de conteúdo. Pode conter gráficos, mapa com destaque nas regiões de maior engajamento, área de apresentação às empresas, formas de publicidade ofertadas, termos de uso e até mesmo um formulário de contato."
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "label",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5ccf3b63980e4",
+            "label": "... mais detalhes sobre as funcionalidades assinaladas",
+            "name": "bform_geral_15",
+            "type": "textarea",
+            "instructions": "Caso escolheu uma das opções acima, ou deseja uma funcionalidade extra diferenciada, por favor, faça uma descrição do que você espera no uso desta área e seus recursos. Exemplo de recursos: área de cadastro de link externo; área de cadastro de contato, endereço, telefone; área de incorporação de mapa do google; área de foto destacada extra; galeria de imagens; categorias extras (estado, cidade, cor, função) etc.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf3909f02ab",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ccf3bb6980e5",
+            "label": "Recurso multilíngua",
+            "name": "bform_geral_12",
+            "type": "radio",
+            "instructions": "Ideal para quem busca (ou já atinge) público no exterior",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "<strong>MODO AUTOMÁTICO:<\/strong> utiliza-se recurso do Google Tradutor, com tradução automática. <u>Não há custo adicional<\/u>": "<strong>MODO AUTOMÁTICO:<\/strong> utiliza-se recurso do Google Tradutor, com tradução automática. <u>Não há custo adicional<\/u>",
+                "<strong>MODO MANUAL:<\/strong> é aplicado o recurso de multilíngua dentro do sistema, onde a criação de conteúdo em outras línguas é feita manualmente. <u>Custo adicional: R$240<\/u>": "<strong>MODO MANUAL:<\/strong> é aplicado o recurso de multilíngua dentro do sistema, onde a criação de conteúdo em outras línguas é feita manualmente. <u>Custo adicional: R$240<\/u>"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "label",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5ccf3c4d980e6",
+            "label": "Informe as línguas adicionais",
+            "name": "bform_geral_13",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf3bb6980e5",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "Inglês, Espanhol, Italiano, Francês...",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ccf1222113a6",
+            "label": "Mídias",
+            "name": "",
+            "type": "page",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": true,
+            "show_numbering": 1,
+            "previous_text": "Voltar",
+            "next_text": "Avançar"
+        },
+        {
+            "key": "field_5ccf30d2b8696",
+            "label": "Capas para perfis sociais",
+            "name": "bform_midias",
+            "type": "repeater",
+            "instructions": "Com a proposta de layout, você pode solicitar a confecção de peças gráficas (capas e avatares) para suas principais redes sociais. Verifique os preços promocionais na <a href=\"https:\/\/afcweb.design\/orcamento2020.pdf\" taget=\"_blank\">tabela de preço<\/a>, na página 6.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "collapsed": "field_5ccf3162b8697",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "adicionar mídia",
+            "sub_fields": [
+                {
+                    "key": "field_5ccf3162b8697",
+                    "label": "Selecionar mídia",
+                    "name": "tipo_midia",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "choices": {
+                        "Facebook": "Facebook",
+                        "Twitter": "Twitter",
+                        "Youtube": "Youtube",
+                        "Linkedin": "Linkedin",
+                        "Instagram": "Instagram"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ccf3187b8698",
+                    "label": "Criar capa?",
+                    "name": "capa",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ccf3162b8697",
+                                "operator": "!=",
+                                "value": "Instagram"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "message": "Sim",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5ccf3198b8699",
+                    "label": "Criar avatar?",
+                    "name": "avatar",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "message": "Sim",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5daf3d1916640",
+            "label": "Templates",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Um template é uma imagem de base (podendo ser editável ou não) para a construção de uma peça gráfica específica. Aqui no studio criamos templates para você utilizar em sua rede social sempre que quiser.<br><br><strong>Custo de confecção: R$23,00 cada template.<\/strong>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5daf3790806ca",
+            "label": "Opções de template",
+            "name": "bform_midias_2",
+            "type": "checkbox",
+            "instructions": "Os templates são confeccionadas originalmente em .afdesign (Affinity Designer) com possibilidade de conversão para .PSD e .PDF para serem editados nos softwares Adobe Photoshop e Illustrator.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Insta Stories (1080 x 1920)": "Insta Stories (1080 x 1920)",
+                "Insta Timeline quadrado (1080 x 1080)": "Insta Timeline quadrado (1080 x 1080)",
+                "Insta Timeline vertical (1080 x 1350)": "Insta Timeline vertical (1080 x 1350)",
+                "Pinterest Timeline (1000 x 1500)": "Pinterest Timeline (1000 x 1500)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_5ed0f25f3a023",
+            "label": "Filtro Instagram (novo)",
+            "name": "bform_midias_3",
+            "type": "true_false",
+            "instructions": "Transformamos o seu filtro favorito do Lightroom diretamente para seus stories do insta! Além de filtro de cor, aplicamos também suavidade de linhas finas e grafismos usados na identidade visual para seu instagram combinar com seu layout.\r\n<br><br>\r\nObs: Não é realizado filtros de maquiagem, aplicação de cílios, máscaras e distorções faciais.\r\n<br><br>\r\n<strong>Custo de produção: R$240<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Incluir produção de filtro",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "af_form",
+                "operator": "==",
+                "value": "form_5cc98ff56cee8"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "AFC WD - Formulário de briefing",
+    "modified": 1591194946
+}

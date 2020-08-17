@@ -66,6 +66,14 @@
     }
 }
 
+@include keyframes(chacoalha){
+    0%{@include transform(rotate(0deg))}
+    25%{@include transform(rotate(-8deg))}
+    50%{@include transform(rotate(8deg))}
+    75%{@include transform(rotate(-8deg))}
+    100%{@include transform(rotate(0deg))}
+}
+
 %textshadow { text-shadow: 1px 1px 0 transparentize(black,0.9); }
 %textshadow-claro { text-shadow: 1px 1px 0 transparentize(white,0.5); }
 
