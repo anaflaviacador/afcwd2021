@@ -22,13 +22,24 @@ if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocom
 			echo '</div>';
 
 			if (class_exists('Woocommerce')) { 
+				$pgAoLogar = '';
 				$pgConta = wc_get_page_permalink( 'myaccount' );
+			    $pgAdmin = admin_url();
+
+			    $user = wp_get_current_user();
+			    $role = $user->roles[0];
+				if( $role == 'administrator' ) {
+			        $pgAoLogar = $pgAdmin;
+			    } else {
+			        $pgAoLogar = $pgConta;
+			    }
+
 				$numItensCarrinho = WC()->cart->get_cart_contents_count();
 				$pgCarrinho = wc_get_page_permalink( 'cart' );
 				$pgSair = esc_url(wc_logout_url());
 
 				echo '<div class="menu-loja" aria-label="Menu de navegação para clientes do studio.">';
-					echo '<a'.(!is_user_logged_in() ? ' href="#login" class="conta abre-modal" data-target="#login" title="Logar na conta de cliente"' : ' href="'.$pgConta.'" class="conta" title="Conta de cliente"').'>';
+					echo '<a'.(!is_user_logged_in() ? ' href="#login" class="conta abre-modal" data-target="#login" title="Logar na conta de cliente"' : ' href="'.$pgAoLogar.'" class="conta" title="Conta de cliente"').'>';
 						echo '<i class="fas fa-user-lock"></i><span>';
 						if (is_user_logged_in()) { echo ' Conta'; } else { echo ' Logar';}
 					echo '</span></a>';
@@ -43,7 +54,7 @@ if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocom
 		echo '</div>';
 
 		echo '<nav class="menu-site" aria-label="Navegação principal do site">';
-			echo '<ul id="navegacao">';
+			echo '<ul id="navegacao" role="navigation">';
 				afc_menu('primary');
 			echo '</ul>';
 		echo '</nav>';

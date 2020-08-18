@@ -82,6 +82,13 @@ h1, h2, h3, h4, h5 {
 	&.cursivo {
 		font-weight: normal; line-height: 0.6;
 		font-family: $fonte-cursiva;
+		text-transform: lowercase;
+		@extend %textshadow-claro;
+	}
+	
+	&.assinado {
+		@include transform(rotate(-10deg) translateX(-30px)); @include transform-origin(left top);
+		@media (max-width: $container) {@include transform(rotate(-10deg) translate(0,12px));}
 	}
 }
 

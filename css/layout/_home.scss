@@ -170,3 +170,47 @@
 		}
 	}
 }
+
+
+#projetos-principais {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	position: relative;
+	
+	&:before,&:after {content: '';}
+	&:before {
+		width: 165px; height: 165px; border-radius: 50%;
+		background: var(--cor-rosa-claro); display: block;
+		top: 0; left: 0; position: absolute;
+		@include transform(translateX(-25%));
+		z-index: -1;
+	}	
+
+	h2 { 
+		display: inline-block; z-index: 1; position: relative;
+	}
+
+	ul {
+		width: 100%;
+		@include flex(space-between);
+
+		li {
+			width: 31%;
+
+			a {
+				display: block;
+
+				img { width: 100%; }
+			}
+		}
+	}
+
+	div {
+		text-align: right;
+		a.vermais { 
+			display: inline-block; font-family: $fonte-redonda;
+			font-size: 12px; text-transform: uppercase;
+			font-weight: bold;
+		}
+	}
+}

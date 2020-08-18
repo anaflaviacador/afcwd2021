@@ -4,9 +4,7 @@ $corwhats : #128c7e;
 	position: fixed;
 	bottom: 30px; right: 30px;
 
-	@media (max-width: $smart-menor) {
-		bottom: 17px; right: 17px;		
-	}
+	@media (max-width: $smart-menor) { bottom: 17px; right: 17px; }
 
 	button {
 		border-radius: 50%; 

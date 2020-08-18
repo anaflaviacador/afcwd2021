@@ -16,7 +16,6 @@ body {
 	font-style: normal;
 	font-size: 18px;
 	line-height: 1.7;
-	min-height: 200vh;
 	color: var(--cor-texto);
 	font-family: $fonte-padrao;
 	letter-spacing: 0.01em;
@@ -27,9 +26,10 @@ body {
 	}
 }
 
+@import "layout/menu";
 @import "layout/cabecalho";
 @import "layout/componentes";
 @import "layout/nav-canvas";
 @import "layout/home";
 @import "padroes/whatsapp";
-
+@import "layout/rodape";

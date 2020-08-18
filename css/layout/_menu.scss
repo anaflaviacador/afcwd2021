@@ -1,0 +1,78 @@
+// menu site
+nav.menu-site {
+	text-align: center;
+	display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+
+	@media (min-width: $container) {
+	    width: $container;
+	    padding: 0 10px;
+	    position: relative;
+	}
+
+	ul {
+		margin: 0 auto;
+		display: inline-block;
+
+		@media (min-width: $container) { padding: 0 50px; width: 100%; }
+		@media (min-width: $tablet) {
+			@include display(flex);
+			@include justify-content(space-around);
+			@include align-items(center);
+		}
+
+
+		& > li {
+			font-family: $fonte-redonda;
+			font-size: .7em;
+			font-weight: 500;
+			text-align: center;
+			display: none;
+
+			@media (min-width: $tablet) {
+				&:not(.menu-item-home) { display: block }
+			}
+
+			a { 
+				display: block;
+				padding: 4px 12px;
+			}
+
+			span {
+				display: block;
+				white-space: nowrap;
+
+				&.descricao { 
+					font-family: $fonte-cursiva;
+					text-transform: lowercase;
+					font-weight: normal;
+					line-height: 0.2; font-size: 2.6em;
+				}
+
+				&.nome { 
+					text-transform: uppercase;
+				}
+			}
+
+			// marca
+			&.menu-item-home {
+				display: block;
+				& > a {
+					span.descricao {display: none;}
+					span.nome {
+						width: 262px; height: 49px;
+						overflow: hidden; letter-spacing: 9999px;
+						text-indent: 9999px;
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: contain;
+
+						@media (max-width: $celular) { @include transform(scale(0.8)); }
+					}
+				}
+			}
+		}
+	}
+}

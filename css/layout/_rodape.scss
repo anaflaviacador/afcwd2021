@@ -1,0 +1,89 @@
+#rodape {
+	width: 100%;
+	background: #393939;
+	margin-top: 4em;
+	color: white;
+	position: relative;
+
+	&:before {
+		content: ""; @extend %sprite;
+		background-position: 0 -135px;
+		width: 1762px; height: 47px;
+		position: absolute; top: 0;
+		left: 50%; @include transform(translate(-50%,-100%));
+	}
+
+	nav.menu-site {
+		display: block;
+		padding: 20px 0 30px;
+
+		ul {
+			padding: 0; width: 100%;
+			& > li {
+				@extend %textshadow;
+
+				a span.descricao { color: var(--cor-bege-medio); }
+
+				// marca
+				&.menu-item-home {
+					& > a {
+						position: relative;
+
+						span.nome { background-image: url('../img/marca-afcwebdesign-footer.svg'); margin: 0 auto; }
+						span.descricao {
+							color: white;
+							display: block;
+							position: absolute;
+							bottom: 0;
+							left: 50%;
+							text-transform: none;
+							@include transform(translate(-50%,100%));
+
+							span.slogan {
+								display: inline-block;
+								font-family: $fonte-padrao;
+							    font-size: .85rem;
+							    text-transform: lowercase;
+						        position: relative;
+							    top: -5px;
+
+							    @media (max-width: $celular) {display: none;}
+							}
+						}
+					}
+				}
+
+				// hover
+				&:not(.menu-item-home) > a:hover, &:not(.menu-item-home) > a:focus,
+				&:not(.menu-item-home).current-menu-item > a {
+					span.nome { color: var(--cor-azul-medio); }
+					span.descricao { color: var(--cor-rosa-medio); }
+				}
+			}
+		}
+	}
+
+	.copyright {
+		background: #313131;
+		font-size: 11px;
+		padding-top: 10px; padding-bottom: 10px;
+
+		.container {
+			@include display(flex); padding: 0;
+			@include align-items(center);
+
+			div {
+				padding: 10px;
+
+				&:nth-of-type(1) { @include flex-grow(1) }
+			}
+
+			a {
+				color: var(--cor-rosa-medio);
+				&:hover, &:focus { text-decoration: underline; }
+
+				i { font-size: 1.15em; }
+			}
+		}
+	}
+}

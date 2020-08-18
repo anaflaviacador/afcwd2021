@@ -119,6 +119,7 @@ function afc_load_styles() {
 
     // layout
     wp_enqueue_style('layout', $urltheme . '/css/layout.css', array(), '', 'all', null); 
+    wp_enqueue_style('lazing', $urlCDN . '/aos@2.3.4/dist/aos.css', array(), '', 'all', null);
     
     // jquery
     wp_deregister_script( 'jquery-core' );
@@ -129,6 +130,7 @@ function afc_load_styles() {
     // scripts
     wp_enqueue_script('ganalytics', $urlCDN . '/ga-lite@2.1.0/dist/ga-lite.min.js', array(), '', false);
     wp_enqueue_script( 'fancybox', $urlCDN . '/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
+    wp_enqueue_script( 'lazying', $urlCDN . '/aos@2.3.4/dist/aos.min.js', array(), '', true);
 
     if (is_front_page()) {
       wp_enqueue_script('typewriter', '//unpkg.com/typewriter-effect@latest/dist/core.js', array('jquery-core'), '', false);
@@ -142,7 +144,7 @@ function afc_load_styles() {
 
 // colocar scripts assincronos
 function afc_asyncjs($tag, $handle) {
-   $scripts_to_async = array('ganalytics','fancybox','scripts');
+   $scripts_to_async = array('ganalytics','fancybox','lazying','scripts');
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
          return str_replace(' src', ' async src', $tag);
