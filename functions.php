@@ -23,7 +23,6 @@ function afc_setup() {
     remove_action( 'wp_head', 'feed_links', 2 );
     remove_action( 'wp_head', 'feed_links_extra', 3 );
     remove_action( 'wp_head', 'rest_output_link_wp_head');
-    remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
     remove_action( 'wp_head', 'wlwmanifest_link');
 
 
@@ -44,6 +43,7 @@ function afc_setup() {
     include_once(get_template_directory().'/func/shortcodes.php' );
     include_once(get_template_directory().'/func/thumbs.php' );
     include_once(get_template_directory().'/func/feed-rss.php' );
+    include_once(get_template_directory().'/func/projetos-loop.php' );
 
     // menus
     register_nav_menus( array( 
@@ -57,8 +57,10 @@ function afc_setup() {
       include_once(get_template_directory().'/func/loja.php' );
     }    
 
-    // registra portfolio post type
+    // registra post types
     include_once(get_template_directory().'/func/pt_portfolio.php' ); // post type - portfolio
+    include_once(get_template_directory().'/func/pt_depoimentos.php' ); // post type - depoimentos
+    include_once(get_template_directory().'/func/depoimentos.php' ); // depoimentos
 
 
     // ========================================//
@@ -72,12 +74,11 @@ function afc_setup() {
     add_theme_support('disable-custom-colors');
     add_theme_support('disable-custom-gradients');    
 }
-include_once(get_template_directory().'/func/blocks.php' );
 
 
-if (class_exists('acf') && class_exists('AF')) { 
-  include_once(get_template_directory().'/func/acf-forms.php' );
-}
+// if (class_exists('acf') && class_exists('AF')) { 
+  // include_once(get_template_directory().'/func/acf-forms.php' );
+// }
 
 /////////////// AREA CLIENTE
 include_once(get_template_directory().'/func/config-cliente.php' );
@@ -277,117 +278,6 @@ function afc_body_class($classes) {
   }
     return $classes;
 }
-
-
-
-
-// ========================================//
-// RELACIONADOS
-// ========================================// 
-function afc_relacionados($post_id, $related_count, $args = array()) {
-
-  $args = wp_parse_args( (array) $args, array(
-    'orderby' => 'rand',
-    'return'  => 'query', // Valid values are: 'query' (WP_Query object), 'array' (the arguments array)
-  ) );
-
-  $post_type = get_post_type( $post_id );
-  $post      = get_post( $post_id );
-
-  $term_list  = array();
-  $query_args = array();
-  $tax_query  = array();
-  $taxonomies = get_object_taxonomies( $post, 'names' );
-
-  foreach ( $taxonomies as $taxonomy ) {
-    $terms = get_the_terms( $post_id, $taxonomy );
-    if ( is_array( $terms ) and count( $terms ) > 0 ) {
-      $term_list = wp_list_pluck( $terms, 'slug' );
-      $term_list = array_values( $term_list );
-      if ( ! empty( $term_list ) ) {
-        $tax_query['tax_query'][] = array(
-          'taxonomy' => $taxonomy,
-          'field'    => 'slug',
-          'terms'    => $term_list
-        );
-      }
-    }
-  }
-
-  if ( count( $taxonomies ) > 1 ) {
-    $tax_query['tax_query']['relation'] = 'OR';
-  }
-
-  $query_args = array(
-    'post_type'      => $post_type,
-    'posts_per_page' => $related_count,
-    'post_status'    => 'publish',
-    'post__not_in'   => array( $post_id ),
-    'orderby'        => $args['orderby']
-  );
-
-  if ( $args['return'] == 'query' ) {
-    return new WP_Query( array_merge( $query_args, $tax_query ) );
-  } else {
-    return array_merge( $query_args, $tax_query );
-  }
-
-}
-
-
-
-
-// ========================================//
-// DESABILITAR GUTENBERG
-// ========================================// 
-function afc_disable_editor( $id = false ) {
-
-    $excluded_templates = array(
-      // 'busca-avancada.php'
-    );
-
-    $excluded_ids = array(
-        get_option( 'page_on_front' )
-    );
-
-    if( empty( $id ) )
-        return false;
-
-    $id = intval( $id );
-    $template = get_page_template_slug( $id );
-
-    return in_array( $id, $excluded_ids ) || in_array( $template, $excluded_templates );
-}
-
-//// Disable Gutenberg by template
-function afc_disable_gutenberg( $can_edit, $post_type ) {
-
-    if( ! ( is_admin() && !empty( $_GET['post'] ) ) )
-        return $can_edit;
-
-    if( afc_disable_editor( $_GET['post'] ) )
-        $can_edit = false;
-
-    return $can_edit;
-
-}
-add_filter( 'gutenberg_can_edit_post_type', 'afc_disable_gutenberg', 10, 2 );
-add_filter( 'use_block_editor_for_post_type', 'afc_disable_gutenberg', 10, 2 );
-
-//// Disable Classic Editor by template
-function afc_disable_classic_editor() {
-
-    $screen = get_current_screen();
-    if( 'page' !== $screen->id || ! isset( $_GET['post']) )
-        return;
-
-    if( afc_disable_editor( $_GET['post'] ) ) {
-        remove_post_type_support( 'page', 'editor' );
-    }
-
-}
-add_action( 'admin_head', 'afc_disable_classic_editor' );
-
 
 
 

@@ -1,3 +1,4 @@
+// gradiente
 .gradiente {
 	display: block; top: 0; left: 0;
 	width: 100%; height: 100%; position: absolute;
@@ -8,7 +9,83 @@
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#8c829c",GradientType=1);
 }
 
+// marca abreviada
 .afc {
 	display: inline-block;
 	svg { height: 16px; }
+}
+
+
+// ========================================//
+// AMOSTRA - GRID PROJETO
+// ========================================// 
+li.mostra-projeto {
+	position: relative;
+	border: 4px solid white;
+
+	a {
+		display: block; background: $grafite;
+		position: relative; overflow: hidden;
+
+		img { width: 100%; @include transition(opacity 0.2s ease-in-out);}
+		
+		summary {
+			position: absolute;
+			top: 50%; left: 0;
+			width: 100%;
+			@include transform(translateY(-50%));
+			color: white;
+			text-align: center;
+			font-size: 1.5em; 
+			display: none;
+
+			.categoria {
+				font-family: $fonte-cursiva; line-height: .3; display: block;
+				font-size: 2em; text-transform: lowercase; @extend %textshadow;
+				@include transition(transform 0.6s ease-in-out, opacity 0.2s ease-in-out);
+			}
+
+			h2 { 
+				font-size: 1em; @extend %textshadow; display: block;
+				@include transition(transform 0.4s ease-in-out, opacity 0.2s ease-in-out);
+			}
+
+			p { margin-top: 12px; @include transition(transform 0.4s ease-in-out, opacity 0.2s ease-in-out);}
+
+			.conhecer {
+				margin-top: 12px;
+				display: inline-block;
+				letter-spacing: 0.09em;
+				padding: .5em 1.2em;
+				position: relative;
+				font-size: .5em;
+				font-weight: bold;
+				text-transform: uppercase;
+				white-space: nowrap;
+				color: var(--cor-texto);
+				font-family: $fonte-redonda;
+				@extend %borda-redonda;
+				background: var(--cor-bege-medio);
+				@include transition(transform 0.4s ease-in-out, opacity 0.2s ease-in-out);
+			}
+		}
+
+		@media (min-width: $tablet) {
+			summary {
+				display: block;
+				.categoria, h2, p, .conhecer { opacity: 0 }
+				.categoria, h2 { @include transform(translateY(-160px)); }
+				p, .conhecer { @include transform(translateY(160px)); }
+			}
+			&:hover {
+				img {opacity: .3}
+				.categoria, h2, p, .conhecer {
+					opacity: 1;
+					@include transform(translateY(0px));
+				}
+			}
+		}
+
+		
+	}
 }

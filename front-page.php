@@ -2,6 +2,9 @@
 $urlHome = esc_url(home_url('/'));
 $urlTema = get_template_directory_uri();
 
+// ========================================//
+// CHAMADA PRINCIPAL
+// ========================================// 
 echo '<section id="chamada-principal" aria-label="Área de apresentação da empresa, com imagem de fundo fotografada por cima de uma mulher em uma escrivaninha de frente a uma tela de notebook trabalhando" style="background-image: url('.$urlTema.'/img/foto-oficial.jpg);">';
 	echo '<div class="gradiente" aria-hidden="true"></div>';
 
@@ -58,33 +61,52 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 echo '</section>';
 
 
+
+// ========================================//
+// PROJETOS
+// ========================================// 
 $tax = array('taxonomy' => 'categories', 'field' => 'slug', 'terms' => 'destaque');
-$args = array('post_type' => 'etheme_portfolio', 'order' => 'DESC', 'posts_per_page' => 3, 'tax_query' => array($tax));
+$args = array('post_type' => 'etheme_portfolio', 'order' => 'DESC', 'posts_per_page' => 6, 'tax_query' => array($tax));
 
 $publicacoes = new WP_Query($args);
 if ( $publicacoes->have_posts() ) { $i = 0;
-	echo '<section class="container" id="projetos-principais"><h2 class="cursivo assinado">Projetos</h2><ul>';
+	echo '<section class="container" id="projetos-principais"><h2 class="cursivo assinado">Projetos</h2><div class="lista-posts"><ul>';
 	while ( $publicacoes->have_posts() ) : $i++; $publicacoes->the_post(); 
-		echo '<li itemscope itemtype="http://schema.org/CreativeWork" data-aos="fade-up"';
-			if ($i == 1 ) { echo ' data-aos-delay="200"';}
-			elseif ($i == 2 ) { echo ' data-aos-delay="400"';}
-			elseif ($i == 3 ) { echo ' data-aos-delay="600"';}
-		echo '>';
-			echo '<a href="#">';
-				echo '<img src="'; afc_thumb('large'); echo '" alt="">';
-			echo '</a>';
+		echo '<li itemscope itemtype="http://schema.org/CreativeWork"';
+			if ($i == 1 ) { echo ' data-aos="fade-right"';}
+			elseif ($i == 2 ) { echo ' data-aos="fade-up"';}
+			elseif ($i == 3 ) { echo ' data-aos="fade-left"';}
+		echo ' class="projeto-'.$i.' mostra-projeto">';
+			afc_projeto('large');
 		echo '</li>';
 	endwhile;
-	echo '</ul><div><a href="'.$urlHome.'projetos" class="vermais">+ projetos</a></div></section>';
+	echo '</ul></div><div class="bt"><a href="'.$urlHome.'projetos" class="vermais">+ projetos</a></div></section>';
 }
 	
 
 
-		
-		// if (have_posts()) {
-		// 	while (have_posts()) : the_post();
 
-		// 	endwhile;
-		// }
+// ========================================//
+// BENEFICIOS
+// ========================================//
+echo '<section class="container" id="beneficios">';
+	echo '<div data-aos="fade-right">';
+		echo '<article>';
+			echo '<p>O studio faz <strong>projetos completos</strong> de design e desenvolvimento para <strong>plataforma Wordpress</strong> com <em>código 100% autoral</em>, limpo, durável e altamente otimizado.</p>';
+			echo '<p>Por aqui também criamos <strong>ferramentas únicas</strong> para você <strong>automatizar tarefas</strong> em sua página, montando seu conteúdo de forma <em>prática</em>, <em>rápida</em> e <em>eficiente</em>.</p>';
+		echo '</article>';
+		echo '<h2 class="cursivo">Resultado</h2>';
+	echo '</div>';
+
+	echo '<div data-aos="fade-left" data-aos-delay="1200">';
+		echo '<h2 class="cursivo">Leveza <span>+ eficiência</span></h2>';
+		echo '<article>';
+			echo '<p>Com um <em>layout rápido e amigável</em>, você é <strong>encontrada no Google</strong> com mais facilidade, aumentando as chances de ser mais conhecia e ganhar mais <em>autoridade</em> com seu público. Isso potencializa a <strong>monetização</strong> do conteúdo do seu blog e convertendo leads em <em>verdadeiros clientes</em> para seu negócio!</p>';
+			echo '<p><a href="'.$urlHome.'servicos" class="button">Quero saber mais!</a></p>';
+		echo '</article>';
+	echo '</div>';
+echo '</section>';
+
+
 	
 get_footer();

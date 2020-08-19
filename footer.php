@@ -1,5 +1,9 @@
 <?php  
 
+echo '<section id="depoimentos-incriveis">';
+	afc_depoimentos();
+echo '</section>';
+
 echo '<footer id="rodape">';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
 		echo '<ul id="navegacao" role="navigation">';

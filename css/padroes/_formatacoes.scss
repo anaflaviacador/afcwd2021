@@ -88,35 +88,51 @@ h1, h2, h3, h4, h5 {
 	
 	&.assinado {
 		@include transform(rotate(-10deg) translateX(-30px)); @include transform-origin(left top);
-		@media (max-width: $container) {@include transform(rotate(-10deg) translate(0,12px));}
+		padding-left: 17px;
+		@media (max-width: $container) {@include transform(rotate(-10deg) translate(-17px,12px));}
 	}
 }
 
 h1 {
     font-size: 2.1em; 
     &.cursivo { font-size: #{2.1em * 3}; }
-    @media (max-width: $smart-maior) {font-size: 2em; }
+    @media (max-width: $smart-maior) 
+    {font-size: 2em;
+    	    &.cursivo { font-size: #{2.1em * 2.3}; }
+    }
 }
 
 h2 { 
 	font-size: 1.8em; 
 	&.cursivo { font-size: #{1.8em * 3}; }
-	@media (max-width: $smart-maior) {font-size: 1.7em; }
+	@media (max-width: $smart-maior) {
+		font-size: 1.7em;
+		&.cursivo { font-size: #{1.8em * 2.3}; }
+	}
 }
 h3 { 
 	font-size: 1.65em; 
 	&.cursivo { font-size: #{1.65em * 3}; }
-	@media (max-width: $smart-maior) {font-size: 1.4em; }
+	@media (max-width: $smart-maior) {
+		font-size: 1.4em;
+		&.cursivo { font-size: #{1.65em * 2.3}; }
+	}
 }
 h4 { 
 	font-size: 1.45em;
 	&.cursivo { font-size: #{1.45em * 3}; }
-	@media (max-width: $smart-maior) {font-size: 1.3em; }
+	@media (max-width: $smart-maior) {
+		font-size: 1.3em;
+		&.cursivo { font-size: #{1.45em * 2.3}; }
+	}
 }
 h5 { 
 	font-size: 1.15em; 
 	&.cursivo { font-size: #{1.15em * 3}; }
-	@media (max-width: $smart-maior) {font-size: 1.1em; }
+	@media (max-width: $smart-maior) {
+		font-size: 1.1em;
+		&.cursivo { font-size: #{1.15em * 2.3}; }
+	}
 }
 h6 { font-size: 1em; }
 

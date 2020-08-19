@@ -175,9 +175,6 @@ $corwhats : #128c7e;
 	}
 
 	&:not(.afc_onclick) {
-		@media (max-width: $smart-menor) {
-			@include animation(chacoalha 0.5s ease-in-out 0s infinite normal forwards);
-		}
 		&:hover {
 			button:before {@include animation(chacoalha 0.5s ease-in-out 0s infinite normal forwards);}
 		}
