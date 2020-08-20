@@ -85,6 +85,24 @@ include_once(get_template_directory().'/func/config-cliente.php' );
 
 
 
+// ========================================//
+// PAGINAS WOOCOMMERCE
+// ========================================// 
+if (class_exists('Woocommerce')) {
+  function afc_woocommerce() {
+    // creditos: https://webcraft.tools/create-your-own-conditional-tag/
+    // condicional para mostrar algo apenas em paginas woocommerce
+    global $woocommerce, $post;
+    $response = false;
+
+    if (is_shop() || is_woocommerce() || is_product() || is_product_category() || is_cart() || is_checkout() || is_account_page() || is_page_template('woocommerce-pgs.php') || is_page_template('page-semsidebar-loja.php')) {
+      $response = true;
+    }
+
+    return $response;
+  }
+}
+
 
 // ========================================//
 // CUSTOM DASHBOARD ITENS PARA LOGADOS
@@ -129,23 +147,28 @@ function afc_load_styles() {
     wp_register_script( 'jquery-migrate', $urlCDN . '/jquery-migrate@3.3.1/dist/jquery-migrate.min.js', array(), '' );
 
     // scripts
-    wp_enqueue_script('ganalytics', $urlCDN . '/ga-lite@2.1.0/dist/ga-lite.min.js', array(), '', false);
+    wp_enqueue_script( 'ganalytics', $urlCDN . '/ga-lite@2.1.0/dist/ga-lite.min.js', array('jquery-core'), '', false);
     wp_enqueue_script( 'fancybox', $urlCDN . '/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
-    wp_enqueue_script( 'lazying', $urlCDN . '/aos@2.3.4/dist/aos.min.js', array(), '', true);
+    wp_enqueue_script( 'lazying', $urlCDN . '/aos@2.3.4/dist/aos.min.js', array('jquery-core'), '', true);
+    wp_enqueue_script( 'masonrydepos', $urlCDN . '/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array('jquery-core'), '', true);
 
     if (is_front_page()) {
-      wp_enqueue_script('typewriter', '//unpkg.com/typewriter-effect@latest/dist/core.js', array('jquery-core'), '', false);
+      wp_enqueue_script( 'typewriter', $urlCDN . '/typewriter-effect@2.13.1/dist/core.js', array('jquery-core'), '', true);
     }
 
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
 
-    // retirando css e js indesejados
+    // retirando css e js indesejados ou que nao precisam em algumas paginas
     wp_deregister_script( 'comment-reply' );
+    wp_deregister_style( 'swpcss' );
+    wp_deregister_script( 'swpjs' );
+    remove_action('wp_enqueue_scripts', 'add_sendy_scripts'); // retirar scripts do sendy
 } 
+
 
 // colocar scripts assincronos
 function afc_asyncjs($tag, $handle) {
-   $scripts_to_async = array('ganalytics','fancybox','lazying','scripts');
+   $scripts_to_async = array('ganalytics','fancybox','lazying','masonrydepos','scripts');
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
          return str_replace(' src', ' async src', $tag);

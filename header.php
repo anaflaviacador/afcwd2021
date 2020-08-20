@@ -8,14 +8,16 @@ echo '<head>';
 get_template_part('inc/metatags');
 echo '</head>';
 echo '<body class="'.join(' ',get_body_class()).'">';
-
 get_template_part('inc/menu','canvas');
-
 echo '<main>';
 
+// mensagens de erro ao logar
 if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocommerce_before_customer_login_form' ); echo '</div>'; }
 
-	echo '<header id="cabecalho">';
+// ========================================//
+// CABECALHO GERAL
+// ========================================// 
+	echo '<'.(is_front_page() ? 'header' : 'section').' id="cabecalho">';
 		echo '<div class="nav-mini container">';
 			echo '<div class="menu-mob" aria-label="Menu de navegação. Clique para mostrar.">';
 				echo '<a href="#" id="menu-mob"><i class="fas fa-stream"></i></a>';
@@ -60,9 +62,18 @@ if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocom
 				afc_menu('primary');
 			echo '</ul>';
 		echo '</nav>';
-	echo '</header>';
+
+
+	echo '</'.(is_front_page() ? 'header' : 'section').'>';
+
 
 if (! is_user_logged_in()) { 
 	echo '<div class="modal pequeno floral" id="login" aria-label="Área de login do cliente">'; get_template_part('modais/login'); echo '</div>';
 	do_action( 'woocommerce_after_customer_login_form' );
 }	
+
+
+// ========================================//
+// TITULO DAS PAGINAS
+// ========================================// 
+if (! is_front_page()) { get_template_part('inc/titulo','paginas'); }

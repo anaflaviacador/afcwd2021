@@ -52,7 +52,7 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 			echo '</a>';
 
 			echo '<summary>';
-				echo '<p>Aqui é a Ana, a designer por trás do studio <span class="afc">'; echo get_template_part('img/afc'); echo '.</span> Desde 2007 realizo sonhos de <em>blogueiras</em>, <em>influencers</em> e <em>empreendedoras</em> projetando blogs, websites, lojas virtuais e ferramentas através de um  <strong class="rosa">design único</strong>, <strong class="verde">inteligente</strong>, com <strong class="roxo">personalidade</strong> e <strong class="bege">propósito</strong>.</p>';
+				echo '<p>Aqui é a Ana, a designer que toca o studio <span class="afc">'; echo get_template_part('img/afc'); echo '.</span> Desde 2007 realizo sonhos de <em>blogueiras</em>, <em>influencers</em> e <em>empreendedoras</em> projetando blogs, websites, lojas virtuais e ferramentas através de um  <strong class="rosa">design único</strong>, <strong class="verde">inteligente</strong>, com <strong class="roxo">personalidade</strong> e <strong class="bege">propósito</strong>.</p>';
 				echo '<p><a href="'.$urlHome.'servicos" class="button pequeno">Conheça o meu trabalho</a></p>';
 			echo '</summary>';
 		echo '</div>';
@@ -92,8 +92,8 @@ if ( $publicacoes->have_posts() ) { $i = 0;
 echo '<section class="container" id="beneficios">';
 	echo '<div data-aos="fade-right">';
 		echo '<article>';
-			echo '<p>O studio faz <strong>projetos completos</strong> de design e desenvolvimento para <strong>plataforma Wordpress</strong> com <em>código 100% autoral</em>, limpo, durável e altamente otimizado.</p>';
-			echo '<p>Por aqui também criamos <strong>ferramentas únicas</strong> para você <strong>automatizar tarefas</strong> em sua página, montando seu conteúdo de forma <em>prática</em>, <em>rápida</em> e <em>eficiente</em>.</p>';
+			echo '<p>O studio faz <strong>projetos completos</strong> de design e programação para <strong>plataforma Wordpress</strong> com <em>código 100% autoral</em>, limpo, acessível, durável e altamente otimizado.</p>';
+			echo '<p>São produzidas <strong>ferramentas únicas</strong> para você <strong>automatizar tarefas</strong> em seu site, integrando com redes sociais e montando seu conteúdo com <em>praticidade</em> e <em>agilidade</em>.</p>';
 		echo '</article>';
 		echo '<h2 class="cursivo">Resultado</h2>';
 	echo '</div>';
@@ -101,7 +101,7 @@ echo '<section class="container" id="beneficios">';
 	echo '<div data-aos="fade-left" data-aos-delay="1200">';
 		echo '<h2 class="cursivo">Leveza <span>+ eficiência</span></h2>';
 		echo '<article>';
-			echo '<p>Com um <em>layout rápido e amigável</em>, você é <strong>encontrada no Google</strong> com mais facilidade, aumentando as chances de ser mais conhecia e ganhar mais <em>autoridade</em> com seu público. Isso potencializa a <strong>monetização</strong> do conteúdo do seu blog e convertendo leads em <em>verdadeiros clientes</em> para seu negócio!</p>';
+			echo '<p>Com um <em>site rápido e layout amigável</em>, você é <strong>encontrada no Google</strong> com mais facilidade, aumentando as chances de ser mais conhecia e ganhar mais <em>autoridade</em> em seu nicho. Potencialize a <strong>monetização</strong> do seu conteúdo e converta leads em <em>verdadeiros clientes</em> para seu negócio!</p>';
 			echo '<p><a href="'.$urlHome.'servicos" class="button">Quero saber mais!</a></p>';
 		echo '</article>';
 	echo '</div>';

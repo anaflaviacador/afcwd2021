@@ -1,7 +1,102 @@
+// ========================================//
+// DEPOIMENTOS
+// ========================================// 
+#depoimentos-incriveis {
+	width: 100%;
+	padding-top: 4em;
+	padding-bottom: 3em;
+	background: var(--cor-verde-claro);
+	background: -moz-linear-gradient(0deg, rgba(248,248,244,1) 10%, rgba(255,255,255,1) 100%);
+	background: -webkit-linear-gradient(0deg, rgba(248,248,244,1) 10%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(0deg, rgba(248,248,244,1) 10%, rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f8f8f4",endColorstr="#ffffff",GradientType=1);	
+
+	.container {
+		.gutter-sizer{ width: 30px; }
+		.grid-sizer, .depoimento {
+			width: calc(100% - 20px);
+
+			@media (min-width: $smart-menor) { width: calc(50% - 30px); }
+			@media (min-width: $tablet) { width: calc(25% - 30px); }
+		}
+
+		.depoimento {
+			.intro {
+				position: relative;
+
+				&:before,&:after {content: '';}
+				&:before {
+					width: 165px; height: 165px; border-radius: 50%;
+					background: var(--cor-verde-claro); display: block;
+					top: 0; left: 0; position: absolute;
+					@include transform(translate(-25%,-25%));
+				}	
+
+				&:after {
+					@extend %sprite; height: 67px; width: 175px;
+					background-position: -343px -192px;
+					top: 3px; left: 2px; position: absolute; @include transform(rotate(-25deg) scale(.5));
+				}
+
+				h2, p { position: relative;}
+				p { margin-top: .4em }
+				
+				a.vermais {
+					color: var(--cor-verde); font-family: $fonte-redonda;
+					text-transform: uppercase; font-weight: bold; font-size: 12px;
+				}
+			}			
+
+			.wrap {
+				width: 100%;
+				background: white;
+				border: 1px solid var(--cor-verde-medio);
+				padding: 12px;
+
+				header {
+					@include display(flex); margin-bottom: 6px;
+					@include align-items(flex-end); margin-top: -44px;
+
+					figure {
+						width: 65px; margin-right: 10px; border-radius: 50%;
+						border: 1px solid var(--cor-verde-medio); padding: 4px;
+						background: white;
+
+						img { width: 100%; border-radius: 50%; }
+					}
+
+					hgroup {
+						h3 { font-size: 3em; line-height: .7; text-transform: none; white-space: nowrap; }
+						h4 { 
+							font-size: 1em; margin: 10px 0 13px; font-weight: 500;
+							font-family: $fonte-redonda; white-space: nowrap;
+
+							a, a:link, a:visited, a:hover { font-weight: bold; color: var(--cor-rosa) !important; }
+							a:hover { color: var(--cor-verde) !important; }
+						}
+					}
+				}
+			}			
+		}
+	}
+
+
+	&.no-rodape .container .depoimento:nth-of-type(n+2),
+	&:not(.no-rodape) .container .depoimento {
+		padding-top: 50px;
+		font-size: 12px;
+	}
+}
+
+
+
+// ========================================//
+// RODAPE
+// ========================================// 
 #rodape {
 	width: 100%;
 	background: #393939;
-	margin-top: 4em;
+	// margin-top: 4em;
 	color: white;
 	position: relative;
 
