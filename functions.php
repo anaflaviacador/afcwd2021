@@ -5,6 +5,18 @@
 // ========================================// 
 add_action( 'after_setup_theme', 'afc_setup' );
 function afc_setup() {
+    if( function_exists('acf_add_options_page') ) {
+      acf_add_options_page(array(
+        'page_title'  => 'Configurações principais',
+        'menu_title'  => 'AFC Painel',
+        'menu_slug'   => 'afc-opcoes',
+        'capability'  => 'edit_posts',
+        'icon_url'    => 'dashicons-heart',
+        'position'    => 3,
+        'redirect'    => false
+      ));
+    }
+
     // seguranca
     add_filter( 'style_loader_src', 'afc_scripts_remove_versao', 9999 );
     add_filter( 'script_loader_src', 'afc_scripts_remove_versao', 9999 );

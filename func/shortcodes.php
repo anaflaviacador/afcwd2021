@@ -38,6 +38,18 @@ function afc_shortcode_videofolio( $atts, $content = null ) {
 add_shortcode('videofolio','afc_shortcode_videofolio');
 
 
+/////////////////////////////// ASSINATURA
+function afc_shortcode_ass( $atts, $content = null ) {
+    ob_start();
+        echo '<span class="afc">'; 
+            get_template_part('img/afc');
+        echo '</span>';
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('afc','afc_shortcode_ass');
+
+
 ////////////////////////////// COLUNAS
 function afc_shortcode_cols($atts, $content = null) {
     return '<div class="colunas">'.do_shortcode($content).'</div>';

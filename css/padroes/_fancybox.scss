@@ -846,7 +846,8 @@ body.compensate-for-scrollbar {
 }
 
 .modal { 
-	display: none; width: $tablet; max-width: 98%; 
+	display: none; width: $colmax; max-width: 98%;
+	font-size: .9em;
 
 	&.medio { width: $smart-menor; font-size: .8em; }
 	&.pequeno { width: $celular; font-size: .8em; overflow: hidden; padding: 20px;}
@@ -858,5 +859,9 @@ body.compensate-for-scrollbar {
 
 		&:before { top: -20px; left: -56px; @include transform(rotate(-31deg));}
 		&:after { bottom: -29px; right: -29px; @include transform(rotate(-31deg));}
+	}
+
+	article {
+		margin-top: 2em;
 	}
 }

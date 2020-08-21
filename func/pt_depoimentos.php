@@ -3,7 +3,7 @@
 add_action('init', 'afc_cpt_depoimentos', 1);  
 function afc_cpt_depoimentos(){
 	$labels = array(
-		'name' => _x('Experiências', 'post type general name', 'afcwebdesign'),
+		'name' => _x('Depoimentos', 'post type general name', 'afcwebdesign'),
 		'singular_name' => _x('Depoimento', 'post type singular name', 'afcwebdesign'),
 		'add_new' => _x('Add novo', 'depoimento', 'afcwebdesign'),
 		'add_new_item' => __('Add novo depoimento', 'afcwebdesign'),
@@ -33,7 +33,7 @@ function afc_cpt_depoimentos(){
 		'show_in_rest' => false, //habilita gutenberg
 		'menu_icon' => 'dashicons-groups',
 		'supports' => array('title','editor','thumbnail'),
-		'rewrite' => array('slug' => 'experiencias')
+		'rewrite' => array('slug' => 'depoimentos')
 	);
 	
 	register_post_type('afc_depoimentos',$args);

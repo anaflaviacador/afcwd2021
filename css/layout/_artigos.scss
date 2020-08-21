@@ -1,0 +1,35 @@
+// ========================================//
+// ARTIGOS
+// ========================================//
+article {
+	* { margin-top: 1.4rem;}
+	p:first-of-type { margin-top: 0; }
+
+	.nomargin { margin-top: 0 }
+
+	blockquote {
+		background: var(--cor-cinza);
+		border: 1px solid #ddd;
+
+		&.rosa {
+			background: var(--cor-rosa-claro);
+			border-color: var(--cor-rosa-medio);
+		}
+		&.roxo {
+			background: var(--cor-roxo-claro);
+			border-color: var(--cor-roxo-medio);
+		}
+		&.verde {
+			background: var(--cor-verde-claro);
+			border-color: var(--cor-verde-medio);
+		}
+		&.bege {
+			background: var(--cor-bege-claro);
+			border-color: var(--cor-bege-medio);
+		}
+		&.azul {
+			background: var(--cor-azul-claro);
+			border-color: var(--cor-azul-medio);
+		}		
+	}
+}

@@ -1,0 +1,70 @@
+#lista-projetos {
+
+	& > article {
+		max-width: $colmax;
+		text-align: center;
+		margin: 0 auto 2em;
+
+		em { padding: 0 3px; box-shadow: inset 0 -20px transparentize($azul,0.8); }
+	}
+
+	.projetos-afc {
+		width: 100%;
+		// grid-template-columns: repeat(4, 1fr);
+		// grid-template-rows: repeat(14, 1fr);
+
+		@media (min-width: $celular + 1px) {
+			gap: 2px 6px;
+			display: grid;
+			grid-template-areas: 
+				"projeto-1 projeto-1 projeto-2 projeto-3"
+				"projeto-1 projeto-1 projeto-4 projeto-5"
+
+				"codigo-autoral codigo-autoral codigo-autoral codigo-autoral"
+				// "codigo-autoral codigo-autoral codigo-autoral codigo-autoral"
+				
+				"projeto-6 projeto-7 projeto-8 projeto-8"
+				"projeto-9 projeto-10 projeto-8 projeto-8"
+				"projeto-11 projeto-12 projeto-13 projeto-14"
+
+				"chamada-orcamento chamada-orcamento chamada-orcamento chamada-orcamento"
+				// "chamada-orcamento chamada-orcamento chamada-orcamento chamada-orcamento"
+
+				"projeto-15 projeto-15 projeto-16 projeto-17"
+				"projeto-15 projeto-15 projeto-18 projeto-19"
+				"projeto-20 projeto-21 projeto-22 projeto-23"
+				"projeto-24 projeto-25 projeto-25 projeto-26"
+				"projeto-27 projeto-25 projeto-25 projeto-28";
+		}
+		@media (min-width: $tablet) and (max-width: $container - 1px) { gap: 14px 20px; }
+		@media (min-width: $container) { gap: 20px 30px; }
+
+		.chamada-orcamento { grid-area: chamada-orcamento; }
+		.codigo-autoral { grid-area: codigo-autoral; }
+
+		@for $i from 1 through 28 {
+		    .projeto-#{$i} { grid-area: projeto-#{$i}; }
+		}
+
+		.maior a summary {
+			font-size: 1.2em;
+
+			h2 { font-size: 1.6em }
+			p { font-size: 1.1rem; padding: 0 1rem; }
+		}		
+	}
+}
+
+.chamada-orcamento {
+	margin: 2em 0;
+	background: var(--cor-verde-claro);
+	padding: 3em 0;
+	text-align: center;
+	@include expandefundo();
+
+	&:before {background: var(--cor-verde-claro);}
+
+	h2 { font-size: 2.6em; }
+
+	p { margin-top: 1.4em }
+}

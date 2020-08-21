@@ -78,7 +78,19 @@ jQuery(document).ready(function($) {
   abrirFancybox.on('click', function(event) {
     var thisTarget = $(this).data('target');
     event.preventDefault();
-    $.fancybox.open($(thisTarget));
+    $.fancybox.open(
+      $(thisTarget),
+      {
+        beforeShow: function(instance,slide){
+          $('html').addClass('noscroll');
+          console.log('abriu');
+        },
+        afterClose: function(instance,slide){
+          $('html').removeClass('noscroll');
+          console.log('feshow');
+        }
+      }  
+    );
   });
 
 

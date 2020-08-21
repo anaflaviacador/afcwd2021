@@ -91,6 +91,25 @@ h1, h2, h3, h4, h5 {
 		padding-left: 17px;
 		@media (max-width: $container) {@include transform(rotate(-10deg) translate(-17px,12px));}
 	}
+
+	&.marca-dagua {
+		position: relative; z-index: 1;
+		span {
+			display: block; bottom: -10px; left: 50%; @include transform(translateX(-50%));
+			opacity: .25; text-align: center; line-height: .2;
+			font-weight: normal; position: absolute;
+			font-family: $fonte-cursiva; z-index: -1;
+			text-transform: lowercase; font-size: 2.3em;
+			text-shadow: 2px 2px 1px transparentize(white,0.8);
+		}
+	}
+
+	&.grafite {color: var(--cor-grafite);}
+	&.rosa {color: var(--cor-rosa);}
+	&.roxo {color: var(--cor-roxo);}
+	&.verde {color: var(--cor-verde);}
+	&.bege {color: var(--cor-bege);}
+	&.azul {color: var(--cor-azul);}
 }
 
 h1 {
@@ -141,7 +160,6 @@ blockquote {
 	font-size: 1em;
 	color: inherit;
 	padding: 20px;
-	font-style: italic;
 
 	p:last-of-type {margin-bottom: 0;}
 }
@@ -214,7 +232,11 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	@extend %textshadow;
 
 	&:hover, &:focus {
-		@include transform(scale(1.05));
+	    -webkit-transform: scale(1.05) !important;
+	    -moz-transform: scale(1.05) !important;
+	    -ms-transform: scale(1.05) !important;
+	    -o-transform: scale(1.05) !important;
+	    transform: scale(1.05) !important;
 	}
 
 	&.grafite {background: var(--cor-grafite);}
@@ -224,6 +246,7 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	&.bege {background: var(--cor-bege);}
 	&.azul {background: var(--cor-azul);}
 
+	&.mini { font-size: .65em !important; padding: .6em 1.2em !important}
 	&.pequeno { font-size: .85em !important; padding: .6em 1.2em .8em !important}
 	&.medio { font-size: 1.3em !important;}
 	&.grande { font-size: 1.5em !important; padding: .7em 1.5em !important;}

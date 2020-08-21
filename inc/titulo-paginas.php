@@ -8,8 +8,8 @@ if (is_page()) {
 	$subtitulo = get_field('subtitulo');
 }
 if (is_404()) { 
-	$titulo = 'Ops!';
-	$subtitulo = 'erro 404';
+	$titulo = 'Página';
+	$subtitulo = 'não encontrada';
 }
 if (is_search()) {
 	$titulo = 'Resultados';
@@ -19,7 +19,7 @@ if (is_post_type_archive()) {
 	$post_type_obj = get_post_type_object(get_post_type($post));
 	$titulo = $post_type_obj->labels->name;
 
-	if (is_post_type_archive('afc_depoimentos')) { $subtitulo = 'Depoimentos de clientes'; }
+	if (is_post_type_archive('afc_depoimentos')) { $subtitulo = 'Experiências de clientes'; }
 	if (is_post_type_archive('etheme_portfolio')) { $subtitulo = 'Projetos realizados'; }
 }
 

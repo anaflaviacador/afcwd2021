@@ -12,13 +12,16 @@ if (! is_post_type_archive('afc_depoimentos')) {
 			echo '<div class="depoimento"><div class="intro">';
 				echo '<h2 class="cursivo assinado">Clientes</h2>';
 				echo '<p><strong>Depoimentos</strong> de clientes que tiraram seus projetos do papel e permitiram que o studio <span class="afc">'; echo get_template_part('img/afc'); echo '</span> os tornassem <strong>reais</strong>!</p>';
-				echo '<p><a href="'.$urlHome.'experiencias" class="vermais">+ experiências</a></p>';
+				echo '<p><a href="'.$urlHome.'experiencias" class="button verde mini">+ depoimentos</a></p>';
 			echo '</div></div>';
 
 			$numDepo = '';
 			if (is_front_page()) { $numDepo = 8; } else { $numDepo = 3; }
 			afc_depoimentos($numDepo);
 		echo '</div>';
+
+
+		echo '<p data-aos="zoom-in" class="has-text-align-center cta"><a href="'.$urlHome.'contato" class="button rosa medio">Peça seu orçamento</a></p>';
 	echo '</section>';
 }
 
@@ -37,10 +40,12 @@ echo '<footer id="rodape">';
 
 	echo '<div class="copyright">';
 		echo '<div class="container">';
-			echo '<div>&copy; 2020 - CNPJ 24.014.911/0001-36 &nbsp;|&nbsp; <a href="'.$politicapg.'">Política de Privacidade</a></div>';
+			echo '<div>&copy; 2020 - CNPJ 24.014.911/0001-36 &nbsp;&nbsp;| <a href="'.$politicapg.'">Política de Privacidade</a></div>';
 
 			echo '<div>';
-				echo '<a href="https://www.instagram.com/anaflaviacador"><i class="fab fa-instagram"></i></a>';
+				echo '<a target="_blank" title="Instagram" href="https://www.instagram.com/anaflaviacador"><i class="fab fa-instagram" aria-hidden="true"></i></a>';
+				echo '<a target="_blank" title="Facebook" href="https://facebook.com/afcweb.design"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>';
+				echo '<a target="_blank" title="Whatsapp" href="https://api.whatsapp.com/send?phone=5562996269941"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>';
 			echo '</div>';
 		echo '</div>';
 	echo '</div>';

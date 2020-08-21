@@ -19,12 +19,12 @@
 // ========================================//
 // AMOSTRA - GRID PROJETO
 // ========================================// 
-li.mostra-projeto {
+.mostra-projeto {
 	position: relative;
 	border: 4px solid white;
 
 	a {
-		display: block; background: $grafite;
+		display: block; background: var(--cor-grafite);
 		position: relative; overflow: hidden;
 
 		img { width: 100%; @include transition(opacity 0.2s ease-in-out);}
@@ -36,17 +36,16 @@ li.mostra-projeto {
 			@include transform(translateY(-50%));
 			color: white;
 			text-align: center;
-			font-size: 1.5em; 
 			display: none;
 
 			.categoria {
 				font-family: $fonte-cursiva; line-height: .3; display: block;
-				font-size: 2em; text-transform: lowercase; @extend %textshadow;
+				font-size: 2.8em;; text-transform: lowercase; @extend %textshadow;
 				@include transition(transform 0.6s ease-in-out, opacity 0.2s ease-in-out);
 			}
 
 			h2 { 
-				font-size: 1em; @extend %textshadow; display: block;
+				font-size: 1.2em; @extend %textshadow; display: block;
 				@include transition(transform 0.4s ease-in-out, opacity 0.2s ease-in-out);
 			}
 
@@ -58,7 +57,7 @@ li.mostra-projeto {
 				letter-spacing: 0.09em;
 				padding: .5em 1.2em;
 				position: relative;
-				font-size: .5em;
+				font-size: .65em;
 				font-weight: bold;
 				text-transform: uppercase;
 				white-space: nowrap;
@@ -87,5 +86,76 @@ li.mostra-projeto {
 		}
 
 		
+	}
+}
+
+
+
+// ========================================//
+// O QUE E CODIGO AUTORAL
+// ========================================//
+.codigo-autoral {
+	margin-top: 2em; margin-bottom: 2em;
+	width: 100%; position: relative;
+	background: var(--cor-grafite);
+	padding: 3em 0;
+	color: white;
+	@include expandefundo();
+	@include flex(space-between);
+	@include align-items(flex-end);
+
+	&:before {background: var(--cor-grafite);}
+
+	.foto {
+		width: 105vw; height: 100%; position: absolute;
+        top: 0; left: 50%; display: block; opacity: .3;
+        @include transform(translateX(-50%));
+        @include imagemfull(cover,center,center);
+	}
+
+	h2 { 
+		width: 100%;
+		font-size: 2.6em;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 1em;
+
+		span { 
+			text-transform: lowercase; text-shadow: 2px 2px 1px transparentize(black,0.8);
+			opacity: 1; color: var(--cor-rosa-medio);
+		}
+	}
+
+	
+
+	& > div:not(.foto) {
+		width: 48%; margin-top: 1.4em;
+
+		p {
+			margin-top: 1.4em;
+			&:first-of-type { margin-top: 0; }
+		}
+	}
+
+
+	ul.lista-beneficios {
+		@include flex(space-between);
+		font-size: 1.2em;
+
+		li {
+			width: 49%; padding: .3em 0;
+
+			i {
+				width: 34px; height: 34px;
+				line-height: 34px;
+				display: inline-block;
+				vertical-align: middle;
+				text-align: center;
+				background: var(--cor-afirmacao);
+				color: white; font-size: .9em;
+				@extend %textshadow;
+				border-radius: 50%;
+			}
+		}
 	}
 }

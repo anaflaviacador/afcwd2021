@@ -80,6 +80,7 @@
 		}
 	}
 
+	.cta { padding-top: 2em; }
 
 	&.no-rodape .container .depoimento:nth-of-type(n+2),
 	&:not(.no-rodape) .container .depoimento {
@@ -174,7 +175,7 @@
 			}
 
 			a {
-				color: var(--cor-rosa-medio);
+				color: var(--cor-rosa-medio); margin-left: 8px;
 				&:hover, &:focus { text-decoration: underline; }
 
 				i { font-size: 1.15em; }

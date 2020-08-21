@@ -5,5 +5,6 @@ echo '<section id="depoimentos-incriveis">';
 		echo '<span class="gutter-sizer"></span><span class="grid-sizer"></span>';
 		afc_depoimentos(-1);
 	echo '</div>';
+	echo '<p class="has-text-align-center cta"><a href="'.$urlHome.'contato" class="button verde medio">Peça seu orçamento</a></p>';
 echo '</section>';
 get_footer();

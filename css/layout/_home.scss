@@ -70,7 +70,7 @@
 		.mockup {
 			width: 48%; 
 		
-			@media (max-width: $tablet) { width: 100%; margin-left: auto; margin-right: auto; max-width: $smart-menor; }
+			@media (max-width: $tablet) {@include order(1); width: 100%; margin-left: auto; margin-right: auto; max-width: $smart-menor; }
 			
 			a.ver {
 				font-size: .7em;
@@ -91,7 +91,7 @@
 
 		.apresentacao {
 			width: 48%; @extend %textshadow-claro;
-			text-align: center;
+			text-align: center; z-index: 1;
 
 			em {
 				position: relative; z-index: 1;
@@ -134,6 +134,7 @@
 			}
 
 			@media (max-width: $tablet) {
+				@include order(2);
 				margin-top: 1em;
 				width: 100%; text-align: left;
 				@include flex(space-between);
@@ -211,7 +212,6 @@
 
 		ul {
 			width: 100%;
-
 			// definicao de grid
 			@media (min-width: $celular + 1px) {
 				display: grid;
@@ -256,7 +256,8 @@
 	}
 
 	div.bt {
-		text-align: right; position: relative;
+		text-align: center; position: relative;
+		width: 100%; padding-top: 2em;
 
 		&:after {@extend %sprite;}
 
@@ -297,7 +298,11 @@
 
 	& > div {
 		position: relative; text-align: center;
-		@media (min-width: $smart-maior + 1px) { width: 50%; }
+		@media (min-width: $smart-maior + 1px) { 
+			width: 50%;
+			&:nth-of-type(1) {margin-bottom: 6em;}
+			&:nth-of-type(2) {margin-top: 6em;}
+		}
 
 		& > h2 {
 			text-align: center; white-space: nowrap; position: relative;

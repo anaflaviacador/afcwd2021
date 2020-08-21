@@ -18,18 +18,8 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 
 	echo '<div class="container">';
 
-		// mockup
-		echo '<div class="mockup" data-aos="fade-right" data-aos-delay="200">';
-			echo '<picture role="img" aria-label="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
-			    echo '<source srcset="'.$urlTema.'/img/mockup1.png" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
-			    echo '<source srcset="'.$urlTema.'/img/mockup1@2x.png" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
-			    echo '<img srcset="'.$urlTema.'/img/mockup1.png">';
-			echo '</picture>';
-			echo '<a href="/" class="ver">Projeto <strong>A Casa Delas</strong></a>';
-		echo '</div>';
-
 		// apresentacao
-		echo '<div class="apresentacao" data-aos="fade-left" data-aos-delay="400">';
+		echo '<div class="apresentacao" data-aos="fade-right" data-aos-delay="400">';
 				echo '<a href="'.$urlHome.'sobre" title="Conheça a designer" class="foto">';
 					echo '<picture role="img" aria-label="Mulher morena por volta de 30 anos, de cabelos escuros até altura dos ombros sorrindo para câmera, vestida com um vestido bege de alças finas">';
 
@@ -52,10 +42,23 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 			echo '</a>';
 
 			echo '<summary>';
-				echo '<p>Aqui é a Ana, a designer que toca o studio <span class="afc">'; echo get_template_part('img/afc'); echo '.</span> Desde 2007 realizo sonhos de <em>blogueiras</em>, <em>influencers</em> e <em>empreendedoras</em> projetando blogs, websites, lojas virtuais e ferramentas através de um  <strong class="rosa">design único</strong>, <strong class="verde">inteligente</strong>, com <strong class="roxo">personalidade</strong> e <strong class="bege">propósito</strong>.</p>';
-				echo '<p><a href="'.$urlHome.'servicos" class="button pequeno">Conheça o meu trabalho</a></p>';
+				echo '<p>Aqui é a Ana, a designer que toca o studio <span class="afc">'; get_template_part('img/afc'); echo '.</span> Desde 2007 realizo sonhos de <em>empreendedoras</em>, <em>influencers</em> e <em>blogueiras</em> projetando sites, lojas virtuais, blogs e ferramentas através de um  <strong class="rosa">design único</strong>, <strong class="verde">inteligente</strong>, com <strong class="roxo">personalidade</strong> e <strong class="bege">propósito</strong>.</p>';
+				echo '<p><a href="'.$urlHome.'servicos" class="button pequeno">Peça seu orçamento!</a></p>';
 			echo '</summary>';
 		echo '</div>';
+
+
+
+		// mockup
+		echo '<div class="mockup" data-aos="fade-left" data-aos-delay="200">';
+			echo '<picture role="img" aria-label="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
+			    echo '<source srcset="'.$urlTema.'/img/mockup1.png" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+			    echo '<source srcset="'.$urlTema.'/img/mockup1@2x.png" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+			    echo '<img srcset="'.$urlTema.'/img/mockup1.png">';
+			echo '</picture>';
+			echo '<a href="/" class="ver">Projeto <strong>A Casa Delas</strong></a>';
+		echo '</div>';
+
 	echo '</div>';
 
 echo '</section>';
@@ -80,10 +83,9 @@ if ( $publicacoes->have_posts() ) { $i = 0;
 			afc_projeto('large');
 		echo '</li>';
 	endwhile;
-	echo '</ul></div><div class="bt"><a href="'.$urlHome.'projetos" class="vermais">+ projetos</a></div></section>';
+	echo '</ul></div><div class="bt"><a data-aos="fade-up" href="'.$urlHome.'projetos" class="button verde">ver mais projetos</a></div></section>';
 }
 	
-
 
 
 // ========================================//
@@ -98,7 +100,7 @@ echo '<section class="container" id="beneficios">';
 		echo '<h2 class="cursivo">Resultado</h2>';
 	echo '</div>';
 
-	echo '<div data-aos="fade-left" data-aos-delay="1200">';
+	echo '<div data-aos="fade-left">';
 		echo '<h2 class="cursivo">Leveza <span>+ eficiência</span></h2>';
 		echo '<article>';
 			echo '<p>Com um <em>site rápido e layout amigável</em>, você é <strong>encontrada no Google</strong> com mais facilidade, aumentando as chances de ser mais conhecia e ganhar mais <em>autoridade</em> em seu nicho. Potencialize a <strong>monetização</strong> do seu conteúdo e converta leads em <em>verdadeiros clientes</em> para seu negócio!</p>';
