@@ -23,9 +23,12 @@ if (is_post_type_archive()) {
 	if (is_post_type_archive('etheme_portfolio')) { $subtitulo = 'Projetos realizados'; }
 }
 
+// titulos de todas as paginas em geral
+if (! is_singular('etheme_portfolio')) {
 echo '<header id="titulo-pagina" style="background-image: url('.$urlTema.'/img/foto-oficial.jpg);">';
 	echo '<div class="gradiente" aria-hidden="true"></div>';
 
 	echo '<h1 data-aos="fade-down">'.$titulo.'</h1>';
 	if($subtitulo) {echo '<h2 class="cursivo" data-aos="fade-down">'.$subtitulo.'</h2>';}
-echo '</header>';
+echo '</header>';	
+}

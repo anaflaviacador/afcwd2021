@@ -68,3 +68,102 @@
 
 	p { margin-top: 1.4em }
 }
+
+
+// ========================================//
+// SINGLE DE PROJETO - AMOSTRA FINAL
+// ========================================//
+.info-projeto {
+	@include flex(space-around);
+	@include align-items(flex-end);
+	position: relative;
+	padding-top: 3em;
+
+	.gradiente {
+		width: 100vw; left: 50%; @include transform(translateX(-50%));
+		background: white;
+		background: -moz-linear-gradient(0deg, white 0%, var(--cor-roxo-claro) 100%);
+		background: -webkit-linear-gradient(0deg, white 0%, var(--cor-roxo-claro) 100%);
+		background: linear-gradient(0deg, white 0%, var(--cor-roxo-claro) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#F7F5FA",GradientType=1);
+	}
+
+
+	figure, summary {
+		width: 100%; position: relative;
+		@media (min-width: $tablet + 1px) {width: 48%;}
+	}
+
+	summary {
+		@include align-self(center);
+		hgroup {
+			text-align: center; margin-bottom: 2em;
+
+			h1 { position: relative; z-index: 1; }
+
+			h2 {
+				color: var(--cor-roxo); position: relative;
+				font-size: 3.6em; line-height: .2;
+			}
+		}
+	}
+
+	@media (max-width: $tablet) {
+		figure { @include order(2); }		
+		summary { @include order(1); }		
+	}
+}
+
+
+.detalhes-projeto {
+	width: $colmax;
+	max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+
+	.info {
+		width: 100%; padding: 2em 0 1em;
+		@include flex(space-between);
+		@include align-items(center);
+
+		* { margin-top: 0 }
+
+		& > div {
+			position: relative;
+
+			a.profissionais {
+				color: var(--cor-azul); top: 0; @include transform(translateY(-100%));
+				font-weight: bold; font-family: $fonte-redonda;
+				font-size: 13px; position: absolute; z-index: 1;
+				&:hover { color: var(--cor-rosa); }
+			}
+
+			h2 {
+				position: relative;
+				display: inline-block;
+				vertical-align: bottom;
+
+				&:before, &.ver:after { content: ''; position: absolute;}
+
+				&:before {
+					width: 60vw; height: 400%; display: block;
+					background: var(--cor-azul-claro); top: -30px;
+					right: -15px; z-index: -1;
+
+				}
+
+				&.ver:after {
+					width: 335px; height: 3px; background: var(--cor-texto);
+					top: 50%; margin-top: 1px; border-radius: 3px;
+					right: -30px; @include transform(translateX(100%));
+				}
+			}
+
+			&.online {
+				@include flex-shrink(0);
+				background: white; display: block;
+				padding-left: 30px;
+			}
+		}
+	}
+}

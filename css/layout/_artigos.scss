@@ -2,7 +2,7 @@
 // ARTIGOS
 // ========================================//
 article {
-	* { margin-top: 1.4rem;}
+	& > * { margin-top: 1.4rem;}
 	p:first-of-type { margin-top: 0; }
 
 	.nomargin { margin-top: 0 }
@@ -31,5 +31,70 @@ article {
 			background: var(--cor-azul-claro);
 			border-color: var(--cor-azul-medio);
 		}		
+	}
+
+	.videofolio {
+		width: 100%;
+		position: relative;
+	}
+
+	.wp-caption, .wp-block-image, .wp-block-media-text {
+		position: relative;
+
+		figcaption, p.wp-caption {
+			position: absolute;
+			margin: 0; padding: 1em;
+			background: var(--cor-grafite);
+			bottom: 20px;
+			left: 20px;
+			color: white;
+			font-size: .75em;
+			max-width: calc(100% - 40px);
+			outline: 3px solid white;
+			@include transition(opacity 0.2s ease-in-out);
+		}
+
+		&:hover {
+			figcaption, p.wp-caption { opacity: 0; }
+		}
+	}
+
+	hr {
+		margin: 0 auto;
+		border:0;
+		position: relative;
+
+		&:not(.simples) { width: 80%; height: 85px; }
+
+		&:not(.simples):before, &:not(.simples):after {content: ""; position: absolute;}
+
+		&:not(.simples):before {
+			width: 100%; 
+			height: 6px; top: 50%; margin-top: -3px;
+			background: var(--cor-texto); 
+		    display: block; @extend %borda-redonda;
+		}
+		&:not(.sem-enfeite):after {
+			@extend %sprite; height: 67px; width: 175px;
+			background-position: -343px -192px;
+			top: -23px; left: 50%; @include transform(rotate(-18deg) scale(0.9) translateX(-50%));
+		}
+
+		&.simples {
+			width: 100%; height: 2px; margin-top: 1.4em;
+			background: var(--cor-roxo-medio);
+		}
+	}
+
+	body.single-etheme_portfolio & {
+		.wp-caption, .wp-block-image, .wp-block-media-text {
+			img {
+				box-shadow: 0 0 20px rgba(0,0,0,0.1);
+			}
+
+			&.sem-sombra {
+				img { box-shadow: none !important; }
+			}
+		}
 	}
 }

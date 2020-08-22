@@ -164,7 +164,8 @@
 
 			// hover
 			&:not(.menu-item-home) > a:hover, &:not(.menu-item-home) > a:focus,
-			&:not(.menu-item-home).current-menu-item > a {
+			&:not(.menu-item-home).current-menu-item > a,
+			body.single-etheme_portfolio &.menu-item-object-etheme_portfolio > a {
 				background: url('../img/splash.svg') no-repeat center center / 100% auto;
 
 				span.descricao { color: var(--cor-rosa-medio); }
