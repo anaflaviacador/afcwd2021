@@ -1,0 +1,133 @@
+#pagina-servicos {
+	.intro {
+		@include flex(space-between);
+
+		article, .plataformas {
+			width: 100%; max-width: $smart-maior; margin: 0 auto 2em;
+			text-align: center;
+
+			em { padding: 0 3px; box-shadow: inset 0 -20px transparentize($azul,0.8); }
+
+			@media (min-width: $tablet + 1px) {width: 48%;}
+		}
+
+		.plataformas {
+			@include flex(space-between);
+			font-size: .8em;
+			line-height: 1.3;
+
+			figure {
+				position: relative;
+				width: 49.9%; margin: 1em auto;
+				@include display(flex);
+
+				&:before {
+					width: 20px; height: 1px; background: var(--cor-texto);
+					position: absolute; content: ""; display: block;
+					top: 50%;
+				}
+
+				img { margin: 1em auto; @include align-self(center);}
+
+				&.wp {
+					@include order(1);
+					background: var(--cor-azul-claro);
+					@media (min-width: $smart-menor + 1px) {&:before {right: -10px}}
+				}
+				&.woo {
+					@include order(4);
+					background: var(--cor-roxo-claro);
+					@media (min-width: $smart-menor + 1px) {&:before {left: -10px;}}
+				}
+
+				@media (max-width: $smart-menor) {
+					width: 275px;
+					&.woo { @include order(3); margin-top: 3.5em;}
+					&:before { bottom: -10px; left: 50%; @include transform(rotate(90deg) translateX(150%)); }
+				}
+			}
+
+			.desc {
+				width: 49.9%; @include align-self(center);
+				text-align: center; padding: 0 10px;
+
+				&.wp { @include order(2); }
+				&.woo { @include order(3); }
+
+				@media (max-width: $smart-menor) {
+					width: 100%;
+					&.woo { @include order(4);}
+				}
+			}
+
+		}
+	}
+}
+
+#lista-servicos {
+	width: 100%;
+	position: relative;
+
+	h2.cursivo.assinado { display: inline-block; }
+
+	ul {
+		width: 100%;
+		@include flex(space-between);
+
+		li {
+			margin-bottom: 100px; width: calc(50% - 10px);
+			font-size: .9em; text-align: center;
+			background: var(--cor-cinza); padding: 15px 20px;
+
+			@media (max-width: $celular) { width: 90%; margin-left: auto; margin-right: auto; }
+			@media (min-width: $smart-maior + 1px) { width: calc(33.3% - 15px); }
+
+			header {
+				margin-top: -72px; margin-bottom: 1em;
+
+				i {
+					text-align: center; display: block;
+					font-size: 2.4em; margin-bottom: .2em;
+				}
+
+				h3 {
+					text-align: center; z-index: 1; 
+					span { bottom: -5px; }
+				}
+			}
+
+			p { line-height: 1.55; }
+
+			// div {
+			// 	display: block; padding: 36px 12px;
+			// 	background: var(--cor-cinza);
+			// 	margin-top: -18px;
+			// }
+
+			&.rosa {
+				background: var(--cor-rosa-claro);
+				i, h3 span {color: var(--cor-rosa);}
+			}
+			&.roxo {
+				background: var(--cor-roxo-claro);
+				i, h3 span {color: var(--cor-roxo);}
+			}
+			&.verde {
+				background: var(--cor-verde-claro);
+				i, h3 span {color: var(--cor-verde);}
+			}
+			&.bege {
+				background: var(--cor-bege-claro);
+				i, h3 span {color: var(--cor-bege);}
+			}
+			&.azul {
+				background: var(--cor-azul-claro);
+				i, h3 span {color: var(--cor-azul);}
+			}
+		}
+	}
+}
+
+#tipos-pagamento {
+
+}

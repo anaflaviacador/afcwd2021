@@ -4,7 +4,7 @@ $urlHome = esc_url(home_url('/'));
 // ========================================//
 // DEPOIMENTOS
 // ========================================// 
-if (! is_post_type_archive('afc_depoimentos')) {
+if (! is_post_type_archive('afc_depoimentos') && ! is_singular('etheme_portfolio')) {
 	echo '<section id="depoimentos-incriveis" class="no-rodape">';
 		echo '<div class="container">';
 			echo '<span class="gutter-sizer"></span><span class="grid-sizer"></span>';
@@ -40,7 +40,7 @@ echo '<footer id="rodape">';
 
 	echo '<div class="copyright">';
 		echo '<div class="container">';
-			echo '<div>&copy; 2020 - CNPJ 24.014.911/0001-36 &nbsp;&nbsp;| <a href="'.$politicapg.'">Política de Privacidade</a></div>';
+			echo '<div>&copy; 2020 - CNPJ 24.014.911/0001-36<span>&nbsp;&nbsp;|</span><a href="'.$politicapg.'">Política de Privacidade</a></div>';
 
 			echo '<div>';
 				echo '<a target="_blank" title="Instagram" href="https://www.instagram.com/anaflaviacador"><i class="fab fa-instagram" aria-hidden="true"></i></a>';

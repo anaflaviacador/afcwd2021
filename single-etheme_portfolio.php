@@ -90,11 +90,40 @@ if (have_posts()) {
 			if($online) {echo '<div class="online"><a href="'.$online.'" class="button pequeno" target="_blank" rel="nofollow noopened">ver online</a></div>';}
 		echo '</div>';
 
-		the_content();
-
-	echo '</article>';
+		the_content();	
+	echo '</article>';	
 
 	endwhile;
 }
 	
+// ========================================//
+// CHAMADA ORCAMENTO
+// ========================================// 
+$urlHome = esc_url(home_url('/'));
+echo '<section class="chamada-orcamento pag-projeto">';
+	echo '<div class="wrap" data-aos="fade-left">';
+		echo '<h2 class="rosa marca-dagua">Gostou do que viu? <span aria-hidden="true">Peça seu orçamento</span></h2>';
+		echo '<p><strong>Faça sua cotação</strong> e comece o planejamento de seu projeto hoje mesmo!</p>';
+		echo '<p><a href="'.$urlHome.'contato" class="button rosa medio">Pedir orçamento</a></p>';
+	echo '</div>';
+echo '</section>';	
+
+
+
+// ========================================//
+// PROJETOS
+// ========================================// 
+$args = array('post_type' => 'etheme_portfolio', 'orderby' => 'rand', 'posts_per_page' => 6);
+$publicacoes = new WP_Query($args);
+if ( $publicacoes->have_posts() ) { $i = 0;
+	echo '<section class="container" id="projetos-principais"><h2 class="cursivo assinado">mais</h2><div class="lista-posts"><ul>';
+	while ( $publicacoes->have_posts() ) : $i++; $publicacoes->the_post(); 
+		echo '<li itemscope itemtype="http://schema.org/CreativeWork" data-aos="fade-up" class="projeto-'.$i.' mostra-projeto">';
+			afc_projeto('large');
+		echo '</li>';
+	endwhile;
+	echo '</ul></div></section>';
+	echo '<p>&nbsp;</p>';
+}
+
 get_footer();

@@ -124,12 +124,18 @@
 			text-transform: lowercase; text-shadow: 2px 2px 1px transparentize(black,0.8);
 			opacity: 1; color: var(--cor-rosa-medio);
 		}
+
+		@media (max-width: $smart-menor) {font-size: 2em}
 	}
 
 	
 
 	& > div:not(.foto) {
-		width: 48%; margin-top: 1.4em;
+		width: 100%; max-width: $smart-maior; margin-top: 1.4em;
+		margin-left: auto; margin-right: auto;
+		@media (min-width: $tablet + 1px) {
+			width: 48%;
+		}
 
 		p {
 			margin-top: 1.4em;
@@ -143,7 +149,9 @@
 		font-size: 1.2em;
 
 		li {
-			width: 49%; padding: .3em 0;
+			width: 100%; padding: .3em 0;
+
+			@media (min-width: $smart-menor + 1px) {width: 49%;}
 
 			i {
 				width: 34px; height: 34px;
