@@ -22,7 +22,7 @@
 				@include display(flex);
 
 				&:before {
-					width: 20px; height: 1px; background: var(--cor-texto);
+					width: 20px; height: 2px; background: var(--cor-texto);
 					position: absolute; content: ""; display: block;
 					top: 50%;
 				}
@@ -67,20 +67,24 @@
 #lista-servicos {
 	width: 100%;
 	position: relative;
+	@media (max-width: $smart-maior) { padding-top: 70px; }
 
-	h2.cursivo.assinado { display: inline-block; }
+	h2.cursivo.assinado {
+		display: inline-block;
+		@media (max-width: $smart-maior) { display: none;}
+	}
 
 	ul {
 		width: 100%;
 		@include flex(space-between);
 
 		li {
-			margin-bottom: 100px; width: calc(50% - 10px);
+			margin-bottom: 70px; width: calc(50% - 10px);
 			font-size: .9em; text-align: center;
 			background: var(--cor-cinza); padding: 15px 20px;
 
 			@media (max-width: $celular) { width: 90%; margin-left: auto; margin-right: auto; }
-			@media (min-width: $smart-maior + 1px) { width: calc(33.3% - 15px); }
+			@media (min-width: $smart-maior + 1px) { width: calc(33.3% - 15px); margin-bottom: 100px;}
 
 			header {
 				margin-top: -72px; margin-bottom: 1em;
@@ -128,6 +132,93 @@
 	}
 }
 
-#tipos-pagamento {
+.tipos-pagamento {
+	margin-bottom: 2em;
+	margin-top: -20px;
+	@media (min-width: $smart-maior + 1px) { margin-top: -80px; }
 
+	ul {
+		li {
+			width: 100%; margin: 1em 0;
+			@include flex(space-between);
+			@include align-items(center);
+			@media (min-width: $tablet + 1px) { margin: 3em 0;}
+
+			.tipo {
+				width: 180px; position: relative;
+				font-size: 4em;
+				font-family: $fonte-cursiva;
+				text-align: center;
+				line-height: .3;
+				@media (min-width: $tablet + 1px) { font-size: 6em; width: 33%; }
+				@media (max-width: $smart-menor) {
+					width: 60px;
+					span { display: none; }
+				}
+
+				i {
+					position: absolute;
+					top: 50%; left: 50%;
+					opacity: .25; font-size: .75em;
+					@include transform(translate(-50%,-50%));
+				}
+			}
+
+			.descricao {
+				width: calc(100% - 190px); position: relative;
+				padding: 1em 2em; font-size: .9em;
+				@media (min-width: $tablet + 1px) { font-size: 1.3em; width: 66%;  }
+				@media (max-width: $smart-menor) { width: calc(100% - 70px); }
+
+				p { position: relative; z-index: 2; }
+
+				&:before {
+					width: 50px; height: 2px; content: ""; display: block; z-index: 1;
+					background: var(--cor-texto); position: absolute; top: 50%;
+
+					@media (min-width: $tablet + 1px) { width: 100px; }
+				}
+
+				&:after {
+					width: 80vw; height: 100%; display: block; content: "";
+					top: 0; position: absolute;
+				}
+			}
+
+			&:nth-of-type(1) {
+				.tipo i {color: var(--cor-azul);}
+				.descricao { 
+					background: var(--cor-azul-claro);
+					&:before { left: 0; @include transform(translateX(-75%)); }
+					&:after {background: var(--cor-azul-claro); left: 0;}
+
+					@media (max-width: $smart-menor) {padding-right: 0;}
+				}
+			}
+
+			&:nth-of-type(2) {
+				.tipo i {color: var(--cor-verde);}
+				.descricao { 
+					background: var(--cor-verde-claro); text-align: right;
+					&:before { right: 0; @include transform(translateX(75%)); }
+					&:after {background: var(--cor-verde-claro); right: 0; }
+
+					@media (max-width: $smart-menor) {padding-left: 0;}
+				}
+			}
+		}
+	}
+
+	.logos {
+		@include flex(space-around);
+
+		img { margin: .5em; }
+
+		@media (min-width: $tablet) {
+			img:nth-of-type(1) { width: 204px; }	
+			img:nth-of-type(2) { width: 75px; }	
+			img:nth-of-type(3) { width: 245px; }	
+			img:nth-of-type(4) { width: 108px; }	
+		}
+	}
 }

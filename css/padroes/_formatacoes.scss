@@ -201,7 +201,7 @@ input[type=text], input[type=tel], input[type=email], input[type=name], input[ty
 
 textarea {
 	padding: 15px;
-	line-height: 1.65;
+	line-height: 1.65; border-radius: 8px;
 	font-family: $fonte-padrao;
 }
 
@@ -214,7 +214,7 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	display: inline-block;
 	outline: 0;
 	background: $roxo;
-	color: white;
+	color: white !important;
 	letter-spacing: 0.09em;
 	line-height: 1;
 	cursor: pointer;
@@ -238,6 +238,7 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	    -ms-transform: scale(1.05) !important;
 	    -o-transform: scale(1.05) !important;
 	    transform: scale(1.05) !important;
+	    text-decoration: none !important;
 	}
 
 	&.grafite {background: var(--cor-grafite);}

@@ -6,6 +6,15 @@ article {
 	& > * { margin-top: 1.4rem;}
 	p:first-of-type { margin-top: 0; }
 
+	a {
+		&:link, &:visited, &:active, &:hover, &:focus {
+			outline: 0;
+			color: var(--cor-rosa);
+			@include transition(all 0.2s ease-in-out);
+			text-decoration:none;
+		}
+		&:hover, &:focus { color: var(--cor-roxo); text-decoration: underline }
+	}
 	.nomargin { margin-top: 0 }
 
 	blockquote {

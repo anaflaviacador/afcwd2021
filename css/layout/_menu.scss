@@ -62,7 +62,7 @@ nav.menu-site {
 			// marca
 			&.menu-item-home {
 				display: block;
-				@media (min-width: $tablet) {@include flex-grow(1);}
+				@media (min-width: $tablet) {@include flex-grow(1); max-width: 370px;}
 
 				& > a {
 					margin: 0 auto;

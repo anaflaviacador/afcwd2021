@@ -1,0 +1,117 @@
+.af-form.acf-form {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $colmax;
+}
+
+.af-fields.acf-fields {
+	font-size: .9em;
+
+	a {text-decoration: underline}
+
+	input[type="text"], 
+	input[type="password"], 
+	input[type="date"], 
+	input[type="datetime"], 
+	input[type="datetime-local"], 
+	input[type="email"], 
+	input[type="month"], 
+	input[type="number"], 
+	input[type="search"], 
+	input[type="tel"], 
+	input[type="time"], 
+	input[type="url"], 
+	input[type="week"], textarea, select {
+		line-height: inherit !important;
+		font-size: 1em !important;
+		padding: 5px 15px !important;
+	}
+
+
+	& > .acf-field {
+		border: none !important;
+	}
+	
+	.af-field-instructions {
+	    font-size: 0.95em;
+	    font-style: italic;
+	    opacity: .8;
+	}
+
+	textarea {height: auto;}
+
+
+	// radio buttons
+	ul.acf-radio-list li, ul.acf-checkbox-list li {
+		font-size: 0.95em;
+	    line-height: inherit;
+	    padding: 4px 0;
+	    cursor: pointer;
+	}
+	ul.acf-radio-list li label {
+		cursor: pointer;
+		font-size: 0.95em;
+		&.selected {font-weight: bold;}
+	}
+
+	.acf-true-false {
+		span.message { font-size: 0.95em; cursor: pointer; }
+	}
+
+
+	// loading apos enviar form
+	.acf-spinner {
+	    margin-left: 13px !important;
+	}
+
+	// botao enviar
+	// .af-submit {padding: 0 !important;}
+
+	.af-page-wrap {
+		margin: 0 0 20px !important;
+		.af-page-button {
+			// font-family: $fonte-titulo;
+			// @extend %textocor5, %uppercase;
+
+			// &.enabled {@extend %textocor5;}
+			span.index {background: transparent; border: 1px solid #DDD; line-height: 16px}
+
+			&.current {
+				// @extend %textocor1;
+				// &.enabled {@extend %textocor1;}
+
+				span.index {
+					// @extend %bgcor1, %bordercor1;
+					// color: $branco;
+				}
+			}
+		}
+	}
+
+	// botoes de acao para acrescentar conteudo
+	.acf-actions {
+		text-align: center;
+		a.button {
+			// @extend .btn-xs;
+		}
+	}
+
+	// campos personalizados
+	.chamada-maior {
+		.af-label.acf-label label {
+			font-weight: normal !important;
+			@extend h2;
+		}
+	}
+
+	// titulo escondido
+	.esconde-titulo {
+		.af-label.acf-label label { display: none; }
+	}
+}
+
+// animacao
+@include keyframes(nomesurge) {
+	0%{opacity: 0; }
+	100%{ opacity: 1; }
+}		
