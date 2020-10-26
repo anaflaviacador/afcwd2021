@@ -47,16 +47,24 @@ add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 // redireciona o form de login
 function afc_redireciona_qdo_loga( $redirect, $user ) {
-    $role = $user->roles[0];
-    $redirect = '';
+    global $user;
+
     $admin = admin_url();
     $minhaconta = wc_get_page_permalink( 'myaccount' );
 
-    if( $role == 'administrator' ) {
-        $redirect = $admin; // painel de login para admins
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        if ( in_array( 'administrator', $user->roles ) ) {
+            $redirect = $admin;
+        } else {
+            $redirect = $minhaconta;
+        }
     } else {
-        $redirect = $minhaconta; // painel minha conta para clientes
-    }
+        $redirect = $minhaconta;
+    }    
+
+    // if( $role == 'administrator' ) {
+    //     $redirect = $admin; // painel de login para admins
+    // } 
 
     return $redirect;
 }
@@ -107,18 +115,26 @@ function afcwoo_preco_free( $price, $product ){
 // retirar produtos relacionados
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
-
 // ========================================//
-// PAGAMENTO
+// MINHA CONTA - NAV
 // ========================================// 
-// adicionando CPF para qdo eh compra por deposito
-add_filter('woocommerce_bacs_account_fields', function($fields){
-    $fields['titular']=array(
-        'label'=>'Titular',
-        'value'=>'Ana Flávia F C Oliveira &nbsp;&mdash;&nbsp; CPF: 041.551.991-81'
+// customiza os nomes dos menus da conta do usuario
+function afcwoo_menu_cliente() {
+    $myorder = array(
+        'dashboard'          => __( 'Painel', 'woocommerce' ),
+        'orders'             => __( 'Pedidos', 'woocommerce' ),   
+        'downloads'          => __( 'Downloads', 'woocommerce' ),     
+        'edit-account'       => __( 'Meus dados', 'woocommerce' ),
+        // 'subscriptions'      => __( 'Assinatura', 'woocommerce' ),
+        // 'edit-address'       => __( 'Endereços', 'woocommerce' ),
+        // 'payment-methods'    => __( 'Payment Methods', 'woocommerce' ),
+        // 'loja' => __( 'Comprar mais moldes', 'woocommerce' ),
+        // 'customer-logout'    => __( 'Sair', 'woocommerce' ),
     );
-    return $fields;
-});
+    return $myorder;
+}
+add_filter ( 'woocommerce_account_menu_items', 'afcwoo_menu_cliente' );
+
 
 
 // ========================================//

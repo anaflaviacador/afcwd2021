@@ -50,6 +50,16 @@ function afc_shortcode_ass( $atts, $content = null ) {
 add_shortcode('afc','afc_shortcode_ass');
 
 
+/////////////////////////////// FAQ
+function afc_shortcode_faq( $atts, $content = null ) {
+    ob_start();
+    get_template_part('modais/faq');
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('faq','afc_shortcode_faq');
+
+
 ////////////////////////////// COLUNAS
 function afc_shortcode_cols($atts, $content = null) {
     return '<div class="colunas">'.do_shortcode($content).'</div>';
@@ -133,3 +143,37 @@ function afc_shortcode_tabscnt6($atts, $content = null) {
 function afc_shortcode_tabscnt7($atts, $content = null) {
     return '<div id="tab-7" class="tab-content">'.apply_filters('the_content', $content).'</div>';
 } add_shortcode('cnttab7','afc_shortcode_tabscnt7');
+
+
+// ========================================//
+// ICONE
+// ========================================// 
+function afc_shortcode_icone($atts, $content = null) {
+    extract(shortcode_atts(array(
+        "nome" => '',
+        "prefixo" => '',
+        "tamanho" => '',
+        "cor" => '',
+    ), $atts));
+    ob_start();
+
+    echo '<i class="'.$prefixo.' fa-'.$nome.'" style="font-size:'.($tamanho ? $tamanho : '1').'em;'.($cor ? 'color: var(--cor-'.$cor.');' : '').'" aria-hidden="true"></i>';
+
+    $output = ob_get_clean();
+    return $output;
+
+} add_shortcode('icone','afc_shortcode_icone');
+
+function afc_shortcode_marca($atts, $content = null) {
+    extract(shortcode_atts(array(
+        "nome" => '',
+        "tamanho" => '',
+    ), $atts));
+    ob_start();
+
+    echo '<i class="fab fa-'.$nome.'" style="font-size:'.($tamanho ? $tamanho : '1').'em" aria-hidden="true"></i>';
+
+    $output = ob_get_clean();
+    return $output;
+
+} add_shortcode('marca','afc_shortcode_marca');

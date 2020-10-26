@@ -14,7 +14,7 @@ echo '<div id="customer_login">';
 
 				echo '<div>'; 
 					echo '<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme lembrar-login"><input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Quero me manter logada</span></label>';
-					echo '<p class="woocommerce-LostPassword lost_password"><a href="'.esc_url( wp_lostpassword_url() ).'">Ih! Esqueci minha senha.</p>';
+					echo '<p class="woocommerce-LostPassword lost_password"><a href="'.esc_url( wp_lostpassword_url() ).'">Ih! Esqueci minha senha.</a></p>';
 				echo '</div>';
 
 				wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' );

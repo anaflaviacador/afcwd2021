@@ -4,7 +4,7 @@ $urlHome = esc_url(home_url('/'));
 // ========================================//
 // DEPOIMENTOS
 // ========================================// 
-if (! is_post_type_archive('afc_depoimentos') && ! is_singular('etheme_portfolio') && ! is_page('contato')) {
+if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing')) && afc_nao_woocommerce()) {
 	echo '<section id="depoimentos-incriveis" class="no-rodape">';
 		echo '<div class="container">';
 			echo '<span class="gutter-sizer"></span><span class="grid-sizer"></span>';
@@ -21,7 +21,7 @@ if (! is_post_type_archive('afc_depoimentos') && ! is_singular('etheme_portfolio
 		echo '</div>';
 
 
-		echo '<p data-aos="zoom-in" class="has-text-align-center cta"><a href="'.$urlHome.'contato" class="button rosa medio">Peça seu orçamento</a></p>';
+		echo '<p data-aos="zoom-in" class="has-text-align-center cta"><a href="'.$urlHome.'contato" class="button rosa medio">Peça seu orçamento</a> <br> <a href="#faq" data-target="#faq" class="abre-modal"><small>Dúvidas? Veja o F.A.Q. do studio.</small></a></p>';
 	echo '</section>';
 }
 
@@ -31,7 +31,7 @@ if (! is_post_type_archive('afc_depoimentos') && ! is_singular('etheme_portfolio
 // RODAPE 
 // ========================================// 
 
-echo '<footer id="rodape"'.(is_post_type_archive('afc_depoimentos') || is_singular('etheme_portfolio') || is_page('contato') ? ' style="margin-top:5em"' : '').'>';
+echo '<footer id="rodape"'.(is_singular('etheme_portfolio') || is_page('contato') || afc_woocommerce() ? ' style="margin-top:5em"' : '').'>';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
 		echo '<ul id="navegacao" role="navigation">';
 			afc_menu('primary');
@@ -40,7 +40,7 @@ echo '<footer id="rodape"'.(is_post_type_archive('afc_depoimentos') || is_singul
 
 	echo '<div class="copyright">';
 		echo '<div class="container">';
-			echo '<div>&copy; 2020 - CNPJ 24.014.911/0001-36<span>&nbsp;&nbsp;|</span><a href="#privacidade" data-target="#privacidade" class="abre-modal">Política de Privacidade</a></div>';
+			echo '<div><strong>AFC Web Design</strong> - CNPJ 24.014.911/0001-36<span>&nbsp;&nbsp;|</span><a href="#privacidade" data-target="#privacidade" class="abre-modal">Política de Privacidade</a></div>';
 
 			echo '<div>';
 				echo '<a target="_blank" title="Instagram" href="https://www.instagram.com/anaflaviacador"><i class="fab fa-instagram" aria-hidden="true"></i></a>';
@@ -55,12 +55,18 @@ echo '</main>';
 
 
 // politica de privacidade
-$politicapg = get_option( 'wp_page_for_privacy_policy' );
-echo '<div class="modal" id="privacidade" aria-label="'.get_the_title($politicapg).'">'; 
-	$mypost = get_post($politicapg);
-	echo '<article>'.apply_filters('the_content',$mypost->post_content).'</article>';
+$politicaID = get_option( 'wp_page_for_privacy_policy' );
+echo '<div class="modal" id="privacidade" aria-label="'.get_the_title($politicaID).'">'; 
+	$politicaPG = get_post($politicaID);
+	echo '<h2 class="has-text-align-center">'.get_the_title($politicaID).'</h2>';
+	echo '<article>'.apply_filters('the_content',$politicaPG->post_content).'</article>';
 echo '</div>'; 
 
+// perguntas frequentes
+echo '<div class="modal" id="faq" aria-label="Perguntas frequentes">';
+	echo '<h2 class="has-text-align-center">Perguntas Frequentes</h2>';
+	echo '<article>'; get_template_part('modais/faq'); echo '</article>'; 
+echo '</div>'; 
 
 get_template_part('inc/whatsapp');
 

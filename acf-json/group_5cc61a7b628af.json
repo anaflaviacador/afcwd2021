@@ -82,6 +82,118 @@
             "maxlength": ""
         },
         {
+            "key": "field_5ef0ad16d71f0",
+            "label": "Por onde conheceu o studio?",
+            "name": "form_referencia",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Indicação direta de alguém ou empresa": "Indicação direta de alguém ou empresa",
+                "Viu um site que leva a marca do studio": "Viu um site que leva a marca do studio",
+                "Busca no Google": "Busca no Google",
+                "Menção em redes sociais": "Menção em redes sociais"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "label",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ef0ae254f841",
+            "label": "Quem indicou?",
+            "name": "form_referencia_indicacao",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef0ad16d71f0",
+                        "operator": "==",
+                        "value": "Indicação direta de alguém ou empresa"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ef0ae8a4f844",
+            "label": "Qual blog \/ site?",
+            "name": "form_referencia_blogsite",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef0ad16d71f0",
+                        "operator": "==",
+                        "value": "Viu um site que leva a marca do studio"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ef0ae6f4f843",
+            "label": "Qual mídia social?",
+            "name": "form_referencia_midia",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef0ad16d71f0",
+                        "operator": "==",
+                        "value": "Menção em redes sociais"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5cc61cf2c9778",
             "label": "Assunto principal do contato",
             "name": "form_assunto",
@@ -110,7 +222,7 @@
         },
         {
             "key": "field_5f440c7b743a5",
-            "label": "",
+            "label": "Mensagem",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -126,11 +238,11 @@
             ],
             "wrapper": {
                 "width": "",
-                "class": "",
+                "class": "msghidden",
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "<blockquote class=\"verde\" style=\"border:0;font-size:0.9em\">Está tudo bem caso você ainda não saiba todas as respostas para seu projeto. Afinal, é uma grande transformação que requer um tempo de maturação. Mas é extremamente importante preencher o formulário com o máximo de detalhes que puder eu ter uma ideia geral do seu projeto para nortear o studio a propor as melhores soluções para ti.<\/blockquote>",
+            "message": "Está tudo bem caso você ainda não saiba todas as respostas para seu projeto! Afinal, é uma grande transformação que requer um tempo de maturação. Mas é extremamente importante preencher o formulário com o máximo de detalhes que puder para <em>o studio ter uma ideia geral do seu projeto<\/em> para nortear propostas e melhores soluções para você e seu público.",
             "new_lines": "",
             "esc_html": 0
         },
@@ -157,15 +269,14 @@
             },
             "hide_admin": 0,
             "choices": {
-                "site": "Projeto de website <em>(para promover meu negócio, serviços e\/ou produtos)<\/em>",
-                "landing": "Produção de landing page \/ página de venda",
-                "blogpro": "Projeto de blog profissional <em>(conteúdo monetizado)<\/em>",
-                "blogpessoal": "Projeto de blog pessoal",
-                "design": "Projeto de Design <em>(eu já tenho quem faça a programação)<\/em>",
-                "programacao": "Programação Wordpress <em>(eu já tenho um layout produzido por outro profissional)<\/em>",
-                "custom": "Customização de tema de terceiros",
+                "site": "Projeto de website para promover meu negócio, serviços e\/ou produtos",
+                "minisite": "Produção de minisite \/ landing page \/ página de venda",
+                "blogpro": "Projeto de blog profissional (conteúdo monetizado)",
+                "blogpessoal": "Projeto de blog pessoal (escrevo por hobbie)",
+                "design": "Projeto apenas de Design (eu já tenho quem faça a programação)",
+                "programacao": "Projeto apenas de Programação Wordpress (eu já tenho um layout produzido por outro profissional)",
                 "ferramentas": "Construção de ferramentas específicas",
-                "naosei": "Ainda não sei o que quero"
+                "naosei": "Ainda não sei o que quero (me ajuda?)"
             },
             "allow_null": 1,
             "other_choice": 0,
@@ -252,8 +363,9 @@
             },
             "hide_admin": 0,
             "choices": {
-                "suportegeral": "Para um layout que já faço uso e preciso de ajuda para solucionar um problema nele",
-                "suporteloja": "Para um produto que comprei neste site"
+                "suportegeral": "Para um tema de outro profissional que faço uso",
+                "suporteloja": "Para um produto que comprei neste site",
+                "suporteprojeto": "Para um projeto que leva a assinatura Studio AFC \/ Ana Flávia Cador"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -330,7 +442,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": ""
+            "new_lines": "wpautop"
         },
         {
             "key": "field_5f440d9f51449",
@@ -359,127 +471,14 @@
                 "perto": "Quero iniciar nos próximos 3 meses",
                 "longe": "Pretendo começar entre 3 a 6 meses",
                 "mtolonge": "Pretendo começar entre 6 meses a 1 ano",
-                "pesquisa": "Ainda estou em fase de pesquisa <em>(não sei quando pretendo começar)<\/em>"
+                "pesquisa": "Ainda estou em fase de pesquisa (ou ainda não sei quando pretendo começar)"
             },
             "allow_null": 1,
             "other_choice": 0,
             "default_value": "",
             "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_5ef0ad16d71f0",
-            "label": "Por onde conheceu o studio?",
-            "name": "form_referencia",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "choices": {
-                "Por indicação direta de alguém": "Por indicação direta de alguém",
-                "Por um site \/ blog que leva a marca do studio": "Por um site \/ blog que leva a marca do studio",
-                "Por uma busca no Google": "Por uma busca no Google",
-                "Por menção em redes sociais": "Por menção em redes sociais",
-                "Por um anúncio publicitário": "Por um anúncio publicitário"
-            },
-            "default_value": false,
-            "allow_null": 1,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "label",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5ef0ae254f841",
-            "label": "Quem indicou?",
-            "name": "form_referencia_indicacao",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ef0ad16d71f0",
-                        "operator": "==",
-                        "value": "Por indicação direta de alguém"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5ef0ae8a4f844",
-            "label": "Qual blog \/ site?",
-            "name": "form_referencia_blogsite",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ef0ad16d71f0",
-                        "operator": "==",
-                        "value": "Por um site \/ blog que leva a marca do studio"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5ef0ae6f4f843",
-            "label": "Qual mídia social?",
-            "name": "form_referencia_midia",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ef0ad16d71f0",
-                        "operator": "==",
-                        "value": "Por menção em redes sociais"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "save_other_choice": 0
         },
         {
             "key": "field_5efba8e2686b4",
@@ -495,7 +494,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "Li e aceito a <a href=\"#privacidade\" data-target=\"#privacidade\" class=\"abre-modal\">política de privacidade<\/a> do site <span style=\"color:red\">*<\/span>",
+            "message": "Aceito ceder meus dados pessoais informados neste formulário e coletados em meu navegador para fins de comunicação com o studio AFC Web Design, conforme informado na <a href=\"#privacidade\" data-target=\"#privacidade\" class=\"abre-modal\">política de privacidade<\/a> do site. <span style=\"color:red\">*<\/span>",
             "default_value": 0,
             "ui": 0,
             "ui_on_text": "",
@@ -519,5 +518,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de contato padrão do site",
-    "modified": 1598313959
+    "modified": 1603456201
 }

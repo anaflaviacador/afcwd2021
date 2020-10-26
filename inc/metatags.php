@@ -124,14 +124,15 @@ if(is_home() || is_front_page()) {
         echo '<meta property="article:author" content="https://www.facebook.com/anaflaviacador">';
         echo '<meta property="article:publisher" content="https://www.facebook.com/anaflaviacador">';
 
+        global $post;
         if ( ! has_post_thumbnail( $post->ID ) ) {
             echo '<meta property="og:image" content="'.$tema.'/screenshot.png">';
             echo '<meta name="twitter:image" content="'.$tema.'/screenshot.png">';
             echo '<meta itemprop="image" content="'.$tema.'/screenshot.png">';
         } else {
-            echo '<meta property="og:image" content="'; while( have_posts() ) : the_post(); echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); endwhile; echo '">';
-            echo '<meta name="twitter:image" content="'; while( have_posts() ) : the_post(); echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); endwhile; echo '">';
-            echo '<meta itemprop="image" content="'; while( have_posts() ) : the_post(); echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); endwhile; echo '">';
+            echo '<meta property="og:image" content="'.afc_thumb('full').'">';
+            echo '<meta name="twitter:image" content="'.afc_thumb('full').'">';
+            echo '<meta itemprop="image" content="'.afc_thumb('full').'">';
         }
 }
 
@@ -147,16 +148,20 @@ if (class_exists('Woocommerce')) {
 }
 
 
-//////////////// facebook
-echo '<div id="fb-root"></div>';
-echo "<script async defer crossorigin=\"anonymous\" src=\"//connect.facebook.net/pt_BR/sdk.js#xfbml=1&autoLogAppEvents=1&version=v4.0&appId=\"256251604417279\"></script>";
-
-
 //////////////// wp head para itens de plugins
 wp_head();
 
 /////////////// favicon
-echo '<link rel="shortcut icon" href="https://afcweb.design/wp-content/uploads/2017/12/favicon.png">';
+if (has_site_icon()) {
+    echo '<link rel="icon" type="image/png" href="'.get_site_icon_url().'?vs=2" />';
+    echo '<link rel="icon" type="mage/x-icon" href="'.get_site_icon_url().'?vs=2" />';
+    echo '<link rel="apple-touch-icon-precomposed" href='.get_site_icon_url().'?vs=2" />';
+    echo '<link rel="shortcut icon" type="image/png" href="'.get_site_icon_url().'?vs=2" />';
+    echo '<link rel="shortcut icon" type="mage/x-icon" href="'.get_site_icon_url().'?vs=2" />';
+    echo '<meta name="msapplication-TileImage" content="'.get_site_icon_url().'?vs=2" />';   
+} else {
+    echo '<link rel="shortcut icon" href="https://afcweb.design/wp-content/uploads/2017/12/favicon.png">';
+}
 
 ////////////// analytics
-echo "<script>var galite = galite || {};galite.UA = 'UA-10144283-7';</script>";
+// echo "<script>var galite = galite || {};galite.UA = 'UA-10144283-7';</script>";

@@ -1,0 +1,148 @@
+{
+    "key": "group_5f91e497de12d",
+    "title": "Form Depoimento - Campos",
+    "fields": [
+        {
+            "key": "field_5f91e4a0170f3",
+            "label": "Seu nome e sobrenome",
+            "name": "depo_nome",
+            "type": "text",
+            "instructions": "Será mostrado no site.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f91e559170f4",
+            "label": "E-mail",
+            "name": "depo_email",
+            "type": "email",
+            "instructions": "Para fins de verificação (não será visível).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5f91e9dc202e6",
+            "label": "Seu domínio",
+            "name": "depo_site",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "http:\/\/",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f91e5d9170f5",
+            "label": "Conte sua experiência!",
+            "name": "depo_experiencia",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 10,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5f91e60a170f6",
+            "label": "Uma foto para posteridade",
+            "name": "depo_foto",
+            "type": "image",
+            "instructions": "Será mostrada no site.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f91e67c170f7",
+            "label": "Declaração de ciência",
+            "name": "depo_privacidade",
+            "type": "true_false",
+            "instructions": "Não há garantias de todos relatos enviados serão obrigatoriamente divulgados.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Aceito ceder meus dados pessoais e minha imagem para serem usados exclusivamente neste site. Declaro ciência da avaliação do meu depoimento.",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "af_form",
+                "operator": "==",
+                "value": "form_5f91e6e6224e4"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1603419750
+}

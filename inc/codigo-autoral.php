@@ -9,7 +9,7 @@ echo '<section class="codigo-autoral">';
 		
 		echo '<div data-aos="fade-right">';
 			echo '<p>Significa que cada linha de código é escrita <em>especialmente para você e seu público final</em>, seguindo todas diretrizes de identidade visual e as boas práticas de programação + otimização para promover o melhor desempenho possível.</p>';
-			echo '<p><strong>ZERO USO DE PAGE BUILDERS!</strong>* <br /> Tudo é produzido nos padrões Wordpress e linguagem PHP, com uso mínimo de plugins, promovendo <u>máxima autonima</u>. <i class="far fa-heart"></i></p>';
+			echo '<p><strong>ZERO USO DE PAGE BUILDERS!</strong>* <br /> Tudo é produzido nos padrões Wordpress e linguagem PHP, com uso mínimo de plugins, promovendo <u>máxima autonomia</u>. <i class="far fa-heart"></i></p>';
 			echo '<p><a href="#autoral-vs-pagebuilders" data-target="#autoral-vs-pagebuilders" class="button grafite mini abre-modal" data-aos="zoom-in" data-aos-delay="200">Saiba mais</a></p>';
 		echo '</div>';
 
@@ -23,12 +23,13 @@ echo '<section class="codigo-autoral">';
 				echo '<li data-aos="fade-left" data-aos-delay="450"><i class="far fa-tachometer-alt-average"></i> Painel personalizado</li>';
 			echo '</ul>';
 
-			echo '<p style="margin-top:2em; text-align:center" data-aos="zoom-in" data-aos-delay="550"><a href="'.$urlHome.'contato" class="button rosa medio">Quero fazer orçamento</a></p>';
+			echo '<p style="margin-top:2em; text-align:center" data-aos="zoom-in" data-aos-delay="550"><a href="'.$urlHome.'contato" class="button rosa medio">Quero fazer orçamento</a> <br> <a href="#faq" data-target="#faq" class="abre-modal"><small>Dúvidas? Veja o F.A.Q. do studio.</small></a></p>';
 		echo '</div>';
 
 		// explicacao do que eh codigo autoral
 		echo '<div class="modal" id="autoral-vs-pagebuilders" aria-label="Janela de explicação">'; 
-			$idPgPost = 5305;
+			// $idPgPost = 5305;
+			$idPgPost = 5276;
 			$mypost = get_post($idPgPost);
 			echo '<h2 class="has-text-align-center">'.get_the_title($idPgPost).'</h2>';
 			echo '<article>'.apply_filters('the_content',$mypost->post_content).'</article>';

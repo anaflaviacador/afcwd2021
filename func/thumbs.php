@@ -18,7 +18,7 @@ function afc_thumb($size) {
   global $post;
   $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),$size); 
   $url = $thumb['0'];
-  echo $url;
+  return $url;
 }
 
 
@@ -36,5 +36,5 @@ function afc_autothumb($size) {
         return;
     }
     $attachment = current( $attachment );
-    echo wp_get_attachment_url( $attachment->ID,$size);
+    return wp_get_attachment_url( $attachment->ID,$size);
 }

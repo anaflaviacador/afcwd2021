@@ -21,11 +21,13 @@
 }
 
 .afc-login {
+	padding: 15px;
+	
 	label[for="username"], label[for="password"] {
 		position: relative; margin-top: 12px;
 		display: block;
 		
-		input { margin-top: 0; padding-left: 42px;}
+		input { margin-top: 0; padding-left: 42px !important;}
 
 		i {
 			color: var(--cor-grafite); opacity: .4; font-size: 1.3em;
@@ -45,6 +47,8 @@
 			&:hover { color: var(--cor-azul-escuro); }
 			input[type="checkbox"]:checked + span { color: var(--cor-azul-escuro); }
 		}
+
+		.button { @include align-self(flex-start); }
 	}
 
 	.lost_password {

@@ -6,7 +6,7 @@ function afc_projeto($thumb = '', $excerpt = '') {
 	$title = get_the_title();
 
 	echo '<a href="'.get_the_permalink().'">';
-		echo '<img src="'; afc_thumb($thumb); echo '" alt="'.$title.'">';
+		echo '<img src="'.afc_thumb($thumb).'" alt="'.$title.'">';
 
 		echo '<summary>';
 			echo '<div class="categoria">';

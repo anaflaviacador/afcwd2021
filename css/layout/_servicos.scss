@@ -67,7 +67,8 @@
 #lista-servicos {
 	width: 100%;
 	position: relative;
-	@media (max-width: $smart-maior) { padding-top: 70px; }
+	padding-top: 70px;
+	// @media (max-width: $smart-maior) {  }
 
 	h2.cursivo.assinado {
 		display: inline-block;
@@ -79,15 +80,15 @@
 		@include flex(space-between);
 
 		li {
-			margin-bottom: 70px; width: calc(50% - 10px);
-			font-size: .9em; text-align: center;
-			background: var(--cor-cinza); padding: 15px 20px;
+			margin-bottom: 50px; width: calc(50% - 10px);
+			font-size: .9em; text-align: center; position: relative;
+			background: var(--cor-cinza); padding: 15px 15px 35px;
 
 			@media (max-width: $celular) { width: 90%; margin-left: auto; margin-right: auto; }
-			@media (min-width: $smart-maior + 1px) { width: calc(33.3% - 15px); margin-bottom: 100px;}
+			@media (min-width: $tablet + 1px) { width: calc(25% - 15px);}
 
 			header {
-				margin-top: -72px; margin-bottom: 1em;
+				margin-top: -35px; margin-bottom: 1em;
 
 				i {
 					text-align: center; display: block;
@@ -107,6 +108,11 @@
 			// 	background: var(--cor-cinza);
 			// 	margin-top: -18px;
 			// }
+
+			footer {
+				position: absolute; bottom: 0; left: 50%; 
+				@include transform(translate(-50%,50%));
+			}
 
 			&.rosa {
 				background: var(--cor-rosa-claro);
@@ -134,8 +140,8 @@
 
 .tipos-pagamento {
 	margin-bottom: 2em;
-	margin-top: -20px;
-	@media (min-width: $smart-maior + 1px) { margin-top: -80px; }
+	// margin-top: -20px;
+	// @media (min-width: $smart-maior + 1px) { margin-top: -80px; }
 
 	ul {
 		li {
@@ -167,7 +173,7 @@
 			.descricao {
 				width: calc(100% - 190px); position: relative;
 				padding: 1em 2em; font-size: .9em;
-				@media (min-width: $tablet + 1px) { font-size: 1.3em; width: 66%;  }
+				@media (min-width: $tablet + 1px) { font-size: 1.1em; width: 66%;  }
 				@media (max-width: $smart-menor) { width: calc(100% - 70px); }
 
 				p { position: relative; z-index: 2; }
@@ -212,12 +218,12 @@
 	.logos {
 		@include flex(space-around);
 
-		img { margin: .5em; }
+		img { margin: .5em; position: relative;}
 
 		@media (min-width: $tablet) {
-			img:nth-of-type(1) { width: 204px; }	
-			img:nth-of-type(2) { width: 75px; }	
-			img:nth-of-type(3) { width: 245px; }	
+			img:nth-of-type(1) { width: 204px; }
+			img:nth-of-type(2) { width: 175px; top: 11px;}	
+			img:nth-of-type(3) { width: 75px; }	
 			img:nth-of-type(4) { width: 108px; }	
 		}
 	}

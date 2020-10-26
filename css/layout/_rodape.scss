@@ -17,7 +17,8 @@
 			width: calc(100% - 20px);
 
 			@media (min-width: $smart-menor) { width: calc(50% - 30px); }
-			@media (min-width: $tablet) { width: calc(25% - 30px); }
+			@media (min-width: $tablet) { width: calc(33% - 30px); }
+			@media (min-width: $container) { width: calc(25% - 30px); }
 		}
 
 		.depoimento {
@@ -60,7 +61,7 @@
 					figure {
 						width: 65px; margin-right: 10px; border-radius: 50%;
 						border: 1px solid var(--cor-verde-medio); padding: 4px;
-						background: white;
+						background: white; @include flex-shrink(0);
 
 						img { width: 100%; border-radius: 50%; }
 					}

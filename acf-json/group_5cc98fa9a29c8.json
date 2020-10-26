@@ -42,7 +42,7 @@
         },
         {
             "key": "field_5ccf0c178fa6e",
-            "label": "Blog ou Site?",
+            "label": "Tipo de projeto?",
             "name": "bform_estr",
             "type": "radio",
             "instructions": "Confirme a estrutura para direcionar os devidos campos nas próximas páginas do formulário.",
@@ -56,7 +56,8 @@
             "hide_admin": 0,
             "choices": {
                 "blog": "Blog",
-                "site": "Site"
+                "site": "Site",
+                "minisite": "Minisite"
             },
             "allow_null": 1,
             "other_choice": 0,
@@ -114,6 +115,32 @@
             },
             "hide_admin": 1,
             "message": "<strong>Estrutura SITE:<\/strong> com uma estrutura mais fluida; funcionalidades personalizadas permitindo criação de páginas internas de forma dinâmica e direcionada ao seu público alvo. Possui uma área de notícias (blog interno) sem custo extra.\r\n<span>Ideal para empresas, profissionais autônomos, micro-empreendedores e criadores de conteúdo que buscam divulgar serviços e\/ou produtos além de seu blog.<\/span>",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5f736e44d2b94",
+            "label": "O que é um projeto de minisite?",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "minisite"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden info",
+                "id": ""
+            },
+            "hide_admin": 1,
+            "message": "<strong>Estrutura MINISITE:<\/strong> Com foco total na página inicial com informações sucintas, rápidas e de alto impacto, com alto poder de conversão. Possui poucas funcionalidades por ser um site de acesso rápido e com pouquíssimas páginas internas. Pode possuir uma área de notícias.\r\n<span>Ideal para profissionais que precisam de uma página de venda ou de um cartão de visita digital para se promover na internet.<\/span>",
             "new_lines": "br",
             "esc_html": 0
         },
@@ -209,16 +236,16 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "O studio AFC trabalha com afiliação à <a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Nuvem Hospedagem<\/a>, uma das melhores empresas provedoras de hospedagem de websites do Brasil, com atendimento 24h por dia e um ótimo custo-benefício ao consumidor. \r\n<span><a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Clique aqui<\/a> e ganhe 50% de desconto na primeira sua mensalidade utilizando o cupom de desconto <strong>NUVEM50<\/strong>!<\/span>",
+            "message": "O studio AFC trabalha com afiliação à <a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Nuvem Hospedagem<\/a>, uma das melhores empresas provedoras de hospedagem de websites do Brasil, com atendimento 24\/7 e um ótimo custo-benefício ao consumidor. \r\n<span><a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Clique aqui<\/a> e ganhe 50% de desconto na primeira sua mensalidade utilizando o cupom de desconto <strong>NUVEM50<\/strong>!<\/span>",
             "new_lines": "br",
             "esc_html": 0
         },
         {
             "key": "field_5ccf2eef9feaa",
-            "label": "Nome",
+            "label": "Nome \/ Razão Social",
             "name": "bform_nfse_2",
             "type": "text",
-            "instructions": "Seu nome completo, por favor",
+            "instructions": "Seu nome completo ou razão social (contrato via PJ)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -238,7 +265,7 @@
             "label": "CPF \/ CNPJ",
             "name": "bform_nfse_1",
             "type": "text",
-            "instructions": "Para contrato e nota fiscal (caso solicite)",
+            "instructions": "Para contrato e nota fiscal",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -254,41 +281,13 @@
             "maxlength": ""
         },
         {
-            "key": "field_5ccf2d667f427",
-            "label": "Nota fiscal",
-            "name": "bform_nfse",
-            "type": "true_false",
-            "instructions": "Deseja a emissão de nota fiscal eletrônica na entrega?",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "chamada-maior",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "message": "Sim, solicito NFS-e",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_5ccf2e187f429",
-            "label": "Endereço residencial ou empresarial",
+            "label": "Endereço residencial \/ empresarial",
             "name": "bform_nfse_3",
             "type": "textarea",
             "instructions": "Por favor, insira seu endereço completo (logradouro, número, CEP, cidade, estado) para ser inserido na nota fiscal",
             "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ccf2d667f427",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "100",
                 "class": "",
@@ -324,7 +323,7 @@
             "label": "Marca ou Arte do topo?",
             "name": "bform_marca",
             "type": "radio",
-            "instructions": "Todo projeto de layout já vem por padrão uma arte para o cabeçalho que pode ser usado apenas para mídias sociais. Esta arte faz parte da composição do layout e é entregue separadamente em formato simples (com fundo transparente), porém, de alta qualidade. Um sistema de identidade visual é um projeto de marca projetada para ser utilizada em diversos lugares e aplicações, inclusive em papelaria, como cartões de visita.<br><br>\r\n\r\n<u>Projetos específicos de identidade visual são terceirizados. Caso tenha esta necessidade, informe abaixo que indicarei o melhor profissional para o seu perfil. <\/u><br><br>\r\n\r\n<strong>O que você deseja no seu cabeçalho?<\/strong>",
+            "instructions": "Todo projeto de layout já vem por padrão uma arte para o cabeçalho que pode ser usado apenas para mídias sociais. Esta arte faz parte da composição do layout e é entregue separadamente em formato simples (com fundo transparente), porém, de alta qualidade. Um sistema de identidade visual é um projeto de marca projetada para ser utilizada em diversos lugares e aplicações, inclusive em papelaria, como cartões de visita e papel timbrado.<br><br>\r\n\r\n<u>Projetos específicos de identidade visual são terceirizados. Caso tenha esta necessidade, informe abaixo que indicarei o melhor profissional para o seu perfil. <\/u><br><br>\r\n\r\n<strong>O que você deseja no seu cabeçalho?<\/strong>",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -334,7 +333,7 @@
             },
             "hide_admin": 0,
             "choices": {
-                "Ficarei apenas com a arte do topo que vem no layout (alego que não necessito de criação de sistema de identidade visual)": "Ficarei apenas com a arte do topo que vem no layout (alego que não necessito de criação de sistema de identidade visual)",
+                "Ficarei apenas com a arte do topo que vem no layout <em>(alego que não necessito de criação de sistema de identidade visual)<\/em>": "Ficarei apenas com a arte do topo que vem no layout <em>(alego que não necessito de criação de sistema de identidade visual)<\/em>",
                 "Tenho uma identidade visual e irei no usar em meu projeto": "Tenho uma identidade visual e irei no usar em meu projeto",
                 "Preciso de uma marca, me indique um profissional": "Preciso de uma marca, me indique um profissional"
             },
@@ -350,7 +349,7 @@
             "label": "Público alvo",
             "name": "bform_site_1",
             "type": "textarea",
-            "instructions": "Qual é o perfil de pessoa (no design chamamdos de \"persona\") que você espera que interaja contigo no site e nas redes sociais?",
+            "instructions": "Qual é o perfil de pessoa (no design chamamos de \"persona\") que você espera que interaja contigo no site e nas redes sociais?",
             "required": 1,
             "conditional_logic": [
                 [
@@ -358,6 +357,13 @@
                         "field": "field_5ccf0c178fa6e",
                         "operator": "==",
                         "value": "site"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "minisite"
                     }
                 ]
             ],
@@ -378,7 +384,7 @@
             "label": "Tarefas do site",
             "name": "bform_site_2",
             "type": "checkbox",
-            "instructions": "Quais são as tarefas <u>básicas e essenciais<\/u> que seu site precisa exercer assim que seu visitante entra em seu site?",
+            "instructions": "Qual é a <u>tarefa principal<\/u> que seu site precisa exercer logo à primeira vista? Pode marcar mais de um.",
             "required": 1,
             "conditional_logic": [
                 [
@@ -386,6 +392,13 @@
                         "field": "field_5ccf0c178fa6e",
                         "operator": "==",
                         "value": "site"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "minisite"
                     }
                 ]
             ],
@@ -396,12 +409,14 @@
             },
             "hide_admin": 0,
             "choices": {
-                "Oferecer serviços": "Oferecer serviços",
-                "Apresentar uma empresa": "Apresentar uma empresa",
-                "Promover uma figura pública": "Promover uma figura pública",
+                "Oferta de serviços profissionais": "Oferta de serviços profissionais",
+                "Apresentação de uma empresa": "Apresentação de uma empresa",
+                "Promoção de um profissional \/ figura pública": "Promoção de um profissional \/ figura pública",
                 "Portal de notícias e artigos": "Portal de notícias e artigos",
-                "Venda de produtos (e-commerce)": "Venda de produtos (e-commerce)",
-                "Ofertar cursos e treinamentos": "Ofertar cursos e treinamentos",
+                "Venda de produtos físicos": "Venda de produtos físicos",
+                "Venda de produtos digitais": "Venda de produtos digitais",
+                "Venda de UM único produto específico": "Venda de UM único produto específico",
+                "Promover diversos cursos, treinamentos ou consultorias": "Promover diversos cursos, treinamentos ou consultorias",
                 "Captura de leads (e-mail marketing)": "Captura de leads (e-mail marketing)"
             },
             "allow_custom": 0,
@@ -416,7 +431,7 @@
             "label": "Detalhamento",
             "name": "bform_site_3",
             "type": "textarea",
-            "instructions": "Por favor, explique com um pouco mais de detalhes sobre as tarefas de seu site, como os <strong>serviços<\/strong> que você oferece, os <strong>produtos<\/strong> que quer vender para o público, <strong>histórico da empresa<\/strong>, tipo de <strong>conteúdo do blog<\/strong>, o que seu cliente deve <strong>encontrar no seu site<\/strong> etc.",
+            "instructions": "Por favor, explique com um pouco mais de detalhes sobre as tarefas de seu site, como os <strong>serviços<\/strong> que você oferece, os <strong>produtos<\/strong> que quer vender para o público, <strong>histórico da empresa<\/strong>, tipo de <strong>conteúdo abordado<\/strong>, o que seu cliente deve <strong>encontrar no seu site<\/strong> etc.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -424,6 +439,13 @@
                         "field": "field_5ccf0c178fa6e",
                         "operator": "==",
                         "value": "site"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "minisite"
                     }
                 ]
             ],
@@ -693,6 +715,13 @@
                         "operator": "==",
                         "value": "site"
                     }
+                ],
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "minisite"
+                    }
                 ]
             ],
             "wrapper": {
@@ -719,6 +748,13 @@
                         "operator": "==",
                         "value": "site"
                     }
+                ],
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "minisite"
+                    }
                 ]
             ],
             "wrapper": {
@@ -729,10 +765,11 @@
             "hide_admin": 0,
             "choices": {
                 "PAGINA <strong>SOBRE<\/strong>: Histórico da empresa ou da figura pública que escreve o site": "PAGINA <strong>SOBRE<\/strong>: Histórico da empresa ou da figura pública que escreve o site",
-                "PAGINA DE <strong>CONTATO<\/strong>: Com formulário de envio, podendo conter outras informações como telefone, mapa do google e redes sociais)": "PAGINA DE <strong>CONTATO<\/strong>: Com formulário de envio, podendo conter outras informações como telefone, mapa do google e redes sociais)",
+                "PAGINA DE <strong>CONTATO<\/strong>: Com formulário de envio, podendo conter outras informações como telefone, mapa do google e redes sociais + armazenamento de email": "PAGINA DE <strong>CONTATO<\/strong>: Com formulário de envio, podendo conter outras informações como telefone, mapa do google e redes sociais + armazenamento de email",
                 "PAGINA DE <strong>SERVIÇOS<\/strong>": "PAGINA DE <strong>SERVIÇOS<\/strong>",
                 "PÁGINA DE <strong>CLIENTES<\/strong>": "PÁGINA DE <strong>CLIENTES<\/strong>",
                 "PÁGINA DE <strong>PARCEIROS<\/strong>": "PÁGINA DE <strong>PARCEIROS<\/strong>",
+                "PÁGINA DE <strong>NOTÍCIAS \/ BLOG<\/strong>": "PÁGINA DE <strong>NOTÍCIAS \/ BLOG<\/strong>",
                 "PAGINA DE <strong>RECURSOS:<\/strong> Como por exemplo lista de recursos e\/ou downloads de arquivos": "PAGINA DE <strong>RECURSOS:<\/strong> Como por exemplo lista de recursos e\/ou downloads de arquivos"
             },
             "allow_custom": 0,
@@ -747,7 +784,7 @@
             "label": "... mais detalhes que deseja nas páginas do site",
             "name": "bform_site_5",
             "type": "textarea",
-            "instructions": "Selecione as páginas internas básicas, de conteúdos pontuais, que deverão constar no seu site. Você será livre para criar e gerenciar quantas páginas quiser em seu site, mas as páginas abaixo poderão ter uma estruturação diferente para mostrar seu conteúdo da melhor forma possível.",
+            "instructions": "Selecione as páginas internas básicas, de conteúdos pontuais, que deverão constar no seu site. Você será livre para criar e gerenciar quantas páginas quiser em seu site, mas as páginas acima poderão ter uma estruturação diferente para mostrar seu conteúdo da melhor forma possível.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -783,6 +820,23 @@
                         "field": "field_5ccf0c178fa6e",
                         "operator": "==",
                         "value": "site"
+                    },
+                    {
+                        "field": "field_5ccf36c99cdbf",
+                        "operator": "==",
+                        "value": "PÁGINA DE <strong>NOTÍCIAS \/ BLOG<\/strong>"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "minisite"
+                    },
+                    {
+                        "field": "field_5ccf36c99cdbf",
+                        "operator": "==",
+                        "value": "PÁGINA DE <strong>NOTÍCIAS \/ BLOG<\/strong>"
                     }
                 ]
             ],
@@ -793,13 +847,34 @@
             },
             "hide_admin": 0,
             "choices": {
-                "Listagem dos posts em forma resumida (caso não seja assinalado, os posts virão com conteúdo inteiro visível)": "Listagem dos posts em forma resumida (caso não seja assinalado, os posts virão com conteúdo inteiro visível)",
-                "Coluna lateral com widgets básicas": "Coluna lateral com widgets básicas",
-                "Área de posts mais populares": "Área de posts mais populares",
-                "Twitter (últimos tweets)": "Twitter (últimos tweets)",
-                "Youtube (vídeos incorporados do canal do site)": "Youtube (vídeos incorporados do canal do site)",
-                "Caixa postal": "Caixa postal",
-                "Área para enquete": "Área para enquete"
+                "<strong>001.<\/strong> Primeiro post completo com o restante em resumo\u2029": "<strong>001.<\/strong> Primeiro post completo com o restante em resumo\u2029",
+                "<strong>002.<\/strong> Posts de colaboradores com bio e contato de cada usuário\u2029": "<strong>002.<\/strong> Posts de colaboradores com bio e contato de cada usuário\u2029",
+                "<strong>003.<\/strong> Área de newsletter, com a plataforma mailing da minha preferência (ex: Feedsburner, Mailchimp, Leadlovers, Mautic etc)\u2029": "<strong>003.<\/strong> Área de newsletter, com a plataforma mailing da minha preferência (ex: Feedsburner, Mailchimp, Leadlovers, Mautic etc)\u2029",
+                "<strong>004.<\/strong> Categorias ilustradas em ícones\u2029": "<strong>004.<\/strong> Categorias ilustradas em ícones\u2029",
+                "<strong>005.<\/strong> Postagens relacionadas (automáticas)\u2029": "<strong>005.<\/strong> Postagens relacionadas (automáticas)\u2029",
+                "<strong>006.<\/strong> Descrição de autoria (ideal para blogs colaborativos)\u2029": "<strong>006.<\/strong> Descrição de autoria (ideal para blogs colaborativos)\u2029",
+                "<strong>007.<\/strong> Subtítulo de publicação\u2029": "<strong>007.<\/strong> Subtítulo de publicação\u2029",
+                "<strong>008.<\/strong> Sinalização para post patrocinado com frase customizável, vinculado a uma tag escolhida\u2029": "<strong>008.<\/strong> Sinalização para post patrocinado com frase customizável, vinculado a uma tag escolhida\u2029",
+                "<strong>009.<\/strong> Índice de postagem (ideal para quem escreve muito!)\u2029": "<strong>009.<\/strong> Índice de postagem (ideal para quem escreve muito!)\u2029",
+                "<strong>010.<\/strong> Recurso “carregar mais posts” na mesma página, uma alternativa mais otimizada à paginação padrão do Wordpress": "<strong>010.<\/strong> Recurso “carregar mais posts” na mesma página, uma alternativa mais otimizada à paginação padrão do Wordpress",
+                "<strong>011.<\/strong> Galeria de fotos + zoom em lightbox\u2029": "<strong>011.<\/strong> Galeria de fotos + zoom em lightbox\u2029",
+                "<strong>012.<\/strong> Conteúdo abre \/ fecha efeito sanfona (toggle)\u2029": "<strong>012.<\/strong> Conteúdo abre \/ fecha efeito sanfona (toggle)\u2029",
+                "<strong>013.<\/strong> Conteúdo abre \/ fecha efeito abas (tabs)\u2029": "<strong>013.<\/strong> Conteúdo abre \/ fecha efeito abas (tabs)\u2029",
+                "<strong>014.<\/strong> Receita (ingredientes e preparo) + botão imprimir\u2029": "<strong>014.<\/strong> Receita (ingredientes e preparo) + botão imprimir\u2029",
+                "<strong>015.<\/strong> Ficha técnica de obra (ﬁlme, série, livro ou game) \u2029": "<strong>015.<\/strong> Ficha técnica de obra (ﬁlme, série, livro ou game) \u2029",
+                "<strong>016.<\/strong> Shop this post: lista de produtos + link afiliados\u2029": "<strong>016.<\/strong> Shop this post: lista de produtos + link afiliados\u2029",
+                "<strong>017.<\/strong> Imagem antes \/ depois (ideal para posts de DIY e decoração)\u2029": "<strong>017.<\/strong> Imagem antes \/ depois (ideal para posts de DIY e decoração)\u2029",
+                "<strong>018.<\/strong> Pinar publicação + área de banner para Pinterest\u2029": "<strong>018.<\/strong> Pinar publicação + área de banner para Pinterest\u2029",
+                "<strong>019.<\/strong> Download de materiais digitais (freebies)\u2029": "<strong>019.<\/strong> Download de materiais digitais (freebies)\u2029",
+                "<strong>020.<\/strong> Colaboradores com foto (via gravatar) + link para publicações\u2029": "<strong>020.<\/strong> Colaboradores com foto (via gravatar) + link para publicações\u2029",
+                "<strong>021.<\/strong> Posts mais visitados + escolha por período\u2029": "<strong>021.<\/strong> Posts mais visitados + escolha por período\u2029",
+                "<strong>022.<\/strong> Últimos pins do pinterest (por @ ou board)\u2029": "<strong>022.<\/strong> Últimos pins do pinterest (por @ ou board)\u2029",
+                "<strong>023.<\/strong> Últimos tweets\u2029": "<strong>023.<\/strong> Últimos tweets\u2029",
+                "<strong>024.<\/strong> Youtube: vídeos em destaque + botão de inscrição\u2029": "<strong>024.<\/strong> Youtube: vídeos em destaque + botão de inscrição\u2029",
+                "<strong>025.<\/strong> Blogroll \/ Sites parceiros (mostrar por foto \/ marca)\u2029": "<strong>025.<\/strong> Blogroll \/ Sites parceiros (mostrar por foto \/ marca)\u2029",
+                "<strong>026.<\/strong> Últimos posts de uma categoria escolhida\u2029": "<strong>026.<\/strong> Últimos posts de uma categoria escolhida\u2029",
+                "<strong>027.<\/strong> Caixa postal\u2029": "<strong>027.<\/strong> Caixa postal\u2029",
+                "<strong>028.<\/strong> Agenda de eventos e posts (calendário dinâmico)\u2029": "<strong>028.<\/strong> Agenda de eventos e posts (calendário dinâmico)\u2029"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -807,34 +882,6 @@
             "toggle": 0,
             "return_format": "value",
             "save_custom": 0
-        },
-        {
-            "key": "field_5ccf38d4f02aa",
-            "label": "... mais detalhes que deseja no blog",
-            "name": "bform_site_7",
-            "type": "textarea",
-            "instructions": "Veja mais opções na página 6 da <a href=\"https:\/\/afcweb.design\/orcamento2020.pdf\" target=\"_blank\">tabela de orçamento<\/a> específica para blogs sem custo adicional.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ccf0c178fa6e",
-                        "operator": "==",
-                        "value": "site"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 6,
-            "new_lines": ""
         },
         {
             "key": "field_5ccf41cd99406",
@@ -858,7 +905,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "Você pode enriquecer o seu layout com diversos detalhes e funcionalidades. Liste abaixo os itens que você deseja incluir. Caso tenha dúvida de alguma opção, não hesite em entrar em contato e solucionar sua questão. Os números em negrito são referência aos respectivos números dos itens presentes na <a href=\"https:\/\/afcweb.design\/orcamento2020.pdf\" target=\"_blank\">tabela de orçamento<\/a>, página 6.<br><br><strong>Custo adicional: R$25,00 cada item.<\/strong>",
+            "message": "Você pode enriquecer o seu layout com diversos detalhes e funcionalidades. Liste abaixo os itens que você deseja incluir. Caso tenha dúvida de alguma opção, não hesite em entrar em contato e solucionar sua questão. Os números em negrito são referência aos respectivos números dos itens presentes no <a href=\"https:\/\/afcweb.design\/informacoes.pdf\" target=\"_blank\">documento auxiliar<\/a>, página 3.<br><br><strong>O custo adicional ao orçamento será de acordo com a quantidade de itens assinalados associado ao grau de complexidade no desenvolvimento.<\/strong>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -885,20 +932,26 @@
             },
             "hide_admin": 0,
             "choices": {
-                "<strong>001.<\/strong> Box promocionais dinâmicos (foto, link e título)": "<strong>001.<\/strong> Box promocionais dinâmicos (foto, link e título)",
-                "<strong>002.<\/strong> Habilitar widgets no rodapé": "<strong>002.<\/strong> Habilitar widgets no rodapé",
-                "<strong>003.<\/strong> Áreas de anúncios (até 3 áreas diferentes)": "<strong>003.<\/strong> Áreas de anúncios (até 3 áreas diferentes)",
-                "<strong>004.<\/strong> Área de inserção de script adicionais (recomendado para blogs que possuem parceiros e anunciantes)": "<strong>004.<\/strong> Área de inserção de script adicionais (recomendado para blogs que possuem parceiros e anunciantes)",
-                "<strong>005.<\/strong> Áreas de conteúdo incorporado entre a diagramação de um post e outro (fotos do instagram, pinterest, youtube, anúncios, thumbnails de uma categoria específica etc)": "<strong>005.<\/strong> Áreas de conteúdo incorporado entre a diagramação de um post e outro (fotos do instagram, pinterest, youtube, anúncios, thumbnails de uma categoria específica etc)",
-                "<strong>006.<\/strong> Primeiro post completo com o restante em grid com resumo": "<strong>006.<\/strong> Primeiro post completo com o restante em grid com resumo",
-                "<strong>007.<\/strong> Layout de listagem de uma categoria ou tag específica diferente das demais": "<strong>007.<\/strong> Layout de listagem de uma categoria ou tag específica diferente das demais",
-                "<strong>008.<\/strong> Listagem de posts de colaboradores com informação de perfil e contato de cada usuário": "<strong>008.<\/strong> Listagem de posts de colaboradores com informação de perfil e contato de cada usuário",
-                "<strong>009.<\/strong> Menu de categorias (além do menu global)": "<strong>009.<\/strong> Menu de categorias (além do menu global)",
-                "<strong>010.<\/strong> Página de arquivos organizada por ano, mês, categoria e palavras-chave (tags)": "<strong>010.<\/strong> Página de arquivos organizada por ano, mês, categoria e palavras-chave (tags)",
-                "<strong>011.<\/strong> Página interna com layout personalizado": "<strong>011.<\/strong> Página interna com layout personalizado",
-                "<strong>012.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem": "<strong>012.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem",
-                "<strong>013.<\/strong> Área destaque para uma categoria ou tag específica (ex: ultimos looks, últimas resenhas etc)": "<strong>013.<\/strong> Área destaque para uma categoria ou tag específica (ex: ultimos looks, últimas resenhas etc)",
-                "<strong>014.<\/strong> Área de newsletter (feedsburner ou mailchimp)": "<strong>014.<\/strong> Área de newsletter (feedsburner ou mailchimp)"
+                "<strong>001.<\/strong> Box promocionais dinâmicos (foto, link e título)\u2029": "<strong>001.<\/strong> Box promocionais dinâmicos (foto, link e título)\u2029",
+                "<strong>002.<\/strong> Habilitar widgets no rodapé\u2029": "<strong>002.<\/strong> Habilitar widgets no rodapé\u2029",
+                "<strong>003.<\/strong> Áreas de anúncios (até 3 áreas diferentes)\u2029": "<strong>003.<\/strong> Áreas de anúncios (até 3 áreas diferentes)\u2029",
+                "<strong>004.<\/strong> Áreas de conteúdo incorporado entre a diagramação de um post e outro para destacar um material específico\u2029": "<strong>004.<\/strong> Áreas de conteúdo incorporado entre a diagramação de um post e outro para destacar um material específico\u2029",
+                "<strong>005.<\/strong> Primeiro post completo com o restante em resumo\u2029": "<strong>005.<\/strong> Primeiro post completo com o restante em resumo\u2029",
+                "<strong>006.<\/strong> Categoria ou tag personalizada (listagem diferente)\u2029": "<strong>006.<\/strong> Categoria ou tag personalizada (listagem diferente)\u2029",
+                "<strong>007.<\/strong> Posts de colaboradores com bio e contato de cada usuário\u2029": "<strong>007.<\/strong> Posts de colaboradores com bio e contato de cada usuário\u2029",
+                "<strong>008.<\/strong> Menu de categorias (além do menu global padrão)\u2029": "<strong>008.<\/strong> Menu de categorias (além do menu global padrão)\u2029",
+                "<strong>009.<\/strong> Página de arquivos organizada por ano, mês, categoria e palavras-chave (tags)\u2029": "<strong>009.<\/strong> Página de arquivos organizada por ano, mês, categoria e palavras-chave (tags)\u2029",
+                "<strong>010.<\/strong> Página inicial personalizada, diferente das páginas internas (ideal para dar ao blog um quê mais profissional)\u2029": "<strong>010.<\/strong> Página inicial personalizada, diferente das páginas internas (ideal para dar ao blog um quê mais profissional)\u2029",
+                "<strong>011.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem\u2029": "<strong>011.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem\u2029",
+                "<strong>012.<\/strong> Área de newsletter, com a plataforma mailing da minha preferência (ex: Feedsburner, Mailchimp, Leadlovers, Mautic etc)\u2029": "<strong>012.<\/strong> Área de newsletter, com a plataforma mailing da minha preferência (ex: Feedsburner, Mailchimp, Leadlovers, Mautic etc)\u2029",
+                "<strong>013.<\/strong> Categorias ilustradas em ícones\u2029": "<strong>013.<\/strong> Categorias ilustradas em ícones\u2029",
+                "<strong>014.<\/strong> Postagens relacionadas (automáticas)\u2029": "<strong>014.<\/strong> Postagens relacionadas (automáticas)\u2029",
+                "<strong>015.<\/strong> Descrição de autoria (ideal para blogs colaborativos)\u2029": "<strong>015.<\/strong> Descrição de autoria (ideal para blogs colaborativos)\u2029",
+                "<strong>016.<\/strong> Área de imagem destacada extra\u2029": "<strong>016.<\/strong> Área de imagem destacada extra\u2029",
+                "<strong>017.<\/strong> Subtítulo de publicação\u2029": "<strong>017.<\/strong> Subtítulo de publicação\u2029",
+                "<strong>018.<\/strong> Sinalização para post patrocinado com frase customizável, vinculado a uma tag escolhida\u2029": "<strong>018.<\/strong> Sinalização para post patrocinado com frase customizável, vinculado a uma tag escolhida\u2029",
+                "<strong>019.<\/strong> Índice de postagem (ideal para quem escreve muito!)\u2029": "<strong>019.<\/strong> Índice de postagem (ideal para quem escreve muito!)\u2029",
+                "<strong>020.<\/strong> Recurso “carregar mais posts” na mesma página, uma alternativa mais otimizada à paginação padrão do Wordpress": "<strong>020.<\/strong> Recurso “carregar mais posts” na mesma página, uma alternativa mais otimizada à paginação padrão do Wordpress"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -912,7 +965,7 @@
             "label": "Estrutura do post",
             "name": "bform_blog_2",
             "type": "checkbox",
-            "instructions": "Itens que farão parte do post para você utilizar como recurso para enriquecer seu conteúdo.",
+            "instructions": "Itens que farão parte do post para você utilizar como recurso para enriquecer seu conteúdo. Tais itens podem ser blocos gutenberg ou shortcodes.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -930,20 +983,18 @@
             },
             "hide_admin": 0,
             "choices": {
-                "<strong>015.<\/strong> Galeria de fotos (personalização da galeria padrão do WP)": "<strong>015.<\/strong> Galeria de fotos (personalização da galeria padrão do WP)",
-                "<strong>016.<\/strong> Categoria em ícone": "<strong>016.<\/strong> Categoria em ícone",
-                "<strong>017.<\/strong> Posts relacionados": "<strong>017.<\/strong> Posts relacionados",
-                "<strong>018.<\/strong> Descrição de autor (indicado para blogs colaborativos)": "<strong>018.<\/strong> Descrição de autor (indicado para blogs colaborativos)",
-                "<strong>019.<\/strong> Abas de conteúdo interno": "<strong>019.<\/strong> Abas de conteúdo interno",
-                "<strong>020.<\/strong> Toogle (conteúdo abre\/fecha)": "<strong>020.<\/strong> Toogle (conteúdo abre\/fecha)",
-                "<strong>021.<\/strong> Ficha técnica de filme \/ série \/ livro \/ game com classificação, capa e sinopse": "<strong>021.<\/strong> Ficha técnica de filme \/ série \/ livro \/ game com classificação, capa e sinopse",
-                "<strong>022.<\/strong> Área de imagem destacada extra": "<strong>022.<\/strong> Área de imagem destacada extra",
-                "<strong>023.<\/strong> Inserção rápida de playlist spotify \/ deezer": "<strong>023.<\/strong> Inserção rápida de playlist spotify \/ deezer",
-                "<strong>024.<\/strong> Recurso de foto antes \/ depois": "<strong>024.<\/strong> Recurso de foto antes \/ depois",
-                "<strong>025.<\/strong> Área de receita com lista de ingredientes, com área de “modo de preparo” e botão de imprimir receita": "<strong>025.<\/strong> Área de receita com lista de ingredientes, com área de “modo de preparo” e botão de imprimir receita",
-                "<strong>026.<\/strong> Frase de citação (diferente da formatação de títulos e blockquote)": "<strong>026.<\/strong> Frase de citação (diferente da formatação de títulos e blockquote)",
-                "<strong>027.<\/strong> Sinalização para post patrocinado com frase customizável": "<strong>027.<\/strong> Sinalização para post patrocinado com frase customizável",
-                "<strong>028.<\/strong> Subtítulo de postagem": "<strong>028.<\/strong> Subtítulo de postagem"
+                "<strong>021.<\/strong> Galeria de fotos + zoom em lightbox\u2029": "<strong>021.<\/strong> Galeria de fotos + zoom em lightbox\u2029",
+                "<strong>022.<\/strong> Publicações sugeridas (entre parágrafos)\u2029": "<strong>022.<\/strong> Publicações sugeridas (entre parágrafos)\u2029",
+                "<strong>023.<\/strong> Conteúdo abre \/ fecha efeito sanfona (toggle)\u2029": "<strong>023.<\/strong> Conteúdo abre \/ fecha efeito sanfona (toggle)\u2029",
+                "<strong>024.<\/strong> Conteúdo abre \/ fecha efeito abas (tabs)\u2029": "<strong>024.<\/strong> Conteúdo abre \/ fecha efeito abas (tabs)\u2029",
+                "<strong>025.<\/strong> Receita (ingredientes e preparo) + botão imprimir\u2029": "<strong>025.<\/strong> Receita (ingredientes e preparo) + botão imprimir\u2029",
+                "<strong>026.<\/strong> Ficha técnica de obra (ﬁlme, série, livro ou game) \u2029": "<strong>026.<\/strong> Ficha técnica de obra (ﬁlme, série, livro ou game) \u2029",
+                "<strong>027.<\/strong> Shop this post: lista de produtos + link afiliados\u2029": "<strong>027.<\/strong> Shop this post: lista de produtos + link afiliados\u2029",
+                "<strong>028.<\/strong> Imagem antes \/ depois (ideal para posts de DIY e decoração)\u2029": "<strong>028.<\/strong> Imagem antes \/ depois (ideal para posts de DIY e decoração)\u2029",
+                "<strong>029.<\/strong> Newsletter (entre parágrafos)\u2029": "<strong>029.<\/strong> Newsletter (entre parágrafos)\u2029",
+                "<strong>030.<\/strong> Pinar publicação + área de banner para Pinterest\u2029": "<strong>030.<\/strong> Pinar publicação + área de banner para Pinterest\u2029",
+                "<strong>031.<\/strong> Botões personalizados (com opção de tamanho e cores) \u2029": "<strong>031.<\/strong> Botões personalizados (com opção de tamanho e cores) \u2029",
+                "<strong>032.<\/strong> Download de materiais digitais (freebies)\u2029": "<strong>032.<\/strong> Download de materiais digitais (freebies)\u2029"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -975,20 +1026,17 @@
             },
             "hide_admin": 0,
             "choices": {
-                "<strong>029.<\/strong> Colaboradores com foto (via gravatar) com link para listagem de post de cada usuário": "<strong>029.<\/strong> Colaboradores com foto (via gravatar) com link para listagem de post de cada usuário",
-                "<strong>030.<\/strong> Posts mais visitados": "<strong>030.<\/strong> Posts mais visitados",
-                "<strong>031.<\/strong> Pinterest (por usuário ou por board)": "<strong>031.<\/strong> Pinterest (por usuário ou por board)",
-                "<strong>032.<\/strong> Twitter": "<strong>032.<\/strong> Twitter",
-                "<strong>033.<\/strong> Youtube (vídeo destaque e botão de inscrição)": "<strong>033.<\/strong> Youtube (vídeo destaque e botão de inscrição)",
-                "<strong>034.<\/strong> Blogroll em fotos": "<strong>034.<\/strong> Blogroll em fotos",
-                "<strong>035.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem": "<strong>035.<\/strong> Mapa mundi de viagens com cadastro de pins e links de posts desejados para cada viagem",
-                "<strong>036.<\/strong> Wishlist (com cadastro de imagem + link)": "<strong>036.<\/strong> Wishlist (com cadastro de imagem + link)",
-                "<strong>037.<\/strong> Ultimos posts de uma categoria específica": "<strong>037.<\/strong> Ultimos posts de uma categoria específica",
-                "<strong>038.<\/strong> Parceiros (em listagem ou slide)": "<strong>038.<\/strong> Parceiros (em listagem ou slide)",
-                "<strong>039.<\/strong> Newsletter (feedsburner ou mailchimp)": "<strong>039.<\/strong> Newsletter (feedsburner ou mailchimp)",
-                "<strong>040.<\/strong> Caixa postal": "<strong>040.<\/strong> Caixa postal",
-                "<strong>041.<\/strong> Agenda de posts publicados e\/ou agendados e eventos personalizados": "<strong>041.<\/strong> Agenda de posts publicados e\/ou agendados e eventos personalizados",
-                "<strong>042.<\/strong> Categorias selecionadas em link ou em ícone (diferente do padrão onde a listagem é de todas as categorias utilizadas)": "<strong>042.<\/strong> Categorias selecionadas em link ou em ícone (diferente do padrão onde a listagem é de todas as categorias utilizadas)"
+                "<strong>033.<\/strong> Colaboradores com foto (via gravatar) + link para publicações\u2029": "<strong>033.<\/strong> Colaboradores com foto (via gravatar) + link para publicações\u2029",
+                "<strong>034.<\/strong> Posts mais visitados + escolha por período\u2029": "<strong>034.<\/strong> Posts mais visitados + escolha por período\u2029",
+                "<strong>035.<\/strong> Últimos pins do pinterest (por @ ou board)\u2029": "<strong>035.<\/strong> Últimos pins do pinterest (por @ ou board)\u2029",
+                "<strong>036.<\/strong> Últimos tweets\u2029": "<strong>036.<\/strong> Últimos tweets\u2029",
+                "<strong>037.<\/strong> Youtube: vídeos em destaque + botão de inscrição\u2029": "<strong>037.<\/strong> Youtube: vídeos em destaque + botão de inscrição\u2029",
+                "<strong>038.<\/strong> Blogroll \/ Sites parceiros (mostrar por foto \/ marca)\u2029": "<strong>038.<\/strong> Blogroll \/ Sites parceiros (mostrar por foto \/ marca)\u2029",
+                "<strong>039.<\/strong> Wishlist: foto de produto + link (ideal para afiliados)\u2029": "<strong>039.<\/strong> Wishlist: foto de produto + link (ideal para afiliados)\u2029",
+                "<strong>040.<\/strong> Últimos posts de uma categoria escolhida\u2029": "<strong>040.<\/strong> Últimos posts de uma categoria escolhida\u2029",
+                "<strong>041.<\/strong> Caixa postal\u2029": "<strong>041.<\/strong> Caixa postal\u2029",
+                "<strong>042.<\/strong> Agenda de eventos e posts (calendário dinâmico)\u2029": "<strong>042.<\/strong> Agenda de eventos e posts (calendário dinâmico)\u2029",
+                "<strong>043.<\/strong> Lista de categorias favoritas (texto ou em ícone)": "<strong>043.<\/strong> Lista de categorias favoritas (texto ou em ícone)"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -999,10 +1047,10 @@
         },
         {
             "key": "field_5ccf5bd95e42a",
-            "label": "Quer algum item que não encontrou nos itens anteriores?",
+            "label": "Quer alguma funcionalidades que não encontrou nos itens anteriores?",
             "name": "bform_blog_4",
             "type": "textarea",
-            "instructions": "Especifique mais ou menos como você imagina o(s) item(s) que você não encontrou acima que faço algo exclusivo pra ti! Se quiser citar exemplos e links de outros blogs, fique à vontade.",
+            "instructions": "Especifique mais ou menos como você imagina que faço algo exclusivo pra ti! Se quiser citar exemplos e links de outros blogs como inspiração, fique à vontade. Quanto mais informação, melhor. :)",
             "required": 0,
             "conditional_logic": [
                 [
@@ -1030,7 +1078,7 @@
             "label": "Funcionalidades específicas \/ complexas",
             "name": "bform_geral_14",
             "type": "checkbox",
-            "instructions": "Funcionalidades específicas são áreas de desenvolvimento de alta complexidade ou de criação de publicações independentes do blog e das páginas internas que já ofertadas originalmente no Wordpress. Geralmente tem finalidade de promover informações específicas e direcionadas que estão em constante atualização.<br><br><strong>Custo extra: R$320 cada item<\/strong>",
+            "instructions": "Funcionalidades específicas são áreas de desenvolvimento de alta complexidade ou de criação de publicações independentes do blog e das páginas internas que já ofertadas originalmente no Wordpress. Geralmente tem finalidade de promover informações específicas e direcionadas a um público que estão em constante atualização, com um perfil mais mercadológico.<br><br>\r\n\r\nCaso tenha dúvida de alguma opção, não hesite em entrar em contato e solucionar sua questão e não esqueça de consultar o <a href=\"https:\/\/afcweb.design\/informacoes.pdf\" target=\"_blank\">documento auxiliar<\/a>! <strong>O custo adicional ao orçamento será de acordo com a quantidade de itens assinalados associado ao grau de complexidade no desenvolvimento.<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1040,14 +1088,15 @@
             },
             "hide_admin": 0,
             "choices": {
-                "<strong>ÁREA PORTFOLIO:<\/strong> exposição de trabalhos realizados, com galeria de fotos com descrição de cada projeto realizado": "<strong>ÁREA PORTFOLIO:<\/strong> exposição de trabalhos realizados, com galeria de fotos com descrição de cada projeto realizado",
-                "<strong>LOJA VIRTUAL NATIVA:<\/strong> significa que o e-commerce será dentro do seu site (usamos a tecnologia Woocommerce). <u>Obs:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem devido à alta requisição de servidor por parte do e-commerce": "<strong>LOJA VIRTUAL NATIVA:<\/strong> significa que o e-commerce será dentro do seu site (usamos a tecnologia Woocommerce). <u>Obs:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem devido à alta requisição de servidor por parte do e-commerce",
-                "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados como uma loja virtual, porém o botão de compra redireciona para uma plataforma externa de e-commerce, como Iluria, Loja integrada, Tanlup, Hotmart etc. Indicado para quem trabalha apenas com link de afiliado e ganha comissão por cliques.": "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados como uma loja virtual, porém o botão de compra redireciona para uma plataforma externa de e-commerce, como Iluria, Loja integrada, Tanlup, Hotmart etc. Indicado para quem trabalha apenas com link de afiliado e ganha comissão por cliques.",
-                "<strong>CATALOGO DE CURSOS \/ TREINAMENTOS:<\/strong> área com construtor de página de venda, com personalização de conteúdo e botão de matrícula direcionando para uma plataforma externa, como Hotmart ou Zoom.": "<strong>CATALOGO DE CURSOS \/ TREINAMENTOS:<\/strong> área com construtor de página de venda, com personalização de conteúdo e botão de matrícula direcionando para uma plataforma externa, como Hotmart ou Zoom.",
+                "<strong>ÁREA PORTFOLIO:<\/strong> tenha uma área própria para você cadastrar seus trabalhos com sistema de comentários, categorização de projeto, galeria de imagens, descrição completa com resumo, área de cadastro de membros de equipe e botão de acessar projeto online.": "<strong>ÁREA PORTFOLIO:<\/strong> tenha uma área própria para você cadastrar seus trabalhos com sistema de comentários, categorização de projeto, galeria de imagens, descrição completa com resumo, área de cadastro de membros de equipe e botão de acessar projeto online.",
+                "<strong>LOJA VIRTUAL NATIVA:<\/strong> utilizando a tecnologia Woocommerce adquira uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, estoque etc. <u>Obs:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem devido à alta requisição de servidor por parte do e-commerce.": "<strong>LOJA VIRTUAL NATIVA:<\/strong> utilizando a tecnologia Woocommerce adquira uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, estoque etc. <u>Obs:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem devido à alta requisição de servidor por parte do e-commerce.",
+                "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados como uma loja virtual, porém o botão de compra redireciona para uma plataforma externa. Ex: Iluria, Loja integrada, Tanlup, Hotmart, Eduzz, Zoom etc. Ideal para quem trabalha apenas como de afiliado e ganha comissão por cliques.": "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados como uma loja virtual, porém o botão de compra redireciona para uma plataforma externa. Ex: Iluria, Loja integrada, Tanlup, Hotmart, Eduzz, Zoom etc. Ideal para quem trabalha apenas como de afiliado e ganha comissão por cliques.",
+                "<strong>CONSTRUTOR PÁGINA DE VENDA:<\/strong> tenha um módulo de construção de landing pages completinhas do início ao fim, com captura de leads, fazendo uso apenas Blocos Gutenberg personalizados e feitos sob medida para seu layout!": "<strong>CONSTRUTOR PÁGINA DE VENDA:<\/strong> tenha um módulo de construção de landing pages completinhas do início ao fim, com captura de leads, fazendo uso apenas Blocos Gutenberg personalizados e feitos sob medida para seu layout!",
                 "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc": "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc",
                 "<strong>ÁRA DE ACESSO RESTRITO:<\/strong> uma área que só membros do seu site pode acessar. Pode estar associado a e-commerce, do qual só quem comprou algo no site (ou fez uma assinatura) possui acesso a conteúdos exclusivos.": "<strong>ÁRA DE ACESSO RESTRITO:<\/strong> uma área que só membros do seu site pode acessar. Pode estar associado a e-commerce, do qual só quem comprou algo no site (ou fez uma assinatura) possui acesso a conteúdos exclusivos.",
-                "<strong>GUIA DE FORNECEDORES:<\/strong> com possibilidade de funcionalidade de filtragem de busca (ideal para site de casamentos e decoração)": "<strong>GUIA DE FORNECEDORES:<\/strong> com possibilidade de funcionalidade de filtragem de busca (ideal para site de casamentos e decoração)",
-                "<strong>MIDIA KIT DINÂMICO:<\/strong> com criação de uma área específica para gerir o número de seguidores. Ideal para profissionais de geração de conteúdo. Pode conter gráficos, mapa com destaque nas regiões de maior engajamento, área de apresentação às empresas, formas de publicidade ofertadas, termos de uso e até mesmo um formulário de contato.": "<strong>MIDIA KIT DINÂMICO:<\/strong> com criação de uma área específica para gerir o número de seguidores. Ideal para profissionais de geração de conteúdo. Pode conter gráficos, mapa com destaque nas regiões de maior engajamento, área de apresentação às empresas, formas de publicidade ofertadas, termos de uso e até mesmo um formulário de contato."
+                "<strong>GUIA DE FORNECEDORES:<\/strong> área dedicada para busca e cadastro de profissionais, separados por segmentos, com cada fornecedor possuindo sua própria página de apresentação, com foto, marca, mapa, informações de contato etc. Indispensável para sites e blogs de decoração, casamentos e dentre outros eventos.": "<strong>GUIA DE FORNECEDORES:<\/strong> área dedicada para busca e cadastro de profissionais, separados por segmentos, com cada fornecedor possuindo sua própria página de apresentação, com foto, marca, mapa, informações de contato etc. Indispensável para sites e blogs de decoração, casamentos e dentre outros eventos.",
+                "<strong>MIDIA KIT DINÂMICO:<\/strong> com criação de uma área específica para gerir o número de seguidores. Ideal para profissionais de geração de conteúdo. Pode conter gráficos, mapa com destaque nas regiões de maior engajamento, área de apresentação às empresas, formas de publicidade ofertadas, termos de uso e até mesmo um formulário de contato.": "<strong>MIDIA KIT DINÂMICO:<\/strong> com criação de uma área específica para gerir o número de seguidores. Ideal para profissionais de geração de conteúdo. Pode conter gráficos, mapa com destaque nas regiões de maior engajamento, área de apresentação às empresas, formas de publicidade ofertadas, termos de uso e até mesmo um formulário de contato.",
+                "<strong>GERADOR DE POPUPS:<\/strong> popups lindos e descomplicados para promover seu conteúdo e capturar leads de forma mais amigável e menos invasiva ao público, com poder de personalização de texto, botões, imagem e formulário de captura. Filtre as páginas que seu popup será mostrando e qual momento será visto.": "<strong>GERADOR DE POPUPS:<\/strong> popups lindos e descomplicados para promover seu conteúdo e capturar leads de forma mais amigável e menos invasiva ao público, com poder de personalização de texto, botões, imagem e formulário de captura. Filtre as páginas que seu popup será mostrando e qual momento será visto."
             },
             "allow_custom": 0,
             "default_value": [],
@@ -1098,8 +1147,8 @@
             },
             "hide_admin": 0,
             "choices": {
-                "<strong>MODO AUTOMÁTICO:<\/strong> utiliza-se recurso do Google Tradutor, com tradução automática. <u>Não há custo adicional<\/u>": "<strong>MODO AUTOMÁTICO:<\/strong> utiliza-se recurso do Google Tradutor, com tradução automática. <u>Não há custo adicional<\/u>",
-                "<strong>MODO MANUAL:<\/strong> é aplicado o recurso de multilíngua dentro do sistema, onde a criação de conteúdo em outras línguas é feita manualmente. <u>Custo adicional: R$240<\/u>": "<strong>MODO MANUAL:<\/strong> é aplicado o recurso de multilíngua dentro do sistema, onde a criação de conteúdo em outras línguas é feita manualmente. <u>Custo adicional: R$240<\/u>"
+                "<strong>MODO SIMPLES:<\/strong> utiliza-se recurso do Google Tradutor, com tradução automática. Não detecta língua automaticamente no navegador do usuário. <u>Sem custo adicional.<\/u>": "<strong>MODO SIMPLES:<\/strong> utiliza-se recurso do Google Tradutor, com tradução automática. Não detecta língua automaticamente no navegador do usuário. <u>Sem custo adicional.<\/u>",
+                "<strong>MODO PRO:<\/strong> o recurso multilíngua é aplicado dentro do sistema, onde a criação de conteúdo em outras línguas é traduzido manualmente. Detecta língua automaticamente no navegador do usuário, provendo maior experiência. <u>Custo adicional de R$350.<\/u>": "<strong>MODO PRO:<\/strong> o recurso multilíngua é aplicado dentro do sistema, onde a criação de conteúdo em outras línguas é traduzido manualmente. Detecta língua automaticamente no navegador do usuário, provendo maior experiência. <u>Custo adicional de R$350.<\/u>"
             },
             "allow_null": 1,
             "other_choice": 0,
@@ -1158,7 +1207,7 @@
             "label": "Capas para perfis sociais",
             "name": "bform_midias",
             "type": "repeater",
-            "instructions": "Com a proposta de layout, você pode solicitar a confecção de peças gráficas (capas e avatares) para suas principais redes sociais. Verifique os preços promocionais na <a href=\"https:\/\/afcweb.design\/orcamento2020.pdf\" taget=\"_blank\">tabela de preço<\/a>, na página 6.",
+            "instructions": "Com a proposta de layout, você pode solicitar a confecção de peças gráficas (capas e avatares) para suas principais redes sociais.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1194,7 +1243,7 @@
                         "Linkedin": "Linkedin",
                         "Instagram": "Instagram"
                     },
-                    "default_value": [],
+                    "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -1266,7 +1315,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "Um template é uma imagem de base (podendo ser editável ou não) para a construção de uma peça gráfica específica. Aqui no studio criamos templates para você utilizar em sua rede social sempre que quiser.<br><br><strong>Custo de confecção: R$23,00 cada template.<\/strong>",
+            "message": "Um template é uma imagem de base (podendo ser editável ou não) para a construção de uma peça gráfica específica. Aqui no studio criamos templates para você utilizar em sua rede social sempre que quiser.",
             "new_lines": "",
             "esc_html": 0
         },
@@ -1302,7 +1351,7 @@
             "label": "Filtro Instagram (novo)",
             "name": "bform_midias_3",
             "type": "true_false",
-            "instructions": "Transformamos o seu filtro favorito do Lightroom diretamente para seus stories do insta! Além de filtro de cor, aplicamos também suavidade de linhas finas e grafismos usados na identidade visual para seu instagram combinar com seu layout.\r\n<br><br>\r\nObs: Não é realizado filtros de maquiagem, aplicação de cílios, máscaras e distorções faciais.\r\n<br><br>\r\n<strong>Custo de produção: R$240<\/strong>",
+            "instructions": "Transformamos o seu filtro favorito do Lightroom diretamente para seus stories do insta! Além de filtro de cor, aplicamos também suavidade de linhas finas e grafismos usados na identidade visual para seu instagram combinar com seu layout.\r\n<br><br>\r\nObs: Não é realizado filtros de maquiagem, aplicação de cílios, máscaras e distorções faciais.\r\n<br><br>\r\n<strong>Custo de produção: R$350<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1333,7 +1382,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "AFC WD - Formulário de briefing",
-    "modified": 1591194946
+    "modified": 1601404137
 }

@@ -173,9 +173,6 @@ function clientevip_columndash($columns) {
       'nomeprojeto' => __( 'Nome' ),
       'tipo' => __( 'Categoria' ),
       'dominio' => __( 'Domínio' ),
-      'nfse' => __( 'NFS-e' ),
-      // 'date' => __( 'Data' ),
-      // 'author' => __( 'Por' ),
     );
     return $columns;  
 }
@@ -190,9 +187,6 @@ if ( in_array( 'administrator', (array) $user->roles ) ) {
         'nomeprojeto' => __( 'Nome' ),
         'tipo' => __( 'Categoria' ),
         'dominio' => __( 'Domínio' ),
-        'nfse' => __( 'NFS-e' ),
-        'date' => __( 'Data' ),
-        'author' => __( 'Por' ),
       );
       return $columns;  
   }
@@ -209,10 +203,5 @@ function clientevip_columndash_content($column_name) {
     if ($column_name == 'nomeprojeto') { echo get_field('bform_nome',$idpost); }
     if ($column_name == 'tipo') { echo get_field('bform_estr',$idpost); }
     if ($column_name == 'dominio') { echo get_field('bform_link',$idpost); }
-    if ($column_name == 'nfse') { 
-      if (get_field('bform_nfse',$idpost)) {
-        echo 'Sim';
-      } else { echo '-'; }
-    }
 }
 

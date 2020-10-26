@@ -104,7 +104,7 @@ echo '<section class="chamada-orcamento pag-projeto">';
 	echo '<div class="wrap" data-aos="fade-left">';
 		echo '<h2 class="rosa marca-dagua">Gostou do que viu? <span aria-hidden="true">Peça seu orçamento</span></h2>';
 		echo '<p><strong>Faça sua cotação</strong> e comece o planejamento de seu projeto hoje mesmo!</p>';
-		echo '<p><a href="'.$urlHome.'contato" class="button rosa medio">Pedir orçamento</a></p>';
+		echo '<p><a href="'.$urlHome.'contato" class="button rosa medio">Pedir orçamento</a> <br> <a href="#faq" data-target="#faq" class="abre-modal"><small>Dúvidas? Veja o F.A.Q. do studio.</small></a></p>';
 	echo '</div>';
 echo '</section>';	
 

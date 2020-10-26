@@ -36,7 +36,7 @@ echo '<section class="container" id="lista-projetos">';
 					echo '<div class="wrap" data-aos="fade-left" data-aos-delay="'.$timer.'">';
 						echo '<h2 class="verde marca-dagua">Gostou do que viu? <span aria-hidden="true">Peça seu orçamento</span></h2>';
 						echo '<p><strong>Faça sua cotação</strong> e comece o planejamento de seu projeto hoje mesmo!</p>';
-						echo '<p><a href="'.$urlHome.'contato" class="button verde medio">Pedir orçamento</a></p>';
+						echo '<p><a href="'.$urlHome.'contato" class="button verde medio">Pedir orçamento</a> <br> <a href="#faq" data-target="#faq" class="abre-modal"><small>Dúvidas? Veja o F.A.Q. do studio.</small></a></p>';
 					echo '</div>';
 				echo '</section>';
 				

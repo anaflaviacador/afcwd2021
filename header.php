@@ -30,12 +30,16 @@ if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocom
 				    $pgAdmin = admin_url();
 				    
 				    $user = wp_get_current_user();
-				    $role = $user->roles[0];
-					if( $role == 'administrator' ) {
-				        $pgAoLogar = $pgAdmin;
+
+				    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+				        if ( in_array( 'administrator', $user->roles ) ) {
+				            $pgAoLogar = $pgAdmin;
+				        } else {
+							$pgAoLogar = $pgConta;
+				        }
 				    } else {
-				        $pgAoLogar = $pgConta;
-				    }	
+				    	$pgAoLogar = home_url();
+				    }
 			    }
 
 				$numItensCarrinho = WC()->cart->get_cart_contents_count();

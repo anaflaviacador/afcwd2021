@@ -167,3 +167,61 @@
 		}
 	}
 }
+
+
+
+// ========================================//
+// PERGUNTAS FREQUENTES
+// ========================================//
+.abinhas {
+	position: relative;
+	text-align: left;
+	font-size: 0.9em;
+
+	.aba {
+		margin: 20px 0 0 0;
+
+		.aba-titulo {
+			font-size: 1em;
+			font-weight: 500;
+			display: block;
+			position: relative;
+			padding: 8px 12px;
+			border-radius: 5px;
+			cursor: pointer;
+			background: var(--cor-roxo-claro);
+
+			&:before {
+				display: inline-block;
+				margin-right: 10px;
+				content: "\f105";
+				font-family: $fonte-icone;
+				color: var(--cor-roxo);
+				vertical-align: middle;
+			}
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			&.ativo {font-weight: bold;}
+		}
+		
+		.aba-conteudo {
+			padding: 25px 15px 15px;
+			position: relative;
+			z-index: 1;
+			margin: 0;
+			display:none;
+			@extend article;
+
+			// p:last-child {margin-bottom: 0;}
+		}
+
+		&:first-of-type {
+			margin-top: 0;
+
+			.aba-conteudo {display: block;}
+		}
+	}
+}

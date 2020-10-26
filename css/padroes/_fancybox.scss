@@ -866,4 +866,11 @@ body.compensate-for-scrollbar {
 
 		.obs { font-size: .75em; font-style: italic; }
 	}
+
+	@media (max-width: $smart-maior) {
+		padding: 20px 10px !important;
+	}
+	@media (max-width: $smart-menor) {
+		padding-top: 40px !important; padding-left: 0 !important; padding-right: 0 !important;
+	}
 }

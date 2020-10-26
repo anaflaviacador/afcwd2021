@@ -23,6 +23,7 @@ function afc_setup() {
     add_filter( 'style_loader_src', 'afc_removequerystring', 10, 2 );
     add_filter( 'script_loader_src', 'afc_removequerystring', 10, 2 );
     add_filter( 'script_loader_tag', 'afc_asyncjs', 10, 2);
+    add_filter( 'script_loader_tag', 'afc_noasyncjs', 10, 2);
     add_filter( 'style_loader_tag', 'afc_cssnosync', 10, 4); 
     add_filter( 'xmlrpc_enabled', '__return_false');
 
@@ -107,7 +108,20 @@ if (class_exists('Woocommerce')) {
     global $woocommerce, $post;
     $response = false;
 
-    if (is_shop() || is_woocommerce() || is_product() || is_product_category() || is_cart() || is_checkout() || is_account_page() || is_page_template('woocommerce-pgs.php') || is_page_template('page-semsidebar-loja.php')) {
+    if (is_shop() || is_woocommerce() || is_product() || is_product_category() || is_product_tag() || is_cart() || is_checkout() || is_account_page()) {
+      $response = true;
+    }
+
+    return $response;
+  }
+
+  function afc_nao_woocommerce() {
+    // creditos: https://webcraft.tools/create-your-own-conditional-tag/
+    // condicional para mostrar algo apenas em paginas woocommerce
+    global $woocommerce, $page;
+    $response = false;
+
+    if (! is_shop() && ! is_woocommerce() && ! is_product() && ! is_product_category() && ! is_product_tag() && ! is_cart() && ! is_checkout() && ! is_account_page()) {
       $response = true;
     }
 
@@ -150,30 +164,24 @@ function afc_load_styles() {
 
     // layout
     wp_enqueue_style('layout', $urltheme . '/css/layout.css', array(), '', 'all', null); 
-    // wp_enqueue_style('lazing', $urlCDN . '/aos@2.3.4/dist/aos.css', array(), '', 'all', null);
-    wp_enqueue_style('lazing', $urltheme . '/css/aos.css', array(), '', 'all', null);
+    wp_enqueue_style('lazing', $urlCDN . '/aos@2.3.4/dist/aos.css', array(), '', 'all', null);
     
     // jquery
     wp_deregister_script( 'jquery-core' );
     wp_register_script( 'jquery-core', $urlCDN . '/jquery@3.4.1/dist/jquery.min.js', array(), '' );
     wp_deregister_script( 'jquery-migrate' );
-    // wp_register_script( 'jquery-migrate', $urlCDN . '/jquery-migrate@3.3.1/dist/jquery-migrate.min.js', array(), '' );
+    wp_register_script( 'jquery-migrate', $urlCDN . '/jquery-migrate@3.3.1/dist/jquery-migrate.min.js', array(), '' );
+
+    if (is_front_page()) {
+      wp_enqueue_script( 'typewriter', $urlCDN . '/typewriter-effect@2.13.1/dist/core.js', array('jquery-core'), '', true);
+    }    
 
     // scripts
     // wp_enqueue_script( 'ganalytics', $urlCDN . '/ga-lite@2.1.0/dist/ga-lite.min.js', array('jquery-core'), '', false);
-    // wp_enqueue_script( 'fancybox', $urlCDN . '/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
-    // wp_enqueue_script( 'lazying', $urlCDN . '/aos@2.3.4/dist/aos.min.js', array('jquery-core'), '', true);
-    // wp_enqueue_script( 'masonrydepos', $urlCDN . '/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array('jquery-core'), '', true);
-    wp_enqueue_script( 'ganalytics', $urltheme . '/js/ga-lite.min.js', array('jquery-core'), '', false);
-    wp_enqueue_script( 'fancybox', $urltheme . '/js/jquery.fancybox.min.js', array('jquery-core'), '', true);
-    wp_enqueue_script( 'lazying', $urltheme . '/js/aos.min.js', array('jquery-core'), '', true);
-    wp_enqueue_script( 'masonrydepos', $urltheme . '/js/masonry.pkgd.min.js', array('jquery-core'), '', true);
-
-
-    if (is_front_page()) {
-      // wp_enqueue_script( 'typewriter', $urlCDN . '/typewriter-effect@2.13.1/dist/core.js', array('jquery-core'), '', true);
-      wp_enqueue_script( 'typewriter', $urltheme . '/js/typewriter.js', array('jquery-core'), '', true);
-    }
+    wp_enqueue_script( 'fancybox', $urlCDN . '/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
+    wp_enqueue_script( 'lazying', $urlCDN . '/aos@2.3.4/dist/aos.min.js', array('jquery-core'), '', false);
+    wp_enqueue_script( 'masonrydepos', $urlCDN . '/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array('jquery-core'), '', false);
+    wp_enqueue_script( 'depoimentos', $urltheme . '/js/depoimentos.js', array('masonrydepos'), '', false);
 
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
 
@@ -187,7 +195,7 @@ function afc_load_styles() {
 
 // colocar scripts assincronos
 function afc_asyncjs($tag, $handle) {
-   $scripts_to_async = array('ganalytics','fancybox','lazying','masonrydepos','scripts');
+   $scripts_to_async = array('fancybox','scripts');
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
          return str_replace(' src', ' async src', $tag);
@@ -196,8 +204,19 @@ function afc_asyncjs($tag, $handle) {
    return $tag;
 }
 
+// nao rodar SCRIPT de forma assincrona no LS Cache
+function afc_noasyncjs($tag, $handle) {
+   $scripts_to_noasync = array('typewriter', 'lazying','masonrydepos','depoimentos');
+   foreach($scripts_to_noasync as $async_script) {
+      if ($async_script === $handle) {
+         return str_replace(' src', ' data-no-async="1" src', $tag);
+      }
+   }
+   return $tag;
+}
 
-// nao rodar de forma assincrona no LS Cache
+
+// nao rodar CSS de forma assincrona no LS Cache
 function afc_cssnosync($tag, $handle) {
    $styles_preload = array('layout');
    foreach($styles_preload as $style_preloaded) {
@@ -210,16 +229,18 @@ function afc_cssnosync($tag, $handle) {
 
 
 function afc_load_scripts_head() {
+  // anayltics
+  echo '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10144283-7"></script>';
+  echo '<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'UA-10144283-7\');</script>';
 }
 
 
 function afc_load_scripts_footer() { 
   if(is_singular('etheme_portfolio')) { echo '<script async defer src="//assets.pinterest.com/js/pinit.js"></script>'; }
   if(is_front_page()) {
-    echo '<script type="text/javascript">';
-      echo "const instance = new Typewriter('#foco-frase', { strings: ['o site','a loja','o blog'],delay: 120,autoStart: true,loop: true});";
-    echo '</script>';
-  }  
+    echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'o site\',\'a loja\',\'o blog\'],delay: 120,autoStart: true,loop: true});</script>';
+  } 
+  echo '<script type="text/javascript">jQuery(document).ready(function(e){AOS.init({duration:600,easing:"ease-out",once:!0})});</script>';
 
   // configuracoes da barra de admin, caso exista
   if (is_admin_bar_showing()) {

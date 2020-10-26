@@ -11,7 +11,7 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 	// titulo da pagina inicial
 	echo '<h1 data-aos="fade-down">';
 		echo 'Tire o seu projeto do papel e <br>tenha &nbsp;';
-		echo '<span class="foco" id="foco-frase" aria-label="o site, o blog ou a loja virtual"></span>';
+		echo '<span class="foco" id="foco-frase" aria-label="o site, o blog ou a loja virtual">o site</span>';
 		echo ' que você <br>sempre sonhou.';
 	echo '</h1>';
 
@@ -36,14 +36,14 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-400.png" media="(max-width: 680px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
 				    
 				    // fallback
-				    echo '<img srcset="'.$urlTema.'/img/anaflaviacador-300.png">';
+				    echo '<img srcset="'.$urlTema.'/img/anaflaviacador-300.png" alt="Ana Flávia Cador - AFC Web Design">';
 				echo '</picture>';
 				echo '<h2 lang="en" class="ola cursivo">hello</h2>';
 			echo '</a>';
 
 			echo '<summary>';
 				echo '<p>Aqui é a Ana, a designer que toca o studio <span class="afc">'; get_template_part('img/afc'); echo '.</span> Desde 2007 realizo sonhos de <em>empreendedoras</em>, <em>influencers</em> e <em>blogueiras</em> projetando sites, lojas virtuais, blogs e ferramentas através de um  <strong class="rosa">design único</strong>, <strong class="verde">inteligente</strong>, com <strong class="roxo">personalidade</strong> e <strong class="bege">propósito</strong>.</p>';
-				echo '<p><a href="'.$urlHome.'servicos" class="button pequeno">Peça seu orçamento!</a></p>';
+				echo '<p><a href="'.$urlHome.'servicos" class="button pequeno">Conheça meu trabalho</a></p>';
 			echo '</summary>';
 		echo '</div>';
 
@@ -54,9 +54,9 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 			echo '<picture role="img" aria-label="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
 			    echo '<source srcset="'.$urlTema.'/img/mockup1.png" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
 			    echo '<source srcset="'.$urlTema.'/img/mockup1@2x.png" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
-			    echo '<img srcset="'.$urlTema.'/img/mockup1.png">';
+			    echo '<img srcset="'.$urlTema.'/img/mockup1.png" alt="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
 			echo '</picture>';
-			echo '<a href="/" class="ver">Projeto <strong>A Casa Delas</strong></a>';
+			echo '<a href="https://afcweb.design/projetos/" class="ver">Ver mais projetos como esse</a>';
 		echo '</div>';
 
 	echo '</div>';
@@ -101,7 +101,7 @@ echo '<section class="container" id="beneficios">';
 	echo '</div>';
 
 	echo '<div data-aos="fade-left">';
-		echo '<h2 class="cursivo">Leveza <span>+ eficiência</span></h2>';
+		echo '<h2 class="cursivo">Leveza <span>+ &nbsp;eficiência</span></h2>';
 		echo '<article>';
 			echo '<p>Com um <em>site rápido e layout amigável</em>, você é <strong>encontrada no Google</strong> com mais facilidade, aumentando as chances de ser mais conhecia e ganhar mais <em>autoridade</em> em seu nicho. Potencialize a <strong>monetização</strong> do seu conteúdo e converta leads em <em>verdadeiros clientes</em> para seu negócio!</p>';
 			echo '<p><a href="'.$urlHome.'servicos" class="button">Quero saber mais!</a></p>';

@@ -213,7 +213,7 @@ textarea {
 a.button, button.button, .button, .enviar input[type="submit"] {
 	display: inline-block;
 	outline: 0;
-	background: $roxo;
+	background-color: var(--cor-roxo) !important;
 	color: white !important;
 	letter-spacing: 0.09em;
 	line-height: 1;
@@ -229,7 +229,7 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	box-shadow: none !important;
 	@include transition(background 0.2s ease-in-out, padding 0.2s ease-in-out, transform 0.2s ease-in-out);
 	@extend %letterspacing;
-	@extend %borda-redonda;
+	border-radius: 100px !important;
 	@extend %textshadow;
 
 	&:hover, &:focus {
@@ -241,12 +241,12 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	    text-decoration: none !important;
 	}
 
-	&.grafite {background: var(--cor-grafite);}
-	&.rosa {background: var(--cor-rosa);}
-	&.roxo {background: var(--cor-roxo);}
-	&.verde {background: var(--cor-verde);}
-	&.bege {background: var(--cor-bege);}
-	&.azul {background: var(--cor-azul);}
+	&.grafite {background-color: var(--cor-grafite) !important;}
+	&.rosa {background-color: var(--cor-rosa) !important;}
+	&.roxo {background-color: var(--cor-roxo) !important;}
+	&.verde {background-color: var(--cor-verde) !important;}
+	&.bege,&.alt {background-color: var(--cor-bege) !important;}
+	&.azul {background-color: var(--cor-azul) !important;}
 
 	&.mini { font-size: .65em !important; padding: .6em 1.2em !important}
 	&.pequeno { font-size: .85em !important; padding: .6em 1.2em .8em !important}

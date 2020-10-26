@@ -1,0 +1,290 @@
+// ========================================//
+// MINHA CONTA
+// ========================================//
+// menu woo geral, inclusive canvas
+.woocommerce-MyAccount-navigation {
+	width: 100% !important; float: none !important;
+
+	ul {
+		width: 100%;
+
+		li {
+			a:before {
+				font-family: $fonte-icone; content: "";
+				font-weight: 400; display: inline-block;
+				margin-right: 8px; font-size: .9em;
+			}
+
+			&[class*="--dashboard"] a:before { content: "\f4c9"; }
+			&[class*="--orders"] a:before { content: "\f570"; }
+			&[class*="--downloads"] a:before { content: "\f0ed";}
+			&[class*="--edit-account"] a:before { content: "\f4fe"; }
+			&[class*="--customer-logout"] a:before { content: "\f08b"; }
+			&[class*="--docs"] a:before { content: "\f0ea"; }
+			&[class*="--briefing"] a:before { content: "\f036"; }
+			&[class*="--briefing-novo"] a:before { content: "\f305"; }
+		}
+	}
+
+	.menu-cliente {display: none; cursor: pointer}
+
+	// qdo o menu está na pagina
+	.container & {
+		background: white;
+		position: relative;
+		@extend %borda-redonda;
+		@extend %sombra-leve;
+		padding: 0 30px;
+		font-size: 12px; text-transform: uppercase;
+		@include transform(translateY(-75%));	
+
+		.menu-cliente {
+			padding: 10px;
+			width: 100%; text-align: center;
+			font-weight: 500; text-transform: uppercase;
+
+			i { color: var(--cor-roxo); margin-left: 8px;}
+		}
+
+
+		ul {
+		 	text-align: center;
+
+			li {
+				display: inline-block;
+				a {
+					color: currentColor; font-weight: 500;
+					text-decoration: none; padding: 10px;
+					display: block;
+				}
+
+				&:not(:first-child) {
+					a { padding-left: 25px; background: no-repeat left center url(../img/slash.svg);}
+				}
+
+				&:hover a, &:focus a, &[class*="is-active"] a {
+					&:before { color: var(--cor-roxo); }
+				}
+				&[class*="is-active"] a { font-weight: bold; }
+			}
+		}
+
+		@media (max-width: $container) {
+			.menu-cliente { display: block; }
+			ul { display: none; }
+		}	
+	}
+
+}
+
+
+
+.woocommerce-MyAccount-content {
+	width: 100% !important; max-width: $colmax !important; float: none !important;
+	margin: 0 auto;
+}
+
+.woocommerce-account {
+	form.edit-account {
+		margin-bottom: 3em;
+	}
+
+	.woocommerce-Address {
+		margin-top: 1em;
+
+		header.woocommerce-Address-title {
+			@include display(flex); line-height: 1;
+			@include align-items(center);
+
+			h3 { font-size: 1em; text-transform: uppercase; color: var(--cor-roxo);}
+			a {
+				display: inline-block;
+				outline: 0;
+				background: var(--cor-roxo);
+				color: white;
+				letter-spacing: 0.09em;
+				line-height: 1;
+				position: relative;
+				font-weight: bold;
+				text-transform: uppercase;
+				white-space: nowrap;
+				margin-left: 15px;
+				font-family: $fonte-redonda;
+				box-shadow: none;
+				@extend %letterspacing;
+				@extend %borda-redonda;
+				@extend %textshadow;
+				font-size: .65em; padding: .6em 1.2em;
+			}
+		}
+	}
+
+	table.shop_table {
+		input#submit, a.button, button.button, input.button {
+			font-size: 12px !important;
+		}
+	}
+}
+
+// ========================================//
+// DETALHES DE CONTA / PEDIDO
+// ========================================//
+.woocommerce-customer-details, .woocommerce-order-details, .woocommerce-order-downloads {
+	h2 { font-size: 1.2em; margin: 10px 0; }
+}
+
+
+// ========================================//
+// GERAL
+// ========================================//
+// quantidade
+.quantity .qty {
+	margin-top: 0;
+	padding-right: 5px;
+	border-radius: 4px;
+    line-height: 35px;
+}
+// input
+.input-text {line-height: inherit !important; min-height: 35px; padding: 5px 15px !important;}
+
+div.woocommerce {
+	fieldset {
+		margin-top: 3em;
+		legend { font-weight: bold; }
+	}
+
+	.show-password-input { top: 6px !important; }
+}
+
+
+// ========================================//
+// PAGINA DOCUMENTOS
+// ========================================//
+#pagina-docs {
+	min-height: 300px;
+	padding-bottom: 60px;
+
+	.sem-permissao { text-align: center; padding-top: 40px; }
+
+	.wrap-arquivos-cliente {
+		width: 100%;
+		@include flex(space-between);
+		position: relative;
+		
+		.box {
+			width: 48%;
+			border: 2px solid #EEE;
+			padding: 30px 20px 12px;
+			position: relative;
+			margin-bottom: 40px;
+			border-radius: 10px;
+
+			&.indisponivel {
+				cursor: not-allowed;
+			}
+
+			.vazio {
+				margin: 40px 0;
+				text-align: center;
+				font-weight: 300;
+				color: #CCC;
+				text-transform: uppercase;
+
+				span {
+					font-size: 0.9rem;
+					display: block;
+					margin-top: 5px;
+					font-style: italic;
+					text-transform: none;
+				}
+			}
+
+			h3 {
+				position: absolute;
+				top: 0; left: 10px;
+				@include transform(translateY(-50%));
+				background: white;
+				padding: 0 10px;
+				@include flex(space-between);
+				@include align-items(center);
+				text-transform: none;
+				font-size: 1.4em;
+
+				img {
+					width: 43px; height: auto;
+					margin-right: 10px;
+				}
+
+				span small {
+					font-weight: normal;
+					font-size: 13px;
+					display: block;
+					margin-top: 5px;
+					font-style: italic;
+					color: var(--cor-texto);
+					opacity: 0.6
+				}
+			}
+
+
+			ul li {
+				padding: 0 0 8px;
+				position: relative;
+				font-size: 0.85em;
+				@include flex(space-between);
+
+				&:before {
+					display: inline-block;
+					margin-right: 6px;
+					width: 17px;
+					font-family: $fonte-icone;
+					content: '\f004';
+					font-weight: 400;
+					margin-top: 2px;
+					color: var(--cor-rosa);
+				}
+
+				&:hover:before {font-weight: 900}
+
+				a {
+					display: block;
+					font-weight: 300;
+					color: inherit;
+					width: calc(100% - 23px);
+
+					span {
+						font-size: 0.75em;
+						display: block;
+						font-weight: normal;
+						opacity: 0.6;
+					}
+				}
+			}
+		}
+
+	}
+
+}
+
+
+// ========================================//
+// PAGINA BRIEFING
+// ========================================//
+#pagina-briefing {
+	@include flex(space-between);
+	padding-bottom: 60px;
+
+	.sidebar {
+		width: $colmax;
+		margin-bottom: 2em;
+		font-size: 13px; 
+
+		@media (min-width: $container + 1px) { width: calc(100% - #{$colmax} - 30px); }
+		@media (max-width: $container) { margin-left: auto; margin-right: auto; }
+
+		.saudacoes {text-transform: capitalize; margin-bottom: 10px}
+	}
+
+	
+}
+

@@ -11,16 +11,20 @@ nav.menu-site {
 	    padding: 0 10px;
 	    position: relative;
 	}
+	@media (max-width: $container - 1px) {width: 100%;}
+	@media (max-width: $tablet) { width: 370px; }
+	@media (max-width: $celular) { width: 262px }
 
 	ul {
-		margin: 0 auto;
+		margin: 0 auto; 
 		display: inline-block;
 
-		@media (min-width: $container) { padding: 0 50px; width: 100%; }
+		@media (min-width: $container) { padding: 0 50px; }
 		@media (min-width: $tablet) {
 			@include display(flex);
 			@include justify-content(space-around);
 			@include align-items(center);
+			width: 100%;
 		}
 
 

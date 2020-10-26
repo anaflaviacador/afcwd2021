@@ -1,41 +1,117 @@
 jQuery(document).ready(function($) {
   ////////////////////////////////// canvas
+  // var btMenu = $('#menu-mob'),
+  //     tagMain = $('main'),
+  //     tagCanvas = $('.canvas'),
+  //     tagOverlay = $('.canvas-overlay');
+  // tagMain.prepend( "<div class='canvas-overlay'></div>" );
+
+  // menu normal
+  // function escondeCanvas() {
+  //   $('.canvas, .canvas-overlay').removeClass('visivel');
+  //   setTimeout(function(){
+  //     $('.canvas, .canvas-overlay').removeClass('db');
+  //   },330)
+  //   tagMain.off('mousedown', escondeCanvas);
+  //   tagCanvas.off('swipeleft', escondeCanvas);
+  //   tagOverlay.removeClass('visivel');
+  //   console.log('escondeu');
+  // }
+
+  // function mostraCanvas() {
+  //   $('.canvas, .canvas-overlay').addClass('db');
+  //   setTimeout(function(){
+  //     $('.canvas, .canvas-overlay').addClass('visivel');
+  //   },20)
+  //   tagMain.on('mousedown', escondeCanvas);
+  //   tagCanvas.on('swipeleft', escondeCanvas);
+  // }
+  // btMenu.on('click', function(){
+  //  mostraCanvas();
+  //  console.log('clicou menu');
+  // }); 
+
+
+  ////////////////////////////////// canvas
   var btMenu = $('#menu-mob'),
+      btMenuCliente = $('.menu-cliente'),
       tagMain = $('main'),
-      tagCanvas = $('.canvas'),
+      tagCanvas = $('#canvas-bar'),
+      tagCanvasCliente = $('#canvas-cliente'),
       tagOverlay = $('.canvas-overlay');
   tagMain.prepend( "<div class='canvas-overlay'></div>" );
 
+
   // menu normal
   function escondeCanvas() {
-    $('.canvas, .canvas-overlay').removeClass('visivel');
+    $('#canvas-bar, .canvas-overlay').removeClass('visivel');
     setTimeout(function(){
-      $('.canvas, .canvas-overlay').removeClass('db');
+      $('#canvas-bar, .canvas-overlay').removeClass('db');
     },330)
     tagMain.off('mousedown', escondeCanvas);
     tagCanvas.off('swipeleft', escondeCanvas);
     tagOverlay.removeClass('visivel');
     console.log('escondeu');
   }
-
   function mostraCanvas() {
-    $('.canvas, .canvas-overlay').addClass('db');
+    $('#canvas-bar, .canvas-overlay').addClass('db');
     setTimeout(function(){
-      $('.canvas, .canvas-overlay').addClass('visivel');
+      $('#canvas-bar, .canvas-overlay').addClass('visivel');
     },20)
     tagMain.on('mousedown', escondeCanvas);
     tagCanvas.on('swipeleft', escondeCanvas);
   }
   btMenu.on('click', function(){
    mostraCanvas();
-   console.log('clicou menu');
-  }); 
+   console.log('clicou menu bar');
+  });
+
+
+  // menu categorias
+  function escondeCanvasCliente() {
+    $('#canvas-cliente, .canvas-overlay').removeClass('visivel');
+    setTimeout(function(){
+      $('#canvas-cliente, .canvas-overlay').removeClass('db');
+    },330)
+    tagMain.off('mousedown', escondeCanvasCliente);
+    tagCanvasCliente.off('swipeleft', escondeCanvasCliente);
+    tagOverlay.removeClass('visivel');
+    console.log('escondeu');
+  }  
+  function mostraCanvasCliente() {
+    $('#canvas-cliente, .canvas-overlay').addClass('db');
+    setTimeout(function(){
+      $('#canvas-cliente, .canvas-overlay').addClass('visivel');
+    },20)
+    tagMain.on('mousedown', escondeCanvasCliente);
+    tagCanvasCliente.on('swipeleft', escondeCanvasCliente);
+  }
+  btMenuCliente.on('click', function(){
+   mostraCanvasCliente();
+   console.log('clicou menu cliente');
+  });
+
+
+
 
   ////////////////////////////////// abinhas = accordion
-  $('.aba').find('.aba-titulo').click(function(){
-      $(this).next().slideToggle('fast');
-      $(".aba-conteudo").not($(this).next()).slideUp('fast');
-  });  
+  // $('.aba').find('.aba-titulo').click(function(){
+  //     $(this).next().slideToggle('fast');
+  //     $(".aba-conteudo").not($(this).next()).slideUp('fast');
+  // });  
+
+
+  var accordion = $('.aba');
+  accordion.find('.aba-titulo').on('click', function(event) {
+    var $thisArticle = $(this).siblings('.aba-conteudo');
+    
+    accordion.find('.aba-titulo').not($(this)).removeClass('ativo');
+    $(this).toggleClass('ativo');
+
+    accordion.find('.aba-conteudo').not($thisArticle).slideUp();
+    $thisArticle.slideToggle();
+  });
+
 
 
   ////////////////////////////////// Cookies: local storage
@@ -83,13 +159,13 @@ jQuery(document).ready(function($) {
       {
         beforeShow: function(instance,slide){
           $('html').addClass('noscroll');
-          console.log('abriu');
+          // console.log('abriu');
         },
         afterClose: function(instance,slide){
           $('html').removeClass('noscroll');
-          console.log('feshow');
+          // console.log('feshow');
         }
-      }  
+      }
     );
   });
 
@@ -135,36 +211,14 @@ jQuery(document).ready(function($) {
         afcwd_ChamadaWhaaa.append('Deixe seu recado que te retornarei em breve, ou entre em <a href="/contato">contato por email</a>. 💌');
     }    
   }
-
-
-  ////////////////////////////////// MASONRY - DEPOIMENTOS
-  var depoimentos = $('#depoimentos-incriveis > .container');
-  if (depoimentos.length > 0) {
-    var masonryArgs = {
-      itemSelector: '.depoimento',
-      columnWidth: '.grid-sizer',
-      gutter: '.gutter-sizer',
-      percentPosition: true
-    };
-    depoimentos.each(function(index, el) {
-      var $thisMasonry = $(el);
-      $thisMasonry.masonry(masonryArgs);
-      $thisMasonry.find('img').each(function(index, el) {
-        $(el).on('load', function(event) {
-          console.log('imagem de cliente carregou');
-          $thisMasonry.masonry('layout');
-        });
-      });
-    });
-  }  
-
+  
 
   ////////////////////////////////// lazying
   // creditos: https://michalsnik.github.io/aos/
-  AOS.init({
-    duration: 600,
-    easing: 'ease-out',
-    once: true,
-  });
+  // AOS.init({
+  //   duration: 600,
+  //   easing: 'ease-out',
+  //   once: true,
+  // });
 
 });

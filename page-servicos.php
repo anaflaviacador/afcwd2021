@@ -27,56 +27,54 @@ echo '<div class="container" id="pagina-servicos">';
 		echo '</div>';
 	echo '</section>';
 
-	get_template_part('inc/codigo-autoral');
 
 	echo '<section id="lista-servicos">';
-		echo '<h2 class="cursivo assinado" style="line-height: .3">mais<br />serviços</h2>';
+		// echo '<h2 class="cursivo assinado" style="line-height: .3">serviços</h2>';
 		echo '<ul>';
-			echo '<li class="azul" data-aos="fade-up">';
+
+			echo '<li class="roxo" data-aos="fade-up">';
 				echo '<header><i class="icone fal fa-bezier-curve"></i>';
 				echo '<h3 class="marca-dagua">Design <span aria-hidden="true">layout</span></h3></header>';
-				// echo '<div>'; 
-					echo '<p>Layout para sites, lojas virtuais, blogs e midia-kits, peças gráficas reutilizáveis para redes sociais e filtros Instagram</p>';
-				// echo '</div>';
+					echo '<p>Projeto de layout para websites, lojas virtuais, blogs, media kits, peças gráficas e templates para mídias sociais.</p>';
+				// echo '<footer><a href="#" title="" class="button pequeno">saiba mais</a></footer>';
 			echo '</li>';
-			echo '<li class="verde" data-aos="fade-up" data-aos-delay="150">';
+
+			echo '<li class="azul" data-aos="fade-up" data-aos-delay="150">';
 				echo '<header><i class="icone fal fa-code"></i>';
 				echo '<h3 class="marca-dagua">Programação <span aria-hidden="true">desenvolvimento</span></h3></header>';
-				// echo '<div>'; 
-					echo '<p>Programação em linguagem PHP para plataforma Wordpress ou em linguagem estática (HTML / CSS e javaScript)</p>';
-				// echo '</div>';
+					echo '<p>Programação para plataforma Wordpress (back-end) ou em linguagem estática (front-end).</p>';
+				// echo '<footer><a href="#" title="" class="button pequeno azul">saiba mais</a></footer>';
 			echo '</li>';
-			echo '<li class="rosa" data-aos="fade-up" data-aos-delay="250">';
+
+			echo '<li class="verde" data-aos="fade-up" data-aos-delay="250">';
 				echo '<header><i class="icone fab fa-wordpress"></i>';
 				echo '<h3 class="marca-dagua">Manutenção <span aria-hidden="true">suporte e auxílio</span></h3></header>';
-				// echo '<div>'; 
-					echo '<p>Manutenção periódica Wordpress e assistência ilimitada para clientes da casa enquanto fazem uso de um projeto '.do_shortcode('[afc]').'</p>';
-				// echo '</div>';
+					echo '<p>Manutenção mensal e assistência ilimitada para clientes da casa durante o uso de um produto '.do_shortcode('[afc]').'.</p>';
+				// echo '<footer><a href="#" title="" class="button pequeno verde">saiba mais</a></footer>';
 			echo '</li>';
-			echo '<li class="roxo" data-aos="fade-up" data-aos-delay="350">';
-				echo '<header><i class="icone fal fa-chart-line"></i>';
-				echo '<h3 class="marca-dagua">Otimização <span aria-hidden="true">mehorias</span></h3></header>';
-				// echo '<div>'; 
-					echo '<p>Análise de layout e sistema Wordpress, com proposta de correções e melhorias para máximo desempenho possível em velocidade e motores de busca</p>';
-				// echo '</div>';
-			echo '</li>';
-			echo '<li class="bege" data-aos="fade-up" data-aos-delay="450">';
-				echo '<header><i class="icone fal fa-palette"></i>';
-				echo '<h3 class="marca-dagua">Customização <span aria-hidden="true">personalização</span></h3></header>';
-				// echo '<div>'; 
-					echo '<p>Instalação de templates Wordpress com customização de identidade visual e configurações necessárias para funcionar com máximo desempenho.</p>';
-				// echo '</div>';
-			echo '</li>';
-			echo '<li data-aos="fade-up" data-aos-delay="550">';
+
+			// echo '<li class="roxo" data-aos="fade-up" data-aos-delay="350">';
+			// 	echo '<header><i class="icone fal fa-chart-line"></i>';
+			// 	echo '<h3 class="marca-dagua">Otimização <span aria-hidden="true">mehorias</span></h3></header>';
+			// 		echo '<p>Análise de layout e sistema Wordpress, com proposta de correções e melhorias para máximo desempenho possível em velocidade e motores de busca</p>';
+			// echo '</li>';
+
+			// echo '<li class="bege" data-aos="fade-up" data-aos-delay="450">';
+			// 	echo '<header><i class="icone fal fa-palette"></i>';
+			// 	echo '<h3 class="marca-dagua">Customização <span aria-hidden="true">personalização</span></h3></header>';
+			// 		echo '<p>Instalação de templates Wordpress com customização de identidade visual e configurações necessárias para funcionar com máximo desempenho.</p>';
+			// echo '</li>';
+
+			echo '<li class="bege" data-aos="fade-up" data-aos-delay="350">';
 				echo '<header><i class="icone fal fa-wrench"></i>';
 				echo '<h3 class="marca-dagua">Ferramentas <span aria-hidden="true">facilidades</span></h3></header>';
-				// echo '<div>'; 
-					echo '<p>Criação de Blocos personalizados para criação de conteúdo no editor Wordpress (5.0+), plugins e ferramentas para ajudar na automação de tarefas.</p>';
-				// echo '</div>';
+					echo '<p>Criação de blocos personalizados para editor Wordpress e ferramentas para auxiliar automação de tarefas.</p>';
+				// echo '<footer><a href="#" title="" class="button pequeno bege">saiba mais</a></footer>';
 			echo '</li>';
 		echo '</ul>';
 	echo '</section>';
 
+	get_template_part('inc/codigo-autoral');
 
 	echo '<div class="tipos-pagamento">';
 		echo '<ul aria-label="Tipos de pagamento">';
@@ -92,11 +90,11 @@ echo '<div class="container" id="pagina-servicos">';
 
 		echo '<div class="logos">';
 			echo '<img data-aos="zoom-out" src="'.$urlTema.'/img/logo-pagseguro.svg" alt="Aceitamos PagSeguro">';
-			echo '<img data-aos="zoom-out" data-aos-delay="150" src="'.$urlTema.'/img/logo-boleto.svg" alt="Pagamentos por boleto bancário">';
-			echo '<img data-aos="zoom-out" data-aos-delay="250" src="'.$urlTema.'/img/logo-bb.svg" alt="Transferência ou depósito para Banco do Brasil">';
-			echo '<img data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-nu.svg" alt="Transferência para NuConta">';
+			echo '<img data-aos="zoom-out" data-aos-delay="150" src="'.$urlTema.'/img/logo-cartoes.svg" alt="Aceitamos até 18 bandeiras de cartões de crédito">';
+			echo '<img data-aos="zoom-out" data-aos-delay="250" src="'.$urlTema.'/img/logo-boleto.svg" alt="Aceitamos pagamentos por boleto bancário">';
+			echo '<img data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-nu.svg" alt="Aceitamos pagamento por transferência para NuConta">';
 		echo '</div>';
-	echo '</div>';
+	echo '</div>';	
 
 echo '</div>';
 
