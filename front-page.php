@@ -69,7 +69,7 @@ echo '</section>';
 // PROJETOS
 // ========================================// 
 $tax = array('taxonomy' => 'categories', 'field' => 'slug', 'terms' => 'destaque');
-$args = array('post_type' => 'etheme_portfolio', 'order' => 'DESC', 'posts_per_page' => 6, 'tax_query' => array($tax));
+$args = array('post_type' => 'etheme_portfolio', 'orderby' => 'rand', 'posts_per_page' => 6, 'tax_query' => array($tax));
 
 $publicacoes = new WP_Query($args);
 if ( $publicacoes->have_posts() ) { $i = 0;

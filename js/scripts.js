@@ -95,12 +95,6 @@ jQuery(document).ready(function($) {
 
 
   ////////////////////////////////// abinhas = accordion
-  // $('.aba').find('.aba-titulo').click(function(){
-  //     $(this).next().slideToggle('fast');
-  //     $(".aba-conteudo").not($(this).next()).slideUp('fast');
-  // });  
-
-
   var accordion = $('.aba');
   accordion.find('.aba-titulo').on('click', function(event) {
     var $thisArticle = $(this).siblings('.aba-conteudo');
@@ -112,6 +106,15 @@ jQuery(document).ready(function($) {
     $thisArticle.slideToggle();
   });
 
+
+  //////////////////////////////////////// JUMP PARA QUALQUER LUGAR
+  $(document).on('click', 'a.jump[href^="#"]', function (event) {
+      event.preventDefault();
+
+      $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top
+      }, 1000);
+  });
 
 
   ////////////////////////////////// Cookies: local storage

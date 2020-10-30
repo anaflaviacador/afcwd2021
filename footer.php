@@ -4,7 +4,7 @@ $urlHome = esc_url(home_url('/'));
 // ========================================//
 // DEPOIMENTOS
 // ========================================// 
-if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing')) && afc_nao_woocommerce()) {
+if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing') && ! is_page('planos')) && afc_nao_woocommerce()) {
 	echo '<section id="depoimentos-incriveis" class="no-rodape">';
 		echo '<div class="container">';
 			echo '<span class="gutter-sizer"></span><span class="grid-sizer"></span>';
@@ -31,7 +31,7 @@ if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') 
 // RODAPE 
 // ========================================// 
 
-echo '<footer id="rodape"'.(is_singular('etheme_portfolio') || is_page('contato') || afc_woocommerce() ? ' style="margin-top:5em"' : '').'>';
+echo '<footer id="rodape"'.(is_singular('etheme_portfolio') || is_page(array('contato','briefing','planos')) || afc_woocommerce() ? ' style="margin-top:5em"' : '').'>';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
 		echo '<ul id="navegacao" role="navigation">';
 			afc_menu('primary');

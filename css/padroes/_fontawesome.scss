@@ -11,6 +11,7 @@
   font-variant: normal;
   text-rendering: auto;
   line-height: 1; }
+  
 .fa-align-left:before {
   content: "\f036"; }
 
@@ -38,6 +39,9 @@
 .fa-arrow-right:before {
   content: "\f061"; }
 
+.fa-badge-check:before {
+  content: "\f336"; }
+
 .fa-behance:before {
   content: "\f1b4"; }
 
@@ -58,6 +62,12 @@
 
 .fa-chart-line:before {
   content: "\f201"; }
+
+.fa-check:before {
+  content: "\f00c"; }
+
+.fa-check-circle:before {
+  content: "\f058"; }
 
 .fa-cloud-download:before {
   content: "\f0ed"; }
@@ -108,7 +118,7 @@
   content: "\f0d5"; }
 
 .fa-hand-sparkles:before {
-  content: "\f95d"; }
+  content: "\e05d"; }
 
 .fa-heart:before {
   content: "\f004"; }
@@ -121,6 +131,9 @@
 
 .fa-id-card-alt:before {
   content: "\f47f"; }
+
+.fa-info-circle:before {
+  content: "\f05a"; }
 
 .fa-instagram:before {
   content: "\f16d"; }
@@ -240,7 +253,7 @@
   content: "\f3fe"; }
 
 .fa-tiktok:before {
-  content: "\f97b"; }
+  content: "\e07b"; }
 
 .fa-tools:before {
   content: "\f7d9"; }
@@ -283,7 +296,7 @@
 
 .fa-youtube:before {
   content: "\f167"; }
-  
+
 .sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
