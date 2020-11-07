@@ -148,7 +148,7 @@
             "key": "field_5ccf2804a89cf",
             "label": "Domínio",
             "name": "bform_link",
-            "type": "url",
+            "type": "text",
             "instructions": "Insira o domínio pelo qual será direcionado o projeto.",
             "required": 1,
             "conditional_logic": 0,
@@ -159,7 +159,10 @@
             },
             "hide_admin": 0,
             "default_value": "",
-            "placeholder": ""
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5ccf28fda89d1",
@@ -1384,5 +1387,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de briefing",
-    "modified": 1601404137
+    "modified": 1604417921
 }

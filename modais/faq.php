@@ -22,7 +22,6 @@ echo '<div class="abinhas">';
 		echo '<div class="aba-conteudo">';
 			echo '<p>Sim! Mas não são todos os tipos de e-commerce que são produzidos pelo studio. Eu somente produzo lojas virtuais de pequeno porte &mdash; de média ou inferior à 2.000 vendas mensais em produtos digitais; ou 300 vendas mensais para produtos físicos &mdash; exclusivamente para plataforma Wordpress.</p>';
 			echo '<p>O studio não atende lojas virtuais de grande porte ou situadas em outras plataformas, tais como Iluria, NuvemShop, Shopify, BoxLoja, Tanlup etc.</p>';
-			echo '<p><small>* .</small></p>';
 		echo '</div>';
 	echo '</div>';
 	
