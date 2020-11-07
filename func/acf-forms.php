@@ -115,7 +115,8 @@ function register_forms() {
   Ecommerce: {field:form_loja_tipo}<br />
   Suporte: {field:form_suporte}<br />
   Inten&ccedil;&atilde;o de in&iacute;cio: {field:form_preparacao}<br />
-  Referência: {field:form_referencia} &#8211; {field:form_referencia_indicacao}{field:form_referencia_blogsite}{field:form_referencia_midia}</p>
+  Referência: {field:form_referencia} &#8211; {field:form_referencia_indicacao}{field:form_referencia_blogsite}{field:form_referencia_midia}<br />
+  Newsletter: {field:form_newsletter}</p>
   <blockquote><p>{field:form_mensagem_orcamento}{field:form_mensagem_suporte}</p></blockquote>
   ',
       ),
