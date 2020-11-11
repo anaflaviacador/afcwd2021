@@ -129,7 +129,7 @@ function register_forms() {
     'slack' => false,
     'mailchimp' => false,
     'zapier' => array(
-      'webhook_url' => 'https://hooks.zapier.com/hooks/catch/7925472/o8cxyu6/',
+      'webhook_url' => 'https://hooks.zapier.com/hooks/catch/7925472/oltjuq5/',
     ),
     'calculated' => array(
     ),

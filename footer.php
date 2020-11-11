@@ -58,7 +58,7 @@ echo '</main>';
 $politicaID = get_option( 'wp_page_for_privacy_policy' );
 echo '<div class="modal" id="privacidade" aria-label="'.get_the_title($politicaID).'">'; 
 	$politicaPG = get_post($politicaID);
-	echo '<h2 class="has-text-align-center">'.get_the_title($politicaID).'</h2>';
+	echo '<h2 class="has-text-align-center">Privacidade & Termos de uso</h2>';
 	echo '<article>'.apply_filters('the_content',$politicaPG->post_content).'</article>';
 echo '</div>'; 
 
@@ -67,6 +67,10 @@ echo '<div class="modal" id="faq" aria-label="Perguntas frequentes">';
 	echo '<h2 class="has-text-align-center">Perguntas Frequentes</h2>';
 	echo '<article>'; get_template_part('modais/faq'); echo '</article>'; 
 echo '</div>'; 
+
+if(!is_page('contato') && ! is_user_logged_in()) {
+	get_template_part('inc/popup');
+}
 
 get_template_part('inc/whatsapp');
 

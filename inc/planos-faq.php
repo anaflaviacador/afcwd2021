@@ -69,6 +69,13 @@ echo '<div class="wp-block-columns abinhas">';
 				echo '<p><u>O studio não faz, sob hipótese alguma, produção conteúdo ou gestão de mídias sociais.</u> O serviço de diagramação é realizado apenas sob envio do conteúdo completo.</p>';
 			echo '</div>';
 		echo '</div>';
+
+		echo '<div class="aba">';
+			echo '<div class="aba-titulo">Parceiras do studio tem assinatura mais barata?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>Por ter um custo por hora bastante reduzido no serviço recorrente, os planos de manutenção não se adequam aos descontos de pós-produção para clientes afiliadas.</p>';
+			echo '</div>';
+		echo '</div>';
 		
 
 	echo '</div>';

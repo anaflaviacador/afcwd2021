@@ -1,35 +1,7 @@
 jQuery(document).ready(function($) {
-  ////////////////////////////////// canvas
-  // var btMenu = $('#menu-mob'),
-  //     tagMain = $('main'),
-  //     tagCanvas = $('.canvas'),
-  //     tagOverlay = $('.canvas-overlay');
-  // tagMain.prepend( "<div class='canvas-overlay'></div>" );
-
-  // menu normal
-  // function escondeCanvas() {
-  //   $('.canvas, .canvas-overlay').removeClass('visivel');
-  //   setTimeout(function(){
-  //     $('.canvas, .canvas-overlay').removeClass('db');
-  //   },330)
-  //   tagMain.off('mousedown', escondeCanvas);
-  //   tagCanvas.off('swipeleft', escondeCanvas);
-  //   tagOverlay.removeClass('visivel');
-  //   console.log('escondeu');
-  // }
-
-  // function mostraCanvas() {
-  //   $('.canvas, .canvas-overlay').addClass('db');
-  //   setTimeout(function(){
-  //     $('.canvas, .canvas-overlay').addClass('visivel');
-  //   },20)
-  //   tagMain.on('mousedown', escondeCanvas);
-  //   tagCanvas.on('swipeleft', escondeCanvas);
-  // }
-  // btMenu.on('click', function(){
-  //  mostraCanvas();
-  //  console.log('clicou menu');
-  // }); 
+  
+  var janela = $(window),
+      janelaWidth = $(window).width();
 
 
   ////////////////////////////////// canvas
@@ -173,6 +145,7 @@ jQuery(document).ready(function($) {
   });
 
 
+
   ///////////////////////////////////////// TIME ZONE - MOSTRA WHATS
   var afcwd_BRDate = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"}));
   var afcwd_BRHour = afcwd_BRDate.getHours();
@@ -216,12 +189,54 @@ jQuery(document).ready(function($) {
   }
   
 
-  ////////////////////////////////// lazying
-  // creditos: https://michalsnik.github.io/aos/
-  // AOS.init({
-  //   duration: 600,
-  //   easing: 'ease-out',
-  //   once: true,
-  // });
+
+  //////////////////////////////////////// POP UP RECURSOS
+  var popupTempo = $('#popupTempo'),
+      popupScroll = $('#popupScroll'),
+      popupSaida = $('#popupSaida');
+  // var popupDelay = popupTempo.data('tempo');
+
+  // se eh por tempo
+  if (popupTempo.length > 0 && sessionStorage.getItem('popupTempoAbriu') !== 'true') {
+    setTimeout(function(){
+      $.fancybox.open(popupTempo, {
+        afterClose: function(){
+          sessionStorage.setItem('popupTempoAbriu','true');
+        }
+      });
+    },8000);
+  }
+
+  // se eh por rolagem
+  if (popupScroll.length > 0 && sessionStorage.getItem('popupScrollAbriu') !== 'true') {
+    var popupScrollJaAbriu = false;
+
+    janela.on("scroll", function () {
+       if ($(this).scrollTop() > 2500 && popupScrollJaAbriu === false) {
+          popupScrollJaAbriu = true;
+          $.fancybox.open(popupScroll, {
+            afterClose: function(){
+              sessionStorage.setItem('popupScrollAbriu','true');
+            }
+          });
+       } 
+    });
+  }
+
+  // se eh na saida da janela
+  if (popupSaida.length > 0 && sessionStorage.getItem('popupSaidaAbriu') !== 'true') {
+    var popupSaidaJaAbriu = false;
+    $(document).on('mouseleave', function(event) {
+      if (!popupSaidaJaAbriu) {
+        popupSaidaJaAbriu = true;
+        $.fancybox.open(popupSaida, {
+          afterClose: function(){
+            sessionStorage.setItem('popupSaidaAbriu','true');
+          }
+        });
+      }
+    });
+  }  
+
 
 });

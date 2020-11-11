@@ -230,8 +230,11 @@ function afc_cssnosync($tag, $handle) {
 
 function afc_load_scripts_head() {
   // anayltics
-  echo '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10144283-7"></script>';
-  echo '<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'UA-10144283-7\');</script>';
+  $user = wp_get_current_user();
+  if (!in_array( 'administrator', (array) $user->roles ) ) {
+    echo '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10144283-7"></script>';
+    echo '<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'UA-10144283-7\');</script>';
+  }
 }
 
 
@@ -411,5 +414,3 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
   }
   return $urls;
 }
-
-

@@ -124,6 +124,6 @@ if ( $publicacoes->have_posts() ) { $i = 0;
 	endwhile;
 	echo '</ul></div></section>';
 	echo '<p>&nbsp;</p>';
-}
+} wp_reset_query();
 
 get_footer();

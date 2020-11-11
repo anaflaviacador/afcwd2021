@@ -41,3 +41,129 @@ body {
 @import "layout/planos";
 
 a[data-target="#faq"]:hover {text-decoration: underline;}
+
+
+//////// POPUP
+.popup {
+	width: $smart-maior;
+	position: relative; overflow: hidden;
+
+	&.com-imagem {padding: 0; width: $tablet;}
+	
+	&:before, &:after {
+		position: absolute; left: 0; content: "";
+		content: ""; @extend %sprite;
+		background-position: 0 -135px;
+		width: 1762px; height: 47px;
+		position: absolute;
+		left: 50%;
+	}
+
+
+	&:before { top: -8px; @include transform(translateX(-50%) scaleY(-0.7));}
+	&:after { bottom: -8px; @include transform(translateX(-50%) scale(0.7)); }
+
+	a:not(.button) { color: var(--cor-azul-escuro); text-decoration: underline }
+
+	.cursivo { text-transform: none; }
+	p { margin-top: 1.8em }
+
+	&:not(.com-imagem) {
+		padding: 4em 2em; font-size: 0.95em;
+	}
+	
+
+	// QUANDO HA IMAGENS
+	.wrap {
+		width: 100%;
+		@include flex(space-between);
+		@include flex-wrap(nowrap);
+
+		@media (min-width: 781px) {
+			.area-texto, .area-img { width: 50% }
+		}
+		@media (max-width: 780px) {
+			.area-texto { width: 100%; }
+			.area-img { display: none; }
+		}
+
+		.area-texto { 
+			padding: 3em 2em 35px; font-size: 0.95em;
+			@include align-self(center);
+
+			.afc svg { height: 14px; }
+
+			form { font-size: 1em; }
+		}
+
+		.area-img {
+			min-height: 400px;
+			padding: 40px 0; z-index: 1;
+			@include imagemfull(cover,center,bottom);
+
+			img {visibility: hidden; height: 100%; width: auto;}
+		}
+	}
+
+	// newsletter
+	form {
+		@include flex(space-between); width: 100%;
+		margin-top: 1.8em; font-size: 0.95em;
+
+		input {
+			margin-top: 10px; line-height: 36px;
+			&[type="text"], &[type="email"] { width: 100%; padding-left: 34px }
+
+			&:focus { background: white; border: 1px solid $azul-medio; }
+		}
+
+		button { min-width: 125px; margin-left: 10px; line-height: 36px; padding-top: 0; padding-bottom: 0; margin-top: 10px; display: block; }
+
+		label, button { @include align-self(flex-start); }
+
+		label {
+			position: relative;
+
+			i {
+				color: var(--cor-azul); opacity: .9; font-size: 1em;
+				position: absolute; top: 22px; left: 12px;
+			}
+		}
+
+		[for="name"], button { width: calc(40% - 5px) }
+		[for="email"], [for="Site"] { width: calc(60% - 5px) }
+
+		[for="email"] { margin-left: 10px; }
+
+		[for="Site"] {
+			span { display: block; font-size: 11px; margin-top: 3px; opacity: 0.9; }
+		}
+
+
+		@media (max-width: 440px) {
+			[for="Site"], button { width: 100%; margin-left: 0; }
+		}
+	}
+
+	button.fancybox-close-small {
+		padding: 3px; right: 15px; width: 30px; height: 30px; top: 15px; background: white; border-radius: 50%; opacity: 1;
+	}
+
+
+	p.infospam {
+	    font-size: 12px;
+	    color: var(--cor-verde);
+	}
+
+
+	&.news .wrap {
+		@media (min-width: 781px) {
+			.area-texto { width: 55%; }			
+			.area-img { width: 45% }
+		}
+		@media (max-width: 780px) {
+			.area-texto { width: 100%; }
+			.area-img { display: none; }
+		}
+	}
+}

@@ -30,5 +30,5 @@ function afc_depoimentos($num = '') {
 				echo '</div>';
 			echo '</div>';
 		endwhile;
-	}
+	} wp_reset_query();
 }
