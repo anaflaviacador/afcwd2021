@@ -83,6 +83,16 @@ echo '<div class="wp-block-columns abinhas">';
 
 	echo '<div class="wp-block-column">';
 		echo '<div class="aba" style="margin-top: 20px;">';
+			echo '<div class="aba-titulo"> <i class="fas fa-badge-check""></i> Como é sistema de newsletter ofertado no BONUS?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>O studio trabalha com o <a href="https://sendy.co/?ref=v0hCr" target="_blank">Sendy</a>, um software licenciado de email marketing auto-hospedado que permite enviar e-mails rastreáveis através do serviço <a href="https://aws.amazon.com/" target="_blank">Amazon Simple Email Service (SES)</a>, possibilitando enviar e-mails em massa com a autenticidade dos servidores Amazon.</p>';
+				echo '<p>O Sendy possui uma boa integração com Wordpress, podendo ser integrado a formulários de contato e compras no Woocommerce. É o recurso perfeito para quem precisa de um meio simples e eficiente de armazenamento de emails.</p>';
+				echo '<p>O software está hospedado nos servidores do studio e licenciado, com recurso API disponível para integrações com outros plugins Wordpress e aplicações externas, como o Zapier! 😎</p>';
+				echo '<p>O Sendy que o studio '.do_shortcode('[afc]').' oferece <strong>não há limite de contatos, listas, autoresponders ou segmentações</strong>. A cota é inserida por disparos, ou seja, pelas <em>newsletter enviadas</em>. O limite de envios vai depender do plano, que vai de 2mil a 50mil disparos ao mês.</p>';
+				echo '<p><small>Incluso no plano: apontamentos DNS de domínio, atribuição de email remetente e implementação de formulário no layout</small></p>';
+			echo '</div>';
+		echo '</div>';
+		echo '<div class="aba" style="margin-top: 20px;">';
 			echo '<div class="aba-titulo">É possível escolher outro tipo de periodicidade?</div>';
 			echo '<div class="aba-conteudo">';
 				echo '<p>Claro! ✨Há também assinaturas trimestrais, com 5% de economia em relação à mensalidade para as clientes da casa. 😎💸</p>';

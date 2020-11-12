@@ -1,7 +1,13 @@
 <?php
+
+$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
+$extensao = 'jpg';
+if( $webp == true ) $extensao = 'webp';
+
 $urlTema = get_template_directory_uri();
 $titulo = '';
 $subtitulo = '';
+
 
 if (is_page()) {
 	$titulo = get_the_title();
@@ -36,7 +42,7 @@ if (is_singular('private-page')) {
 
 // titulos de todas as paginas em geral
 if (! is_singular('etheme_portfolio')) {
-echo '<header id="titulo-pagina" style="background-image: url('.$urlTema.'/img/foto-oficial.jpg);">';
+echo '<header id="titulo-pagina" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao.');">';
 	echo '<div class="gradiente" aria-hidden="true"></div>';
 
 	echo '<h1 data-aos="fade-down">'.$titulo.'</h1>';

@@ -7,6 +7,8 @@
 	min-height: 400px;
 	position: relative;
 	@include imagemfull(cover,center,top);
+	// background-image: url('../img/foto-oficial.jpg');
+	// body.suporte-webp & {background-image: url('../img/foto-oficial.webp');}
 
 	@media (min-width: $container) { background-attachment: fixed; }
 

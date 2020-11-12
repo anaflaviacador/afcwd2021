@@ -2,9 +2,12 @@
 $urlHome = esc_url(home_url('/'));
 $urlTema = get_template_directory_uri();
 
+$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
+$extensao = 'jpg';
+if( $webp == true ) $extensao = 'webp';
 
 echo '<section class="codigo-autoral">';
-	echo '<div class="foto" style="background-image: url('.$urlTema.'/img/foto-oficial.jpg);"></div>';
+	echo '<div class="foto" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao.');"></div>';
 		echo '<h2 class="marca-dagua" data-aos="fade-up">Código autoral <span>O que significa?</span></h2>';
 		
 		echo '<div data-aos="fade-right">';

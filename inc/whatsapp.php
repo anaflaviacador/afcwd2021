@@ -1,12 +1,16 @@
 <?php
 $urlTema = get_template_directory_uri();
+$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
+$extensao = 'png';
+if( $webp == true ) $extensao = 'webp';
+
 
 echo '<div id="afc_btwhats">';
 	echo '<button></button>';
 
 	echo '<div class="afc_btwhats_box">';
-		echo '<div class="foto" style="background-image: url('.$urlTema.'/img/anaflaviacador-150.png);">';
-			echo '<img src="'.$urlTema.'/img/anaflaviacador-150.png">';
+		echo '<div class="foto" style="background-image: url('.$urlTema.'/img/anaflaviacador-150.'.$extensao.');">';
+			echo '<img src="'.$urlTema.'/img/anaflaviacador-150.'.$extensao.'">';
 			echo '<div class="status on" id="afc_btwhats_status"></div>';
 		echo '</div>';
 

@@ -68,7 +68,7 @@ echo '<div class="modal" id="faq" aria-label="Perguntas frequentes">';
 	echo '<article>'; get_template_part('modais/faq'); echo '</article>'; 
 echo '</div>'; 
 
-if(!is_page('contato') && ! is_user_logged_in()) {
+if(!is_page('contato') && ! is_page('planos') && ! is_user_logged_in()) {
 	get_template_part('inc/popup');
 }
 

@@ -183,6 +183,8 @@ function afc_load_styles() {
     wp_enqueue_script( 'masonrydepos', $urlCDN . '/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array('jquery-core'), '', false);
     wp_enqueue_script( 'depoimentos', $urltheme . '/js/depoimentos.js', array('masonrydepos'), '', false);
 
+    // wp_enqueue_script( 'suporte-webp', $urltheme . '/js/webp.js', array(), '', false);
+
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
 
     // retirando css e js indesejados ou que nao precisam em algumas paginas

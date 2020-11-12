@@ -2,10 +2,15 @@
 $urlHome = esc_url(home_url('/'));
 $urlTema = get_template_directory_uri();
 
+$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
+$extensao = 'png';
+$extensao2 = 'jpg';
+if( $webp == true ) {$extensao = 'webp'; $extensao2 = 'webp';}
+
 // ========================================//
 // CHAMADA PRINCIPAL
 // ========================================// 
-echo '<section id="chamada-principal" aria-label="Área de apresentação da empresa, com imagem de fundo fotografada por cima de uma mulher em uma escrivaninha de frente a uma tela de notebook trabalhando" style="background-image: url('.$urlTema.'/img/foto-oficial.jpg);">';
+echo '<section id="chamada-principal" aria-label="Área de apresentação da empresa, com imagem de fundo fotografada por cima de uma mulher em uma escrivaninha de frente a uma tela de notebook trabalhando" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao2.');">';
 	echo '<div class="gradiente" aria-hidden="true"></div>';
 
 	// titulo da pagina inicial
@@ -24,16 +29,16 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 					echo '<picture role="img" aria-label="Mulher morena por volta de 30 anos, de cabelos escuros até altura dos ombros sorrindo para câmera, vestida com um vestido bege de alças finas">';
 
 					// telas dekstop
-				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-150.png" media="(min-width: 991px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
-				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-300.png" media="(min-width: 991px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+				    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/anaflaviacador-150.'.$extensao.'" media="(min-width: 991px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+				    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/anaflaviacador-300.'.$extensao.'" media="(min-width: 991px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
 
 				    // tablets
-				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-250.png" media="(min-width: 681px) and (max-width: 990px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
-				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-500.png" media="(min-width: 681px) and (max-width: 990px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+				    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/anaflaviacador-250.'.$extensao.'" media="(min-width: 681px) and (max-width: 990px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+				    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/anaflaviacador-500.'.$extensao.'" media="(min-width: 681px) and (max-width: 990px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
 				    
 				    // celulares
-				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-200.png" media="(max-width: 680px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
-				    echo '<source srcset="'.$urlTema.'/img/anaflaviacador-400.png" media="(max-width: 680px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+				    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/anaflaviacador-200.'.$extensao.'" media="(max-width: 680px) and (-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+				    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/anaflaviacador-400.'.$extensao.'" media="(max-width: 680px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
 				    
 				    // fallback
 				    echo '<img srcset="'.$urlTema.'/img/anaflaviacador-300.png" alt="Ana Flávia Cador - AFC Web Design">';
@@ -52,8 +57,9 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 		// mockup
 		echo '<div class="mockup" data-aos="fade-left" data-aos-delay="200">';
 			echo '<picture role="img" aria-label="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
-			    echo '<source srcset="'.$urlTema.'/img/mockup1.png" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
-			    echo '<source srcset="'.$urlTema.'/img/mockup1@2x.png" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+
+			    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/mockup1.'.$extensao.'" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+			    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/mockup1@2x.'.$extensao.'" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
 			    echo '<img srcset="'.$urlTema.'/img/mockup1.png" alt="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
 			echo '</picture>';
 			echo '<a href="https://afcweb.design/projetos/" class="ver">Ver mais projetos como esse</a>';

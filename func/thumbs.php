@@ -15,6 +15,10 @@ add_theme_support( 'post-thumbnails' );
 // THUMBS CHAMADAS
 // ========================================//
 function afc_thumb($size) {
+  // $webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
+  // $extensao = 'png';
+  // if( $webp == true ) $extensao = 'webp';  
+
   global $post;
   $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),$size); 
   $url = $thumb['0'];
@@ -38,3 +42,4 @@ function afc_autothumb($size) {
     $attachment = current( $attachment );
     return wp_get_attachment_url( $attachment->ID,$size);
 }
+

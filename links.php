@@ -30,16 +30,34 @@ echo '<header id="cabecalho" style="box-shadow: none">';
 echo '</header>';
 
 if (have_posts()) {
-	echo '<article class="container" style="min-height:380px;">';
+	echo '<article class="container mini-page-insta">';
 	while (have_posts()) : the_post();
+
 		the_content();
 
-		if( have_rows('links') ) { 
-			while ( have_rows('links') ) : the_row();
+		if( have_rows('links') ) { $i = 0;
+			while ( have_rows('links') ) : $i++; the_row();
 				$link = get_sub_field('link'); $cor = get_sub_field('cor');
-				echo '<p style="margin-top: 15px">';
-					echo '<a style="display:block; line-height: 1.4; white-space:normal; text-transform:none; text-align:center; border-radius: 10px !important; letter-spacing: 0.03em; padding-top: 0.9em !important; padding-bottom: 0.9em !important; font-size: 1.1em !important; transform:none !important; '.($cor ? 'background-color:'.$cor.' !important' : '').'" class="button" href="'.$link['url'].'" target="'.$link['target'].'">'.$link['title'].'</a>';
+				echo '<p style="margin-top: 15px;">';
+					echo '<a style="'.($cor ? 'background-color:'.$cor.' !important' : '').'" class="button link-bio" href="'.$link['url'].'" target="'.$link['target'].'">'.$link['title'].'</a>';
 				echo '</p>';
+
+
+				if ($i == 2) {
+					echo '<div class="area-news">';
+						$urlTema = get_template_directory_uri();
+						$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
+						$extensao = 'jpg';
+						if( $webp == true ) $extensao = 'webp';
+						echo '<div class="foto" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao.');"></div>';
+
+						echo '<h2 class="cursivo has-text-align-center">conteúdos exclusivos</h2>';
+						echo '<p class="has-text-align-center">dicas sobre design, freebies, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu site!</p>';
+
+						get_template_part('inc/news');
+
+					echo '</div>';
+				}
 			endwhile;
 		}
 

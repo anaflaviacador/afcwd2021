@@ -28,12 +28,17 @@
 						echo '<li>Atualização de sistema Wordpress e plugins</li>';
 						echo '<li>Supervisão de recursos utilizados no plano de hospedagem <span data-tooltip="Uso do espaço em disco, recurso de CPU, memória etc." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
+
 						echo '<p><strong>AÇÕES DE DESIGN</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li>Template e-mail marketing <span data-tooltip="Aplicável quando o sistema que você utiliza permite customização." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(1 por ano)</em></li>';
 						echo '<li>Banner mídia social <span data-tooltip="Produção de peça gráfica avulsa. Não inclui gestão da mídia social." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 por ano)</em></li>';
 
 						echo '<p><strong>AÇÕES DE CONTEÚDO</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li>Diagramação de e-mail marketing <span data-tooltip="Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(1 por semestre)</em></li>';
+
+
+						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong><em style="color:var(--cor-negacao);">benefício extra para as 20 primeiras adesões</em></p>';
+						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i style="color:var(--cor-negacao);" class="far fa-info-circle"></i></span> <em>(2mil envios ao mês)</em></li>';
 					echo '</ul>';
 					echo '<footer>';
 						echo $cancela;
@@ -84,6 +89,9 @@
 						echo '<p><strong>AÇÕES DE CONTEÚDO</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li>Diagramação de conteúdo <span data-tooltip="Construção de página ou publicação utilizando recursos inclusos do tema em atividade. Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 págs por mês)</em></li>';
 						echo '<li>Diagramação de e-mail marketing <span data-tooltip="Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(1 por mês)</em></li>';
+
+						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong><em style="color:var(--cor-negacao);">benefício extra para as 20 primeiras adesões</em></p>';
+						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i style="color:var(--cor-negacao);" class="far fa-info-circle"></i></span> <em>(10mil envios ao mês)</em></li>';
 
 					echo '</ul>';
 
@@ -138,6 +146,9 @@
 						echo '<p><strong>AÇÕES DE CONTEÚDO</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li>Diagramação de conteúdo <span data-tooltip="Construção de página ou publicação utilizando recursos inclusos do tema em atividade. Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(4 págs por mês)</em></li>';
 						echo '<li>Diagramação de e-mail marketing <span data-tooltip="Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 por mês)</em></li>';
+
+						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong><em style="color:var(--cor-negacao);">benefício extra para as 20 primeiras adesões</em></p>';
+						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i style="color:var(--cor-negacao);" class="far fa-info-circle"></i></span> <em>(50mil envios ao mês)</em></li>';
 					echo '</ul>';
 
 					echo '<footer>';

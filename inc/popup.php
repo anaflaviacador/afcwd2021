@@ -1,4 +1,9 @@
 <?php
+
+$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
+$extensao = 'jpg';
+if( $webp == true ) $extensao = 'webp';
+
 $urlHome = esc_url(home_url('/'));
 $urlTema = get_template_directory_uri();
 
@@ -7,7 +12,7 @@ $acao = 'popupSaida';
 $titulo = '<h4 class="cursivo has-text-align-center">Aproveite a oportunidade!</h4>';
 $texto = 'Receba novidades e ofertas do studio '.do_shortcode('[afc]').', além de <strong>conteúdos exclusivos</strong>, recheados de dicas sobre <u>design</u>, <u>métodos</u> e <u>ferramentas web</u> para manter a saúde e desempenho do seu site!';
 $cta = '';
-$fundo = 'background: url('.$urlTema.'/img/foto-news.jpg) no-repeat center top / cover';
+$fundo = 'background: url('.$urlTema.'/img/foto-news.'.$extensao.') no-repeat center top / cover';
 $posicao = 'center center / cover';
 
 if (is_post_type_archive('etheme_portfolio') || is_page('sobre') || is_page('servicos')) {
@@ -16,7 +21,7 @@ if (is_post_type_archive('etheme_portfolio') || is_page('sobre') || is_page('ser
 }
 
 if (is_post_type_archive('afc_depoimentos')) {
-	$fundo = 'background: url('.$urlTema.'/img/foto-depos.jpg) no-repeat left top / cover';
+	$fundo = 'background: url('.$urlTema.'/img/foto-depos.'.$extensao.') no-repeat left top / cover';
 	$titulo = '<h4 class="cursivo has-text-align-center">Faça parte do time!</h4>';
 	$texto = 'Enquanto você ainda não <a href="'.$urlHome.'contato">pede seu orçamento</a>, que tal receber novidades e ofertas do studio '.do_shortcode('[afc]').' como elas? <br /><br />Receba <strong>conteúdos exclusivos</strong> com dicas de design, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu futuro site!';
 }
