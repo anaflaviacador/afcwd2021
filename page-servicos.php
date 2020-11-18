@@ -1,5 +1,6 @@
 <?php get_header(); 
 $urlTema = get_template_directory_uri();
+$urlHome = esc_url(home_url('/'));
 
 echo '<div class="container" id="pagina-servicos">';
 
@@ -36,21 +37,21 @@ echo '<div class="container" id="pagina-servicos">';
 				echo '<header><i class="icone fal fa-bezier-curve"></i>';
 				echo '<h3 class="marca-dagua">Design <span aria-hidden="true">layout</span></h3></header>';
 					echo '<p>Projeto de layout para websites, lojas virtuais, blogs, media kits, peças gráficas e templates para mídias sociais.</p>';
-				// echo '<footer><a href="#" title="" class="button pequeno">saiba mais</a></footer>';
+				// echo '<footer><a href="'.$urlHome.'projetos" class="button pequeno">ver trabalhos</a></footer>';
 			echo '</li>';
 
 			echo '<li class="azul" data-aos="fade-up" data-aos-delay="150">';
 				echo '<header><i class="icone fal fa-code"></i>';
 				echo '<h3 class="marca-dagua">Programação <span aria-hidden="true">desenvolvimento</span></h3></header>';
 					echo '<p>Programação para plataforma Wordpress (back-end) ou em linguagem estática (front-end).</p>';
-				// echo '<footer><a href="#" title="" class="button pequeno azul">saiba mais</a></footer>';
+				// echo '<footer><a href="'.$urlHome.'projetos" class="button pequeno azul">ver trabalhos</a></footer>';
 			echo '</li>';
 
 			echo '<li class="verde" data-aos="fade-up" data-aos-delay="250">';
 				echo '<header><i class="icone fab fa-wordpress"></i>';
 				echo '<h3 class="marca-dagua">Manutenção <span aria-hidden="true">suporte e auxílio</span></h3></header>';
 					echo '<p>Manutenção mensal e assistência ilimitada para clientes da casa durante o uso de um produto '.do_shortcode('[afc]').'.</p>';
-				// echo '<footer><a href="#" title="" class="button pequeno verde">saiba mais</a></footer>';
+				echo '<footer><a href="'.$urlHome.'servicos/planos" class="button pequeno verde">ver planos</a></footer>';
 			echo '</li>';
 
 			// echo '<li class="roxo" data-aos="fade-up" data-aos-delay="350">';
@@ -69,7 +70,7 @@ echo '<div class="container" id="pagina-servicos">';
 				echo '<header><i class="icone fal fa-wrench"></i>';
 				echo '<h3 class="marca-dagua">Ferramentas <span aria-hidden="true">facilidades</span></h3></header>';
 					echo '<p>Criação de blocos personalizados para editor Wordpress e ferramentas para auxiliar automação de tarefas.</p>';
-				// echo '<footer><a href="#" title="" class="button pequeno bege">saiba mais</a></footer>';
+				// echo '<footer><a href="'.$urlHome.'contato" title="" class="button pequeno bege">solicite</a></footer>';
 			echo '</li>';
 		echo '</ul>';
 	echo '</section>';
