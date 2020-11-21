@@ -15,13 +15,13 @@ echo '<div class="container" id="pagina-servicos">';
 
 		echo '<div class="plataformas" data-aos="fade-left">';
 			echo '<figure class="wp">';
-				echo '<img src="'.$urlTema.'/img/wordpress-logo.svg" width="230px" alt="Logo do Wordpress">';
+				echo '<img data-pin-nopin="true" src="'.$urlTema.'/img/wordpress-logo.svg" width="230px" alt="Logo do Wordpress">';
 			echo '</figure>';
 
 			echo '<div class="desc wp">Plataforma usada na criação de websites e blogs</div>';
 			
 			echo '<figure class="woo">';
-				echo '<img src="'.$urlTema.'/img/woocommerce-logo.svg" width="210px" alt="Logo do Woocomerce">';
+				echo '<img data-pin-nopin="true" src="'.$urlTema.'/img/woocommerce-logo.svg" width="210px" alt="Logo do Woocomerce">';
 			echo '</figure>';
 
 			echo '<div class="desc woo">Tecnologia utilizada para criação de lojas virtuais no Wordpress</div>';
@@ -90,10 +90,10 @@ echo '<div class="container" id="pagina-servicos">';
 		echo '</ul>';
 
 		echo '<div class="logos">';
-			echo '<img data-aos="zoom-out" src="'.$urlTema.'/img/logo-pagseguro.svg" alt="Aceitamos PagSeguro">';
-			echo '<img data-aos="zoom-out" data-aos-delay="150" src="'.$urlTema.'/img/logo-cartoes.svg" alt="Aceitamos até 18 bandeiras de cartões de crédito">';
-			echo '<img data-aos="zoom-out" data-aos-delay="250" src="'.$urlTema.'/img/logo-boleto.svg" alt="Aceitamos pagamentos por boleto bancário">';
-			echo '<img data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-nu.svg" alt="Aceitamos pagamento por transferência para NuConta">';
+			echo '<img data-pin-nopin="true" data-aos="zoom-out" src="'.$urlTema.'/img/logo-pagseguro.svg" alt="Aceitamos PagSeguro">';
+			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="150" src="'.$urlTema.'/img/logo-cartoes.svg" alt="Aceitamos até 18 bandeiras de cartões de crédito">';
+			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="250" src="'.$urlTema.'/img/logo-boleto.svg" alt="Aceitamos pagamentos por boleto bancário">';
+			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-nu.svg" alt="Aceitamos pagamento por transferência para NuConta">';
 		echo '</div>';
 	echo '</div>';	
 

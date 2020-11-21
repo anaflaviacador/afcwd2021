@@ -41,7 +41,7 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 				    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/anaflaviacador-400.'.$extensao.'" media="(max-width: 680px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
 				    
 				    // fallback
-				    echo '<img srcset="'.$urlTema.'/img/anaflaviacador-300.png" alt="Ana Flávia Cador - AFC Web Design">';
+				    echo '<img data-pin-nopin="true" srcset="'.$urlTema.'/img/anaflaviacador-300.png" alt="Ana Flávia Cador - AFC Web Design">';
 				echo '</picture>';
 				echo '<h2 lang="en" class="ola cursivo">hello</h2>';
 			echo '</a>';
@@ -60,7 +60,7 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 
 			    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/mockup1.'.$extensao.'" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
 			    echo '<source type="image/'.$extensao.'" srcset="'.$urlTema.'/img/mockup1@2x.'.$extensao.'" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
-			    echo '<img srcset="'.$urlTema.'/img/mockup1.png" alt="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
+			    echo '<img data-pin-nopin="true" srcset="'.$urlTema.'/img/mockup1.png" alt="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
 			echo '</picture>';
 			echo '<a href="https://afcweb.design/projetos/" class="ver">Ver mais projetos como esse</a>';
 		echo '</div>';

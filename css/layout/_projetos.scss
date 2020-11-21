@@ -146,7 +146,9 @@
 	// }
 }
 
-
+// ========================================//
+// DESTAQUES DO PROJETO - PRINTS
+// ========================================//
 .detalhes-projeto {
 	width: $colmax;
 	max-width: 100%;
@@ -211,6 +213,43 @@
 					a.button {padding: .5em 1em .5em !important; font-size: .8em !important}
 				}
 			}
+		}
+	}
+}
+
+
+// ========================================//
+// BOTAO SALVAR PIN
+// ========================================//
+.pin-button {
+	position: relative;
+
+	a.pin-button {
+		position: absolute; top: 12px; right: 12px;
+		font-size: 10px; background: white;
+		cursor: pointer; @extend %borda-redonda;
+		@extend %sombra-forte;
+		text-transform: uppercase;
+		text-decoration: none; line-height: 1;
+		padding: 5px 10px 5px 5px; font-weight: bold;
+		@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+
+		i {
+			background: var(--cor-negacao); color: white; vertical-align: middle;
+			border-radius: 50%; display: inline-block; width: 22px; height: 22px;
+			text-align: center; line-height: 22px; margin-right: 5px;
+			@include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+		}
+
+		&:hover {
+			background: var(--cor-negacao); color: white;
+
+			i { background: white; color: var(--cor-negacao);}
+		}
+
+		@media (min-width: $smart-maior + 1px) {
+			font-size: 12px; top: 20px; right: 20px;
+			padding: 8px 13px 8px 9px;
 		}
 	}
 }

@@ -10,7 +10,7 @@ echo '<div id="afc_btwhats">';
 
 	echo '<div class="afc_btwhats_box">';
 		echo '<div class="foto" style="background-image: url('.$urlTema.'/img/anaflaviacador-150.'.$extensao.');">';
-			echo '<img src="'.$urlTema.'/img/anaflaviacador-150.'.$extensao.'">';
+			echo '<img data-pin-nopin="true" src="'.$urlTema.'/img/anaflaviacador-150.'.$extensao.'">';
 			echo '<div class="status on" id="afc_btwhats_status"></div>';
 		echo '</div>';
 

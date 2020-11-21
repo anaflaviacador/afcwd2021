@@ -12,7 +12,7 @@ if (have_posts()) {
 
 		if($imagemExtra){
 			echo '<figure data-aos="fade-right">';
-				echo '<img src="'.$imagemExtra['sizes']['large'].'" alt="'.$titulo.'">';
+				echo '<img src="'.$imagemExtra['sizes']['large'].'" alt="'.$titulo.'" data-pin-nopin="true">';
 			echo '</figure>';
 		}
 

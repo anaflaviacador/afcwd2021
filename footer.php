@@ -44,6 +44,7 @@ echo '<footer id="rodape"'.(is_singular('etheme_portfolio') || is_page(array('co
 
 			echo '<div>';
 				echo '<a target="_blank" title="Instagram" href="https://www.instagram.com/anaflaviacador"><i class="fab fa-instagram" aria-hidden="true"></i></a>';
+				echo '<a target="_blank" title="Pinterest" href="https://br.pinterest.com/afcwebdesign"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>';
 				echo '<a target="_blank" title="Facebook" href="https://facebook.com/afcweb.design"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>';
 				echo '<a target="_blank" title="Whatsapp" href="https://api.whatsapp.com/send?phone=5562996269941"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>';
 			echo '</div>';

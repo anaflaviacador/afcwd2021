@@ -23,7 +23,7 @@ if (have_posts()) { while (have_posts()) : the_post();
 				///////////////// DOCUMENTOS
 				echo '<div class="box'.(empty(have_rows('areacliente_docs')) ? ' indisponivel' : '').'">';
 					echo '<h3>';
-						echo '<img src="'.$path.'-documentos.svg" aria-hidden="true">';
+						echo '<img data-pin-nopin="true" src="'.$path.'-documentos.svg" aria-hidden="true">';
 						echo '<span>Documentos <small>Contrato, formulário e nota fiscal</small></span>';
 					echo '</h3>';
 					if( have_rows('areacliente_docs') ) {
@@ -51,7 +51,7 @@ if (have_posts()) { while (have_posts()) : the_post();
 				///////////////// LAYOUT E DESIGN	
 				echo '<div class="box'.(empty(have_rows('areacliente_design')) ? ' indisponivel' : '').'">';
 					echo '<h3>';
-						echo '<img src="'.$path.'-layout.svg" aria-hidden="true">';
+						echo '<img data-pin-nopin="true" src="'.$path.'-layout.svg" aria-hidden="true">';
 						echo '<span>Design <small>Propostas de layout</small></span>';
 					echo '</h3>';
 					if( have_rows('areacliente_design') ) {
@@ -78,7 +78,7 @@ if (have_posts()) { while (have_posts()) : the_post();
 				///////////////// ARTES FINAIS
 				echo '<div class="box'.(empty(have_rows('areacliente_artes')) ? ' indisponivel' : '').'">';
 					echo '<h3>';
-						echo '<img src="'.$path.'-artefinal.svg" aria-hidden="true">';
+						echo '<img data-pin-nopin="true" src="'.$path.'-artefinal.svg" aria-hidden="true">';
 						echo '<span>Artes finais <small>Arquivos de imagem</small></span>';
 					echo '</h3>';
 					if( have_rows('areacliente_artes') ) {
@@ -106,7 +106,7 @@ if (have_posts()) { while (have_posts()) : the_post();
 				///////////////// ZIPS
 				echo '<div class="box'.(empty(have_rows('areacliente_zips')) ? ' indisponivel' : '').'">';
 					echo '<h3>';
-						echo '<img src="'.$path.'-arquivoszip.svg" aria-hidden="true">';
+						echo '<img data-pin-nopin="true" src="'.$path.'-arquivoszip.svg" aria-hidden="true">';
 						echo '<span>Compactados <small>Pacotes prontos para instalação</small></span>';
 					echo '</h3>';
 					if( have_rows('areacliente_zips') ) {

@@ -19,6 +19,10 @@ echo '<meta property="article:publisher" content="https://www.facebook.com/anafl
 echo '<meta property="fb:profile_id" content="100001760930781">';  
 echo '<meta property="fb:app_id" content="256251604417279">';
 
+// pinterest
+echo '<meta name="p:domain_verify" content="dabe58e86f525dd790cd953954d1b568"/>';
+if (! is_singular('etheme_portfolio') ) echo '<meta name="pinterest" content="nopin" description="Visite o Pinterest oficial do studio e salve suas inpirações por lá: https://br.pinterest.com/afcwebdesign" />';
+
 // logo
 echo '<meta itemprop="logo" content="'.$tema.'/screenshot.png">';
 
@@ -92,16 +96,16 @@ if(is_home() || is_front_page()) {
     echo '<meta property="og:url" content="'.$url.'/?s='.get_search_query().'">';
 
 } elseif(is_singular('')) {
-
+    $resumo = wp_strip_all_tags( get_the_excerpt(), true );
     echo '<meta property="og:title" content="'; echo single_post_title(); echo '">';
     echo '<meta name="twitter:title" content="'; echo single_post_title(); echo '">';
     echo '<meta itemprop="name" content="'; echo single_post_title(); echo '">';
 
-    echo '<meta property="og:description" content="'; echo afc_get_excerpt(''); echo '">';
-    echo '<meta name="description" content="'; echo afc_get_excerpt(''); echo '">';
-    echo '<meta itemprop="description" content="'; echo afc_get_excerpt(''); echo '">';
-    echo '<meta name="twitter:description" content="'; echo afc_get_excerpt(''); echo '">';
-    echo '<meta name="twitter:card" content="'; echo afc_get_excerpt(''); echo '">';
+    echo '<meta property="og:description" content="'.$resumo.'">';
+    echo '<meta name="description" content="'.$resumo.'">';
+    echo '<meta itemprop="description" content="'.$resumo.'">';
+    echo '<meta name="twitter:description" content="'.$resumo.'">';
+    echo '<meta name="twitter:card" content="'.$resumo.'">';
 
     echo '<meta property="article:published_time" content="'.get_the_time('c').'">';
 
@@ -163,5 +167,24 @@ if (has_site_icon()) {
     echo '<link rel="shortcut icon" href="https://afcweb.design/wp-content/uploads/2017/12/favicon.png">';
 }
 
-////////////// analytics
-// echo "<script>var galite = galite || {};galite.UA = 'UA-10144283-7';</script>";
+////////////// Facebook Pixel Code
+echo '<script>!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,\'script\', \'https://connect.facebook.net/en_US/fbevents.js\'); fbq(\'init\', \'1002685960227949\'); fbq(\'track\', \'PageView\');</script><noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1002685960227949&ev=PageView&noscript=1"/></noscript>';
+
+if (is_front_page() || is_singular()) echo '<script>fbq(\'track\', \'ViewContent\');</script>';
+if (is_page('contato')) echo '<script>fbq(\'track\', \'Contact\');</script>';
+if (is_page('planos')) {
+    echo '<script>';
+        echo 'var planoBasic = document.getElementById(\'assinar-plano-basic\');';
+        echo 'var planoStandard = document.getElementById(\'assinar-plano-standard\');';
+        echo 'var planoPremium = document.getElementById(\'assinar-plano-premium\');';
+        echo 'planoBasic.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'90.00\', currency: \'BRL\'}); }, false);';
+        echo 'planoStandard.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'140.00\', currency: \'BRL\'}); }, false);';
+        echo 'planoPremium.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'240.00\', currency: \'BRL\'}); }, false);';
+    echo '</script>';        
+}
+
+/////////////// Pinterest pixel code
+echo '<script>!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0]; r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js"); pintrk(\'load\', \'2614196759086\', {em: \'<user_email_address>\'}); pintrk(\'page\'); pintrk(\'track\', \'pagevisit\');
+</script><noscript><img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?event=init&tid=2614196759086&pd[em]=<hashed_email_address>&noscript=1" /></noscript>';

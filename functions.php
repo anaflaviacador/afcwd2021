@@ -97,6 +97,9 @@ if (class_exists('acf') && class_exists('AF')) {
 include_once(get_template_directory().'/func/config-cliente.php' );
 
 
+/////////////// PINTEREST
+include_once(get_template_directory().'/func/pinterest.php' );
+
 
 // ========================================//
 // PAGINAS WOOCOMMERCE
@@ -262,14 +265,7 @@ function afc_load_scripts_footer() {
 // RESUMO
 // ========================================// 
 function afc_excerpt_more( $more ) { return '...'; }
-function afc_excerpt_length( $length ) { return 50; }
-
-function afc_get_excerpt($out_excerpt) {
-  while (have_posts()):the_post(); 
-    $out_excerpt = str_replace(array("\r\n", "\r", "\n"), "", strip_tags(get_the_excerpt())); 
-    echo apply_filters("the_excerpt_rss", $out_excerpt); 
-  endwhile;
-}
+function afc_excerpt_length( $length ) { return 600; }
 
 
 

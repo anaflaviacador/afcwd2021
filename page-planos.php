@@ -43,7 +43,7 @@
 					echo '<footer>';
 						echo $cancela;
 						echo '<div class="botao" id="basic">';
-							echo '<a href="http://pag.ae/7WxZFSoxR" target="_blank" class="button medio azul">assinar!</a>'; 
+							echo '<a href="http://pag.ae/7WxZFSoxR" id="assinar-plano-basic" target="_blank" class="button medio azul">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
@@ -98,7 +98,7 @@
 					echo '<footer>';
 						echo $cancela;
 						echo '<div class="botao" id="basic">';
-							echo '<a href="http://pag.ae/7WxZKRqeu" target="_blank" class="button medio verde">assinar!</a>';
+							echo '<a href="http://pag.ae/7WxZKRqeu" id="assinar-plano-standard" target="_blank" class="button medio verde">assinar!</a>';
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
@@ -154,7 +154,7 @@
 					echo '<footer>';
 						echo $cancela;
 						echo '<div class="botao" id="basic">';
-							echo '<a href="http://pag.ae/7WxZN8JB8" target="_blank" class="button medio">assinar!</a>'; 
+							echo '<a href="http://pag.ae/7WxZN8JB8" id="assinar-plano-premium"  target="_blank" class="button medio">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
