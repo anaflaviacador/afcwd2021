@@ -494,12 +494,38 @@
                         "operator": "==",
                         "value": "pronta"
                     }
-                ],
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Que bom que já está com planos para começar em breve! Entretanto, o studio não tem condições de atender projetos com caráter de urgência no momento.\r\n\r\n<strong>O studio tem vagas para iniciar novos projetos a partir de Abril de 2021.<\/strong> Portanto, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar a qualquer momento! :)",
+            "new_lines": "br",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5fbd2dc49f251",
+            "label": "Mensagem sobre agenda 2",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
                 [
                     {
                         "field": "field_5f440d9f51449",
                         "operator": "==",
                         "value": "perto"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5f440d9f51449",
+                        "operator": "==",
+                        "value": "longe"
                     }
                 ]
             ],
@@ -509,7 +535,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "Que bom que já está com planos para começar em breve! Entretanto, o studio não tem condições de atender projetos com caráter de urgência no momento.\r\n\r\n<strong>O studio tem vagas para iniciar novos projetos a partir de Janeiro de 2021.<\/strong> Portanto, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar a qualquer momento!",
+            "message": "<strong>O studio tem vagas para iniciar novos projetos a partir de Abril de 2021.<\/strong> Portanto, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar a qualquer momento! :)",
             "new_lines": "br",
             "esc_html": 0
         },
@@ -571,5 +597,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de contato padrão do site",
-    "modified": 1604787680
+    "modified": 1606233614
 }

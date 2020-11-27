@@ -17,20 +17,20 @@ $posicao = 'center center / cover';
 
 if (is_post_type_archive('etheme_portfolio') || is_page('sobre') || is_page('servicos')) {
 	$titulo = '<h4 class="cursivo has-text-align-center">Hey, espera um pouco!</h4>';
-	$texto = 'Enquanto você ainda não <a href="'.$urlHome.'contato">pede seu orçamento</a>, que tal receber novidades e ofertas do studio '.do_shortcode('[afc]').' por e-mail?<br /><br />Receba <strong>conteúdos exclusivos</strong> com dicas de design, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu futuro site!';
+	$texto = 'Que tal receber novidades e ofertas do studio '.do_shortcode('[afc]').' por e-mail?<br /><br />Receba <strong>conteúdos exclusivos</strong> com dicas de design, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu futuro site!';
 }
 
 if (is_post_type_archive('afc_depoimentos')) {
 	$fundo = 'background: url('.$urlTema.'/img/foto-depos.'.$extensao.') no-repeat left top / cover';
 	$titulo = '<h4 class="cursivo has-text-align-center">Faça parte do time!</h4>';
-	$texto = 'Enquanto você ainda não <a href="'.$urlHome.'contato">pede seu orçamento</a>, que tal receber novidades e ofertas do studio '.do_shortcode('[afc]').' como elas? <br /><br />Receba <strong>conteúdos exclusivos</strong> com dicas de design, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu futuro site!';
+	$texto = 'Que tal receber novidades e ofertas do studio '.do_shortcode('[afc]').' como essas clientes? <br /><br />Receba <strong>conteúdos exclusivos</strong> com dicas de design, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu futuro site!';
 }
 
 if (is_singular('etheme_portfolio')) {
 	// $class = '';
 	$acao = 'popupScroll';
 	$titulo = '<h4 class="cursivo has-text-align-center">Gostou do meu trabalho?</h4>';
-	$texto = 'Enquanto você ainda não <a href="'.$urlHome.'contato">pede seu orçamento</a>, que tal receber <strong>conteúdos exclusivos</strong>, novidades e ofertas do studio '.do_shortcode('[afc]').' no confordo do seu e-mail?';
+	$texto = 'Que tal receber <strong>conteúdos exclusivos</strong>, novidades e ofertas do studio '.do_shortcode('[afc]').' no conforto do seu e-mail?';
 }
 
 if (is_front_page()) $class = 'news com-imagem';

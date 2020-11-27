@@ -20,6 +20,7 @@
 			&[class*="--downloads"] a:before { content: "\f0ed";}
 			&[class*="--edit-account"] a:before { content: "\f4fe"; }
 			&[class*="--customer-logout"] a:before { content: "\f08b"; }
+			&[class*="--subscriptions"] a:before { content: "\f005"; }
 			&[class*="--docs"] a:before { content: "\f0ea"; }
 			&[class*="--briefing"] a:before { content: "\f036"; }
 			&[class*="--briefing-novo"] a:before { content: "\f305"; }
@@ -81,7 +82,9 @@
 
 .woocommerce-MyAccount-content {
 	width: 100% !important; max-width: $colmax !important; float: none !important;
-	margin: 0 auto;
+	margin: 0 auto; font-size: .9em;
+
+	h2, h3 { font-size: 1.1em; margin-bottom: 10px; }
 }
 
 .woocommerce-account {
@@ -126,6 +129,8 @@
 	}
 }
 
+
+
 // ========================================//
 // DETALHES DE CONTA / PEDIDO
 // ========================================//
@@ -156,6 +161,124 @@ div.woocommerce {
 	.show-password-input { top: 6px !important; }
 }
 
+
+
+// ========================================//
+// SINGLE - PRODUTO
+// ========================================//
+.loja-wrap-descricao {
+	form.cart {
+		margin: 2em 0;
+
+		button.disabled {display: none;}
+	}
+}
+
+
+// ========================================//
+// CARRINHO E CHECKOUT
+// ========================================//
+.afc-carrinho {
+	@include flex(space-between);
+	font-size: .9em;
+	h3.titulo { font-size: 1em; text-transform: uppercase;  margin-bottom: 10px; }
+
+	table.shop_table {border-radius: 0 !important;}
+
+	.afc-itens {
+		table.shop_table {
+			&, tr td, tr th { border-color: var(--cor-azul-medio) !important; }
+		}
+	}
+	.afc-total {
+		margin-left: 40px; 
+		table.shop_table {
+			&, tr td, tr th { border-color: var(--cor-verde-medio) !important; }
+			tr.order-total { background: var(--cor-verde-claro);}
+		}
+	}
+
+	@media (min-width: 830px) {
+		.afc-itens {width: 60%;}
+		.afc-total {width: calc(40% - 40px);}
+	}
+	@media (max-width: 829px) {
+		.afc-itens, .afc-total {width: 100%;}
+		.afc-total { margin: 2em 0 0 0;}
+	}
+}
+
+
+.woocommerce-checkout {
+	font-size: 1em;
+
+	.woocommerce-checkout-review-order-table {
+		margin-bottom: 2.5em !important; font-size: .9em;
+		border-radius: 0 !important;
+
+		&, tr td, tr th { border-color: var(--cor-roxo-medio) !important; }
+
+		tr.order-total { background: var(--cor-roxo-claro);}
+
+		.product-quantity {display: none;}
+	}
+
+	#customer_details {
+		h3 { font-size: 1em; text-transform: uppercase; margin-bottom: 10px;}
+
+		input { border-radius: 0; }
+	}	
+
+	#payment {
+		background: transparent;
+
+		ul.payment_methods {
+			padding: 0 !important;
+			border: 0;
+
+			li {
+				label {
+					cursor: pointer;
+					img { max-width: 30px !important; vertical-align: unset; position: relative; bottom: -2px }
+				}
+
+				.payment_box {
+					background: var(--cor-verde-claro); border-radius: 0 !important;
+					&:before { border-bottom-color: var(--cor-verde-claro); }
+				}
+
+				&.payment_method_cod label img { max-width: 37px !important; }
+			}
+		}
+
+		div.place-order {
+			margin-top: 2em;
+			padding: 0 !important;
+
+			.woocommerce-privacy-policy-text { font-size: .9em; background: var(--cor-azul-claro); padding: 1em; }
+		}
+	}
+}
+
+// pagina de confirmacao
+.woocommerce-order {
+	width: $colmax; max-width: 100%;
+	margin-left: auto; margin-right: auto;
+
+
+	.woocommerce-notice { margin-bottom: 3em; font-size: 1.2em; text-align: center;}
+
+	.woocommerce-customer-details, .order-again { display: none; }
+
+	ul.order_details li {
+	    padding-right: 1.5em; margin-right: 1.5em;
+	    margin-bottom: 12px;
+
+	    strong { margin-top: 6px; }
+
+	    &:last-of-type { padding-right: 0; margin-right: 0; }
+	}
+}
 
 // ========================================//
 // PAGINA DOCUMENTOS

@@ -97,9 +97,13 @@ if(is_home() || is_front_page()) {
 
 } elseif(is_singular('')) {
     $resumo = wp_strip_all_tags( get_the_excerpt(), true );
-    echo '<meta property="og:title" content="'; echo single_post_title(); echo '">';
-    echo '<meta name="twitter:title" content="'; echo single_post_title(); echo '">';
-    echo '<meta itemprop="name" content="'; echo single_post_title(); echo '">';
+    $titulo = get_the_title() .' - '.$nome;
+
+    if (is_singular('etheme_portfolio')) $titulo = get_the_title().' - AFC Web Design | Wordpress Theme Developer';
+    
+    echo '<meta property="og:title" content="'.$titulo.'">';
+    echo '<meta name="twitter:title" content="'.$titulo.'">';
+    echo '<meta itemprop="name" content="'.$titulo.'">';
 
     echo '<meta property="og:description" content="'.$resumo.'">';
     echo '<meta name="description" content="'.$resumo.'">';
