@@ -40,7 +40,7 @@ echo '<nav class="woocommerce-MyAccount-navigation">';
 
 		if( array_intersect($clientevip, $user->roles )) {
 			echo '<li class="woocommerce-MyAccount-navigation-link--docs'.(is_singular('private-page')?' is-active':'').'">';
-		      		echo '<a href="'.$urlsite.'/minha-conta/docs/'.$username.'"><span class="nome">Documentos</span></a>';
+		      		echo '<a href="'.$urlsite.'/minha-conta/docs/'.$username.'"><span class="nome">Docs</span></a>';
 		    echo '</li>';
 		    
 		    if ($tembriefing >= 1){

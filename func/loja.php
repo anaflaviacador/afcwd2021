@@ -45,31 +45,7 @@ function afc_removedimensoes_thumbnail( $html, $post_id, $post_image_id ) {
 // retirando titulo da loja principal (home)
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
-// redireciona o form de login
-function afc_redireciona_qdo_loga( $redirect, $user ) {
-    global $user;
-
-    $admin = admin_url();
-    $minhaconta = wc_get_page_permalink( 'myaccount' );
-
-    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-        if ( in_array( 'administrator', $user->roles ) ) {
-            $redirect = $admin;
-        } else {
-            $redirect = $minhaconta;
-        }
-    } else {
-        $redirect = $minhaconta;
-    }    
-
-    // if( $role == 'administrator' ) {
-    //     $redirect = $admin; // painel de login para admins
-    // } 
-
-    return $redirect;
-}
-add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 10, 3 );    
-
+// redireciona quando sai
 add_action('wp_logout','afc_redireciona_qdo_sai');
 function afc_redireciona_qdo_sai(){
     wp_redirect( home_url() );
@@ -104,16 +80,65 @@ function wc_custom_replace_sale_text( $html ) {
 }
 
 // para produtos gratis
-add_filter( 'woocommerce_get_price_html', 'afcwoo_preco_free', 100, 2 );
-function afcwoo_preco_free( $price, $product ){
-    if ( 0 == $product->get_price() ) {
-        $price = '<span class="woocommerce-Price-amount amount">Grátis!</span>';
-    } 
-    return $price;
-}
+// add_filter( 'woocommerce_get_price_html', 'afcwoo_preco_free', 100, 2 );
+// function afcwoo_preco_free( $price, $product ){
+//     if ( 0 == $product->get_price() ) {
+//         $price = '<span class="woocommerce-Price-amount amount">Grátis!</span>';
+//     } 
+//     return $price;
+// }
 
 // retirar produtos relacionados
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+// limpa tudo da parte de resumo pra inserir conteudo completo
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+add_filter( 'woocommerce_product_description_heading', '__return_null' );
+add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
+
+
+// remove area das tabs
+// remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+
+// inserindo descricao abaixo do bt de compra
+add_action( 'woocommerce_single_product_summary', 'afcwoo_wrap_description_tab', 60 );
+function afcwoo_wrap_description_tab() {
+    echo '<div class="loja-wrap-descricao">';
+        woocommerce_template_single_add_to_cart();
+        echo '<article style="padding: 0">'; the_content(); echo '</article>';
+    echo '</div>';
+}
+
+
+// abas 
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+function woo_remove_product_tabs( $tabs ) {
+
+    unset( $tabs['description'] );          // Remove the description tab
+    unset( $tabs['reviews'] );          // Remove the reviews tab
+    // unset( $tabs['additional_information'] );   // Remove the additional information tab
+
+    return $tabs;
+}
+
+// remove metabox do resumo do produto - que eh desenecessario
+function remove_excerpt_metabox() {
+    remove_meta_box( 'postexcerpt','product','normal'); 
+}
+add_action('add_meta_boxes','remove_excerpt_metabox', 50);
+
+// preços "a partir de"
+add_filter( 'woocommerce_format_price_range', 'afc_custom_range_price', 10, 3 );
+function afc_custom_range_price( $price, $from, $to ) {
+    return sprintf( 'A partir de %s', wc_price( $from ) );
+}
+
 
 // ========================================//
 // MINHA CONTA - NAV
@@ -121,15 +146,11 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 // customiza os nomes dos menus da conta do usuario
 function afcwoo_menu_cliente() {
     $myorder = array(
-        'dashboard'          => __( 'Painel', 'woocommerce' ),
+        'dashboard'          => __( 'Início', 'woocommerce' ),
         'orders'             => __( 'Pedidos', 'woocommerce' ),   
         'downloads'          => __( 'Downloads', 'woocommerce' ),     
-        'edit-account'       => __( 'Meus dados', 'woocommerce' ),
-        // 'subscriptions'      => __( 'Assinatura', 'woocommerce' ),
-        // 'edit-address'       => __( 'Endereços', 'woocommerce' ),
-        // 'payment-methods'    => __( 'Payment Methods', 'woocommerce' ),
-        // 'loja' => __( 'Comprar mais moldes', 'woocommerce' ),
-        // 'customer-logout'    => __( 'Sair', 'woocommerce' ),
+        'edit-account'       => __( 'Dados', 'woocommerce' ),
+        'subscriptions'      => __( 'Meu Plano', 'woocommerce' ),
     );
     return $myorder;
 }
@@ -140,28 +161,101 @@ add_filter ( 'woocommerce_account_menu_items', 'afcwoo_menu_cliente' );
 // ========================================//
 // CARRINHO
 // ========================================// 
+// tirar mensagem de carrinho
+add_filter( 'wc_add_to_cart_message_html', '__return_null' );
+
 // retira campo de endereço e restante de campos desnecessarios para compra de item digital
-function wpb_custom_billing_fields( $fields = array() ) {
+function wpb_custom_billing_fields( $fields) {
 	unset($fields['billing_company']);
 	unset($fields['billing_address_1']);
 	unset($fields['billing_address_2']);
 	unset($fields['billing_state']);
 	unset($fields['billing_city']);
-	unset($fields['billing_phone']);
+    unset($fields['billing_phone']);
+    unset($fields['billing_number']); // brazilian market
+	unset($fields['billing_neighborhood']); // brazilian market
 	unset($fields['billing_postcode']);
 	unset($fields['billing_country']);
+
 	return $fields;
 }
 add_filter('woocommerce_billing_fields','wpb_custom_billing_fields');
 
+
 function custom_override_checkout_fields_ek( $fields ) {
-     unset($fields['billing']['billing_company']);
-     unset($fields['billing']['billing_address_1']);
-     unset($fields['billing']['billing_postcode']);
-     unset($fields['billing']['billing_state']);
-     return $fields;
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_address_1']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_postcode']);
+    unset($fields['billing']['billing_state']);
+    unset($fields['order']['order_comments'] );
+    unset($fields['shipping']['shipping_first_name']);    
+    unset($fields['shipping']['shipping_last_name']);  
+    unset($fields['shipping']['shipping_company']);
+    unset($fields['shipping']['shipping_address_1']);
+    unset($fields['shipping']['shipping_address_2']);
+    unset($fields['shipping']['shipping_city']);
+    unset($fields['shipping']['shipping_postcode']);
+    unset($fields['shipping']['shipping_country']);
+    unset($fields['shipping']['shipping_state']);
+
+    $fields['billing']['billing_email']['priority'] = 1;
+
+    // $fields['billing']['billing_number']['required'] = false;
+    // $fields['billing']['billing_neighborhood']['required'] = false;
+
+    return $fields;
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_ek', 99 );
+
+// remove titulo de nota adicional
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
+
+// removendo possiveis itens do lado do checkout de fechar compra
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
+
+
+// pgto de boleto
+add_filter( 'woocommerce_available_payment_gateways', 'afc_pgto_boleto' );
+function afc_pgto_boleto( $gateways ) {
+    if ( isset( $gateways['cod'] ) ) $gateways['cod']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
+    return $gateways;
+}
+
+
+// botao de pagamento
+add_filter( 'woocommerce_order_button_html', 'afc_botao_pagar' );
+function afc_botao_pagar( $button_html ) {
+
+    $order_button_text = 'Finalizar pagamento';
+    $button_html = '<p class="has-text-align-center" style="width:100%; margin-top:2em"><button type="submit" class="button verde medio" name="woocommerce_checkout_place_order" style="float:none" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button></p>';
+
+    return $button_html;
+}
+
+
+
+// ========================================//
+// PEDIDO FINALIZADO
+// ========================================// 
+// agradecimento
+add_filter( 'woocommerce_thankyou_order_received_text', 'misha_thank_you_title', 20, 2 );
+function misha_thank_you_title( $thank_you_title, $order ){
+    $conta = wc_get_page_permalink('myaccount');
+    $loja = wc_get_page_permalink('shop');
+    return '<a href="'.esc_url($downloads).'" class="button bege mini">minha conta</a> <a href="'.esc_url($loja).'" class="button mini">voltar à loja</a><br><br><strong>Muito obrigada pela compra, ' . $order->get_billing_first_name() . '!</strong><br>Segue abaixo detalhes do seu pedido.';
+}
+
+// organizacao de colunas de download
+function filter_woocommerce_account_downloads_columns( $columns ) {
+    $columns['download-product'] = __( 'Produto digital adquirido', 'woocommerce');
+    $columns['download-remaining'] = __( 'Limite de download', 'woocommerce');
+    $columns['download-expires'] = __( 'Baixar até a data', 'woocommerce');
+    $columns['download-file'] = __( 'Arquivo(s)', 'woocommerce');
+    return $columns;
+}
+add_filter( 'woocommerce_account_downloads_columns', 'filter_woocommerce_account_downloads_columns', 10, 1 );
 
 
 // ========================================//
