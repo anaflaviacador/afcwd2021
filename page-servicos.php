@@ -81,19 +81,20 @@ echo '<div class="container" id="pagina-servicos">';
 		echo '<ul aria-label="Tipos de pagamento">';
 			echo '<li data-aos="fade-left">';
 				echo '<div class="tipo" aria-hidden="true"><i class="fal fa-credit-card"></i><span>parcele</span></div>';
-				echo '<div class="descricao"><p>Aceitamos pagamentos <strong>parcelados em até 12x</strong> no cartão de crédito, ou em até <strong>5x sem juros</strong></p></div>';
+				echo '<div class="descricao"><p>Parcele seu projeto <strong>em até 10x</strong>* no cartão de crédito via Paypal, o melhor e mais seguro gateway de pagamento do mundo.<br><span style="font-size: 12px">*Não se aplica para venda de produtos digitais vendidos na loja do studio.</span></p></div>';
 			echo '</li>';
 			echo '<li data-aos="fade-right">';
-				echo '<div class="descricao"><p>Ganhe <strong>desconto de 10%</strong> no pagamento à vista antecipado, ou pague uma entrada e parcele o restante no final</p></div>';
+				echo '<div class="descricao"><p>Super <strong>desconto no pagamento à vista</strong> antecipado,<br> ou então opte em pagar uma entrada e parcelar o restante*<br><span style="font-size: 12px">*Não é o mesmo nível de desconto do pagamento à vista, mas podemos negociar!</span></p></div>';
 				echo '<div class="tipo" aria-hidden="true"><i class="fal fa-sack-dollar"></i><span>poupe</span></div>';
 			echo '</li>';
 		echo '</ul>';
 
 		echo '<div class="logos">';
-			echo '<img data-pin-nopin="true" data-aos="zoom-out" src="'.$urlTema.'/img/logo-pagseguro.svg" alt="Aceitamos PagSeguro">';
+			echo '<img data-pin-nopin="true" data-aos="zoom-out" src="'.$urlTema.'/img/logo-paypal.svg" alt="Aceitamos PagSeguro">';
 			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="150" src="'.$urlTema.'/img/logo-cartoes.svg" alt="Aceitamos até 18 bandeiras de cartões de crédito">';
 			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="250" src="'.$urlTema.'/img/logo-boleto.svg" alt="Aceitamos pagamentos por boleto bancário">';
 			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-nu.svg" alt="Aceitamos pagamento por transferência para NuConta">';
+			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="450" src="'.$urlTema.'/img/logo-pix.svg" alt="Aceitamos pagamento por transferência Pix">';
 		echo '</div>';
 	echo '</div>';	
 

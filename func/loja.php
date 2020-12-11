@@ -55,28 +55,28 @@ function afc_redireciona_qdo_sai(){
 // ========================================//
 // PRODUTO
 // ========================================// 
-// adicionar preco original com preco promocional
-add_filter( 'woocommerce_get_price_html', 'afc_addpromocao', 10, 2 );
-function afc_addpromocao( $price, $product ) {
-    if( $product->is_on_sale())
-        // return $price . sprintf( __('<p>Save %s</p>'), $product->regular_price - $product->sale_price );
-        return '<span class="regular_price">De ' . str_replace( '<ins>', '</span> Por <ins>', $price );
-    else
-        return $price;
-}
+// // adicionar preco original com preco promocional
+// add_filter( 'woocommerce_get_price_html', 'afc_addpromocao', 10, 2 );
+// function afc_addpromocao( $price, $product ) {
+//     if( $product->is_on_sale())
+//         // return $price . sprintf( __('<p>Save %s</p>'), $product->regular_price - $product->sale_price );
+//         return '<span class="regular_price">De ' . str_replace( '<ins>', '</span> Por <ins>', $price );
+//     else
+//         return $price;
+// }
 
 
 // remove botao de add ao carrinho e coloca o link do produto no lugar
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 add_action( 'woocommerce_after_shop_loop_item', 'afcwoo_custom_bt_comprar', 15 );
 function afcwoo_custom_bt_comprar() {
-    echo '<a href="'.get_permalink().'" class="button">Ver detalhes</a>';
+    echo '<a href="'.get_permalink().'" class="button rosa pequeno">Ver detalhes</a>';
 }
 
 // label de oferta / liquidacao
 add_filter( 'woocommerce_sale_flash', 'wc_custom_replace_sale_text' );
 function wc_custom_replace_sale_text( $html ) {
-	return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Liquidação', 'woocommerce' ), $html );
+	return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Promoção!', 'woocommerce' ), $html );
 }
 
 // para produtos gratis
@@ -229,7 +229,7 @@ add_filter( 'woocommerce_order_button_html', 'afc_botao_pagar' );
 function afc_botao_pagar( $button_html ) {
 
     $order_button_text = 'Finalizar pagamento';
-    $button_html = '<p class="has-text-align-center" style="width:100%; margin-top:2em"><button type="submit" class="button verde medio" name="woocommerce_checkout_place_order" style="float:none" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button></p>';
+    $button_html = '<p class="has-text-align-center" style="width:100%; margin-top:2em"><button type="submit" class="button verde medio" name="woocommerce_checkout_place_order" style="float:none;display:inline-block" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button></p>';
 
     return $button_html;
 }

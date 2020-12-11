@@ -30,7 +30,7 @@ $allowed_html = array(
 $clienteloja = array('customer','administrator');
 $clientevip = array('cliente_vip','administrator');
 
-
+echo '<article>';
 
 	/* translators: 1: user display name 2: logout url */
 	// printf(
@@ -85,3 +85,4 @@ $clientevip = array('cliente_vip','administrator');
 	do_action( 'woocommerce_after_my_account' );
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
+echo '</article>';

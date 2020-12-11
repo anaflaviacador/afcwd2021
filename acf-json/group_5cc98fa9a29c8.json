@@ -674,7 +674,7 @@
             "label": "Painel Pinterest",
             "name": "bform_geral_11",
             "type": "url",
-            "instructions": "Você tem um painel de inspiração que gostaria de compartilhar? Por favor, insira o link dele abaixo ou compartilhe-o com o meu perfil do pinterest @anaflaviacador caso seu painel seja privado.",
+            "instructions": "Você tem um painel de inspiração que gostaria de compartilhar? Por favor, insira o link dele abaixo ou compartilhe-o com o meu perfil <a href=\"https:\/\/br.pinterest.com\/afcwebdesign\/\" target=\"_blank\">@afcwebdesign<\/a> caso seu painel seja privado.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1387,5 +1387,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de briefing",
-    "modified": 1604417921
+    "modified": 1607374250
 }
