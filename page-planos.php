@@ -43,7 +43,7 @@
 					echo '<footer>';
 						echo $cancela;
 						echo '<div class="botao" id="basic">';
-							echo '<a target="_blank" onclick="window.open(this.href,this.target,\'width=580,height=700\');return false;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4J2VH73YSBHT6" id="assinar-plano-basic" class="button medio azul">assinar!</a>'; 
+							echo '<a target="_blank" onclick="window.open(this.href,this.target,\'width=580,height=700\');return false;" href="https://afcweb.design/plano-basic" id="assinar-plano-basic" class="button medio azul">assinar!</a>'; 
 
 							/////////// TESTE
 							// echo '<a target="_blank" onclick="window.open(this.href,this.target,\'width=580,height=700\');return false;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AB9KWYH5YKVY8" id="assinar-plano-basic" class="button medio azul">assinar!</a>'; 
@@ -103,7 +103,7 @@
 					echo '<footer>';
 						echo $cancela;
 						echo '<div class="botao" id="basic">';
-							echo '<a target="_blank" onclick="window.open(this.href,this.target,\'width=580,height=700\');return false;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E58RQ34FJ5WSN" id="assinar-plano-standard" class="button medio verde">assinar!</a>';
+							echo '<a target="_blank" onclick="window.open(this.href,this.target,\'width=580,height=700\');return false;" href="https://afcweb.design/plano-standard" id="assinar-plano-standard" class="button medio verde">assinar!</a>';
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
@@ -159,7 +159,7 @@
 					echo '<footer>';
 						echo $cancela;
 						echo '<div class="botao" id="basic">';
-							echo '<a target="_blank" onclick="window.open(this.href,this.target,\'width=580,height=700\');return false;" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TE2SMMYJHBVTG" id="assinar-plano-premium" class="button medio">assinar!</a>'; 
+							echo '<a target="_blank" onclick="window.open(this.href,this.target,\'width=580,height=700\');return false;" href="https://afcweb.design/plano-premium" id="assinar-plano-premium" class="button medio">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
