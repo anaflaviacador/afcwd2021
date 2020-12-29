@@ -1,0 +1,32 @@
+#affwp-affiliate-dashboard {
+	padding-bottom: 4em;
+
+	#affwp-affiliate-dashboard-visits .referral-status { white-space: nowrap }
+
+	.affwp-table { margin-bottom: 3em; }
+
+	#affwp-affiliate-dashboard-creatives {
+		@include flex(space-between);
+
+		h4 { width: 100%; }
+
+		.affwp-creative {
+			width: calc(50% - 40px); border: 0;
+
+			p { margin-bottom: 1em; }
+
+			pre { margin-top: -10px; font-size: 11px; }
+		}
+	}
+}
+
+#affwp-register-form {
+
+	&.afc-form-afiliada {
+		input:not([type="checkbox"]), textarea { margin-top: 5px; border-radius: 8px; }
+
+		span { font-size: 80%; font-style: italic; line-height: 1.2; }
+
+		p { margin-bottom: 1.8em }
+	}
+}

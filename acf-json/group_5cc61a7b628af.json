@@ -11,7 +11,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "35",
+                "width": "34",
                 "class": "",
                 "id": ""
             },
@@ -31,13 +31,33 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "65",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "hide_admin": 0,
             "default_value": "",
             "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fe389c210e1a",
+            "label": "Telefone \/ Whatsapp",
+            "name": "form_telefone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "(xx) xxxx-xxxx",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -77,118 +97,6 @@
             "hide_admin": 0,
             "default_value": "",
             "placeholder": "Seu site \/ blog (caso tenha)",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5ef0ad16d71f0",
-            "label": "Por onde conheceu o studio?",
-            "name": "form_referencia",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "choices": {
-                "Indicação direta de alguém ou empresa": "Indicação direta de alguém ou empresa",
-                "Viu um site que leva a marca do studio": "Viu um site que leva a marca do studio",
-                "Busca no Google": "Busca no Google",
-                "Menção em redes sociais": "Menção em redes sociais"
-            },
-            "default_value": false,
-            "allow_null": 1,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "label",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5ef0ae254f841",
-            "label": "Quem indicou?",
-            "name": "form_referencia_indicacao",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ef0ad16d71f0",
-                        "operator": "==",
-                        "value": "Indicação direta de alguém ou empresa"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5ef0ae8a4f844",
-            "label": "Qual blog \/ site?",
-            "name": "form_referencia_blogsite",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ef0ad16d71f0",
-                        "operator": "==",
-                        "value": "Viu um site que leva a marca do studio"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5ef0ae6f4f843",
-            "label": "Qual mídia social?",
-            "name": "form_referencia_midia",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ef0ad16d71f0",
-                        "operator": "==",
-                        "value": "Menção em redes sociais"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -481,7 +389,7 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_5fa6f1c1a4201",
+            "key": "field_5fbd2dc49f251",
             "label": "Mensagem sobre agenda",
             "name": "",
             "type": "message",
@@ -491,8 +399,12 @@
                 [
                     {
                         "field": "field_5f440d9f51449",
-                        "operator": "==",
-                        "value": "pronta"
+                        "operator": "!=",
+                        "value": "mtolonge"
+                    },
+                    {
+                        "field": "field_5f440d9f51449",
+                        "operator": "!=empty"
                     }
                 ]
             ],
@@ -502,42 +414,121 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "Que bom que já está com planos para começar em breve! Entretanto, o studio não tem condições de atender projetos com caráter de urgência no momento.\r\n\r\n<strong>O studio tem vagas para iniciar novos projetos a partir de Abril de 2021.<\/strong> Portanto, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar a qualquer momento! :)",
+            "message": "<strong>O studio tem vagas para iniciar novos projetos a partir de Julho de 2021.<\/strong> Portanto, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar a qualquer momento! :)",
             "new_lines": "br",
             "esc_html": 0
         },
         {
-            "key": "field_5fbd2dc49f251",
-            "label": "Mensagem sobre agenda 2",
-            "name": "",
-            "type": "message",
+            "key": "field_5ef0ad16d71f0",
+            "label": "Por onde conheceu o studio?",
+            "name": "form_referencia",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "Indicação direta de alguém ou empresa": "Indicação direta de alguém ou empresa",
+                "Viu um site que leva a marca do studio": "Viu um site que leva a marca do studio",
+                "Busca no Google": "Busca no Google",
+                "Menção em redes sociais": "Menção em redes sociais"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "label",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ef0ae254f841",
+            "label": "Quem indicou o studio para ti?",
+            "name": "form_referencia_indicacao",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5f440d9f51449",
+                        "field": "field_5ef0ad16d71f0",
                         "operator": "==",
-                        "value": "perto"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_5f440d9f51449",
-                        "operator": "==",
-                        "value": "longe"
+                        "value": "Indicação direta de alguém ou empresa"
                     }
                 ]
             ],
             "wrapper": {
-                "width": "",
-                "class": "msghidden",
+                "width": "50",
+                "class": "",
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "<strong>O studio tem vagas para iniciar novos projetos a partir de Abril de 2021.<\/strong> Portanto, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar a qualquer momento! :)",
-            "new_lines": "br",
-            "esc_html": 0
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ef0ae8a4f844",
+            "label": "Qual endereço \/ nome do site?",
+            "name": "form_referencia_blogsite",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef0ad16d71f0",
+                        "operator": "==",
+                        "value": "Viu um site que leva a marca do studio"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ef0ae6f4f843",
+            "label": "Qual mídia social?",
+            "name": "form_referencia_midia",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ef0ad16d71f0",
+                        "operator": "==",
+                        "value": "Menção em redes sociais"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "Instagram, Facebook, Linkedin etc",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5fa6f36b4d03e",
@@ -597,5 +588,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de contato padrão do site",
-    "modified": 1606233614
+    "modified": 1609162164
 }

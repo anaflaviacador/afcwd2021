@@ -36,10 +36,13 @@ body {
 @import "layout/servicos";
 @import "padroes/whatsapp";
 @import "layout/cliente";
+@import "layout/afiliada";
 @import "layout/rodape";
 @import "layout/formularios";
 @import "layout/planos";
 @import "layout/popups";
+
+
 
 a[data-target="#faq"]:hover {text-decoration: underline;}
 

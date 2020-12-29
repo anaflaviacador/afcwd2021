@@ -4,7 +4,7 @@ $urlHome = esc_url(home_url('/'));
 // ========================================//
 // DEPOIMENTOS
 // ========================================// 
-if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing') && ! is_page('planos')) && afc_nao_woocommerce()) {
+if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing') && ! is_page('afiliacao') && ! is_page('planos')) && afc_nao_woocommerce()) {
 	echo '<section id="depoimentos-incriveis" class="no-rodape">';
 		echo '<div class="container">';
 			echo '<span class="gutter-sizer"></span><span class="grid-sizer"></span>';

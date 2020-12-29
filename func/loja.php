@@ -45,6 +45,31 @@ function afc_removedimensoes_thumbnail( $html, $post_id, $post_image_id ) {
 // retirando titulo da loja principal (home)
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
+
+// ========================================//
+// REDIRECIONAMENTOS
+// ========================================// 
+function afc_redireciona_qdo_loga( $redirect, $user ) {
+    $user = wp_get_current_user();
+
+    $redirect = '';
+    $admin = admin_url();
+    $minhaconta = wc_get_page_permalink( 'myaccount' );
+
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        if ( in_array( 'administrator', $user->roles ) ) {
+            $redirect = $admin;
+        } else {
+            $redirect = $minhaconta;
+        }
+    } else {
+        $redirect = $minhaconta;
+    }
+
+    return $redirect;
+}
+add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 10, 3 );    
+
 // redireciona quando sai
 add_action('wp_logout','afc_redireciona_qdo_sai');
 function afc_redireciona_qdo_sai(){
@@ -150,7 +175,7 @@ function afcwoo_menu_cliente() {
         'orders'             => __( 'Pedidos', 'woocommerce' ),   
         'downloads'          => __( 'Downloads', 'woocommerce' ),     
         'edit-account'       => __( 'Dados', 'woocommerce' ),
-        'subscriptions'      => __( 'Meu Plano', 'woocommerce' ),
+        // 'subscriptions'      => __( 'Meu Plano', 'woocommerce' ),
     );
     return $myorder;
 }

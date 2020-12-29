@@ -24,6 +24,9 @@
 			&[class*="--docs"] a:before { content: "\f0ea"; }
 			&[class*="--briefing"] a:before { content: "\f036"; }
 			&[class*="--briefing-novo"] a:before { content: "\f305"; }
+
+			// afiliados
+			&[class*="--voltarpainel"] a:before { content: "\f177"; }
 		}
 	}
 
@@ -79,7 +82,7 @@
 
 
 
-.woocommerce-MyAccount-content {
+.woocommerce-MyAccount-content, .affwp-tab-content {
 	width: 100% !important; max-width: $colmax !important; float: none !important;
 	margin: 0 auto; font-size: .9em;
 

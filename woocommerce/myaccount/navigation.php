@@ -57,6 +57,20 @@ echo '<nav class="woocommerce-MyAccount-navigation">';
 		    }
 
 		}
+		if (class_exists( 'Affiliate_WP' )) {
+			$status_afiliado = affwp_get_affiliate_status( affwp_get_affiliate_id() );
+			$chamada_afiliado = 'Afilie-se!';
+			$painelAfiliado = get_home_url() . '/programa-afiliados';
+
+			if ( 'active' == $status_afiliado ) {
+				$painelAfiliado = get_home_url() . '/minha-conta/afiliacao';
+				$chamada_afiliado = 'Afiliação';
+			}
+
+			echo '<li class="woocommerce-MyAccount-navigation-link--customer-logout">';
+				echo '<a href="'.esc_url($painelAfiliado).'"><span class="nome">'.$chamada_afiliado.'</span></a>';
+			echo '</li>';
+		}
 		echo '<li class="woocommerce-MyAccount-navigation-link--customer-logout">';
 			echo '<a href="'.esc_url( wc_logout_url( wc_get_page_permalink( 'myaccount' ) ) ).'"><span class="nome">Sair</span></a>';
 		echo '</li>';

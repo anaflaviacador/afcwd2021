@@ -197,6 +197,10 @@ input[type=text], input[type=tel], input[type=email], input[type=name], input[ty
 		background: $verde-claro;
 		border: 1px solid $verde-medio;
 	}
+
+	&[disabled], &[disabled="disabled"] {
+		opacity: .4; cursor: not-allowed;
+	} 
 }
 
 textarea {
