@@ -414,7 +414,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "<strong>O studio tem vagas para iniciar novos projetos a partir de Julho de 2021.<\/strong> Portanto, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar a qualquer momento! :)",
+            "message": "<strong>O studio tem vagas para iniciar novos projetos a partir de Agosto de 2021.<\/strong> Portanto, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar a qualquer momento! :)",
             "new_lines": "br",
             "esc_html": 0
         },
@@ -588,5 +588,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de contato padrão do site",
-    "modified": 1609162164
+    "modified": 1610893476
 }

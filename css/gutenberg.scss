@@ -7,141 +7,101 @@ $output-bourbon-deprecation-warnings: false !default;
 }
 
 
-
-// BOTAO
-a.btn,button.btn,.btn,.enviar input[type="submit"],a.more-link{
-	display:inline-block;outline:0;background:$marsala;color:white;letter-spacing:0.09em;line-height:1;cursor:pointer;padding:.6em 1.2em;position:relative;font-size:.85em;font-weight:900;text-transform:uppercase;white-space:nowrap;border-radius:6px;border:0;font-family:$fonte-padrao;box-shadow:none!important;@include transition(background 0.2s ease-in-out,padding 0.2s ease-in-out);@extend %letterspacing;
-	text-decoration: none;
-	&:hover{background:$verde;}
-	&.menor{font-size:.85em!important;padding:.4em .7em!important;}
-	&.maior{font-size:1.4em!important;padding:.5em 1.5em!important;}
-	&.verde{background:$verde;
-		&:hover{background:darken($verde,8%);}
-	}
-	&.azul{background:$azul;
-		&:hover{background:darken($azul,8%);}
-	}
-	&.laranja{background:$laranja;
-		&:hover{background:$marsala;}
-	}
-	@media (max-width:$celular){
-		padding:9px 15px!important;font-size:0.85em!important;
-		&.maior{font-size:1.2em!important;padding:6px 20px 8px!important;}
-	}
-}
-
-@import "layout/componentes";
-@import "layout/publicacoes";
-
-
-
 /****************************************
  ----------------------------------------
  * PADRAO DE ITENS *
  ----------------------------------------
  ****************************************/
 body {
-	font-weight: normal;
+	font-weight: 500;
 	font-style: normal;
-	font-size: 17px;
+	font-size: 18px;
 	line-height: 1.7;
-	color: $texto;
+	color: var(--cor-texto);
 	font-family: $fonte-padrao;
-	letter-spacing: 0.04;
+	letter-spacing: 0.01em;
 	position: relative;
-	background-image: url('../img/fundo_top.jpg');
-	background-repeat: no-repeat;
-	background-position: center -45px;
-	background-size: 1603px auto;
 }
 
 
 // titulos
 .wp-block[data-type="core/heading"] {
 	h1, h2, h3, h4, h5, h6 {
-		margin-bottom: 10px;
+		margin: 0;
 		a {
 			color: inherit !important;
 			text-decoration:none !important;
 		}
 	}
 
-	h1 { font-size: 2.1; }
-	h2 { font-size: 1.8em; }
-	h3 { font-size: 1.65em; }
-	h4 { font-size: 1.45em; }
-	h5 { font-size: 1.15em; }
-	h6 { font-size: 1em;}
+	h2 {font-size: 1.65em; 
+		&.cursivo { font-size: #{1.65em * 3}; }
+		@media (max-width: $smart-maior) {
+			font-size: 1.4em;
+			&.cursivo { font-size: #{1.65em * 2.3}; }
+		}
+	}
+
+	h3 {
+		font-size: 1.45em;
+		&.cursivo { font-size: #{1.45em * 3}; }
+		@media (max-width: $smart-maior) {
+			font-size: 1.3em;
+			&.cursivo { font-size: #{1.45em * 2.3}; }
+		}
+	}
+
+	h4 {
+		font-size: 1.15em; 
+		&.cursivo { font-size: #{1.15em * 3}; }
+		@media (max-width: $smart-maior) {
+			font-size: 1.1em;
+			&.cursivo { font-size: #{1.15em * 2.3}; }
+		}
+	}
+
+	h5, h6 { font-size: 1em; }
 }
 
 
 strong, b {font-weight: bold}
 i, em {font-style: italic;}
 
-p:before {display: none;}
-
-
-// linha divisoria
-hr {
-	&:before {display: none;}
-}
 
 
 // titulo de post
 .editor-post-title__block .editor-post-title__input {
 	font-weight: bold; 
-	color: $marrom;
+	font-size: 2.1em; 
 	font-family: $fonte-padrao;
-	text-align: center; position: relative;
+	text-align: left; position: relative;
 }
 
 
 // blocos de forma geral
 .wp-block {
 	width: 100%; 
-	max-width: $colmaior !important;
+	max-width: $colmax !important;
+}
 
-	&[data-align="wide"] {
-		max-width: unset; 
-	    width: inherit;
-	}
 
-	&[data-align="full"] {
-		max-width: $container !important;
-	    width: inherit; margin-left: 0px;
-	    margin-right: 0px;
-	}
-
-	p[role="textbox"] {
+.wp-block[data-type="core/paragraph"] {
+	&:not(.has-text-align-center):not(.has-text-align-left):not(.has-text-align-right) { 
+		text-align: justify; hyphens: auto;
 		a {
-			outline: 0; text-decoration:none; @include transition(box-shadow 0.2s ease-in-out);
-			color: inherit;
+			outline: 0; text-decoration:none;
+			color: var(--cor-rosa);
 			&:hover { }
 		}
 	}
 }
 
 
-.wp-block[data-type="core/paragraph"] {
-	p:not(.has-text-align-center):not(.has-text-align-left):not(.has-text-align-right) { text-align: justify; }
-}
-
-.wp-block[data-type="core/list"], .wp-block[data-type="core/paragraph"],
-.wp-block[data-type="core/heading"], .wp-block[data-type="core/quote"] {
-	max-width: #{$colmaior - 80px} !important;
-}
-
-
 .wp-block[data-type="core/list"], .wp-block[data-type="core/paragraph"],
 .wp-block[data-type="core/image"], .wp-block[data-type="core/quote"], .wp-block[data-type="acf/afcblock-tabs"],
 .wp-block[data-type="acf/afcblock-accordion"] {
-	ul, ol, figcaption, p, .tab-content, .sanfona .sanfona-conteudo {
-		a {
-			color: $marsala !important; font-weight: 500; cursor: pointer;
-			box-shadow: inset 0 -5px 0 transparentize($marsala,0.85);
-	
-			&:hover { box-shadow: inset 0 -15px 0 transparentize($marsala,0.85); }
-		}
+	ul, ol, figcaption, p {
+		a {}
 	}
 }
 
@@ -188,10 +148,6 @@ hr {
 .wp-block[data-type="core/image"] {
 	.wp-block-image {
 		position: relative;
-
-		figcaption {
-			bottom: 32px;
-		}
 	}
 }
 
@@ -200,21 +156,10 @@ hr {
 	&[data-align="center"] .is-block-content .wp-block-buttons .block-editor-inner-blocks .block-editor-block-list__layout { text-align: center; }
 	&[data-align="right"] .is-block-content .wp-block-buttons .block-editor-inner-blocks .block-editor-block-list__layout { text-align: right; }
 	&[data-align="left"] .is-block-content .wp-block-buttons .block-editor-inner-blocks .block-editor-block-list__layout { text-align: left; }
-
-	.wp-block-button {
-		font-weight: bold; text-transform: uppercase;
-		@extend %letterspacing-menor;
-		.has-background {
-			&:before {display: none;}
-		}
-	}
 }
 
 // separador
 .wp-block[data-type="core/separator"] {
-	hr {
-		&:after {width: 79px;}
-	}
 }
 
 

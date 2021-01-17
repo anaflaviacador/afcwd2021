@@ -57,25 +57,18 @@ function afc_setup() {
     if (class_exists('Woocommerce')) { 
       add_theme_support( 'woocommerce' );
       include_once(get_template_directory().'/func/loja.php' );
-    }    
-
-    // registra post types
-    include_once(get_template_directory().'/func/pt_portfolio.php' ); // post type - portfolio
-    include_once(get_template_directory().'/func/pt_depoimentos.php' ); // post type - depoimentos
-    include_once(get_template_directory().'/func/depoimentos.php' ); // depoimentos
-
-
-    // ========================================//
-    // HABILITANDO GUTENBERG
-    // ========================================//
-    add_theme_support( 'align-full' );
-    add_theme_support( 'align-wide' );
-    add_theme_support( 'editor-styles' );
-    // add_editor_style( 'css/gutenberg.css' );
-    add_theme_support('disable-custom-font-sizes');
-    add_theme_support('disable-custom-colors');
-    add_theme_support('disable-custom-gradients');    
+    }     
 }
+
+// gutenberg
+include_once(get_template_directory().'/func/blocks.php' );
+
+// registra post types
+include_once(get_template_directory().'/func/pt_portfolio.php' ); // post type - portfolio
+include_once(get_template_directory().'/func/pt_depoimentos.php' ); // post type - depoimentos
+include_once(get_template_directory().'/func/pt_dicas.php' ); // post type - studio blog
+include_once(get_template_directory().'/func/depoimentos.php' ); // depoimentos
+
 
 
 if (class_exists('acf') && class_exists('AF')) { 
@@ -130,7 +123,7 @@ function edit_admin_menus(){
   // $submenu['edit.php?post_type=private-page'][0][0] = '';
 
   // remove_menu_page( 'edit.php?post_type=acf-field-group' );
-  remove_menu_page( 'edit-comments.php' );
+  // remove_menu_page( 'edit-comments.php' );
   // remove_menu_page( 'edit.php?post_type=af_form' );
 
   add_menu_page('Clientes', 'Clientes', 'manage_options', 'edit.php?post_type=private-page', '', 'dashicons-star-filled', 20 );
@@ -179,6 +172,8 @@ function afc_load_styles() {
 
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
 
+    if (is_singular('afc_blog')) wp_enqueue_script( 'indice', $urltheme . '/js/indice.js', array('jquery-core'), '', true);
+
     // retirando css e js indesejados ou que nao precisam em algumas paginas
     wp_deregister_script( 'comment-reply' );
     wp_deregister_style( 'swpcss' );
@@ -223,11 +218,51 @@ function afc_cssnosync($tag, $handle) {
 
 
 function afc_load_scripts_head() {
-  // anayltics
+  // SCRIPTS QUE NAO RODA PARA ADMIN
   $user = wp_get_current_user();
   if (!in_array( 'administrator', (array) $user->roles ) ) {
+
+    ////////////// ANALYTICS
     echo '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10144283-7"></script>';
     echo '<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'UA-10144283-7\');</script>';
+
+    ////////////// Facebook Pixel Code
+    echo '<script>!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,\'script\', \'https://connect.facebook.net/en_US/fbevents.js\'); fbq(\'init\', \'1002685960227949\'); fbq(\'track\', \'PageView\');</script><noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1002685960227949&ev=PageView&noscript=1"/></noscript>';
+
+    // rastreia paginas de forma geral
+    if (is_front_page() || (is_single() && ! is_singular('afc_blog'))) echo '<script>fbq(\'track\', \'ViewContent\');</script>';
+
+    // rastreia quem acessou a home
+    if (is_front_page()) echo '<script>fbq(\'trackCustom\', \'Home\');</script>';
+
+    // rastreia quem leu artigo do blog
+    if (is_singular('afc_blog')) echo '<script>fbq(\'trackCustom\', \'PostBlogView\');</script>';
+
+    // rastreia quem buscou entrar em contato
+    if (is_page('contato')) echo '<script>fbq(\'track\', \'Contact\');</script>';
+
+    // rastreia quem quis assinar um plano
+    if (is_page('planos')) {
+        echo '<script>';
+            echo 'var planoBasic = document.getElementById(\'assinar-plano-basic\');';
+            echo 'var planoStandard = document.getElementById(\'assinar-plano-standard\');';
+            echo 'var planoPremium = document.getElementById(\'assinar-plano-premium\');';
+            echo 'planoBasic.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'90.00\', currency: \'BRL\'}); }, false);';
+            echo 'planoStandard.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'140.00\', currency: \'BRL\'}); }, false);';
+            echo 'planoPremium.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'240.00\', currency: \'BRL\'}); }, false);';
+            echo 'fbq(\'trackCustom\', \'PlanosAFC\');';
+        echo '</script>';        
+    }
+
+    // rastreia visualizacoes na loja
+    if (class_exists('Woocommerce')) {
+      if(is_shop()) echo '<script>fbq(\'trackCustom\', \'ShopView\');</script>';
+      if(is_product()) echo '<script>fbq(\'trackCustom\', \'ProdutoView\');</script>';
+      if(is_cart()) echo '<script>fbq(\'track\', \'AddToCart\');</script>';
+      if(is_checkout()) echo '<script>fbq(\'track\', \'AddPaymentInfo\');</script>';
+      if(is_wc_endpoint_url( 'order-received' )) echo '<script>fbq(\'track\', \'Purchase\');</script>'; 
+    }
   }
 }
 

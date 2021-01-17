@@ -110,14 +110,17 @@ function register_forms() {
         'from' => '{field:form_nome} <{field:form_email}>',
         'subject' => 'AFC Web Design | {field:form_assunto}',
         'content' => '<p>De: {field:form_nome} {field:form_sobrenome} &lt;{field:form_email}&gt; {field:form_url}<br />
+        Telefone / Whatsapp: {field:form_telefone}<br />
   Assunto: {field:form_assunto}<br />
   Categoria: {field:form_tipo_estrutura}<br />
   Ecommerce: {field:form_loja_tipo}<br />
   Suporte: {field:form_suporte}<br />
   Inten&ccedil;&atilde;o de in&iacute;cio: {field:form_preparacao}<br />
   Referência: {field:form_referencia} &#8211; {field:form_referencia_indicacao}{field:form_referencia_blogsite}{field:form_referencia_midia}<br />
-  Newsletter: {field:form_newsletter}</p>
+  Lista receber newsletter: {field:form_newsletter}</p>
   <blockquote><p>{field:form_mensagem_orcamento}{field:form_mensagem_suporte}</p></blockquote>
+  <br /><br />---<br />
+  Acordo da política de privacidade: {field:form_aceita_termos}
   ',
       ),
     ),

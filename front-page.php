@@ -14,7 +14,7 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 	echo '<div class="gradiente" aria-hidden="true"></div>';
 
 	// titulo da pagina inicial
-	echo '<h1 data-aos="fade-down">';
+	echo '<h1 class="h1-home" data-aos="fade-down">';
 		echo 'Tire o seu projeto do papel e <br>tenha &nbsp;';
 		echo '<span class="foco" id="foco-frase" aria-label="o site, o blog ou a loja virtual">o site</span>';
 		echo ' que você <br>sempre sonhou.';

@@ -1,0 +1,70 @@
+// ========================================//
+// FUNDOS E CORES DE TEXTOS
+// ========================================//
+// padrao
+.has-inline-color {
+	padding: 0 3px;
+	a {
+		color: inherit !important; box-shadow: none !important;
+		&:hover { text-decoration: underline; }
+	}
+}
+strong .has-inline-color { font-weight: bold; }
+
+.has-background { 
+	position: relative;
+
+	a {color: inherit; }	
+}
+
+.has-small-font-size, .has-normal-font-size, .has-regular-font-size, .has-medium-font-size, 
+.has-large-font-size, .has-huge-font-size, .has-larger-font-size { font-size: inherit; }
+
+// cores
+.has-texto-background-color { background-color: var(--cor-texto); }
+.has-grafite-background-color { background-color: var(--cor-grafite); }
+.has-cinza-background-color { background-color: var(--cor-cinza); }
+.has-rosa-background-color { background-color: var(--cor-rosa); }
+.has-rosa-medio-background-color { background-color: var(--cor-rosa-medio); }
+.has-rosa-claro-background-color { background-color: var(--cor-rosa-claro); }
+.has-roxo-background-color { background-color: var(--cor-roxo); }
+.has-roxo-medio-background-color { background-color: var(--cor-roxo-medio); }
+.has-roxo-claro-background-color { background-color: var(--cor-roxo-claro); }
+.has-roxo-escuro-background-color { background-color: var(--cor-roxo-escuro); }
+.has-verde-background-color { background-color: var(--cor-verde); }
+.has-verde-medio-background-color { background-color: var(--cor-verde-medio); }
+.has-verde-claro-background-color { background-color: var(--cor-verde-claro); }
+.has-bege-background-color { background-color: var(--cor-bege); }
+.has-bege-medio-background-color { background-color: var(--cor-bege-medio); }
+.has-bege-claro-background-color { background-color: var(--cor-bege-claro); }
+.has-azul-background-color { background-color: var(--cor-azul); }
+.has-azul-medio-background-color { background-color: var(--cor-azul-medio); }
+.has-azul-claro-background-color { background-color: var(--cor-azul-claro); }
+.has-azul-escuro-background-color { background-color: var(--cor-azul-escuro); }
+
+.has-texto-color { color: var(--cor-texto); box-shadow: inset 0 -20px transparentize($texto,0.85); }
+.has-grafite-color { color: var(--cor-grafite); box-shadow: inset 0 -20px transparentize($grafite,0.85); }
+.has-cinza-color { color: var(--cor-cinza); box-shadow: inset 0 -20px transparentize($cinza,0.85); }
+.has-rosa-color { color: var(--cor-rosa); box-shadow: inset 0 -20px transparentize($rosa,0.85); }
+.has-rosa-medio-color { color: var(--cor-rosa-medio); box-shadow: inset 0 -20px transparentize($rosa-medio,0.85); }
+.has-rosa-claro-color { color: var(--cor-rosa-claro); box-shadow: inset 0 -20px transparentize($rosa-claro,0.85); }
+.has-roxo-color { color: var(--cor-roxo); box-shadow: inset 0 -20px transparentize($roxo,0.85); }
+.has-roxo-medio-color { color: var(--cor-roxo-medio); box-shadow: inset 0 -20px transparentize($roxo-medio,0.85); }
+.has-roxo-claro-color { color: var(--cor-roxo-claro); box-shadow: inset 0 -20px transparentize($roxo-claro,0.85); }
+.has-roxo-escuro-color { color: var(--cor-roxo-escuro); box-shadow: inset 0 -20px transparentize($roxo-escuro,0.85); }
+.has-verde-color { color: var(--cor-verde); box-shadow: inset 0 -20px transparentize($verde,0.85); }
+.has-verde-medio-color { color: var(--cor-verde-medio); box-shadow: inset 0 -20px transparentize($verde-medio,0.85); }
+.has-verde-claro-color { color: var(--cor-verde-claro); box-shadow: inset 0 -20px transparentize($verde-claro,0.85); }
+.has-bege-color { color: var(--cor-bege); box-shadow: inset 0 -20px transparentize($bege,0.85); }
+.has-bege-medio-color { color: var(--cor-bege-medio); box-shadow: inset 0 -20px transparentize($bege-medio,0.85); }
+.has-bege-claro-color { color: var(--cor-bege-claro); box-shadow: inset 0 -20px transparentize($bege-claro,0.85); }
+.has-azul-color { color: var(--cor-azul); box-shadow: inset 0 -20px transparentize($azul,0.85); }
+.has-azul-medio-color { color: var(--cor-azul-medio); box-shadow: inset 0 -20px transparentize($azul-medio,0.85); }
+.has-azul-claro-color { color: var(--cor-azul-claro); box-shadow: inset 0 -20px transparentize($azul-claro,0.85); }
+.has-azul-escuro-color { color: var(--cor-azul-escuro); box-shadow: inset 0 -20px transparentize($azul-escuro,0.85); }
+
+
+// alinhamentos
+.has-text-align-center, .wp-block[data-align="center"] { text-align: center; }
+.has-text-align-left, .wp-block[data-align="left"] { text-align: left; }
+.has-text-align-right, .wp-block[data-align="right"] { text-align: right; }

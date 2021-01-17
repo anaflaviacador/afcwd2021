@@ -171,22 +171,6 @@ if (has_site_icon()) {
     echo '<link rel="shortcut icon" href="https://afcweb.design/wp-content/uploads/2017/12/favicon.png">';
 }
 
-////////////// Facebook Pixel Code
-echo '<script>!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,\'script\', \'https://connect.facebook.net/en_US/fbevents.js\'); fbq(\'init\', \'1002685960227949\'); fbq(\'track\', \'PageView\');</script><noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1002685960227949&ev=PageView&noscript=1"/></noscript>';
-
-if (is_front_page() || is_singular()) echo '<script>fbq(\'track\', \'ViewContent\');</script>';
-if (is_page('contato')) echo '<script>fbq(\'track\', \'Contact\');</script>';
-if (is_page('planos')) {
-    echo '<script>';
-        echo 'var planoBasic = document.getElementById(\'assinar-plano-basic\');';
-        echo 'var planoStandard = document.getElementById(\'assinar-plano-standard\');';
-        echo 'var planoPremium = document.getElementById(\'assinar-plano-premium\');';
-        echo 'planoBasic.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'90.00\', currency: \'BRL\'}); }, false);';
-        echo 'planoStandard.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'140.00\', currency: \'BRL\'}); }, false);';
-        echo 'planoPremium.addEventListener(\'click\', function() { fbq(\'track\', \'Subscribe\', {value: \'240.00\', currency: \'BRL\'}); }, false);';
-    echo '</script>';        
-}
 
 /////////////// Pinterest pixel code
 echo '<script>!function(e){if(!window.pintrk){window.pintrk = function () {

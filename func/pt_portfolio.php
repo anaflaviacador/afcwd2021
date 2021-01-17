@@ -32,7 +32,7 @@ function afc_cpt_portfolio(){
 		'hierarchical' => false,
 		'menu_position' => null,
 		'show_in_rest' => true, //habilita gutenberg
-		'menu_icon' => 'dashicons-heart',
+		'menu_icon' => 'dashicons-art',
 		'supports' => array('title','editor','author','thumbnail','excerpt','comments'),
 		'rewrite' => array('slug' => 'projetos')
 	);
@@ -58,6 +58,7 @@ function afc_cpt_portfolio(){
 		'labels' => $labels,
 		'show_ui' => true,
 		'query_var' => true,
+		'show_in_rest' => true,
 		'rewrite' => array( 'slug' => 'tag' ),
 	));
 	

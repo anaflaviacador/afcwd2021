@@ -4,7 +4,11 @@ $urlHome = esc_url(home_url('/'));
 // ========================================//
 // DEPOIMENTOS
 // ========================================// 
-if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing') && ! is_page('afiliacao') && ! is_page('planos')) && afc_nao_woocommerce()) {
+// if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing') && ! is_page('afiliacao') && ! is_page('planos')) && afc_nao_woocommerce()) {
+
+
+if (is_front_page() || is_post_type_archive(array('etheme_portfolio','afc_blog')) || is_page(array('servicos','sobre')) || is_singular('afc_blog')) {
+
 	echo '<section id="depoimentos-incriveis" class="no-rodape">';
 		echo '<div class="container">';
 			echo '<span class="gutter-sizer"></span><span class="grid-sizer"></span>';
@@ -16,7 +20,7 @@ if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') 
 			echo '</div></div>';
 
 			$numDepo = '';
-			if (is_front_page()) { $numDepo = 8; } else { $numDepo = 3; }
+			if (is_front_page()) { $numDepo = 8; } else { $numDepo = 5; }
 			afc_depoimentos($numDepo);
 		echo '</div>';
 
@@ -31,7 +35,7 @@ if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') 
 // RODAPE 
 // ========================================// 
 
-echo '<footer id="rodape"'.(is_singular('etheme_portfolio') || is_page(array('contato','briefing','planos')) || afc_woocommerce() ? ' style="margin-top:5em"' : '').'>';
+echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_page(array('contato','briefing','planos')) || (is_archive() && ! is_post_type_archive(array('etheme_portfolio','afc_blog'))) || afc_woocommerce() ? ' style="margin-top:5em"' : '').'>';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
 		echo '<ul id="navegacao" role="navigation">';
 			afc_menu('primary');

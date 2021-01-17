@@ -4,15 +4,15 @@
 #chamada-principal {
 	width: 100%;
 	display: block;
-	min-height: 400px;
 	position: relative;
 	@include imagemfull(cover,center,top);
 	// background-image: url('../img/foto-oficial.jpg');
 	// body.suporte-webp & {background-image: url('../img/foto-oficial.webp');}
 
 	@media (min-width: $container) { background-attachment: fixed; }
+	@media (min-width: $smart-maior + 1px) { min-height: 400px; }
 
-	h1 {
+	h1.h1-home {
 		color: white;
 		text-align: center;
 		padding: 2em 8px;
@@ -30,22 +30,6 @@
 		}
 
 		br { display: none; }
-
-		// span.enfase {
-		// 	display: inline-block;
-		// 	position: relative;
-		// 	padding: 0 7px;
-			
-		// 	&:before { 
-		// 		width: 100%; height: 56%; opacity: .3;
-		// 		background: var(--cor-roxo-escuro);
-		// 		position: absolute; top: 50%; left: 0;
-		// 		@include transform(translateY(-50%));
-		// 		content: ''; margin-top: 4px;
-		// 	}
-
-		// 	span { position: relative; }
-		// }
 
 		@media (max-width: $smart-maior) {
 			br {display: block;}
@@ -88,8 +72,6 @@
 				a.ver { display: none; }
 			}
 		}
-
-		
 
 		.apresentacao {
 			width: 48%; @extend %textshadow-claro;

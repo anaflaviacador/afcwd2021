@@ -2,7 +2,7 @@
 
 // thumbnails
 add_theme_support( 'post-thumbnails' ); 
-// add_image_size( 'afc_projeto_mini', 265, 199, true );
+add_image_size( 'afc_blog_thumb', 366, 200, true );
 // add_image_size( 'afc_projeto_mini2x', 530, 399, true );
 
 // add_image_size( 'afc_projeto_medium', 350, 263, true );

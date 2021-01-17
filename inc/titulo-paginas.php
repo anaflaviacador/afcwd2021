@@ -9,7 +9,8 @@ $titulo = '';
 $subtitulo = '';
 
 
-if (is_page()) {
+// geral
+if (is_page() || (is_single() && ! is_singular('afc_blog') )) {
 	$titulo = get_the_title();
 	$subtitulo = get_field('subtitulo');
 }
@@ -25,6 +26,7 @@ if (is_search()) {
 	$subtitulo = 'busca';
 }
 
+// post types
 $post_type_obj = get_post_type_object(get_post_type($post));
 
 if (is_post_type_archive('afc_depoimentos')) {
@@ -35,13 +37,27 @@ if (is_post_type_archive('etheme_portfolio')) {
 	$titulo = $post_type_obj->labels->name;
 	$subtitulo = 'Projetos realizados'; 
 }
+if (is_post_type_archive('afc_blog')) {
+	$titulo = 'Studio Blog';
+	$subtitulo = ''; 
+}
 
+if (is_tax('categoria_blog')) {
+	$term = get_queried_object();
+	$titulo = $term->name;
+	$subtitulo = 'artigos relacionados';
+}
+
+
+// pagina privada de cliente
 if (is_singular('private-page')) {
 	$user = wp_get_current_user(); 
 	$titulo = 'Documentos';
 	$subtitulo = 'arquivos de projeto';
 }
 
+
+// paginas da loja
 if (class_exists('Woocommerce')) { 
 	if (is_shop() || is_woocommerce() || is_product() || is_product_category() || is_product_tag()) {
 		$titulo = 'Lojinha';
@@ -72,9 +88,8 @@ if (class_exists('Woocommerce')) {
 	}
 }
 
-
 // titulos de todas as paginas em geral
-if (! is_singular('etheme_portfolio')) {
+if (! is_singular('etheme_portfolio') && ! is_post_type_archive('afc_blog') && ! is_singular('afc_blog')) {
 	echo '<header id="titulo-pagina" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao.');">';
 		echo '<div class="gradiente" aria-hidden="true"></div>';
 
@@ -82,3 +97,18 @@ if (! is_singular('etheme_portfolio')) {
 		if($subtitulo) {echo '<h2 class="cursivo" data-aos="fade-down">'.$subtitulo.'</h2>';}
 	echo '</header>';	
 }
+
+
+// titulo de paginas com mais enfase - blog
+if (is_post_type_archive('afc_blog')) {
+echo '<header id="chamada-principal" class="pag-interna-destaque" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao.');">';
+	echo '<div class="gradiente" aria-hidden="true"></div>';
+
+	echo '<h1 data-aos="fade-up">'.$titulo.'</h1>';
+		if($subtitulo) {echo '<h2 class="cursivo" data-aos="fade-up" data-aos-delay="100"><span>'.$subtitulo.'</span></h2>';}
+echo '</header>';
+}
+
+
+
+
