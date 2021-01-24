@@ -20,6 +20,7 @@ defined( 'ABSPATH' ) || exit;
 do_action( 'woocommerce_before_cart' ); ?>
 
 <div class="afc-carrinho">
+
 	<div class="afc-itens">
 		<h3 class="titulo">Carrinho</h3>
 		<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
@@ -171,8 +172,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<h3 class="titulo">Total a pagar</h3>
 		<?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 		<?php do_action( 'woocommerce_cart_collaterals' );?>
-
+		<br>
 	</div>
-
 </div>
 <?php do_action( 'woocommerce_after_cart' ); ?>
+<?php get_template_part('inc/aviso-checkout'); ?>
+

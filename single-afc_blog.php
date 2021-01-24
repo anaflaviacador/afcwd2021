@@ -20,7 +20,7 @@ echo '</header>';
 if (have_posts()) {
 echo '<section class="container area-artigo">';
 
-	echo '<div class="colmaior">';
+	echo '<div class="colmaior" data-aos="fade-left">';
 	while (have_posts()) : the_post();
 		
 		echo '<div class="info-post">';

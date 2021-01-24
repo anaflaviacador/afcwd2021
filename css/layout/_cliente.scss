@@ -218,6 +218,40 @@ div.woocommerce {
 .woocommerce-checkout {
 	font-size: 1em;
 
+	select:not(.woocommerce-input-wrapper) {
+		width: auto; min-width: unset; height: auto;
+		@include appearance(none);
+		margin:0;
+		display: block;
+		padding: .6em 30px .6em 15px;
+		line-height: 1.2;
+		color: var(--cor-texto);
+		font-weight: 500;
+		outline: 0; font-size: 1em;
+		background-color: white;
+		background-repeat: no-repeat; 
+		background-size: 13px auto;
+		background-position: 96% 3px;
+		background-image: url('../img/select.svg');
+		border-radius: 8px !important;
+	    background: var(--cor-azul-claro);
+		border: 1px solid var(--cor-azul-medio);
+	    font-family: $fonte-padrao;
+	    position: relative;
+	    cursor: pointer;
+
+	    &:-moz-focusring {
+	    	color: transparent;
+			text-shadow: 0 0 0 #000;
+	    }
+
+	    &::-ms-expand { display: none; }
+
+	    // &:focus {
+	    	
+	    // }
+	}
+
 	.woocommerce-checkout-review-order-table {
 		margin-bottom: 2.5em !important; font-size: .9em;
 		border-radius: 0 !important;
@@ -243,17 +277,68 @@ div.woocommerce {
 			border: 0;
 
 			li {
-				label {
-					cursor: pointer;
-					img { max-width: 30px !important; vertical-align: unset; position: relative; bottom: -2px }
+				& > label {
+					cursor: pointer; 
+ 
+					img { max-height: 20px !important; vertical-align: unset; position: relative; bottom: -2px !important;}
 				}
 
-				.payment_box {
+				div.payment_box {
 					background: var(--cor-verde-claro); border-radius: 0 !important;
+					border: 1px solid var(--cor-verde-medio);
+
 					&:before { border-bottom-color: var(--cor-verde-claro); }
+					&:after {
+						content: ""; display: block; z-index: -1;
+					    border: 1em solid var(--cor-verde-medio);
+					    border-right-color: transparent;
+					    border-left-color: transparent;
+					    border-top-color: transparent;
+					    position: absolute; top: -.75em;
+					    left: 0; margin: -1.1em 0 0 2em;
+					}
+
+					fieldset {
+						// background: white !important; 
+						margin-top: 0 !important;
+						padding: 0 !important; 
+
+						.form-row-wide { margin-bottom: 0; }
+						.form-row-first, .form-row-last { width: 48%; margin-bottom: 0; }
+
+						div[role="alert"] {
+							margin-top: 1em;
+
+							& + br { display: none; }
+						}
+
+						input.input-text, select {
+							background: white !important; box-shadow: none !important;
+							font-size: 1em !important; border-color: var(--cor-verde-medio) !important;
+							&:focus { border-color: var(--cor-verde) !important; }
+						}
+					}
+					
 				}
 
-				&.payment_method_cod label img { max-width: 37px !important; }
+				&.payment_method_cod label img { max-width: 37px !important; } // para boletos manuais
+				&.payment_method_juno-credit-card {
+					.form-row-wide:not(:first-child), .form-row-first, .form-row-last { padding-top: 1em; }
+
+					fieldset { 
+						position: relative;
+
+						&:before {
+							content: ''; background-repeat: no-repeat; 
+							background-size: auto 25px; display: block;
+							background-position: left center;
+							background-image: url('../img/cartoes-juno.svg');
+							width: 100%; margin-bottom: 1em; height: 25px;
+
+							@media (max-width: 420px) { background-size: 100% auto;}
+						}
+					}
+				}
 			}
 		}
 
@@ -261,10 +346,13 @@ div.woocommerce {
 			margin-top: 2em;
 			padding: 0 !important;
 
-			.woocommerce-privacy-policy-text { font-size: .9em; background: var(--cor-azul-claro); padding: 1em; }
+			.woocommerce-privacy-policy-text { margin-bottom: 20px; font-style: italic; }
+			.woocommerce-terms-and-conditions { border-color: var(--cor-cinza); box-shadow: 0 0 15px transparentize(black,0.95) !important; }
 		}
 	}
 }
+
+.aceite-extra label.checkbox { line-height: 1.4 !important; }
 
 // termos e condicoes
 .woocommerce-terms-and-conditions {

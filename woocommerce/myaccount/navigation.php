@@ -38,6 +38,14 @@ echo '<nav class="woocommerce-MyAccount-navigation">';
 		}
 		// } 
 
+		if (class_exists('WC_Subscription')) {
+			if (has_active_subscription()) {
+				echo '<li class="woocommerce-MyAccount-navigation-link--subscriptions">';
+					echo '<a href="'.esc_url( wc_get_account_endpoint_url( 'subscriptions' ) ).'"><span class="nome">Plano</span></a>';
+				echo '</li>';
+			}
+		}
+
 		if( array_intersect($clientevip, $user->roles )) {
 			echo '<li class="woocommerce-MyAccount-navigation-link--docs'.(is_singular('private-page')?' is-active':'').'">';
 		      		echo '<a href="'.$urlsite.'/minha-conta/docs/'.$username.'"><span class="nome">Docs</span></a>';

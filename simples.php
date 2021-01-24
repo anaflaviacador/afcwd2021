@@ -1,4 +1,4 @@
-<?php /* Template Name: Links */
+<?php /* Template Name: Simples */
  
 echo '<!DOCTYPE html>';
 echo '<html lang="pt-BR" dir="ltr">';
@@ -32,39 +32,17 @@ echo '<header id="cabecalho" style="box-shadow: none">';
 echo '</header>';
 
 if (have_posts()) {
-	echo '<article class="container mini-page-insta">';
+	echo '<article class="container mini-page-insta post-blog">';
 	while (have_posts()) : the_post();
+		echo '<h1 style="font-size:1.65em;text-align:center; margin: 0 0 2em;">'; the_title(); echo '</h1>';
 
 		the_content();
 
-		if( have_rows('links') ) { $i = 0;
-			while ( have_rows('links') ) : $i++; the_row();
-				$link = get_sub_field('link'); $cor = get_sub_field('cor');
-				echo '<p style="margin-top: 15px;">';
-					echo '<a style="'.($cor ? 'background-color:'.$cor.' !important' : '').'" class="button link-bio" href="'.$link['url'].'" target="'.$link['target'].'">'.$link['title'].'</a>';
-				echo '</p>';
-
-
-				if ($i == 2) {
-					echo '<div class="area-news">';
-						$urlTema = get_template_directory_uri();
-						$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
-						$extensao = 'jpg';
-						if( $webp == true ) $extensao = 'webp';
-						echo '<div class="foto" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao.');"></div>';
-
-						echo '<h2 class="cursivo has-text-align-center">conteúdos exclusivos</h2>';
-						echo '<p class="has-text-align-center">dicas sobre design, freebies, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu site!</p>';
-
-						get_template_part('inc/news');
-
-					echo '</div>';
-				}
-			endwhile;
-		}
-
 	endwhile;
 	echo '</article>';
+
+	echo '<div class="has-text-align-center" style="margin-top:2em"><a href="'.$urlHome.'" class="button"><i class="far fa-long-arrow-left"></i> Voltar ao site</a></div>';
+
 }
 
 echo '<footer id="rodape" style="margin-top:5em">';

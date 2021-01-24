@@ -21,7 +21,7 @@ echo '<meta property="fb:app_id" content="256251604417279">';
 
 // pinterest
 echo '<meta name="p:domain_verify" content="dabe58e86f525dd790cd953954d1b568"/>';
-if (! is_singular('etheme_portfolio') ) echo '<meta name="pinterest" content="nopin" description="Visite o Pinterest oficial do studio e salve suas inpirações por lá: https://br.pinterest.com/afcwebdesign" />';
+if (! is_singular('etheme_portfolio') && ! is_singular('afc_blog') ) echo '<meta name="pinterest" content="nopin" description="Visite o Pinterest oficial do studio e salve suas inpirações por lá: https://br.pinterest.com/afcwebdesign" />';
 
 // logo
 echo '<meta itemprop="logo" content="'.$tema.'/screenshot.png">';

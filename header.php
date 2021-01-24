@@ -25,21 +25,7 @@ if (! is_user_logged_in()) { echo '<div id="afc-msg-login">'; do_action( 'woocom
 
 			if (class_exists('Woocommerce')) { 
 			    if (is_user_logged_in()) {
-					$pgAoLogar = '';
-					$pgConta = wc_get_page_permalink( 'myaccount' );
-				    $pgAdmin = admin_url();
-				    
-				    $user = wp_get_current_user();
-
-				    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-				        if ( in_array( 'administrator', $user->roles ) ) {
-				            $pgAoLogar = $pgAdmin;
-				        } else {
-							$pgAoLogar = $pgConta;
-				        }
-				    } else {
-				    	$pgAoLogar = home_url();
-				    }
+					$pgAoLogar = wc_get_page_permalink( 'myaccount' );
 			    }
 
 				$numItensCarrinho = WC()->cart->get_cart_contents_count();

@@ -49,26 +49,21 @@ add_filter( 'woocommerce_show_page_title', '__return_false' );
 // ========================================//
 // REDIRECIONAMENTOS
 // ========================================// 
-function afc_redireciona_qdo_loga( $redirect, $user ) {
-    $user = wp_get_current_user();
+// function afc_redireciona_qdo_loga( $redirect ) {
+//     $minhaconta = wc_get_page_permalink( 'myaccount' );
+//     $redirect = '';
 
-    $redirect = '';
-    $admin = admin_url();
-    $minhaconta = wc_get_page_permalink( 'myaccount' );
+//     $protocolo = isset($_SERVER["HTTPS"]) ? 'https://' : 'http://';
+//     $pagina_atual = esc_url($protocolo .$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 
-    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-        if ( in_array( 'administrator', $user->roles ) ) {
-            $redirect = $admin;
-        } else {
-            $redirect = $minhaconta;
-        }
-    } else {
-        $redirect = $minhaconta;
-    }
+//     if (is_cart() || is_checkout())
+//         $redirect = $pagina_atual;
+//     else
+//         $redirect = $minhaconta;
 
-    return $redirect;
-}
-add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 10, 3 );    
+//     return $redirect;
+// }
+// add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 1100, 2 );    
 
 // redireciona quando sai
 add_action('wp_logout','afc_redireciona_qdo_sai');
@@ -170,17 +165,36 @@ function afc_custom_range_price( $price, $from, $to ) {
 // ========================================// 
 // customiza os nomes dos menus da conta do usuario
 function afcwoo_menu_cliente() {
+
     $myorder = array(
         'dashboard'          => __( 'Início', 'woocommerce' ),
         'orders'             => __( 'Pedidos', 'woocommerce' ),   
         'downloads'          => __( 'Downloads', 'woocommerce' ),     
         'edit-account'       => __( 'Dados', 'woocommerce' ),
-        // 'subscriptions'      => __( 'Meu Plano', 'woocommerce' ),
+        // 'subscriptions'      => __( 'Plano', 'woocommerce' ),
     );
     return $myorder;
+
 }
 add_filter ( 'woocommerce_account_menu_items', 'afcwoo_menu_cliente' );
 
+
+// ========================================//
+// DETECTA SE HA ASSINATURA
+// ========================================// 
+if (class_exists('WC_Subscription')) {
+    function has_active_subscription( $user_id='' ) {
+        // When a $user_id is not specified, get the current user Id
+        if( '' == $user_id && is_user_logged_in() ) 
+            $user_id = get_current_user_id();
+
+        // User not logged in we return false
+        if( $user_id == 0 ) 
+            return false;
+
+        return wcs_user_has_subscription( $user_id, '', 'active' );
+    }
+}
 
 
 // ========================================//
@@ -192,27 +206,38 @@ add_filter( 'wc_add_to_cart_message_html', '__return_null' );
 // retira campo de endereço e restante de campos desnecessarios para compra de item digital
 function wpb_custom_billing_fields( $fields) {
 	unset($fields['billing_company']);
-	unset($fields['billing_address_1']);
+	// unset($fields['billing_address_1']);
 	unset($fields['billing_address_2']);
-	unset($fields['billing_state']);
-	unset($fields['billing_city']);
+	// unset($fields['billing_state']);
+	// unset($fields['billing_city']);
     unset($fields['billing_phone']);
-    unset($fields['billing_number']); // brazilian market
+    // unset($fields['billing_number']); // brazilian market
 	unset($fields['billing_neighborhood']); // brazilian market
-	unset($fields['billing_postcode']);
+	// unset($fields['billing_postcode']);
 	unset($fields['billing_country']);
+
+    $fields['billing_cpf']['class'][0] = 'form-row-first';
+    $fields['billing_postcode']['class'][0] = 'form-row-last';
+
+    $fields['billing_address_1']['class'][0] = 'form-row-first';
+    $fields['billing_number']['class'][0] = 'form-row-last';
+    $fields['billing_city']['class'][0] = 'form-row-first';
+
+    // $fields['billing_address_1']['label'] = 'Endereço';
+    $fields['billing_number']['placeholder'] = 'Insira S/N se não houver';
+
+    $fields['billing_state']['class'][0] = 'form-row-last';
 
 	return $fields;
 }
 add_filter('woocommerce_billing_fields','wpb_custom_billing_fields');
 
-
 function custom_override_checkout_fields_ek( $fields ) {
     unset($fields['billing']['billing_company']);
-    unset($fields['billing']['billing_address_1']);
+    // unset($fields['billing']['billing_address_1']);
     unset($fields['billing']['billing_address_2']);
-    unset($fields['billing']['billing_postcode']);
-    unset($fields['billing']['billing_state']);
+    // unset($fields['billing']['billing_postcode']);
+    // unset($fields['billing']['billing_state']);
     unset($fields['order']['order_comments'] );
     unset($fields['shipping']['shipping_first_name']);    
     unset($fields['shipping']['shipping_last_name']);  
@@ -224,7 +249,7 @@ function custom_override_checkout_fields_ek( $fields ) {
     unset($fields['shipping']['shipping_country']);
     unset($fields['shipping']['shipping_state']);
 
-    $fields['billing']['billing_email']['priority'] = 1;
+    $fields['billing']['billing_email']['priority'] = 21;
 
     // $fields['billing']['billing_number']['required'] = false;
     // $fields['billing']['billing_neighborhood']['required'] = false;
@@ -233,6 +258,16 @@ function custom_override_checkout_fields_ek( $fields ) {
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_ek', 99 );
 
+// adiciona nota dentro dos fields de checkout
+add_action( 'woocommerce_form_field_text','afc_checkout_field_alerta', 10, 2 );
+function afc_checkout_field_alerta( $field, $key ){
+    if ( is_checkout() && ( $key == 'billing_number') ) {
+        $field .= '<p class="form-row form-row-wide" style="font-size: 12px; margin: -7px 0 11px 0 !important; float: left; line-height: 1.5; clear: both;"><span style="color:var(--cor-negacao)">Obs:</span> Não é necessário inserir o bairro e complemento dentro do campo de "Endereço", ok? Só o logradouro <em>(nome da rua, avenida, alameda, praça etc)</em> é o suficiente. ;&#41;</p>';
+    }
+    return $field;
+}
+    
+
 // remove titulo de nota adicional
 add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
 
@@ -240,11 +275,11 @@ add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 
-
 // pgto de boleto
-add_filter( 'woocommerce_available_payment_gateways', 'afc_pgto_boleto' );
-function afc_pgto_boleto( $gateways ) {
-    if ( isset( $gateways['cod'] ) ) $gateways['cod']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
+add_filter( 'woocommerce_available_payment_gateways', 'afc_logos_pgto' );
+function afc_logos_pgto( $gateways ) {
+    if ( isset( $gateways['paghiper'] ) ) $gateways['paghiper']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
+    // if ( isset( $gateways['juno-credit-card'] ) ) $gateways['juno-credit-card']->icon = get_stylesheet_directory_uri() . '/img/cartoes-juno.svg';
     return $gateways;
 }
 
@@ -260,6 +295,50 @@ function afc_botao_pagar( $button_html ) {
 }
 
 
+// ========================================//
+// ALEGACAO DE NAO REVENDA FORA DO SITE - qdo eh produto digital
+// nao visivel para categorias de planos de manutencao
+// ========================================// 
+add_action( 'woocommerce_review_order_before_submit', 'afcwoo_inserir_politica', 9 );
+function afcwoo_inserir_politica() {
+
+    $cat_check = false;
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+        $product = $cart_item['data'];
+        
+        if ( !has_term( 'planos', 'product_cat', $product->id ) ) {
+            $cat_check = true;
+
+                woocommerce_form_field( 'aceite_extra', array(
+                    'type' => 'checkbox',
+                    'class' => array('form-row privacy aceite-extra'),
+                    'label_class' => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
+                    'input_class' => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
+                    'required' => true,
+                    'label' => '<label style="line-height: initial; display: initial;">Alego que não irei reproduzir o código-fonte, revender ou disponibilizar os produtos do Studio AFC Web Design para terceiros.</label>',
+                    )
+                );
+
+            break;
+        }
+    }
+}
+
+add_action( 'woocommerce_checkout_process', 'afcwoo_politica_nao_selecionada' );
+function afcwoo_politica_nao_selecionada() {
+    $cat_check = false;
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+        $product = $cart_item['data'];
+        
+        if ( !has_term( 'planos', 'product_cat', $product->id ) ) {
+            $cat_check = true;
+
+            if ( ! (int) isset( $_POST['aceite_extra'] ) ) wc_add_notice( __( '<strong>Você precisa alegar que não irá reproduzir, vender ou disponibilizar os produtos do Studio AFC Web Design!</strong>' ), 'error' );
+        }
+    }
+}
+     
+
 
 // ========================================//
 // PEDIDO FINALIZADO
@@ -267,9 +346,9 @@ function afc_botao_pagar( $button_html ) {
 // agradecimento
 add_filter( 'woocommerce_thankyou_order_received_text', 'misha_thank_you_title', 20, 2 );
 function misha_thank_you_title( $thank_you_title, $order ){
-    $conta = wc_get_page_permalink('myaccount');
+    $downloads = wc_get_account_endpoint_url('downloads');
     $loja = wc_get_page_permalink('shop');
-    return '<a href="'.esc_url($downloads).'" class="button bege mini">minha conta</a> <a href="'.esc_url($loja).'" class="button mini">voltar à loja</a><br><br><strong>Muito obrigada pela compra, ' . $order->get_billing_first_name() . '!</strong><br>Segue abaixo detalhes do seu pedido.';
+    return '<a href="'.esc_url($downloads).'" class="button bege mini">downloads</a> <a href="'.esc_url($loja).'" class="button mini">voltar à loja</a><br><br><strong>Muito obrigada pela compra, ' . $order->get_billing_first_name() . '!</strong><br>Segue abaixo detalhes do seu pedido.';
 }
 
 // organizacao de colunas de download

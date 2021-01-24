@@ -63,7 +63,7 @@ echo '<article>';
 	// echo '<br><hr><p><strong>Mantenha seu Wordpress atualizado!</strong> Ele é uma plataforma de software livre, com diversas pessoas trabalhando incansavelmente para melhorar o sistema com inovações e reforçando a segurança. Um sistema antigo abre portas para vulnerabilidades (ataques de vírus e/ou malwares) além de sobrecarga desnecessária de seu plano de hospedagem. Lembre-se: <em>uma versão nunca é lançada à toa, o que significa que algo não estava ocorrendo bem antes</em>.</p>';
 
 	echo '<br><p class="has-text-align-center">Está a fim de uma manutenção mensal para nunca mais ter dor de cabeça?</p>';
-	echo '<p class="has-text-align-center"><a href="https://afcweb.design/servicos/planos" target="_blank" class="button">Ver planos disponíveis</a><br> <a href="https://www.paypal.com/myaccount/autopay/" target="_blank" style="color:var(--cor-texto)"><small>cancelar plano atual aqui</small></a></p>';
+	echo '<p class="has-text-align-center"><a href="https://afcweb.design/servicos/planos" target="_blank" class="button">Ver planos disponíveis</a></p>';
 
 
 	/**

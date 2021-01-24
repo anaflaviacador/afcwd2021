@@ -176,7 +176,7 @@ input, button, textarea {
 }
 
 // caixas de texto e selects pra contato e afins
-input[type=text], input[type=tel], input[type=email], input[type=name], input[type=password], input[type=number], input[type=search], textarea {
+input[type=text]:not([role="combobox"]), input[type=tel], input[type=email], input[type=name], input[type=password], input[type=number], input[type=search], textarea {
 	width: 100%;
 	margin-top: 20px;
 	vertical-align:middle;
@@ -185,17 +185,17 @@ input[type=text], input[type=tel], input[type=email], input[type=name], input[ty
 	padding: 0 15px;
 	line-height: 40px;
 	font-size: 1em;
-	color: $texto;
-	background: $azul-claro;
+	color: var(--cor-texto);
+	background: var(--cor-azul-claro);
     border-radius: 100px;
-    border: 1px solid $azul-medio;
+    border: 1px solid var(--cor-azul-medio);
     font-family: $fonte-padrao;
 	@include transition(background 0.3s ease-in-out);
 
 	&:focus {
 		outline:0;
-		background: $verde-claro;
-		border: 1px solid $verde-medio;
+		background: var(--cor-verde-claro);
+		border: 1px solid var(--cor-verde-medio);
 	}
 
 	&[disabled], &[disabled="disabled"] {

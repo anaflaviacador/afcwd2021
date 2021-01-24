@@ -51,6 +51,7 @@ function afc_setup() {
     register_nav_menus( array( 
       'primary' => __( 'Menu principal'),
       'secondary' => __( 'Menu celular'),
+      'footer' => __( 'Menu Rodape'),
     ) );
 
     // loja
@@ -435,4 +436,11 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
     $urls = array_diff( $urls, array( $emoji_svg_url ) );
   }
   return $urls;
+}
+
+// ========================================//
+// AFFILIATE WP
+// ========================================// 
+if (class_exists( 'Affiliate_WP' )) {
+  include_once(get_template_directory().'/func/affiatewp-extrafields.php' );
 }

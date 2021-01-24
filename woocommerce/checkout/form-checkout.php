@@ -38,7 +38,11 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<div class="col2-set" id="customer_details">
 			<div class="col-1">
 
-				<h3>Resumo do pedido</h3>
+				<div style="display:flex;justify-content:space-between;align-items:flex-start;">
+					<h3>Pedido</h3>
+					<a href="<?php echo wc_get_page_permalink('cart'); ?>" class="button mini"><i class="fa fa-shopping-cart"></i> Rever carrinho</a>
+				</div>
+				
 				<?php echo wc_get_template( 'checkout/review-order.php' ); ?>
 
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
@@ -46,7 +50,10 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 			</div>
 
 			<div class="col-2">
-				<h3>Meio de pagamento</h3>
+
+				<h3>Forma de pagamento</h3>
+				<?php get_template_part('inc/aviso-checkout'); ?>
+				
 				<?php echo wc_get_template( 'checkout/payment.php' ); ?>
 			</div>
 		</div>

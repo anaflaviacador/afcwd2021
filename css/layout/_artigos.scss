@@ -10,7 +10,7 @@
 	header {
 		width: 100%; position: relative; overflow: hidden;
 
-		img { width: 100%; height: auto; position: relative; opacity: 0.75 }
+		img { width: 100%; height: auto; position: relative; opacity: 0.85 }
 
 		.gradiente {
 			background: -moz-linear-gradient(0deg, rgba(255,255,255,1) 2%, rgba(162,151,179,0.1) 100%);
@@ -22,7 +22,7 @@
 		a.link { @include blocoabsoluto; }
 
 		.temas {
-			position: absolute;
+			position: absolute; line-height: 1;
 			top: 15px; right: 20px; text-align: right;
 
 			a { display: inline-block; margin: 0 0 0 .4em; font-size: 9px !important;}
@@ -30,7 +30,7 @@
 	}
 
 	article {
-		padding: 0 20px; font-size: 0.85em; line-height: 1.6;
+		padding: 20px 20px 0; font-size: 0.85em; line-height: 1.6;
 		flex-grow: 1;
 
 		h3 { margin: 0 0 10px; font-size: 1.45em; }

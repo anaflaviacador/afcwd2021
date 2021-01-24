@@ -35,21 +35,23 @@ if (is_singular('etheme_portfolio')) {
 
 if (is_front_page()) $class = 'news com-imagem';
 
-echo '<div class="modal popup '.$class.'" id="'.$acao.'">';
-	echo '<div class="wrap">';
-		echo '<div class="area-texto">';
-			if($titulo) echo $titulo;
+if (afc_nao_woocommerce()) {
+	echo '<div class="modal popup '.$class.'" id="'.$acao.'">';
+		echo '<div class="wrap">';
+			echo '<div class="area-texto">';
+				if($titulo) echo $titulo;
 
-			if($texto) {
-				echo '<p class="has-text-align-center">';
-					echo $texto;
-				echo '</p>';
-			}
+				if($texto) {
+					echo '<p class="has-text-align-center">';
+						echo $texto;
+					echo '</p>';
+				}
 
-			get_template_part('inc/news');
+				get_template_part('inc/news');
 
-			if($cta) echo $cta;
+				if($cta) echo $cta;
+			echo '</div>';
+			echo '<div class="area-img" style="'.$fundo.'"></div>'; 
 		echo '</div>';
-		echo '<div class="area-img" style="'.$fundo.'"></div>'; 
 	echo '</div>';
-echo '</div>';
+}

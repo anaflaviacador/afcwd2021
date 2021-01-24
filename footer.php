@@ -7,7 +7,7 @@ $urlHome = esc_url(home_url('/'));
 // if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing') && ! is_page('afiliacao') && ! is_page('planos')) && afc_nao_woocommerce()) {
 
 
-if (is_front_page() || is_post_type_archive(array('etheme_portfolio','afc_blog')) || is_page(array('servicos','sobre')) || is_singular('afc_blog')) {
+if (is_front_page() || is_post_type_archive(array('etheme_portfolio')) || is_page(array('servicos','sobre')) || is_singular('afc_blog')) {
 
 	echo '<section id="depoimentos-incriveis" class="no-rodape">';
 		echo '<div class="container">';
@@ -35,10 +35,10 @@ if (is_front_page() || is_post_type_archive(array('etheme_portfolio','afc_blog')
 // RODAPE 
 // ========================================// 
 
-echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_page(array('contato','briefing','planos')) || (is_archive() && ! is_post_type_archive(array('etheme_portfolio','afc_blog'))) || afc_woocommerce() ? ' style="margin-top:5em"' : '').'>';
+echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_page(array('contato','briefing','planos')) || (is_archive() && ! is_post_type_archive(array('etheme_portfolio','afc_depoimentos'))) || afc_woocommerce() ? ' style="margin-top:5em;float:left;clear:both;"' : '').'>';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
 		echo '<ul id="navegacao" role="navigation">';
-			afc_menu('primary');
+			afc_menu('footer');
 		echo '</ul>';
 	echo '</nav>';
 
@@ -63,7 +63,7 @@ echo '</main>';
 $politicaID = get_option( 'wp_page_for_privacy_policy' );
 echo '<div class="modal" id="privacidade" aria-label="'.get_the_title($politicaID).'">'; 
 	$politicaPG = get_post($politicaID);
-	echo '<h2 class="has-text-align-center">Privacidade & Termos de uso</h2>';
+	echo '<h2 class="has-text-align-center">Política de Privacidade</h2>';
 	echo '<article>'.apply_filters('the_content',$politicaPG->post_content).'</article>';
 echo '</div>'; 
 

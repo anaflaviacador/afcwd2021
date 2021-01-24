@@ -13,7 +13,7 @@ $categorias = get_the_terms($idpost,'categoria_blog');
 
  echo '<header>';
  	echo '<img src="'.$thumbnail.'" alt="'.$titulo.'">';
- 	echo '<div class="gradiente" aria-hidden="true"></div>';
+ 	// echo '<div class="gradiente" aria-hidden="true"></div>';
  	echo '<a href="'.$permalink.'" aria-hidden="true" class="link"></a>';
 
  	if ($categorias && ! is_wp_error($terms)) {
