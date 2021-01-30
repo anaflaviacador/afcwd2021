@@ -158,7 +158,7 @@ function afc_load_styles() {
     wp_deregister_script( 'jquery-migrate' );
     wp_register_script( 'jquery-migrate', $urlCDN . '/jquery-migrate@3.3.1/dist/jquery-migrate.min.js', array(), '' );
 
-    if (is_front_page()) {
+    if (is_front_page() || is_post_type_archive('afc_blog')) {
       wp_enqueue_script( 'typewriter', $urlCDN . '/typewriter-effect@2.13.1/dist/core.js', array('jquery-core'), '', true);
     }    
 
@@ -170,6 +170,10 @@ function afc_load_styles() {
     wp_enqueue_script( 'depoimentos', $urltheme . '/js/depoimentos.js', array('masonrydepos'), '', false);
 
     // wp_enqueue_script( 'suporte-webp', $urltheme . '/js/webp.js', array(), '', false);
+
+    if (class_exists('Woocommerce')) {
+      if(is_checkout()) wp_enqueue_script( 'woo-checkout', $urltheme . '/js/woo-checkout.js', array('jquery-core'), '', true);
+    }
 
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
 
@@ -272,6 +276,9 @@ function afc_load_scripts_footer() {
   if(is_singular('etheme_portfolio')) { echo '<script async defer src="//assets.pinterest.com/js/pinit.js"></script>'; }
   if(is_front_page()) {
     echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'o site\',\'a loja\',\'o blog\'],delay: 120,autoStart: true,loop: true});</script>';
+  }
+  if(is_post_type_archive('afc_blog')) {
+    echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'site\',\'e-commerce\',\'blog\'],delay: 120,autoStart: true,loop: true});</script>';
   } 
   echo '<script type="text/javascript">jQuery(document).ready(function(e){AOS.init({duration:600,easing:"ease-out",once:!0})});</script>';
 
@@ -442,5 +449,6 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 // AFFILIATE WP
 // ========================================// 
 if (class_exists( 'Affiliate_WP' )) {
-  include_once(get_template_directory().'/func/affiatewp-extrafields.php' );
+  include_once(get_template_directory().'/func/affiatewp-fields-pix.php' );
+  include_once(get_template_directory().'/func/affiatewp-fields-cpfcnpj.php' );
 }

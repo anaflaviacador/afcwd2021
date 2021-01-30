@@ -145,19 +145,20 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<tr>
 						<td colspan="6" class="actions">
-
+							<div style="display:flex;">
 							<?php if ( wc_coupons_enabled() ) { ?>
-								<div class="coupon">
-									<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
+								<div class="coupon" style="flex-grow:1;margin-right:10px;display:flex;">
+									<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" style="width:180px;font-size:0.9em;text-transform:uppercase;border-radius: 8px!important;" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button style="flex-shrink:0;border-radius: 8px!important;" type="submit" class="button pequeno" name="apply_coupon" value="Aplicar cupom">Usar!</button>
 									<?php do_action( 'woocommerce_cart_coupon' ); ?>
 								</div>
 							<?php } ?>
 
-							<button type="submit" class="button pequeno azul" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+							<button type="submit" style="flex-shrink:0;border-radius: 8px!important;" class="button pequeno azul" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>">Atualizar</button>
 
 							<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 							<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+							</div>
 						</td>
 					</tr>
 
@@ -166,15 +167,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 			</table>
 			<?php do_action( 'woocommerce_after_cart_table' ); ?>
 		</form>
+
+		<?php get_template_part('inc/aviso-checkout'); ?>
 	</div>
 
 	<div class="afc-total">
 		<h3 class="titulo">Total a pagar</h3>
 		<?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 		<?php do_action( 'woocommerce_cart_collaterals' );?>
-		<br>
 	</div>
 </div>
 <?php do_action( 'woocommerce_after_cart' ); ?>
-<?php get_template_part('inc/aviso-checkout'); ?>
 

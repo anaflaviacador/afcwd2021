@@ -44,7 +44,7 @@ echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_pag
 
 	echo '<div class="copyright">';
 		echo '<div class="container">';
-			echo '<div><strong>AFC Web Design</strong> - CNPJ 24.014.911/0001-36<span>&nbsp;&nbsp;|</span><a href="#privacidade" data-target="#privacidade" class="abre-modal">Política de Privacidade</a></div>';
+			echo '<div><img width="16px" src="'.get_stylesheet_directory_uri().'/img/flag-brasil.svg" style="vertical-align: middle;margin-right: 7px;position: relative;top: -1px;" /> <strong>AFC Web Design</strong><span>&nbsp;&nbsp;|</span><a href="#privacidade" data-target="#privacidade" class="abre-modal">Política de Privacidade</a></div>';
 
 			echo '<div>';
 				echo '<a target="_blank" title="Instagram" href="https://www.instagram.com/anaflaviacador"><i class="fab fa-instagram" aria-hidden="true"></i></a>';

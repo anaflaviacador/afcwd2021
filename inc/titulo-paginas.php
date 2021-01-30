@@ -38,7 +38,7 @@ if (is_post_type_archive('etheme_portfolio')) {
 	$subtitulo = 'Projetos realizados'; 
 }
 if (is_post_type_archive('afc_blog')) {
-	$titulo = 'Studio Blog';
+	$titulo = 'Dicas do Studio';
 	$subtitulo = ''; 
 }
 
@@ -106,6 +106,8 @@ echo '<header id="chamada-principal" class="pag-interna-destaque" style="backgro
 
 	echo '<h1 data-aos="fade-up">'.$titulo.'</h1>';
 		if($subtitulo) {echo '<h2 class="cursivo" data-aos="fade-up" data-aos-delay="100"><span>'.$subtitulo.'</span></h2>';}
+
+	echo '<p class="summary has-text-align-center" data-aos="fade-up" data-aos-delay="100">eleve o nível do seu <span id="foco-frase">site</span> com dicas sobre de gestão,<br> ferramentas, produtividade e empreendedorismo digital</p>';
 echo '</header>';
 }
 

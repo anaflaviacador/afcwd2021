@@ -77,28 +77,42 @@ echo '<div class="container" id="pagina-servicos">';
 
 	get_template_part('inc/codigo-autoral');
 
+
+	$args = array('post_type' => 'etheme_portfolio', 'posts_per_page' => 6);
+	$publicacoes = new WP_Query($args);
+	if ( $publicacoes->have_posts() ) { $i = 0;
+		echo '<section class="container" id="projetos-principais"><h2 class="cursivo assinado">projetos</h2><div class="lista-posts"><ul>';
+		while ( $publicacoes->have_posts() ) : $i++; $publicacoes->the_post(); 
+			echo '<li itemscope itemtype="http://schema.org/CreativeWork" data-aos="fade-up" class="projeto-'.$i.' mostra-projeto">';
+				afc_projeto('large');
+			echo '</li>';
+		endwhile;
+		echo '</ul></div><div class="bt"><a data-aos="fade-up" href="'.$urlHome.'projetos" class="button">ver portfolio</a></div></section>';
+	} wp_reset_query();
+
 	echo '<div class="tipos-pagamento">';
 		echo '<ul aria-label="Tipos de pagamento">';
 			echo '<li data-aos="fade-left">';
 				echo '<div class="tipo" aria-hidden="true"><i class="fal fa-credit-card"></i><span>parcele</span></div>';
-				echo '<div class="descricao"><p>Parcele seu projeto <strong>em até 10x</strong>* no cartão de crédito via Paypal, o melhor e mais seguro gateway de pagamento do mundo.<br><span style="font-size: 12px">*Não se aplica para venda de produtos digitais vendidos na loja do studio.</span></p></div>';
+				echo '<div class="descricao"><p>Parcele seu projeto <strong>em até 12x</strong>* no cartão de crédito.<br><span style="font-size: 12px">* Há cobrança de juros, ok? Solicite uma simulação para seu orçamento.</span></p></div>';
 			echo '</li>';
 			echo '<li data-aos="fade-right">';
-				echo '<div class="descricao"><p>Super <strong>desconto no pagamento à vista</strong> antecipado por PIX,<br> ou então opte em pagar entrada e parcelar o restante*<br><span style="font-size: 12px">*Não é o mesmo nível de desconto do pagamento à vista, mas podemos negociar!</span></p></div>';
+				echo '<div class="descricao"><p>Super <strong>desconto no pagamento à vista</strong>* antecipado por PIX ou boleto. Há também como pagar uma entrada e parcelar o restante!<br><span style="font-size: 12px">*Desconto de até 20% em relação ao parcelamento.</span></p></div>';
 				echo '<div class="tipo" aria-hidden="true"><i class="fal fa-sack-dollar"></i><span>poupe</span></div>';
 			echo '</li>';
 		echo '</ul>';
 
-		echo '<div class="logos">';
-			echo '<img data-pin-nopin="true" data-aos="zoom-out" src="'.$urlTema.'/img/logo-paypal.svg" alt="Aceitamos Paypal">';
-			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="150" src="'.$urlTema.'/img/logo-cartoes.svg" alt="Aceitamos cartões de crédito">';
-			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="250" src="'.$urlTema.'/img/logo-boleto.svg" alt="Aceitamos pagamentos por boleto bancário">';
-			// echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-nu.svg" alt="Aceitamos pagamento por transferência para NuConta">';
-			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-stripe.svg" alt="Aceitamos pagamento por Stripe">';
-			echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="450" src="'.$urlTema.'/img/logo-pix.svg" alt="Aceitamos pagamento por transferência Pix">';
-		echo '</div>';
+		// echo '<div class="logos">';
+		// 	echo '<img data-pin-nopin="true" data-aos="zoom-out" src="'.$urlTema.'/img/logo-paypal.svg" alt="Aceitamos Paypal">';
+		// 	echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="150" src="'.$urlTema.'/img/logo-cartoes.svg" alt="Aceitamos cartões de crédito">';
+		// 	echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="250" src="'.$urlTema.'/img/logo-boleto.svg" alt="Aceitamos pagamentos por boleto bancário">';
+		// 	// echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-nu.svg" alt="Aceitamos pagamento por transferência para NuConta">';
+		// 	echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="350" src="'.$urlTema.'/img/logo-stripe.svg" alt="Aceitamos pagamento por Stripe">';
+		// 	echo '<img data-pin-nopin="true" data-aos="zoom-out" data-aos-delay="450" src="'.$urlTema.'/img/logo-pix.svg" alt="Aceitamos pagamento por transferência Pix">';
+		// echo '</div>';
 	echo '</div>';	
 
 echo '</div>';
+
 
 get_footer();

@@ -50,19 +50,10 @@ echo '<nav class="woocommerce-MyAccount-navigation">';
 			echo '<li class="woocommerce-MyAccount-navigation-link--docs'.(is_singular('private-page')?' is-active':'').'">';
 		      		echo '<a href="'.$urlsite.'/minha-conta/docs/'.$username.'"><span class="nome">Docs</span></a>';
 		    echo '</li>';
-		    
-		    if ($tembriefing >= 1){
-		    	echo '<li class="woocommerce-MyAccount-navigation-link--briefing">';
-					echo '<a href="'.$urlsite.'/wp-admin/edit.php?post_type=af_entry" target="_blank"><span class="nome">Editar briefing</span></a>';
-				echo '</li>';
-				echo '<li class="woocommerce-MyAccount-navigation-link--briefing-novo'.(is_page('briefing')?' is-active':'').'">';
-					echo '<a href="'.$urlsite.'/minha-conta/briefing"><span class="nome">Novo Briefing</span></a>';
-				echo '</li>';
-		    } else {
-		    	echo '<li class="woocommerce-MyAccount-navigation-link--briefing'.(is_page('briefing')?' is-active':'').'">';
-					echo '<a href="'.$urlsite.'/minha-conta/briefing"><span class="nome">Briefing</span></a>';
-				echo '</li>';
-		    }
+
+	    	echo '<li class="woocommerce-MyAccount-navigation-link--briefing'.(is_page('briefing')?' is-active':'').'">';
+				echo '<a href="'.$urlsite.'/minha-conta/briefing"><span class="nome">Briefing</span></a>';
+			echo '</li>';
 
 		}
 		if (class_exists( 'Affiliate_WP' )) {

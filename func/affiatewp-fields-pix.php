@@ -1,11 +1,11 @@
 <?php
 
-function affwp_add_additional_field_to_affiliate_registration_form() {
+function affwp_add_additional_field_to_affiliate_registration_form_pix() {
 
 	$errors = affiliate_wp()->register->get_errors();
 
 	if ( ! array_key_exists( 'empty_pix', $errors ) ) {
-		$pix = sanitize_text_field( $_POST['affwp_bitcoin_address'] );
+		$pix = sanitize_text_field( $_POST['affwp_pix_address'] );
 	}
 
 	?>
@@ -16,12 +16,12 @@ function affwp_add_additional_field_to_affiliate_registration_form() {
 	</p>
 	<?php
 }
-add_action( 'affwp_register_fields_before', 'affwp_add_additional_field_to_affiliate_registration_form' );
+add_action( 'affwp_register_fields_before', 'affwp_add_additional_field_to_affiliate_registration_form_pix' );
 
 /*
  * Save the BTC address to the affiliate meta after registration
  */
-function affwp_save_affiliate_bitcoin_address( $affiliate_id, $status, $args ) {
+function affwp_save_affiliate_pix_address( $affiliate_id, $status, $args ) {
 
 	$pix = sanitize_text_field( $_POST['affwp_pix'] );
 
@@ -30,7 +30,7 @@ function affwp_save_affiliate_bitcoin_address( $affiliate_id, $status, $args ) {
 	}
 
 }
-add_action( 'affwp_register_user', 'affwp_save_affiliate_bitcoin_address', 10, 3 );
+add_action( 'affwp_register_user', 'affwp_save_affiliate_pix_address', 10, 3 );
 
 /*
  * Make BTC address field required during affiliate registration {Remove if it shouldn't be required}
@@ -54,10 +54,10 @@ function affwp_show_pix_in_affiliate_dashboard( $affiliate_id, $affiliate_user_i
 	$pix = affwp_get_affiliate_meta( $affiliate_id, 'pix', true );
 
 	?>
-
+	<p>&nbsp;</p>
 	<div class="affwp-wrap affwp-pix-wrap">
-		<label for="affwp-pix"><?php _e( 'Chave PIX cadastrada', 'affiliate-wp' ); ?></label>
-		<input id="affwp-pix" type="text" name="pix" value="<?php echo esc_attr( $pix ); ?>" />
+		<label for="affwp-pix"><?php _e( 'Chave PIX criada no seu banco escolhido para recebimento de pagamentos', 'affiliate-wp' ); ?></label>
+		<input id="affwp-pix" style="margin-top:0" type="text" name="pix" value="<?php echo esc_attr( $pix ); ?>" />
 	</div>
 
 	<?php
@@ -90,7 +90,7 @@ add_action( 'affwp_update_affiliate_profile_settings', 'affwp_affiliate_dashboar
 /*
  * Display the BTC address field in the edit affiliate page in the admin dashboard
  */
-function affwp_admin_edit_affiliate_extra_fields( $affiliate ) {
+function affwp_admin_edit_affiliate_extra_fields_pix( $affiliate ) {
 
 	$pix = affwp_get_affiliate_meta( $affiliate->affiliate_id, 'pix', true );
 	?>
@@ -110,7 +110,7 @@ function affwp_admin_edit_affiliate_extra_fields( $affiliate ) {
 
 	<?php
 }
-add_action( 'affwp_edit_affiliate_end', 'affwp_admin_edit_affiliate_extra_fields' );
+add_action( 'affwp_edit_affiliate_end', 'affwp_admin_edit_affiliate_extra_fields_pix' );
 
 /*
  * Update the affiliate BTC address field from the edit affiliate page in the admin dashboard

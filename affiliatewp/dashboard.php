@@ -66,6 +66,7 @@
 						<?php
 							if ( affwp_affiliate_area_show_tab( $tab_slug ) ) : 
 							if ($tab_slug == 'urls') $tab_title = 'Meu link';
+							if ($tab_slug == 'settings') $tab_title = 'Perfil';
 						?>
 						<li class="affwp-affiliate-dashboard-tab--<?php echo $tab_slug; echo $active_tab == $tab_slug ? ' is-active' : ''; ?>">
 							<a href="<?php echo esc_url( affwp_get_affiliate_area_page_url( $tab_slug ) ); ?>"><span class="nome"><?php echo $tab_title; ?></span></a>

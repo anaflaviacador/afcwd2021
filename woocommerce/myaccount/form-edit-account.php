@@ -73,6 +73,10 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 	<?php do_action( 'woocommerce_edit_account_form_end' ); ?>
 </form>
 
-<?php do_action( 'woocommerce_after_edit_account_form' ); 
+<?php do_action( 'woocommerce_after_edit_account_form' ); ?>
+<?php wc_get_template( 'myaccount/my-address.php' ); ?>
 
-wc_get_template( 'myaccount/my-address.php' );
+<p>&nbsp;</p>
+<h2>Métodos de pagamento</h2>
+
+<?php wc_get_template( 'myaccount/payment-methods.php' );

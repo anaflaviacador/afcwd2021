@@ -116,5 +116,25 @@ echo '<section class="container" id="beneficios">';
 echo '</section>';
 
 
+
+// ========================================//
+// BLOG
+// ========================================// 
+
+// $args = array('post_type' => 'afc_blog', 'orderby' => 'rand', 'posts_per_page' => 3);
+
+// $artigos = new WP_Query($args);
+// if ( $artigos->have_posts() ) { $i = 0;
+// 	echo '<section class="container" id="area-blog-home">';
+// 	echo '<div class="lista-artigos">';
+// 	while ( $artigos->have_posts() ) : $i++; $artigos->the_post(); 
+// 		echo '<div class="item-post-grid" data-aos="fade-up" data-aos-delay="'.$timer.'">';
+// 			get_template_part('inc/blog-grid');
+// 		echo '</div>';
+// 	endwhile;
+// 	echo '</div>';
+// 	echo '</section>';
+// }
+
 	
 get_footer();

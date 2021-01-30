@@ -67,7 +67,7 @@ if ( is_user_logged_in() ) {
 		<p>
 			<label for="affwp-user-name">Seu nome</label>
 			<input id="affwp-user-name" type="text" name="affwp_user_name" value="<?php if( ! empty( $user_name ) ) { echo $user_name; } ?>" title="<?php esc_attr_e( 'Your Name', 'affiliate-wp' ); ?>" <?php echo affwp_required_field_attr( 'your_name' ); ?> />
-			<span>Será sua identificação no sistema e também no checkout da venda quando uma pessoa quiser informar a indicação direta.</span>
+			<span>Será sua identificação no sistema.</span>
 		</p>
 
 		<p>
@@ -117,10 +117,10 @@ if ( is_user_logged_in() ) {
 
 		<?php $terms_of_use = affiliate_wp()->settings->get( 'terms_of_use' ); ?>
 		<?php if ( ! empty( $terms_of_use ) ) : ?>
-			<p>
+			<p style="font-size:.9em;line-height: 1.3">
 				<label class="affwp-tos" for="affwp-tos">
-					<input id="affwp-tos" required="required" type="checkbox" name="affwp_tos" />
-					<a href="<?php echo esc_url( get_permalink( affiliate_wp()->settings->get( 'terms_of_use' ) ) ); ?>" target="_blank"><?php echo affiliate_wp()->settings->get( 'terms_of_use_label', __( 'Agree to our Terms of Use and Privacy Policy', 'affiliate-wp' ) ); ?></a>
+					<input id="affwp-tos" required="required" type="checkbox" name="affwp_tos"/>
+					Declaro que li e concordo com todos os <a href="<?php echo esc_url( get_permalink( affiliate_wp()->settings->get( 'terms_of_use' ) ) ); ?>" target="_blank">termos e condições</a> da política de afiliadas do Studio AFC Web Design.
 				</label>
 			</p>
 		<?php endif; ?>

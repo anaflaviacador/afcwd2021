@@ -12,6 +12,7 @@ if ( in_array( 'cliente_vip', (array) $user->roles ) ) {
   add_action('init', 'clientevip_change_post_object',999 );
   add_action('admin_menu', 'clientevip_admin_menus', 999 );
   add_action('admin_bar_menu', 'clientevip_bar_menus', 999);
+  add_action('wp_before_admin_bar_render', 'clientevip_bar_menus_render', 999 );
   add_action('wp_dashboard_setup', 'clientevip_dashboard_widgets' );
   add_action('admin_head', 'clientevip_css',999 );
   add_filter('manage_af_entry_posts_columns', 'clientevip_columndash', 999); // manage_POST-TYPE
@@ -79,6 +80,9 @@ function clientevip_admin_menus(){
     remove_menu_page( 'edit.php?post_type=etheme_portfolio' );
     remove_menu_page( 'edit.php?post_type=afctutoriais' );
     remove_menu_page( 'edit.php?post_type=af_form' );
+    remove_menu_page( 'edit.php?post_type=afc_depoimentos' );
+    remove_menu_page( 'edit.php?post_type=afc_blog' );
+    remove_menu_page( 'edit-comments.php' );
 
     $tembriefing = count_user_posts( $userid , 'af_entry' );
 
@@ -107,6 +111,12 @@ function clientevip_bar_menus($wp_admin_bar) {
     $wp_admin_bar->remove_node('new-content');
     $wp_admin_bar->remove_node('wpseo-menu');
 }
+
+function clientevip_bar_menus_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('wppaginasinstantaneas_flush');
+}
+
 
 function clientevip_dashboard_widgets() {
     global $wp_meta_boxes;  

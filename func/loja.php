@@ -3,6 +3,13 @@ add_theme_support( 'wc-product-gallery-zoom' );
 add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
 
+add_action('admin_menu', 'afc_admin_menus_woo', 999 );
+function afc_admin_menus_woo(){
+  remove_menu_page( 'wc_stripe' );
+  // add_submenu_page( 'woocommerce', 'Cupons desconto', 'Cupons desconto', 'manage_woocommerce', admin_url( 'edit.php?post_type=shop_coupon' ) );
+}
+
+
 // ========================================//
 // GERAL
 // ========================================// 
@@ -204,69 +211,53 @@ if (class_exists('WC_Subscription')) {
 add_filter( 'wc_add_to_cart_message_html', '__return_null' );
 
 // retira campo de endereço e restante de campos desnecessarios para compra de item digital
-function wpb_custom_billing_fields( $fields) {
-	unset($fields['billing_company']);
-	// unset($fields['billing_address_1']);
-	unset($fields['billing_address_2']);
-	// unset($fields['billing_state']);
-	// unset($fields['billing_city']);
-    unset($fields['billing_phone']);
-    // unset($fields['billing_number']); // brazilian market
-	unset($fields['billing_neighborhood']); // brazilian market
-	// unset($fields['billing_postcode']);
-	unset($fields['billing_country']);
-
-    $fields['billing_cpf']['class'][0] = 'form-row-first';
-    $fields['billing_postcode']['class'][0] = 'form-row-last';
-
-    $fields['billing_address_1']['class'][0] = 'form-row-first';
-    $fields['billing_number']['class'][0] = 'form-row-last';
-    $fields['billing_city']['class'][0] = 'form-row-first';
-
-    // $fields['billing_address_1']['label'] = 'Endereço';
-    $fields['billing_number']['placeholder'] = 'Insira S/N se não houver';
-
-    $fields['billing_state']['class'][0] = 'form-row-last';
-
-	return $fields;
-}
-add_filter('woocommerce_billing_fields','wpb_custom_billing_fields');
-
 function custom_override_checkout_fields_ek( $fields ) {
+    // credito: https://rudrastyh.com/woocommerce/reorder-checkout-fields.html
+
     unset($fields['billing']['billing_company']);
-    // unset($fields['billing']['billing_address_1']);
     unset($fields['billing']['billing_address_2']);
-    // unset($fields['billing']['billing_postcode']);
-    // unset($fields['billing']['billing_state']);
-    unset($fields['order']['order_comments'] );
-    unset($fields['shipping']['shipping_first_name']);    
-    unset($fields['shipping']['shipping_last_name']);  
-    unset($fields['shipping']['shipping_company']);
-    unset($fields['shipping']['shipping_address_1']);
-    unset($fields['shipping']['shipping_address_2']);
-    unset($fields['shipping']['shipping_city']);
-    unset($fields['shipping']['shipping_postcode']);
-    unset($fields['shipping']['shipping_country']);
-    unset($fields['shipping']['shipping_state']);
+    unset($fields['billing']['billing_phone']);
+    unset($fields['billing']['billing_neighborhood']);
+    // unset($fields['billing']['billing_country']);
 
     $fields['billing']['billing_email']['priority'] = 21;
+    $fields['billing']['billing_email']['class'] = array( 'afc-form-row-first' );
 
-    // $fields['billing']['billing_number']['required'] = false;
-    // $fields['billing']['billing_neighborhood']['required'] = false;
+    $fields['billing']['billing_cpf']['class'] = array( 'afc-form-row-last' );
+    $fields['billing']['billing_cpf']['label'] = 'CPF (se mora no Brasil)';
+
+    $fields['billing']['billing_number']['placeholder'] = 'Insira S/N se não houver';
 
     return $fields;
 }
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_ek', 99 );
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_ek' );
+
+add_filter('woocommerce_default_address_fields', 'override_default_address_checkout_fields', 20, 1);
+function override_default_address_checkout_fields( $fields ) {
+    $fields['address_1']['placeholder'] = 'Rua / avenida (não precisa de complemento ou bairro)';
+    // $fields['postcode']['label'] = 'CEP / Postcode / ZIP';
+    return $fields;
+}
+
+
 
 // adiciona nota dentro dos fields de checkout
-add_action( 'woocommerce_form_field_text','afc_checkout_field_alerta', 10, 2 );
-function afc_checkout_field_alerta( $field, $key ){
-    if ( is_checkout() && ( $key == 'billing_number') ) {
-        $field .= '<p class="form-row form-row-wide" style="font-size: 12px; margin: -7px 0 11px 0 !important; float: left; line-height: 1.5; clear: both;"><span style="color:var(--cor-negacao)">Obs:</span> Não é necessário inserir o bairro e complemento dentro do campo de "Endereço", ok? Só o logradouro <em>(nome da rua, avenida, alameda, praça etc)</em> é o suficiente. ;&#41;</p>';
+add_action( 'woocommerce_form_field_country','afc_checkout_field_alerta_pais', 10, 4 );
+function afc_checkout_field_alerta_pais( $field, $key ){
+    if ( is_checkout() && ( $key == 'billing_country') ) {
+        $field .= '<p class="form-row form-row-wide" style="font-size: 12px; margin: 0 0 11px 0 !important; float: left; line-height: 1.5; clear: both;"><span style="color:var(--cor-negacao)">Obs:</span> Selecionar o país determinará suas opções de pagamento.</p>';
     }
     return $field;
 }
+// add_action( 'woocommerce_form_field_text','afc_checkout_field_alerta_endereco', 10, 2 );
+// function afc_checkout_field_alerta_endereco( $field, $key ){
+//     if ( is_checkout() && ( $key == 'billing_address_1') ) {
+//         $field .= '<p class="form-row form-row-wide" style="font-size: 12px; width: 100%; margin: -7px 0 11px 0 !important; float: left; line-height: 1.5; clear: both;">Não precisa ter bairro e complemento. Só o logradouro é o suficiente. ;&#41;</p>';
+//     }
+//     return $field;
+// }
     
+
 
 // remove titulo de nota adicional
 add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
@@ -274,13 +265,50 @@ add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
 // removendo possiveis itens do lado do checkout de fechar compra
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
-
-// pgto de boleto
+// imagens de formas de pagamentos
 add_filter( 'woocommerce_available_payment_gateways', 'afc_logos_pgto' );
 function afc_logos_pgto( $gateways ) {
-    if ( isset( $gateways['paghiper'] ) ) $gateways['paghiper']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
-    // if ( isset( $gateways['juno-credit-card'] ) ) $gateways['juno-credit-card']->icon = get_stylesheet_directory_uri() . '/img/cartoes-juno.svg';
-    return $gateways;
+    if ( isset( $gateways['paghiper_billet'] ) ) $gateways['paghiper_billet']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
+    if ( isset( $gateways['paghiper_pix'] ) ) $gateways['paghiper_pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
+    if ( isset( $gateways['juno-credit-card'] ) ) $gateways['juno-credit-card']->icon = get_stylesheet_directory_uri() . '/img/flag-brasil.svg';
+
+        return $gateways;
+}
+
+add_filter( 'woocommerce_paypal_icon', 'afc_logos_pgto_pp' ); 
+function afc_logos_pgto_pp() { return get_stylesheet_directory_uri() . '/img/logo-paypal-gateway.svg'; }
+
+if (class_exists('WC_Gateway_Stripe')) {
+    add_filter( 'wc_stripe_payment_icons', 'afc_logos_pgto_stripe' );
+    function afc_logos_pgto_stripe( $icons ) {
+        // var_dump( $icons ); // to show all possible icons to change.
+        $icons['visa'] = '<img width="20px" src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" />';
+        $icons['amex'] = ''; $icons['mastercard'] = ''; $icons['discover'] = ''; $icons['diners'] = ''; $icons['jcb'] = ''; $icons['alipay'] = ''; $icons['wechat'] = ''; $icons['bancontact'] = ''; $icons['ideal'] = ''; $icons['p24'] = ''; $icons['giropay'] = ''; $icons['eps'] = ''; $icons['multibanco'] = ''; $icons['sofort'] = ''; $icons['sepa'] = '';
+
+        return $icons;
+    }    
+}
+
+
+
+// mensagem de aviso sobre o nao parcelamento para planos recorrentes
+add_action('woocommerce_checkout_before_terms_and_conditions', 'afc_mensagem_para_planos', 999);
+function afc_mensagem_para_planos() {
+    $time = date('d-m-Y');
+    $hoje = date("d",strtotime($time));
+
+    $valorCart = WC()->cart->get_cart_total();
+
+    $cat_check = false;
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+        $product = $cart_item['data'];
+        
+        if ( has_term( 'planos', 'product_cat', $product->id ) ) {
+            $cat_check = true;
+            echo '<blockquote class="rosa" style="margin-bottom: 3em; border:0; font-size: 0.8em; color:var(--cor-negacao);"><p> <strong>LEMBRE-SE</strong>: Um plano de assinatura não é o mesmo que uma compra parcelada! <u>Isso significa que será debitado no seu cartão '.$valorCart.' todo dia '.$hoje.'</u>, sem cobrança de juros, e você <u>pode encerrar quando quiser</u>. Nos campos do cartão acima apenas <strong>ignore o <em>"número de parcelas"</em></strong>, pois será desconsiderado no seu pagamento.</p></blockquote>';
+            break;
+        }
+    }
 }
 
 
@@ -294,6 +322,13 @@ function afc_botao_pagar( $button_html ) {
     return $button_html;
 }
 
+
+// function webroom_hide_coupon_field_on_woocommerce_checkout( $enabled ) {
+//     if ( is_checkout() ) $enabled = false;
+//     return $enabled;
+// }
+// add_filter( 'woocommerce_coupons_enabled', 'webroom_hide_coupon_field_on_woocommerce_checkout' );
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
 // ========================================//
 // ALEGACAO DE NAO REVENDA FORA DO SITE - qdo eh produto digital
@@ -420,3 +455,6 @@ function afc_disable_woocommerce_widgets() {
     unregister_widget('WC_Widget_Top_Rated_Products');
     unregister_widget('WC_Widget_Rating_Filter');
 }
+
+
+

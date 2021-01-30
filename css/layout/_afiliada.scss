@@ -18,15 +18,32 @@
 			pre { margin-top: -10px; font-size: 11px; }
 		}
 	}
+
+	input:not([type="checkbox"]):not(.button), textarea { border-radius: 8px !important; }
+
 }
 
 #affwp-register-form {
 
 	&.afc-form-afiliada {
-		input:not([type="checkbox"]), textarea { margin-top: 5px; border-radius: 8px; }
+		input:not([type="checkbox"]):not(.button), textarea { margin-top: 5px; border-radius: 8px !important; }
 
 		span { font-size: 80%; font-style: italic; line-height: 1.4; margin-top: 5px; display: block; }
 
 		p { margin-bottom: 1.8em }
 	}
+}
+
+
+.affwp-notice {
+	margin-bottom: 40px;
+}
+
+// informa afiliada no checkout
+.woocommerce-additional-fields {
+	padding: 1em 0 2em;
+
+	label { display: block; line-height: 1.3;}
+
+	input { margin-top: 7px !important; }
 }
