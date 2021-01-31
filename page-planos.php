@@ -1,13 +1,48 @@
 <?php get_header(); 
+    ?>
+    <script>
+    	jQuery(document).ready(function($) {
+
+			$('#troca-cliente > input[type="checkbox"]').click(function() {
+				$('#troca-cliente').find('span.label').text(function(i, text){ return text === 'Sou cliente do studio' ? 'Ainda não sou cliente' : 'Sou cliente do studio'; });
+
+			    $('#assinar-plano-basic').attr('href', function(index, attr){ 
+			    	return attr == 'https://afcweb.design/plano-basic' ? 'https://afcweb.design/plano-basic-naoclientes' : 'https://afcweb.design/plano-basic';
+			    });
+			    $('#valor-plano-basic').text(function(i, text){ return text === '90' ? '120' : '90'; });
+
+			    $('#assinar-plano-standard').attr('href', function(index, attr){ 
+			    	return attr == 'https://afcweb.design/plano-standard' ? 'https://afcweb.design/plano-standard-naoclientes' : 'https://afcweb.design/plano-standard';
+			    });
+			    $('#valor-plano-standard').text(function(i, text){ return text === '140' ? '228' : '140'; });
+
+			    $('#assinar-plano-premium').attr('href', function(index, attr){ 
+			    	return attr == 'https://afcweb.design/plano-premium' ? 'https://afcweb.design/plano-premium-naoclientes' : 'https://afcweb.design/plano-premium';
+			    });
+			    $('#valor-plano-premium').text(function(i, text){ return text === '240' ? '432' : '240'; });
+	   		});
+		});
+
+    </script>
+    <?php
+
 		echo '<div class="container" id="pagina-planos">';
 			if (have_posts()) { while (have_posts()) : the_post();
 				echo '<article>';
 						the_content();
+
+						echo '<p style="margin-top: 2em;">';
+							echo '<small style="opacity:0.65; margin-bottom: 8px; display: block; font-style: italic">Informe o seu vínculo com o studio</small>';
+							echo '<label id="troca-cliente" class="cl-switch">
+				                    <input type="checkbox" checked="checked">
+				                    <span class="switcher"></span>
+				                    <span class="label">Sou cliente do studio</span>
+				                </label>';
+						echo '</p>';
 				echo '</article>';
 			endwhile; }
 
-			$cancela = '<p>* Mensalidade cotada apenas para quem possui layout que leva a assinatura do studio.</p>';
-			$urlTema = get_template_directory_uri().'/img/logo-';
+			$cancela = '<p>* Você pode assinar quando quiser e cancelar quando desejar. Zero fidelidade!</p>';
 
 			echo '<section class="todos-planos">';
 
@@ -18,7 +53,7 @@
 					echo '<header>';
 						echo '<h3>Plano Basic</h3>';
 						echo '<time data-tooltip="Previsão de tempo gasto por mês em ações preventivas.">2h</time>';
-						echo '<data><abbr title="BRL">R$</abbr>90<span>/mês*</span></data>';
+						echo '<data><abbr title="BRL">R$</abbr><span id="valor-plano-basic">90</span><span class="freq">/mês*</span></data>';
 						echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites / blogs simples ou de baixo tráfego<br><br><a href="#basic" class="jump" title="assinar"><i style="font-size: 2em;" class="fal fa-angle-down"></i></a></p>';
 					echo '</header>';
 					echo '<ul>';
@@ -44,11 +79,6 @@
 						echo $cancela;
 						echo '<div class="botao" id="basic">';
 							echo '<a href="https://afcweb.design/plano-basic" id="assinar-plano-basic" class="button medio azul">assinar!</a>'; 
-
-							/////////// TESTE
-							// echo '<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AB9KWYH5YKVY8" id="assinar-plano-basic" class="button medio azul">assinar!</a>'; 
-
-
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
@@ -66,7 +96,7 @@
 						echo '<label>+ pedido</label>';
 
 						echo '<time data-tooltip="Previsão de tempo gasto por mês em ações preventivas, isoladas e corretivas.">4h</time>';
-						echo '<data><abbr title="BRL">R$</abbr>140<span>/mês*</span></data>';
+						echo '<data><abbr title="BRL">R$</abbr><span id="valor-plano-standard">140</span><span class="freq">/mês*</span></data>';
 						echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites profissionais, blogs monetizados<br><br><a href="#standard" class="jump" title="assinar"><i style="font-size: 2em;" class="fal fa-angle-down"></i></a></p>';
 					echo '</header>';
 					echo '<ul>';
@@ -117,7 +147,7 @@
 					echo '<header>';
 						echo '<h3>Plano Premium</h3>';
 						echo '<time data-tooltip="Previsão de tempo gasto por mês em ações preventivas, isoladas e corretivas.">8h</time>';
-						echo '<data><abbr title="BRL">R$</abbr>240<span>/mês*</span></data>';
+						echo '<data><abbr title="BRL">R$</abbr><span id="valor-plano-premium">240</span><span class="freq">/mês*</span></data>';
 						echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites e blogs de alto tráfego, lojas virtuais<br><br><a href="#premium" class="jump" title="assinar"><i style="font-size: 2em;" class="fal fa-angle-down"></i></a></p>';
 					echo '</header>';
 					echo '<ul>';
