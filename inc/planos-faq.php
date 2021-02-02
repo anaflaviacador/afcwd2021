@@ -13,7 +13,7 @@ echo '<div class="wp-block-columns abinhas">';
 			echo '<div class="aba-titulo">O pagamento é seguro?</div>';
 			echo '<div class="aba-conteudo">';
 				echo '<p>Sim, é 100% seguro! O gateway de pagamento que o studio usa é o <a href="https://app.juno.com.br/#/onboarding/775831:b02a84" target="_blank" rel="nofollow noopener">Juno Pagamentos</a> para clientes residentes no Brasil e Stripe para as clientes que moram no exterior. Toda transação é realizada sob criptografia, com certificado de segurança ativado.</p>';
-				echo '<p>A solicitação de pagamento aqui do site é enviada para o servidor do gatway através de um código criptografado. Depois, o gatway fará a solicitação ao seu cartão de crédito, e o mesmo permitirá (ou não) o andamento do seu pedido. Tudo isso em questão de segundos!</p>';
+				echo '<p>A solicitação de pagamento aqui do site é enviada para o servidor do gateway através de um código criptografado. Depois, o gateway fará a solicitação ao seu cartão de crédito, e o mesmo permitirá (ou não) o andamento do seu pedido. Tudo isso em questão de segundos!</p>';
 				echo '<p>Você não precisa ter conta em nenhum dos gateways usados no site para sua assinatura. O checkout é transparente, com zero burocracia. Basta ter apenas o número do seu cartão em mãos.</p>';
 			echo '</div>';
 		echo '</div>';

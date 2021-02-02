@@ -224,7 +224,6 @@ function custom_override_checkout_fields_ek( $fields ) {
     $fields['billing']['billing_email']['class'] = array( 'afc-form-row-first' );
 
     $fields['billing']['billing_cpf']['class'] = array( 'afc-form-row-last' );
-    $fields['billing']['billing_cpf']['label'] = 'CPF (se mora no Brasil)';
 
     $fields['billing']['billing_number']['placeholder'] = 'Insira S/N se não houver';
 
@@ -297,7 +296,7 @@ function afc_mensagem_para_planos() {
     $time = date('d-m-Y');
     $hoje = date("d",strtotime($time));
 
-    $valorCart = WC()->cart->get_cart_total();
+    // $valorCart = WC()->cart->get_cart_subtotal();
 
     $cat_check = false;
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
@@ -305,7 +304,17 @@ function afc_mensagem_para_planos() {
         
         if ( has_term( 'planos', 'product_cat', $product->id ) ) {
             $cat_check = true;
-            echo '<blockquote class="rosa" style="margin-bottom: 3em; border:0; font-size: 0.8em; color:var(--cor-negacao);"><p> <strong>LEMBRE-SE</strong>: Um plano de assinatura não é o mesmo que uma compra parcelada! <u>Isso significa que será debitado no seu cartão '.$valorCart.' todo dia '.$hoje.'</u>, sem cobrança de juros, e você <u>pode encerrar quando quiser</u>. Nos campos do cartão acima apenas <strong>ignore o <em>"número de parcelas"</em></strong>, pois será desconsiderado no seu pagamento.</p></blockquote>';
+
+            $recurring_total = 0;
+
+            foreach ( WC()->cart->cart_contents as $item_key => $item ){
+                $item_quantity = $item['quantity'];
+                $item_monthly_price = $item['data']->subscription_price;
+                $item_recurring_total = $item_quantity * $item_monthly_price;
+                $recurring_total += $item_recurring_total; 
+            }
+
+            echo '<blockquote class="rosa" style="margin-bottom: 3em; border:0; font-size: 0.8em; color:var(--cor-negacao);"><p> <strong>LEMBRE-SE</strong>: Um plano de assinatura não é o mesmo que uma compra parcelada! Isso significa que será debitado no seu cartão <strong>R$'.$recurring_total.' todo mês</strong>. Você pode encerrar nos próximos 7 dias gratuitamente. Após este período não haverá reembolso, apenas cancelamento de renovação automática, ok? <a href="'.esc_url(home_url('/')).'servicos/planos#faq" target="_blank" style="color:var(--cor-negacao); text-decoration:underline">Saiba mais aqui</a>.</p></blockquote>';
             break;
         }
     }
