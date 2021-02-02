@@ -59,7 +59,7 @@ echo '<nav class="woocommerce-MyAccount-navigation">';
 		if (class_exists( 'Affiliate_WP' )) {
 			$status_afiliado = affwp_get_affiliate_status( affwp_get_affiliate_id() );
 			$chamada_afiliado = 'Afilie-se!';
-			$painelAfiliado = get_home_url() . '/programa-afiliados';
+			$painelAfiliado = get_home_url() . '/programa-de-afiliadas/';
 
 			if ( 'active' == $status_afiliado ) {
 				$painelAfiliado = get_home_url() . '/minha-conta/afiliacao';

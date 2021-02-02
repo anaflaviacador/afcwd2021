@@ -271,13 +271,52 @@ $plano-cor: (
 }
 
 
-
+////// troca de plano
 #troca-cliente {
-	background: var(--cor-cinza);
-	@extend %borda-redonda;
-	padding: 10px 20px 13px;
+	background: lighten($bege-medio,10%);
+	@extend %borda-redonda; width: 310px;
+	overflow: hidden; margin: 0 auto;
+	box-shadow: 0 0 8px $bege-medio inset;
+	display: flex; position: relative;
+	font-family: $fonte-redonda; font-weight: bold;
+	font-size: 12px; text-transform: uppercase;
+	letter-spacing: 0.04em; 
+
+	label {
+	    width: 50%;
+	    background-color: transparent;
+	    z-index: 2;
+	    position: relative;
+	    cursor: pointer;
+	    text-align: center;
+	    padding: .85em 10px;
+	    color: darken($bege,8%);
+	    @include transition(color 0.2s ease-in-out);
+	}
+	
+	input[type="radio"] {display: none;}
+
+	.slider{
+	    position:absolute;
+	    left: 0%; 
+	    top:0;
+	    width:50%; 
+	    height: 100%;
+	    animation-timing-function: ease-in-out;
+	    animation-duration:.3s;
+	    animation-fill-mode: forwards;
+	    transition: 0.2s left 0s ease-in-out;
+	    box-shadow: 0 0 10px $bege-medio;
+	    z-index: 0; background-color: $bege;
+	}
+	#input-jacliente:checked  ~ .slider { left:0; }
+	#input-novocliente:checked  ~ .slider { left:50%; }
+	#input-jacliente:checked + label, #input-novocliente:checked + label {color: #fff;}
 }
 
+
+
+/////// SWITCH
 .cl-switch {
   input[type="checkbox"] {
     display: none;
@@ -359,5 +398,4 @@ $plano-cor: (
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
     }
   }
-
 }

@@ -35,6 +35,14 @@ echo '<div class="wp-block-columns abinhas">';
 			echo '</div>';
 		echo '</div>';
 		echo '<div class="aba">';
+			echo '<div class="aba-titulo">Assinei por engano ou me arrependi da assinatura. Posso ter meu dinheiro de volta?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>Você tem 7 dias corridos após adesão do seu plano para cancelar seu plano sem descontar do seu cartão de crédito. Será descontado automaticamente apenas no 8º dia após a adesão.</p>';
+				echo '<p>Não se preocupe que antes deste período entrarei em contato contigo para solicitar seus dados de acesso, caso seja nova por aqui. Nesta conversa podemos retirar dúvidas e decidir como podemos trabalhar juntas dentro da lista de benefícios do plano escolhido. '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').'</p>';
+				echo '<p>Com isso, você poderá manter sua decisão de adesão ao plano ou simplesmente cancelar. Sem mágoas, ok?</p>';
+			echo '</div>';
+		echo '</div>';
+		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Os valores incluem hospedagem ou registro de domínio?</div>';
 			echo '<div class="aba-conteudo">';
 				echo '<p>Não. Hospedagem e registro de domínio são serviços ofertados por empresas provedoras de hospedagem, que cedem um espaço em seus servidores para armazenar sites e mantê-los "no ar".</p>'; 
@@ -72,6 +80,7 @@ echo '<div class="wp-block-columns abinhas">';
 			echo '</div>';
 		echo '</div>';
 
+
 		
 		
 
@@ -80,7 +89,7 @@ echo '<div class="wp-block-columns abinhas">';
 
 	echo '<div class="wp-block-column">';
 		echo '<div class="aba" style="margin-top: 20px;">';
-			echo '<div class="aba-titulo"> <i class="fas fa-badge-check""></i> Como é sistema de newsletter ofertado no BONUS?</div>';
+			echo '<div class="aba-titulo">Como é sistema de newsletter ofertado no BONUS?</div>';
 			echo '<div class="aba-conteudo">';
 				echo '<p>O studio trabalha com o <a href="https://sendy.co/?ref=v0hCr" target="_blank">Sendy</a>, um software licenciado de email marketing auto-hospedado que permite enviar e-mails rastreáveis através do serviço <a href="https://aws.amazon.com/" target="_blank">Amazon Simple Email Service (SES)</a>, possibilitando enviar e-mails em massa com a autenticidade dos servidores Amazon.</p>';
 				echo '<p>O Sendy possui uma boa integração com Wordpress, podendo ser integrado a formulários de contato e compras no Woocommerce. É o recurso perfeito para quem precisa de um meio simples e eficiente de armazenamento de emails.</p>';
@@ -124,38 +133,25 @@ echo '<div class="wp-block-columns abinhas">';
 			echo '</div>';
 		echo '</div>';
 		echo '<div class="aba">';
-			echo '<div class="aba-titulo">Cancelei dias depois à renovação. Posso ter meu dinheiro de volta?</div>';
+			echo '<div class="aba-titulo">Cancelei dias após à renovação do plano e quero cancelar. Posso ter meu dinheiro de volta?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Não, automaticamente você fará uso dos benefícios do seu plano até o ciclo se encerrar. Após o encerramento do ciclo não haverá renovação automática.</p>';
+				echo '<p>Não, você ainda terá os benefícios do seu plano até o ciclo se encerrar. O pedido de cancelamento após uma renovação só cancela a renovação automática.</p>';
+				echo '<p>Você tem o direito de arrependimento do seu plano aderido apenas na primeira semana de adesão, que é enquanto ainda não é descontado do seu cartão. Após este período, nenhum reembolso será realizado.</p>';
 			echo '</div>';
 		echo '</div>';
 		echo '<div class="aba">';
-			echo '<div class="aba-titulo">Preciso ter um layout do studio para assinar um plano?</div>';
+			echo '<div class="aba-titulo">Por que os valores para novos clientes são mais altos?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Diversos benefícios &mdash; como as ações preventivas e corretivas &mdash; são aplicados com mais eficiência e agilidade se você já faz uso de um projeto que leva a assinatura do studio. Desta forma, o plano recorrente possui uma cotação por hora mais acessível para as clientes da casa.</p>';
-				echo '<p>Você pode usar um tema produzido por outro profissional e assinar um plano de manutenção mesmo assim! 😎 Entretanto, os valores dos planos são contabilizados de forma mais fiel ao preço cheio da hora trabalhada "avulsa". Veja abaixo:</p>';
-
-				echo '<table class="tabela-planos-trimestrais">';
-					echo '<tr>';
-						echo '<th>Basic</th>';
-						echo '<th>Standard</th>';
-						echo '<th>Premium</th>';
-					echo '</tr>';
-					echo '<tr>';
-						echo '<td><strong>R$120 /mês</strong><br> <small>2h</small></td>';
-						echo '<td><strong>R$228 /mês</strong><br> <small>4h</small></td>';
-						echo '<td><strong>R$432 /mês</strong><br> <small>8h</small></td>';
-					echo '</tr>';
-				echo '</table>';
-
-				echo '<p>Entre em contato para saber quais são as condições de plano para sua situação!</p>';
-
+				echo '<p>Cada designer / desenvolvedor tem sua forma de trabalhar. Os valores dos planos para clientes que possuem layout de terceiros são contabilizados de forma mais fiel ao preço cheio da hora trabalhada avulsa para cobrir possíveis complexidades inesperadas de código por conta da produção terceirizada.</p>';
+				echo '<p>O código dos projetos do studio é 100% autoral, produzido com uma metodologia que facilita edições na fase de pós-produção. Por isso, todo processo de diagnóstico para soluções de problemas e alterações num layout autoral são realizadas com mais agilidade em relação a um layout produzido por terceiros. Desta forma, o investimento mensal para clientes da casa é mais acessível.</p>';
 			echo '</div>';
 		echo '</div>';
 		echo '<div class="aba">';
-			echo '<div class="aba-titulo">Parceiras do studio tem assinatura mais barata?</div>';
+			echo '<div class="aba-titulo">Afiliadas do studio tem assinatura mais barata?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Por ter um custo por hora bastante reduzido no serviço recorrente, os planos de manutenção não se adequam aos descontos de pós-produção para clientes afiliadas.</p>';
+				echo '<p>Por ter um custo por hora reduzido, os planos de manutenção não se adequam aos descontos de pós-produção para clientes afiliadas que possuem layout assinado pelo studio.</p>';
+				echo '<p>Entretanto, a afiliada poderá indicar o studio e ganhar comissão por indicações das vendas dos produtos vendidos no site através de seu link de afiliada, inclusive para os planos de assinatura!</p>';
+				echo '<p>Desta forma, você pode ter uma espécie de "cashback" de sua assinatura recomendando meus serviços para outras pessoas. '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').'</p>';
 			echo '</div>';
 		echo '</div>';
 

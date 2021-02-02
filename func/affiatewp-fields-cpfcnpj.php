@@ -109,7 +109,7 @@ function affwp_admin_edit_affiliate_extra_fields_cpfcnpj( $affiliate ) {
 
 	<?php
 }
-add_action( 'affwp_edit_affiliate_end', 'affwp_admin_edit_affiliate_extra_fields_cpfcnpj' );
+add_action( 'affwp_edit_affiliate_end', 'affwp_admin_edit_affiliate_extra_fields_cpfcnpj', 1 );
 
 /*
  * Update the affiliate BTC address field from the edit affiliate page in the admin dashboard

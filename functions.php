@@ -178,6 +178,7 @@ function afc_load_styles() {
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
 
     if (is_singular('afc_blog')) wp_enqueue_script( 'indice', $urltheme . '/js/indice.js', array('jquery-core'), '', true);
+    if (is_page('planos')) wp_enqueue_script( 'planos', $urltheme . '/js/planos.js', array('jquery-core'), '', true);
 
     // retirando css e js indesejados ou que nao precisam em algumas paginas
     wp_deregister_script( 'comment-reply' );
@@ -189,7 +190,7 @@ function afc_load_styles() {
 
 // colocar scripts assincronos
 function afc_asyncjs($tag, $handle) {
-   $scripts_to_async = array('fancybox','scripts');
+   $scripts_to_async = array('fancybox','scripts','indice','planos');
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
          return str_replace(' src', ' async src', $tag);

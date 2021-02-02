@@ -65,7 +65,7 @@ echo '<article>';
 	if (class_exists('WC_Subscription')) {
 		if (! has_active_subscription()) {
 			echo '<br><p class="has-text-align-center">Está a fim de uma manutenção mensal para nunca mais ter dor de cabeça?</p>';
-			echo '<p class="has-text-align-center"><a href="https://afcweb.design/servicos/planos" class="button">Ver planos disponíveis</a></p>';
+			echo '<p class="has-text-align-center"><a href="'.esc_url(home_url('/')).'servicos/planos" class="button">Ver planos disponíveis</a></p>';
 		}
 	}
 
