@@ -177,3 +177,34 @@ function afc_shortcode_marca($atts, $content = null) {
     return $output;
 
 } add_shortcode('marca','afc_shortcode_marca');
+
+
+// ========================================//
+// PARA BLOG
+// ========================================// 
+function afc_posts_blog($atts, $content = null) {
+    extract(shortcode_atts(array(
+        "posts" => '',
+    ), $atts));
+    ob_start();
+
+    $ids = explode(',',$posts);
+
+    $args = array('post_type' => 'afc_blog', 'post__in' => $ids);
+    $relacionados = new WP_Query($args);
+
+    if ( $relacionados->have_posts() ) { 
+        echo '<div><h4 class="cursivo">leitura complementar</h4></div>';
+        echo '<div class="relacionados lista-artigos">';
+        while ( $relacionados->have_posts() ) : $relacionados->the_post(); 
+            echo '<div class="item-post-grid">';
+                get_template_part('inc/blog-grid');
+            echo '</div>';
+        endwhile;
+        echo '</div>';
+    } wp_reset_query();
+
+    $output = ob_get_clean();
+    return $output;
+
+} add_shortcode('vertb','afc_posts_blog');
