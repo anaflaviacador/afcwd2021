@@ -194,8 +194,8 @@ function afc_posts_blog($atts, $content = null) {
     $relacionados = new WP_Query($args);
 
     if ( $relacionados->have_posts() ) { 
-        echo '<div><h4 class="cursivo">leitura complementar</h4></div>';
-        echo '<div class="relacionados lista-artigos">';
+        if($relacionados->post_count !== 1) echo '<div><h4 class="cursivo">leitura complementar</h4></div>';
+        echo '<div'.($relacionados->post_count === 1 ? ' style="margin-top: 2em;"' : '').' class="relacionados interno lista-artigos num-'.$relacionados->post_count.'">';
         while ( $relacionados->have_posts() ) : $relacionados->the_post(); 
             echo '<div class="item-post-grid">';
                 get_template_part('inc/blog-grid');
