@@ -149,8 +149,8 @@ echo '<div class="abinhas">';
 	echo '<div class="aba">';
 		echo '<div class="aba-titulo">Quais são os métodos de pagamento?</div>';
 		echo '<div class="aba-conteudo">';
-			echo '<p>Trabalho com Paypal para pagamentos no cartão de crédito, onde você pode <strong>parcelar em até 10x</strong>. Você também pode escolher boleto como forma de pagamento, podendo ter um ótimo desconto em relação ao parcelamento. Há também como pagar parte no boleto como entrada (valor mínimo de 1/3 do total à vista) e parcelar o restante!</p>';
-			echo '<p>Você também pode pagar fazendo uma TED para NuConta ou transferência PIX.</p>';
+			echo '<p>Trabalho com a <a href="https://app.juno.com.br/#/onboarding/775831:b02a84" target="_blank" rel="nofollow noopener">Juno Pagamentos</a> para pagamentos parcelados. Você pode <strong>parcelar em até 12x</strong> seu projeto! Você também pode escolher boleto, transferência bancária ou Pix, garantindo um ótimo desconto em relação ao parcelamento.</p>';
+			echo '<p>Há também como pagar uma entrada, de valor mínimo 1/3 do total, e parcelar o restante também em 12x!</p>';
 		echo '</div>';
 	echo '</div>';
 
