@@ -52,7 +52,7 @@
 		?>
 
 		<div class="woocommerce-MyAccount-navigation">
-			<div class="menu-cliente"><i class="fas fa-stream"></i> Menu de afiliado</div>
+			<div class="menu-afiliada"><i class="fas fa-stream"></i> Menu da afiliação</div>
 			<ul>
 				<li class="--voltarpainel">
 					<a href="<?php echo $pgConta; ?>"><span class="nome">Voltar</span></a>

@@ -1,7 +1,8 @@
 <?php 
 
-add_action('init', 'afc_cpt_dicas', 1);  
 
+
+add_action('init', 'afc_cpt_dicas', 1);  
 function afc_cpt_dicas(){
 	$labels = array(
 		'name' => _x('Blog', 'post type general name', 'afcwebdesign'),

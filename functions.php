@@ -120,19 +120,24 @@ if (class_exists('Woocommerce')) {
 // CUSTOM DASHBOARD ITENS PARA LOGADOS
 // ========================================// 
 function edit_admin_menus(){
-  // global $menu, $submenu;
-  // $submenu['edit.php?post_type=private-page'][0][0] = '';
+  $admin = wp_get_current_user();
 
-  // remove_menu_page( 'edit.php?post_type=acf-field-group' );
-  // remove_menu_page( 'edit-comments.php' );
-  // remove_menu_page( 'edit.php?post_type=af_form' );
+  if ( in_array( 'administrator', (array) $admin->roles ) && $admin->user_login === 'aninha') {
 
-  add_menu_page('Clientes', 'Clientes', 'manage_options', 'edit.php?post_type=private-page', '', 'dashicons-star-filled', 20 );
-  add_submenu_page( 'edit.php?post_type=private-page', 'Paineis', 'Paineis','manage_options', 'edit.php?post_type=private-page');
-  add_submenu_page( 'edit.php?post_type=private-page', 'Usuários', 'Usuários', 'manage_options', 'users.php?role=cliente_vip');
-  add_submenu_page( 'edit.php?post_type=private-page', 'Briefings', 'Briefings', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1');
+    remove_menu_page( 'edit.php' );
+    remove_menu_page( 'edit.php?post_type=acf-field-group' );
+    remove_menu_page( 'cookie-notice' );
+    remove_menu_page( 'edit.php?post_type=af_form' );
 
-  add_menu_page('Contatos', 'Contatos', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc611ad7448b&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-email', 30 );
+    add_menu_page('Clientes', 'Clientes', 'manage_options', 'edit.php?post_type=private-page', '', 'dashicons-star-filled', 20 );
+    add_submenu_page( 'edit.php?post_type=private-page', 'Paineis', 'Paineis','manage_options', 'edit.php?post_type=private-page');
+    add_submenu_page( 'edit.php?post_type=private-page', 'Usuários', 'Usuários', 'manage_options', 'users.php?role=cliente_vip');
+    add_submenu_page( 'edit.php?post_type=private-page', 'Briefings', 'Briefings', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1');
+
+    remove_menu_page( 'wppaginasinstantaneas' );
+    // add_menu_page('Contatos', 'Contatos', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc611ad7448b&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-email', 30 );
+  
+  }
 
 }
 add_action( 'admin_menu', 'edit_admin_menus', 999 );

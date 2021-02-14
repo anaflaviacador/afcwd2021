@@ -32,10 +32,19 @@
 
 			// afiliados
 			&[class*="--voltarpainel"] a:before { content: "\f177"; }
+			&[class*="--afiliadas"] a:before { content: "\f81d"; }
+
+			&[class*="--url"] a:before { content: "\f0c1"; }
+			&[class*="--stats"] a:before { content: "\f201"; }
+			&[class*="--referrals"] a:before { content: "\f649"; }
+			&[class*="--payouts"] a:before { content: "\f788"; }
+			&[class*="--visits"] a:before { content: "\f500"; }
+			&[class*="--settings"] a:before { content: "\f4fe"; }
+
 		}
 	}
 
-	.menu-cliente {display: none; cursor: pointer}
+	.menu-cliente, .menu-afiliada {display: none; cursor: pointer}
 
 	// qdo o menu está na pagina
 	.container & {
@@ -47,7 +56,7 @@
 		font-size: 12px; text-transform: uppercase;
 		@include transform(translateY(-75%));	
 
-		.menu-cliente {
+		.menu-cliente, .menu-afiliada {
 			padding: 10px;
 			width: 100%; text-align: center;
 			font-weight: 500; text-transform: uppercase;
@@ -79,7 +88,7 @@
 		}
 
 		@media (max-width: $container) {
-			.menu-cliente { display: block; }
+			.menu-cliente, .menu-afiliada { display: block; }
 			ul { display: none; }
 		}	
 	}

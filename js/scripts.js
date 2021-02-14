@@ -7,9 +7,11 @@ jQuery(document).ready(function($) {
   ////////////////////////////////// canvas
   var btMenu = $('#menu-mob'),
       btMenuCliente = $('.menu-cliente'),
+      btMenuAfiliada = $('.menu-afiliada'),
       tagMain = $('main'),
       tagCanvas = $('#canvas-bar'),
       tagCanvasCliente = $('#canvas-cliente'),
+      tagCanvasAfiliada = $('#canvas-afiliada'),
       tagOverlay = $('.canvas-overlay');
   tagMain.prepend( "<div class='canvas-overlay'></div>" );
 
@@ -39,7 +41,7 @@ jQuery(document).ready(function($) {
   });
 
 
-  // menu categorias
+  // menu cliente
   function escondeCanvasCliente() {
     $('#canvas-cliente, .canvas-overlay').removeClass('visivel');
     setTimeout(function(){
@@ -61,6 +63,31 @@ jQuery(document).ready(function($) {
   btMenuCliente.on('click', function(){
    mostraCanvasCliente();
    console.log('clicou menu cliente');
+  });
+
+
+  // menu afiliada
+  function escondeCanvasAfiliada() {
+    $('#canvas-afiliada, .canvas-overlay').removeClass('visivel');
+    setTimeout(function(){
+      $('#canvas-afiliada, .canvas-overlay').removeClass('db');
+    },330)
+    tagMain.off('mousedown', escondeCanvasAfiliada);
+    tagCanvasAfiliada.off('swipeleft', escondeCanvasAfiliada);
+    tagOverlay.removeClass('visivel');
+    console.log('escondeu');
+  }  
+  function mostraCanvasAfiliada() {
+    $('#canvas-afiliada, .canvas-overlay').addClass('db');
+    setTimeout(function(){
+      $('#canvas-afiliada, .canvas-overlay').addClass('visivel');
+    },20)
+    tagMain.on('mousedown', escondeCanvasAfiliada);
+    tagCanvasAfiliada.on('swipeleft', escondeCanvasAfiliada);
+  }
+  btMenuAfiliada.on('click', function(){
+   mostraCanvasAfiliada();
+   console.log('clicou menu afiliada');
   });
 
 

@@ -9,6 +9,13 @@ function afc_admin_menus_woo(){
   // add_submenu_page( 'woocommerce', 'Cupons desconto', 'Cupons desconto', 'manage_woocommerce', admin_url( 'edit.php?post_type=shop_coupon' ) );
 }
 
+add_action('admin_head', 'afc_fix_css_admin',999 );
+function afc_fix_css_admin() {
+    echo '<style>';
+      echo '.wrap.woocommerce {padding-top: 60px}';
+    echo '</style>';
+}
+
 
 // ========================================//
 // GERAL
