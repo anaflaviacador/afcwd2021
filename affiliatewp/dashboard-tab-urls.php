@@ -3,7 +3,7 @@ $affiliate_id = affwp_get_affiliate_id();
 ?>
 <div id="affwp-affiliate-dashboard-url-generator" class="affwp-tab-content">
 
-	<h4><?php _e( 'Affiliate URLs', 'affiliate-wp' ); ?></h4>
+	<h4>Informações principais</h4>
 
 	<?php
 	/**
@@ -17,12 +17,13 @@ $affiliate_id = affwp_get_affiliate_id();
 	?>
 
 	<p>
-		<?php if ( 'id' == affwp_get_referral_format() ) : ?>
+		<?php /*if ( 'id' == affwp_get_referral_format() ) : ?>
 			<?php printf( __( 'Your affiliate ID is: <strong>%s</strong>', 'affiliate-wp' ), $affiliate_id ); ?>
 		<?php elseif ( 'username' == affwp_get_referral_format() ) : ?>
 			<?php printf( __( 'Your affiliate username is: <strong>%s</strong>', 'affiliate-wp' ), affwp_get_affiliate_username() ); ?>
-		<?php endif; ?>
-		<br>
+		<?php endif;*/ ?>
+		<?php printf( __( 'Seu ID de afiliada é: <strong>%s</strong>', 'affiliate-wp' ), $affiliate_id ); ?><br>
+		<?php printf( __( 'Seu username é: <strong>%s</strong>', 'affiliate-wp' ), affwp_get_affiliate_username() ); ?><br>
 		<?php printf( __( 'Seu link principal é: <strong>%s</strong>', 'affiliate-wp' ), esc_url( urldecode( affwp_get_affiliate_referral_url() ) ) ); ?>
 	</p>
 
@@ -40,7 +41,7 @@ $affiliate_id = affwp_get_affiliate_id();
 	do_action( 'affwp_affiliate_dashboard_urls_before_generator', $affiliate_id );
 	?>
 
-	<h4><?php _e( 'Referral URL Generator', 'affiliate-wp' ); ?></h4>
+	<h4>Gerador de URL</h4>
 
 	<p>Digite qualquer URL daqui do site para gerar seu link direto!</p>
 	<p>&nbsp;</p>

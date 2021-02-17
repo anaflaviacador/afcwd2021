@@ -67,12 +67,12 @@ if ( is_user_logged_in() ) {
 		<p>
 			<label for="affwp-user-name">Seu nome</label>
 			<input id="affwp-user-name" type="text" name="affwp_user_name" value="<?php if( ! empty( $user_name ) ) { echo $user_name; } ?>" title="<?php esc_attr_e( 'Your Name', 'affiliate-wp' ); ?>" <?php echo affwp_required_field_attr( 'your_name' ); ?> />
-			<span>Será sua identificação no sistema.</span>
 		</p>
 
 		<p>
 			<label for="affwp-user-login"><?php _e( 'Username', 'affiliate-wp' ); ?></label>
 			<input id="affwp-user-login" required="required" type="text" name="affwp_user_login" maxlength="60" value="<?php if( ! empty( $user_login ) ) { echo $user_login; } ?>" title="<?php esc_attr_e( 'Username', 'affiliate-wp' ); ?>"<?php echo $disabled; ?> />
+			<span>Será sua identificação no sistema e poderá ser usado no checkout.</span>
 		</p>
 
 		<p>
@@ -149,7 +149,7 @@ if ( is_user_logged_in() ) {
 			<input type="hidden" name="affwp_redirect" value="<?php echo esc_url( $affwp_register_redirect ); ?>"/>
 			<input type="hidden" name="affwp_register_nonce" value="<?php echo wp_create_nonce( 'affwp-register-nonce' ); ?>" />
 			<input type="hidden" name="affwp_action" value="affiliate_register" />
-			<input class="button" type="submit" value="<?php esc_attr_e( 'Register', 'affiliate-wp' ); ?>" />
+			<input class="button" type="submit" value="Enviar pedido de afiliação" />
 		</p>
 
 		<?php

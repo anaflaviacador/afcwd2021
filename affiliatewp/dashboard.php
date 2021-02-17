@@ -1,18 +1,20 @@
 <?php $active_tab = affwp_get_active_affiliate_area_tab(); ?>
 
-<div id="affwp-affiliate-dashboard">
+<div id="affwp-affiliate-dashboard" style="min-height: 350px;">
 
 	<?php if ( 'pending' == affwp_get_affiliate_status( affwp_get_affiliate_id() ) ) : ?>
 
-		<p class="has-text-align-center affwp-notice"><?php _e( 'Your affiliate account is pending approval', 'affiliate-wp' ); ?></p>
+		<p class="has-text-align-center"><strong>Sua inscrição foi enviada com sucesso!</strong> <?php echo do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]'); ?>
+		<br>Agora é só aguardar. Você receberá um email de confirmação em breve.</p>
+		<p class="has-text-align-center"><em>Não esqueça de checar sua caixa de spam, ok?</em></p>
 
 	<?php elseif ( 'inactive' == affwp_get_affiliate_status( affwp_get_affiliate_id() ) ) : ?>
 
-		<p class="has-text-align-center affwp-notice"><?php _e( 'Your affiliate account is not active', 'affiliate-wp' ); ?></p>
+		<p class="has-text-align-center">Sua inscrição não está mais ativa ou foi excluída do sistema.<br>Por favor, entre em contato caso tenha dúvidas.</p>
 
 	<?php elseif ( 'rejected' == affwp_get_affiliate_status( affwp_get_affiliate_id() ) ) : ?>
 
-		<p class="has-text-align-center affwp-notice"><?php _e( 'Your affiliate account request has been rejected', 'affiliate-wp' ); ?></p>
+		<p class="has-text-align-center">Infelizmente sua aplicação foi revogada. :(</p>
 
 	<?php endif; ?>
 

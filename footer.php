@@ -35,7 +35,7 @@ if (is_front_page() || is_post_type_archive(array('etheme_portfolio')) || is_pag
 // RODAPE 
 // ========================================// 
 
-echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_page(array('contato','briefing','planos')) || (is_archive() && ! is_post_type_archive(array('etheme_portfolio','afc_depoimentos'))) || afc_woocommerce() ? ' style="margin-top:5em;float:left;clear:both;"' : '').'>';
+echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_page(array('contato','briefing','planos','inscricao-afiliadas')) || (is_archive() && ! is_post_type_archive(array('etheme_portfolio','afc_depoimentos'))) || afc_woocommerce() ? ' style="margin-top:5em;float:left;clear:both;"' : '').'>';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
 		echo '<ul id="navegacao" role="navigation">';
 			afc_menu('footer');

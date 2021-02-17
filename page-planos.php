@@ -53,9 +53,9 @@
 						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong><em style="color:var(--cor-negacao);">benefício extra para as 20 primeiras adesões</em></p>';
 						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i style="color:var(--cor-negacao);" class="far fa-info-circle"></i></span> <em>(2mil envios ao mês)</em></li>';
 					echo '</ul>';
-					echo '<footer>';
+					echo '<footer id="basic">';
 						echo $cancela;
-						echo '<div class="botao" id="basic">';
+						echo '<div class="botao">';
 							echo '<a target="_blank" href="https://afcweb.design/plano-basic" data-novo-cliente="https://afcweb.design/plano-basic-novocliente" id="assinar-plano-basic" class="btAssinarPlano button medio azul">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';
@@ -84,6 +84,7 @@
 						echo '<li>Atualização de sistema Wordpress e plugins</li>';
 						echo '<li>Supervisão de recursos utilizados no plano de hospedagem <span data-tooltip="Uso do espaço em disco, recurso de CPU, memória etc." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Otimização de banco de dados <span data-tooltip="Promove redução de espaço e aumenta desempenho na leitura dos dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Backup completo semanalmente</li>';
 
 						echo '<p><strong>AÇÕES ISOLADAS</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li>Criação de endereço de email e vinculação à Gmail</li>';
@@ -108,9 +109,9 @@
 
 					echo '</ul>';
 
-					echo '<footer>';
+					echo '<footer id="standard">';
 						echo $cancela;
-						echo '<div class="botao" id="basic">';
+						echo '<div class="botao">';
 							echo '<a target="_blank" href="https://afcweb.design/plano-standard" data-novo-cliente="https://afcweb.design/plano-standard-novocliente" id="assinar-plano-standard" class="btAssinarPlano button medio verde">assinar!</a>';
 						echo '</div>';
 					echo '</footer>';
@@ -135,8 +136,8 @@
 						echo '<li>Atualização de sistema Wordpress e plugins</li>';
 						echo '<li>Supervisão de recursos utilizados no plano de hospedagem <span data-tooltip="Uso do espaço em disco, recurso de CPU, memória etc." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Otimização de banco de dados <span data-tooltip="Promove redução de espaço e aumenta desempenho na leitura dos dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Backup completo diariamente</li>';
 						echo '<li>Supervisão de desempenho de páginas principais</li>';
-						echo '<li>Backup manual semanal</li>';
 						echo '<li>Supervisão e inserção de módulos de segurança <span data-tooltip="Proteção de arquivos e pastas, prevenção de ataque de força bruta." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
 						echo '<p><strong>AÇÕES ISOLADAS</strong><em>realizadas sob solicitação</em></p>';
@@ -164,9 +165,9 @@
 						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i style="color:var(--cor-negacao);" class="far fa-info-circle"></i></span> <em>(50mil envios ao mês)</em></li>';
 					echo '</ul>';
 
-					echo '<footer>';
+					echo '<footer id="premium">';
 						echo $cancela;
-						echo '<div class="botao" id="basic">';
+						echo '<div class="botao">';
 							echo '<a target="_blank" href="https://afcweb.design/plano-premium" data-novo-cliente="https://afcweb.design/plano-premium-novocliente" id="assinar-plano-premium" class="btAssinarPlano button medio">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';

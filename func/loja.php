@@ -63,21 +63,22 @@ add_filter( 'woocommerce_show_page_title', '__return_false' );
 // ========================================//
 // REDIRECIONAMENTOS
 // ========================================// 
-// function afc_redireciona_qdo_loga( $redirect ) {
-//     $minhaconta = wc_get_page_permalink( 'myaccount' );
-//     $redirect = '';
+function afc_redireciona_qdo_loga( $redirect ) {
+    $minhaconta = wc_get_page_permalink( 'myaccount' );
+    $checkout = wc_get_page_permalink( 'checkout' );
+    $carrinho = wc_get_page_permalink( 'cart' );
 
-//     $protocolo = isset($_SERVER["HTTPS"]) ? 'https://' : 'http://';
-//     $pagina_atual = esc_url($protocolo .$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+    // se eh pag de checkou ou carrinho permanece
+    if ($redirect == $checkout || $redirect == $carrinho) {
+        return $redirect;
 
-//     if (is_cart() || is_checkout())
-//         $redirect = $pagina_atual;
-//     else
-//         $redirect = $minhaconta;
-
-//     return $redirect;
-// }
-// add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 1100, 2 );    
+    // se eh outra pagina, vai pra conta de cliente
+    } else {
+        $redirect = $minhaconta;
+        return $redirect;
+    }
+}
+add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 1100, 2 );    
 
 // redireciona quando sai
 add_action('wp_logout','afc_redireciona_qdo_sai');
