@@ -59,6 +59,14 @@ function afc_shortcode_faq( $atts, $content = null ) {
 }
 add_shortcode('faq','afc_shortcode_faq');
 
+function afc_shortcode_affiliadas_faq( $atts, $content = null ) {
+    ob_start();
+    get_template_part('inc/afiliadas-faq');
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('aff-faq','afc_shortcode_affiliadas_faq');
+
 
 ////////////////////////////// COLUNAS
 function afc_shortcode_cols($atts, $content = null) {
