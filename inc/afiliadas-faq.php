@@ -16,6 +16,13 @@ echo '<div class="abinhas">';
 	echo '</div>';
 
 	echo '<div class="aba">';
+		echo '<div class="aba-titulo">Como faz para colocar meu link de afiliada no banner personalizado do studio que já tem no meu layout?</div>';
+		echo '<div class="aba-conteudo">';
+			echo '<p>Após sua aprovação, entre em contato comigo solicitando essa atualização que faço para ti sem custo algum! ;)</p>';
+		echo '</div>';
+	echo '</div>';
+
+	echo '<div class="aba">';
 		echo '<div class="aba-titulo">Indiquei seus serviços diretamente para alguém e sei que vocês fecharam contrato. Ganho comissão também?</div>';
 		echo '<div class="aba-conteudo">';
 			echo '<p>Agradeço muito pela indicação! 💜 Mas os projetos fechados sob contrato de prestação de serviço (ou seja, projetos de design exclusivos) não fazem parte do programa de afiliadas.</p>';
