@@ -24,11 +24,20 @@ echo '<div class="abinhas">';
 			echo '<p>O studio não atende lojas virtuais de grande porte ou situadas em outras plataformas, tais como Iluria, NuvemShop, Shopify, BoxLoja, Tanlup etc.</p>';
 		echo '</div>';
 	echo '</div>';
+
+	echo '<div class="aba">';
+		echo '<div class="aba-titulo">Eu preciso de um layout para ontem! É possível te contratar com urgência?</div>';
+		echo '<div class="aba-conteudo">';
+			echo '<p>Infelizmente o studio não tem estrutura de atender novos projetos com caráter de urgência por conta da fila de produção.</p>';
+			echo '<p><strong>O único atendimento de urgência* prestado é sob caráter de suporte e manutenção para clientes que já são do studio.</strong> A prioridade é dada para as assinantes de planos de manutenção e, posteriormente, para qualquer cliente com projeto em atividade que está passando por problemas técnicos.</p>';
+			echo '<p><small>* Dentro do horário de atendimento do studio: das 14h às 17h, de segunda à sexta.</small></p>';
+		echo '</div>';
+	echo '</div>';
 	
 	echo '<div class="aba">';
 		echo '<div class="aba-titulo">Meu projeto será feito imediatamente após a contratação?</div>';
 		echo '<div class="aba-conteudo">';
-			echo '<p>Provavelmente não. Qualquer serviço prestado de produção sob demanda (ou seja, de layout exclusivo) exige muita dedicação e tempo de execução, portanto, o período em que o projeto será produzido está sujeito à disponibilidade da agenda do studio. Por isso, <strong>o agendamento é super importante</strong>! É uma forma de garantir que seu projeto seja feito no prazo estipulado.</p>';
+			echo '<p>Provavelmente não. Todo serviço de design e desenvolvimento exige muita dedicação e tempo de produção, portanto, o período em que o seu projeto será produzido está sujeito à disponibilidade da agenda do studio. Por isso, <strong>o agendamento é super importante</strong>! É uma forma de garantir que seu projeto seja feito no prazo informado.</p>';
 			echo '<p>A média de disponibilidade da agenda gira em torno de 3 a 6 meses posterior ao primeiro contato do cliente via e-mail ou chat.</p>';
 			echo '<p>Vale lembrar que o AFC Web Design é uma microempresa, então o agendamento também garante que não aconteça sobrecarga de trabalho e queda da qualidade da produção &mdash; dois itens que não combinam com mentes criativas, não é mesmo? <strong>A empresa preza mais por qualidade do que quantidade!</strong></p>';
 		echo '</div>';
@@ -102,6 +111,13 @@ echo '<div class="abinhas">';
 			echo '<p>Peça gráfica é uma imagem com o intuito de comunicar algo e transmitir uma mensagem. Uma peça pode ser independente de algum projeto de web design contratado, como um banner de publicidade, por exemplo, ou um complemento de um projeto, como banners para redes sociais, um midia-kit (podendo ser em .PDF ou em HTML), um avatar, uma capa para facebook, etc. É qualquer item "avulso", e é cobrado por hora trabalhada.</p>';
 		echo '</div>';
 	echo '</div>';
+
+	echo '<div class="aba">';
+		echo '<div class="aba-titulo">Você faz cartão de visita, papelaria ou design gráfico de forma geral?</div>';
+		echo '<div class="aba-conteudo">';
+			echo '<p>Não. O studio não trabalha com nenhum serviço de design para impressão, nem de identidade visual. O foco do studio é o web design, produzindo sites, lojas e blogs.</p>';
+		echo '</div>';
+	echo '</div>';
 	
 	echo '<div class="aba">';
 		echo '<div class="aba-titulo">Qual é a diferença entre blog e site?</div>';
@@ -140,7 +156,7 @@ echo '<div class="abinhas">';
 	echo '<div class="aba">';
 		echo '<div class="aba-titulo">Onde estão os valores dos projetos?</div>';
 		echo '<div class="aba-conteudo">';
-			echo '<p>Cada projeto é único e tem o seu devido valor. Os mais simples como blogs, possuem um investimento a partir de R$1.950*, e também há projetos mais complexos, como sites profissionais e e-commerce, com investimento a partir de R$3.650*.</p>';
+			echo '<p>Cada projeto é único e tem o seu devido valor. Os mais simples como blogs, possuem um investimento a partir de R$1.950*, e também há projetos mais complexos, como sites profissionais, com investimento a partir de R$3.650*.</p>';
 			echo '<p>Por isso, a melhor forma de saber o quanto que você deve investir em seu projeto é <a href="https://afcweb.design/contato/">entrando em contato</a> e informar pelo formulário de contato tudo o que deseja e espera de seu projeto. Assim, posso informar um orçamento preliminar para você começar a se programar sobre o quanto deverá investir.</p>';
 			echo '<p><small>* Valores referente ao pagamento à vista.</small></p>';
 		echo '</div>';

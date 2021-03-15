@@ -414,7 +414,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "<strong>O studio tem disponibilidade para iniciar novos projetos a partir de OUTUBRO de 2021.<\/strong> Porém, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar.",
+            "message": "<strong>O studio tem disponibilidade para iniciar novos projetos a partir de NOVEMBRO de 2021.<\/strong> Porém, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar.",
             "new_lines": "br",
             "esc_html": 0
         },
@@ -588,5 +588,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de contato padrão do site",
-    "modified": 1611755560
+    "modified": 1615803388
 }
