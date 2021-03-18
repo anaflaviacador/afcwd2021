@@ -16,6 +16,13 @@ function afc_fix_css_admin() {
     echo '</style>';
 }
 
+// ========================================//
+// COOKIES
+// ========================================// 
+add_filter('wc_session_expiring', 'filter_ExtendSessionExpiring' );
+add_filter('wc_session_expiration' , 'filter_ExtendSessionExpired' );
+function filter_ExtendSessionExpiring($seconds) { return 60 * 60 * 71; }
+function filter_ExtendSessionExpired($seconds) { return 60 * 60 * 72; }
 
 // ========================================//
 // GERAL
