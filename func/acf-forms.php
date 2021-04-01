@@ -13,6 +13,7 @@ add_filter( 'af/form/button_attributes', 'afc_forms_atributos_btn', 10, 3 );
 // contato
 function afc_forms_contato_args( $args, $form ) {  
     $args['submit_text'] = 'Enviar';
+    $args['redirect'] = 'https://afcweb.design/sucesso/';
     return $args;
 }
 add_filter( 'af/form/args/key=form_5efb867474157', 'afc_forms_contato_args', 10, 2 );
@@ -33,6 +34,15 @@ add_filter( 'af/form/next_button_atts', 'afc_forms_briefing_nav', 10, 2 );
 add_filter( 'af/form/previous_button_atts', 'afc_forms_briefing_nav', 10, 2 );
 
 
+// ========================================//
+// CONTATO
+// ========================================//
+function afc_forms_contato_headers( $headers, $email, $form, $fields ) {
+  $usuarioMail = af_get_field('form_email');
+  $headers[] = 'Reply-To: ' . $usuarioMail;
+  return $headers;
+}
+add_filter( 'af/form/email/headers/key=form_5efb867474157', 'afc_forms_contato_headers', 10, 4 );
 
 
 // ========================================//
@@ -117,10 +127,10 @@ function register_forms() {
   Suporte: {field:form_suporte}<br />
   Inten&ccedil;&atilde;o de in&iacute;cio: {field:form_preparacao}<br />
   Referência: {field:form_referencia} &#8211; {field:form_referencia_indicacao}{field:form_referencia_blogsite}{field:form_referencia_midia}<br />
-  Lista receber newsletter: {field:form_newsletter}</p>
+  Lista newsletter: {field:form_newsletter}</p>
   <blockquote><p>{field:form_mensagem_orcamento}{field:form_mensagem_suporte}</p></blockquote>
   <br /><br />---<br />
-  Acordo da política de privacidade: {field:form_aceita_termos}
+  Aceite da política de privacidade: {field:form_aceita_termos}
   ',
       ),
     ),

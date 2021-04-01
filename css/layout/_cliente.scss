@@ -4,6 +4,28 @@
 .afc-form-row-last { float: right !important; clear: unset !important;}
 
 // ========================================//
+// PAGINA DE LOGIN PADRAO
+// ========================================//
+.afc-pagina-login-padrao {
+	form.login, form.register {
+		font-size: .9em;
+		border: 0 !important; padding: 0 !important;
+	}
+
+	.woocommerce-privacy-policy-text {
+		font-size: .9em; line-height: 1.5;
+		margin-top: 10px;
+	}
+}
+
+// forca de senha
+.woocommerce-password-strength { 
+	margin-top: 5px; border-radius: 8px !important;
+	padding: .5em; font-size: 12px;
+}
+.woocommerce-password-hint { line-height: 1.5; font-style: italic;}
+
+// ========================================//
 // MINHA CONTA
 // ========================================//
 // menu woo geral, inclusive canvas
@@ -95,7 +117,6 @@
 }
 
 
-
 .woocommerce-MyAccount-content, .affwp-tab-content {
 	width: 100% !important; max-width: $colmax !important; float: none !important;
 	margin: 0 auto; font-size: .9em;
@@ -149,7 +170,11 @@
 	}
 }
 
-
+// perda de senha
+.woocommerce-ResetPassword {
+	width: $colmax; max-width: 100%;
+	margin-left: auto; margin-right: auto;
+}
 
 // ========================================//
 // DETALHES DE CONTA / PEDIDO

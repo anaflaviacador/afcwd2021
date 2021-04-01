@@ -77,7 +77,7 @@ if(!is_page('contato') && ! is_page('planos') && ! is_user_logged_in()) {
 	get_template_part('inc/popup');
 }
 
-get_template_part('inc/whatsapp');
+// get_template_part('inc/whatsapp');
 
 wp_footer(); // scripts e tudo mais
 

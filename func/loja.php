@@ -9,11 +9,52 @@ function afc_admin_menus_woo(){
   // add_submenu_page( 'woocommerce', 'Cupons desconto', 'Cupons desconto', 'manage_woocommerce', admin_url( 'edit.php?post_type=shop_coupon' ) );
 }
 
-add_action('admin_head', 'afc_fix_css_admin',999 );
-function afc_fix_css_admin() {
-    echo '<style>';
-      echo '.wrap.woocommerce {padding-top: 60px}';
-    echo '</style>';
+// add_action('admin_head', 'afc_fix_css_admin',999 );
+// function afc_fix_css_admin() {
+//     echo '<style>';
+//       echo '.wrap.woocommerce {padding-top: 60px}';
+//     echo '</style>';
+// }
+
+// ========================================//
+// REGISTRO DE USUARIO PARA SENDY
+// ========================================// 
+add_action('user_register', 'add_user_to_sendy_list', 20);
+function add_user_to_sendy_list($user_id) {
+
+  $api_key = 'JFeHli8LY5NqmSFRuXfp';
+  $list = 'BH0ACmpWou8929pwTyLi892Y3A';
+  $url  = 'https://mailing.anaflaviacador.com/subscribe';
+
+  $user_info = get_userdata($user_id);
+  $name = $user_info->first_name;
+  $email = $user_info->user_email;
+
+  $role = $user_info->roles;
+
+  /* If new account doesn't have the first_name filled in pull it from the registraion POST.  
+  user_register doesnt write out to the database until after registration is complete. */
+  if (isset($_POST['first_name'])) {
+    $name = $_POST['first_name'];
+  }
+
+  $args = array(
+    'body' => array(
+      'name'  => $name,
+      'email' => $email,
+      'origem' => 'cadastroshop',
+      'list'    => $list,
+      'api_key' => $api_key,
+      'boolean' => true
+    )
+  );
+
+  // If new account doesn't have the 'customer' role don't do anything.  If you want all roles to go comment this out.
+  if (!in_array('customer', $role)) {
+    return;
+  }
+
+  $result = wp_remote_post($url, $args);
 }
 
 // ========================================//
@@ -405,9 +446,8 @@ function afcwoo_politica_nao_selecionada() {
 // agradecimento
 add_filter( 'woocommerce_thankyou_order_received_text', 'misha_thank_you_title', 20, 2 );
 function misha_thank_you_title( $thank_you_title, $order ){
-    $downloads = wc_get_account_endpoint_url('downloads');
-    $loja = wc_get_page_permalink('shop');
-    return '<a href="'.esc_url($downloads).'" class="button bege mini">downloads</a> <a href="'.esc_url($loja).'" class="button mini">voltar à loja</a><br><br><strong>Muito obrigada pela compra, ' . $order->get_billing_first_name() . '!</strong><br>Segue abaixo detalhes do seu pedido.';
+    $conta = wc_get_page_permalink('myaccount');
+    return '<strong>Pedido recebido. Obrigada!</strong><br>Acesse sua conta para mais detalhes.<br><a href="'.esc_url($conta).'" class="button alt mini" style="margin-top:4px">acessar conta</a>';
 }
 
 // organizacao de colunas de download

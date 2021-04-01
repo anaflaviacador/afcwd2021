@@ -17,9 +17,9 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-} ?>
+}
 
-<?php do_action( 'woocommerce_before_checkout_form', $checkout );
+do_action( 'woocommerce_before_checkout_form', $checkout );
 
 // If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
@@ -36,42 +36,37 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
 		<div class="col2-set" id="customer_details">
+
 			<div class="col-1" style="margin-bottom: 2em;">
 
-				<div style="display:flex;justify-content:space-between;align-items:flex-start; margin-bottom: 10px;">
-					<h3>Faturamento</h3>
-					<a href="<?php echo wc_get_page_permalink('cart'); ?>" class="button mini"><i class="fa fa-shopping-cart"></i> &nbsp;Rever carrinho</a>
+				<div style="display:flex;justify-content:space-between;align-items:flex-start;">
+					<h3>Pedido</h3>
+					<a href="<?php echo wc_get_page_permalink('cart'); ?>" class="button mini"><i class="fa fa-shopping-cart"></i> Rever carrinho</a>
 				</div>
 
-				<?php get_template_part('inc/aviso-checkout'); ?>
+				<?php echo wc_get_template( 'checkout/review-order.php' ); ?>
 
 				<?php if (wc_coupons_enabled()): ?>
 					<p style="margin: -1em 0 3em; font-size:.9em; color:var(--cor-afirmacao)"><strong><em>Tem cupom de desconto?</em></strong>  <a href="<?php echo wc_get_page_permalink('cart'); ?>" style="color:inherit">Clique aqui e adicione seu cupom no carrinho.</a></p>
 				<?php endif; ?>
 				
+
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
-				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 				
 			</div>
 
 			<div class="col-2">
+				<?php get_template_part('inc/aviso-checkout'); ?>
 
-				<h3 style="margin-bottom:10px">Pedido e pagamento</h3>
+				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 
-				<?php //wc_get_template( 'checkout/payment.php' ); ?>
-				<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
-				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+				<h3>Forma de pagamento</h3>
+				<?php echo wc_get_template( 'checkout/payment.php' ); ?>
 
-				<div id="order_review" class="woocommerce-checkout-review-order">
-					<?php do_action( 'woocommerce_checkout_order_review' ); ?>
-				</div>
-
-				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 			</div>
 		</div>
 
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
-
 
 	<?php endif; ?>
 	

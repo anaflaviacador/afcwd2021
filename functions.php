@@ -28,12 +28,6 @@ function afc_setup() {
     remove_action( 'wp_head', 'wlwmanifest_link');
 
 
-    if ( class_exists( 'Jetpack' ) ) { 
-      add_filter( 'jetpack_implode_frontend_css', '__return_false' );
-      add_action( 'wp_print_styles', 'afc_remove_jetpacks' ); 
-      add_filter( 'jetpack_enable_open_graph', '__return_false' );
-    }
-
     // layout
     add_action( 'wp_enqueue_scripts', 'afc_load_styles', 999 );
     add_action( 'wp_head', 'afc_load_scripts_head', 999 );
@@ -135,10 +129,11 @@ function edit_admin_menus(){
     add_submenu_page( 'edit.php?post_type=private-page', 'Briefings', 'Briefings', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1');
 
     remove_menu_page( 'wppaginasinstantaneas' );
-    // add_menu_page('Contatos', 'Contatos', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc611ad7448b&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-email', 30 );
+
+    // logs do form de contato
+    add_menu_page('Contatos', 'Logs de contato', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5efb867474157&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-email', 30 );
   
   }
-
 }
 add_action( 'admin_menu', 'edit_admin_menus', 999 );
 
@@ -155,7 +150,7 @@ function afc_load_styles() {
 
     // layout
     wp_enqueue_style('layout', $urltheme . '/css/layout.css', array(), '', 'all', null); 
-    wp_enqueue_style('lazing', $urlCDN . '/aos@2.3.4/dist/aos.css', array(), '', 'all', null);
+    if(! is_page_template('simples.php')) wp_enqueue_style('lazing', $urlCDN . '/aos@2.3.4/dist/aos.css', array(), '', 'all', null);
     
     // jquery
     wp_deregister_script( 'jquery-core' );
@@ -167,23 +162,26 @@ function afc_load_styles() {
       wp_enqueue_script( 'typewriter', $urlCDN . '/typewriter-effect@2.13.1/dist/core.js', array('jquery-core'), '', true);
     }    
 
-    // scripts
-    // wp_enqueue_script( 'ganalytics', $urlCDN . '/ga-lite@2.1.0/dist/ga-lite.min.js', array('jquery-core'), '', false);
-    wp_enqueue_script( 'fancybox', $urlCDN . '/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
-    wp_enqueue_script( 'lazying', $urlCDN . '/aos@2.3.4/dist/aos.min.js', array('jquery-core'), '', false);
-    wp_enqueue_script( 'masonrydepos', $urlCDN . '/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array('jquery-core'), '', false);
-    wp_enqueue_script( 'depoimentos', $urltheme . '/js/depoimentos.js', array('masonrydepos'), '', false);
+    // scripts packages
+    if(! is_page_template('simples.php')) {
+      wp_enqueue_script( 'fancybox', $urlCDN . '/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
+      wp_enqueue_script( 'lazying', $urlCDN . '/aos@2.3.4/dist/aos.min.js', array('jquery-core'), '', false);
+      wp_enqueue_script( 'masonrydepos', $urlCDN . '/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array('jquery-core'), '', false);
+    }
 
-    // wp_enqueue_script( 'suporte-webp', $urltheme . '/js/webp.js', array(), '', false);
 
+    // checkout woocommerce personalizacoes
     if (class_exists('Woocommerce')) {
       if(is_checkout()) wp_enqueue_script( 'woo-checkout', $urltheme . '/js/woo-checkout.js', array('jquery-core'), '', true);
     }
 
+    // scripts do site
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
-
-    if (is_singular('afc_blog')) wp_enqueue_script( 'indice', $urltheme . '/js/indice.js', array('jquery-core'), '', true);
-    if (is_page('planos')) wp_enqueue_script( 'planos', $urltheme . '/js/planos.js', array('jquery-core'), '', true);
+    if(! is_page_template('simples.php'))  {
+      wp_enqueue_script( 'depoimentos', $urltheme . '/js/depoimentos.js', array('masonrydepos'), '', false);
+      if (is_singular('afc_blog')) wp_enqueue_script( 'indice', $urltheme . '/js/indice.js', array('jquery-core'), '', true);
+      if (is_page('planos')) wp_enqueue_script( 'planos', $urltheme . '/js/planos.js', array('jquery-core'), '', true);
+    }
 
     // retirando css e js indesejados ou que nao precisam em algumas paginas
     wp_deregister_script( 'comment-reply' );
@@ -282,15 +280,11 @@ function afc_load_scripts_head() {
 
 function afc_load_scripts_footer() { 
   // if(is_singular('etheme_portfolio')) { echo '<script async defer src="//assets.pinterest.com/js/pinit.js"></script>'; }
-  if(is_front_page()) {
-    echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'o site\',\'a loja\',\'o blog\'],delay: 120,autoStart: true,loop: true});</script>';
-  }
-  if(is_post_type_archive('afc_blog')) {
-    echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'site\',\'e-commerce\',\'blog\'],delay: 120,autoStart: true,loop: true});</script>';
-  } 
-  if (is_page('planos')) {
-  }
-  echo '<script type="text/javascript">jQuery(document).ready(function(e){AOS.init({duration:600,easing:"ease-out",once:!0})});</script>';
+  if(is_front_page()) echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'o site\',\'a loja\',\'o blog\'],delay: 120,autoStart: true,loop: true});</script>';
+
+  if(is_post_type_archive('afc_blog')) echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'site\',\'e-commerce\',\'blog\'],delay: 120,autoStart: true,loop: true});</script>';
+  
+  if(! is_page_template('simples.php')) echo '<script type="text/javascript">jQuery(document).ready(function(e){AOS.init({duration:600,easing:"ease-out",once:!0})});</script>';
 
   // configuracoes da barra de admin, caso exista
   if (is_admin_bar_showing()) {
@@ -383,42 +377,6 @@ function afc_body_class($classes) {
     $classes[] = $post->post_type . '-' . $post->post_name;
   }
     return $classes;
-}
-
-
-
-
-// ========================================//
-// JETPACK
-// ========================================// 
-////// removendo scripts e css desnecessarios do jetpack
-function afc_remove_jetpacks() {
-  wp_deregister_style( 'AtD_style' ); // After the Deadline
-  wp_deregister_style( 'jetpack_likes' ); // Likes
-  wp_deregister_style( 'jetpack_related-posts' ); //Related Posts
-  wp_deregister_style( 'jetpack-carousel' ); // Carousel
-  wp_deregister_style( 'grunion.css' ); // Grunion contact form
-  wp_deregister_style( 'the-neverending-homepage' ); // Infinite Scroll
-  wp_deregister_style( 'infinity-twentyten' ); // Infinite Scroll - Twentyten Theme
-  wp_deregister_style( 'infinity-twentyeleven' ); // Infinite Scroll - Twentyeleven Theme
-  wp_deregister_style( 'infinity-twentytwelve' ); // Infinite Scroll - Twentytwelve Theme
-  wp_deregister_style( 'noticons' ); // Notes
-  wp_deregister_style( 'post-by-email' ); // Post by Email
-  wp_deregister_style( 'publicize' ); // Publicize
-  wp_deregister_style( 'sharedaddy' ); // Sharedaddy
-  wp_deregister_style( 'sharing' ); // Sharedaddy Sharing
-  wp_deregister_style( 'stats_reports_css' ); // Stats
-  wp_deregister_style( 'jetpack-widgets' ); // Widgets
-  wp_deregister_style( 'jetpack-slideshow' ); // Slideshows
-  wp_deregister_style( 'presentations' ); // Presentation shortcode
-  wp_deregister_style( 'jetpack-subscriptions' ); // Subscriptions
-  wp_deregister_style( 'tiled-gallery' ); // Tiled Galleries
-  wp_deregister_style( 'widget-conditions' ); // Widget Visibility
-  wp_deregister_style( 'jetpack_display_posts_widget' ); // Display Posts Widget
-  wp_deregister_style( 'gravatar-profile-widget' ); // Gravatar Widget
-  wp_deregister_style( 'widget-grid-and-list' ); // Top Posts widget
-  wp_deregister_style( 'jetpack-widgets' ); // Widgets
-  wp_deregister_style( 'simple-payments' ); // simple-payments.css
 }
 
 

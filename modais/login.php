@@ -1,6 +1,7 @@
 <?php 
 echo '<div id="customer_login">';
-	echo '<h2 class="has-text-align-center cursivo">Faça seu login</h2>';
+	echo '<h2 class="has-text-align-center cursivo">minha conta</h2>';
+	echo '<p class="has-text-align-center">Não tem cadastro? Clique aqui e faça o seu!</p>';
 	echo '<form class="woocommerce-form woocommerce-form-login login afc-login" method="post">';
 		do_action( 'woocommerce_login_form_start' );
 
@@ -25,4 +26,6 @@ echo '<div id="customer_login">';
 			
 		do_action( 'woocommerce_login_form_end' );
 	echo '</form>';	
+
 echo '</div>';
+do_action( 'woocommerce_after_customer_login_form' );

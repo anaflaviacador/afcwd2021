@@ -116,15 +116,15 @@
             },
             "hide_admin": 0,
             "choices": {
-                "orcamento": "Pedido de orçamento",
-                "suporte": "Solicitação de suporte",
+                "orcamento": "Pedido de orçamento (projetos exclusivos)",
+                "suporte": "Solicitação de suporte (faço uso de um produto do studio)",
                 "duvida": "Dúvidas em geral",
-                "outro": "Outro"
+                "politica": "Esclarecimentos sobre política de privacidade"
             },
             "allow_null": 1,
             "other_choice": 0,
             "default_value": "",
-            "layout": "horizontal",
+            "layout": "vertical",
             "return_format": "label",
             "save_other_choice": 0
         },
@@ -315,28 +315,19 @@
             "label": "Em que posso ajudar?",
             "name": "form_mensagem_suporte",
             "type": "textarea",
-            "instructions": "Quanto mais detalhes puder fornecer, melhor.",
+            "instructions": "Quanto mais detalhes puder fornecer na sua solicitação, melhor.",
             "required": 0,
             "conditional_logic": [
                 [
                     {
                         "field": "field_5cc61cf2c9778",
-                        "operator": "==",
-                        "value": "duvida"
-                    }
-                ],
-                [
+                        "operator": "!=",
+                        "value": "orcamento"
+                    },
                     {
                         "field": "field_5cc61cf2c9778",
-                        "operator": "==",
-                        "value": "suporte"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_5cc61cf2c9778",
-                        "operator": "==",
-                        "value": "outro"
+                        "operator": "!=",
+                        "value": ""
                     }
                 ]
             ],
@@ -351,6 +342,34 @@
             "maxlength": "",
             "rows": "",
             "new_lines": "wpautop"
+        },
+        {
+            "key": "field_6064845c63653",
+            "label": "Comprovação de titular",
+            "name": "form_documento_comprova",
+            "type": "file",
+            "instructions": "O seu documento pessoal é único meio de comprovação que você é o titular dos dados questionados. Faça upload da foto do seu CPF, RG ou CNH. A imagem precisa conter informações de nome, sobrenome e número de identificação.<br><span style=\"color:red;font-size:.85em\">Tamanho máximo do arquivo: 2MB. Formatos permitidos: .jpg, .png, .jpeg e .pdf<\/span>",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "==",
+                        "value": "politica"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": 2,
+            "mime_types": "jpeg,jpg,png,pdf"
         },
         {
             "key": "field_5f440d9f51449",
@@ -404,7 +423,8 @@
                     },
                     {
                         "field": "field_5f440d9f51449",
-                        "operator": "!=empty"
+                        "operator": "!=",
+                        "value": ""
                     }
                 ]
             ],
@@ -425,7 +445,15 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "!=",
+                        "value": "politica"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -531,6 +559,32 @@
             "maxlength": ""
         },
         {
+            "key": "field_60648a8108b79",
+            "label": "Mensagem sobre pedido de esclarecimento de uso de dados",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cc61cf2c9778",
+                        "operator": "==",
+                        "value": "politica"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden rosa",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "<div style=\"display:flex\">\r\n\r\n<div style=\"flex-grow:1;align-self:center\"><strong style=\"color:red\">ALERTA!<\/strong><br>O processo de envio do formulário pode levar alguns minutos por conta do upload da foto do seu documento em nossos servidores.<br><br>Não atualize e nem feche esta aba até que a página de conclusão de envio apareça (semelhante a imagem ao lado), ok?<\/div>\r\n\r\n<div style=\"width: 32%;margin-left:10px;flex-shrink: 0;font-size:11px;text-align:center\"><img src=\"https:\/\/afcweb.design\/wp-content\/uploads\/2021\/03\/laptop-300x181.png\" style=\"width:100%;margin-bottom:6px;\"><br>ilustração de mensagem de sucesso de envio.<\/div>\r\n\r\n<\/div>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
             "key": "field_5fa6f36b4d03e",
             "label": "Newsletter",
             "name": "form_newsletter",
@@ -552,7 +606,7 @@
         },
         {
             "key": "field_5efba8e2686b4",
-            "label": "De acordo com a nossa Política de Privacidade",
+            "label": "Acordo com a nossa Política de Privacidade",
             "name": "form_aceita_termos",
             "type": "true_false",
             "instructions": "",
@@ -588,5 +642,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de contato padrão do site",
-    "modified": 1615803388
+    "modified": 1617213616
 }
