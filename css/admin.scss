@@ -1,6 +1,14 @@
 $output-bourbon-deprecation-warnings: false !default;
 @import "padroes/predefinicoes";
 
+%sprite {
+    background-image: url('../img/sprite.png');
+    background-size: 1762px auto;
+    background-repeat: no-repeat;
+
+    @media (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) { background-image: url('../img/sprite@2x.png'); }
+}
+
 .fa-select2.fa5, .fa-select2-drop.fa5 { 
 	font-family: inherit !important; 
 }
@@ -9,4 +17,147 @@ $output-bourbon-deprecation-warnings: false !default;
 .acf-field.sem-espaco .acf-input ol, {
 	padding-left: 0 !important; margin-left: 0 !important;
 	margin-bottom: 0 !important;
+}
+
+/////// LAYOUT
+body, html {overflow-x: hidden; min-height: 100vh;}
+body.login {
+	background:var(--cor-roxo-claro);
+	font-weight: 500;
+	font-style: normal;
+	font-family: $fonte-padrao;
+	letter-spacing: 0.01em;
+	position: relative;
+	
+	@media screen and (min-height: 660px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&:before, &:after {
+		content: ""; @extend %sprite;
+		background-position: 0 -135px;
+		width: 1762px; height: 47px;
+		position: fixed; 
+		left: 50%; 
+	}
+
+	&:before {top: 0; @include transform(translateX(-50%) scale(-1));}
+	&:after {bottom: 0; @include transform(translateX(-50%));}
+
+	// links
+	a { color: var(--cor-roxo); }
+
+	// marca
+	h1 a {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: contain;
+		background-image: url(../img/marca-afcwebdesign.svg);
+		margin: 0 auto;
+		width: 300px;
+		height: 57px;
+	}
+
+	// mensagens
+	#login_error, .message, .success {
+		border: 1px solid var(--cor-verde);
+		border-left-width: 4px;
+		padding: 12px;
+		border-radius: 8px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		background-color: #fff;
+		box-shadow: none;
+
+		a { color: inherit; font-weight: bold;}
+	}
+	.message.register { display: none; }
+	#login_error { border-color: var(--cor-negacao);}
+
+	// form
+	#login { padding-top: 60px; padding-bottom: 60px; }
+
+	form {
+		border-radius: 8px;
+		border-color: var(--cor-roxo-medio);
+		// border: none;
+		box-shadow: 0 0 10px #0000001a;
+
+		input:not([type=checkbox]):not([type=submit]) {
+			border-color: var(--cor-azul-medio);
+			border-radius: 8px;
+			background: var(--cor-azul-claro);
+			outline: 0;
+			color: var(--cor-texto);
+
+			&:focus {
+				border-color: var(--cor-verde-medio);
+				box-shadow: none;
+				background: var(--cor-verde-claro);
+			}
+		}
+
+		input[type=checkbox] {
+			&:checked::before {
+				content: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23BA5040%27%2F%3E%3C%2Fsvg%3E);
+			}
+			&:focus {
+				border-color: var(--cor-negacao);
+				box-shadow: 0 0 0 1px var(--cor-negacao);
+			}
+		}
+
+		.termos-e-politica {
+			margin-bottom: 20px !important; font-size: 13px;
+			a { color: var(--cor-negacao); }
+		}
+
+		.button.wp-hide-pw {
+			box-shadow: none !important;
+			border: 0 !important;
+			opacity: .8;
+			color: var(--cor-grafite);
+		}
+
+		//reCAPTCHA Google
+		.anr_captcha_field {
+			// transform: scale(.75); transform-origin: left bottom;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+	}
+
+	// botoes em geral
+	.button, .button-secondary {
+		color: white;
+		border-color: var(--cor-azul);
+		background: var(--cor-azul);
+		vertical-align: top;
+		outline: 0; font-weight: bold;
+		font-family: $fonte-redonda;
+		text-transform: uppercase;
+		box-shadow: none;
+		letter-spacing: 0.05em;
+		border-radius: 100px;
+
+		&:hover { background: var(--cor-azul-escuro);}
+	}
+
+	// links de rodape
+	#nav {
+		a:hover { color: var(--cor-roxo-escuro); text-decoration: underline;}
+	}
+
+	#backtoblog { display: none;}
+
+	.privacy-policy-page-link {
+		margin: 1em 0 2em;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		a { text-decoration: none; color: var(--cor-negacao) }
+		a:hover { text-decoration: underline; }
+	}
 }

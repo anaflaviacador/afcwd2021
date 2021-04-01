@@ -114,3 +114,9 @@ a[data-target="#faq"]:hover {text-decoration: underline;}
 		}
 	}
 }
+
+//reCAPTCHA Google
+.anr_captcha_field {
+	transform: scale(.75); transform-origin: left bottom;
+	margin-bottom: 20px;
+}

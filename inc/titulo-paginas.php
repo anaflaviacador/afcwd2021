@@ -70,6 +70,11 @@ if (class_exists('Woocommerce')) {
 	if (is_checkout()) {
 		$titulo = 'Pagamento';
 		$subtitulo = 'falta pouco!';
+
+		if(is_wc_endpoint_url( 'order-received' )) {
+			$titulo = 'Pedido recebido';
+			$subtitulo = 'muito obrigada!';
+		}
 	}
 	if (is_account_page()) {
 		$titulo	= 'Conta';

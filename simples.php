@@ -31,19 +31,27 @@ echo '<header id="cabecalho" style="box-shadow: none">';
 
 echo '</header>';
 
+echo '<article class="container mini-page-insta post-blog"'.(is_404() ? ' style="min-height: calc(100vh - 283px);"' : '').'>';
+
+echo '<h1 style="font-size:1.65em;text-align:center; margin: 0 0 2em;">'; 
+	if(is_404()) { echo 'Nada encontrado'; } else { the_title(); }
+echo '</h1>';
+
 if (have_posts()) {
-	echo '<article class="container mini-page-insta post-blog">';
 	while (have_posts()) : the_post();
-		echo '<h1 style="font-size:1.65em;text-align:center; margin: 0 0 2em;">'; the_title(); echo '</h1>';
-
 		the_content();
-
 	endwhile;
-	echo '</article>';
-
-	echo '<div class="has-text-align-center" style="margin-top:2em"><a href="'.$urlHome.'" class="button"><i class="far fa-long-arrow-left"></i> Voltar ao site</a></div>';
-
 }
+
+if(is_404()) {
+	echo '<p class="has-text-align-center">Essa página não existe ou já foi excluída.<br><br>Por favor, retorne ao site e navegue novamente,<br> ou entre em contato caso precise de ajuda!</p>';
+	echo '<p class="has-text-align-center"><a href="'.$urlHome.'" class="button mini azul"><i class="fas fa-home-heart"></i> ver site</a> &nbsp;&nbsp; <a href="'.$urlHome.'contato" class="button verde mini"><i class="fas fa-envelope"></i> pedir ajuda</a></p>';
+}
+
+echo '</article>';
+
+if(! is_404()) echo '<div class="has-text-align-center" style="margin-top:2em"><a href="'.$urlHome.'" class="button"><i class="far fa-long-arrow-left"></i> Voltar ao site</a></div>';
+
 
 echo '<footer id="rodape" style="margin-top:5em">';
 	echo '<div class="copyright">';

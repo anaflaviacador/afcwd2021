@@ -19,17 +19,17 @@ if ( in_array( 'cliente_vip', (array) $user->roles ) ) {
 }
 
 // renomeando private-page da area vip para personalizado
-if (class_exists('CL_Client_Portal')) {
-  add_action('init', 'afc_change_postype_clientportal',999 );
-  function afc_change_postype_clientportal() {
-      $get_post_type = get_post_type_object('private-page');
-      $labels = $get_post_type->labels;
-      $labels->name = 'Minha conta';
-      $labels->singular_name = 'Minha conta';
-  }
-  global $CP_Object; // plugin Client Portal
-  remove_filter( 'the_content',array($CP_Object,'cp_add_private_page_info'));
-}
+// if (class_exists('CL_Client_Portal')) {
+//   add_action('init', 'afc_change_postype_clientportal',999 );
+//   function afc_change_postype_clientportal() {
+//       $get_post_type = get_post_type_object('private-page');
+//       $labels = $get_post_type->labels;
+//       $labels->name = 'Minha conta';
+//       $labels->singular_name = 'Minha conta';
+//   }
+//   global $CP_Object; // plugin Client Portal
+//   remove_filter( 'the_content',array($CP_Object,'cp_add_private_page_info'));
+// }
 
 // ========================================//
 // Tirar nome de "Dashboard" para nome de "Area Cliente"
@@ -76,12 +76,11 @@ function clientevip_admin_menus(){
     remove_menu_page( 'jetpack' );
     remove_menu_page( 'options-general.php' );
     remove_menu_page( 'edit.php?post_type=page' );
-    remove_menu_page( 'edit.php?post_type=ticket' );
     remove_menu_page( 'edit.php?post_type=etheme_portfolio' );
-    remove_menu_page( 'edit.php?post_type=afctutoriais' );
     remove_menu_page( 'edit.php?post_type=af_form' );
     remove_menu_page( 'edit.php?post_type=afc_depoimentos' );
     remove_menu_page( 'edit.php?post_type=afc_blog' );
+    remove_menu_page( 'edit.php?post_type=swp_forms' );
     remove_menu_page( 'edit-comments.php' );
 
     $tembriefing = count_user_posts( $userid , 'af_entry' );

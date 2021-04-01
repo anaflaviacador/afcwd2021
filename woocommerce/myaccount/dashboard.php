@@ -39,7 +39,7 @@ echo '<article>';
 	// 	esc_url( wc_logout_url() )
 	// );
 	printf(
-		wp_kses_post( __( '<h5 class="cursivo has-text-align-center" style="text-transform: none;">Bem-vinda, %1$s</h5><br>', 'woocommerce' ), $allowed_html ),
+		wp_kses_post( __( '<h5 class="cursivo has-text-align-center" style="text-transform: none;">Bem-vinde, %1$s</h5><br>', 'woocommerce' ), $allowed_html ),
 		 esc_html( $current_user->user_firstname ) 
 		// esc_url( wc_logout_url() )
 	);
@@ -54,9 +54,10 @@ echo '<article>';
 	); endif;
 	if ( array_intersect($clientevip, $current_user->roles )) :
 		printf(
-		__( '<p>Nesta área privada você poderá poderá editar seu <a href="%2$s">perfil</a> e <a href="%3$s">preencher seu formulário de briefing</a>. No decorrer de nosso projeto estarão anexados neste painel seus <a href="%1$s">principais arquivos para download</a>, como: documento de contrato, artes finais (banners de mídias sociais), o seu tema, nota fiscal etc.</p>'),
-		get_home_url() . '/minha-conta/docs/'.$current_user->user_login,
+		__( '<p>Nesta área você poderá acessar <a href="%1$s">suas compras recentes</a>, gerenciar seus <a href="%2$s">dados pessoais</a>, <a href="%3$s">baixar seus arquivos</a> adquiridos na loja e visualizar seus <a href="%4$s">formulários de briefing</a>.</p>'),
+		esc_url( wc_get_endpoint_url( 'orders' ) ),
 		esc_url( wc_get_endpoint_url( 'edit-account' ) ),
+		esc_url( wc_get_endpoint_url( 'downloads' ) ),
 		get_home_url() . '/minha-conta/briefing'
 	); 
 	endif;

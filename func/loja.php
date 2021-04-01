@@ -50,9 +50,9 @@ function add_user_to_sendy_list($user_id) {
   );
 
   // If new account doesn't have the 'customer' role don't do anything.  If you want all roles to go comment this out.
-  if (!in_array('customer', $role)) {
-    return;
-  }
+//   if (!in_array('customer', $role)) {
+//     return;
+//   }
 
   $result = wp_remote_post($url, $args);
 }
@@ -64,6 +64,16 @@ add_filter('wc_session_expiring', 'filter_ExtendSessionExpiring' );
 add_filter('wc_session_expiration' , 'filter_ExtendSessionExpired' );
 function filter_ExtendSessionExpiring($seconds) { return 60 * 60 * 71; }
 function filter_ExtendSessionExpired($seconds) { return 60 * 60 * 72; }
+
+// limpa carrinho
+add_action( 'init', 'woocommerce_clear_cart_url' );
+function woocommerce_clear_cart_url() {
+	if ( isset( $_GET['limpar-carrinho'] ) ) {
+		// global $woocommerce;
+		// $woocommerce->cart->empty_cart();
+        WC()->cart->empty_cart();
+	}
+}
 
 // ========================================//
 // GERAL
@@ -370,7 +380,7 @@ function afc_mensagem_para_planos() {
                 $recurring_total += $item_recurring_total; 
             }
 
-            echo '<blockquote class="rosa" style="margin-bottom: 3em; border:0; font-size: 0.8em; color:var(--cor-negacao);"><p> <strong>LEMBRE-SE</strong>: Um plano de assinatura não é o mesmo que uma compra parcelada! Isso significa que será debitado no seu cartão <strong>R$'.$recurring_total.' todo mês</strong>. Você pode encerrar nos próximos 7 dias gratuitamente. Após este período não haverá reembolso, apenas cancelamento de renovação automática, ok? <a href="'.esc_url(home_url('/')).'servicos/planos#faq" target="_blank" style="color:var(--cor-negacao); text-decoration:underline">Saiba mais aqui</a>.</p></blockquote>';
+            echo '<blockquote class="rosa" style="margin-bottom: 3em; border:0; font-size: 0.8em; color:var(--cor-negacao);"><p> <strong>LEMBRE-SE</strong>: Um plano de assinatura não é o mesmo que uma compra parcelada! Isso significa que será debitado no seu cartão <strong>R$'.$recurring_total.' todo dia '.$hoje.' do mês</strong>. Você pode pedir reembolso apenas nos próximos 7 dias. Após este período não haverá devolução, apenas cancelamento de renovação automática, ok? <a href="'.esc_url(home_url('/')).'servicos/planos#faq" target="_blank" style="color:var(--cor-negacao); text-decoration:underline">Saiba mais aqui</a>.</p></blockquote>';
             break;
         }
     }
@@ -447,7 +457,7 @@ function afcwoo_politica_nao_selecionada() {
 add_filter( 'woocommerce_thankyou_order_received_text', 'misha_thank_you_title', 20, 2 );
 function misha_thank_you_title( $thank_you_title, $order ){
     $conta = wc_get_page_permalink('myaccount');
-    return '<strong>Pedido recebido. Obrigada!</strong><br>Acesse sua conta para mais detalhes.<br><a href="'.esc_url($conta).'" class="button alt mini" style="margin-top:4px">acessar conta</a>';
+    return '<strong>Pedido recebido. Obrigada, '.$order->get_billing_first_name().'!</strong><br>Acesse sua conta para mais detalhes.<br><a href="'.esc_url($conta).'" class="button alt mini" style="margin-top:4px">acessar conta</a>';
 }
 
 // organizacao de colunas de download

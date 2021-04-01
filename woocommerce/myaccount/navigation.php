@@ -47,16 +47,16 @@ echo '<nav class="woocommerce-MyAccount-navigation">';
 		}
 
 		if( array_intersect($clientevip, $user->roles )) {
-			echo '<li class="woocommerce-MyAccount-navigation-link--docs'.(is_singular('private-page')?' is-active':'').'">';
-		      		echo '<a href="'.$urlsite.'/minha-conta/docs/'.$username.'"><span class="nome">Docs</span></a>';
-		    echo '</li>';
-
+			// echo '<li class="woocommerce-MyAccount-navigation-link--docs'.(is_singular('private-page')?' is-active':'').'">';
+		    //   		echo '<a href="'.$urlsite.'/minha-conta/docs/'.$username.'"><span class="nome">Docs</span></a>';
+		    // echo '</li>';
+			
 	    	echo '<li class="woocommerce-MyAccount-navigation-link--briefing'.(is_page('briefing')?' is-active':'').'">';
 				echo '<a href="'.$urlsite.'/minha-conta/briefing"><span class="nome">Briefing</span></a>';
 			echo '</li>';
 
 		}
-		if (class_exists( 'Affiliate_WP' ) && array_intersect($clientevip, $user->roles )) {
+		if (class_exists( 'Affiliate_WP' )) {
 			$status_afiliado = affwp_get_affiliate_status( affwp_get_affiliate_id() );
 			$chamada_afiliado = 'Afilie-se!';
 			$painelAfiliado = get_home_url() . '/inscricao-afiliadas/';

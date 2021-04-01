@@ -14,7 +14,9 @@ echo '<main>';
 // mensagens de erro ao logar
 if (! is_user_logged_in()) { 
 	echo '<div id="afc-msg-login">'; 
-		do_action( 'woocommerce_before_customer_login_form' );
+		if(class_exists('Woocommerce')) {
+			if(!is_cart()) do_action( 'woocommerce_before_customer_login_form' );
+		}
 	echo '</div>';
 }
 

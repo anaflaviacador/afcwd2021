@@ -445,6 +445,21 @@ div.woocommerce {
 	}
 }
 
+// ========================================//
+// PEDIDOS
+// ========================================//
+// lista de pedidos
+span.afc-pedido-status { 
+	font-weight: 600; text-transform: uppercase;
+	&.pending {color: LightSalmon;}
+	&.processing, &.on-hold {color: orange;}
+	&.completed {color: YellowGreen;}
+	&.cancelled {color: red;}
+	&.refunded {color: LightCoral;}
+	&.failed {color: red;}
+}
+
+
 
 // ========================================//
 // PAGINA DOCUMENTOS

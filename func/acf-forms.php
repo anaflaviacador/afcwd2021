@@ -144,6 +144,7 @@ function register_forms() {
     'zapier' => array(
       'webhook_url' => 'https://hooks.zapier.com/hooks/catch/7925472/oltjuq5/',
     ),
+    'recaptcha' => true,
     'calculated' => array(
     ),
   ) );  
@@ -204,7 +205,7 @@ function register_forms() {
     'slack' => false,
     'mailchimp' => false,
     'zapier' => false,
-    'recaptcha' => false,
+    'recaptcha' => true,
     'calculated' => array(
     ),
   ) );
@@ -250,6 +251,7 @@ function register_forms() {
     'slack' => false,
     'mailchimp' => false,
     'zapier' => false,
+    'recaptcha' => true,
     'calculated' => array(
     ),
   ) );

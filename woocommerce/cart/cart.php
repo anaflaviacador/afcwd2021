@@ -22,7 +22,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 <div class="afc-carrinho">
 
 	<div class="afc-itens">
-		<h3 class="titulo">Carrinho</h3>
+		<div style="display:flex;justify-content:space-between;align-items:flex-start;">
+			<h3 class="titulo">Itens no carrinho</h3>
+			<a href="<?php echo esc_url( wc_get_cart_url() ); ?>?limpar-carrinho" class="button mini"><i class="fa fa-empty-set"></i> &nbsp;Limpar carrinho</a>
+		</div>
+
 		<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 			<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
@@ -172,7 +176,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 	</div>
 
 	<div class="afc-total">
-		<h3 class="titulo">Total a pagar</h3>
+		<div style="display:flex;justify-content:space-between;align-items:flex-start;">
+			<h3 class="titulo">Total a pagar</h3>
+			<a href="<?php echo $pgShop; ?>" class="button mini rosa"><i class="fas fa-long-arrow-left"></i> &nbsp;Voltar à loja</a>
+		</div>
 		<?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 		<?php do_action( 'woocommerce_cart_collaterals' );?>
 	</div>

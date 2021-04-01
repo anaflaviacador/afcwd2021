@@ -55,17 +55,19 @@ function afc_setup() {
     }     
 }
 
-// gutenberg
+/////////////// gutenberg
 include_once(get_template_directory().'/func/blocks.php' );
 
-// registra post types
+/////////////// registra post types
 include_once(get_template_directory().'/func/pt_portfolio.php' ); // post type - portfolio
 include_once(get_template_directory().'/func/pt_depoimentos.php' ); // post type - depoimentos
 include_once(get_template_directory().'/func/pt_dicas.php' ); // post type - studio blog
 include_once(get_template_directory().'/func/depoimentos.php' ); // depoimentos
 
+/////////////// login
+include_once(get_template_directory().'/func/login.php' );
 
-
+/////////////// forms
 if (class_exists('acf') && class_exists('AF')) { 
   include_once(get_template_directory().'/func/acf-forms.php' );
 }
@@ -116,28 +118,25 @@ if (class_exists('Woocommerce')) {
 function edit_admin_menus(){
   $admin = wp_get_current_user();
 
-  if ( in_array( 'administrator', (array) $admin->roles ) && $admin->user_login === 'aninha') {
+  remove_menu_page( 'edit.php' );
 
-    remove_menu_page( 'edit.php' );
+  // todos adms menos Ana
+  if ( in_array( 'administrator', (array) $admin->roles ) && $admin->user_login !== 'aninha' && $admin->user_login !== 'admin') {
     remove_menu_page( 'edit.php?post_type=acf-field-group' );
-    remove_menu_page( 'cookie-notice' );
     remove_menu_page( 'edit.php?post_type=af_form' );
+  }
 
-    add_menu_page('Clientes', 'Clientes', 'manage_options', 'edit.php?post_type=private-page', '', 'dashicons-star-filled', 20 );
-    add_submenu_page( 'edit.php?post_type=private-page', 'Paineis', 'Paineis','manage_options', 'edit.php?post_type=private-page');
-    add_submenu_page( 'edit.php?post_type=private-page', 'Usuários', 'Usuários', 'manage_options', 'users.php?role=cliente_vip');
-    add_submenu_page( 'edit.php?post_type=private-page', 'Briefings', 'Briefings', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1');
-
-    remove_menu_page( 'wppaginasinstantaneas' );
+  // somente para Ana
+  if ( in_array( 'administrator', (array) $admin->roles ) && ($admin->user_login === 'aninha' || $admin->user_login === 'admin')) {
+    add_menu_page('Clientes', 'Briefings', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-star-filled', 31 );
+    // add_submenu_page( 'edit.php?post_type=private-page', 'Paineis', 'Paineis','manage_options', 'edit.php?post_type=private-page');
+    add_submenu_page( 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1', 'Clientes', 'Clientes VIPs', 'manage_options', 'users.php?role=cliente_vip');
 
     // logs do form de contato
     add_menu_page('Contatos', 'Logs de contato', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5efb867474157&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-email', 30 );
-  
   }
 }
 add_action( 'admin_menu', 'edit_admin_menus', 999 );
-
-
 
 
 // ========================================//
@@ -419,4 +418,17 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 if (class_exists( 'Affiliate_WP' )) {
   include_once(get_template_directory().'/func/affiatewp-fields-pix.php' );
   include_once(get_template_directory().'/func/affiatewp-fields-cpfcnpj.php' );
+}
+
+
+// ========================================//
+// 404
+// ========================================//
+add_filter('template_include', 'afc_erro_404');
+function afc_erro_404($template) {
+
+    if(is_404() && is_main_query()) {
+        return locate_template('simples.php');
+    } 
+    return $template;
 }

@@ -33,11 +33,17 @@
 .fa-arrow-circle-right:before {
   content: "\f0a9"; }
 
+.fa-arrow-down:before {
+  content: "\f063"; }
+
 .fa-arrow-left:before {
   content: "\f060"; }
 
 .fa-arrow-right:before {
   content: "\f061"; }
+
+.fa-arrow-up:before {
+  content: "\f062"; }
 
 .fa-badge-check:before {
   content: "\f336"; }
@@ -95,6 +101,9 @@
 
 .fa-dribbble:before {
   content: "\f17d"; }
+
+.fa-empty-set:before {
+  content: "\f656"; }
 
 .fa-envelope:before {
   content: "\f0e0"; }
@@ -314,7 +323,8 @@
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px; }
+  width: 1px;
+}
 
 .sr-only-focusable:active, .sr-only-focusable:focus {
   clip: auto;
