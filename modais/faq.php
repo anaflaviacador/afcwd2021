@@ -156,7 +156,7 @@ echo '<div class="abinhas">';
 	echo '<div class="aba">';
 		echo '<div class="aba-titulo">Onde estão os valores dos projetos?</div>';
 		echo '<div class="aba-conteudo">';
-			echo '<p>Cada projeto é único e tem o seu devido valor. Os mais simples como blogs, possuem um investimento a partir de R$1.950*, e também há projetos mais complexos, como sites profissionais, com investimento a partir de R$3.650*.</p>';
+			echo '<p>Cada projeto é único e tem o seu devido valor. Os mais simples como blogs, possuem um investimento a partir de R$2.650*, e também há projetos mais complexos, como sites profissionais, com investimento a partir de R$3.650*.</p>';
 			echo '<p>Por isso, a melhor forma de saber o quanto que você deve investir em seu projeto é <a href="https://afcweb.design/contato/">entrando em contato</a> e informar pelo formulário de contato tudo o que deseja e espera de seu projeto. Assim, posso informar um orçamento preliminar para você começar a se programar sobre o quanto deverá investir.</p>';
 			echo '<p><small>* Valores referente ao pagamento à vista.</small></p>';
 		echo '</div>';

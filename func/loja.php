@@ -16,46 +16,6 @@ function afc_admin_menus_woo(){
 //     echo '</style>';
 // }
 
-// ========================================//
-// REGISTRO DE USUARIO PARA SENDY
-// ========================================// 
-add_action('user_register', 'add_user_to_sendy_list', 20);
-function add_user_to_sendy_list($user_id) {
-
-  $api_key = 'JFeHli8LY5NqmSFRuXfp';
-  $list = 'BH0ACmpWou8929pwTyLi892Y3A';
-  $url  = 'https://mailing.anaflaviacador.com/subscribe';
-
-  $user_info = get_userdata($user_id);
-  $name = $user_info->first_name;
-  $email = $user_info->user_email;
-
-  $role = $user_info->roles;
-
-  /* If new account doesn't have the first_name filled in pull it from the registraion POST.  
-  user_register doesnt write out to the database until after registration is complete. */
-  if (isset($_POST['first_name'])) {
-    $name = $_POST['first_name'];
-  }
-
-  $args = array(
-    'body' => array(
-      'name'  => $name,
-      'email' => $email,
-      'origem' => 'cadastroshop',
-      'list'    => $list,
-      'api_key' => $api_key,
-      'boolean' => true
-    )
-  );
-
-  // If new account doesn't have the 'customer' role don't do anything.  If you want all roles to go comment this out.
-//   if (!in_array('customer', $role)) {
-//     return;
-//   }
-
-  $result = wp_remote_post($url, $args);
-}
 
 // ========================================//
 // COOKIES

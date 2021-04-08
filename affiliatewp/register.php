@@ -55,6 +55,12 @@ if ( is_user_logged_in() ) {
 	?>
 
 	<fieldset>
+
+		<p>
+			<label for="affwp-user-name">Seu nome</label>
+			<input id="affwp-user-name" type="text" name="affwp_user_name" value="<?php if( ! empty( $user_name ) ) { echo $user_name; } ?>" title="<?php esc_attr_e( 'Your Name', 'affiliate-wp' ); ?>" <?php echo affwp_required_field_attr( 'your_name' ); ?> />
+		</p>
+
 		<?php
 		/**
 		 * Fires just before the affiliate registration templates' form fields.
@@ -63,11 +69,6 @@ if ( is_user_logged_in() ) {
 		 */
 		do_action( 'affwp_register_fields_before' );
 		?>
-
-		<p>
-			<label for="affwp-user-name">Seu nome</label>
-			<input id="affwp-user-name" type="text" name="affwp_user_name" value="<?php if( ! empty( $user_name ) ) { echo $user_name; } ?>" title="<?php esc_attr_e( 'Your Name', 'affiliate-wp' ); ?>" <?php echo affwp_required_field_attr( 'your_name' ); ?> />
-		</p>
 
 		<p>
 			<label for="affwp-user-login"><?php _e( 'Username', 'affiliate-wp' ); ?></label>
@@ -115,12 +116,15 @@ if ( is_user_logged_in() ) {
 		do_action( 'affwp_register_fields_before_tos' );
 		?>
 
-		<?php $terms_of_use = affiliate_wp()->settings->get( 'terms_of_use' ); ?>
-		<?php if ( ! empty( $terms_of_use ) ) : ?>
+		<?php 
+			$terms_of_use = affiliate_wp()->settings->get( 'terms_of_use' );
+			$politicapg = get_permalink( get_option( 'wp_page_for_privacy_policy' ) );
+			if ( ! empty( $terms_of_use ) ) : 
+		?>
 			<p style="font-size:.9em;line-height: 1.3">
 				<label class="affwp-tos" for="affwp-tos">
 					<input id="affwp-tos" required="required" type="checkbox" name="affwp_tos"/>
-					Declaro que li e concordo com todos os <a href="<?php echo esc_url( get_permalink( affiliate_wp()->settings->get( 'terms_of_use' ) ) ); ?>" target="_blank">termos e condições</a> da política de afiliadas do Studio AFC Web Design.
+					Declaro que li e concordo com todos os <a href="<?php echo esc_url( get_permalink( affiliate_wp()->settings->get( 'terms_of_use' ) ) ); ?>" target="_blank">termos e condições</a> do programa de afiliadas e da <a href="<?php echo esc_url($politicapg); ?>">política de privacidade</a> de retenção de dados do Studio AFC Web Design.
 				</label>
 			</p>
 		<?php endif; ?>

@@ -198,7 +198,7 @@
             "label": "Pretende vender algo?",
             "name": "form_loja",
             "type": "true_false",
-            "instructions": "Marque se pretende ter sistema de checkout.",
+            "instructions": "Marque se gostaria de ter sistema de checkout dentro do site.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -271,13 +271,13 @@
             },
             "hide_admin": 0,
             "choices": {
-                "suportegeral": "Para um tema de outro profissional que faço uso",
                 "suporteloja": "Para um produto que comprei neste site",
-                "suporteprojeto": "Para um projeto que leva a assinatura Studio AFC \/ Ana Flávia Cador"
+                "suporteprojeto": "Para um projeto exclusivo que leva a assinatura do studio",
+                "suportegeral": "Para um layout de outro profissional que faço uso"
             },
             "allow_null": 0,
             "other_choice": 0,
-            "default_value": "",
+            "default_value": "suporteloja",
             "layout": "vertical",
             "return_format": "label",
             "save_other_choice": 0
@@ -434,7 +434,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "<strong>O studio tem disponibilidade para iniciar novos projetos a partir de NOVEMBRO de 2021.<\/strong> Porém, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar.",
+            "message": "<strong>O studio tem disponibilidade para iniciar novos projetos a partir de DEZEMBRO de 2021.<\/strong> Porém, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar.",
             "new_lines": "br",
             "esc_html": 0
         },
@@ -642,5 +642,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de contato padrão do site",
-    "modified": 1617213616
+    "modified": 1617915918
 }

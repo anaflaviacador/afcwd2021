@@ -120,3 +120,17 @@ a[data-target="#faq"]:hover {text-decoration: underline;}
 	transform: scale(.75); transform-origin: left bottom;
 	margin-bottom: 20px;
 }
+
+// form do sendy
+.unsubscribe-sendy-form {
+	@include flex(space-between);
+	margin-top: 1.8em; margin-bottom: 1.8em;
+
+	input.unsubscribe-email { width: calc(100% - 180px); margin: 0 0 10px; }
+	input.button { width: 170px; margin: 0 0 10px; }
+
+	@media (max-width: $smart-menor) {
+		input.unsubscribe-email, input.button { width: 100%;}
+		input.button { margin-top: 10px; }
+	}
+}

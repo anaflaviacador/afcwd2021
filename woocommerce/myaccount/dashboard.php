@@ -38,11 +38,10 @@ echo '<article>';
 	// 	'<strong>' . esc_html( $current_user->user_firstname ) . '</strong>',
 	// 	esc_url( wc_logout_url() )
 	// );
-	printf(
-		wp_kses_post( __( '<h5 class="cursivo has-text-align-center" style="text-transform: none;">Bem-vinde, %1$s</h5><br>', 'woocommerce' ), $allowed_html ),
-		 esc_html( $current_user->user_firstname ) 
-		// esc_url( wc_logout_url() )
-	);
+
+	echo '<h5 class="cursivo has-text-align-center" style="text-transform: none;">Bem-vinde';
+		if($current_user->user_firstname) echo ', '.$current_user->user_firstname;
+	echo '!</h5><br>';
 
 
 	if ( array_intersect($clienteloja, $current_user->roles )) :
@@ -54,7 +53,7 @@ echo '<article>';
 	); endif;
 	if ( array_intersect($clientevip, $current_user->roles )) :
 		printf(
-		__( '<p>Nesta área você poderá acessar <a href="%1$s">suas compras recentes</a>, gerenciar seus <a href="%2$s">dados pessoais</a>, <a href="%3$s">baixar seus arquivos</a> adquiridos na loja e visualizar seus <a href="%4$s">formulários de briefing</a>.</p>'),
+		__( '<p>Nesta área você poderá acessar <a href="%1$s">suas compras recentes</a>, gerenciar seus <a href="%2$s">dados pessoais</a>, <a href="%3$s">baixar seus arquivos</a> adquiridos na loja e visualizar seus <a href="%4$s">formulários de briefing</a> de sua contratação.</p>'),
 		esc_url( wc_get_endpoint_url( 'orders' ) ),
 		esc_url( wc_get_endpoint_url( 'edit-account' ) ),
 		esc_url( wc_get_endpoint_url( 'downloads' ) ),

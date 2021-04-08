@@ -1,5 +1,5 @@
 <?php
-$cadastro = home_url(). '/wp-login.php?action=register';
+$cadastro = home_url(). '/minha-conta';
 echo '<div id="customer_login">';
 	echo '<h2 class="has-text-align-center cursivo">minha conta</h2>';
 	echo '<p class="has-text-align-center">Não tem cadastro? <a href="'.$cadastro.'" style="text-decoration:underline">Clique aqui</a> e faça o seu!</p>';

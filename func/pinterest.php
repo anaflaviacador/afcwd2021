@@ -10,8 +10,9 @@ add_filter( 'render_block', 'afc_pinar_imgs', 10, 2 );
 function afc_pinar_imgs( $block_content, $block ) {
 	global $post;
 
-	if ($post->post_type == 'etheme_portfolio' && 'core/image' === $block['blockName'] && ! empty( $block_content ) && ! ctype_space( $block_content ) ) {
-
+	// pegar o slug post type antigo: $post->post_type == 'etheme_portfolio'
+	if (get_post_type( get_the_ID() ) == 'etheme_portfolio' && 'core/image' === $block['blockName'] && ! empty( $block_content ) && ! ctype_space( $block_content ) ) {
+	
 		$titulopost = get_the_title();
 		$nomesite = get_bloginfo('name');
 		$resumo = get_the_excerpt();
