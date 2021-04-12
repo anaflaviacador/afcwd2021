@@ -75,15 +75,16 @@
 			font-size: 13px;
 			color: inherit;
 
-			&.enabled { color: var(--cor-roxo); }
+			&.enabled { color: var(--cor-azul); }
 			span.index {background: var(--cor-texto); border: none; line-height: 19px; color: white;}
 
 			&.current {
-				// @extend %textocor1;
-				// &.enabled {@extend %textocor1;}
+				&.enabled {
+					color: var(--cor-verde);
+				}
 
 				span.index {
-					// @extend %bgcor1, %bordercor1;
+					background: var(--cor-verde);
 					// color: $branco;
 				}
 			}

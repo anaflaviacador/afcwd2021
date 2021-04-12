@@ -79,7 +79,7 @@ add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 
 // ========================================//
-// REDIRECIONAMENTOS
+// REDIRECIONAMENTOS PARA USER DA LOJA
 // ========================================// 
 function afc_redireciona_qdo_loga( $redirect ) {
     $minhaconta = wc_get_page_permalink( 'myaccount' );

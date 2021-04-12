@@ -124,7 +124,7 @@ if ( is_user_logged_in() ) {
 			<p style="font-size:.9em;line-height: 1.3">
 				<label class="affwp-tos" for="affwp-tos">
 					<input id="affwp-tos" required="required" type="checkbox" name="affwp_tos"/>
-					Declaro que li e concordo com todos os <a href="<?php echo esc_url( get_permalink( affiliate_wp()->settings->get( 'terms_of_use' ) ) ); ?>" target="_blank">termos e condições</a> do programa de afiliadas e da <a href="<?php echo esc_url($politicapg); ?>">política de privacidade</a> de retenção de dados do Studio AFC Web Design.
+					Declaro que li e concordo com todos os <a href="<?php echo esc_url( get_permalink( $terms_of_use ) ); ?>" target="_blank">termos e condições</a> do programa de afiliadas e da <a href="<?php echo esc_url($politicapg); ?>">política de privacidade</a> de retenção de dados do Studio AFC Web Design.
 				</label>
 			</p>
 		<?php endif; ?>

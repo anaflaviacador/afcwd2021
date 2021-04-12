@@ -16,6 +16,8 @@ if ( in_array( 'cliente_vip', (array) $user->roles ) ) {
   add_action('wp_dashboard_setup', 'clientevip_dashboard_widgets' );
   add_action('admin_head', 'clientevip_css',999 );
   add_filter('manage_af_entry_posts_columns', 'clientevip_columndash', 999); // manage_POST-TYPE
+  add_action('user_register', 'set_default_admin_color');
+
 }
 
 // renomeando private-page da area vip para personalizado
@@ -30,6 +32,7 @@ if ( in_array( 'cliente_vip', (array) $user->roles ) ) {
 //   global $CP_Object; // plugin Client Portal
 //   remove_filter( 'the_content',array($CP_Object,'cp_add_private_page_info'));
 // }
+
 
 // ========================================//
 // Tirar nome de "Dashboard" para nome de "Area Cliente"
@@ -55,7 +58,7 @@ function clientevip_change_post_object() {
     $get_post_type = get_post_type_object('af_entry');
     $labels = $get_post_type->labels;
 
-    $labels->name = 'Formulários preenchidos';
+    $labels->name = 'Formulários salvos';
     $labels->singular_name = 'Formulário Briefing';
     $labels->edit_item = 'Editar formulário de briefing';
     $labels->search_items = 'Procurar formulário';
@@ -163,13 +166,14 @@ function custom_dashboard_help() {
 // ========================================// 
 function clientevip_css() {
     echo '<style>';
-      echo '#tinypng_dashboard_widget, #wpseo-dashboard-overview, #post-body-content, .page-title-action, .subsubsub, #slugdiv, #screen-meta-links {display: none;}';
+      echo '#tinypng_dashboard_widget, #wpseo-dashboard-overview, #post-body-content, .page-title-action, .subsubsub, #slugdiv, #screen-meta-links, .tablenav, .search-box, .notice {display: none;}';
+      echo '.acf-field.msghidden { background: white; margin-left: 12px !important; margin-bottom: 40px; position: relative; border: 1px solid #D1C8E2 !important; cursor: help; }';
+      echo '#posts-filter {margin-top: 30px}';
       echo '.manage-column.column-primary {width: 125px}';
       echo '.manage-column.column-editarform {width: 60px}';
       echo '@media (max-width: 782px) { .column-editarform, .manage-column.column-editarform {display: none !important; visibility: hidden; height: 0px !important; padding: 0px !important; margin: 0px !important;} }';
     echo '</style>';
 }
-
 
 // ========================================//
 // organizando area de colunas do painel de edicao dos forms

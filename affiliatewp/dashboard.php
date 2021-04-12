@@ -67,8 +67,11 @@
 					foreach ( $tabs as $tab_slug => $tab_title ) : ?>
 						<?php
 							if ( affwp_affiliate_area_show_tab( $tab_slug ) ) : 
-							if ($tab_slug == 'urls') $tab_title = 'Meu link';
+							if ($tab_slug == 'urls') $tab_title = 'Divulgação';
 							if ($tab_slug == 'settings') $tab_title = 'Perfil';
+							if ($tab_slug == 'creatives') $tab_title = 'Banners';
+							if ($tab_slug == 'coupons') $tab_title = 'Cupons';
+							
 						?>
 						<li class="affwp-affiliate-dashboard-tab--<?php echo $tab_slug; echo $active_tab == $tab_slug ? ' is-active' : ''; ?>">
 							<a href="<?php echo esc_url( affwp_get_affiliate_area_page_url( $tab_slug ) ); ?>"><span class="nome"><?php echo $tab_title; ?></span></a>

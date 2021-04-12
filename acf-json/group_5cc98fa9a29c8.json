@@ -26,7 +26,7 @@
             "name": "bform_nome",
             "type": "text",
             "instructions": "Nome de sua empresa ou blog + slogan (opcional)",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -46,7 +46,7 @@
             "name": "bform_estr",
             "type": "radio",
             "instructions": "Confirme a estrutura para direcionar os devidos campos nas próximas páginas do formulário.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -87,7 +87,7 @@
                 "class": "msghidden info",
                 "id": ""
             },
-            "hide_admin": 1,
+            "hide_admin": 0,
             "message": "<strong>Estrutura BLOG:<\/strong> projeto que segue a estrutura clássica dos blogs que conhecemos <em>(coluna de posts + coluna lateral de perfil)<\/em>; a estrutura segue praticamente a mesma em todas as páginas internas, porém, com possibilidade de diversas funcionalidades e widgets extras personalizadas. \r\n<span>Ideal para quem tem um blog como hobbie ou trabalha profissionalmente com criação de conteúdo.<\/span>",
             "new_lines": "br",
             "esc_html": 0
@@ -113,7 +113,7 @@
                 "class": "msghidden info",
                 "id": ""
             },
-            "hide_admin": 1,
+            "hide_admin": 0,
             "message": "<strong>Estrutura SITE:<\/strong> com uma estrutura mais fluida; funcionalidades personalizadas permitindo criação de páginas internas de forma dinâmica e direcionada ao seu público alvo. Possui uma área de notícias (blog interno) sem custo extra.\r\n<span>Ideal para empresas, profissionais autônomos, micro-empreendedores e criadores de conteúdo que buscam divulgar serviços e\/ou produtos além de seu blog.<\/span>",
             "new_lines": "br",
             "esc_html": 0
@@ -139,7 +139,7 @@
                 "class": "msghidden info",
                 "id": ""
             },
-            "hide_admin": 1,
+            "hide_admin": 0,
             "message": "<strong>Estrutura MINISITE:<\/strong> Com foco total na página inicial com informações sucintas, rápidas e de alto impacto, com alto poder de conversão. Possui poucas funcionalidades por ser um site de acesso rápido e com pouquíssimas páginas internas. Pode possuir uma área de notícias.\r\n<span>Ideal para profissionais que precisam de uma página de venda ou de um cartão de visita digital para se promover na internet.<\/span>",
             "new_lines": "br",
             "esc_html": 0
@@ -150,7 +150,7 @@
             "name": "bform_link",
             "type": "text",
             "instructions": "Insira o domínio pelo qual será direcionado o projeto.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -159,10 +159,10 @@
             },
             "hide_admin": 0,
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5ccf28fda89d1",
@@ -170,7 +170,7 @@
             "name": "bform_host",
             "type": "radio",
             "instructions": "Possui uma hospedagem contratada para seu domínio?",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -195,7 +195,7 @@
             "name": "bform_host_1",
             "type": "text",
             "instructions": "Informe o provedor de hospedagem do qual está vinculado ao seu domínio. Informação importante para determinar o rumo da fase de desenvolvimento (os dados serão solicitados futuramente).",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
                 [
                     {
@@ -219,7 +219,7 @@
         },
         {
             "key": "field_5ccf2a15a89d3",
-            "label": "Não tem host",
+            "label": "Não tem hospegagem?",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -235,22 +235,54 @@
             ],
             "wrapper": {
                 "width": "",
-                "class": "msghidden estrela",
+                "class": "msghidden rosa",
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "O studio AFC trabalha com afiliação à <a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Nuvem Hospedagem<\/a>, uma das melhores empresas provedoras de hospedagem de websites do Brasil, com atendimento 24\/7 e um ótimo custo-benefício ao consumidor. \r\n<span><a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Clique aqui<\/a> e ganhe 50% de desconto na primeira sua mensalidade utilizando o cupom de desconto <strong>NUVEM50<\/strong>!<\/span>",
+            "message": "O studio AFC trabalha com afiliação à <a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Nuvem Hospedagem<\/a>, uma das melhores empresas provedoras de hospedagem de websites do Brasil, com atendimento 24\/7 e um ótimo custo-benefício ao consumidor. \r\n<span style=\"color:red\"><a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Clique aqui<\/a> e ganhe 50% de desconto na primeira sua mensalidade utilizando o cupom de desconto <strong>NUVEM50<\/strong>!<\/span>",
             "new_lines": "br",
             "esc_html": 0
         },
         {
-            "key": "field_5ccf2eef9feaa",
-            "label": "Nome \/ Razão Social",
-            "name": "bform_nfse_2",
-            "type": "text",
-            "instructions": "Seu nome completo ou razão social (contrato via PJ)",
+            "key": "field_607042e7af7dd",
+            "label": "O contrato será fechado para que tipo de Pessoa?",
+            "name": "bform_nfse",
+            "type": "radio",
+            "instructions": "Escolha para que tipo de pessoa será direcionado o contrato de prestação de serviço. Em seguida, insira os dados que serão pedidos posteriormente de acordo com essa escolha principal.",
             "required": 1,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "pfisica": "Pessoa Física (CPF)",
+                "pjuridica": "Pessoa Jurídica (CNPJ)"
+            },
+            "allow_null": 1,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5ccf2dbe7f428",
+            "label": "Documento CPF \/ CNPJ",
+            "name": "bform_nfse_1",
+            "type": "text",
+            "instructions": "Insira de acordo com sua escolha de contrato.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_607042e7af7dd",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "chamada-maior",
@@ -264,13 +296,20 @@
             "maxlength": ""
         },
         {
-            "key": "field_5ccf2dbe7f428",
-            "label": "CPF \/ CNPJ",
-            "name": "bform_nfse_1",
+            "key": "field_5ccf2eef9feaa",
+            "label": "Nome completo",
+            "name": "bform_nfse_2",
             "type": "text",
-            "instructions": "Para contrato e nota fiscal",
+            "instructions": "Nome \/ Razão social",
             "required": 1,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_607042e7af7dd",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "chamada-maior",
@@ -285,12 +324,20 @@
         },
         {
             "key": "field_5ccf2e187f429",
-            "label": "Endereço residencial \/ empresarial",
+            "label": "Endereço empresarial",
             "name": "bform_nfse_3",
             "type": "textarea",
-            "instructions": "Por favor, insira seu endereço completo (logradouro, número, CEP, cidade, estado) para ser inserido na nota fiscal",
+            "instructions": "A NFSe só pode ser emitida para CNPJ quando há endereço empresarial preenchido. Por favor, insira seu endereço completo (com logradouro, número, CEP \/ Post code, cidade, estado e país).",
             "required": 1,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_607042e7af7dd",
+                        "operator": "==",
+                        "value": "pjuridica"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "100",
                 "class": "",
@@ -327,7 +374,7 @@
             "name": "bform_marca",
             "type": "radio",
             "instructions": "Todo projeto de layout já vem por padrão uma arte para o cabeçalho que pode ser usado apenas para mídias sociais. Esta arte faz parte da composição do layout e é entregue separadamente em formato simples (com fundo transparente), porém, de alta qualidade. Um sistema de identidade visual é um projeto de marca projetada para ser utilizada em diversos lugares e aplicações, inclusive em papelaria, como cartões de visita e papel timbrado.<br><br>\r\n\r\n<u>Projetos específicos de identidade visual são terceirizados. Caso tenha esta necessidade, informe abaixo que indicarei o melhor profissional para o seu perfil. <\/u><br><br>\r\n\r\n<strong>O que você deseja no seu cabeçalho?<\/strong>",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -336,9 +383,9 @@
             },
             "hide_admin": 0,
             "choices": {
-                "Ficarei apenas com a arte do topo que vem no layout <em>(alego que não necessito de criação de sistema de identidade visual)<\/em>": "Ficarei apenas com a arte do topo que vem no layout <em>(alego que não necessito de criação de sistema de identidade visual)<\/em>",
-                "Tenho uma identidade visual e irei no usar em meu projeto": "Tenho uma identidade visual e irei no usar em meu projeto",
-                "Preciso de uma marca, me indique um profissional": "Preciso de uma marca, me indique um profissional"
+                "op1": "Ficarei apenas com a arte do topo que vem no layout <em>(alego que não necessito de criação de sistema de identidade visual)<\/em>",
+                "op2": "Tenho uma identidade visual e irei no usar em meu projeto",
+                "op3": "Preciso de uma marca, me indique um profissional"
             },
             "allow_null": 1,
             "other_choice": 0,
@@ -353,7 +400,7 @@
             "name": "bform_site_1",
             "type": "textarea",
             "instructions": "Qual é o perfil de pessoa (no design chamamos de \"persona\") que você espera que interaja contigo no site e nas redes sociais?",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
                 [
                     {
@@ -388,7 +435,7 @@
             "name": "bform_site_2",
             "type": "checkbox",
             "instructions": "Qual é a <u>tarefa principal<\/u> que seu site precisa exercer logo à primeira vista? Pode marcar mais de um.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
                 [
                     {
@@ -470,7 +517,7 @@
             "name": "bform_geral_1",
             "type": "textarea",
             "instructions": "Quais são os principais sites\/blogs que têm o mesmo perfil que o seu? <br>Liste seus principais concorrentes e\/ou colegas da área. Se possível, liste também sites estrangeiros de mesmo segmento.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -530,7 +577,7 @@
             "name": "bform_geral_4",
             "type": "textarea",
             "instructions": "Qual é o sentimento que você deseja transmitir ao seu público?",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -550,7 +597,7 @@
             "name": "bform_geral_5",
             "type": "textarea",
             "instructions": "Liste aqueles sites\/blog que você aprecia esteticamente, que se sente em casa, que tem a sua cara e a sensação que você gostaria de passar ao seu público. As referências visuais engloba paleta de cores, formas e elementos, linguagem e estética.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -570,7 +617,7 @@
             "name": "bform_geral_6",
             "type": "radio",
             "instructions": "Imagens genéricas são aquelas que nós conseguimos comprar em banco de imagens, além de ícones e ilustrações prontas (na loja Creative Market há várias lindíssimas). Já ilustrações personalizadas requer a contratação de um profissional da área para trabalhar conosco.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -595,7 +642,7 @@
             "name": "bform_geral_7",
             "type": "text",
             "instructions": "Há alguma cor que jamais poderá faltar em seu layout? Qual? Pode ser mais de uma.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -615,7 +662,7 @@
             "name": "bform_geral_8",
             "type": "text",
             "instructions": "Informe o tipo de estilo de texto que você gostaria de utilizar no seu site. Seria com ar despojado, a delicadeza de uma caligrafia ou estilo geométricas e mais sérias? Elas seriam \"finas\" e mais delicadas, ou \"grossas\"? Ou gosta de um equilíbrio entre os estilos?",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -673,7 +720,7 @@
             "key": "field_5ccf255c8664f",
             "label": "Painel Pinterest",
             "name": "bform_geral_11",
-            "type": "url",
+            "type": "text",
             "instructions": "Você tem um painel de inspiração que gostaria de compartilhar? Por favor, insira o link dele abaixo ou compartilhe-o com o meu perfil <a href=\"https:\/\/br.pinterest.com\/afcwebdesign\/\" target=\"_blank\">@afcwebdesign<\/a> caso seu painel seja privado.",
             "required": 0,
             "conditional_logic": 0,
@@ -684,7 +731,10 @@
             },
             "hide_admin": 0,
             "default_value": "",
-            "placeholder": "inserir url do painel"
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5ccf1211113a5",
@@ -1092,9 +1142,9 @@
             "hide_admin": 0,
             "choices": {
                 "<strong>ÁREA PORTFOLIO:<\/strong> tenha uma área própria para você cadastrar seus trabalhos com sistema de comentários, categorização de projeto, galeria de imagens, descrição completa com resumo, área de cadastro de membros de equipe e botão de acessar projeto online.": "<strong>ÁREA PORTFOLIO:<\/strong> tenha uma área própria para você cadastrar seus trabalhos com sistema de comentários, categorização de projeto, galeria de imagens, descrição completa com resumo, área de cadastro de membros de equipe e botão de acessar projeto online.",
-                "<strong>LOJA VIRTUAL NATIVA:<\/strong> utilizando a tecnologia Woocommerce adquira uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, estoque etc. <u>Obs:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem devido à alta requisição de servidor por parte do e-commerce.": "<strong>LOJA VIRTUAL NATIVA:<\/strong> utilizando a tecnologia Woocommerce adquira uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, estoque etc. <u>Obs:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem devido à alta requisição de servidor por parte do e-commerce.",
-                "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados como uma loja virtual, porém o botão de compra redireciona para uma plataforma externa. Ex: Iluria, Loja integrada, Tanlup, Hotmart, Eduzz, Zoom etc. Ideal para quem trabalha apenas como de afiliado e ganha comissão por cliques.": "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados como uma loja virtual, porém o botão de compra redireciona para uma plataforma externa. Ex: Iluria, Loja integrada, Tanlup, Hotmart, Eduzz, Zoom etc. Ideal para quem trabalha apenas como de afiliado e ganha comissão por cliques.",
-                "<strong>CONSTRUTOR PÁGINA DE VENDA:<\/strong> tenha um módulo de construção de landing pages completinhas do início ao fim, com captura de leads, fazendo uso apenas Blocos Gutenberg personalizados e feitos sob medida para seu layout!": "<strong>CONSTRUTOR PÁGINA DE VENDA:<\/strong> tenha um módulo de construção de landing pages completinhas do início ao fim, com captura de leads, fazendo uso apenas Blocos Gutenberg personalizados e feitos sob medida para seu layout!",
+                "<strong>E-COMMERCE NATIVO:<\/strong> uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, estoque etc. É usada a tecnologia Woocommerce. <span style=\"color:red\"><u>Alerta:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem pois e-commerce exige mais recursos de servidor que sites comuns.<span>": "<strong>E-COMMERCE NATIVO:<\/strong> uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, estoque etc. É usada a tecnologia Woocommerce. <span style=\"color:red\"><u>Alerta:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem pois e-commerce exige mais recursos de servidor que sites comuns.<span>",
+                "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados apenas como catálogo, porém o botão de compra redireciona para uma plataforma externa. Ex: Hotmart, Eduzz, Zoom, Amazon, Mercadolivre, Aliexpress, Elo7 etc. Ideal para quem trabalha como afiliado e ganha comissão por cliques.": "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados apenas como catálogo, porém o botão de compra redireciona para uma plataforma externa. Ex: Hotmart, Eduzz, Zoom, Amazon, Mercadolivre, Aliexpress, Elo7 etc. Ideal para quem trabalha como afiliado e ganha comissão por cliques.",
+                "<strong>CONSTRUTOR PÁGINA DE VENDA:<\/strong> tenha um módulo de construção de landing pages completinhas do início ao fim, com captura de leads, fazendo uso apenas de blocos personalizados e feitos sob medida para seu layout e <a href=\"https:\/\/afcweb.design\/blog\/tema-versus-pagebuilder\/\" target=\"_blank\">zero uso de Page Builders<\/a>.": "<strong>CONSTRUTOR PÁGINA DE VENDA:<\/strong> tenha um módulo de construção de landing pages completinhas do início ao fim, com captura de leads, fazendo uso apenas de blocos personalizados e feitos sob medida para seu layout e <a href=\"https:\/\/afcweb.design\/blog\/tema-versus-pagebuilder\/\" target=\"_blank\">zero uso de Page Builders<\/a>.",
                 "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc": "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc",
                 "<strong>ÁRA DE ACESSO RESTRITO:<\/strong> uma área que só membros do seu site pode acessar. Pode estar associado a e-commerce, do qual só quem comprou algo no site (ou fez uma assinatura) possui acesso a conteúdos exclusivos.": "<strong>ÁRA DE ACESSO RESTRITO:<\/strong> uma área que só membros do seu site pode acessar. Pode estar associado a e-commerce, do qual só quem comprou algo no site (ou fez uma assinatura) possui acesso a conteúdos exclusivos.",
                 "<strong>GUIA DE FORNECEDORES:<\/strong> área dedicada para busca e cadastro de profissionais, separados por segmentos, com cada fornecedor possuindo sua própria página de apresentação, com foto, marca, mapa, informações de contato etc. Indispensável para sites e blogs de decoração, casamentos e dentre outros eventos.": "<strong>GUIA DE FORNECEDORES:<\/strong> área dedicada para busca e cadastro de profissionais, separados por segmentos, com cada fornecedor possuindo sua própria página de apresentação, com foto, marca, mapa, informações de contato etc. Indispensável para sites e blogs de decoração, casamentos e dentre outros eventos.",
@@ -1150,15 +1200,67 @@
             },
             "hide_admin": 0,
             "choices": {
-                "<strong>MODO SIMPLES:<\/strong> utiliza-se recurso do Google Tradutor, com tradução automática. Não detecta língua automaticamente no navegador do usuário. <u>Sem custo adicional.<\/u>": "<strong>MODO SIMPLES:<\/strong> utiliza-se recurso do Google Tradutor, com tradução automática. Não detecta língua automaticamente no navegador do usuário. <u>Sem custo adicional.<\/u>",
-                "<strong>MODO PRO:<\/strong> o recurso multilíngua é aplicado dentro do sistema, onde a criação de conteúdo em outras línguas é traduzido manualmente. Detecta língua automaticamente no navegador do usuário, provendo maior experiência. <u>Custo adicional de R$350.<\/u>": "<strong>MODO PRO:<\/strong> o recurso multilíngua é aplicado dentro do sistema, onde a criação de conteúdo em outras línguas é traduzido manualmente. Detecta língua automaticamente no navegador do usuário, provendo maior experiência. <u>Custo adicional de R$350.<\/u>"
+                "modosimples": "<strong>MODO SIMPLIFICADO:<\/strong> tradução simples e automática.",
+                "modopro": "<strong>MODO PROFISSIONAL:<\/strong> tradução realizada por você ou profissional de confiança."
             },
             "allow_null": 1,
             "other_choice": 0,
             "default_value": "",
             "layout": "vertical",
-            "return_format": "label",
+            "return_format": "value",
             "save_other_choice": 0
+        },
+        {
+            "key": "field_60706d5b5687f",
+            "label": "Alerta multilíngua - SIMPLES",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf3bb6980e5",
+                        "operator": "==",
+                        "value": "modosimples"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden rosa",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "O <strong>modo simples<\/strong> oferece tradução automática dos textos visíveis do layout. O visitante precisa clicar na bandeirinha que deseja para ver a tradução. O recurso não oferece tradução personalizável (é tudo 100% automático) e não promove melhorias no SEO para as línguas adicionais.<br><br>\r\n\r\n<em>A tecnologia que o studio utiliza para site multilíngue <u>simples<\/u> é do <a href=\"https:\/\/translate.google.com.br\/?hl=pt-BR\" target=\"_blank\" rel=\"nofollow noopener\">Google Tradutor<\/a><\/em>.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6070548045d1e",
+            "label": "Alerta multilíngua - PRO",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf3bb6980e5",
+                        "operator": "==",
+                        "value": "modopro"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden rosa",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "O <strong>modo profissional<\/strong> é aplicado dentro do sistema, com conteúdo traduzido de forma exclusivamente manual (ou seja, não há tradução automática). Este módulo detecta automaticamente a língua usada no navegador do visitante, provendo maior experiência de navegação. Este módulo também promove melhorias no SEO para todas as línguas adicionais.<br><br>\r\n\r\n<em>A tecnologia que o studio utiliza para site multilíngue no módulo <u>profissional<\/u> é da <a href=\"https:\/\/wpml.org\/pt-br\/\" target=\"_blank\" rel=\"nofollow noopener\">WPML Multilingual CMS<\/a><\/em>. Esta tecnologia oferece o melhor plugin de tradução para sites Wordpress.<br><br>\r\n\r\nNo seu projeto será instalada a última versão disponível do plugin na implementação de seu layout, porém, se você quiser garantir atualizações <em>automáticas<\/em> sem auxílio do studio, será necessário adquirir a licença do WPML para seu domínio<span style=\"color:red;\">*<\/span>. Saiba mais <a href=\"https:\/\/wpml.org\/pt-br\/purchase\/\" target=\"_blank\" rel=\"nofollow noopener\">clicando aqui<\/a>.",
+            "new_lines": "",
+            "esc_html": 0
         },
         {
             "key": "field_5ccf3c4d980e6",
@@ -1210,7 +1312,7 @@
             "label": "Capas para perfis sociais",
             "name": "bform_midias",
             "type": "repeater",
-            "instructions": "Com a proposta de layout, você pode solicitar a confecção de peças gráficas (capas e avatares) para suas principais redes sociais.",
+            "instructions": "Com a proposta de layout, você pode solicitar a confecção de capas e avatares para suas principais redes sociais.<br><br><span style=\"color:red; font-size:0.9em\">Alerta: Não é ofertado o serviço de gestão ou produção de conteúdo para social media, apenas imagens de perfis para ficarem de acordo com o layout do projeto.<\/span>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1305,53 +1407,8 @@
             ]
         },
         {
-            "key": "field_5daf3d1916640",
-            "label": "Templates",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "chamada-maior",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "message": "Um template é uma imagem de base (podendo ser editável ou não) para a construção de uma peça gráfica específica. Aqui no studio criamos templates para você utilizar em sua rede social sempre que quiser.",
-            "new_lines": "",
-            "esc_html": 0
-        },
-        {
-            "key": "field_5daf3790806ca",
-            "label": "Opções de template",
-            "name": "bform_midias_2",
-            "type": "checkbox",
-            "instructions": "Os templates são confeccionadas originalmente em .afdesign (Affinity Designer) com possibilidade de conversão para .PSD e .PDF para serem editados nos softwares Adobe Photoshop e Illustrator.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "choices": {
-                "Insta Stories (1080 x 1920)": "Insta Stories (1080 x 1920)",
-                "Insta Timeline quadrado (1080 x 1080)": "Insta Timeline quadrado (1080 x 1080)",
-                "Insta Timeline vertical (1080 x 1350)": "Insta Timeline vertical (1080 x 1350)",
-                "Pinterest Timeline (1000 x 1500)": "Pinterest Timeline (1000 x 1500)"
-            },
-            "allow_custom": 0,
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "return_format": "value",
-            "save_custom": 0
-        },
-        {
             "key": "field_5ed0f25f3a023",
-            "label": "Filtro Instagram (novo)",
+            "label": "Filtro Instagram",
             "name": "bform_midias_3",
             "type": "true_false",
             "instructions": "Transformamos o seu filtro favorito do Lightroom diretamente para seus stories do insta! Além de filtro de cor, aplicamos também suavidade de linhas finas e grafismos usados na identidade visual para seu instagram combinar com seu layout.\r\n<br><br>\r\nObs: Não é realizado filtros de maquiagem, aplicação de cílios, máscaras e distorções faciais.\r\n<br><br>\r\n<strong>Custo de produção: R$350<\/strong>",
@@ -1387,5 +1444,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de briefing",
-    "modified": 1607374250
+    "modified": 1618001423
 }

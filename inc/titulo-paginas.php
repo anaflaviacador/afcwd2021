@@ -77,8 +77,8 @@ if (class_exists('Woocommerce')) {
 		}
 	}
 	if (is_account_page()) {
-		$titulo	= 'Conta';
-		$subtitulo = 'área cliente';
+		$titulo	= 'Minha Conta';
+		$subtitulo = 'área de cliente';
 	}
 
 	$endpoint = WC()->query->get_current_endpoint();

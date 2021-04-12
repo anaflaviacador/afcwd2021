@@ -1,5 +1,31 @@
 <?php
 // ========================================//
+// REDIRECIONA AO LOGAR
+// ========================================// 
+function my_login_redirect( $redirect_to, $request, $user ) {
+    if (class_exists('Woocommerce')) {
+      $redirect_to = wc_get_page_permalink( 'myaccount' );
+    } else {
+      $redirect_to = home_url();
+    }
+
+    //is there a user to check?
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        //check for admins
+        if ( in_array( 'administrator', $user->roles ) ) {
+            // redirect them to the default place
+            return admin_url();
+        } else {
+            return $redirect_to;
+        }
+    } else {
+        return admin_url();
+    }
+}
+ 
+add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
+
+// ========================================//
 // ESTILO DA PAG DE LOGIN
 // ========================================// 
 // url da logo
@@ -60,11 +86,6 @@ function afc_register_privacidade_save( $user_id ) {
 // login: https://rudrastyh.com/wordpress/sortable-users-last-login-column.html
 // registro: https://rudrastyh.com/wordpress/sortable-date-user-registered-column.html
 // ========================================// 
-// registra data de registro
-// add_action('user_register', 'afc_registra_data_user'); 
-// function afc_registra_data_user( $user_id ) {    
-//   update_user_meta( $user_id, 'registered', time() ); 
-// }
 
 // registra ultimo login
 add_action( 'wp_login', 'afc_collect_login_timestamp', 10, 2 );
@@ -76,8 +97,8 @@ function afc_collect_login_timestamp( $user_login, $user ) {
 // cria a coluna na dashboard de usuarios
 add_filter( 'manage_users_columns', 'afc_user_last_login_column' );
 function afc_user_last_login_column( $columns ) {
-	$columns['last_login'] = 'Ultimo login'; // column ID / column Title
-  $columns['registration_date'] = 'Cadastrou em'; // add new
+	$columns['last_login'] = 'Ultimo login'; // coluna de ultimo login
+  $columns['registration_date'] = 'Cadastrou em'; // coluna de cadastro
 	return $columns;
 }
 
@@ -160,3 +181,27 @@ function afc_sort_last_login_column( $query ) {
  
 	return $query;
 }
+
+
+// ========================================//
+// DASHBOARD WORDPRESS
+// determina personalizacao de css da dashboard
+// creditos: https://www.wpbeginner.com/wp-tutorials/how-to-set-default-admin-color-scheme-for-new-users-in-wordpress/
+// creditos: https://wpadmincolors.com/export/cliente-studio-afc
+// ========================================// 
+function afc_admin_color_scheme() {
+  $theme_dir = get_template_directory_uri();
+  wp_admin_css_color( 'studio-afc', __( 'Studio AFC Web &hearts; Design' ),
+    $theme_dir . '/func/dashboard-studio-afc.css',
+    array( '#5e556b', '#fff', '#ba5040' , '#a297b3')
+  );
+}
+add_action('admin_init', 'afc_admin_color_scheme');
+
+add_action( 'admin_init', function() {
+      // remove the color scheme picker
+      remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+      // force all users to use the "studio-afc" color scheme
+      add_filter( 'get_user_option_admin_color', function() { return 'studio-afc'; });
+  }
+);

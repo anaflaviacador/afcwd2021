@@ -52,7 +52,8 @@ function afc_setup() {
     if (class_exists('Woocommerce')) { 
       add_theme_support( 'woocommerce' );
       include_once(get_template_directory().'/func/loja.php' );
-    }     
+    } 
+  
 }
 
 /////////////// gutenberg

@@ -13,7 +13,7 @@ echo '<article class="container" id="pagina-briefing">';
 
 	if ($tembriefing >= 1){
 		echo '<blockquote style="border:0;background:var(--cor-negacao);color:white; width:100%;font-size:.8em;">';
-		echo '<p class="has-text-align-center">Você já tem briefing preenchido, '.$cliente.'! <a href="'.$urlsite.'/wp-admin/edit.php?post_type=af_entry" target="_blank" style="color:white;text-decoration:underline"><strong>Clique aqui para editar</strong></a> caso não esteja solicitando um novo projeto.</p>';
+		echo '<p class="has-text-align-center">Você já tem briefing preenchido, '.$cliente.'! <a href="'.$urlsite.'/wp-admin/edit.php?s&post_status=publish&post_type=af_entry&author='.$userid.'&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1" target="_blank" style="color:white;text-decoration:underline"><strong>Clique aqui para editar</strong></a> caso não esteja solicitando um novo projeto.</p>';
 		echo '</blockquote>';
 	}
 		

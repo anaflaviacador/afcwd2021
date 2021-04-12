@@ -76,14 +76,6 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 
 <?php do_action( 'woocommerce_after_edit_account_form' ); ?>
 
-<!-- EMAIL MARKETING -->
-<p style="margin:30px 0 50px; border-bottom: 2px solid var(--cor-roxo);">&nbsp;<p>
-<h2>Exclusão de dados de email marketing</h2>
-<p>Se você não quer mais fazer parte de nossa lista de email, por favor, insira o seu email abaixo e confirme sua exclusão da lista.</p>
-<?php echo do_shortcode('[unsubscribe-sendy-form id="KhSUxhhVb3kw55YY892IIHzw,BH0ACmpWou8929pwTyLi892Y3A,kWB892PKPVxCKdiFbZ8Osyhw"]') ?>
-
-<p style="margin-top:1.8em">Esta ação fará com que seu email seja excluído de todas as listas relacionadas ao <em>marketing e promoções</em> do studio, exceto a lista de Clientes VIPs (caso você possua um projeto exclusivo), pois nesta lista são enviadas informações cruciais sobre contratação e atendimento.</p>
-
 <!-- ENDEREÇOS -->
 <p style="margin:30px 0 50px; border-bottom: 2px solid var(--cor-roxo);">&nbsp;<p>
 <?php wc_get_template( 'myaccount/my-address.php' ); ?>

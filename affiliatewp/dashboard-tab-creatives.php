@@ -2,7 +2,7 @@
 
 	<h4><?php _e( 'Creatives', 'affiliate-wp' ); ?></h4>
 
-	<p style="width: 100%; margin-bottom: 3em;">Aqui você encontrará alguns banners que você poderá usar em seu blog, ou em seu site. Porém, você é livre para divulgar apenas o link ou também pode criar sua própria arte.</p>
+	<p style="width: 100%; margin-bottom: 3em;">Aqui você encontrará alguns banners que você poderá usar em sua página. É só copiar e colar o código abaixo em algum lugar fixo do seu site <em>(o código já possui seu link de afiliada)</em>.</p>
 
 	<?php
 	$per_page  = 30;
@@ -60,5 +60,7 @@
 		<p class="affwp-no-results"><?php _e( 'Sorry, there are currently no creatives available.', 'affiliate-wp' ); ?></p>
 
 	<?php endif; ?>
+
+	<p><strong>Observação:</strong> Caso já tenha um banner do studio em seu <em>layout exclusivo</em> e não consegue atualizar para seu link de afiliada, é possível que a imagem possa ser alterada apenas via programação. Entre em contato comigo solicitando essa atualização que faço para ti sem custo adicional! ;)</p>
 
 </div>
