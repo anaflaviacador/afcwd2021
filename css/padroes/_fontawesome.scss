@@ -12,6 +12,11 @@
   text-rendering: auto;
   line-height: 1; }
 
+.fab { font-family: 'Font Awesome 5 Brands'; font-weight: 400; }
+.fal { font-family: 'Font Awesome 5 Pro'; font-weight: 300; }
+.far { font-family: 'Font Awesome 5 Pro'; font-weight: 400; }
+.fa, .fas { font-family: 'Font Awesome 5 Pro'; font-weight: 900; }  
+
 .fa-align-left:before {
   content: "\f036"; }
 
@@ -33,17 +38,11 @@
 .fa-arrow-circle-right:before {
   content: "\f0a9"; }
 
-.fa-arrow-down:before {
-  content: "\f063"; }
-
 .fa-arrow-left:before {
   content: "\f060"; }
 
 .fa-arrow-right:before {
   content: "\f061"; }
-
-.fa-arrow-up:before {
-  content: "\f062"; }
 
 .fa-badge-check:before {
   content: "\f336"; }
@@ -161,9 +160,6 @@
 
 .fa-lock-alt:before {
   content: "\f30d"; }
-
-.fa-long-arrow-alt-down:before {
-  content: "\f309"; }
 
 .fa-long-arrow-down:before {
   content: "\f175"; }
@@ -323,8 +319,7 @@
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px;
-}
+  width: 1px; }
 
 .sr-only-focusable:active, .sr-only-focusable:focus {
   clip: auto;
@@ -333,44 +328,7 @@
   overflow: visible;
   position: static;
   width: auto; }
-@font-face {
-  font-family: 'Font Awesome 5 Brands';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url("fonts/fa-brands-400.woff2") format("woff2"), url("fonts/fa-brands-400.woff") format("woff"); }
 
-.fab {
-  font-family: 'Font Awesome 5 Brands';
-  font-weight: 400; }
-@font-face {
-  font-family: 'Font Awesome 5 Pro';
-  font-style: normal;
-  font-weight: 300;
-  font-display: block;
-  src: url("fonts/fa-light-300.woff2") format("woff2"), url("fonts/fa-light-300.woff") format("woff"); }
 
-.fal {
-  font-family: 'Font Awesome 5 Pro';
-  font-weight: 300; }
-@font-face {
-  font-family: 'Font Awesome 5 Pro';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url("fonts/fa-regular-400.woff2") format("woff2"), url("fonts/fa-regular-400.woff") format("woff"); }
 
-.far {
-  font-family: 'Font Awesome 5 Pro';
-  font-weight: 400; }
-@font-face {
-  font-family: 'Font Awesome 5 Pro';
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: url("fonts/fa-solid-900.woff2") format("woff2"), url("fonts/fa-solid-900.woff") format("woff"); }
 
-.fa,
-.fas {
-  font-family: 'Font Awesome 5 Pro';
-  font-weight: 900; }

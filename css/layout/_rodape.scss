@@ -162,28 +162,24 @@
 
 	.copyright {
 		background: #313131;
-		font-size: 11px;
+		font-size: 12px;
 		padding-top: 10px; padding-bottom: 10px;
 
 		.container {
-			@include display(flex); padding: 0;
-			@include align-items(flex-end);
+			display: flex; justify-content: space-between; padding: 5px;
+			@include align-items(center);
 
-			div {
-				padding: 10px;
+			div { padding: 5px; }
 
-				&:nth-of-type(1) {
-					@include flex-grow(1);
-					@media (max-width: $celular) {
-						span {display: none;}
-						a { display: block; margin-left: 0; }
-					}
-				}
-				&:nth-of-type(2) { @include flex-shrink(0) }
+			@media (max-width: $celular) {
+				flex-wrap: wrap;
+				
+				div { width: 100%; text-align: center; }
+				div span { display: block;}
 			}
 
 			a {
-				color: var(--cor-rosa-medio); margin-left: 8px;
+				color: var(--cor-rosa-medio); //margin-left: 8px;
 				&:hover, &:focus { text-decoration: underline; }
 
 				i { font-size: 1.15em; }

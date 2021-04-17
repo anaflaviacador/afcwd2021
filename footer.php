@@ -34,6 +34,7 @@ if (is_front_page() || is_post_type_archive(array('etheme_portfolio')) || is_pag
 // ========================================//
 // RODAPE 
 // ========================================// 
+$temaurl = get_stylesheet_directory_uri();
 
 echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_page(array('contato','briefing','planos','inscricao-afiliadas')) || (is_archive() && ! is_post_type_archive(array('etheme_portfolio','afc_depoimentos'))) || afc_woocommerce() ? ' style="margin-top:5em;float:left;clear:both;"' : '').'>';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
@@ -44,15 +45,33 @@ echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_pag
 
 	echo '<div class="copyright">';
 		echo '<div class="container">';
-			echo '<div><img width="16px" src="'.get_stylesheet_directory_uri().'/img/flag-brasil.svg" style="vertical-align: middle;margin-right: 7px;position: relative;top: -1px;" /> <strong>AFC Web Design</strong><span>&nbsp;&nbsp;|</span><a href="#privacidade" data-target="#privacidade" class="abre-modal">Política de Privacidade</a></div>';
+			echo '<div aria-label="Meios de pagamento aceitos">';
+				echo '<img alt="Bandeiras Master, Visa, Elo, American Express, Hiper, JBC e mais" title="Aceitamos diversas bandeiras de cartão através da Juno Pagamentos e Stripe" style="width:auto;height:18px" src="'.$temaurl.'/img/cartoes-juno.svg" />';
+				echo '<img alt="Pix" title="Transferencia Pix (à vista)" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-pix-gateway.svg" />';
+				echo '<img alt="Boleto" title="Boleto (à vista)" style="width:auto;height:18px;margin-left:10px;" src="'.$temaurl.'/img/logo-boleto.svg" />';
+				echo '<img alt="Paypal" title="Paypal para pagamentos internacionais (exclusivamente)" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-paypal.svg" />';
+			echo '</div>';
 
 			echo '<div>';
-				echo '<a target="_blank" title="Instagram" href="https://www.instagram.com/anaflaviacador"><i class="fab fa-instagram" aria-hidden="true"></i></a>';
-				echo '<a target="_blank" title="Pinterest" href="https://br.pinterest.com/afcwebdesign"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>';
-				echo '<a target="_blank" title="Facebook" href="https://facebook.com/afcweb.design"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>';
-				echo '<a target="_blank" title="Whatsapp" href="https://api.whatsapp.com/send?phone=5562996269941"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>';
+				echo '<a href="https://transparencyreport.google.com/safe-browsing/search?url=afcweb.design" target="_blank" rel="nofollow noopener"><img style="width:auto;height:35px" src="'.$temaurl.'/img/logo-googlesecurity.svg" /></a>';
 			echo '</div>';
 		echo '</div>';
+
+		echo '<div class="container">';
+			echo '<div>'; 
+				echo date('Y').' &copy; <strong>AFC Web Design</strong> &nbsp;&nbsp;<span><img width="16px" src="'.$temaurl.'/img/flag-brasil.svg" alt="AFC Web Design is a brazilian business" title="AFC Web Design is a brazilian business" style="vertical-align: middle;margin-right: 7px;position: relative;top: -1px;" /> CNPJ 24.014.911/0001-36</span>';
+			echo '</div>';
+
+			$politicaID = get_option( 'wp_page_for_privacy_policy' );
+			$termsID = wc_terms_and_conditions_page_id();
+			echo '<div>';
+				echo '<a href="'.get_permalink($politicaID).'">Política de Privacidade</a>';
+				if (class_exists('Woocommerce')) echo '&nbsp;&nbsp;& &nbsp;<a href="'.get_permalink($termsID).'">Termos de Uso</a>';
+			echo '</div>';
+
+		echo '</div>';
+
+		
 	echo '</div>';
 echo '</footer>';
 
@@ -60,12 +79,12 @@ echo '</main>';
 
 
 // politica de privacidade
-$politicaID = get_option( 'wp_page_for_privacy_policy' );
-echo '<div class="modal" id="privacidade" aria-label="'.get_the_title($politicaID).'">'; 
-	$politicaPG = get_post($politicaID);
-	echo '<h2 class="has-text-align-center">Política de Privacidade</h2>';
-	echo '<article>'.apply_filters('the_content',$politicaPG->post_content).'</article>';
-echo '</div>'; 
+// $politicaID = get_option( 'wp_page_for_privacy_policy' );
+// echo '<div class="modal" id="privacidade" aria-label="'.get_the_title($politicaID).'">'; 
+// 	$politicaPG = get_post($politicaID);
+// 	echo '<h2 class="has-text-align-center">Política de Privacidade</h2>';
+// 	echo '<article>'.apply_filters('the_content',$politicaPG->post_content).'</article>';
+// echo '</div>'; 
 
 // perguntas frequentes
 echo '<div class="modal" id="faq" aria-label="Perguntas frequentes">';

@@ -38,27 +38,25 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<div class="col2-set" id="customer_details">
 			<div class="col-1" style="margin-bottom: 2em;">
 
-				<div style="display:flex;justify-content:space-between;align-items:flex-start; margin-bottom: 10px;">
-					<h3>Faturamento</h3>
-					<a href="<?php echo wc_get_page_permalink('cart'); ?>" class="button mini"><i class="fa fa-shopping-cart"></i> &nbsp;Rever carrinho</a>
-				</div>
+				<!-- <h3 style="margin-bottom: 10px;">Faturamento</h3> -->
 
 				<?php get_template_part('inc/aviso-checkout'); ?>
 
-				<?php if (wc_coupons_enabled()): ?>
+				<?php /*if (wc_coupons_enabled()): ?>
 					<p style="margin: -1em 0 3em; font-size:.9em; color:var(--cor-afirmacao)"><strong><em>Tem cupom de desconto?</em></strong>  <a href="<?php echo wc_get_page_permalink('cart'); ?>" style="color:inherit">Clique aqui e adicione seu cupom no carrinho.</a></p>
-				<?php endif; ?>
+				<?php endif;*/ ?>
 				
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
-				
 			</div>
 
 			<div class="col-2">
 
-				<h3 style="margin-bottom:10px">Pedido e pagamento</h3>
+				<div style="display:flex;justify-content:space-between;align-items:flex-start; margin-bottom: 10px;">
+					<h3>Pedido e pagamento</h3>
+					<a href="<?php echo wc_get_page_permalink('cart'); ?>" class="button mini"><i class="fa fa-shopping-cart"></i> &nbsp;Rever carrinho</a>
+				</div>
 
-				<?php //wc_get_template( 'checkout/payment.php' ); ?>
 				<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 

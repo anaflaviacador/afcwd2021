@@ -100,7 +100,7 @@ if ( $publicacoes->have_posts() ) { $i = 0;
 echo '<section class="container" id="beneficios">';
 	echo '<div data-aos="fade-right">';
 		echo '<article>';
-			echo '<p>O studio faz <strong>projetos completos</strong> de design e programação para <strong>plataforma Wordpress</strong> com <em>código 100% autoral</em>, limpo, acessível, durável e altamente otimizado.</p>';
+			echo '<p>O studio faz <strong>projetos completos</strong> de design e programação para <em>sites, lojas virtuais e blogs</em> na <strong>plataforma Wordpress</strong> com código autoral, limpo, durável e altamente otimizado.</p>';
 			echo '<p>São produzidas <strong>ferramentas únicas</strong> para você <strong>automatizar tarefas</strong> em seu site, integrando com redes sociais e montando seu conteúdo com <em>praticidade</em> e <em>agilidade</em>.</p>';
 		echo '</article>';
 		echo '<h2 class="cursivo">Resultado</h2>';

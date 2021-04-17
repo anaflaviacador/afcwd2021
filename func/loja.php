@@ -247,9 +247,10 @@ function custom_override_checkout_fields_ek( $fields ) {
     // unset($fields['billing']['billing_country']);
 
     $fields['billing']['billing_email']['priority'] = 21;
-    $fields['billing']['billing_email']['class'] = array( 'afc-form-row-first' );
+    $fields['billing']['billing_email']['class'] = array( 'afc-form-row-wide' );
 
-    $fields['billing']['billing_cpf']['class'] = array( 'afc-form-row-last' );
+    $fields['billing']['billing_address_1']['class'] = array( 'afc-form-row-first' );
+    $fields['billing']['billing_number']['class'] = array( 'afc-form-row-last' );
 
     $fields['billing']['billing_number']['placeholder'] = 'Insira S/N se não houver';
 
@@ -357,13 +358,9 @@ function afc_botao_pagar( $button_html ) {
     return $button_html;
 }
 
-
-// function webroom_hide_coupon_field_on_woocommerce_checkout( $enabled ) {
-//     if ( is_checkout() ) $enabled = false;
-//     return $enabled;
-// }
-// add_filter( 'woocommerce_coupons_enabled', 'webroom_hide_coupon_field_on_woocommerce_checkout' );
+// move cupom de lugar
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+add_action( 'woocommerce_review_order_before_payment', 'woocommerce_checkout_coupon_form' );
 
 // ========================================//
 // ALEGACAO DE NAO REVENDA FORA DO SITE - qdo eh produto digital

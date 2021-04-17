@@ -1,8 +1,8 @@
 <div id="affwp-affiliate-dashboard-creatives" class="affwp-tab-content">
 
-	<h4><?php _e( 'Creatives', 'affiliate-wp' ); ?></h4>
+	<h4>Banners de divulgação</h4>
 
-	<p style="width: 100%; margin-bottom: 3em;">Aqui você encontrará alguns banners que você poderá usar em sua página. É só copiar e colar o código abaixo em algum lugar fixo do seu site <em>(o código já possui seu link de afiliada)</em>.</p>
+	<p style="width: 100%; margin-bottom: 3em;">Aqui você encontrará alguns banners que você poderá usar. É só copiar o código do banner desejado e colar num local estratégico de sua página. Exemplo de uso: área de <u>widgets</u> de blog ou <u>área de anúncios</u> de site. <em style="color:var(--cor-negacao);">Os códigos de incorporação abaixo já possuem seu ID de afiliada.</em></p>
 
 	<?php
 	$per_page  = 30;

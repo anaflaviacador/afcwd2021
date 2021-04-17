@@ -16,6 +16,6 @@ echo '<form action="https://mailing.anaflaviacador.com/subscribe" method="POST" 
 	echo '<div style="display:none;"><input type="text" name="hp" id="hp"/></div>';
 	echo '<input type="hidden" name="list" value="BH0ACmpWou8929pwTyLi892Y3A"/>';
 	echo '<input type="hidden" name="subform" value="yes"/>';
-	echo '<button type="submit" name="submit" style="line-height:40px" class="button" id="submit"/><i class="fas fa-check-circle"></i> Assinar</button>';
+	echo '<button type="submit" name="submit" style="line-height:40px" class="button" id="submit"/><i class="far fa-check-circle"></i> Assinar</button>';
 echo '</form>';
 // echo '<p class="infospam"><i class="fas fa-lock-alt"></i> Email seguro e protegido contra spam!</p>';

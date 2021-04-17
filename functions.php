@@ -53,7 +53,6 @@ function afc_setup() {
       add_theme_support( 'woocommerce' );
       include_once(get_template_directory().'/func/loja.php' );
     } 
-  
 }
 
 /////////////// gutenberg
@@ -432,4 +431,18 @@ function afc_erro_404($template) {
         return locate_template('simples.php');
     } 
     return $template;
+}
+
+// ========================================//
+// CSS PONTUAIS ADMIN
+// ========================================//
+add_action('admin_head', 'afc_admin_css_simples',999 );
+function afc_admin_css_simples() {
+    echo '<style>';
+      echo '#adminmenu #toplevel_page_woocommerce > a > div.wp-menu-image.svg {background: none !important;}';
+      echo '#adminmenu #toplevel_page_woocommerce > a > div.wp-menu-image::before {';
+        echo 'font-family: \'WooCommerce\' !important; line-height: 1;';
+        echo 'content: \'\e03d\'; padding: 7px 0; font-size: 20px; position: relative; top: 7px;';
+      echo '}';
+    echo '</style>';
 }

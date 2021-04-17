@@ -205,3 +205,17 @@ add_action( 'admin_init', function() {
       add_filter( 'get_user_option_admin_color', function() { return 'studio-afc'; });
   }
 );
+
+// ========================================//
+// VALIDA USERNAME SEM ESPACOS - EVITA ERROS
+// creditos: https://www.trickspanda.com/prevent-spaces-wordpress-usernames/
+// ========================================//
+add_filter('validate_username' , 'afc_valida_username', 10, 2);
+function afc_valida_username($valid, $username ) {
+		if (preg_match("/\\s/", $username)) {
+   			// there are spaces
+			return $valid=false;
+		}
+
+	return $valid;
+}

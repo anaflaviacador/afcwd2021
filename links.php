@@ -70,7 +70,7 @@ if (have_posts()) {
 echo '<footer id="rodape" style="margin-top:5em">';
 	echo '<div class="copyright">';
 		echo '<div class="container">';
-			echo '<div style="width:100%; text-align:center"><img width="16px" src="'.get_stylesheet_directory_uri().'/img/flag-brasil.svg" style="vertical-align: middle;margin-right: 7px;position: relative;top: -1px;" /> <strong>AFC Web Design</strong> - CNPJ 24.014.911/0001-36</div>';
+			echo '<div style="width:100%; text-align:center">'.date('Y').' &copy; <strong>AFC Web Design</strong> &nbsp;&nbsp;<img width="16px" src="'.get_template_directory_uri().'/img/flag-brasil.svg" alt="AFC Web Design is a brazilian business" title="AFC Web Design is a brazilian business" style="vertical-align: middle;margin-right: 7px;position: relative;top: -1px;" /> CNPJ 24.014.911/0001-36</div>';
 		echo '</div>';
 	echo '</div>';
 echo '</footer>';

@@ -308,6 +308,14 @@ div.woocommerce {
 		input { border-radius: 8px; }
 	}	
 
+	.woocommerce-form-coupon-toggle { display: none; }
+
+	.afc-form-cupom {
+		display: flex; margin: 10px 0 1.8em;
+		input { margin: 0; text-transform: uppercase; }
+		button { margin-left: 8px; border-radius: 8px !important;}
+	}
+
 	#payment {
 		background: transparent;
 
