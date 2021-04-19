@@ -16,6 +16,8 @@ function afc_admin_menus_woo(){
 //     echo '</style>';
 // }
 
+// evita conflitos de otimizacao de imagem do plugin TinyPNG
+if(class_exists('Tiny_Compress')) add_filter( 'woocommerce_background_image_regeneration', '__return_false' );
 
 // ========================================//
 // COOKIES
