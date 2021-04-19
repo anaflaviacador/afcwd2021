@@ -227,8 +227,8 @@ function afc_cssnosync($tag, $handle) {
 
 function afc_load_scripts_head() {
   // SCRIPTS QUE NAO RODA PARA ADMIN
-  $user = wp_get_current_user();
-  if (!in_array( 'administrator', (array) $user->roles ) ) {
+  // $user = wp_get_current_user();
+  // if (!in_array( 'administrator', (array) $user->roles ) ) {
 
     ////////////// ANALYTICS
     // echo '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10144283-7"></script>';
@@ -273,7 +273,7 @@ function afc_load_scripts_head() {
       if(is_checkout()) echo '<script>fbq(\'track\', \'AddPaymentInfo\');</script>';
       if(is_wc_endpoint_url( 'order-received' )) echo '<script>fbq(\'track\', \'Purchase\');</script>'; 
     }
-  }
+  // }
 }
 
 
