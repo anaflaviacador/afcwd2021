@@ -121,20 +121,21 @@ echo '</section>';
 // BLOG
 // ========================================// 
 
-// $args = array('post_type' => 'afc_blog', 'orderby' => 'rand', 'posts_per_page' => 3);
+$args = array('post_type' => 'afc_blog', 'order' => 'DESC', 'posts_per_page' => 3);
 
-// $artigos = new WP_Query($args);
-// if ( $artigos->have_posts() ) { $i = 0;
-// 	echo '<section class="container" id="area-blog-home">';
-// 	echo '<div class="lista-artigos">';
-// 	while ( $artigos->have_posts() ) : $i++; $artigos->the_post(); 
-// 		echo '<div class="item-post-grid" data-aos="fade-up" data-aos-delay="'.$timer.'">';
-// 			get_template_part('inc/blog-grid');
-// 		echo '</div>';
-// 	endwhile;
-// 	echo '</div>';
-// 	echo '</section>';
-// }
+$artigos = new WP_Query($args);
+if ( $artigos->have_posts() ) { $i = 0;
+	echo '<section class="container" id="area-blog-home" style="padding-top:2em">';
+	echo '<h2 class="cursivo assinado" style="margin-bottom: -0.3em; position: relative; z-index:1">Dicas</h2>';
+	echo '<div class="lista-artigos" style="width: 100%; clear: both;">';
+	while ( $artigos->have_posts() ) : $i++; $artigos->the_post(); 
+		echo '<div class="item-post-grid" data-aos="fade-up" data-aos-delay="'.$timer.'">';
+			get_template_part('inc/blog-grid');
+		echo '</div>';
+	endwhile;
+	echo '</div>';
+	echo '</section>';
+}
 
 	
 get_footer();

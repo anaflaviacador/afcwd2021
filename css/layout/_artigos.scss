@@ -33,7 +33,9 @@
 		padding: 20px 20px 0; font-size: 0.85em; line-height: 1.6;
 		flex-grow: 1;
 
-		h3 { margin: 0 0 10px; font-size: 1.45em; }
+		h3 { margin: 0 0 10px; font-size: 1.35em; }
+
+		p { hyphens: auto; }
 	}
 
 	footer { 
@@ -536,5 +538,11 @@ article {
 			li::marker { content: '\2192\0020\0020'; font-size: 1.3em;}
 		}
 		ol:not(.wp-block-gallery):not(.woocommerce-shipping-methods):not(.woocommerce-order-overview):not(.blocks-gallery-grid) { list-style-type: decimal; }
+
+		.wp-caption.com-sombra, .wp-block-image.com-sombra, .wp-block-media-text.com-sombra {
+			img {
+				box-shadow: 0 0 20px rgba(0,0,0,0.1);
+			}
+		}
 	}
 }
