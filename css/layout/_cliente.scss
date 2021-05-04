@@ -330,6 +330,8 @@ div.woocommerce {
 					img { max-height: 20px !important; vertical-align: unset; position: relative; bottom: -2px !important;}
 
 					&[for=payment_method_juno-credit-card] img { width: 23px; }
+
+					small { color: var(--cor-afirmacao); font-weight: bold; text-transform: uppercase; background: var(--cor-verde-claro);}
 				}
 
 				div.payment_box {

@@ -153,12 +153,12 @@ function afc_load_styles() {
     
     // jquery
     wp_deregister_script( 'jquery-core' );
-    wp_register_script( 'jquery-core', $urlCDN . '/jquery@3.4.1/dist/jquery.min.js', array(), '' );
+    wp_register_script( 'jquery-core', $urlCDN . '/jquery@3.6.0/dist/jquery.min.js', array(), '' );
     wp_deregister_script( 'jquery-migrate' );
-    wp_register_script( 'jquery-migrate', $urlCDN . '/jquery-migrate@3.3.1/dist/jquery-migrate.min.js', array(), '' );
+    wp_register_script( 'jquery-migrate', $urlCDN . '/jquery-migrate@3.3.2/dist/jquery-migrate.min.js', array(), '' );
 
     if (is_front_page() || is_post_type_archive('afc_blog')) {
-      wp_enqueue_script( 'typewriter', $urlCDN . '/typewriter-effect@2.13.1/dist/core.js', array('jquery-core'), '', true);
+      wp_enqueue_script( 'typewriter', $urlCDN . '/typewriter-effect@2.17.0/dist/core.js', array('jquery-core'), '', true);
     }    
 
     // scripts packages

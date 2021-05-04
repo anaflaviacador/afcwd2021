@@ -464,7 +464,7 @@
             "label": "Quando você pretende começar?",
             "name": "form_preparacao",
             "type": "radio",
-            "instructions": "Devido à grande complexidade de um projeto de webdesign muitos de nossos projetos precisam ser agendados. <strong>Informe sua previsão que sua resposta será levada em conta na agenda do studio.<\/strong>",
+            "instructions": "Devido à grande complexidade de um projeto de site, muitos de nossos projetos precisam ser agendados. Informe sua previsão que sua resposta será levada em conta na agenda do studio.",
             "required": 1,
             "conditional_logic": [
                 [
@@ -494,37 +494,6 @@
             "layout": "vertical",
             "return_format": "label",
             "save_other_choice": 0
-        },
-        {
-            "key": "field_5fbd2dc49f251",
-            "label": "Mensagem sobre agenda",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f440d9f51449",
-                        "operator": "!=",
-                        "value": "mtolonge"
-                    },
-                    {
-                        "field": "field_5f440d9f51449",
-                        "operator": "!=",
-                        "value": ""
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "msghidden",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "message": "<strong>O studio tem disponibilidade para iniciar novos projetos a partir de DEZEMBRO de 2021.<\/strong> Porém, <u>não deixe de entrar em contato<\/u> pois essa disponibilidade da agenda pode se modificar.",
-            "new_lines": "br",
-            "esc_html": 0
         },
         {
             "key": "field_5ef0ad16d71f0",
@@ -730,5 +699,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de contato padrão do site",
-    "modified": 1618259135
+    "modified": 1619208291
 }

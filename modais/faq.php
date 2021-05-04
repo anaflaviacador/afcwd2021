@@ -5,14 +5,14 @@ echo '<div class="abinhas">';
 		echo '<div class="aba-conteudo">';
 			echo '<p>O studio AFC Web Design é um escritório digital situado em <em>home office</em>. O atendimento realizado é exclusivamente online desde 2012. A quarentana não afetou os serviços e atendimento. :)</p>';
 
-			echo '<p><strong>O horário de atendimento é: segunda a sexta, das 8h às 17h <a href="https://afcweb.design/contato" target="_blank">via email</a> e das 14h às 17h via <a href="https://api.whatsapp.com/send?phone=5562996269941" target="_blank">Whatsapp</a>.</strong></p>';
+			echo '<p><strong>O horário de atendimento é: segunda a sexta, das 8h às 17h <a href="https://afcweb.design/contato" target="_blank">via email</a> e das 14h às 17h via <a href="https://api.whatsapp.com/send?phone=5562996269941" target="_blank" rel="nofollow noopener">Whatsapp</a>.</strong></p>';
 		echo '</div>';
 	echo '</div>';
 	
 	echo '<div class="aba">';
 		echo '<div class="aba-titulo">Como contratar um serviço de projeto exclusivo?</div>';
 		echo '<div class="aba-conteudo">';
-			echo '<p>Para realizar qualquer tipo de contratação ou até mesmo fazer um orçamento sem compromisso é necessário <a href="https://afcweb.design/contato/">entrar em contato via e-mail</a> ou <a href="https://api.whatsapp.com/send?phone=5562996269941" target="_blank">Whatsapp</a>. Em até 24h úteis, dentro do horário comercial do studio, você receberá um feedback com todas as informações necessárias sobre a minha forma de trabalho, prazos, disponibilidade da agenda, além de noções de valores e formas pagamento. Com a proposta de trabalho aceita, fazemos o agendamento* da produção do projeto.</p>';
+			echo '<p>Para realizar qualquer tipo de contratação ou até mesmo fazer um orçamento sem compromisso é necessário <a href="https://afcweb.design/contato/">entrar em contato via e-mail</a> ou <a href="https://api.whatsapp.com/send?phone=5562996269941" target="_blank" rel="nofollow noopener">Whatsapp</a>. Em até 24h úteis, dentro do horário comercial do studio, você receberá um feedback com todas as informações necessárias sobre a minha forma de trabalho, prazos, disponibilidade da agenda, além de noções de valores e formas pagamento. Com a proposta de trabalho aceita, fazemos o agendamento* da produção do projeto.</p>';
 			echo '<p><small>* Sujeito à disponibilidade da agenda de produção do studio.</small></p>';
 		echo '</div>';
 	echo '</div>';

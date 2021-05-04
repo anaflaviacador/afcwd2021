@@ -4,5 +4,5 @@
  */
 ?>
 <span class="wc-stripe-card-icons-container" style="float:none;">
-	<img width="20px" src="<?php echo get_stylesheet_directory_uri(); ?>/img/flag-globe.svg" />
+	<img width="95px" src="<?php echo get_stylesheet_directory_uri(); ?>/img/flag-globe.svg" />
 </span>

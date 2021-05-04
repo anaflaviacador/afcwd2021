@@ -44,28 +44,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 							switch ( $column_id ) {
 								case 'download-product':
 									if ( $download['product_url'] ) {
-										echo '<a href="' . esc_url( $download['product_url'] ) . '">' . esc_html( $download['product_name'] ) . '</a>';
+										echo '<a href="'.esc_url( $download['product_url'] ) . '">' . esc_html( $download['download_name'] ).'<br><small>'.esc_html( $download['product_name'] ).'</small></a>';
 									} else {
-										echo esc_html( $download['product_name'] );
+										echo esc_html( $download['download_name'] ).'<br><small>'.esc_html( $download['product_name'] ).'</small>';
 									}
 									break;
 								case 'download-file':
-									echo '<a href="' . esc_url( $download['download_url'] ) . '" class="woocommerce-MyAccount-downloads-file button verde mini"><i class="far fa-long-arrow-down" style="font-size: 1.2em; line-height: 0; position: relative; bottom: -1px;" aria-hidden="true"></i> Baixar</a>';
+									echo '<a href="' . esc_url( $download['download_url'] ) . '" class="woocommerce-MyAccount-downloads-file button verde mini" title="'.esc_html( $download['download_name'] ).'"><i class="far fa-long-arrow-down" style="font-size: 1.2em; line-height: 0; position: relative; bottom: -1px;" aria-hidden="true"></i> Baixar</a>';
 									break;
-								case 'download-remaining':
-									if(is_numeric( $download['downloads_remaining'] )) {
-										echo esc_html( $download['downloads_remaining'] );
-									} else {
-										if ( ! empty( $download['access_expires'] ) ) {
-											echo esc_html__( 'ilimitado até a data', 'woocommerce' );
-										} else {
-											echo esc_html__( 'ilimitado', 'woocommerce' );
-										}
-									}
-									break;
+								// case 'download-remaining':
+								// 	if(is_numeric( $download['downloads_remaining'] )) {
+								// 		echo esc_html( $download['downloads_remaining'] );
+								// 	} else {
+								// 		echo esc_html__( 'ilimitado', 'woocommerce' );
+								// 	}
+								// 	break;
 								case 'download-expires':
 									if ( ! empty( $download['access_expires'] ) ) {
-										echo '<time datetime="' . esc_attr( date( 'Y-m-d', strtotime( $download['access_expires'] ) ) ) . '" title="' . esc_attr( strtotime( $download['access_expires'] ) ) . '">' . esc_html( date_i18n( get_option( 'date_format' ), strtotime( $download['access_expires'] ) ) ) . '</time>';
+										echo '<time datetime="' . esc_attr( date( 'Y-m-d', strtotime( $download['access_expires'] ) ) ) . '" title="' . esc_attr( strtotime( $download['access_expires'] ) ) . '">Até ' . esc_html( date_i18n( get_option( 'date_format' ), strtotime( $download['access_expires'] ) ) ) . '</time>';
 									} else {
 										esc_html_e( 'vitalicio', 'woocommerce' );
 									}

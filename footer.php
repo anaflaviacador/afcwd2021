@@ -46,14 +46,14 @@ echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_pag
 	echo '<div class="copyright">';
 		echo '<div class="container">';
 			echo '<div aria-label="Meios de pagamento aceitos">';
-				echo '<img alt="Bandeiras Master, Visa, Elo, American Express, Hiper, JBC e mais" title="Aceitamos diversas bandeiras de cartão através da Juno Pagamentos e Stripe" style="width:auto;height:18px" src="'.$temaurl.'/img/cartoes-juno.svg" />';
-				echo '<img alt="Pix" title="Transferencia Pix (à vista)" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-pix-gateway.svg" />';
-				echo '<img alt="Boleto" title="Boleto (à vista)" style="width:auto;height:18px;margin-left:10px;" src="'.$temaurl.'/img/logo-boleto.svg" />';
-				echo '<img alt="Paypal" title="Paypal para pagamentos internacionais (exclusivamente)" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-paypal.svg" />';
+				echo '<span style="display: inline-block !important;" data-tooltip="Aceitamos pagamentos nacionais e internacionais com cartão de crédito!"><img alt="Bandeiras Master, Visa, Elo, American Express, Hiper, JBC e mais" style="width:auto;height:18px" src="'.$temaurl.'/img/cartoes-juno.svg" /></span>';
+				echo '<span style="display: inline-block !important;" data-tooltip="Pagamentos com Pix são processados na hora!"><img alt="Pix" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-pix-gateway.svg" /></span>';
+				// echo '<span style="display: inline-block !important;" data-tooltip="Pagamentos com Boleto são processados em até 1 dia útil."><img alt="Boleto" style="width:auto;height:18px;margin-left:10px;" src="'.$temaurl.'/img/logo-boleto.svg" /></span>';
+				echo '<span style="display: inline-block !important;" data-tooltip="Aceitamos pagamentos internacionais com Paypal!"><img alt="Paypal" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-paypal.svg" /></span>';
 			echo '</div>';
 
 			echo '<div>';
-				echo '<a href="https://transparencyreport.google.com/safe-browsing/search?url=afcweb.design" target="_blank" rel="nofollow noopener"><img style="width:auto;height:35px" src="'.$temaurl.'/img/logo-googlesecurity.svg" /></a>';
+				echo '<a href="https://transparencyreport.google.com/safe-browsing/search?url=afcweb.design" target="_blank" rel="nofollow noopener" data-tooltip="Transações 100% seguras e criptografadas via SSL!" style="display:block"><img style="width:auto;height:35px" src="'.$temaurl.'/img/logo-googlesecurity.svg" /></a>';
 			echo '</div>';
 		echo '</div>';
 

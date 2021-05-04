@@ -416,15 +416,19 @@ function afcwoo_politica_nao_selecionada() {
 add_filter( 'woocommerce_thankyou_order_received_text', 'misha_thank_you_title', 20, 2 );
 function misha_thank_you_title( $thank_you_title, $order ){
     $conta = wc_get_page_permalink('myaccount');
-    return '<strong>Pedido recebido. Obrigada, '.$order->get_billing_first_name().'!</strong><br>Acesse sua conta para mais detalhes.<br><a href="'.esc_url($conta).'" class="button alt mini" style="margin-top:4px">acessar conta</a>';
+    $pedidos = wc_get_account_endpoint_url( 'orders' );
+    $downloads = wc_get_account_endpoint_url( 'downloads' );
+    return '<strong>Pedido recebido com sucesso! Obrigada, '.$order->get_billing_first_name().'!</strong><br>Acesse seu histórico de pedidos para mais detalhes.<br><a href="'.esc_url($pedidos).'" class="button alt mini" style="margin-top:4px">pedidos</a> &nbsp; <a href="'.esc_url($downloads).'" class="button alt mini" style="margin-top:4px">downloads</a>';
 }
 
 // organizacao de colunas de download
 function filter_woocommerce_account_downloads_columns( $columns ) {
-    $columns['download-product'] = __( 'Produto digital adquirido', 'woocommerce');
-    $columns['download-remaining'] = __( 'Limite de download', 'woocommerce');
-    $columns['download-expires'] = __( 'Baixar até a data', 'woocommerce');
-    $columns['download-file'] = __( 'Arquivo(s)', 'woocommerce');
+    $columns['download-product'] = __( 'Produto digital liberado', 'woocommerce');
+    // $columns['download-remaining'] = __( 'Nº downloads', 'woocommerce');
+    $columns['download-expires'] = __( 'Licença (updates)', 'woocommerce');
+    $columns['download-file'] = __( 'Arquivo', 'woocommerce');
+
+    unset($columns['download-remaining']);
     return $columns;
 }
 add_filter( 'woocommerce_account_downloads_columns', 'filter_woocommerce_account_downloads_columns', 10, 1 );

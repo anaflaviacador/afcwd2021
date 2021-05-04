@@ -92,7 +92,19 @@ echo '<section class="container area-artigo">';
 
 		echo '</footer>';
 
-		if (comments_open()) comments_template('', true);
+		if (comments_open()) {
+			// comments_template('', true);
+			echo '<div id="disqus_thread"></div>';
+			$diqus_shortname = 'afcwebdesign'; 
+			global $post;					
+			echo '<script>';
+				echo 'var disqus_config = function () {';
+					echo 'this.page.url = \''.$permalink.'\';';
+					echo 'this.page.identifier = \''.$idpost.' '.$post->guid.'\';';
+				echo '};';
+				echo '(function() { var d = document, s = d.createElement(\'script\'); s.src = \'https://'.$diqus_shortname.'.disqus.com/embed.js\'; s.setAttribute(\'data-timestamp\', +new Date()); (d.head || d.body).appendChild(s); })();';
+			echo '</script>';
+		}
 	endwhile;
 	echo '</div>';
 

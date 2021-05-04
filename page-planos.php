@@ -56,7 +56,7 @@
 					echo '<footer id="basic">';
 						echo $cancela;
 						echo '<div class="botao">';
-							echo '<a target="_blank" href="https://afcweb.design/plano-basic" data-novo-cliente="https://afcweb.design/plano-basic-novocliente" id="assinar-plano-basic" class="btAssinarPlano button medio azul">assinar!</a>'; 
+							echo '<a target="_blank" href="https://afcweb.design/finalizar-compra/?add-to-cart=5438" data-novo-cliente="https://afcweb.design/finalizar-compra/?add-to-cart=5492" id="assinar-plano-basic" class="btAssinarPlano button medio azul">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
@@ -112,7 +112,7 @@
 					echo '<footer id="standard">';
 						echo $cancela;
 						echo '<div class="botao">';
-							echo '<a target="_blank" href="https://afcweb.design/plano-standard" data-novo-cliente="https://afcweb.design/plano-standard-novocliente" id="assinar-plano-standard" class="btAssinarPlano button medio verde">assinar!</a>';
+							echo '<a target="_blank" href="https://afcweb.design/finalizar-compra/?add-to-cart=5439" data-novo-cliente="https://afcweb.design/finalizar-compra/?add-to-cart=5493" id="assinar-plano-standard" class="btAssinarPlano button medio verde">assinar!</a>';
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
@@ -168,7 +168,7 @@
 					echo '<footer id="premium">';
 						echo $cancela;
 						echo '<div class="botao">';
-							echo '<a target="_blank" href="https://afcweb.design/plano-premium" data-novo-cliente="https://afcweb.design/plano-premium-novocliente" id="assinar-plano-premium" class="btAssinarPlano button medio">assinar!</a>'; 
+							echo '<a target="_blank" href="https://afcweb.design/finalizar-compra/?add-to-cart=5440" data-novo-cliente="https://afcweb.design/finalizar-compra/?add-to-cart=5495" id="assinar-plano-premium" class="btAssinarPlano button medio">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
