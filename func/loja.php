@@ -248,8 +248,15 @@ function custom_override_checkout_fields_ek( $fields ) {
     unset($fields['billing']['billing_neighborhood']);
     // unset($fields['billing']['billing_country']);
 
-    $fields['billing']['billing_email']['priority'] = 21;
-    $fields['billing']['billing_email']['class'] = array( 'afc-form-row-wide' );
+    // $fields['billing']['billing_email']['priority'] = 21;
+    $fields['billing']['billing_email']['class'] = array( 'afc-form-row-wide clear' );
+
+    if(is_user_logged_in()) {
+        $fields['billing']['billing_email']['label'] = 'E-mail para recebimento';
+    } else {
+        $fields['billing']['billing_email']['label'] = 'E-mail para conta e recebimento';
+    }
+
 
     $fields['billing']['billing_address_1']['class'] = array( 'afc-form-row-first' );
     $fields['billing']['billing_number']['class'] = array( 'afc-form-row-last' );
@@ -277,13 +284,15 @@ function afc_checkout_field_alerta_pais( $field, $key ){
     }
     return $field;
 }
-// add_action( 'woocommerce_form_field_text','afc_checkout_field_alerta_endereco', 10, 2 );
-// function afc_checkout_field_alerta_endereco( $field, $key ){
-//     if ( is_checkout() && ( $key == 'billing_address_1') ) {
-//         $field .= '<p class="form-row form-row-wide" style="font-size: 12px; width: 100%; margin: -7px 0 11px 0 !important; float: left; line-height: 1.5; clear: both;">Não precisa ter bairro e complemento. Só o logradouro é o suficiente. ;&#41;</p>';
-//     }
-//     return $field;
-// }
+
+
+add_action( 'woocommerce_form_field_email','afc_checkout_field_alerta_email', 10, 2 );
+function afc_checkout_field_alerta_email( $field, $key ){
+    if ( is_checkout() && ( $key == 'billing_email') && !is_user_logged_in() ) {
+        $field .= '<p class="form-row form-row-wide" style="font-size: 12px; width: 100%; margin: -7px 0 11px 0 !important; float: left; line-height: 1.5; clear: both;"><span style="color:var(--cor-negacao)">Obs:</span> Utilize um e-mail que você tenha acesso, pois será por ele que você receberá informações de pedido, arquivos para download, nota fiscal e acesso a área de clientes do site.</p>';
+    }
+    return $field;
+}
     
 
 
