@@ -307,6 +307,7 @@ add_filter( 'woocommerce_available_payment_gateways', 'afc_logos_pgto' );
 function afc_logos_pgto( $gateways ) {
     if ( isset( $gateways['paghiper_billet'] ) ) $gateways['paghiper_billet']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
     if ( isset( $gateways['paghiper_pix'] ) ) $gateways['paghiper_pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
+    if ( isset( $gateways['juno-pix'] ) ) $gateways['juno-pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
     if ( isset( $gateways['juno-credit-card'] ) ) $gateways['juno-credit-card']->icon = get_stylesheet_directory_uri() . '/img/flag-brasil.svg';
 
         return $gateways;

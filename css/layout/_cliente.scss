@@ -330,6 +330,7 @@ div.woocommerce {
 					img { max-height: 20px !important; vertical-align: unset; position: relative; bottom: -2px !important;}
 
 					&[for=payment_method_juno-credit-card] img { width: 23px; }
+					&[for=payment_method_juno-pix] img { width: 23px; }
 
 					small { color: var(--cor-afirmacao); font-weight: bold; text-transform: uppercase; background: var(--cor-verde-claro);}
 				}
@@ -470,115 +471,15 @@ span.afc-pedido-status {
 	&.failed {color: red;}
 }
 
-
-
 // ========================================//
-// PAGINA DOCUMENTOS
+// AGRADECIMENTO
 // ========================================//
-#pagina-docs {
-	min-height: 300px;
-	padding-bottom: 60px;
+#juno-pix-thankyou {
+	width: $colmax; max-width: 100%; padding: 0 0 4em;
+	margin-left: auto; margin-right: auto;
 
-	.sem-permissao { text-align: center; padding-top: 40px; }
-
-	.wrap-arquivos-cliente {
-		width: 100%;
-		@include flex(space-between);
-		position: relative;
-		
-		.box {
-			width: 48%;
-			border: 2px solid #EEE;
-			padding: 30px 20px 12px;
-			position: relative;
-			margin-bottom: 40px;
-			border-radius: 10px;
-
-			&.indisponivel {
-				cursor: not-allowed;
-			}
-
-			.vazio {
-				margin: 40px 0;
-				text-align: center;
-				font-weight: 300;
-				color: #CCC;
-				text-transform: uppercase;
-
-				span {
-					font-size: 0.9rem;
-					display: block;
-					margin-top: 5px;
-					font-style: italic;
-					text-transform: none;
-				}
-			}
-
-			h3 {
-				position: absolute;
-				top: 0; left: 10px;
-				@include transform(translateY(-50%));
-				background: white;
-				padding: 0 10px;
-				@include flex(space-between);
-				@include align-items(center);
-				text-transform: none;
-				font-size: 1.4em;
-
-				img {
-					width: 43px; height: auto;
-					margin-right: 10px;
-				}
-
-				span small {
-					font-weight: normal;
-					font-size: 13px;
-					display: block;
-					margin-top: 5px;
-					font-style: italic;
-					color: var(--cor-texto);
-					opacity: 0.6
-				}
-			}
-
-
-			ul li {
-				padding: 0 0 8px;
-				position: relative;
-				font-size: 0.85em;
-				@include flex(space-between);
-
-				&:before {
-					display: inline-block;
-					margin-right: 6px;
-					width: 17px;
-					font-family: $fonte-icone;
-					content: '\f004';
-					font-weight: 400;
-					margin-top: 2px;
-					color: var(--cor-rosa);
-				}
-
-				&:hover:before {font-weight: 900}
-
-				a {
-					display: block;
-					font-weight: 300;
-					color: inherit;
-					width: calc(100% - 23px);
-
-					span {
-						font-size: 0.75em;
-						display: block;
-						font-weight: normal;
-						opacity: 0.6;
-					}
-				}
-			}
-		}
-
-	}
-
+	& > .juno-pix-title, & > .instruction { padding: 0 20px 10px !important;}
+	& > .instruction { padding: 0 20px !important; margin-bottom: 30px;}
 }
 
 
