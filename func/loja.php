@@ -306,6 +306,7 @@ remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' 
 add_filter( 'woocommerce_available_payment_gateways', 'afc_logos_pgto' );
 function afc_logos_pgto( $gateways ) {
     if ( isset( $gateways['paghiper_billet'] ) ) $gateways['paghiper_billet']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
+    if ( isset( $gateways['juno-bank-slip'] ) ) $gateways['juno-bank-slip']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
     if ( isset( $gateways['paghiper_pix'] ) ) $gateways['paghiper_pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
     if ( isset( $gateways['juno-pix'] ) ) $gateways['juno-pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
     if ( isset( $gateways['juno-credit-card'] ) ) $gateways['juno-credit-card']->icon = get_stylesheet_directory_uri() . '/img/flag-brasil.svg';
@@ -372,7 +373,6 @@ function afc_botao_pagar( $button_html ) {
 
 // move cupom de lugar
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-add_action( 'woocommerce_review_order_before_payment', 'woocommerce_checkout_coupon_form' );
 
 // ========================================//
 // ALEGACAO DE NAO REVENDA FORA DO SITE - qdo eh produto digital
@@ -394,7 +394,17 @@ function afcwoo_inserir_politica() {
                     'label_class' => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
                     'input_class' => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
                     'required' => true,
-                    'label' => '<label style="line-height: initial; display: initial;">Alego que não irei reproduzir o código-fonte, revender ou disponibilizar os produtos do Studio AFC Web Design para terceiros.</label>',
+                    'label' => '<label style="line-height: initial; display: initial;">Tenho ciência que minha <span data-tooltip="Uso vitalício + instalação em domínios ilimitados de minha própria titularidade + 1 ano de atualizações grátis"><u>licença é instransferível</u></span> e que não irei reproduzir ou distribuir minha aquisição para terceiros.</label>',
+                    )
+                );
+
+                woocommerce_form_field( 'aceite_extra2', array(
+                    'type' => 'checkbox',
+                    'class' => array('form-row privacy aceite-extra'),
+                    'label_class' => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
+                    'input_class' => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
+                    'required' => true,
+                    'label' => '<label style="line-height: initial; display: initial;">Entendo que, pela <span data-tooltip="Entrega instantânea de consumo imediato logo após o 1º download realizado, impossibilitando a devolução."><u>natureza de consumo</u></span> dos produtos do studio, não tenho direito a reembolso.</label>',
                     )
                 );
 
@@ -412,7 +422,8 @@ function afcwoo_politica_nao_selecionada() {
         if ( !has_term( 'planos', 'product_cat', $product->id ) ) {
             $cat_check = true;
 
-            if ( ! (int) isset( $_POST['aceite_extra'] ) ) wc_add_notice( __( '<strong>Você precisa alegar que não irá reproduzir, vender ou disponibilizar os produtos do Studio AFC Web Design!</strong>' ), 'error' );
+            if ( ! (int) isset( $_POST['aceite_extra'] ) ) wc_add_notice( __( 'Você precisa alegar que está ciente que sua licença é intransferível e que <strong>não pode reproduzir ou distribuir os produtos do studio</strong> para outras pessoas.' ), 'error' );
+            if ( ! (int) isset( $_POST['aceite_extra2'] ) ) wc_add_notice( __( 'Você precisa alegar que está ciente de que <strong>os produtos do studio não entram na categoria da Lei do Arrependimento!</strong>' ), 'error' );
         }
     }
 }
