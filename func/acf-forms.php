@@ -13,7 +13,8 @@ add_filter( 'af/form/button_attributes', 'afc_forms_atributos_btn', 10, 3 );
 // contato
 function afc_forms_contato_args( $args, $form ) {  
     $args['submit_text'] = 'Enviar';
-    $args['redirect'] = 'https://afcweb.design/sucesso/';
+    $args['ajax'] = false;
+    $args['redirect'] = 'https://afcweb.design/contato/sucesso/';
     return $args;
 }
 add_filter( 'af/form/args/key=form_5efb867474157', 'afc_forms_contato_args', 10, 2 );
@@ -22,6 +23,7 @@ add_filter( 'af/form/args/key=form_5efb867474157', 'afc_forms_contato_args', 10,
 // briefing
 function afc_forms_briefing_args( $args, $form ) {  
     $args['submit_text'] = 'Enviar briefing';
+    $args['ajax'] = false;
     return $args;
 }
 add_filter( 'af/form/args/key=form_5cc98ff56cee8', 'afc_forms_briefing_args', 10, 2 );
@@ -50,6 +52,8 @@ add_filter( 'af/form/email/headers/key=form_5efb867474157', 'afc_forms_contato_h
 // ========================================//
 function afc_forms_depo_args( $args, $form ) {  
     $args['submit_text'] = 'Enviar depoimento';
+    $args['ajax'] = false;
+    $args['redirect'] = 'https://afcweb.design/enviar-relato/enviado/';
     return $args;
 }
 add_filter( 'af/form/args/key=form_5f91e6e6224e4', 'afc_forms_depo_args', 10, 2 );

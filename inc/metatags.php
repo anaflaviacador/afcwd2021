@@ -1,7 +1,7 @@
 <?php 
 echo '<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->';
 echo '<meta http-equiv="Content-Type" content="text/html; image/svg+xml; charset='.get_bloginfo('charset').' ">';
-echo '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">';
+echo '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">';
 echo '<meta name="theme-color" content="#6A607C" />';
 echo '<meta name="msapplication-navbutton-color" content="#6A607C">';
 

@@ -22,7 +22,7 @@ if ( ! wc_coupons_enabled() ) { // @codingStandardsIgnoreLine.
 }
 
 ?>
-<form class="checkout_coupon woocommerce-form-coupon" method="post">
+<form method="post">
     <p>Tem um cupom de desconto? Use-o aqui!</p>
     <div class="afc-form-cupom">
         <input type="text" name="coupon_code" class="input-text" placeholder="Código do cupom" id="coupon_code" value="" />

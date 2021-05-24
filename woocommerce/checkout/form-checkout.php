@@ -29,6 +29,18 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 ?>
 
+<?php if (wc_coupons_enabled()): ?>
+<div class="col2-set" id="customer_details">
+	<div class="col-1">
+		<?php get_template_part('inc/aviso-checkout'); ?>
+	</div>
+
+	<div class="col-2">
+		<?php wc_get_template_part('checkout/form-coupon');?>
+	</div>
+</div>
+<?php endif; ?>
+
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
@@ -40,7 +52,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 				<!-- <h3 style="margin-bottom: 10px;">Faturamento</h3> -->
 
-				<?php get_template_part('inc/aviso-checkout'); ?>
+				<?php if (!wc_coupons_enabled()) : get_template_part('inc/aviso-checkout'); endif; ?>
+				
 
 				<?php /*if (wc_coupons_enabled()): ?>
 					<p style="margin: -1em 0 3em; font-size:.9em; color:var(--cor-afirmacao)"><strong><em>Tem cupom de desconto?</em></strong>  <a href="<?php echo wc_get_page_permalink('cart'); ?>" style="color:inherit">Clique aqui e adicione seu cupom no carrinho.</a></p>
