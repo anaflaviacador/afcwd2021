@@ -394,7 +394,7 @@ function afcwoo_inserir_politica() {
                     'label_class' => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
                     'input_class' => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
                     'required' => true,
-                    'label' => '<label style="line-height: initial; display: initial;">Tenho ciência que minha <span data-tooltip="Uso vitalício + instalação em domínios ilimitados de minha própria titularidade + 1 ano de atualizações grátis"><u>licença é instransferível</u></span> e que não irei reproduzir ou distribuir minha aquisição para terceiros.</label>',
+                    'label' => '<label style="line-height: initial; display: initial;">Tenho ciência que minha <span data-tooltip="Licença vitalícia para uso em domínios ilimitados de mesma titularidade + 1 ano de atualizações grátis"><u>licença é instransferível</u></span> e que não posso reproduzir ou distribuir este(s) produto(s) para terceiros.</label>',
                     )
                 );
 
@@ -404,7 +404,7 @@ function afcwoo_inserir_politica() {
                     'label_class' => array('woocommerce-form__label woocommerce-form__label-for-checkbox checkbox'),
                     'input_class' => array('woocommerce-form__input woocommerce-form__input-checkbox input-checkbox'),
                     'required' => true,
-                    'label' => '<label style="line-height: initial; display: initial;">Entendo que, pela <span data-tooltip="Entrega instantânea de consumo imediato logo após o 1º download realizado, impossibilitando a devolução."><u>natureza de consumo</u></span> dos produtos do studio, não tenho direito a reembolso.</label>',
+                    'label' => '<label style="line-height: initial; display: initial;">Entendo a <span data-tooltip="Entrega instantânea, considerada de consumo imediato após download."><u>natureza de consumo</u></span> do(s) produto(s) que estou adquirindo e que não tenho direito a <span data-tooltip="O reembolso é possível APENAS se não houver download do produto."><u>reembolso por arrependimento</u></span>.</label>',
                     )
                 );
 
