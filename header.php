@@ -26,7 +26,7 @@ if (! is_user_logged_in()) {
 	echo '<'.(is_front_page() ? 'header' : 'section').' id="cabecalho">';
 		echo '<div class="nav-mini container">';
 			echo '<div class="menu-mob" aria-label="Menu de navegação. Clique para mostrar.">';
-				echo '<a href="#" id="menu-mob"><i class="fas fa-stream"></i></a>';
+				echo '<a href="#" id="menu-mob" title="Menu de navegação."><i class="fas fa-stream"></i></a>';
 			echo '</div>';
 
 			if (class_exists('Woocommerce')) { 
@@ -54,7 +54,7 @@ if (! is_user_logged_in()) {
 		echo '</div>';
 
 		echo '<nav class="menu-site" aria-label="Navegação principal do site">';
-			echo '<ul id="navegacao" role="navigation">';
+			echo '<ul id="navegacao">';
 				afc_menu('primary');
 			echo '</ul>';
 		echo '</nav>';

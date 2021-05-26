@@ -38,7 +38,7 @@ $temaurl = get_stylesheet_directory_uri();
 
 echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_page(array('contato','briefing','planos','inscricao-afiliadas')) || (is_archive() && ! is_post_type_archive(array('etheme_portfolio','afc_depoimentos'))) || afc_woocommerce() ? ' style="margin-top:5em;float:left;clear:both;"' : '').'>';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
-		echo '<ul id="navegacao" role="navigation">';
+		echo '<ul id="navegacao">';
 			afc_menu('footer');
 		echo '</ul>';
 	echo '</nav>';
@@ -53,7 +53,7 @@ echo '<footer id="rodape"'.((is_single() && ! is_singular('afc_blog')) || is_pag
 			echo '</div>';
 
 			echo '<div>';
-				echo '<a href="https://transparencyreport.google.com/safe-browsing/search?url=afcweb.design" target="_blank" rel="nofollow noopener" data-tooltip="Transações 100% seguras e criptografadas via SSL!" style="display:block"><img style="width:auto;height:35px" src="'.$temaurl.'/img/logo-googlesecurity.svg" /></a>';
+				echo '<a href="https://transparencyreport.google.com/safe-browsing/search?url=afcweb.design" target="_blank" rel="nofollow noopener" data-tooltip="Transações 100% seguras e criptografadas via SSL!" style="display:block"><img style="width:auto;height:35px" src="'.$temaurl.'/img/logo-googlesecurity.svg" alt="Navegação segura do Google" /></a>';
 			echo '</div>';
 		echo '</div>';
 

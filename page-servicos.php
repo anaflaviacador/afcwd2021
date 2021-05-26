@@ -78,17 +78,7 @@ echo '<div class="container" id="pagina-servicos">';
 	get_template_part('inc/codigo-autoral');
 
 
-	$args = array('post_type' => 'etheme_portfolio', 'posts_per_page' => 6);
-	$publicacoes = new WP_Query($args);
-	if ( $publicacoes->have_posts() ) { $i = 0;
-		echo '<section class="container" id="projetos-principais"><h2 class="cursivo assinado">projetos</h2><div class="lista-posts"><ul>';
-		while ( $publicacoes->have_posts() ) : $i++; $publicacoes->the_post(); 
-			echo '<li itemscope itemtype="http://schema.org/CreativeWork" data-aos="fade-up" class="projeto-'.$i.' mostra-projeto">';
-				afc_projeto('large');
-			echo '</li>';
-		endwhile;
-		echo '</ul></div><div class="bt"><a data-aos="fade-up" href="'.$urlHome.'projetos" class="button">ver portfolio</a></div></section>';
-	} wp_reset_query();
+
 
 	echo '<div class="tipos-pagamento">';
 		echo '<ul aria-label="Tipos de pagamento">';
@@ -112,6 +102,20 @@ echo '<div class="container" id="pagina-servicos">';
 		// echo '</div>';
 	echo '</div>';	
 
+
+	$args = array('post_type' => 'etheme_portfolio', 'posts_per_page' => 6);
+	$publicacoes = new WP_Query($args);
+	if ( $publicacoes->have_posts() ) { $i = 0;
+		echo '<section class="container" id="projetos-principais"><h2 class="cursivo assinado">projetos</h2><div class="lista-posts"><ul>';
+		while ( $publicacoes->have_posts() ) : $i++; $publicacoes->the_post(); 
+			echo '<li itemscope itemtype="http://schema.org/CreativeWork" data-aos="fade-up" class="projeto-'.$i.' mostra-projeto">';
+				afc_projeto('large');
+			echo '</li>';
+		endwhile;
+		echo '</ul></div><div class="bt"><a data-aos="fade-up" href="'.$urlHome.'projetos" class="button">ver portfolio</a></div></section>';
+	} wp_reset_query();	
+
+	
 echo '</div>';
 
 

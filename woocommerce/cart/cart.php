@@ -149,10 +149,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<tr>
 						<td colspan="6" class="actions">
-							<div style="display:flex;">
+							<!-- <div style="display:flex;"> -->
 							<?php if ( wc_coupons_enabled() ) { ?>
-								<div class="coupon" style="flex-grow:1;margin-right:10px;display:flex;">
-									<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" style="width:180px;font-size:0.9em;text-transform:uppercase;border-radius: 8px!important;" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button style="flex-shrink:0;border-radius: 8px!important;" type="submit" class="button pequeno" name="apply_coupon" value="Aplicar cupom">Usar!</button>
+								<div class="coupon" style="display:flex;">
+									<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" style="width:180px;font-size:0.9em;text-transform:uppercase;border-radius: 8px!important;" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button style="flex-shrink:0;border-radius: 8px!important; width:90px" type="submit" class="button pequeno" name="apply_coupon" value="Aplicar cupom">Usar!</button>
 									<?php do_action( 'woocommerce_cart_coupon' ); ?>
 								</div>
 							<?php } ?>
@@ -162,7 +162,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 							<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-							</div>
+							<!-- </div> -->
 						</td>
 					</tr>
 
