@@ -16,7 +16,9 @@ function afc_depoimentos($num = '') {
 				echo '<div class="wrap">';
 					echo '<header>';
 						if (has_post_thumbnail()) {
-							echo '<figure><img data-pin-nopin="true" src="'.afc_thumb('thumbnail').'" alt="'.$nome.'"></figure>';
+							echo '<figure>';
+								echo the_post_thumbnail('thumbnail', array('alt' => 'Depoimento de '.$nome.' para o site AFC Web Design'));
+							echo '</figure>';
 						}
 
 						echo '<hgroup>';

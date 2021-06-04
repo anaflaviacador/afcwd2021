@@ -12,7 +12,7 @@ function afc_setup() {
     add_filter( 'style_loader_src', 'afc_removequerystring', 10, 2 );
     add_filter( 'script_loader_src', 'afc_removequerystring', 10, 2 );
     add_filter( 'script_loader_tag', 'afc_asyncjs', 10, 2);
-    add_filter( 'script_loader_tag', 'afc_noasyncjs', 10, 2);
+    // add_filter( 'script_loader_tag', 'afc_noasyncjs', 10, 2);
     add_filter( 'style_loader_tag', 'afc_cssnosync', 10, 4); 
     add_filter( 'xmlrpc_enabled', '__return_false');
 
@@ -176,6 +176,7 @@ function afc_load_styles() {
 
     // scripts do site
     wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
+    wp_enqueue_script( 'suporte-webp', $urltheme . '/js/webp.js', array('jquery-core'), '', true);
     if(! is_page_template('simples.php'))  {
       wp_enqueue_script( 'depoimentos', $urltheme . '/js/depoimentos.js', array('masonrydepos'), '', false);
       if (is_singular('afc_blog')) wp_enqueue_script( 'indice', $urltheme . '/js/indice.js', array('jquery-core'), '', true);
@@ -192,7 +193,7 @@ function afc_load_styles() {
 
 // colocar scripts assincronos
 function afc_asyncjs($tag, $handle) {
-   $scripts_to_async = array('fancybox','scripts','indice','planos');
+   $scripts_to_async = array('fancybox','scripts','webp','indice','planos');
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
          return str_replace(' src', ' async src', $tag);
@@ -202,15 +203,15 @@ function afc_asyncjs($tag, $handle) {
 }
 
 // nao rodar SCRIPT de forma assincrona no LS Cache
-function afc_noasyncjs($tag, $handle) {
-   $scripts_to_noasync = array('typewriter', 'lazying','masonrydepos','depoimentos');
-   foreach($scripts_to_noasync as $async_script) {
-      if ($async_script === $handle) {
-         return str_replace(' src', ' data-no-async="1" src', $tag);
-      }
-   }
-   return $tag;
-}
+// function afc_noasyncjs($tag, $handle) {
+//    $scripts_to_noasync = array('typewriter', 'lazying','masonrydepos','depoimentos');
+//    foreach($scripts_to_noasync as $async_script) {
+//       if ($async_script === $handle) {
+//          return str_replace(' src', ' data-no-async="1" src', $tag);
+//       }
+//    }
+//    return $tag;
+// }
 
 
 // nao rodar CSS de forma assincrona no LS Cache

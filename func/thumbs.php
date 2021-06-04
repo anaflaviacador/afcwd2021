@@ -17,7 +17,7 @@ add_image_size( 'afc_blog_thumb', 366, 200, true );
 function afc_thumb($size) {
   // $webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
   // $extensao = 'png';
-  // if( $webp == true ) $extensao = 'webp';  
+  // if( $webp !== false ) $extensao = 'webp';  
 
   global $post;
   $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),$size); 

@@ -11,9 +11,10 @@ $categorias = get_the_terms($idpost,'categoria_blog');
 $urlTema = get_template_directory_uri();
 $webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
 $png = 'png'; $jpg = 'jpg';
-if( $webp == true ) {$png = 'webp'; $jpg = 'webp';}
+if( $webp !== false ) {$png = 'webp'; $jpg = 'webp';}
 
 echo '<header id="chamada-principal" class="pag-interna-destaque singular" style="background-image: url('.$thumbnail.');">';
+	echo '<noscript>'; echo the_post_thumbnail('full'); echo '</noscript>';
 	echo '<div class="gradiente" aria-hidden="true"></div>';
 echo '</header>';
 		

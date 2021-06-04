@@ -6,15 +6,7 @@ add_theme_support( 'wc-product-gallery-slider' );
 add_action('admin_menu', 'afc_admin_menus_woo', 999 );
 function afc_admin_menus_woo(){
   remove_menu_page( 'wc_stripe' );
-  // add_submenu_page( 'woocommerce', 'Cupons desconto', 'Cupons desconto', 'manage_woocommerce', admin_url( 'edit.php?post_type=shop_coupon' ) );
 }
-
-// add_action('admin_head', 'afc_fix_css_admin',999 );
-// function afc_fix_css_admin() {
-//     echo '<style>';
-//       echo '.wrap.woocommerce {padding-top: 60px}';
-//     echo '</style>';
-// }
 
 // evita conflitos de otimizacao de imagem do plugin TinyPNG
 if(class_exists('Tiny_Compress')) add_filter( 'woocommerce_background_image_regeneration', '__return_false' );
@@ -31,8 +23,6 @@ function filter_ExtendSessionExpired($seconds) { return 60 * 60 * 72; }
 add_action( 'init', 'woocommerce_clear_cart_url' );
 function woocommerce_clear_cart_url() {
 	if ( isset( $_GET['limpar-carrinho'] ) ) {
-		// global $woocommerce;
-		// $woocommerce->cart->empty_cart();
         WC()->cart->empty_cart();
 	}
 }
@@ -110,45 +100,18 @@ function afc_redireciona_qdo_sai(){
 // ========================================//
 // PRODUTO
 // ========================================// 
-// // adicionar preco original com preco promocional
-// add_filter( 'woocommerce_get_price_html', 'afc_addpromocao', 10, 2 );
-// function afc_addpromocao( $price, $product ) {
-//     if( $product->is_on_sale())
-//         // return $price . sprintf( __('<p>Save %s</p>'), $product->regular_price - $product->sale_price );
-//         return '<span class="regular_price">De ' . str_replace( '<ins>', '</span> Por <ins>', $price );
-//     else
-//         return $price;
-// }
-
-
-// remove botao de add ao carrinho e coloca o link do produto no lugar
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-add_action( 'woocommerce_after_shop_loop_item', 'afcwoo_custom_bt_comprar', 15 );
-function afcwoo_custom_bt_comprar() {
-    echo '<a href="'.get_permalink().'" class="button rosa pequeno">Ver detalhes</a>';
-}
-
 // label de oferta / liquidacao
 add_filter( 'woocommerce_sale_flash', 'wc_custom_replace_sale_text' );
 function wc_custom_replace_sale_text( $html ) {
 	return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Promoção!', 'woocommerce' ), $html );
 }
 
-// para produtos gratis
-// add_filter( 'woocommerce_get_price_html', 'afcwoo_preco_free', 100, 2 );
-// function afcwoo_preco_free( $price, $product ){
-//     if ( 0 == $product->get_price() ) {
-//         $price = '<span class="woocommerce-Price-amount amount">Grátis!</span>';
-//     } 
-//     return $price;
-// }
-
 // retirar produtos relacionados
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 // limpa tudo da parte de resumo pra inserir conteudo completo
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 add_filter( 'woocommerce_product_description_heading', '__return_null' );
@@ -156,37 +119,16 @@ add_filter( 'woocommerce_product_additional_information_heading', '__return_null
 
 
 // remove area das tabs
-// remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
-
-// inserindo descricao abaixo do bt de compra
-add_action( 'woocommerce_single_product_summary', 'afcwoo_wrap_description_tab', 60 );
-function afcwoo_wrap_description_tab() {
-    echo '<div class="loja-wrap-descricao">';
-        woocommerce_template_single_add_to_cart();
-        echo '<article style="padding: 0">'; the_content(); echo '</article>';
-    echo '</div>';
-}
-
-
-// abas 
-add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
-function woo_remove_product_tabs( $tabs ) {
-
-    unset( $tabs['description'] );          // Remove the description tab
-    unset( $tabs['reviews'] );          // Remove the reviews tab
-    // unset( $tabs['additional_information'] );   // Remove the additional information tab
-
-    return $tabs;
-}
 
 // remove metabox do resumo do produto - que eh desenecessario
 function remove_excerpt_metabox() {
     remove_meta_box( 'postexcerpt','product','normal'); 
 }
-add_action('add_meta_boxes','remove_excerpt_metabox', 50);
+// add_action('add_meta_boxes','remove_excerpt_metabox', 50);
 
 // preços "a partir de"
 add_filter( 'woocommerce_format_price_range', 'afc_custom_range_price', 10, 3 );
@@ -373,6 +315,7 @@ function afc_botao_pagar( $button_html ) {
 
 // move cupom de lugar
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
 
 // ========================================//
 // ALEGACAO DE NAO REVENDA FORA DO SITE - qdo eh produto digital

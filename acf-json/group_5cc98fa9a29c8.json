@@ -25,7 +25,7 @@
             "label": "Nome e slogan",
             "name": "bform_nome",
             "type": "text",
-            "instructions": "Nome de sua empresa ou blog + slogan (opcional)",
+            "instructions": "Nome de sua empresa ou blog (o slogan é opcional)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -42,7 +42,7 @@
         },
         {
             "key": "field_5ccf0c178fa6e",
-            "label": "Tipo de projeto?",
+            "label": "Tipo de projeto",
             "name": "bform_estr",
             "type": "radio",
             "instructions": "Confirme a estrutura para direcionar os devidos campos nas próximas páginas do formulário.",
@@ -88,8 +88,8 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "<strong>Estrutura BLOG:<\/strong> projeto que segue a estrutura clássica dos blogs que conhecemos <em>(coluna de posts + coluna lateral de perfil)<\/em>; a estrutura segue praticamente a mesma em todas as páginas internas, porém, com possibilidade de diversas funcionalidades e widgets extras personalizadas. \r\n<span>Ideal para quem tem um blog como hobbie ou trabalha profissionalmente com criação de conteúdo.<\/span>",
-            "new_lines": "br",
+            "message": "<strong>Estrutura BLOG:<\/strong> projeto que segue a estrutura clássica dos blogs que conhecemos <em>(coluna de posts + coluna lateral de perfil)<\/em>; a estrutura segue praticamente a mesma em todas as páginas internas, porém, com possibilidade de diversas funcionalidades e widgets extras personalizadas. \r\nIdeal para quem tem um blog como hobbie ou trabalha profissionalmente com criação de conteúdo.",
+            "new_lines": "wpautop",
             "esc_html": 0
         },
         {
@@ -114,8 +114,8 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "<strong>Estrutura SITE:<\/strong> com uma estrutura mais fluida; funcionalidades personalizadas permitindo criação de páginas internas de forma dinâmica e direcionada ao seu público alvo. Possui uma área de notícias (blog interno) sem custo extra.\r\n<span>Ideal para empresas, profissionais autônomos, micro-empreendedores e criadores de conteúdo que buscam divulgar serviços e\/ou produtos além de seu blog.<\/span>",
-            "new_lines": "br",
+            "message": "<strong>Estrutura SITE:<\/strong> com uma estrutura mais fluida; funcionalidades personalizadas permitindo criação de páginas internas de forma dinâmica e direcionada ao seu público alvo. Possui uma área de notícias (blog interno) sem custo extra.\r\n\r\nIdeal para empresas, profissionais autônomos, micro-empreendedores e criadores de conteúdo que buscam divulgar serviços e\/ou produtos além de seu blog.",
+            "new_lines": "wpautop",
             "esc_html": 0
         },
         {
@@ -140,9 +140,44 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "<strong>Estrutura MINISITE:<\/strong> Com foco total na página inicial com informações sucintas, rápidas e de alto impacto, com alto poder de conversão. Possui poucas funcionalidades por ser um site de acesso rápido e com pouquíssimas páginas internas. Pode possuir uma área de notícias.\r\n<span>Ideal para profissionais que precisam de uma página de venda ou de um cartão de visita digital para se promover na internet.<\/span>",
-            "new_lines": "br",
+            "message": "<strong>Estrutura MINISITE:<\/strong> Com foco total na página inicial com informações sucintas, rápidas e de alto impacto, com alto poder de conversão. Possui poucas funcionalidades por ser um site de acesso rápido e com pouquíssimas páginas internas. Pode possuir uma área de notícias.\r\n\r\nIdeal para profissionais que precisam de uma página de venda ou de um \"cartão de visita\" digital para se promover e ser encontrado na internet.",
+            "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_60b0ba828b254",
+            "label": "Seu negócio",
+            "name": "bform_negocio",
+            "type": "textarea",
+            "instructions": "Faça uma descrição breve sobre o seu negócio.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "site"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5ccf0c178fa6e",
+                        "operator": "==",
+                        "value": "minisite"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
         },
         {
             "key": "field_5ccf2804a89cf",
@@ -239,7 +274,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "O studio AFC trabalha com afiliação à <a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Nuvem Hospedagem<\/a>, uma das melhores empresas provedoras de hospedagem de websites do Brasil, com atendimento 24\/7 e um ótimo custo-benefício ao consumidor. \r\n<span style=\"color:red\"><a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Clique aqui<\/a> e ganhe 50% de desconto na primeira sua mensalidade utilizando o cupom de desconto <strong>NUVEM50<\/strong>!<\/span>",
+            "message": "O studio AFC trabalha com afiliação à <a href=\"http:\/\/cliente.nuvemhospedagem.com.br\/aff.php?aff=20\" target=\"_blank\" rel=\"noopener\">Nuvem Hospedagem<\/a>, uma das melhores empresas provedoras de hospedagem de websites do Brasil, com atendimento 24\/7 e um ótimo custo-benefício ao consumidor.",
             "new_lines": "br",
             "esc_html": 0
         },
@@ -349,6 +384,93 @@
             "maxlength": "",
             "rows": 3,
             "new_lines": ""
+        },
+        {
+            "key": "field_60b1050607525",
+            "label": "Forma de pagamento",
+            "name": "bform_pgto",
+            "type": "radio",
+            "instructions": "Escolha como pretende pagar o seu projeto (você pode mudar de ideia depois, ok?)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "choices": {
+                "avista": "À vista via Pix ou boleto <small>(valor mais acessível)<\/small>",
+                "metade": "Metade para iniciar + Metade no final da produção <small>(valor à vista dividido em 2 partes iguais)<\/small>",
+                "parcelado": "Parcelado em até 12x no cartão de crédito",
+                "misto": "Entrada de 1\/3 do valor para iniciar + parcelar do restante no cartão no final",
+                "internacional": "Moro fora do Brasil e quero pagar de outra forma"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_60b107f2cc2ee",
+            "label": "Informação sobre pagamento parcelado",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60b1050607525",
+                        "operator": "==",
+                        "value": "parcelado"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_60b1050607525",
+                        "operator": "==",
+                        "value": "misto"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden rosa",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "<span style=\"color:red\">Todo pagamento parcelado contém cobrança de juros impostos pela prestadora do cartão + gateway de pagamento<\/span>. Assim que for fechado o valor do projeto, é enviado para ti uma tabelinha contendo as estimativas de juros das parcelas!<br><br>\r\n\r\nO studio usa a <a href=\"https:\/\/juno.com.br\/\" target=\"_blank\" rel=\"nofollow noopener\">Juno<\/a> para parcelar os pagamentos <em>(foi a menor taxa de parcelamento que achei para as clientes!)<\/em>, porém, <u>o parcelamento via cartão de crédito só é possível para cartões emitidos no Brasil<\/u>, ok? Infelizmente o parcelamento não é possível para cartões estrangeiros. <br><br>\r\n\r\nÉ usado o Paypal para pagamento em cartão emitido fora do BR, somente no valor à vista ou metade + metade.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_60b117d6bbb7a",
+            "label": "Informação sobre pagamento internacional",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60b1050607525",
+                        "operator": "==",
+                        "value": "internacional"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden rosa",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Para pagamentos internacionais o studio oferece o Paypal, pois é aceito amplamente no mundo, podendo usar praticamente qualquer cartão do país em que reside. Basta ter uma conta Paypal e seu cartão de crédito vinculado à conta aceitar pagamentos em moedas diferentes.<br><br>\r\n\r\nSe você tiver outra sugestão de pagamento &mdash; como transferir dinheiro pela Western union ou Wise (antiga Transferwise) &mdash; estou aberta à ouvir sua proposta! 😉<br><br>\r\n\r\n<strong>Qualquer pagamento internacional deve ser à vista antecipado ou metade + metade.<\/strong>",
+            "new_lines": "",
+            "esc_html": 0
         },
         {
             "key": "field_5ccf11915dbd7",
@@ -596,7 +718,7 @@
             "label": "Quais são os sites mais lindos que você já viu?",
             "name": "bform_geral_5",
             "type": "textarea",
-            "instructions": "Liste aqueles sites\/blog que você aprecia esteticamente, que se sente em casa, que tem a sua cara e a sensação que você gostaria de passar ao seu público. As referências visuais engloba paleta de cores, formas e elementos, linguagem e estética.",
+            "instructions": "Liste aqueles sites que você aprecia esteticamente, que se sente em casa, que tem a sua cara e a sensação que você gostaria de passar ao seu público. As referências visuais engloba paleta de cores, formas e elementos, linguagem e estética. <u>Não precisa ser do mesmo segmento que seu site!<\/u>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -658,10 +780,10 @@
         },
         {
             "key": "field_5ccf230bf329e",
-            "label": "Como você prefere a fonte de seus títulos e chamadas?",
+            "label": "Como você prefere o \"estilo\" de seus títulos e chamadas de texto?",
             "name": "bform_geral_8",
             "type": "text",
-            "instructions": "Informe o tipo de estilo de texto que você gostaria de utilizar no seu site. Seria com ar despojado, a delicadeza de uma caligrafia ou estilo geométricas e mais sérias? Elas seriam \"finas\" e mais delicadas, ou \"grossas\"? Ou gosta de um equilíbrio entre os estilos?",
+            "instructions": "Qual estilo que você pretende ver em seu site? Seria com ar despojado, a delicadeza de uma caligrafia ou estilo geométricas e mais sérias? Elas seriam \"finas\" e mais delicadas, ou \"grossas\"? Ou gosta de uma mistura entre os estilos?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -678,10 +800,10 @@
         },
         {
             "key": "field_5ccf250f8664d",
-            "label": "Quais são os itens que você mais aprecia nos sites responsivos?",
+            "label": "Quais são os itens que você mais aprecia em sites para celular?",
             "name": "bform_geral_9",
             "type": "textarea",
-            "instructions": "Pode incluir menus, fontes, disposição de elementos, etc. Se possível, enviar exemplos.",
+            "instructions": "Exemplo: forma de menu de navegação, estilo de texto, disposição de elementos etc. Se possível, enviar exemplos dos quais você gostaria de ver em seu layout.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -698,10 +820,10 @@
         },
         {
             "key": "field_5ccf252b8664e",
-            "label": "E qual é a dificuldade que você tem ao acessar sites pelo celular e\/ou tablet?",
+            "label": "O que você detesta ver em sites via celular e\/ou tablet?",
             "name": "bform_geral_10",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "Exemplo: lentidão, dificuldade para encontrar algo, rolagem muito grande, textos muitos pequenos (ou muito grandes) etc.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -817,13 +939,13 @@
             },
             "hide_admin": 0,
             "choices": {
-                "PAGINA <strong>SOBRE<\/strong>: Histórico da empresa ou da figura pública que escreve o site": "PAGINA <strong>SOBRE<\/strong>: Histórico da empresa ou da figura pública que escreve o site",
-                "PAGINA DE <strong>CONTATO<\/strong>: Com formulário de envio, podendo conter outras informações como telefone, mapa do google e redes sociais + armazenamento de email": "PAGINA DE <strong>CONTATO<\/strong>: Com formulário de envio, podendo conter outras informações como telefone, mapa do google e redes sociais + armazenamento de email",
+                "PAGINA <strong>SOBRE<\/strong>: apresentação de histórico da empresa ou da figura pública que escreve o site": "PAGINA <strong>SOBRE<\/strong>: apresentação de histórico da empresa ou da figura pública que escreve o site",
+                "PAGINA DE <strong>CONTATO<\/strong>: formulário de envio que poderá conter outras informações como telefone, mapa do google e redes sociais": "PAGINA DE <strong>CONTATO<\/strong>: formulário de envio que poderá conter outras informações como telefone, mapa do google e redes sociais",
                 "PAGINA DE <strong>SERVIÇOS<\/strong>": "PAGINA DE <strong>SERVIÇOS<\/strong>",
-                "PÁGINA DE <strong>CLIENTES<\/strong>": "PÁGINA DE <strong>CLIENTES<\/strong>",
-                "PÁGINA DE <strong>PARCEIROS<\/strong>": "PÁGINA DE <strong>PARCEIROS<\/strong>",
+                "PÁGINA DE <strong>CLIENTES<\/strong>: apresentação de depoimentos (em imagem, vídeo ou texto)": "PÁGINA DE <strong>CLIENTES<\/strong>: apresentação de depoimentos (em imagem, vídeo ou texto)",
+                "PÁGINA DE <strong>PARCEIROS<\/strong>: uma lista de parceiros com informações de contato e redirecionamento aos seus respectivos sites": "PÁGINA DE <strong>PARCEIROS<\/strong>: uma lista de parceiros com informações de contato e redirecionamento aos seus respectivos sites",
                 "PÁGINA DE <strong>NOTÍCIAS \/ BLOG<\/strong>": "PÁGINA DE <strong>NOTÍCIAS \/ BLOG<\/strong>",
-                "PAGINA DE <strong>RECURSOS:<\/strong> Como por exemplo lista de recursos e\/ou downloads de arquivos": "PAGINA DE <strong>RECURSOS:<\/strong> Como por exemplo lista de recursos e\/ou downloads de arquivos"
+                "PAGINA DE <strong>RECURSOS:<\/strong> lista de ferramentas indicadas e\/ou downloads de materiais gratuitos": "PAGINA DE <strong>RECURSOS:<\/strong> lista de ferramentas indicadas e\/ou downloads de materiais gratuitos"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -1142,11 +1264,11 @@
             "hide_admin": 0,
             "choices": {
                 "<strong>ÁREA PORTFOLIO:<\/strong> tenha uma área própria para você cadastrar seus trabalhos com sistema de comentários, categorização de projeto, galeria de imagens, descrição completa com resumo, área de cadastro de membros de equipe e botão de acessar projeto online.": "<strong>ÁREA PORTFOLIO:<\/strong> tenha uma área própria para você cadastrar seus trabalhos com sistema de comentários, categorização de projeto, galeria de imagens, descrição completa com resumo, área de cadastro de membros de equipe e botão de acessar projeto online.",
-                "<strong>E-COMMERCE NATIVO:<\/strong> uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, estoque etc. É usada a tecnologia Woocommerce. <span style=\"color:red\"><u>Alerta:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem pois e-commerce exige mais recursos de servidor que sites comuns.<span>": "<strong>E-COMMERCE NATIVO:<\/strong> uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, estoque etc. É usada a tecnologia Woocommerce. <span style=\"color:red\"><u>Alerta:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem pois e-commerce exige mais recursos de servidor que sites comuns.<span>",
+                "<strong>E-COMMERCE INTERNO:<\/strong> A tecnologia Woocommerce permite a inserção de uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, gestão de estoque para produtos físicos e venda de produtos digitais etc. <span style=\"color:red\"><u>Alerta:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem pois e-commerce exige mais recursos de servidor que sites comuns.<span>": "<strong>E-COMMERCE INTERNO:<\/strong> A tecnologia Woocommerce permite a inserção de uma loja virtual completa dentro do seu site, totalmente voltada para o seu público com um design único e opções super fáceis de manipular, como meios de pagamento, frete, gestão de estoque para produtos físicos e venda de produtos digitais etc. <span style=\"color:red\"><u>Alerta:<\/u> este recurso poderá requerer eventualmente upgrade de plano de hospedagem pois e-commerce exige mais recursos de servidor que sites comuns.<span>",
                 "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados apenas como catálogo, porém o botão de compra redireciona para uma plataforma externa. Ex: Hotmart, Eduzz, Zoom, Amazon, Mercadolivre, Aliexpress, Elo7 etc. Ideal para quem trabalha como afiliado e ganha comissão por cliques.": "<strong>CATALOGO DE PRODUTOS:<\/strong> quando os produtos são mostrados apenas como catálogo, porém o botão de compra redireciona para uma plataforma externa. Ex: Hotmart, Eduzz, Zoom, Amazon, Mercadolivre, Aliexpress, Elo7 etc. Ideal para quem trabalha como afiliado e ganha comissão por cliques.",
                 "<strong>CONSTRUTOR PÁGINA DE VENDA:<\/strong> tenha um módulo de construção de landing pages completinhas do início ao fim, com captura de leads, fazendo uso apenas de blocos personalizados e feitos sob medida para seu layout e <a href=\"https:\/\/afcweb.design\/blog\/tema-versus-pagebuilder\/\" target=\"_blank\">zero uso de Page Builders<\/a>.": "<strong>CONSTRUTOR PÁGINA DE VENDA:<\/strong> tenha um módulo de construção de landing pages completinhas do início ao fim, com captura de leads, fazendo uso apenas de blocos personalizados e feitos sob medida para seu layout e <a href=\"https:\/\/afcweb.design\/blog\/tema-versus-pagebuilder\/\" target=\"_blank\">zero uso de Page Builders<\/a>.",
-                "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc": "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc",
-                "<strong>ÁRA DE ACESSO RESTRITO:<\/strong> uma área que só membros do seu site pode acessar. Pode estar associado a e-commerce, do qual só quem comprou algo no site (ou fez uma assinatura) possui acesso a conteúdos exclusivos.": "<strong>ÁRA DE ACESSO RESTRITO:<\/strong> uma área que só membros do seu site pode acessar. Pode estar associado a e-commerce, do qual só quem comprou algo no site (ou fez uma assinatura) possui acesso a conteúdos exclusivos.",
+                "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc (área separada do próprio blog)": "<strong>ÁREA DE TUTORIAIS:<\/strong> como área de receitas; área de tutoriais dos produtos vendidos no site; DIY etc (área separada do próprio blog)",
+                "<strong>ÁREA DE MEMBROS:<\/strong> promova conteúdos exclusivos <em>(produtos, posts de blog, recursos, vídeos e muito mais!)<\/em> para uma área que só inscritos do seu site podem acessar, via inscrição gratuita ou paga (com planos de assinatura ou pagamento único) &mdash; esta última é associada à tecnologia woocommerce.": "<strong>ÁREA DE MEMBROS:<\/strong> promova conteúdos exclusivos <em>(produtos, posts de blog, recursos, vídeos e muito mais!)<\/em> para uma área que só inscritos do seu site podem acessar, via inscrição gratuita ou paga (com planos de assinatura ou pagamento único) &mdash; esta última é associada à tecnologia woocommerce.",
                 "<strong>GUIA DE FORNECEDORES:<\/strong> área dedicada para busca e cadastro de profissionais, separados por segmentos, com cada fornecedor possuindo sua própria página de apresentação, com foto, marca, mapa, informações de contato etc. Indispensável para sites e blogs de decoração, casamentos e dentre outros eventos.": "<strong>GUIA DE FORNECEDORES:<\/strong> área dedicada para busca e cadastro de profissionais, separados por segmentos, com cada fornecedor possuindo sua própria página de apresentação, com foto, marca, mapa, informações de contato etc. Indispensável para sites e blogs de decoração, casamentos e dentre outros eventos.",
                 "<strong>MIDIA KIT DINÂMICO:<\/strong> com criação de uma área específica para gerir o número de seguidores. Ideal para profissionais de geração de conteúdo. Pode conter gráficos, mapa com destaque nas regiões de maior engajamento, área de apresentação às empresas, formas de publicidade ofertadas, termos de uso e até mesmo um formulário de contato.": "<strong>MIDIA KIT DINÂMICO:<\/strong> com criação de uma área específica para gerir o número de seguidores. Ideal para profissionais de geração de conteúdo. Pode conter gráficos, mapa com destaque nas regiões de maior engajamento, área de apresentação às empresas, formas de publicidade ofertadas, termos de uso e até mesmo um formulário de contato.",
                 "<strong>GERADOR DE POPUPS:<\/strong> popups lindos e descomplicados para promover seu conteúdo e capturar leads de forma mais amigável e menos invasiva ao público, com poder de personalização de texto, botões, imagem e formulário de captura. Filtre as páginas que seu popup será mostrando e qual momento será visto.": "<strong>GERADOR DE POPUPS:<\/strong> popups lindos e descomplicados para promover seu conteúdo e capturar leads de forma mais amigável e menos invasiva ao público, com poder de personalização de texto, botões, imagem e formulário de captura. Filtre as páginas que seu popup será mostrando e qual momento será visto."
@@ -1169,7 +1291,13 @@
                 [
                     {
                         "field": "field_5ccf3909f02ab",
-                        "operator": "!=empty"
+                        "operator": "!=",
+                        "value": "<strong>E-COMMERCE INTERNO"
+                    },
+                    {
+                        "field": "field_5ccf3909f02ab",
+                        "operator": "!=",
+                        "value": "<strong>CATALOGO DE PRODUTOS"
                     }
                 ]
             ],
@@ -1186,11 +1314,31 @@
             "new_lines": ""
         },
         {
+            "key": "field_60b0f0a40aae6",
+            "label": "Serviço captura de emails",
+            "name": "bform_geral_16",
+            "type": "textarea",
+            "instructions": "Qual o seu nível de envolvimento com serviços de captura de emails? Você já faz uso de algum serviço? Se sim, qual? Pretende se manter nele, trocar ou ampliar seu uso?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "chamada-maior",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
             "key": "field_5ccf3bb6980e5",
             "label": "Recurso multilíngua",
             "name": "bform_geral_12",
             "type": "radio",
-            "instructions": "Ideal para quem busca (ou já atinge) público no exterior",
+            "instructions": "Deseja aplicar outras línguas em seu projeto? Se sim, qual modo que deseja?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1258,7 +1406,7 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "message": "O <strong>modo profissional<\/strong> é aplicado dentro do sistema, com conteúdo traduzido de forma exclusivamente manual (ou seja, não há tradução automática). Este módulo detecta automaticamente a língua usada no navegador do visitante, provendo maior experiência de navegação. Este módulo também promove melhorias no SEO para todas as línguas adicionais.<br><br>\r\n\r\n<em>A tecnologia que o studio utiliza para site multilíngue no módulo <u>profissional<\/u> é da <a href=\"https:\/\/wpml.org\/pt-br\/\" target=\"_blank\" rel=\"nofollow noopener\">WPML Multilingual CMS<\/a><\/em>. Esta tecnologia oferece o melhor plugin de tradução para sites Wordpress.<br><br>\r\n\r\nNo seu projeto será instalada a última versão disponível do plugin na implementação de seu layout, porém, se você quiser garantir atualizações <em>automáticas<\/em> sem auxílio do studio, será necessário adquirir a licença do WPML para seu domínio<span style=\"color:red;\">*<\/span>. Saiba mais <a href=\"https:\/\/wpml.org\/pt-br\/purchase\/\" target=\"_blank\" rel=\"nofollow noopener\">clicando aqui<\/a>.",
+            "message": "O <strong>modo profissional<\/strong> é implementado dentro do sistema, com conteúdo traduzido de forma exclusivamente manual. Este módulo detecta automaticamente a língua usada no navegador do visitante, provendo maior experiência de navegação. Este módulo também promove melhorias no SEO para todas as línguas adicionais.<br><br>\r\n\r\n<em>A tecnologia que o studio utiliza para site multilíngue no módulo <u>profissional<\/u> é da <a href=\"https:\/\/wpml.org\/pt-br\/\" target=\"_blank\" rel=\"nofollow noopener\">WPML Multilingual CMS<\/a><\/em>. Esta tecnologia oferece o melhor plugin para sites que precisam ter várias línguas simultaneamente.<br><br>\r\n\r\nNo seu projeto será instalada a última versão disponível do plugin, porém, o studio ainda não fornece a licença para atualizações. Para manter o uso devido, você precisará adquirir sua própria licença &mdash; que será apenas sua e intransferível, com atualizações automáticas. Saiba mais <a href=\"https:\/\/wpml.org\/pt-br\/purchase\/\" target=\"_blank\" rel=\"nofollow noopener\">clicando aqui<\/a>.",
             "new_lines": "",
             "esc_html": 0
         },
@@ -1288,6 +1436,31 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_60b0f8a0d03cb",
+            "label": "Informa multilíngua",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ccf3bb6980e5",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "msghidden",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "message": "Independente das escolhas acima, seu layout estará apto para receber qualquer língua que seja configurada para ser nativa em sua plataforma Wordpress. <em>Por exemplo: se uma dia você decide que seu site deixe de ser em português e passe a ser apenas em inglês, você pode!<\/em><br><br>\r\n\r\nTodos os layouts  produzidos pelo studio contém o arquivo .pot, que é o arquivo específico para receber traduções contendo todos os textos em pt-BR usados em layout. <br><br>\r\n\r\nAqui a gente só não faz o serviço de tradução em si, ok? 😉",
+            "new_lines": "",
+            "esc_html": 0
         },
         {
             "key": "field_5ccf1222113a6",
@@ -1405,26 +1578,6 @@
                     "ui_off_text": ""
                 }
             ]
-        },
-        {
-            "key": "field_5ed0f25f3a023",
-            "label": "Filtro Instagram",
-            "name": "bform_midias_3",
-            "type": "true_false",
-            "instructions": "Transformamos o seu filtro favorito do Lightroom diretamente para seus stories do insta! Além de filtro de cor, aplicamos também suavidade de linhas finas e grafismos usados na identidade visual para seu instagram combinar com seu layout.\r\n<br><br>\r\nObs: Não é realizado filtros de maquiagem, aplicação de cílios, máscaras e distorções faciais.\r\n<br><br>\r\n<strong>Custo de produção: R$350<\/strong>",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "chamada-maior",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "message": "Incluir produção de filtro",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
         }
     ],
     "location": [
@@ -1444,5 +1597,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "AFC WD - Formulário de briefing",
-    "modified": 1618001423
+    "modified": 1622220038
 }

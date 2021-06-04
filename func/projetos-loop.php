@@ -6,7 +6,7 @@ function afc_projeto($thumb = '', $excerpt = '') {
 	$title = get_the_title();
 
 	echo '<a href="'.get_the_permalink().'">';
-		echo '<img data-pin-nopin="true" src="'.afc_thumb($thumb).'" alt="'.$title.'">';
+		echo the_post_thumbnail($thumb, array('data-pin-nopin' => 'true', 'alt' => 'Projeto '.$title.', por AFC Web Design'));
 
 		echo '<summary>';
 			echo '<div class="categoria">';

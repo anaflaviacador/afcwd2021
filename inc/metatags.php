@@ -26,6 +26,8 @@ if (! is_singular('etheme_portfolio') && ! is_singular('afc_blog') ) echo '<meta
 // logo
 echo '<meta itemprop="logo" content="'.$tema.'/screenshot.png">';
 
+// google
+echo '<meta name="google-site-verification" content="A156l-P0DEFhSnkLFHGJ8lePS4DS45YMNr5LDUyltjw" />';
 
 //////////////// definir metatags se eh home ou outras pags
 if(is_home() || is_front_page()) {
@@ -173,6 +175,6 @@ if (has_site_icon()) {
 
 
 /////////////// Pinterest pixel code
-echo '<script>!function(e){if(!window.pintrk){window.pintrk = function () {
-window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0]; r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js"); pintrk(\'load\', \'2614196759086\', {em: \'<user_email_address>\'}); pintrk(\'page\'); pintrk(\'track\', \'pagevisit\');
-</script><noscript><img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?event=init&tid=2614196759086&pd[em]=<hashed_email_address>&noscript=1" /></noscript>';
+// echo '<script>!function(e){if(!window.pintrk){window.pintrk = function () {
+// window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0]; r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js"); pintrk(\'load\', \'2614196759086\', {em: \'<user_email_address>\'}); pintrk(\'page\'); pintrk(\'track\', \'pagevisit\');
+// </script><noscript><img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?event=init&tid=2614196759086&pd[em]=<hashed_email_address>&noscript=1" /></noscript>';

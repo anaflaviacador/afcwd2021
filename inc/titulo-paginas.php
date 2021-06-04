@@ -2,7 +2,7 @@
 
 $webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
 $extensao = 'jpg';
-if( $webp == true ) $extensao = 'webp';
+if( $webp !== false ) $extensao = 'webp';
 
 $urlTema = get_template_directory_uri();
 $titulo = '';

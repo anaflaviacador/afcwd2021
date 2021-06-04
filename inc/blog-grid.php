@@ -1,18 +1,13 @@
 <?php
 
-$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
-$extensao = 'jpg';
-if( $webp == true ) $extensao = 'webp';
-
 $idpost = get_the_ID();
 $titulo = get_the_title();
 $permalink = get_the_permalink();
-$thumbnail = afc_thumb('afc_blog_thumb');
 $categorias = get_the_terms($idpost,'categoria_blog');
 
 
  echo '<header>';
- 	echo '<img src="'.$thumbnail.'" alt="'.$titulo.'">';
+	 echo the_post_thumbnail('afc_blog_thumb', array('data-pin-nopin' => 'true', 'alt' => $titulo));
  	// echo '<div class="gradiente" aria-hidden="true"></div>';
  	echo '<a href="'.$permalink.'" aria-hidden="true" class="link"></a>';
 

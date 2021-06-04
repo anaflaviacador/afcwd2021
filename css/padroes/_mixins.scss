@@ -89,5 +89,15 @@
     background-size: 1762px auto;
     background-repeat: no-repeat;
 
-    @media (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) { background-image: url('../img/sprite@2x.png'); }
+    @media (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) { 
+        background-image: url('../img/sprite@2x.png');
+    }
+
+    body.suporte-webp & { 
+        background-image: url('../img/sprite.webp');  
+
+        @media (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+            background-image: url('../img/sprite@2x.webp');
+        } 
+    }
 }

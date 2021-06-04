@@ -5,7 +5,7 @@ $urlTema = get_template_directory_uri();
 $webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
 $extensao = 'png';
 $extensao2 = 'jpg';
-if( $webp == true ) {$extensao = 'webp'; $extensao2 = 'webp';}
+if( $webp !== false ) {$extensao = 'webp'; $extensao2 = 'webp';}
 
 // ========================================//
 // CHAMADA PRINCIPAL
@@ -48,7 +48,7 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 
 			echo '<summary>';
 				echo '<p>Aqui é a Ana, a designer que toca o studio <span class="afc">'; get_template_part('img/afc'); echo '.</span> Desde 2007 realizo sonhos de <em>empreendedoras</em>, <em>influencers</em> e <em>blogueiras</em> projetando sites, lojas virtuais, blogs e ferramentas através de um  <strong class="rosa">design único</strong>, <strong class="verde">inteligente</strong>, com <strong class="roxo">personalidade</strong> e <strong class="bege">propósito</strong>.</p>';
-				echo '<p><a href="'.$urlHome.'servicos" class="button pequeno">Conheça meu trabalho</a></p>';
+				// echo '<p><a href="'.$urlHome.'servicos" class="button pequeno">Conheça meu trabalho</a></p>';
 			echo '</summary>';
 		echo '</div>';
 
@@ -89,7 +89,9 @@ if ( $publicacoes->have_posts() ) { $i = 0;
 			afc_projeto('large');
 		echo '</li>';
 	endwhile;
-	echo '</ul></div><div class="bt"><a data-aos="fade-up" href="'.$urlHome.'projetos" class="button verde">ver mais projetos</a></div></section>';
+	echo '</ul></div>';
+		// echo '<div class="bt"><a data-aos="fade-up" href="'.$urlHome.'projetos" class="button verde">ver mais projetos</a></div>';
+	echo '</section>';
 }
 	
 
