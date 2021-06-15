@@ -22,4 +22,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<p class="has-text-align-center"><a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button medio verde wc-forward">Ir ao Pagamento</a></p>
+<p class="has-text-align-center"><a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button medio afirmacao wc-forward">Ir ao Pagamento</a></p>

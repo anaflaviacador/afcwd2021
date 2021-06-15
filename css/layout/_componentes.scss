@@ -193,18 +193,23 @@
 
 			&:before {
 				display: inline-block;
-				margin-right: 10px;
+				margin-right: 7px;
 				content: "\f105";
 				font-family: $fonte-icone;
 				color: var(--cor-roxo);
 				vertical-align: middle;
+				font-weight: 400;
+				width: 11px;
 			}
 
 			&:hover {
 				text-decoration: none;
 			}
 
-			&.ativo {font-weight: bold;}
+			&.ativo {
+				font-weight: bold;
+				&:before {content: '\f107';}
+			}
 		}
 		
 		.aba-conteudo {

@@ -37,8 +37,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<?php /* ?><th class="product-thumbnail">&nbsp;</th><?php */ ?>
 						<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
 						<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-						<?php /* ?><th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th><?php */ ?>
-						<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
+						<?php /* ?><th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
+						<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th><?php */ ?>
 					</tr>
 				</thead>
 				<tbody>
@@ -132,13 +132,14 @@ do_action( 'woocommerce_before_cart' ); ?>
 								echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 								?>
 								</td>
-								<?php */ ?>
+								
 
 								<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
 									<?php
 										echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 									?>
 								</td>
+								<?php */ ?>
 							</tr>
 							<?php
 						}
@@ -178,7 +179,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<div class="afc-total">
 		<div style="display:flex;justify-content:space-between;align-items:flex-start;">
 			<h3 class="titulo">Total a pagar</h3>
-			<a href="<?php echo $pgShop; ?>" class="button mini rosa"><i class="fas fa-long-arrow-left"></i> &nbsp;Voltar à loja</a>
+			<a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="button mini roxo"><i class="fas fa-long-arrow-left"></i> &nbsp;Voltar à loja</a>
 		</div>
 		<?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 		<?php do_action( 'woocommerce_cart_collaterals' );?>

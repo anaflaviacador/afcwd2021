@@ -17,7 +17,6 @@ function afc_shortcode_paragraph_fix($content) {
 add_filter('the_content', 'afc_shortcode_paragraph_fix');
 
 
-
 // ========================================//
 // SHORTCODES
 // ========================================// 
@@ -185,6 +184,21 @@ function afc_shortcode_marca($atts, $content = null) {
     return $output;
 
 } add_shortcode('marca','afc_shortcode_marca');
+
+
+
+// ========================================//
+// SHORTCODE ON FIELDS
+// ========================================//     
+// codigo acf que permite que funcione o shortcode
+if(!function_exists('afc_text_area_shortcode')) {function afc_text_area_shortcode($value, $post_id, $field) {
+  if (is_admin()) return $value;
+  return do_shortcode($value);
+}}
+if(class_exists('acf')) {
+    add_filter('acf/load_value/type=textarea', 'afc_text_area_shortcode', 10, 3);
+    add_filter('acf/format_value/type=text', 'afc_text_area_shortcode', 10, 3);
+}
 
 
 // ========================================//

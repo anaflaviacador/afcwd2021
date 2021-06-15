@@ -240,8 +240,8 @@
 	}
 
 	div.bt {
-		text-align: center; position: relative;
-		width: 100%; padding-top: 2em;
+		text-align: right; position: relative;
+		width: 100%; padding-top: 10px;
 
 		&:after {@extend %sprite;}
 

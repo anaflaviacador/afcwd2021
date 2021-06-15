@@ -101,6 +101,7 @@
 	clear: both;
 	color: white;
 	position: relative;
+	margin-top: 5em;
 
 	&:before {
 		content: ""; @extend %sprite;

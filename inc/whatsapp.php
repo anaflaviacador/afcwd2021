@@ -22,6 +22,6 @@ echo '<div id="afc_btwhats">';
 			echo '<a href="" target="_blank" id="afc_btwhats_box_form_mandar">&nbsp;</a>';
 		echo '</div>';
 		
-		echo '<div class="afc_btwhats_box_horario">Atendimento: 14h às 17h, de seg à sexta</div>';
+		echo '<div class="afc_btwhats_box_horario">Atendimento: 14h às 17h, seg à sexta. Horário de Brasília.</div>';
 	echo '</div>';
 echo '</div>';

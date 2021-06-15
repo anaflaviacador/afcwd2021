@@ -1,4 +1,7 @@
 <?php
+// ========================================//
+// HABILITA WOO
+// ========================================// 
 add_theme_support( 'wc-product-gallery-zoom' );
 add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
@@ -109,13 +112,15 @@ function wc_custom_replace_sale_text( $html ) {
 // retirar produtos relacionados
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
-// limpa tudo da parte de resumo pra inserir conteudo completo
+// limpa tudo no geral da pag
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 add_filter( 'woocommerce_product_description_heading', '__return_null' );
 add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
+
 
 
 // remove area das tabs
@@ -134,6 +139,31 @@ function remove_excerpt_metabox() {
 add_filter( 'woocommerce_format_price_range', 'afc_custom_range_price', 10, 3 );
 function afc_custom_range_price( $price, $from, $to ) {
     return sprintf( 'A partir de %s', wc_price( $from ) );
+}
+
+// texto sobre estoque
+add_filter( 'woocommerce_get_availability', 'custom_get_availability', 1, 2);
+function custom_get_availability( $availability, $_product ) {
+    if ($_product->managing_stock() && $_product->is_in_stock() ) $availability['availability'] = __('Serviço disponível por tempo limitado.');
+
+    if ($_product->managing_stock() && !$_product->is_in_stock() ) $availability['availability'] = __('Serviço esgotado. Já já estará de volta!');
+    
+    return $availability;
+}
+
+// bt comprar customizado
+add_filter('woocommerce_product_single_add_to_cart_text','afc_custom_add_cart');
+function afc_custom_add_cart(){
+    global $product;
+    $lp = get_field('ativar_lp',$product->ID);
+    $nome = get_field('nome_produto',$product->ID);
+
+    if($lp && $nome) {
+        return 'Comprar '.$nome.'!';
+    } else {
+        return 'Comprar!';
+    }
+
 }
 
 
@@ -308,7 +338,7 @@ add_filter( 'woocommerce_order_button_html', 'afc_botao_pagar' );
 function afc_botao_pagar( $button_html ) {
 
     $order_button_text = 'Finalizar pagamento';
-    $button_html = '<p class="has-text-align-center" style="width:100%; margin-top:2em"><button type="submit" class="button verde medio" name="woocommerce_checkout_place_order" style="float:none;display:inline-block" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button></p>';
+    $button_html = '<p class="has-text-align-center" style="width:100%; margin-top:2em"><button type="submit" class="button afirmacao medio" name="woocommerce_checkout_place_order" style="float:none;display:inline-block" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button></p>';
 
     return $button_html;
 }

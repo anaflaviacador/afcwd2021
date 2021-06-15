@@ -109,6 +109,8 @@ h1, h2, h3, h4, h5 {
 	&.rosa {color: var(--cor-rosa);}
 	&.roxo {color: var(--cor-roxo);}
 	&.verde {color: var(--cor-verde);}
+	&.afirmacao {color: var(--cor-afirmacao);}
+	&.negacao {color: var(--cor-negacao);}
 	&.bege {color: var(--cor-bege);}
 	&.azul {color: var(--cor-azul);}
 }
@@ -234,7 +236,7 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	@include transition(background 0.2s ease-in-out, padding 0.2s ease-in-out, transform 0.2s ease-in-out);
 	@extend %letterspacing;
 	border-radius: 100px !important;
-	@extend %textshadow;
+	text-shadow: 1px 1px 0 transparentize(black,0.9) !important; 
 
 	&:hover, &:focus {
 	    -webkit-transform: scale(1.05) !important;
@@ -249,6 +251,8 @@ a.button, button.button, .button, .enviar input[type="submit"] {
 	&.rosa {background-color: var(--cor-rosa) !important;}
 	&.roxo {background-color: var(--cor-roxo) !important;}
 	&.verde {background-color: var(--cor-verde) !important;}
+	&.afirmacao {background-color: var(--cor-afirmacao) !important;}
+	&.negacao {background-color: var(--cor-negacao) !important;}
 	&.bege,&.alt {background-color: var(--cor-bege) !important;}
 	&.azul {background-color: var(--cor-azul) !important;}
 

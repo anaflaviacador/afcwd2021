@@ -3,6 +3,34 @@
 .afc-form-row-first { float: left !important; clear: unset !important;}
 .afc-form-row-last { float: right !important; clear: unset !important;}
 
+// notificacoes
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+	border: 1px solid var(--cor-azul-medio);
+	border-left-width: 6px;
+	border-left-color: var(--cor-azul); padding-left: 3em;
+	border-left-style: solid;
+	background-color: var(--cor-azul-claro);
+	// font-size: .85em; line-height: 1.45;
+	// min-height: 53px;
+	
+	&:before { color: var(--cor-azul); left: 1em;}
+	a:not(.button) { color: inherit; }
+	a.button { font-size: 10px }
+
+	a:not(.button) { color: inherit; text-decoration: underline;}
+
+	& > * { position: relative; z-index: 1;}
+}
+.woocommerce-error {
+	border-color: var(--cor-negacao);
+	background-color: var(--cor-rosa-claro);
+
+	&:before { color: var(--cor-negacao)}
+}
+// .woocommerce-info { border-top-color: var(--afc-color_afirmacao); }
+
+
+
 // ========================================//
 // PAGINA DE LOGIN PADRAO
 // ========================================//
@@ -442,18 +470,25 @@ div.woocommerce {
 	width: $colmax; max-width: 100%;
 	margin-left: auto; margin-right: auto;
 
+	a:not(.button) { color: inherit !important; }
 
 	.woocommerce-notice { margin-bottom: 3em; font-size: 1.2em; text-align: center;}
 
 	.woocommerce-customer-details, .order-again { display: none; }
 
-	ul.order_details li {
-	    padding-right: 1.5em; margin-right: 1.5em;
-	    margin-bottom: 12px;
+	ul.order_details {
+		display: none;
+		// text-align: center;
+		// li {
+		// 	padding-right: 1.5em; margin-right: 1.5em; float: none;
+		// 	margin-bottom: 12px;  display: inline-block;
 
-	    strong { margin-top: 6px; }
+		// 	&.total, &.date { display: none;}
 
-	    &:last-of-type { padding-right: 0; margin-right: 0; }
+		// 	strong { margin-top: 6px; }
+
+		// 	&:last-of-type { padding-right: 0; margin-right: 0; }
+		// }
 	}
 }
 

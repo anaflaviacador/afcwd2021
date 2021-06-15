@@ -171,6 +171,9 @@ jQuery(document).ready(function($) {
     );
   });
 
+  var abrirIMG = $('.afczoom');
+  if (abrirIMG.length > 0) { abrirIMG.fancybox(); }
+
 
 
   ///////////////////////////////////////// TIME ZONE - MOSTRA WHATS
@@ -200,18 +203,18 @@ jQuery(document).ready(function($) {
     }
     else if (afcwd_BRHour >= 8 && afcwd_BRHour < 14 && afcwd_BRDay > 0 && afcwd_BRDay < 6) {
         afcwd_StatusWhaaa.removeClass('off').removeClass('on').addClass('ocupada');
-        afcwd_SaudacoesWhaaa.append('Oi, bom dia! <em>Já já estarei de volta!</em> ✌️');
-        afcwd_ChamadaWhaaa.append('E você? Está pronta para tirar do papel o projeto dos seus sonhos? 🎉 Fale comigo, em breve te retorno!');
+        afcwd_SaudacoesWhaaa.append('Oi, bom dia! <em>Já já estarei online!</em> ✌️');
+        afcwd_ChamadaWhaaa.append('Está pronta para tirar do papel o projeto dos seus sonhos? 🎉 Fale comigo! Em breve te respondo.');
     }
     else if (afcwd_BRDay === 0 || afcwd_BRDay === 6) {
         afcwd_StatusWhaaa.removeClass('on').removeClass('ocupada').addClass('off');
         afcwd_SaudacoesWhaaa.append('Oi, aproveitando o <em>fim de semana</em>? 😎✨');
-        afcwd_ChamadaWhaaa.append('Deixe seu recado que na segunda te respondo. Você também pode entrar em  <a href="/contato">contato por email</a>. 💌');
+      afcwd_ChamadaWhaaa.append('Deixe seu recado que te respondo no próximo dia útil, ou entre em <a href="/contato">contato por email</a>. 💌');
     } 
     else {
         afcwd_StatusWhaaa.removeClass('on').removeClass('ocupada').addClass('off');
         afcwd_SaudacoesWhaaa.append('Oi, estou <u>offline</u> agora 🙈');
-        afcwd_ChamadaWhaaa.append('Deixe seu recado que te retornarei em breve, ou entre em <a href="/contato">contato por email</a>. 💌');
+      afcwd_ChamadaWhaaa.append('Deixe seu recado que te respondo no próximo dia útil, ou entre em <a href="/contato">contato por email</a>. 💌');
     }    
   }
   
