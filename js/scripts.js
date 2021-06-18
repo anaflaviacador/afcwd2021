@@ -196,25 +196,28 @@ jQuery(document).ready(function($) {
       $( "a#afc_btwhats_box_form_mandar" ).attr( 'href', 'https://api.whatsapp.com/send?phone=5562996269941&text=' + value );
     }).keyup();
 
+    $fraseON = 'Quer orçar o projeto dos seus sonhos? Está com dúvidas sobre um produto da loja? Fale comigo! ✨';
+    $fraseOFF = 'Fale comigo que te respondo no próximo dia útil. Aproveite e conheça meu <a href="https://afcweb.design/loja/temas/aurora/">tema premium à venda</a>! ✨';
+
     if (afcwd_BRHour >= 14 && afcwd_BRHour < 17 && afcwd_BRDay > 0 && afcwd_BRDay < 6) {
         afcwd_StatusWhaaa.removeClass('off').removeClass('ocupada').addClass('on');
         afcwd_SaudacoesWhaaa.append('Oi, <strong>Ana</strong> <u>online</u> aqui! 👩‍💻');
-        afcwd_ChamadaWhaaa.append('Está pronta para tirar do papel o projeto dos seus sonhos? 🥳');
+      afcwd_ChamadaWhaaa.append($fraseON);
     }
     else if (afcwd_BRHour >= 8 && afcwd_BRHour < 14 && afcwd_BRDay > 0 && afcwd_BRDay < 6) {
         afcwd_StatusWhaaa.removeClass('off').removeClass('on').addClass('ocupada');
         afcwd_SaudacoesWhaaa.append('Oi, bom dia! <em>Já já estarei online!</em> ✌️');
-        afcwd_ChamadaWhaaa.append('Está pronta para tirar do papel o projeto dos seus sonhos? 🎉 Fale comigo! Em breve te respondo.');
+      afcwd_ChamadaWhaaa.append($fraseON);
     }
     else if (afcwd_BRDay === 0 || afcwd_BRDay === 6) {
         afcwd_StatusWhaaa.removeClass('on').removeClass('ocupada').addClass('off');
         afcwd_SaudacoesWhaaa.append('Oi, aproveitando o <em>fim de semana</em>? 😎✨');
-      afcwd_ChamadaWhaaa.append('Deixe seu recado que te respondo no próximo dia útil, ou entre em <a href="/contato">contato por email</a>. 💌');
+      afcwd_ChamadaWhaaa.append($fraseOFF);
     } 
     else {
         afcwd_StatusWhaaa.removeClass('on').removeClass('ocupada').addClass('off');
         afcwd_SaudacoesWhaaa.append('Oi, estou <u>offline</u> agora 🙈');
-      afcwd_ChamadaWhaaa.append('Deixe seu recado que te respondo no próximo dia útil, ou entre em <a href="/contato">contato por email</a>. 💌');
+      afcwd_ChamadaWhaaa.append($fraseOFF);
     }    
   }
   

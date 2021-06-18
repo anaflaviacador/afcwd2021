@@ -1074,7 +1074,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -1084,6 +1084,22 @@
                                     "prepend": "",
                                     "append": "",
                                     "maxlength": ""
+                                },
+                                {
+                                    "key": "field_60cb27743d0e2",
+                                    "label": "Botão",
+                                    "name": "botao",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "hide_admin": 0,
+                                    "return_format": "array"
                                 }
                             ]
                         },
@@ -1411,5 +1427,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1623332899
+    "modified": 1623926678
 }

@@ -227,6 +227,7 @@ if(have_rows('produto_lp') ) {
 					$icone = get_sub_field('icone'); $tom = get_sub_field('tom');
 					$titulo = get_sub_field('titulo'); $subtitulo = get_sub_field('subtitulo');
 					$descricao = get_sub_field('descricao'); $asterisco = get_sub_field('asterisco');
+					$botao = get_sub_field('botao');
 					$timer = ($i / 2) * 100;
 
 					echo '<li class="'.$tom.'" data-aos="fade-up" data-aos-delay="'.$timer.'">';
@@ -234,7 +235,8 @@ if(have_rows('produto_lp') ) {
 						if($titulo) echo '<h3 class="marca-dagua">'.$titulo.($subtitulo ? ' <span aria-hidden="true">'.$subtitulo.'</span>' : '').'</h3></header>';
 						if($descricao) echo wp_kses_post($descricao);
 
-						if($asterisco) echo '<div class="observacao">'.wp_kses_post($asterisco).'</div>';
+						if($botao) echo '<footer><a href="'.$botao['url'].'" class="button pequeno '.$tom.'" target="'.$botao['target'].'">'.$botao['title'].'</a></footer>';
+						if($asterisco && empty($botao)) echo '<div class="observacao">'.wp_kses_post($asterisco).'</div>';
 					echo '</li>';
 					
 

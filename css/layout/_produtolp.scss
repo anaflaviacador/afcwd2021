@@ -277,6 +277,10 @@
             .bundled_product {
                 width: 49%; 
                 border: 0 !important; margin-bottom: 0 !important;
+
+                @media (max-width: $celular) { width: 100%; }
+
+
                 .bundled_product_title {font-size: 1em; font-weight: 500;}
                 .bundled_product_title_link { display: none; }
                 .bundled_product_excerpt { font-size: .85em; font-style: italic; opacity: .85; }
@@ -578,6 +582,11 @@
                     i { font-size: 1.6em;}
                     h3 { font-size: 1.1em;}
                 }
+			}
+
+            footer {
+				position: absolute; bottom: 0; left: 50%; 
+				@include transform(translate(-50%,50%));
 			}
 
 			p { line-height: 1.45; }

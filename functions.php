@@ -284,7 +284,13 @@ function afc_load_scripts_footer() {
 
   if(is_post_type_archive('afc_blog')) echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'site\',\'e-commerce\',\'blog\'],delay: 120,autoStart: true,loop: true});</script>';
   
-  if(! is_page_template('simples.php')) echo '<script type="text/javascript">jQuery(document).ready(function(e){AOS.init({duration:600,easing:"ease-out",once:!0})});</script>';
+  if(! is_page_template('simples.php')) {
+    echo '<script type="text/javascript">jQuery(document).ready(function(e){AOS.init({duration:600,easing:"ease-out",once:!0})});</script>';
+    // freshdesk - helpdesk da loja
+    echo '<script>window.fwSettings = { \'widget_id\':70000001417 }; !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() </script>';
+    echo '<script type=\'text/javascript\' src=\'https://widget.freshworks.com/widgets/70000001417.js\' async defer></script>';
+  }
+
 
   // configuracoes da barra de admin, caso exista
   if (is_admin_bar_showing()) {

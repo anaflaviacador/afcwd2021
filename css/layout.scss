@@ -134,3 +134,8 @@ a[data-target="#faq"]:hover {text-decoration: underline;}
 		input.button { margin-top: 10px; }
 	}
 }
+
+@media (max-width: $smart-menor) {
+	#cookie-law-info-again {display: none !important;}
+}
+#cookie-law-info-bar {z-index: 2147483001 !important}
