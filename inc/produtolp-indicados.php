@@ -20,7 +20,7 @@ echo '<div class="afclp-recomendacoes">';
                 echo '<div class="intro">Melhor Hospedagem + Domínio</div>';
                 echo '<h3>Nuvem Hospedagem</h3>';
             echo '</header>';
-            echo '<p>Hospedagem com servidores nacionais de altíssima qualidade, suporte incrível e 100% humanizado. Use o cupom do studio e ganhe 30% de desconto no 1ª ciclo de assinatura (mensal, trimestral ou semestral).</p>';
+            echo '<p>Hospedagem com servidores nacionais de altíssima qualidade, suporte incrível e 100% humanizado. Use o cupom do studio e ganhe 30% de desconto no 1º ciclo de assinatura (mensal, trimestral ou semestral).</p>';
         echo '</aside>';
 
         echo '<a class="link" href="https://cliente.nuvemhospedagem.com.br/aff.php?aff=20" target="_blank" rel="noopener" title="Acessar o site da Nuvem Hospedagem"></a>';

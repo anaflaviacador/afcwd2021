@@ -176,7 +176,7 @@
 
 			// marca
 			&.menu-item-home {
-				@media (min-width: $tablet) {max-width: 270px;}
+				@media (min-width: $tablet) {max-width: 300px;}
 				& > a {
 					span.nome { background-image: url('../img/marca-afcwebdesign.svg'); }
 					&:hover, &:focus {

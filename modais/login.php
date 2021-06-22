@@ -1,8 +1,8 @@
 <?php
 $cadastro = home_url(). '/minha-conta';
 echo '<div id="customer_login">';
-	echo '<h2 class="has-text-align-center cursivo">área de cliente</h2>';
-	//echo '<p class="has-text-align-center">Não tem cadastro? <a href="'.$cadastro.'" style="text-decoration:underline">Clique aqui</a> e faça o seu!</p>';
+	echo '<h2 class="has-text-align-center cursivo">Área de membros</h2>';
+	echo '<p class="has-text-align-center">Não tem cadastro? <a href="'.$cadastro.'" style="text-decoration:underline">Clique aqui</a> e faça o seu!</p>';
 	echo '<form class="woocommerce-form woocommerce-form-login login afc-login" method="post">';
 		do_action( 'woocommerce_login_form_start' );
 
