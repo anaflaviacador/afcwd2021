@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/madlyluv/public_html/afcweb.design/wp-content/themes/afcwd2021-site/
+    - /bin/cp -R * $DEPLOYPATH
+    
