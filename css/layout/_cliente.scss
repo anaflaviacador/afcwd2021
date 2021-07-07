@@ -540,33 +540,6 @@ span.afc-pedido-status {
 	.form-briefing {
 		max-width: $colmax;
 		font-size: .9em;
-
-		input { margin-top: 5px !important;}
-
-		.wpforms-field-pagebreak { margin-left: -10px;}
-
-		button.wpforms-page-button {
-			display: inline-block;
-			outline: 0;
-			background-color: var(--cor-grafite) !important;
-			color: white !important;
-			letter-spacing: 0.09em;
-			line-height: 1;
-			cursor: pointer;
-			font-size: .65em !important; padding: .6em 1.2em !important;
-			position: relative;
-			font-size: 1em;
-			font-weight: bold;
-			text-transform: uppercase;
-			white-space: nowrap;
-			border: 0;
-			font-family: $fonte-redonda;
-			box-shadow: none !important;
-			@extend %letterspacing;
-			border-radius: 100px !important;
-			text-shadow: 1px 1px 0 transparentize(black,0.9) !important; 
-			margin-left: 10px;
-		}
 	}
 
 	@media (max-width: $container) { 
