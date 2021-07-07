@@ -453,3 +453,4 @@ function afc_admin_css_simples() {
       echo '}';
     echo '</style>';
 }
+

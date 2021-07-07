@@ -1,6 +1,6 @@
 {
     "key": "group_60ba7c40e7336",
-    "title": "LP de Produto",
+    "title": "Pagina de Produto",
     "fields": [
         {
             "key": "field_60ba7c4ecc105",
@@ -1406,6 +1406,34 @@
             "button_label": "Adicionar Linha",
             "min": "",
             "max": ""
+        },
+        {
+            "key": "field_60cfd953ba367",
+            "label": "Descrição completa para extensão",
+            "name": "descricao_extensao",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60ba7c4ecc105",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 1
         }
     ],
     "location": [
@@ -1427,5 +1455,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1623926678
+    "modified": 1624234811
 }
