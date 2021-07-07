@@ -36,7 +36,7 @@ if (is_front_page() || is_post_type_archive(array('etheme_portfolio')) || is_pag
 // ========================================// 
 $temaurl = get_stylesheet_directory_uri();
 
-echo '<footer id="rodape"'.(is_front_page() || is_post_type_archive(array('etheme_portfolio')) || is_page(array('servicos','sobre')) || is_singular('afc_blog') ? ' style="margin-top:0em;"' : '').'>';
+echo '<footer id="rodape"'.(is_front_page() || is_post_type_archive(array('etheme_portfolio','afc_depoimentos')) || is_page(array('servicos','sobre')) || is_singular('afc_blog') ? ' style="margin-top:0em;"' : '').'>';
 	echo '<nav class="menu-site" aria-label="Navegação do rodapé do site">';
 		echo '<ul id="navegacao">';
 			afc_menu('footer');
