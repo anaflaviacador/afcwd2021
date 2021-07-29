@@ -1,5 +1,6 @@
 <?php get_header(); 
 
+$url = home_url(('/'));
 
 		echo '<div class="container" id="pagina-planos">';
 			if (have_posts()) { while (have_posts()) : the_post();
@@ -56,7 +57,7 @@
 					echo '<footer id="basic">';
 						echo $cancela;
 						echo '<div class="botao">';
-							echo '<a target="_blank" href="https://afcweb.design/finalizar-compra/?add-to-cart=5438" data-novo-cliente="https://afcweb.design/finalizar-compra/?add-to-cart=5492" id="assinar-plano-basic" class="btAssinarPlano button medio azul">assinar!</a>'; 
+							echo '<a href="'.$url.'?add-to-cart=5438" data-novo-cliente="'.$url.'?add-to-cart=5492" id="assinar-plano-basic" class="btAssinarPlano button medio azul">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
@@ -112,7 +113,7 @@
 					echo '<footer id="standard">';
 						echo $cancela;
 						echo '<div class="botao">';
-							echo '<a target="_blank" href="https://afcweb.design/finalizar-compra/?add-to-cart=5439" data-novo-cliente="https://afcweb.design/finalizar-compra/?add-to-cart=5493" id="assinar-plano-standard" class="btAssinarPlano button medio verde">assinar!</a>';
+							echo '<a href="'.$url.'?add-to-cart=5439" data-novo-cliente="'.$url.'?add-to-cart=5493" id="assinar-plano-standard" class="btAssinarPlano button medio verde">assinar!</a>';
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
@@ -168,7 +169,7 @@
 					echo '<footer id="premium">';
 						echo $cancela;
 						echo '<div class="botao">';
-							echo '<a target="_blank" href="https://afcweb.design/finalizar-compra/?add-to-cart=5440" data-novo-cliente="https://afcweb.design/finalizar-compra/?add-to-cart=5495" id="assinar-plano-premium" class="btAssinarPlano button medio">assinar!</a>'; 
+							echo '<a href="'.$url.'?add-to-cart=5440" data-novo-cliente="'.$url.'?add-to-cart=5495" id="assinar-plano-premium" class="btAssinarPlano button medio">assinar!</a>'; 
 						echo '</div>';
 					echo '</footer>';
 				echo '</div>';
