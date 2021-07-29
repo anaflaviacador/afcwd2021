@@ -66,8 +66,9 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 			<div class="col-2">
 
 				<div style="display:flex;justify-content:space-between;align-items:flex-start; margin-bottom: 10px;">
-					<h3>Pedido e pagamento</h3>
-					<a href="<?php echo wc_get_page_permalink('cart'); ?>" class="button mini"><i class="fa fa-shopping-cart"></i> &nbsp;Rever carrinho</a>
+					<h3>Pedido</h3>
+					<a href="<?php echo wc_get_page_permalink('cart'); ?>" class="button mini"><i class="fa fa-shopping-cart"></i> &nbsp;carrinho</a>
+					<a href="<?php echo wc_get_page_permalink('shop'); ?>" class="button mini">voltar à loja</a>
 				</div>
 
 				<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
