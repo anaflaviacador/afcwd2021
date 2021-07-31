@@ -84,7 +84,7 @@ echo '<div class="modal" id="faq" aria-label="Perguntas frequentes">';
 echo '</div>'; 
 
 if(!is_page('contato') && ! is_page('planos') && ! is_user_logged_in()) {
-	get_template_part('inc/popup');
+	// get_template_part('inc/popup');
 }
 
 get_template_part('inc/whatsapp');
