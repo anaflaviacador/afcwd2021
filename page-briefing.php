@@ -15,7 +15,7 @@ echo '<article class="container" id="pagina-briefing">';
 	$formBRIEFING = '5786'; // local 5827
 
 	// captura entradas do form de briefin
-	$entries = wpforms()->entry->get_entries(['form_id' => '5827']);
+	$entries = wpforms()->entry->get_entries(['form_id' => $formBRIEFING]);
 	
 	
 	$clienteEnviouForm = false; // declara 1º como false se enviou form
