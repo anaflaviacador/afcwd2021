@@ -298,8 +298,9 @@ function afc_logos_pgto( $gateways ) {
     if ( isset( $gateways['paghiper_pix'] ) ) $gateways['paghiper_pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
     if ( isset( $gateways['juno-pix'] ) ) $gateways['juno-pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
     if ( isset( $gateways['juno-credit-card'] ) ) $gateways['juno-credit-card']->icon = get_stylesheet_directory_uri() . '/img/flag-brasil.svg';
+    if ( isset( $gateways['pagseguro'] ) ) $gateways['pagseguro']->icon = get_stylesheet_directory_uri() . '/img/logo-pagseguro-gateway.svg';
 
-        return $gateways;
+    return $gateways;
 }
 
 add_filter( 'woocommerce_paypal_icon', 'afc_logos_pgto_pp' ); 
