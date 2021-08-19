@@ -16,17 +16,20 @@
 $plano-bg-claro: (
 	($azul-claro),
 	($verde-claro),
-	($roxo-claro)
+	($roxo-claro),
+	($rosa-claro)
 );
 $plano-bg-medio: (
 	($azul-medio),
 	($verde-medio),
-	($roxo-medio)
+	($roxo-medio),
+	($rosa-medio)
 );
 $plano-cor: (
 	($azul),
 	($verde),
-	($roxo)
+	($roxo),
+	($rosa)
 );
 
 .todos-planos {
@@ -252,22 +255,23 @@ $plano-cor: (
 	width: 100%;
 
 	td, th {
-		border: 2px solid white;
+		border: 2px solid $cinza;
 		font-size: 13px;
 		padding: 10px;
 		text-align: center;
 		line-height: 1.3;
 	}
 
-	th { font-size: 1.1em; font-family: $fonte-redonda;}
+	th { font-size: 1em; font-family: $fonte-redonda; font-weight: bold; text-transform: uppercase;}
 
-	@for $i from 1 through 3 {
-		th:nth-of-type(#{$i}) {
-			background: nth($plano-bg-medio,$i);
-			font-weight: bold; text-transform: uppercase;
-			// color: nth($plano-cor,$i);
-		}
-	}
+	
+	
+	th:nth-of-type(2) { background: nth($plano-bg-medio,1); }
+	th:nth-of-type(3) { background: nth($plano-bg-medio,2); }
+	th:nth-of-type(4) { background: nth($plano-bg-medio,3); }
+	th:nth-of-type(5) { background: nth($plano-bg-medio,4); }
+	
+	
 }
 
 

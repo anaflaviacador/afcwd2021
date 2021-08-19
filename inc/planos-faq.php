@@ -1,4 +1,6 @@
 <?php
+$url = home_url(('/'));
+
 echo '<div class="wp-block-columns abinhas">';
 
 	echo '<div class="wp-block-column">';
@@ -32,6 +34,14 @@ echo '<div class="wp-block-columns abinhas">';
 				echo '<p>Caso tenha diversas funcionalidades e recursos, o <em style="color:var(--cor-verde);">standard</em> é perfeito pois há os benefícios ideais para manter todas as funcionalidades sempre bem redondinhas e funcionando a todo vapor.</p>';
 
 				echo '<p>Agora, se você possui uma loja virtual, tem alto tráfego, não tem tempo algum para gerenciar seu site ou seu trabalho depende exclusivamente dele, o plano <em style="color:var(--cor-roxo);">premium</em> é ideal para ti! Ele é o mais completo dos planos, o único com monitoramento da segurança.</p>';
+			echo '</div>';
+		echo '</div>';
+		echo '<div class="aba">';
+			echo '<div class="aba-titulo">Moro fora do Brasil. Posso contratar um plano?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>Sim! Todo serviço do studio é prestado de forma remota, então é atendido clientes de qualquer país do mundo! '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').'</p>';
+				echo '<p>Para assinar, basta informar o seu país de residência que ficará disponível a forma de pagamento internacional. As assinaturas são cobradas em Real Brasileiro via Stripe, então <em>é preciso que o seu cartão seja internacional</em> para que a transação ocorra com sucesso! Se você tiver um cartão emitido no Brasil e queira usa-lo na assinatura, é só informar um endereço de residência brasileiro.</p>';
+				echo '<p style="line-height:1.3"><small>Obs: o studio não é responsável por taxas adicionais que podem ser cobradas na fatura de seu cartão, nem tarifas de conversão de moeda.</small></p>';
 			echo '</div>';
 		echo '</div>';
 		echo '<div class="aba">';
@@ -97,14 +107,45 @@ echo '<div class="wp-block-columns abinhas">';
 				echo '<p style="line-height:1.3"><small>Incluso no plano: apontamentos DNS de domínio, atribuição de email remetente e implementação de formulário no layout</small></p>';
 			echo '</div>';
 		echo '</div>';
+
 		echo '<div class="aba">';
-			echo '<div class="aba-titulo">Moro fora do Brasil. Posso contratar um plano?</div>';
+			echo '<div class="aba-titulo">Posso contratar apenas um plano de email marketing ao invés do pacote completo de manutenção?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Sim! Todo serviço do studio é prestado de forma remota, então é atendido clientes de qualquer país do mundo! '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').'</p>';
-				echo '<p>Para assinar, basta informar o seu país de residência que ficará disponível a forma de pagamento internacional. As assinaturas são cobradas em Real Brasileiro via Stripe, então <em>é preciso que o seu cartão seja internacional</em> para que a transação ocorra com sucesso! Se você tiver um cartão emitido no Brasil e queira usa-lo na assinatura, é só informar um endereço de residência brasileiro.</p>';
-				echo '<p style="line-height:1.3"><small>Obs: o studio não é responsável por taxas adicionais que podem ser cobradas na fatura de seu cartão, nem tarifas de conversão de moeda.</small></p>';
+				echo '<p>Sim! Veja abaixo as mensalidades em relação à quantidade de disparos mensais:</p>';
+				echo '<table class="tabela-planos-trimestrais">';
+					echo '<tr>';
+						echo '<th>📬</th>';
+						echo '<th>2mil</th>';
+						echo '<th>10mil</th>';
+						echo '<th>50mil</th>';
+						echo '<th>100mil</th>';
+					echo '</tr>';
+					echo '<tr>';
+						echo '<td>Mensalidade</td>';
+						echo '<td>R$9,90</td>';
+						echo '<td>R$32,90</td>';
+						echo '<td>R$59,90</td>';
+						echo '<td>R$84,90</td>';
+					echo '</tr>';
+					echo '<tr>';
+						echo '<td>Templates *</td>';
+						echo '<td>-</td>';
+						echo '<td>1</td>';
+						echo '<td>2</td>';
+						echo '<td>3</td>';
+					echo '</tr>';
+					echo '<tr>';
+						echo '<td>&nbsp;</td>';
+						echo '<td><a href="'.$url.'?add-to-cart=5827" class="button mini azul">assinar</a></td>';
+						echo '<td><a href="'.$url.'?add-to-cart=5828" class="button mini verde">assinar</a></td>';
+						echo '<td><a href="'.$url.'?add-to-cart=5829" class="button mini">assinar</a></td>';
+						echo '<td><a href="'.$url.'?add-to-cart=5830" class="button mini rosa">assinar</a></td>';
+					echo '</tr>';
+				echo '</table>';
+				echo '<p style="line-height:1.3"><small>* São modelos prontos incluídos na contratação (não se renova ao mês, ok?) para você criar e-mail lindos com sua identidade.</small></p>';
 			echo '</div>';
 		echo '</div>';
+		
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Qual é o tipo de hospedagem que se adequa aos planos?</div>';
 			echo '<div class="aba-conteudo">';
