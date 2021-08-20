@@ -1,5 +1,6 @@
 <?php  
 $urlHome = esc_url(home_url('/'));
+$urlTema = get_template_directory_uri();
 
 // ========================================//
 // DEPOIMENTOS
@@ -46,10 +47,11 @@ echo '<footer id="rodape"'.(is_front_page() || is_post_type_archive(array('ethem
 	echo '<div class="copyright">';
 		echo '<div class="container">';
 			echo '<div aria-label="Meios de pagamento aceitos">';
-				echo '<span style="display: inline-block !important;" data-tooltip="Aceitamos pagamentos nacionais e internacionais com cartão de crédito!"><img alt="Bandeiras Master, Visa, Elo, American Express, Hiper, JBC e mais" style="width:auto;height:18px" src="'.$temaurl.'/img/cartoes-juno.svg" /></span>';
-				echo '<span style="display: inline-block !important;" data-tooltip="Pagamentos com Pix são processados na hora!"><img alt="Pix" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-pix-gateway.svg" /></span>';
-				echo '<span style="display: inline-block !important;" data-tooltip="Pagamentos com Boleto são processados em até 1 dia útil."><img alt="Boleto" style="width:auto;height:18px;margin-left:10px;" src="'.$temaurl.'/img/logo-boleto.svg" /></span>';
-				echo '<span style="display: inline-block !important;" data-tooltip="Aceitamos pagamentos internacionais com Paypal!"><img alt="Paypal" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-paypal.svg" /></span>';
+				// echo '<span style="display: inline-block !important;" data-tooltip="Aceitamos pagamentos nacionais e internacionais com cartão de crédito!"><img alt="Bandeiras Master, Visa, Elo, American Express, Hiper, JBC e mais" style="width:auto;height:18px" src="'.$temaurl.'/img/cartoes-juno.svg" /></span>';
+				// echo '<span style="display: inline-block !important;" data-tooltip="Pagamentos com Pix são processados na hora!"><img alt="Pix" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-pix-gateway.svg" /></span>';
+				// echo '<span style="display: inline-block !important;" data-tooltip="Pagamentos com Boleto são processados em até 1 dia útil."><img alt="Boleto" style="width:auto;height:18px;margin-left:10px;" src="'.$temaurl.'/img/logo-boleto.svg" /></span>';
+				// echo '<span style="display: inline-block !important;" data-tooltip="Aceitamos pagamentos internacionais com Paypal!"><img alt="Paypal" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-paypal.svg" /></span>';
+				echo '<img style="width:auto;max-width:100%;height:21px;" src="'.$urlTema.'/img/lp/formas-pgto-dark.svg" alt="É aceito pagamento com praticamente todas as bandeiras de cartão de crédito, pix, boleto, picpay, pagseguro e paypal para pagamentos internacionais.">';
 			echo '</div>';
 
 			echo '<div>';
