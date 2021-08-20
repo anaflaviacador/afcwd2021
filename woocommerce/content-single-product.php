@@ -363,9 +363,11 @@ if(have_rows('produto_lp') ) {
 		echo '</section>';
 
 		echo '<div class="afclp-formas-pgto'.($espaco ? ' espaco' : '').($inverter ? ' inverter' : '').'">';
-			echo '<img src="'.$urlTema.'/img/lp/formas-pgto-dark.svg" alt="É aceito pagamento com praticamente todas as bandeiras de cartão de crédito, pix, boleto e paypal para pagamentos internacionais.">';
-			echo '<p>Pagamentos nacionais são cobrados por Pix, Boleto ou cartão em até 12x, e transações internacionais são cobradas à vista via cartão ou conta Paypal.</p>';
+			echo '<img src="'.$urlTema.'/img/lp/formas-pgto-dark.svg" alt="É aceito pagamento com praticamente todas as bandeiras de cartão de crédito, pix, boleto, picpay, pagseguro e paypal para pagamentos internacionais.">';
+			echo '<p>Pagamentos nacionais podem ser pagos por todas opções mostradas ao lado. Internacionais são cobradas à vista via cartão de crédito ou conta Paypal.</p>';
 		echo '</div>';
+
+		// echo do_shortcode('[products]');
 	}	
 
 
