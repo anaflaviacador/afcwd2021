@@ -438,7 +438,7 @@ article {
 
 	hr {
 		margin: 0 auto;
-		border:0;
+		border:0 !important;
 		position: relative;
 
 		&:not(.simples) { width: 80%; height: 85px; }
@@ -451,6 +451,7 @@ article {
 			background: var(--cor-texto); 
 		    display: block; @extend %borda-redonda;
 		}
+		
 		&:not(.sem-enfeite):after {
 			@extend %sprite; height: 67px; width: 175px;
 			background-position: -343px -192px;
