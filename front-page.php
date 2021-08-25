@@ -128,8 +128,16 @@ echo '<div class="container" style="padding-top: 2em; padding-bottom: 2em">';
 						echo '<span>Acesso instantâneo <small>comprou, baixou!</small></span>';
 					echo '</li>';
 					echo '<li data-aos="fade-left" data-aos-delay="450">';
+						echo '<i class="far fa-shopping-cart"></i>';
+						echo '<span>Add-on Loja virtual <small>para woocommerce</small></span>';
+					echo '</li>';
+					echo '<li data-aos="fade-left" data-aos-delay="500">';
 						echo '<i class="far fa-hands-heart"></i>';
 						echo '<span>6 meses de suporte <small>via email e whatsapp</small></span>';
+					echo '</li>';
+					echo '<li data-aos="fade-left" data-aos-delay="550">';
+						echo '<i class="far fa-tools"></i>';
+						echo '<span>Instalação gratuita <small>no suporte estendido</small></span>';
 					echo '</li>';
 				echo '</ul>';
 
