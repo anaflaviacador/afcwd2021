@@ -102,7 +102,7 @@ echo '<div class="container" style="padding-top: 2em; padding-bottom: 2em">';
 
 		//// descricao
 		echo '<div class="descricao" data-aos="fade-left">';
-			echo '<h2 class="titulo desk">Tema premium <span>para empreendedoras e influencers</span></h2>';
+			echo '<h2 class="titulo desk">Tema premium</h2>';
 
 			echo '<p>Deixe seu site com um design elegante e atraente com <strong>Aurora</strong>, o template premium pronto para uso do studio!</p>';
 
