@@ -140,7 +140,7 @@ if(have_rows('produto_lp') ) {
 
 					if($descricao) echo wp_kses_post($descricao);
 
-					if($pgtos) echo '<img src="'.$urlTema.'/img/lp/formas-pgto.svg" alt="É aceito pagamento com praticamente todas as bandeiras de cartão de crédito, pix, boleto e paypal para pagamentos internacionais.">';
+					if($pgtos) echo '<img src="'.$urlTema.'/img/lp/formas-pgto.svg" alt="É aceito pagamento com praticamente todas as bandeiras de cartão de crédito, pix, boleto, picpay, pagseguro e paypal para pagamentos internacionais.">';
 				echo '</div>';
 			endwhile;
 			echo '</section>';

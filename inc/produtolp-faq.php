@@ -1,6 +1,7 @@
 <?php
 global $product;
 $nomeproduto = get_field('nome_produto',$product->ID);
+$urlTema = get_template_directory_uri();
 
 echo '<h2 class="cursivo has-text-align-center" style="padding-top:40px;margin-top:-40px;" id="faq">Perguntas frequentes</h2>';
 	echo '<p class="has-text-align-center" style="margin-bottom:2em">Dúvidas sobre como baixar, compatibilidade, pagamento etc? Veja abaixo.</p>';
@@ -22,8 +23,10 @@ echo '<div class="wp-block-columns afclp-faq abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Quais são as formas de pagamento aceitas?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>O studio trabalha com Pix, Boleto Bancário, cartão de crédito e Paypal (este último aplicado apenas para compra internacional). É aceito praticamente todas as bandeiras conhecidas nacionalmente, podendo dividir a compra em até 6x s/juros ou 12x c/juros.</p>';
-				echo '<p><strong>Dica:</strong> <em>É imprescindível que o endereço informado no checkout seja verdadeiro</em> e que coincida com os dados do cartão informado para que o sistema anti-fraude do gateway não bloqueie sua compra, ok? </p>';
+				echo '<p>O studio trabalha com Pix, boleto e cartão de crédito. Também é aplicado checkouts redirecionados para pagar com Paypal, PicPay e PagSeguro &mdash; sendo este último apresentando opções de pagar com saldo Pagbank ou cartão de débito Caixa.</p>';
+				echo '<p>É aceito praticamente todas as bandeiras conhecidas nacionalmente, podendo dividir a compra em até 6x sem juros ou até 18x com acréscimento.</p>';
+				echo '<img src="'.$urlTema.'/img/lp/formas-pgto.svg" alt="Meios de pagamento.">';
+				echo '<p><strong>Vai pagar com cartão?</strong> <em><u>É imprescindível que o endereço informado no checkout seja verdadeiro</u> e que coincida com os dados da fatura do seu cartão para que o sistema anti-fraude do gateway não bloqueie sua compra, ok?</em></p>';
 			echo '</div>';
 		echo '</div>';
 
