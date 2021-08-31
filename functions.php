@@ -35,6 +35,7 @@ function afc_setup() {
     add_filter( 'excerpt_more', 'afc_excerpt_more' );
     add_filter( 'excerpt_length', 'afc_excerpt_length', 999 );
     add_filter( 'body_class', 'afc_body_class' );
+    add_filter( 'big_image_size_threshold', '__return_false' ); // desabilitar scaled
 
     include_once(get_template_directory().'/func/shortcodes.php' );
     include_once(get_template_directory().'/func/thumbs.php' );
