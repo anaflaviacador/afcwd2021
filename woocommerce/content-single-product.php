@@ -84,7 +84,7 @@ if(have_rows('produto_lp') ) {
 				}
 
 				$termsID = wc_terms_and_conditions_page_id();
-				if($tour && !empty($tour_video)) echo '<p class="termos">Leia os <a href="'.get_the_permalink($termsID).'" target="_blank">termos de uso</a> para saber como funciona a licença e o que entra no suporte. Para demais dúvidas, veja a sessão de <a class="jump" href="#faq">perguntas e respostas</a> do tema.</p>';
+				if($tour && !empty($tour_video)) echo '<p class="termos">Há emissão de nota fiscal! Leia os <a href="'.get_the_permalink($termsID).'" target="_blank">termos de uso</a> para saber como funciona a licença e o que entra no suporte. Para demais dúvidas, veja a sessão de <a class="jump" href="#faq">perguntas e respostas</a> do tema.</p>';
 
 			echo '</div>';
 
@@ -331,7 +331,7 @@ if(have_rows('produto_lp') ) {
 				echo '</script>';
 
 				$termsID = wc_terms_and_conditions_page_id();
-				echo '<p class="termos">Leia os <a href="'.get_the_permalink($termsID).'" target="_blank">termos de uso</a> para saber como funciona a licença e o que entra no suporte.<br>Para demais dúvidas, veja a sessão de <a class="jump" href="#faq">perguntas e respostas</a> do tema.</p>';
+				echo '<p class="termos">Há emissão de nota fiscal! Leia os <a href="'.get_the_permalink($termsID).'" target="_blank">termos de uso</a> para saber como funciona a licença e o que entra no suporte. Para demais dúvidas, veja a sessão de <a class="jump" href="#faq">perguntas e respostas</a> do tema.</p>';
 
 
 			echo '</div>';
