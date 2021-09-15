@@ -117,7 +117,7 @@ echo '<section class="container area-artigo">';
 
 		get_template_part('inc/blog-share');
 
-		echo '<a href="https://cliente.nuvemhospedagem.com.br/aff.php?aff=20" target="_blank" rel="noopener"><img src="https://www.nuvemhospedagem.com.br/afiliados.png" alt="Nuvem Hospedagem"></a>';
+		echo '<br><a href="https://cliente.nuvemhospedagem.com.br/aff.php?aff=20" target="_blank" rel="noopener"><img src="https://www.nuvemhospedagem.com.br/afiliados.png" alt="Nuvem Hospedagem"></a>';
 
 	echo '</aside>';
 
