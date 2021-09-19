@@ -47,7 +47,7 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 			echo '</a>';
 
 			echo '<summary>';
-				echo '<p>Aqui é a Ana, a designer que toca o studio <span class="afc">'; get_template_part('img/afc'); echo '.</span> Desde 2007 realizo sonhos de <em>empreendedoras</em>, <em>influencers</em> e <em>blogueiras</em> projetando sites, lojas virtuais, blogs e ferramentas através de um  <strong class="rosa">design único</strong>, <strong class="verde">inteligente</strong>, com <strong class="roxo">personalidade</strong> e <strong class="bege">propósito</strong>.</p>';
+				echo '<p>Aqui é a Ana, a designer que toca o studio <span class="afc">'; get_template_part('img/afc'); echo '.</span> Desde 2007 realizo sonhos de <em>empreendedoras</em>, <em>influencers</em> e <em>blogueiras</em> projetando sites, lojas virtuais, blogs e ferramentas através de um <strong class="rosa">design único</strong>, <strong class="verde">inteligente</strong>, com <strong class="roxo">personalidade</strong> e <strong class="bege">propósito</strong>.</p>';
 				// echo '<p><a href="'.$urlHome.'servicos" class="button pequeno">Conheça meu trabalho</a></p>';
 			echo '</summary>';
 		echo '</div>';
@@ -58,11 +58,11 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 		echo '<div class="mockup" data-aos="fade-left" data-aos-delay="200">';
 			echo '<picture role="img" aria-label="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
 
-			    echo '<source type="image/png" srcset="'.$urlTema.'/img/mockup1.png" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
-			    echo '<source type="image/png" srcset="'.$urlTema.'/img/mockup1@2x.png" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
-			    echo '<img data-pin-nopin="true" srcset="'.$urlTema.'/img/mockup1.png" alt="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
+			    echo '<source type="image/png" srcset="'.$urlTema.'/img/mockup1.'.$extensao.'" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
+			    echo '<source type="image/png" srcset="'.$urlTema.'/img/mockup1@2x.'.$extensao.'" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+			    echo '<img data-pin-nopin="true" srcset="'.$urlTema.'/img/mockup1.'.$extensao.'" alt="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
 			echo '</picture>';
-			// echo '<a href="https://afcweb.design/projetos/" class="ver">Ver outros projetos exclusivos</a>';
+			// echo '<a href="https://afcweb.design/projetos/" class="ver">Ver outros projetos como este</a>';
 		echo '</div>';
 
 	echo '</div>';
