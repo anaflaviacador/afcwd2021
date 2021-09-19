@@ -58,8 +58,8 @@ echo '<section id="chamada-principal" aria-label="Área de apresentação da emp
 		echo '<div class="mockup" data-aos="fade-left" data-aos-delay="200">';
 			echo '<picture role="img" aria-label="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
 
-			    echo '<source type="image/png" srcset="'.$urlTema.'/img/mockup1.'.$extensao.'" media="(-webkit-min-device-pixel-ratio: 1) and (max-resolution: 191dpi)">';
-			    echo '<source type="image/png" srcset="'.$urlTema.'/img/mockup1@2x.'.$extensao.'" media="(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)">';
+			    echo '<source type="image/png" srcset="'.$urlTema.'/img/mockup1.'.$extensao.'" media="(max-resolution: 191dpi)">';
+			    echo '<source type="image/png" srcset="'.$urlTema.'/img/mockup1@2x.'.$extensao.'" media="(min-resolution: 192dpi)">';
 			    echo '<img data-pin-nopin="true" srcset="'.$urlTema.'/img/mockup1.'.$extensao.'" alt="Tela de vários dispositivos demonstrando projeto de webiste responsivo">';
 			echo '</picture>';
 			// echo '<a href="https://afcweb.design/projetos/" class="ver">Ver outros projetos como este</a>';
