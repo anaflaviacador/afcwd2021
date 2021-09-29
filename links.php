@@ -32,7 +32,7 @@ echo '<header id="cabecalho" style="box-shadow: none">';
 echo '</header>';
 
 if (have_posts()) {
-	echo '<article class="container mini-page-insta">';
+	echo '<article class="container mini-page-insta" style="min-height: calc(100vh - 283px);">';
 	while (have_posts()) : the_post();
 
 		the_content();
