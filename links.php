@@ -45,21 +45,21 @@ if (have_posts()) {
 				echo '</p>';
 
 
-				if ($i == 2) {
-					echo '<div class="area-news">';
-						$urlTema = get_template_directory_uri();
-						$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
-						$extensao = 'jpg';
-						if( $webp !== false ) $extensao = 'webp';
-						echo '<div class="foto" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao.');"></div>';
+				// if ($i == 2) {
+				// 	echo '<div class="area-news">';
+				// 		$urlTema = get_template_directory_uri();
+				// 		$webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
+				// 		$extensao = 'jpg';
+				// 		if( $webp !== false ) $extensao = 'webp';
+				// 		echo '<div class="foto" style="background-image: url('.$urlTema.'/img/foto-oficial.'.$extensao.');"></div>';
 
-						echo '<h2 class="cursivo has-text-align-center">conteúdos exclusivos</h2>';
-						echo '<p class="has-text-align-center">dicas sobre design, freebies, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu site!</p>';
+				// 		echo '<h2 class="cursivo has-text-align-center">conteúdos exclusivos</h2>';
+				// 		echo '<p class="has-text-align-center">dicas sobre design, freebies, métodos e ferramentas web para manter a saúde e o ótimo desempenho do seu site!</p>';
 
-						get_template_part('inc/news');
+				// 		get_template_part('inc/news');
 
-					echo '</div>';
-				}
+				// 	echo '</div>';
+				// }
 			endwhile;
 		}
 
