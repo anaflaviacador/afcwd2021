@@ -248,10 +248,15 @@ function custom_override_checkout_fields_ek( $fields ) {
     }
 
 
-    // $fields['billing']['billing_address_1']['class'] = array( 'afc-form-row-first' );
-    $fields['billing']['billing_neighborhood']['class'] = array( 'afc-form-row-last' );
+    $fields['billing']['billing_address_1']['class'] = array( 'afc-form-row-first' );
+    $fields['billing']['billing_number']['class'] = array( 'afc-form-row-last' );
+    $fields['billing']['billing_persontype']['class'] = array( 'afc-form-row-first' );
+    $fields['billing']['billing_cpf']['class'] = array( 'afc-form-row-last' );
+    $fields['billing']['billing_cnpj']['class'] = array( 'afc-form-row-last' );
 
-    $fields['billing']['billing_number']['placeholder'] = 'Insira S/N se não houver';
+    $fields['billing']['billing_neighborhood']['class'] = array( 'afc-form-row-wide clear' );
+
+    $fields['billing']['billing_number']['placeholder'] = 'Insira SN se não houver';
 
     return $fields;
 }
@@ -259,7 +264,7 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_ek'
 
 add_filter('woocommerce_default_address_fields', 'override_default_address_checkout_fields', 20, 1);
 function override_default_address_checkout_fields( $fields ) {
-    $fields['address_1']['placeholder'] = 'Rua / avenida (não precisa de complemento ou bairro)';
+    $fields['address_1']['placeholder'] = 'Rua / avenida';
     // $fields['postcode']['label'] = 'CEP / Postcode / ZIP';
     return $fields;
 }
