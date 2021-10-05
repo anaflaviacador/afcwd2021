@@ -233,10 +233,12 @@ function custom_override_checkout_fields_ek( $fields ) {
     unset($fields['billing']['billing_company']);
     unset($fields['billing']['billing_address_2']);
     unset($fields['billing']['billing_phone']);
-    unset($fields['billing']['billing_neighborhood']);
+    // unset($fields['billing']['billing_neighborhood']);
     // unset($fields['billing']['billing_country']);
 
-    // $fields['billing']['billing_email']['priority'] = 21;
+    $fields['billing']['billing_neighborhood']['required'] = true;
+
+    $fields['billing']['billing_email']['priority'] = 21;
     $fields['billing']['billing_email']['class'] = array( 'afc-form-row-wide clear' );
 
     if(is_user_logged_in()) {
@@ -246,8 +248,8 @@ function custom_override_checkout_fields_ek( $fields ) {
     }
 
 
-    $fields['billing']['billing_address_1']['class'] = array( 'afc-form-row-first' );
-    $fields['billing']['billing_number']['class'] = array( 'afc-form-row-last' );
+    // $fields['billing']['billing_address_1']['class'] = array( 'afc-form-row-first' );
+    $fields['billing']['billing_neighborhood']['class'] = array( 'afc-form-row-last' );
 
     $fields['billing']['billing_number']['placeholder'] = 'Insira S/N se não houver';
 
