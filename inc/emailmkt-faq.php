@@ -127,7 +127,7 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Está incluso a produção de emails?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Não. Toda gestão de contatos, listas, criação de emails e campanhas fica sob sua responsabilidade! O studio não interferirá nada em sua conta, exceto para averiguar limites da conta (cotas, recuperação de senha etc). O serviço de email marketing do studio '.do_shortcode('[afc]').' oferta apenas o uso da plataforma e os templates.</p>';
+				echo '<p>Não. Toda gestão de contatos, listas, criação de emails e campanhas fica sob sua responsabilidade! O studio não interferirá em sua conta, exceto para averiguar limites da mesma (cotas mensais, ajuda na recuperação de senha etc). O serviço de email marketing do studio '.do_shortcode('[afc]').' cede apenas o uso da plataforma e os templates.</p>';
 			echo '</div>';
 		echo '</div>';
 
