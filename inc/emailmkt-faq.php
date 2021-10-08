@@ -123,6 +123,14 @@ echo '<div class="wp-block-columns abinhas">';
 				echo '<p>Sim, basta cancelar sua assinatura atual presente dentro da sua Conta, na aba Planos, voltar a essa página e aderir ao plano desejado. Mas lembre-se: caso o cancelamento seja feito antes de encerrar o ciclo da sua última renovação, a mesma permanecerá vigente até encerrar seu prazo, ou seja, de 30 dias. Desta forma, <strong>o ideal é esperar que sua assinatura atual encerre o ciclo para contratar um novo plano.</strong></p>';
 			echo '</div>';
 		echo '</div>';
+
+		echo '<div class="aba">';
+			echo '<div class="aba-titulo">Está incluso a produção de emails?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>Não. Toda gestão de contatos, listas, criação de emails e campanhas fica sob sua responsabilidade! O studio não interferirá nada em sua conta, exceto para averiguar limites da conta (cotas, recuperação de senha etc). O serviço de email marketing do studio '.do_shortcode('[afc]').' oferta apenas o uso da plataforma e os templates.</p>';
+			echo '</div>';
+		echo '</div>';
+
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Posso cancelar a qualquer momento?</div>';
 			echo '<div class="aba-conteudo">';
@@ -146,6 +154,8 @@ echo '<div class="wp-block-columns abinhas">';
 				echo '<p>Por ter um custo bastante reduzido, os planos de email marketing não se adequam aos descontos de pós-produção para clientes afiliadas que possuem layout assinado pelo studio e nem fazem perte do recebimento de comissões por indicação.</p>';
 			echo '</div>';
 		echo '</div>';
+
+		
 
 	echo '</div>';
 
