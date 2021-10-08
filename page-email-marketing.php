@@ -74,7 +74,7 @@ $url = home_url(('/'));
 					echo '</header>';
 					echo '<ul>';
 
-						echo '<li><strong>Cota mensal de 10mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li><strong>Cota mensal de 50mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Templates inclusos: 3</li>';
 						echo '<li>Integração com Woocommerce <span data-tooltip="Capture os emails de compradores e vincule produtos a listas específicas" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
@@ -99,7 +99,7 @@ $url = home_url(('/'));
 					echo '</header>';
 					echo '<ul>';
 
-						echo '<li><strong>Cota mensal de 10mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li><strong>Cota mensal de 100mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Templates inclusos: 4</li>';
 						echo '<li>Integração com Woocommerce <span data-tooltip="Capture os emails de compradores e vincule produtos a listas específicas" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Integração com Zapier <span data-tooltip="Com acesso a API, é possível vincular suas capturas com outros serviços" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
