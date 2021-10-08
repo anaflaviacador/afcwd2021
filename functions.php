@@ -267,20 +267,34 @@ function afc_load_scripts_head() {
         echo '</script>';        
     }
 
-    // rastreia visualizacoes na loja
+    // rastreia pixel na loja
     if (class_exists('Woocommerce')) {
-      if(is_shop()) echo '<script>fbq(\'trackCustom\', \'ShopView\');</script>';
-      if(is_product()) echo '<script>fbq(\'trackCustom\', \'ProdutoView\');</script>';
-      if(is_cart()) echo '<script>fbq(\'track\', \'AddToCart\');</script>';
-      if(is_checkout()) echo '<script>fbq(\'track\', \'AddPaymentInfo\');</script>';
-      if(is_wc_endpoint_url( 'order-received' )) echo '<script>fbq(\'track\', \'Purchase\');</script>'; 
+      echo '<script>';
+      // pag produto
+      if(is_product()) echo "fbq('track', 'ProdutoView');";
+      // pag carrinho
+      if(is_cart()) echo "fbq('track', 'AddToCart');";
+      // pag pagamento
+      if(is_checkout() && ! is_wc_endpoint_url( 'order-received' )) echo "fbq('track', 'InitiateCheckout');";
+      // pag de confirmacao de pgto
+      if(is_wc_endpoint_url( 'order-received' )) {
+        $order_key = $_GET['key'];
+        $order_id = wc_get_order_id_by_order_key($order_key);
+        $order = new WC_Order( $order_id );
+
+        $currency = $order->get_order_currency();
+        $checkout_subtotal = $order->get_subtotal();
+
+        echo "fbq('track', 'Purchase', {value: $checkout_subtotal, currency: '$currency'});";
+      }
+      echo '</script>';
     }
   // }
 }
 
 
 function afc_load_scripts_footer() { 
-  // if(is_singular('etheme_portfolio')) { echo '<script async defer src="//assets.pinterest.com/js/pinit.js"></script>'; }
+  // if(is_singular('etheme_portfolio')) { echo '<script async defer src="//assets.pinterest.com/js/pinit.js"></>'; }
   if(is_front_page()) echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'o site\',\'a loja\',\'o blog\'],delay: 120,autoStart: true,loop: true});</script>';
 
   if(is_post_type_archive('afc_blog')) echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'site\',\'e-commerce\',\'blog\'],delay: 120,autoStart: true,loop: true});</script>';
