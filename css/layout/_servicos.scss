@@ -85,7 +85,7 @@
 			background: var(--cor-cinza); padding: 15px 15px 35px;
 
 			@media (max-width: $celular) { width: 90%; margin-left: auto; margin-right: auto; }
-			@media (min-width: $tablet + 1px) { width: calc(25% - 15px);}
+			@media (min-width: $tablet + 1px) { width: calc(33% - 15px); }
 
 			header {
 				margin-top: -35px; margin-bottom: 1em;
@@ -116,23 +116,23 @@
 
 			&.rosa {
 				background: var(--cor-rosa-claro);
-				i, h3 span {color: var(--cor-rosa);}
+				i, .marca-dagua span {color: var(--cor-rosa);}
 			}
 			&.roxo {
 				background: var(--cor-roxo-claro);
-				i, h3 span {color: var(--cor-roxo);}
+				i, .marca-dagua span {color: var(--cor-roxo);}
 			}
 			&.verde {
 				background: var(--cor-verde-claro);
-				i, h3 span {color: var(--cor-verde);}
+				i, .marca-dagua span {color: var(--cor-verde);}
 			}
 			&.bege {
 				background: var(--cor-bege-claro);
-				i, h3 span {color: var(--cor-bege);}
+				i, .marca-dagua span {color: var(--cor-bege);}
 			}
 			&.azul {
 				background: var(--cor-azul-claro);
-				i, h3 span {color: var(--cor-azul);}
+				i, .marca-dagua span {color: var(--cor-azul);}
 			}
 		}
 	}

@@ -177,7 +177,7 @@ $url = home_url(('/'));
 			echo '</section>';
 
 
-			echo '<h2 class="cursivo has-text-align-center" id="faq">Perguntas frequentes</h2><br>';
+			echo '<h2 class="cursivo has-text-align-center faq-planos" id="faq">Perguntas frequentes</h2><br>';
 
 			get_template_part('inc/planos','faq');
 

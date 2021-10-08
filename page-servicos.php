@@ -35,22 +35,29 @@ echo '<div class="container" id="pagina-servicos">';
 
 			echo '<li class="roxo" data-aos="fade-up">';
 				echo '<header><i class="icone fal fa-bezier-curve"></i>';
-				echo '<h3 class="marca-dagua">Design <span aria-hidden="true">layout</span></h3></header>';
-					echo '<p>Projeto de layout para websites, lojas virtuais, blogs, media kits, peças gráficas e templates para mídias sociais.</p>';
+				echo '<h3 class="marca-dagua">Design de sites <span aria-hidden="true">layout</span></h3></header>';
+					echo '<p>Layout para sites, lojas virtuais, one pages, blogs, media kits, peças gráficas e templates para mídias sociais.</p>';
 				// echo '<footer><a href="'.$urlHome.'projetos" class="button pequeno">ver trabalhos</a></footer>';
 			echo '</li>';
 
 			echo '<li class="azul" data-aos="fade-up" data-aos-delay="150">';
 				echo '<header><i class="icone fal fa-code"></i>';
 				echo '<h3 class="marca-dagua">Programação <span aria-hidden="true">desenvolvimento</span></h3></header>';
-					echo '<p>Programação para plataforma Wordpress (back-end) ou em linguagem estática (front-end).</p>';
+					echo '<p>Programação de layouts produzidos pelo studio ou por terceiros à plataforma Wordpress ou em HTML estático.</p>';
 				// echo '<footer><a href="'.$urlHome.'projetos" class="button pequeno azul">ver trabalhos</a></footer>';
+			echo '</li>';
+
+			echo '<li class="bege" data-aos="fade-up" data-aos-delay="350">';
+				echo '<header><i class="icone fal fa-wrench"></i>';
+				echo '<h3 class="marca-dagua">Ferramentas <span aria-hidden="true">facilidades</span></h3></header>';
+					echo '<p>Criação de blocos personalizados para editor Wordpress e ferramentas para auxiliar automação de tarefas.</p>';
+				// echo '<footer><a href="'.$urlHome.'contato" title="" class="button pequeno bege">solicite</a></footer>';
 			echo '</li>';
 
 			echo '<li class="verde" data-aos="fade-up" data-aos-delay="250">';
 				echo '<header><i class="icone fab fa-wordpress"></i>';
 				echo '<h3 class="marca-dagua">Manutenção <span aria-hidden="true">suporte e auxílio</span></h3></header>';
-					echo '<p>Manutenção mensal e assistência ilimitada para clientes da casa durante o uso de um produto '.do_shortcode('[afc]').'.</p>';
+					echo '<p>Manutenção técnica mensal de otimização e atualizações periódicas, com assistência ilimitada durante o uso de um produto '.do_shortcode('[afc]').'</p>';
 				echo '<footer><a href="'.$urlHome.'servicos/planos" class="button pequeno verde">ver planos</a></footer>';
 			echo '</li>';
 
@@ -66,12 +73,22 @@ echo '<div class="container" id="pagina-servicos">';
 			// 		echo '<p>Instalação de templates Wordpress com customização de identidade visual e configurações necessárias para funcionar com máximo desempenho.</p>';
 			// echo '</li>';
 
-			echo '<li class="bege" data-aos="fade-up" data-aos-delay="350">';
-				echo '<header><i class="icone fal fa-wrench"></i>';
-				echo '<h3 class="marca-dagua">Ferramentas <span aria-hidden="true">facilidades</span></h3></header>';
-					echo '<p>Criação de blocos personalizados para editor Wordpress e ferramentas para auxiliar automação de tarefas.</p>';
-				// echo '<footer><a href="'.$urlHome.'contato" title="" class="button pequeno bege">solicite</a></footer>';
+			
+			echo '<li class="rosa" data-aos="fade-up" data-aos-delay="350">';
+				echo '<header><i class="icone fal fa-envelope"></i>';
+				echo '<h3 class="marca-dagua">E-mail Marketing <span aria-hidden="true">newsletter</span></h3></header>';
+					echo '<p>Listas, automações, segmentações e leads ilimitados a partir de R$9,90 para clientes '.do_shortcode('[afc]').' integrar com site ou e-commerce.</p>';
+					echo '<footer><a href="'.$urlHome.'servicos/email-marketing" class="button pequeno rosa">saiba mais</a></footer>';
 			echo '</li>';
+
+			echo '<li class="roxo" data-aos="fade-up" data-aos-delay="350">';
+				echo '<header><i class="icone fal fa-cart-plus"></i>';
+				echo '<h3 class="marca-dagua">Loja do Studio <span aria-hidden="true">temas para baixar</span></h3></header>';
+					echo '<p>Conheça nossa loja com templates prontinhos para baixar e instalar hoje mesmo em seu site Wordpress!</p>';
+					echo '<footer><a href="'.$urlHome.'loja/" class="button pequeno">conhecer loja</a></footer>';
+			echo '</li>';
+
+
 		echo '</ul>';
 	echo '</section>';
 
