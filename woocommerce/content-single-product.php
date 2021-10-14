@@ -404,12 +404,14 @@ if($demo_exemplos && count($demo_exemplos) > 1) {
 		echo '<div class="summary entry-summary">';
 			add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 			add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-			add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+			add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);			
 			do_action( 'woocommerce_single_product_summary' );
 		echo '</div>';
 		do_action( 'woocommerce_after_single_product_summary' );
 	echo '</div>'; 
 	do_action( 'woocommerce_after_single_product' );
+
+	echo '<div class="clear"></div>';
 }
 
 

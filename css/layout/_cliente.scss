@@ -249,6 +249,22 @@ div.woocommerce {
 }
 
 
+// galeria de 5 cols
+.woocommerce-product-gallery { 
+	.flex-control-thumbs { 
+		margin-top: 5px !important; max-width: initial !important;
+		width: calc(100% + 10px) !important;
+		margin-left: -10px !important;	
+
+		li {
+			margin: 5px 0 5px 10px !important; width: calc(20% - 10px) !important;
+
+			&:nth-child(4n+1) {clear: none !important}
+		}
+	}
+}
+
+
 // ========================================//
 // CARRINHO E CHECKOUT
 // ========================================//

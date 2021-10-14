@@ -73,6 +73,10 @@ function afc_removedimensoes_thumbnail( $html, $post_id, $post_image_id ) {
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 
+// remove label de promocao
+add_filter('woocommerce_sale_flash', 'afc_remove_selo_promo');
+function afc_remove_selo_promo() { return false; }
+
 // ========================================//
 // REDIRECIONAMENTOS PARA USER DA LOJA
 // ========================================// 
@@ -119,12 +123,6 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pro
 // ========================================//
 // PRODUTO
 // ========================================// 
-// label de oferta / liquidacao
-add_filter( 'woocommerce_sale_flash', 'wc_custom_replace_sale_text' );
-function wc_custom_replace_sale_text( $html ) {
-	return str_replace( __( 'Sale!', 'woocommerce' ), __( 'Promoção!', 'woocommerce' ), $html );
-}
-
 // retirar produtos relacionados
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
@@ -177,7 +175,7 @@ function afc_custom_add_cart(){
     if($lp && $nome) {
         return 'Comprar '.$nome.'!';
     } else {
-        return 'Comprar!';
+        return 'Comprar';
     }
 
 }
