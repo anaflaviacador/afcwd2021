@@ -44,13 +44,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 							switch ( $column_id ) {
 								case 'download-product':
 									if ( $download['product_url'] ) {
-										echo '<a href="'.esc_url( $download['product_url'] ) . '">' . esc_html( $download['download_name'] ).'<br><small>'.esc_html( $download['product_name'] ).'</small></a>';
+										echo '<a style="color:inherit" href="'.esc_url( $download['product_url'] ) . '">' . esc_html( $download['download_name'] ).'<br><small>'.esc_html( $download['product_name'] ).'</small></a>';
 									} else {
 										echo esc_html( $download['download_name'] ).'<br><small>'.esc_html( $download['product_name'] ).'</small>';
 									}
 									break;
 								case 'download-file':
-									echo '<a href="' . esc_url( $download['download_url'] ) . '" class="woocommerce-MyAccount-downloads-file button verde mini" title="'.esc_html( $download['download_name'] ).'"><i class="far fa-long-arrow-down" style="font-size: 1.2em; line-height: 0; position: relative; bottom: -1px;" aria-hidden="true"></i> Baixar</a>';
+									echo '<a style="color:inherit" href="' . esc_url( $download['download_url'] ) . '" class="woocommerce-MyAccount-downloads-file button verde mini" title="'.esc_html( $download['download_name'] ).'"><i class="far fa-long-arrow-down" style="font-size: 1.2em; line-height: 0; position: relative; bottom: -1px;" aria-hidden="true"></i> Baixar</a>';
 									break;
 								// case 'download-remaining':
 								// 	if(is_numeric( $download['downloads_remaining'] )) {
