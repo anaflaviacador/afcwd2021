@@ -267,13 +267,12 @@ function afc_load_scripts_head() {
 
     // rastreia pixel na loja
     if (class_exists('Woocommerce')) {
-      echo '<script>';
       // pag produto
-      if(is_product()) echo "fbq('track', 'ProdutoView'); fbq('track', 'ViewContent');";
+      if(is_product()) echo "<scriptscript>fbq('track', 'ProdutoView'); fbq('track', 'ViewContent');</scriptscript>";
       // pag carrinho
-      if(is_cart()) echo "fbq('track', 'AddToCart');";
+      if(is_cart()) echo "<script>fbq('track', 'AddToCart');</script>";
       // pag pagamento
-      if(is_checkout() && ! is_wc_endpoint_url( 'order-received' )) echo "fbq('track', 'InitiateCheckout');";
+      if(is_checkout() && ! is_wc_endpoint_url( 'order-received' )) echo "<script>fbq('track', 'InitiateCheckout');</script>";
       // pag de confirmacao de pgto
       if(is_wc_endpoint_url( 'order-received' )) {
         $order_key = $_GET['key'];
@@ -283,9 +282,8 @@ function afc_load_scripts_head() {
         $currency = $order->get_order_currency();
         $checkout_subtotal = $order->get_subtotal();
 
-        echo "fbq('track', 'Purchase', {value: $checkout_subtotal, currency: '$currency'});";
+        echo "<script>fbq('track', 'Purchase', {value: $checkout_subtotal, currency: '$currency'});</script>";
       }
-      echo '</script>';
     }
   // }
 }
