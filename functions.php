@@ -268,7 +268,7 @@ function afc_load_scripts_head() {
     // rastreia pixel na loja
     if (class_exists('Woocommerce')) {
       // pag produto
-      if(is_product()) echo "<scriptscript>fbq('track', 'ProdutoView'); fbq('track', 'ViewContent');</scriptscript>";
+      if(is_product()) echo "<script>fbq('track', 'ProdutoView'); fbq('track', 'ViewContent');</script>";
       // pag carrinho
       if(is_cart()) echo "<script>fbq('track', 'AddToCart');</script>";
       // pag pagamento
