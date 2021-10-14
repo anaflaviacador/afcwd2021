@@ -18,5 +18,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+$nomeproduto = get_field('nome_produto');
 
-the_title( '<h1 class="product_title entry-title" style="font-size:1.5em">', '</h1>' );
+if($nomeproduto) echo '<h1 class="product_title entry-title" style="font-size:1.5em">'.$nomeproduto.'</h1>';
+else the_title( '<h1 class="product_title entry-title" style="font-size:1.5em">', '</h1>' );

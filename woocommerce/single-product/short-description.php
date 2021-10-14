@@ -23,11 +23,13 @@ global $post;
 
 $short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
 
+$descricao_completa = get_field('descricao_extensao');
+
 if ( ! $short_description ) {
 	return;
 }
 
-?>
-<div class="woocommerce-product-details__short-description" style="margin:1em 0 2em">
-	<?php echo $short_description; // WPCS: XSS ok. ?>
-</div>
+echo '<article class="woocommerce-product-details__short-description" style="margin:1em 0 2em; padding: 0">';
+	if(!empty($descricao_completa)) echo wp_kses_post($descricao_completa);
+	else echo $short_description; 
+echo '</article>';
