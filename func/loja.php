@@ -312,7 +312,7 @@ function afc_logos_pgto( $gateways ) {
     if ( isset( $gateways['woo-mercado-pago-pix'] ) ) $gateways['woo-mercado-pago-pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
     if ( isset( $gateways['juno-credit-card'] ) ) $gateways['juno-credit-card']->icon = get_stylesheet_directory_uri() . '/img/flag-brasil.svg';
     if ( isset( $gateways['pagseguro'] ) ) $gateways['pagseguro']->icon = get_stylesheet_directory_uri() . '/img/logo-pagseguro-gateway.svg';
-    if ( isset( $gateways['paypal-brasil-plus-gateway'] ) ) $gateways['paypal-brasil-plus-gateway']->icon = get_stylesheet_directory_uri() . '/img/logo-paypal-gateway.svg';
+    if ( isset( $gateways['paypal-brasil-plus-gateway'] ) ) $gateways['paypal-brasil-plus-gateway']->icon = get_stylesheet_directory_uri() . '/img/flag-globe.svg';
 
     return $gateways;
 }
