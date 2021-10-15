@@ -51,7 +51,7 @@ echo '<footer id="rodape"'.(is_front_page() || is_post_type_archive(array('ethem
 				// echo '<span style="display: inline-block !important;" data-tooltip="Pagamentos com Pix são processados na hora!"><img alt="Pix" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-pix-gateway.svg" /></span>';
 				// echo '<span style="display: inline-block !important;" data-tooltip="Pagamentos com Boleto são processados em até 1 dia útil."><img alt="Boleto" style="width:auto;height:18px;margin-left:10px;" src="'.$temaurl.'/img/logo-boleto.svg" /></span>';
 				// echo '<span style="display: inline-block !important;" data-tooltip="Aceitamos pagamentos internacionais com Paypal!"><img alt="Paypal" style="width:auto;height:18px;margin-left:8px;" src="'.$temaurl.'/img/logo-paypal.svg" /></span>';
-				echo '<img style="width:auto;max-width:100%;height:21px;" src="'.$urlTema.'/img/lp/formas-pgto-dark.svg" alt="É aceito pagamento com praticamente todas as bandeiras de cartão de crédito, pix, boleto, picpay, pagseguro e paypal para pagamentos internacionais.">';
+				echo '<span style="display: inline-block !important;" data-tooltip="Aceitamos pagamentos nacionais e internacionais!"><img style="width:auto;max-width:100%;height:21px;" src="'.$urlTema.'/img/lp/formas-pgto-dark.svg" alt="Pagamento com cartão de crédito, pix, boleto e paypal.">';
 			echo '</div>';
 
 			echo '<div>';
@@ -60,7 +60,7 @@ echo '<footer id="rodape"'.(is_front_page() || is_post_type_archive(array('ethem
 		echo '</div>';
 
 		echo '<div class="container">';
-			echo '<div>'.date('Y').' &copy; <strong>Ana Flávia Cador</strong> - Todos os direitos reservados &nbsp;&nbsp;<span><img width="16px" src="'.$temaurl.'/img/flag-brasil.svg" alt="AFC Web Design is a brazilian business" title="AFC Web Design is a brazilian business" style="vertical-align: middle;margin-right: 7px;position: relative;top: -1px;" /> CNPJ 24.014.911/0001-36</span>';
+			echo '<div>'.date('Y').' &copy; <strong>Ana Flávia Cador</strong> - Todos os direitos reservados &nbsp;&nbsp;<span> CNPJ 24.014.911/0001-36</span>';
 			echo '</div>';
 
 			$politicaID = get_option( 'wp_page_for_privacy_policy' );

@@ -428,10 +428,23 @@ div.woocommerce {
 						}
 
 						&.wc-paghiper-form {
-							padding: 1em 0 0 0 !important;
+							padding: 1em 0 0 0 !important; 
 							.form-row { padding: 0 !important; }
 						}
 					}
+
+					// mercado pago
+					// div.mp-panel-checkout, div.mp-panel-custom-checkout {
+					// 	padding: 0; background: none;
+					// 	div.mp-redirect-frame-pix { 
+					// 		background: none; 
+					// 		p { font-family: $fonte-padrao !important; color: var(--cor-texto) !important; font-size: .9rem !important;}
+					// 	}
+					// 	input.mp-form-control-check { margin-top: 4px !important;}
+					// 	label.mp-label-form-check, label.mp-label-form, .mp-subtitle-ticket-checkout { font-family: $fonte-padrao !important; color: var(--cor-texto) !important; }
+					// 	.mp-obrigatory { font-family: $fonte-padrao !important; font-weight: bold !important;}
+					// 	.mp-form-control { border-radius: 4px !important; font-family: $fonte-padrao !important; color: var(--cor-texto) !important; }
+					// }
 					
 				}
 

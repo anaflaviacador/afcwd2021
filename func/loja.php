@@ -230,7 +230,7 @@ function custom_override_checkout_fields_ek( $fields ) {
 
     unset($fields['billing']['billing_company']);
     unset($fields['billing']['billing_address_2']);
-    unset($fields['billing']['billing_phone']);
+    // unset($fields['billing']['billing_phone']);
     // unset($fields['billing']['billing_neighborhood']);
     // unset($fields['billing']['billing_country']);
 
@@ -240,7 +240,7 @@ function custom_override_checkout_fields_ek( $fields ) {
     $fields['billing']['billing_email']['class'] = array( 'afc-form-row-wide clear' );
 
     if(is_user_logged_in()) {
-        $fields['billing']['billing_email']['label'] = 'E-mail para recebimento';
+        $fields['billing']['billing_email']['label'] = 'E-mail para recebimento dos arquivos';
     } else {
         $fields['billing']['billing_email']['label'] = 'E-mail para conta e recebimento';
     }
@@ -267,16 +267,22 @@ function override_default_address_checkout_fields( $fields ) {
     return $fields;
 }
 
-
-
-// adiciona nota dentro dos fields de checkout
-add_action( 'woocommerce_form_field_country','afc_checkout_field_alerta_pais', 10, 4 );
-function afc_checkout_field_alerta_pais( $field, $key ){
-    if ( is_checkout() && ( $key == 'billing_country') ) {
-        $field .= '<p class="form-row form-row-wide" style="font-size: 12px; margin: 0 0 11px 0 !important; float: left; line-height: 1.5; clear: both;"><span style="color:var(--cor-negacao)">Obs:</span> Selecionar o país determinará suas opções de pagamento.</p>';
+add_action( 'woocommerce_form_field_tel','afc_checkout_field_alerta_tel', 10, 2 );
+function afc_checkout_field_alerta_tel( $field, $key ){
+    if ( is_checkout() && ( $key == 'billing_phone') ) {
+        $field .= '<p class="form-row form-row-wide" style="font-size: 12px; width: 100%; margin: -7px 0 11px 0 !important; float: left; line-height: 1.5; clear: both;"><span style="color:var(--cor-negacao)">Alerta:</span> caso selecione cartão de crédito, por gentileza, informe o contato que está associado à fatura do cartão utilizado, evitando possíveis bloqueios de pagamento pelo sistema anti-fraude.</p>';
     }
     return $field;
 }
+
+// adiciona nota dentro dos fields de checkout
+// add_action( 'woocommerce_form_field_country','afc_checkout_field_alerta_pais', 10, 4 );
+// function afc_checkout_field_alerta_pais( $field, $key ){
+//     if ( is_checkout() && ( $key == 'billing_country') ) {
+//         $field .= '<p class="form-row form-row-wide" style="font-size: 12px; margin: 0 0 11px 0 !important; float: left; line-height: 1.5; clear: both;"><span style="color:var(--cor-negacao)">Obs:</span> Selecionar o país determinará suas opções de pagamento.</p>';
+//     }
+//     return $field;
+// }
 
 
 add_action( 'woocommerce_form_field_email','afc_checkout_field_alerta_email', 10, 2 );
@@ -300,10 +306,13 @@ add_filter( 'woocommerce_available_payment_gateways', 'afc_logos_pgto' );
 function afc_logos_pgto( $gateways ) {
     if ( isset( $gateways['paghiper_billet'] ) ) $gateways['paghiper_billet']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
     if ( isset( $gateways['juno-bank-slip'] ) ) $gateways['juno-bank-slip']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
+    if ( isset( $gateways['woo-mercado-pago-ticket'] ) ) $gateways['woo-mercado-pago-ticket']->icon = get_stylesheet_directory_uri() . '/img/logo-boleto-gateway.svg';
     if ( isset( $gateways['paghiper_pix'] ) ) $gateways['paghiper_pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
     if ( isset( $gateways['juno-pix'] ) ) $gateways['juno-pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
+    if ( isset( $gateways['woo-mercado-pago-pix'] ) ) $gateways['woo-mercado-pago-pix']->icon = get_stylesheet_directory_uri() . '/img/logo-pix-gateway.svg';
     if ( isset( $gateways['juno-credit-card'] ) ) $gateways['juno-credit-card']->icon = get_stylesheet_directory_uri() . '/img/flag-brasil.svg';
     if ( isset( $gateways['pagseguro'] ) ) $gateways['pagseguro']->icon = get_stylesheet_directory_uri() . '/img/logo-pagseguro-gateway.svg';
+    if ( isset( $gateways['paypal-brasil-plus-gateway'] ) ) $gateways['paypal-brasil-plus-gateway']->icon = get_stylesheet_directory_uri() . '/img/logo-paypal-gateway.svg';
 
     return $gateways;
 }

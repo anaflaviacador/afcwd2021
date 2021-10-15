@@ -30,7 +30,7 @@ function afc_setup() {
 
     // layout
     add_action( 'wp_enqueue_scripts', 'afc_load_styles', 999 );
-    add_action( 'wp_head', 'afc_load_scripts_head' );
+    add_action( 'wp_head', 'afc_load_scripts_head', 999 );
     add_action( 'wp_footer', 'afc_load_scripts_footer', 999 );
     add_filter( 'excerpt_more', 'afc_excerpt_more' );
     add_filter( 'excerpt_length', 'afc_excerpt_length', 999 );
