@@ -376,7 +376,7 @@ div.woocommerce {
 					&[for=payment_method_juno-credit-card] img { width: 23px; }
 					&[for=payment_method_juno-pix] img { width: 23px; }
 
-					small { color: var(--cor-afirmacao); font-weight: bold; text-transform: uppercase; background: var(--cor-verde-claro);}
+					small, span.amount {font-size: 12px; padding: 3px 6px; color: var(--cor-afirmacao); font-weight: bold; padding: 1px 6px; text-transform: uppercase; background: var(--cor-verde-claro);}
 				}
 
 				div.payment_box {
