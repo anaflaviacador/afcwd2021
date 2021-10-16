@@ -523,8 +523,15 @@
 
     header { width: 100%; text-align: center;}
 
-    svg { display:block; width: auto; height: auto; max-width: 190px; max-height: 40px; margin: 20px; }
+    svg { 
+        display:block; width: auto; height: auto; width: 120px; height: auto; 
+        max-height: 40px; margin: 10px; 
+
+        @media (min-width: $smart-maior) { width: 190px; margin: 20px; }
 }
+    }
+
+   
 
 
 
