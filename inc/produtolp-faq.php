@@ -14,7 +14,7 @@ echo '<div class="wp-block-columns afclp-faq abinhas">';
 			echo '<div class="aba-conteudo">';
 				echo '<p>Sim, é totalmente seguro! O site do studio possui certificado de segurança SSL da Cloudflare, Inc, de algoritmo de assinatura digital ECDSA com SHA-256 que garante a criptografia de dados entre o acesso do visitante (independente da página) e o servidor do site.</p>';
 				echo '<p>O site também utiliza os recursos de segurança da Cloudflare, Inc, da qual armazena nossos DNS e, com isso, consegue fornecer monitoramento contra vulnerabilidades e ameaças cruciais, protegendo a infraestrutura de rede contra ataques de DDoS além do próprio Firewall presente nosso provedor de hospedagem favorito, a <a href="https://cliente.nuvemhospedagem.com.br/aff.php?aff=20" target="_blank" rel="noopener">Nuvem Hospedagem</a>.</p>';
-				echo '<p>Os dados bancários dos clientes ficam assegurados e armazenadas nos servidores dos gateways de pagamento que o site utiliza &mdash; Juno Pagamentos, Stripe e Paypal &mdash; com alguns deles utilizando o método de tokenização (impossibilitando a leitura dos dados reais) para facilitar futuras compras dentro do site, como pagamentos recorrentes dos <a href="https://afcweb.design/servicos/planos" target="_blank">planos de manutenção</a>.</p>';
+				echo '<p>Os dados dos cartões de crédito dos clientes ficam assegurados e armazenadas nos servidores dos gateways de pagamento que o site utiliza &mdash; Stripe e Paypal &mdash; com o método de tokenização (impossibilitando a leitura dos dados reais) para facilitar futuras compras dentro do site, como pagamentos recorrentes dos <a href="https://afcweb.design/servicos/planos" target="_blank">planos de manutenção</a>.</p>';
 				echo '<p>Saiba mais sobre a segurança do site na nossa <a href="https://afcweb.design/privacidade/#04" target="_blank">Política de Privacidade</a>.</p>';
 			echo '</div>';
 		echo '</div>';
@@ -130,7 +130,7 @@ echo '<div class="wp-block-columns afclp-faq abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Aceita pagamento internacional?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Sim! Para compras com cartão estrangeiro o studio usa o Stripe (bandeiras visa e master) para compras no cartão e o Paypal para transação entre contas. Para que a transação ocorra com sucesso é preciso que o cartão estrangeiro seja apto à compra internacional, pois a transação é na moeda Real Brasileiro. Infelizmente não é possível parcelar.</p>';
+				echo '<p>Sim! Para compras com cartão estrangeiro o studio usa o Stripe (bandeiras visa e master) e Paypal para compras no cartão, mas é possível também realizar pagamentos por Pix ou Boleto se o app de seu banco estrangeiro permitir. Para que a transação ocorra com sucesso é preciso que o cartão estrangeiro seja apto à compra internacional, pois a transação é feita na moeda local brasileira, o Real Brasileiro. Infelizmente não é possível parcelar.</p>';
 
 				echo '<p>Vale lembrar que o studio não é responsável por taxas adicionais que podem ser cobradas na fatura de seu cartão, nem tarifas de conversão de moeda.</p>';
 
