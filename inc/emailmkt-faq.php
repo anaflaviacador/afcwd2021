@@ -14,13 +14,13 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba" style="margin-top: 20px;">';
 			echo '<div class="aba-titulo">Qual é a vantagem em relação aos outros serviços de newsletter como MailChimp, GetResponse, ActiveCampaign etc?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>A vantagem é custo-benefício! As mensalidades dos demais serviços costumam ser acima de R$100 e há também diversos outros serviços embutidos, como testes A/B, construtor de páginas de vendas, consultoria de marketing, integração com Whatsapp e tudo mais.</p>';
+				echo '<p>A vantagem é custo-benefício! As mensalidades dos demais serviços costumam ser acima de R$100. São complexas e para nível empresarial e grandes audiências. Algumas ofertam geração de páginas de venda, têm aprendizados de máquina, ferramentas de testes A/B, leituras automáticas de feed RSS, integrações com Whatsapp, programas de CRM e ERP.</p>';
 				
-				echo '<p>Grandes empresas de email marketing como MailChimp, GetResponse, ActiveCampaign, Leadlovers etc são perfeitas para grandes empresas ou quem produz conteúdo e infoprodutos para milhares e milhares de pessoas. Porém, são serviços de investimento muito alto para quem está começando, como microempreendedoras, blogueiras e influencers.</p>'; 
+				echo '<p>Esses grandes provedores são perfeitos para empresas de médio a grande porte. Porém, são serviços de investimento muito alto para quem está começando, como microempreendedoras, blogueiras e influencers.</p>'; 
 
-				echo '<p>O sistema de newsletter que o studio '.do_shortcode('[afc]').' utiliza, o Sendy, apesar de não oferecer outros serviços paralelos como estes grandes provedores, possui todas as <em>ferramentas básicas necessárias</em> para trabalhar com email marketing. O Sendy é <u>perfeito para quem está começando</u> seu negócio ou quer compartilhar publicações de seu blog.</p>';
+				echo '<p>Apesar de não oferecer outros serviços paralelos como estes grandes provedores, o app de newsletter do studio '.do_shortcode('[afc]').' terceiriza traz todas as <em>ferramentas básicas necessárias</em> para trabalhar com email marketing. É <u>perfeito para quem está começando</u> seu negócio ou quer compartilhar publicações de seu blog.</p>';
 
-				echo '<p>E não se preocupe! Quando seu negócio estiver rendendo muitos frutos e precisar ir para uma plataforma mais empresarial que englobe outros serviços, você poderá migrar todos os seus contatos do Sendy sem problema algum. Sem ressentimentos, ok? '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').'</p>';
+				echo '<p>E não se preocupe! Quando seu negócio estiver rendendo muitos frutos e precisar ir para uma plataforma mais empresarial que englobe outros serviços, você poderá migrar todos os seus contatos sem problema algum. Sem ressentimentos, ok? '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').'</p>';
 			echo '</div>';
 		echo '</div>';
 
@@ -34,9 +34,9 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">O pagamento é seguro?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Sim, é 100% seguro! O gateway de pagamento que o studio usa é o <a href="https://app.juno.com.br/#/onboarding/775831:b02a84" target="_blank" rel="nofollow noopener">Juno Pagamentos</a> para clientes residentes no Brasil e Stripe para as clientes que moram no exterior. Toda transação é realizada sob criptografia, com certificado de segurança ativado.</p>';
+				echo '<p>Sim, é 100% seguro! O gateway de pagamento que o studio usa é o Stripe, serviço de pagamentos conhecido mundialmente. Toda transação é realizada sob criptografia, com certificado de segurança ativado.</p>';
 				echo '<p>A solicitação de pagamento aqui do site é enviada para o servidor do gateway através de um código criptografado. Depois, o gateway fará a solicitação ao seu cartão de crédito, e o mesmo permitirá (ou não) o andamento do seu pedido. Tudo isso em questão de segundos!</p>';
-				echo '<p>Você não precisa ter conta em nenhum dos gateways usados no site para sua assinatura. O checkout é transparente, com zero burocracia. Basta ter apenas o número do seu cartão em mãos.</p>';
+				echo '<p>O checkout é transparente, com zero burocracia. Basta ter apenas o número do seu cartão em mãos.</p>';
 			echo '</div>';
 		echo '</div>';
 		echo '<div class="aba">';
@@ -56,8 +56,8 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Moro fora do Brasil. Posso contratar um plano?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Sim! Todo serviço do studio é prestado de forma remota, então é atendido clientes de qualquer país do mundo! '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').' As assinaturas são cobradas em Real Brasileiro via Stripe, então <em>é preciso que o seu cartão seja internacional</em> para que a transação ocorra com sucesso!</p>';
-				echo '<p style="line-height:1.3"><small>Obs: o studio não é responsável por taxas adicionais que podem ser cobradas na fatura de seu cartão, nem tarifas de conversão de moeda.</small></p>';
+				echo '<p>Sim! Todo serviço do studio é prestado de forma remota, então é atendido clientes de qualquer país do mundo! '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').' As assinaturas são cobradas em Real Brasileiro, então é preciso o seu cartão permita pagamentos em outras moedas para que a transação ocorra com sucesso!</p>';
+				echo '<p style="line-height:1.3"><small>Obs: o studio não é responsável por taxas adicionais que podem ser cobradas na fatura de seu cartão, IOF ou conversão de moeda.</small></p>';
 			echo '</div>';
 		echo '</div>';
 
@@ -96,7 +96,7 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Posso utilizar email de provedores comuns, como Gmail ou Hotmail?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Para que a Amazon faça os disparos dos emails em seu nome, é necessário que façamos apontamentos de DNS. Desta forma, é obrigatório que você tenha um registro de domínio. Já o email de administração pode ser de provedores comuns.</p>';
+				echo '<p>Para que a Amazon faça os disparos dos emails em seu nome, é necessário que façamos apontamentos de DNS do domínio do remetente. Desta forma, é obrigatório que você tenha um domínio personalizado. Já o email de login de administração do app pode ser de provedores comuns para facilitar acessos e recupeções de senha.</p>';
 			echo '</div>';
 		echo '</div>';
 
@@ -104,15 +104,15 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Como os planos são cotados?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>O Sendy que o studio '.do_shortcode('[afc]').' oferece <strong>não há limite de contatos, listas, autoresponders ou segmentações</strong>. A cota é inserida por disparos, ou seja, pelos <em>emails enviados</em>, que engloba também as confirmações (quando alguém entra ou sai da lista) e as automações (emails automáticos). O limite de envios vai depender do plano, que vai de 2mil a 100mil disparos ao mês.</p>';
+				echo '<p>O app que o studio '.do_shortcode('[afc]').' trabalha <strong>não tem limite de contatos, listas, autoresponders ou segmentações</strong>. A cota é inserida por disparos, ou seja, pelos <em>emails enviados</em>, que engloba também as confirmações (quando alguém entra ou sai da lista) e as automações (emails automáticos). O limite de envios vai depender do plano, que vai de 2mil a 100mil disparos ao mês.</p>';
 			echo '</div>';
 		echo '</div>';
 		
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">O que são os templates inclusos nos planos?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>São modelos prontos de emails incluídos na contratação para você criar e-mail lindos com sua identidade. Eles ficam armazenados em sua conta para reutiliza-los em suas campanhas. Cada plano possui uma quantidade definida de templates.</p>';
-				echo '<p><u>A quantidade de templates não se renovam na mensalidade ou em qualquer outro período.</u> Caso queira mais templates personalizados, entre em contato! Seu pedido será considerado como serviço à parte, como produção de peça gráfica, cotado por hora trabalhada.</p>';
+				echo '<p>São modelos prontos de emails incluídos na contratação para você enviar e-mail lindos com sua identidade. Eles ficam armazenados em sua conta para reutiliza-los em suas campanhas. Cada plano possui uma quantidade definida de templates.</p>';
+				echo '<p><u>A quantidade de templates não se renova na mensalidade ou em qualquer outro período.</u> Caso queira mais templates personalizados, entre em contato! Seu pedido será considerado como serviço à parte, como produção de peça gráfica, cotado por hora trabalhada.</p>';
 			echo '</div>';
 		echo '</div>';
 
@@ -126,15 +126,14 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Está incluso a produção de emails?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Não. Toda gestão de contatos, listas, criação de emails e campanhas fica sob sua responsabilidade! O studio não interferirá em sua conta, exceto para averiguar limites da mesma (cotas mensais, ajuda na recuperação de senha etc). O serviço de email marketing do studio '.do_shortcode('[afc]').' cede apenas o uso da plataforma e os templates.</p>';
+				echo '<p>Não. Toda gestão de contatos, listas, criação de emails e campanhas fica sob sua responsabilidade! O studio não interferirá em sua conta, exceto para averiguar limites da mesma (cotas mensais, auxílio na recuperação de senha etc). O serviço de email marketing do studio '.do_shortcode('[afc]').' cede apenas o uso da plataforma, integração e uso de templates.</p>';
 			echo '</div>';
 		echo '</div>';
 
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Posso cancelar a qualquer momento?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Sim! Não há período mínimo de adesão. Entretanto, vale lembrar que os benefícios da assinatura que contém elementos de <em>cota anual</em> serão perdidos caso o cancelamento seja feito em menos de 6 meses após a adesão.</p>';
-				echo '<p>Para cancelar é só logar na sua conta do site do studio e acessar a aba Planos. Nela estará o seu plano vigente. Ao clica-lo é só clicar no botão "cancelar" e o mesmo não terá mais renovações automáticas.</p>';
+				echo '<p>Sim! Não há período mínimo de adesão. Para cancelar é só logar na sua conta do site do studio e acessar a aba Planos. Nela estará o seu plano vigente. Ao clica-lo é só clicar no botão "cancelar" e o mesmo não terá mais renovações automáticas.</p>';
 			echo '</div>';
 		echo '</div>';
 		
@@ -142,15 +141,15 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Os planos só servem para clientes que possuem layouts produzidos pelo studio?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Não! Entretanto, clientes do studio que assinam um plano ganham implementação de formulário dinâmico em seu layout</p>';
-				echo '<p>Para clientes que não possuem um layout do studio, não há edição de layout. É recomendado o uso do plugin <a href="https://br.wordpress.org/plugins/embed-sendy/" target="_blank" rel="nofollow noopener">Embed Sendy</a>.</p>';
+				echo '<p>Não! Clientes do studio que fazem uso de um layout exclusivo ganham implementação de formulário dinâmico em seu layout. Quem faz uso de um template da loja já tem estrutura de captura preparada.</p>';
+				echo '<p>Para clientes que faz uso de temas de terceiros, não há o benefício da integração de formulário no layout. É recomendado o uso do plugin <a href="https://br.wordpress.org/plugins/embed-sendy/" target="_blank" rel="nofollow noopener">Embed Sendy</a>.</p>';
 			echo '</div>';
 		echo '</div>';
 		
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Afiliadas do studio tem assinatura mais barata?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Por ter um custo bastante reduzido, os planos de email marketing não se adequam aos descontos de pós-produção para clientes afiliadas que possuem layout assinado pelo studio e nem fazem perte do recebimento de comissões por indicação.</p>';
+				echo '<p>Por ter um custo bastante reduzido, os planos de email marketing não se adequam aos descontos de pós-produção nem fazem perte do recebimento de comissões por indicação.</p>';
 			echo '</div>';
 		echo '</div>';
 
