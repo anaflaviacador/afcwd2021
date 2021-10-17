@@ -27,7 +27,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 echo '<li>';
 	echo '<figure>';
+		echo '<a href="'.get_the_permalink( $produto_id ).'">';
 		echo the_post_thumbnail('shop_catalog', array('data-pin-nopin' => 'true'));
+		echo '</a>';
 	echo '</figure>';
 
 	echo '<div class="dados">';
@@ -46,31 +48,28 @@ echo '<li>';
 
 	if($desc_addon) {
 		echo '<div class="modal detalhes-produto" id="produto-'.$produto_id.'">';
-			echo '<header>';
+			echo '<header style="padding:10px">';
 				echo '<div class="titulo">';
 				do_action( 'woocommerce_before_shop_loop_item' );
 				do_action( 'woocommerce_shop_loop_item_title' );
 				do_action( 'woocommerce_after_shop_loop_item_title' );
 				echo '</div>';
-
 				do_action( 'woocommerce_after_shop_loop_item' );
 			echo '</header>';
-			
-			echo $desc_addon;
 
-
-			$attachment_ids = $product->get_gallery_image_ids();
-			if ( $attachment_ids && $product->get_image_id() ) {
-				echo '<div class="galeria"><h3>Veja os prints</h3>';
-				foreach ( $attachment_ids as $attachment_id ) {
-					$img_full = wp_get_attachment_image_src($attachment_id,'full');
-					echo '<a href="'.$img_full['0'].'" target="new">';
-						echo wp_get_attachment_image($attachment_id,'thumbnail'); 
-					echo '</a>';
+				$attachment_ids = $product->get_gallery_image_ids();
+				if ( $attachment_ids && $product->get_image_id() ) {
+					echo '<div class="galeria" style="padding:10px"><h3>Veja os prints</h3>';
+					foreach ( $attachment_ids as $attachment_id ) {
+						$img_full = wp_get_attachment_image_src($attachment_id,'full');
+						echo '<a href="'.$img_full['0'].'" class="afczoom" target="new">';
+							echo wp_get_attachment_image($attachment_id,'thumbnail'); 
+						echo '</a>';
+					}
+					echo '</div>';
 				}
-				echo '</div>';
-			}
-
+			
+			echo '<article>'.$desc_addon.'</article>';
 		echo '</div>';
 	}
 echo '</li>';
