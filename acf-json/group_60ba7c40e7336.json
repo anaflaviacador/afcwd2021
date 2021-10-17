@@ -49,15 +49,7 @@
             "type": "link",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_60ba7c4ecc105",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "35",
                 "class": "",
@@ -73,15 +65,7 @@
             "type": "repeater",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_60ba7c4ecc105",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "65",
                 "class": "",
@@ -1455,5 +1439,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1624234811
+    "modified": 1634499768
 }

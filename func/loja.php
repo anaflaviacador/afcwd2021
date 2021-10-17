@@ -135,7 +135,19 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 add_filter( 'woocommerce_product_description_heading', '__return_null' );
 add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
 
+add_action( 'woocommerce_single_product_summary', 'custom_button_after_product_summary', 15 );
+function custom_button_after_product_summary() {
+    global $product;
+    $ativa_LP = get_field('ativar_lp');
+    $demo_principal = get_field('demo_principal');
 
+    if($ativa_LP == false) {
+        echo '<p style="margin-top:1em">';
+            if($demo_principal) echo '<a class="button mini" href="'.$demo_principal['url'].'" target="_blank" title="'.$demo_principal['title'].'">ver em ação</a>&nbsp;&nbsp;';
+            echo '<a class="button mini bege" href="'.$product->add_to_cart_url().'">comprar</a>';
+        echo '</p>';
+    }
+}
 
 // remove area das tabs
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);

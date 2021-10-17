@@ -20,6 +20,7 @@ defined( 'ABSPATH' ) || exit;
 global $product;
 $produto_id = get_the_ID();
 $desc_addon = get_field('descricao_extensao');
+$nomeproduto = get_field('nome_produto');
 
 // Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {
@@ -35,7 +36,9 @@ echo '<li>';
 	echo '<div class="dados">';
 		do_action( 'woocommerce_before_shop_loop_item' );
 
-		do_action( 'woocommerce_shop_loop_item_title' );
+		if($nomeproduto) echo '<h2 class="woocommerce-loop-product__title">'.$nomeproduto.'</h2>';
+		else do_action( 'woocommerce_shop_loop_item_title' );
+
 		do_action( 'woocommerce_after_shop_loop_item_title' );
 
 		echo '<div class="resumo">'.get_the_excerpt().'</div>';
@@ -68,6 +71,11 @@ echo '<li>';
 					}
 					echo '</div>';
 				}
+
+				$demo_principal = get_field('demo_principal');
+				echo '<p style="padding:10px">';
+					if($demo_principal) echo '<a class="button mini" href="'.$demo_principal['url'].'" target="_blank" title="'.$demo_principal['title'].'">ver em ação</a>';
+				echo '</p>';
 			
 			echo '<article>'.$desc_addon.'</article>';
 		echo '</div>';
