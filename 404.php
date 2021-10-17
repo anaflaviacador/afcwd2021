@@ -22,7 +22,7 @@ echo '<header id="cabecalho" style="box-shadow: none">';
 			echo '<li id="menu-item-2706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2706">';
 				echo '<a href="'.$urlHome.'" style="transform: none !important; -webkit-transform: none !important;"><span class="descricao" aria-hidden="true" style="transform:none"><span class="slogan">';
 					echo 'Linhas de código em poesia</span> por Ana Flávia Cador</span>';
-					echo '<span class="nome" style="background-image: url(\'https://afcweb.design/wp-content/themes/afcwd2021/img/marca-afcwebdesign-splash.svg\')">AFC Web Design</span>';
+					echo '<span class="nome" style="background-image: url(\''.get_template_directory_uri().'/img/marca-afcwebdesign-splash.svg\')">AFC Web Design</span>';
 				echo '</a>';
 			echo '</li>';
 
