@@ -142,17 +142,24 @@ function custom_button_after_product_summary() {
     $demo_principal = get_field('demo_principal');
     $desc_addon = get_field('descricao_extensao');
     $resumo = get_the_excerpt();
-    $bt_comprar = '<a class="button mini bege" href="'.$product->add_to_cart_url().'">comprar</a>';
+
+    $bt_text = 'comprar';
+    if ( has_term( 'servicos-extras', 'product_cat', $product->id ) ) $bt_text = 'contratar';
+    
+    $addcarrinho = '<a class="button mini bege" href="'.$product->add_to_cart_url().'">'.$bt_text.'</a>';
+
 
     if($ativa_LP == false) {
         echo '<p style="margin-top:1em">';
             if($demo_principal) echo '<a class="button mini" href="'.$demo_principal['url'].'" target="_blank" title="'.$demo_principal['title'].'">ver em ação</a>&nbsp;&nbsp;';
 
             if($desc_addon) {
-                if(strlen($desc_addon) >= 1000) echo $bt_comprar;
+                if(strlen($desc_addon) >= 1000) echo $addcarrinho;
             } else {
-                if(strlen($resumo) >= 1000) echo $bt_comprar;
+                if(strlen($resumo) >= 1000) echo $addcarrinho;
             }
+
+            
         echo '</p>';
     }
 }
