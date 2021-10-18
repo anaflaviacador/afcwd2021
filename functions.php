@@ -244,17 +244,17 @@ function afc_load_scripts_head() {
 
 
     // rastreia quem acessou a home
-    if (is_front_page()) echo "<script type='text/javascript'>fbq('trackCustom', 'Home');</script>";
+    if (is_front_page()) echo "<script type='text/plain' data-cli-class='cli-blocker-script' data-cli-script-type='advertisement' data-cli-block='true' data-cli-element-position='head'>fbq('trackCustom', 'Home');</script>";
 
     // rastreia quem leu artigo do blog
-    if (is_singular('afc_blog')) echo "<script type='text/javascript'>fbq('trackCustom', 'PostBlogView');</script>";
+    if (is_singular('afc_blog')) echo "<script type='text/plain' data-cli-class='cli-blocker-script' data-cli-script-type='advertisement' data-cli-block='true' data-cli-element-position='head'>fbq('trackCustom', 'PostBlogView');</script>";
 
     // rastreia quem buscou entrar em contato
-    if (is_page('contato')) echo "<script type='text/javascript'>fbq('track', 'Contact');</script>";
+    if (is_page('contato')) echo "<script type='text/plain' data-cli-class='cli-blocker-script' data-cli-script-type='advertisement' data-cli-block='true' data-cli-element-position='head'>fbq('track', 'Contact');</script>";
 
     // rastreia quem quis assinar um plano
     if (is_page('planos')) {
-        echo '<script>';
+        echo '<script type="text/plain" data-cli-class="cli-blocker-script" data-cli-script-type="advertisement" data-cli-block="true" data-cli-element-position="head">';
             echo 'var planoBasic = document.getElementById(\'assinar-plano-basic\');';
             echo 'var planoStandard = document.getElementById(\'assinar-plano-standard\');';
             echo 'var planoPremium = document.getElementById(\'assinar-plano-premium\');';
@@ -268,11 +268,12 @@ function afc_load_scripts_head() {
     // rastreia pixel na loja
     if (class_exists('Woocommerce')) {
       // pag produto
-      if(is_product()) echo "<script type='text/javascript'>fbq('track', 'ProdutoView'); fbq('track', 'ViewContent');</script>";
+
+      if(is_product()) echo "<script type='text/plain' data-cli-class='cli-blocker-script' data-cli-script-type='advertisement' data-cli-block='true' data-cli-element-position='head'>fbq('track', 'ProdutoView'); fbq('track', 'ViewContent');</script>";
       // pag carrinho
-      if(is_cart()) echo "<script type='text/javascript'>fbq('track', 'AddToCart');</script>";
+      if(is_cart()) echo "<script type='text/plain' data-cli-class='cli-blocker-script' data-cli-script-type='advertisement' data-cli-block='true' data-cli-element-position='head'>fbq('track', 'AddToCart');</script>";
       // pag pagamento
-      if(is_checkout() && ! is_wc_endpoint_url( 'order-received' )) echo "<script type='text/javascript'>fbq('track', 'InitiateCheckout');</script>";
+      if(is_checkout() && ! is_wc_endpoint_url( 'order-received' )) echo "<script type='text/plain' data-cli-class='cli-blocker-script' data-cli-script-type='advertisement' data-cli-block='true' data-cli-element-position='head'>fbq('track', 'InitiateCheckout');</script>";
       // pag de confirmacao de pgto
       if(is_wc_endpoint_url( 'order-received' )) {
         $order_key = $_GET['key'];
@@ -282,7 +283,7 @@ function afc_load_scripts_head() {
         $currency = $order->get_order_currency();
         $checkout_subtotal = $order->get_subtotal();
 
-        echo "<script type='text/javascript'>fbq('track', 'Purchase', {value: $checkout_subtotal, currency: '$currency'});</script>";
+        echo "<script type='text/plain' data-cli-class='cli-blocker-script' data-cli-script-type='advertisement' data-cli-block='true' data-cli-element-position='head'>fbq('track', 'Purchase', {value: $checkout_subtotal, currency: '$currency'});</script>";
       }
     }
   // }
