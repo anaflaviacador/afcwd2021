@@ -140,11 +140,19 @@ function custom_button_after_product_summary() {
     global $product;
     $ativa_LP = get_field('ativar_lp');
     $demo_principal = get_field('demo_principal');
+    $desc_addon = get_field('descricao_extensao');
+    $resumo = get_the_excerpt();
+    $bt_comprar = '<a class="button mini bege" href="'.$product->add_to_cart_url().'">comprar</a>';
 
     if($ativa_LP == false) {
         echo '<p style="margin-top:1em">';
             if($demo_principal) echo '<a class="button mini" href="'.$demo_principal['url'].'" target="_blank" title="'.$demo_principal['title'].'">ver em ação</a>&nbsp;&nbsp;';
-            echo '<a class="button mini bege" href="'.$product->add_to_cart_url().'">comprar</a>';
+
+            if($desc_addon) {
+                if(strlen($desc_addon) >= 1000) echo $bt_comprar;
+            } else {
+                if(strlen($resumo) >= 1000) echo $bt_comprar;
+            }
         echo '</p>';
     }
 }
@@ -155,11 +163,6 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_d
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 
-// remove metabox do resumo do produto - que eh desenecessario
-function remove_excerpt_metabox() {
-    remove_meta_box( 'postexcerpt','product','normal'); 
-}
-// add_action('add_meta_boxes','remove_excerpt_metabox', 50);
 
 // preços "a partir de"
 add_filter( 'woocommerce_format_price_range', 'afc_custom_range_price', 10, 3 );
