@@ -145,7 +145,8 @@ function custom_button_after_product_summary() {
 
     $bt_text = 'comprar';
     if ( has_term( 'servicos-extras', 'product_cat', $product->id ) ) $bt_text = 'contratar';
-    
+    elseif ( has_term( 'planos', 'product_cat', $product->id ) ) $bt_text = 'assinar';
+
     $addcarrinho = '<a class="button mini bege" href="'.$product->add_to_cart_url().'">'.$bt_text.'</a>';
 
 
@@ -200,7 +201,11 @@ function afc_custom_add_cart(){
 
         if ( has_term( 'servicos-extras', 'product_cat', $product->id ) ) return 'Contratar';
 
+        elseif ( has_term( 'planos', 'product_cat', $product->id ) ) return 'Assinar plano';
+
         return 'Comprar';
+
+        
     }
 
 }

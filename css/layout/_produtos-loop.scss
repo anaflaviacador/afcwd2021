@@ -1,6 +1,7 @@
 ul.afc-produtos {
     display: flex; justify-content: center;
     width: calc(100% + 25px); margin-left: -25px;
+    flex-wrap: wrap;
 
     &.col-4 li { width: calc(25% - 25px); margin-left: 25px; }
     &.col-3 li { width: calc(33% - 25px); margin-left: 25px; }
