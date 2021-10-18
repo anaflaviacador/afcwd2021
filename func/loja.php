@@ -190,6 +190,9 @@ function afc_custom_add_cart(){
     if($lp && $nome) {
         return 'Comprar '.$nome.'!';
     } else {
+
+        if ( has_term( 'servicos-extras', 'product_cat', $product->id ) ) return 'Contratar';
+
         return 'Comprar';
     }
 
