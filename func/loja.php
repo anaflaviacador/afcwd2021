@@ -431,7 +431,7 @@ function afcwoo_inserir_politica() {
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
         $product = $cart_item['data'];
         
-        if ( !has_term( 'planos', 'product_cat', $product->id ) ) {
+        if ( has_term( array('temas','addons'), 'product_cat', $product->id ) ) {
             $cat_check = true;
 
                 woocommerce_form_field( 'aceite_extra', array(
