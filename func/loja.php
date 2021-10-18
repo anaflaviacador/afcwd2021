@@ -465,7 +465,7 @@ function afcwoo_politica_nao_selecionada() {
     foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
         $product = $cart_item['data'];
         
-        if ( !has_term( 'planos', 'product_cat', $product->id ) ) {
+        if ( has_term( array('temas','addons'), 'product_cat', $product->id ) ) {
             $cat_check = true;
 
             if ( ! (int) isset( $_POST['aceite_extra'] ) ) wc_add_notice( __( 'Você precisa alegar que está ciente que sua licença é intransferível e que <strong>não pode reproduzir ou distribuir os produtos do studio</strong> para outras pessoas.' ), 'error' );
