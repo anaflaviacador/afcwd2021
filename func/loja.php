@@ -307,6 +307,50 @@ function afc_checkout_field_alerta_email( $field, $key ){
     
 
 
+// mensagens de aviso sobre o nao parcelamento para planos recorrentes, descontos e parcelamentos
+add_action( 'woocommerce_review_order_before_payment', 'afc_mensagem_acima_pagamentos' );
+function afc_mensagem_acima_pagamentos() {
+    $time = date('d-m-Y');
+    $hoje = date("d",strtotime($time));
+    $cat_check = false;
+
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+        $product = $cart_item['data'];
+        
+        if ( has_term( 'planos', 'product_cat', $product->id ) ) {
+            $cat_check = true;            
+
+            $recurring_total = 0;
+
+            foreach ( WC()->cart->cart_contents as $item_key => $item ){
+                $item_quantity = $item['quantity'];
+                $item_monthly_price = $item['data']->subscription_price;
+                $item_recurring_total = $item_quantity * $item_monthly_price;
+                $recurring_total += $item_recurring_total; 
+            }
+
+            echo '<blockquote class="bege" style="margin-bottom: 3em; font-size: 0.8em;"><p><span style="color:var(--cor-bege);font-weight:bold"><i class="fas fa-info-circle"></i> Lembre-se!</span> <em>Assinar um plano não é o mesmo que parcelar uma compra.</em> Será cobrado do seu cartão <strong style="color:var(--cor-bege);font-weight:bold">R$'.$recurring_total.' sempre no dia '.$hoje.'</strong>, incluindo hoje, e se manterá enquanto sua assinatura estiver ativa. Você pode pedir reembolso apenas nos próximos 7 dias e cancelar a renovação quando quiser, sem tempo mínimo!</p></blockquote>';
+
+            break;
+
+        } else {
+
+            // $valorCart = WC()->cart->get_cart_subtotal();
+            $valorCart = WC()->cart->subtotal; // valor sem $
+
+            echo '<blockquote class="verde" style="margin-bottom: 3em; font-size: 0.8em;"><p>';
+                echo '<span style="color:var(--cor-verde);font-weight:bold"><i class="fas fa-info-circle"></i> Hey, sunshine!</span>&nbsp;'; 
+                if($valorCart < 90 ) echo 'Parcelamos compras acima de R$90 em até 6x sem juros e damos desconto de 10% no Pix para compras acima de R$180!';
+                elseif ($valorCart >= 90 && $valorCart < 180) echo 'Damos 10% de desconto no Pix para compras acima de R$180! Você pode parcelar sua compra no cartão de crédito em até 6x sem juros.';
+                elseif ($valorCart >= 180) echo '<span style="color:var(--cor-verde)">Pague no cartão em até 6x s/juros ou ganhe 10% OFF no Pix!</span>';
+            echo '</p></blockquote>';
+
+        }
+    }
+ 
+}
+
+
 // remove titulo de nota adicional
 add_filter( 'woocommerce_enable_order_notes_field', '__return_false', 9999 );
 
@@ -341,38 +385,6 @@ if (class_exists('WC_Gateway_Stripe')) {
 
         return $icons;
     }    
-}
-
-
-
-// mensagem de aviso sobre o nao parcelamento para planos recorrentes
-add_action('woocommerce_checkout_before_terms_and_conditions', 'afc_mensagem_para_planos', 999);
-function afc_mensagem_para_planos() {
-    $time = date('d-m-Y');
-    $hoje = date("d",strtotime($time));
-
-    // $valorCart = WC()->cart->get_cart_subtotal();
-
-    $cat_check = false;
-    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-        $product = $cart_item['data'];
-        
-        if ( has_term( 'planos', 'product_cat', $product->id ) ) {
-            $cat_check = true;
-
-            $recurring_total = 0;
-
-            foreach ( WC()->cart->cart_contents as $item_key => $item ){
-                $item_quantity = $item['quantity'];
-                $item_monthly_price = $item['data']->subscription_price;
-                $item_recurring_total = $item_quantity * $item_monthly_price;
-                $recurring_total += $item_recurring_total; 
-            }
-
-            echo '<blockquote class="rosa" style="margin-bottom: 3em; border:0; font-size: 0.8em; color:var(--cor-negacao);"><p> <strong>LEMBRE-SE</strong>: Um plano de assinatura não é o mesmo que uma compra parcelada! Isso significa que será debitado no seu cartão <strong>R$'.$recurring_total.' todo dia '.$hoje.' do mês</strong>. Você pode pedir reembolso apenas nos próximos 7 dias. Após este período não haverá devolução, apenas cancelamento de renovação automática, ok? <a href="'.esc_url(home_url('/')).'servicos/planos#faq" target="_blank" style="color:var(--cor-negacao); text-decoration:underline">Saiba mais aqui</a>.</p></blockquote>';
-            break;
-        }
-    }
 }
 
 
