@@ -10,10 +10,11 @@ echo '<section class="todos-planos sendy" id="assinar">';
         echo '<header>';
             echo '<h3>Iniciante</h3>';
             echo '<data><abbr title="BRL">R$</abbr><span class="valor-plano">9</span><span class="freq">,90 /mês*</span></data>';
-            echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites com baixa audiência, blogs pessoais e iniciantes em email marketing.</p>';
+            echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites com pequena audiência, blogs pessoais e iniciantes em email marketing.</p>';
         echo '</header>';
         echo '<ul>';
             echo '<li><strong>Cota mensal de 2mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+            echo '<li>Leads, listas, segmentações e automações <em>ilimitadas</em></li>';
             echo '<li>Templates inclusos: 1</li>';
 
         echo '</ul>';
@@ -39,7 +40,9 @@ echo '<section class="todos-planos sendy" id="assinar">';
         echo '<ul>';
 
             echo '<li><strong>Cota mensal de 10mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+            echo '<li>Leads, listas, segmentações e automações <em>ilimitadas</em></li>';
             echo '<li>Templates inclusos: 2</li>';
+            echo '<li>Opt-in comentários Wordpress <span data-tooltip="Seu visitante pode aproveitar e assinar uma lista ao enviar um comentário!" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
         echo '</ul>';
         echo '<footer id="basic">';
@@ -65,7 +68,9 @@ echo '<section class="todos-planos sendy" id="assinar">';
         echo '<ul>';
 
             echo '<li><strong>Cota mensal de 50mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+            echo '<li>Leads, listas, segmentações e automações <em>ilimitadas</em></li>';
             echo '<li>Templates inclusos: 3</li>';
+            echo '<li>Opt-in comentários Wordpress <span data-tooltip="Seu visitante pode aproveitar e assinar uma lista ao enviar um comentário!" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
             echo '<li>Integração com Woocommerce <span data-tooltip="Capture os emails de compradores e vincule produtos a listas específicas" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
         echo '</ul>';
@@ -90,7 +95,9 @@ echo '<section class="todos-planos sendy" id="assinar">';
         echo '<ul>';
 
             echo '<li><strong>Cota mensal de 100mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+            echo '<li>Leads, listas, segmentações e automações <em>ilimitadas</em></li>';
             echo '<li>Templates inclusos: 4</li>';
+            echo '<li>Opt-in comentários Wordpress <span data-tooltip="Seu visitante pode aproveitar e assinar uma lista ao enviar um comentário!" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
             echo '<li>Integração com Woocommerce <span data-tooltip="Capture os emails de compradores e vincule produtos a listas específicas" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
             echo '<li>Integração com Zapier <span data-tooltip="Com acesso a API, é possível vincular suas capturas com outros serviços" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 

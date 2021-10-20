@@ -94,6 +94,14 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '</div>';
 
 		echo '<div class="aba">';
+			echo '<div class="aba-titulo">Posso integrar com comentários do meu blog?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>Com certeza! A partir do plano <em style="color:var(--cor-verde);">entusiasta</em> você poderá adicionar uma opção de assinatura para quem comenta nas suas publicações, facilitando a captura de emails através do formulário de comentário padrão do Wordpress. Ainda é possível escolher uma lista específica só para quem comenta!</p>';
+				echo '<p style="line-height:1.3"><small>Obs: será necessário edição da programação de seu layout pra realizar a integração caso seu projeto não venha pré-implementado nativamente.</small></p>';
+			echo '</div>';
+		echo '</div>';
+
+		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Posso utilizar email de provedores comuns, como Gmail ou Hotmail?</div>';
 			echo '<div class="aba-conteudo">';
 				echo '<p>Para que a Amazon faça os disparos dos emails em seu nome, é necessário que façamos apontamentos de DNS do domínio do remetente. Desta forma, é obrigatório que você tenha um domínio personalizado. Já o email de login de administração do app pode ser de provedores comuns para facilitar acessos e recupeções de senha.</p>';

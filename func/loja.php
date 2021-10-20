@@ -258,12 +258,6 @@ add_filter( 'wc_add_to_cart_message_html', '__return_null' );
 function custom_override_checkout_fields_ek( $fields ) {
     // credito: https://rudrastyh.com/woocommerce/reorder-checkout-fields.html
 
-    unset($fields['billing']['billing_company']);
-    unset($fields['billing']['billing_address_2']);
-    // unset($fields['billing']['billing_phone']);
-    // unset($fields['billing']['billing_neighborhood']);
-    // unset($fields['billing']['billing_country']);
-
     $fields['billing']['billing_neighborhood']['required'] = true;
 
     $fields['billing']['billing_email']['priority'] = 21;
@@ -275,12 +269,11 @@ function custom_override_checkout_fields_ek( $fields ) {
         $fields['billing']['billing_email']['label'] = 'E-mail para conta e recebimento';
     }
 
-
     $fields['billing']['billing_address_1']['class'] = array( 'afc-form-row-first' );
     $fields['billing']['billing_number']['class'] = array( 'afc-form-row-last' );
     $fields['billing']['billing_persontype']['class'] = array( 'afc-form-row-first' );
     $fields['billing']['billing_cpf']['class'] = array( 'afc-form-row-last' );
-    $fields['billing']['billing_cnpj']['class'] = array( 'afc-form-row-last' );
+    // $fields['billing']['billing_cnpj']['class'] = array( 'afc-form-row-last' );
 
     $fields['billing']['billing_neighborhood']['class'] = array( 'afc-form-row-wide clear' );
 
@@ -292,6 +285,7 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_ek'
 
 add_filter('woocommerce_default_address_fields', 'override_default_address_checkout_fields', 20, 1);
 function override_default_address_checkout_fields( $fields ) {
+
     $fields['address_1']['placeholder'] = 'Rua / avenida';
     // $fields['postcode']['label'] = 'CEP / Postcode / ZIP';
     return $fields;
