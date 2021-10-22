@@ -1,5 +1,4 @@
-<?php /* Template Name: Simples */
- 
+<?php
 echo '<!DOCTYPE html>';
 echo '<html lang="pt-BR" dir="ltr">';
 echo '<head>';

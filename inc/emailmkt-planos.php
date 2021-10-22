@@ -10,12 +10,13 @@ echo '<section class="todos-planos sendy" id="assinar">';
         echo '<header>';
             echo '<h3>Iniciante</h3>';
             echo '<data><abbr title="BRL">R$</abbr><span class="valor-plano">9</span><span class="freq">,90 /mês*</span></data>';
-            echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites com pequena audiência, blogs pessoais e iniciantes em email marketing.</p>';
+            echo '<p><strong><span><i class="fas fa-envelope"></i> 2mil envios</span></strong> <br>ideal para sites com pequena audiência e blogs com poucas publicações mensais.</p>';
         echo '</header>';
         echo '<ul>';
             echo '<li><strong>Cota mensal de 2mil envios</strong> <span data-tooltip="São todos os emails enviados pela sua conta no total, incluindo confirmações de cadastrados e automações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
             echo '<li>Leads, listas, segmentações e automações <em>ilimitadas</em></li>';
             echo '<li>Templates inclusos: 1</li>';
+            echo '<li>Opt-in comentários Wordpress <span data-tooltip="Seu visitante pode aproveitar e assinar uma lista ao enviar um comentário!" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
         echo '</ul>';
         echo '<footer id="basic">';
@@ -35,7 +36,7 @@ echo '<section class="todos-planos sendy" id="assinar">';
             echo '<h3>Entusiasta</h3>';
             echo '<label>+ pedido</label>';
             echo '<data><abbr title="BRL">R$</abbr><span class="valor-plano">32</span><span class="freq">,90/mês*</span></data>';
-            echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites e blogs que já têm público fiel e quer aumentar sua conexão.</p>';
+            echo '<p><strong><span><i class="fas fa-envelope"></i> 10mil envios </span></strong><br>ideal para sites com público fiel e blogs com publicações semanais.</p>';
         echo '</header>';
         echo '<ul>';
 
@@ -63,7 +64,7 @@ echo '<section class="todos-planos sendy" id="assinar">';
             
 
             echo '<data><abbr title="BRL">R$</abbr><span class="valor-plano">59</span><span class="freq">,90/mês*</span></data>';
-            echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites que produzem conteúdos frequentes, microempresas e lojas de pequeno porte.</p>';
+            echo '<p><strong><span><i class="fas fa-envelope"></i> 50mil envios</span></strong> <br>ideal para blogs com posts diários, microempresas e lojas de pequeno porte.</p>';
         echo '</header>';
         echo '<ul>';
 
@@ -90,7 +91,7 @@ echo '<section class="todos-planos sendy" id="assinar">';
         echo '<header>';
             echo '<h3>Business</h3>';
             echo '<data><abbr title="BRL">R$</abbr><span class="valor-plano">84</span><span class="freq">,90/mês*</span></data>';
-            echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites com audiência engajada e lojas virtuais em ascensão.</p>';
+            echo '<p><strong><span><i class="fas fa-envelope"></i> 100mil envios</span></strong> <br>ideal para sites e blogs com audiência engajada e lojas virtuais em ascensão.</p>';
         echo '</header>';
         echo '<ul>';
 
