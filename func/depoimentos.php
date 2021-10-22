@@ -31,7 +31,10 @@ function afc_depoimentos($num = '', $term = '') {
 			$nome = get_the_title();
 			$projeto = get_field('projeto');
 			$produto = get_field('tema');
+
 			$site = get_field('dominio');
+			$siteprojeto = get_field('info_proj_online', $projeto);
+			if($projeto) $site = $siteprojeto;
 
 			$nometema = get_the_title($produto);
 			if($produto) $nometema = get_field('nome_produto',$produto);
@@ -47,12 +50,15 @@ function afc_depoimentos($num = '', $term = '') {
 							echo '</figure>';
 						}
 
-						echo '<hgroup>';
+						echo '<hgroup style="width: calc(100% - 75px);">';
 						echo '<h3 class="cursivo">'.$nome.'</h3>';
 							if($projeto){
-								echo '<h4>Projeto <a href="'.get_the_permalink($projeto).'" data-tooltip="Ver detalhes do projeto">'.get_the_title($projeto).'</a></h4>';
+								echo '<h4 style="text-overflow: ellipsis; overflow: hidden">';
+									echo 'Projeto <a href="'.get_the_permalink($projeto).'" data-tooltip="Ver detalhes do projeto">'.get_the_title($projeto).'</a>';
+									if($site) echo '&nbsp;&nbsp;<a href="'.esc_url($site).'" target="_blank" rel="nofollow noopener" style="color:var(--cor-roxo)!important;" data-tooltip="Veja o site projetado!"><i class="fas fa-desktop-alt"></i></a>';
+								echo '</h4>';
 							} elseif ($produto && !is_product()) {
-								echo '<h4><a href="'.get_the_permalink($produto).'" data-tooltip="Ver tema na loja do studio">Template '.$nometema.'</a>'; 
+								echo '<h4 style="text-overflow: ellipsis; overflow: hidden"><a href="'.get_the_permalink($produto).'" data-tooltip="Ver tema na loja do studio">Template '.$nometema.'</a>'; 
 								if($site) echo '&nbsp;&nbsp;<a href="'.esc_url($site).'" target="_blank" rel="nofollow noopener" style="color:var(--cor-roxo)!important;" data-tooltip="Veja em ação nesse site"><i class="fas fa-desktop-alt"></i></a>';
 								echo '</h4>';
 							}
