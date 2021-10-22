@@ -263,6 +263,9 @@ function custom_override_checkout_fields_ek( $fields ) {
     $fields['billing']['billing_email']['priority'] = 21;
     $fields['billing']['billing_email']['class'] = array( 'afc-form-row-wide clear' );
 
+    $fields['billing']['billing_company']['label'] = 'Razão social da empresa <abbr class="required" title="obrigatório">*</abbr>';
+
+
     if(is_user_logged_in()) {
         $fields['billing']['billing_email']['label'] = 'E-mail para recebimento dos arquivos';
     } else {
@@ -283,13 +286,6 @@ function custom_override_checkout_fields_ek( $fields ) {
 }
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields_ek' );
 
-add_filter('woocommerce_default_address_fields', 'override_default_address_checkout_fields', 20, 1);
-function override_default_address_checkout_fields( $fields ) {
-
-    $fields['address_1']['placeholder'] = 'Rua / avenida';
-    // $fields['postcode']['label'] = 'CEP / Postcode / ZIP';
-    return $fields;
-}
 
 add_action( 'woocommerce_form_field_tel','afc_checkout_field_alerta_tel', 10, 2 );
 function afc_checkout_field_alerta_tel( $field, $key ){
