@@ -8,7 +8,7 @@ echo '</article>';
 echo '<section id="depoimentos-incriveis" style="padding-top: 1em">';
 	echo '<div class="container">';
 		echo '<span class="gutter-sizer"></span><span class="grid-sizer"></span>';
-		afc_depoimentos(-1);
+		afc_depoimentos(-1,'');
 	echo '</div>';
 
 	echo '<div class="cta">';

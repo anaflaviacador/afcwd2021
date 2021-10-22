@@ -22,7 +22,7 @@ if (is_front_page() || is_post_type_archive(array('etheme_portfolio')) || is_pag
 
 			$numDepo = '';
 			if (is_front_page()) { $numDepo = 8; } else { $numDepo = 5; }
-			afc_depoimentos($numDepo);
+			afc_depoimentos($numDepo,'');
 		echo '</div>';
 
 

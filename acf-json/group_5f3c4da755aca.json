@@ -1,6 +1,6 @@
 {
     "key": "group_5f3c4da755aca",
-    "title": "Projeto",
+    "title": "Dados de cliente",
     "fields": [
         {
             "key": "field_5f3c4db5c320b",
@@ -24,6 +24,46 @@
             "multiple": 0,
             "return_format": "id",
             "ui": 1
+        },
+        {
+            "key": "field_6172bd0814cc6",
+            "label": "Produto da loja relacionado",
+            "name": "tema",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "post_type": [
+                "product"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_6172bd9542a3d",
+            "label": "Domínio instalação",
+            "name": "dominio",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -36,12 +76,12 @@
         ]
     ],
     "menu_order": 0,
-    "position": "acf_after_title",
-    "style": "seamless",
-    "label_placement": "left",
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1597797670
+    "modified": 1634919563
 }
