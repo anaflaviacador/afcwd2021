@@ -46,7 +46,7 @@ if (have_posts()) {
 
 echo '</article>';
 
-if($mostraprodutos) echo '<div class="container">'.do_shortcode('[products category="addons"]').'</div>';
+if($mostraprodutos) echo '<div class="container">'.do_shortcode('[products category="addons" columns="3"]').'</div>';
 
 echo '<div class="has-text-align-center" style="margin-top:2em"><a href="'.$urlHome.'" class="button"><i class="far fa-long-arrow-left"></i> Voltar ao site</a></div>';
 
