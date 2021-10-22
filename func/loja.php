@@ -353,6 +353,8 @@ function afc_mensagem_acima_pagamentos() {
                 elseif ($valorCart >= 180) echo '<span style="color:var(--cor-verde)">Pague no cartão em até 6x s/juros ou ganhe 10% OFF no Pix!</span>';
             echo '</p></blockquote>';
 
+            break;
+
         }
     }
  

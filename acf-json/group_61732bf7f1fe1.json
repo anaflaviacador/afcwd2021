@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_61732c0b707d0",
-            "label": "Mostrar extensões",
+            "label": "Mostrar produtos",
             "name": "mostrar_produtos",
             "type": "true_false",
             "instructions": "",
@@ -40,5 +40,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634937922
+    "modified": 1634939041
 }
