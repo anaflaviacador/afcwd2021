@@ -73,9 +73,7 @@ echo '<li>';
 				}
 
 				$demo_principal = get_field('demo_principal');
-				echo '<p style="padding:10px">';
-					if($demo_principal) echo '<a class="button mini" href="'.$demo_principal['url'].'" target="_blank" title="'.$demo_principal['title'].'">ver em ação</a>';
-				echo '</p>';
+				if($demo_principal) echo '<p style="padding:10px"><a class="button azul mini" href="'.$demo_principal['url'].'" target="_blank" title="'.$demo_principal['title'].'">ver em ação</a></p>';
 			
 			echo '<article>'.$desc_addon.'</article>';
 		echo '</div>';

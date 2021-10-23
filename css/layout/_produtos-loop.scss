@@ -11,6 +11,9 @@ ul.afc-produtos {
         display: flex; margin-bottom: 2em;
         flex-direction: column; @include transition(box-shadow .2s ease-in-out);
 
+        @media (max-width: $tablet) { width: calc(50% - 20px) !important; margin-left: 20px !important; }
+        @media (max-width: $smart-menor) { width: 100% !important; }
+
         &:hover {@extend %sombra-forte;}
 
         figure { width: 100%; }
@@ -69,14 +72,14 @@ ul.afc-produtos {
             .amount { font-weight: bold; color: var(--cor-verde); }
         }
 
-        a.button { font-size: 1.1em; }
+        a.button { font-size: 1.1em; margin-top: 10px; }
 
         @media (min-width: $smart-menor + 1px) {
             .titulo { margin-right: 1em; flex-grow: 1;}
         }
         @media (max-width: $smart-menor) {
-            flex-wrap: wrap;
-            .titulo { width: 100%; }
+            flex-wrap: wrap; justify-content: center;
+            .titulo { width: 100%; text-align: center; }
         }
     }
 
