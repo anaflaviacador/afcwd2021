@@ -76,6 +76,14 @@ echo '<div class="wp-block-columns abinhas">';
 				echo '<p>Você tem o direito de arrependimento do seu plano aderido apenas na primeira semana de adesão. Após este período, nenhum reembolso será realizado, apenas será realizado o cancelamento da renovação.</p>';
 			echo '</div>';
 		echo '</div>';
+
+
+		echo '<div class="aba">';
+			echo '<div class="aba-titulo">Afiliadas do studio tem assinatura mais barata?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>Por ter um custo bastante reduzido, os planos de email marketing não se adequam aos descontos de pós-produção nem fazem perte do recebimento de comissões por indicação.</p>';
+			echo '</div>';
+		echo '</div>';
 		
 
 		
@@ -96,7 +104,7 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Posso integrar com comentários do meu blog?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Com certeza! A partir do plano <em style="color:var(--cor-verde);">entusiasta</em> você poderá adicionar uma opção de assinatura para quem comenta nas suas publicações, facilitando a captura de emails através do formulário de comentário padrão do Wordpress. Ainda é possível escolher uma lista específica só para quem comenta!</p>';
+				echo '<p>Com certeza! Você poderá adicionar uma opção de assinatura para quem comenta nas suas publicações, facilitando a captura de emails através do formulário de comentário padrão do Wordpress. Ainda é possível escolher uma lista específica só para quem comenta!</p>';
 				echo '<p style="line-height:1.3"><small>Obs: será necessário edição da programação de seu layout pra realizar a integração caso seu projeto não venha pré-implementado nativamente.</small></p>';
 			echo '</div>';
 		echo '</div>';
@@ -138,6 +146,15 @@ echo '<div class="wp-block-columns abinhas">';
 			echo '</div>';
 		echo '</div>';
 
+
+		echo '<div class="aba">';
+			echo '<div class="aba-titulo">Vai enviar emails automaticamente quando eu postar no blog?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>Não. O Sendy é um app de gerenciamento e envio de emails. O serviço de leitura de feed não entra nesta categoria. As integrações no Wordpress se tratam apenas de capturar.</p>';
+				echo '<p>Uma forma de fazer o Sendy trabalhar com seu conteúdo é através do envio de campanhas, programando-as para serem disparadas no mesmo horário das publicações. Com isso, sua newsletter "sincroniza" com o blog para os assinantes receberem notificação assim que houver uma nova publicação!</p>';
+			echo '</div>';
+		echo '</div>';
+
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Posso cancelar a qualquer momento?</div>';
 			echo '<div class="aba-conteudo">';
@@ -154,12 +171,7 @@ echo '<div class="wp-block-columns abinhas">';
 			echo '</div>';
 		echo '</div>';
 		
-		echo '<div class="aba">';
-			echo '<div class="aba-titulo">Afiliadas do studio tem assinatura mais barata?</div>';
-			echo '<div class="aba-conteudo">';
-				echo '<p>Por ter um custo bastante reduzido, os planos de email marketing não se adequam aos descontos de pós-produção nem fazem perte do recebimento de comissões por indicação.</p>';
-			echo '</div>';
-		echo '</div>';
+		
 
 		
 
