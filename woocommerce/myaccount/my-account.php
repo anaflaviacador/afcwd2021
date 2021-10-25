@@ -48,3 +48,9 @@ do_action( 'woocommerce_account_navigation' ); ?>
 			echo '<p class="has-text-align-center"><a href="'.esc_url(home_url('/')).'servicos/email-marketing" class="button grafite">Clique aqui e saiba mais</a></p>';
 		}
 	}
+
+	if( is_wc_endpoint_url('downloads') || is_wc_endpoint_url('orders') || is_wc_endpoint_url('view-order') ) {
+		echo '<div class="has-text-align-center" style="margin-top:1em">';
+			echo '<a href="https://afcweb.design/termos/" target="_blank" class="button mini grafite"><i class="far fa-file-invoice"></i> Termos de uso</a>';
+		echo '</div>';
+	}

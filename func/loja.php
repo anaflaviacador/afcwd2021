@@ -337,7 +337,11 @@ function afc_mensagem_acima_pagamentos() {
                 $recurring_total += $item_recurring_total; 
             }
 
-            echo '<blockquote class="bege" style="margin-bottom: 3em; font-size: 0.8em;"><p><span style="color:var(--cor-bege);font-weight:bold"><i class="fas fa-info-circle"></i> Lembre-se!</span> <em>Assinar um plano não é o mesmo que parcelar uma compra.</em> Será cobrado do seu cartão <strong style="color:var(--cor-bege);font-weight:bold">R$'.$recurring_total.' sempre no dia '.$hoje.'</strong>, incluindo hoje, e se manterá enquanto sua assinatura estiver ativa. Você pode pedir reembolso apenas nos próximos 7 dias e cancelar a renovação quando quiser, sem tempo mínimo!</p></blockquote>';
+            echo '<blockquote class="bege" style="margin-bottom: 3em; font-size: 0.8em;">'; 
+                echo '<p><span style="color:var(--cor-bege);font-weight:bold"><i class="fas fa-info-circle"></i> Lembre-se!</span> <em>Assinar um plano não é o mesmo que parcelar uma compra.</em> Será cobrado do seu cartão <strong style="color:var(--cor-bege);font-weight:bold">R$'.$recurring_total.' sempre no dia '.$hoje.'</strong>, incluindo hoje, e se manterá enquanto sua assinatura estiver ativa. Você pode pedir reembolso apenas nos próximos 7 dias e cancelar a renovação quando quiser, sem tempo mínimo!</p>';
+
+                echo '<p style="margin-top:10px">Ah, e não se preocupe se você mora fora do Brasil: <u>aceitamos cartão de crédito internacional</u> emitido no exterior, não importa onde você estiver! &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;"></p>';
+            echo '</blockquote>';
 
             break;
 
@@ -347,10 +351,13 @@ function afc_mensagem_acima_pagamentos() {
             $valorCart = WC()->cart->subtotal; // valor sem $
 
             echo '<blockquote class="verde" style="margin-bottom: 3em; font-size: 0.8em;"><p>';
-                echo '<span style="color:var(--cor-verde);font-weight:bold"><i class="fas fa-info-circle"></i> Hey, sunshine!</span>&nbsp;'; 
-                if($valorCart < 90 ) echo 'Parcelamos compras acima de R$90 em até 6x sem juros e damos desconto de 10% no Pix para compras acima de R$180!';
+                echo '<span style="color:var(--cor-afirmacao);font-weight:bold"><i class="fas fa-info-circle"></i> Hey, sunshine!</span>&nbsp;'; 
+                if($valorCart < 90 ) echo 'Parcelamos compras acima de R$90 em até 6x sem juros e damos 10%OFF no Pix para compras acima de R$180!';
                 elseif ($valorCart >= 90 && $valorCart < 180) echo 'Damos 10% de desconto no Pix para compras acima de R$180! Você pode parcelar sua compra no cartão de crédito em até 6x sem juros.';
-                elseif ($valorCart >= 180) echo '<span style="color:var(--cor-verde)">Pague no cartão em até 6x s/juros ou ganhe 10% OFF no Pix!</span>';
+                elseif ($valorCart >= 180) 
+                echo 'Pague no cartão em <strong>até 6x s/juros</strong> ou ganhe <strong>10%OFF no Pix</strong>!';
+
+                echo '&nbsp;Ah, e não se preocupe se você mora fora do Brasil: <u>aceitamos cartão de crédito internacional</u> emitido no exterior, não importa onde você estiver! &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;">';
             echo '</p></blockquote>';
 
             break;

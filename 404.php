@@ -30,7 +30,7 @@ echo '<header id="cabecalho" style="box-shadow: none">';
 
 echo '</header>';
 
-echo '<article class="container mini-page-insta post-blog"'.(is_404() ? ' style="min-height: calc(100vh - 283px);"' : '').'>';
+echo '<article class="container mini-page-insta post-blog" style="min-height: calc(100vh - 283px);">';
 
 echo '<h1 style="font-size:1.65em;text-align:center; margin: 0 0 2em;">'; 
 	echo 'Nada encontrado';
