@@ -340,7 +340,7 @@ function afc_mensagem_acima_pagamentos() {
             echo '<blockquote class="bege" style="margin-bottom: 3em; font-size: 0.8em;">'; 
                 echo '<p><span style="color:var(--cor-bege);font-weight:bold"><i class="fas fa-info-circle"></i> Lembre-se!</span> <em>Assinar um plano não é o mesmo que parcelar uma compra.</em> Será cobrado do seu cartão <strong style="color:var(--cor-bege);font-weight:bold">R$'.$recurring_total.' sempre no dia '.$hoje.'</strong>, incluindo hoje, e se manterá enquanto sua assinatura estiver ativa. Você pode pedir reembolso apenas nos próximos 7 dias e cancelar a renovação quando quiser, sem tempo mínimo!</p>';
 
-                echo '<p style="margin-top:10px">Ah, e não se preocupe se você mora fora do Brasil: <u>aceitamos cartão de crédito internacional</u> emitido no exterior, não importa onde você estiver! &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;"></p>';
+                // echo '<p style="margin-top:10px">Ah, e não se preocupe se você mora fora do Brasil: <u>aceitamos cartão de crédito internacional</u> emitido no exterior, não importa onde você estiver! &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;"></p>';
             echo '</blockquote>';
 
             break;
@@ -357,7 +357,7 @@ function afc_mensagem_acima_pagamentos() {
                 elseif ($valorCart >= 180) 
                 echo 'Pague no cartão em <strong>até 6x s/juros</strong> ou ganhe <strong>10%OFF no Pix</strong>!';
 
-                echo '&nbsp;Ah, e não se preocupe se você mora fora do Brasil: <u>aceitamos cartão de crédito internacional</u> emitido no exterior, não importa onde você estiver! &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;">';
+                // echo '&nbsp;Ah, e não se preocupe se você mora fora do Brasil: <u>aceitamos cartão de crédito internacional</u> emitido no exterior, não importa onde você estiver! &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;">';
             echo '</p></blockquote>';
 
             break;
