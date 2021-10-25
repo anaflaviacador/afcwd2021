@@ -396,7 +396,7 @@ if (class_exists('WC_Gateway_Stripe')) {
     add_filter( 'wc_stripe_payment_icons', 'afc_logos_pgto_stripe' );
     function afc_logos_pgto_stripe( $icons ) {
         // var_dump( $icons ); // to show all possible icons to change.
-        $icons['visa'] = '<img width="20px" src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" />';
+        $icons['visa'] = '';
         $icons['amex'] = ''; $icons['mastercard'] = ''; $icons['discover'] = ''; $icons['diners'] = ''; $icons['jcb'] = ''; $icons['alipay'] = ''; $icons['wechat'] = ''; $icons['bancontact'] = ''; $icons['ideal'] = ''; $icons['p24'] = ''; $icons['giropay'] = ''; $icons['eps'] = ''; $icons['multibanco'] = ''; $icons['sofort'] = ''; $icons['sepa'] = '';
 
         return $icons;
