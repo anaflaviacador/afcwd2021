@@ -317,7 +317,7 @@ function afc_checkout_field_alerta_email( $field, $key ){
 
 // mensagens de aviso sobre o nao parcelamento para planos recorrentes, descontos e parcelamentos
 add_action( 'woocommerce_review_order_before_payment', 'afc_mensagem_acima_pagamentos' );
-function afc_mensagem_acima_pagamentos() {
+function afc_mensagem_acima_pagamentos() {  
     $time = date('d-m-Y');
     $hoje = date("d",strtotime($time));
     $cat_check = false;
@@ -340,7 +340,7 @@ function afc_mensagem_acima_pagamentos() {
             echo '<blockquote class="bege" style="margin-bottom: 3em; font-size: 0.8em;">'; 
                 echo '<p><span style="color:var(--cor-bege);font-weight:bold"><i class="fas fa-info-circle"></i> Lembre-se!</span> <em>Assinar um plano não é o mesmo que parcelar uma compra.</em> Será cobrado do seu cartão <strong style="color:var(--cor-bege);font-weight:bold">R$'.$recurring_total.' sempre no dia '.$hoje.'</strong>, incluindo hoje, e se manterá enquanto sua assinatura estiver ativa. Você pode pedir reembolso apenas nos próximos 7 dias e cancelar a renovação quando quiser, sem tempo mínimo!</p>';
 
-                // echo '<p style="margin-top:10px">Ah, e não se preocupe se você mora fora do Brasil: <u>aceitamos cartão de crédito internacional</u> emitido no exterior, não importa onde você estiver! &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;"></p>';
+                echo '<p style="margin-top:10px">Aceitamos cartão de crédito estrangeiro! É só ter um cartão apto a realizar transação internacional (será em moeda BRL) de bandeira Visa ou Master. &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;"></p>';
             echo '</blockquote>';
 
             break;
@@ -352,12 +352,11 @@ function afc_mensagem_acima_pagamentos() {
 
             echo '<blockquote class="verde" style="margin-bottom: 3em; font-size: 0.8em;"><p>';
                 echo '<span style="color:var(--cor-afirmacao);font-weight:bold"><i class="fas fa-info-circle"></i> Hey, sunshine!</span>&nbsp;'; 
-                if($valorCart < 90 ) echo 'Parcelamos compras acima de R$90 em até 6x sem juros e damos 10%OFF no Pix para compras acima de R$180!';
-                elseif ($valorCart >= 90 && $valorCart < 180) echo 'Damos 10% de desconto no Pix para compras acima de R$180! Você pode parcelar sua compra no cartão de crédito em até 6x sem juros.';
-                elseif ($valorCart >= 180) 
-                echo 'Pague no cartão em <strong>até 6x s/juros</strong> ou ganhe <strong>10%OFF no Pix</strong>!';
+                if($valorCart < 90 ) echo 'Parcelamos compras acima de R$90 em até 6x sem juros e damos 10%OFF no Pix para compras acima de R$180!</p>';
+                elseif ($valorCart >= 90 && $valorCart < 180) echo 'Damos 10% de desconto no Pix para compras acima de R$180! Você pode parcelar sua compra no cartão de crédito em até 6x sem juros.</p>';
+                elseif ($valorCart >= 180) echo 'Pague no cartão em <strong>até 6x s/juros</strong> ou ganhe <strong>10%OFF no Pix</strong>!</p>';
 
-                // echo '&nbsp;Ah, e não se preocupe se você mora fora do Brasil: <u>aceitamos cartão de crédito internacional</u> emitido no exterior, não importa onde você estiver! &nbsp;<img src="'.get_stylesheet_directory_uri() . '/img/flag-globe.svg" style="height:14px;vertical-align: text-top;">';
+                echo '<p style="margin-top:10px">Mora fora do Brasil? Aceitamos seu pagamento por conta <img src="'.get_stylesheet_directory_uri() . '/img/logo-paypal-gateway.svg" alt="paypal" title="paypal" style="height:14px;vertical-align: text-top;">. É só ter um cartão de crédito internacional cadastrado para fazer a transação na moeda BRL.';
             echo '</p></blockquote>';
 
             break;
