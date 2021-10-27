@@ -84,7 +84,7 @@ if(have_rows('produto_lp') ) {
 				}
 
 				$termsID = wc_terms_and_conditions_page_id();
-				if($tour && !empty($tour_video)) echo '<p class="termos">Há emissão de nota fiscal! Leia os <a href="'.get_the_permalink($termsID).'" target="_blank">termos de uso</a> para saber como funciona a licença e o que entra no suporte. Para demais dúvidas, veja a sessão de <a class="jump" href="#faq">perguntas e respostas</a> do tema.</p>';
+				if($tour && !empty($tour_video)) echo '<p class="termos">Há emissão de nota fiscal! Leia os <a href="'.get_the_permalink($termsID).'" target="_blank">termos de uso</a> para saber detalhes. Caso tenha alguma dúvida, conheça o <a class="jump" href="#faq">F.A.Q do tema</a>.</p>';
 
 			echo '</div>';
 
@@ -363,8 +363,8 @@ if(have_rows('produto_lp') ) {
 		echo '</section>';
 
 		echo '<div class="afclp-formas-pgto'.($espaco ? ' espaco' : '').($inverter ? ' inverter' : '').'">';
-			echo '<img src="'.$urlTema.'/img/lp/formas-pgto-dark.svg" alt="É aceito pagamento com praticamente todas as bandeiras de cartão de crédito, pix, boleto, picpay, pagseguro e paypal para pagamentos internacionais.">';
-			echo '<p>Pagamentos nacionais podem ser pagos por todas opções mostradas ao lado. Internacionais são cobradas à vista via cartão de crédito ou conta Paypal.</p>';
+			echo '<img src="'.$urlTema.'/img/lp/formas-pgto-dark.svg" alt="É aceito pagamento com praticamente todas as bandeiras de cartão de crédito, pix, boleto e paypal para pagamentos internacionais.">';
+			echo '<p>Pagamentos nacionais podem ser pagos em até 6x s/juros, boleto ou 10%OFF no Pix. Internacionais são cobradas à vista via Paypal.</p>';
 		echo '</div>';
 
 		// echo do_shortcode('[products]');
