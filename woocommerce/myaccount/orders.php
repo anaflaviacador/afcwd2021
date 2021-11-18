@@ -37,6 +37,8 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 			foreach ( $customer_orders->orders as $customer_order ) {
 				$order      = wc_get_order( $customer_order ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 				$item_count = $order->get_item_count() - $order->get_item_count_refunded();
+				$order_id = $order->ID;
+				
 				?>
 				<tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-<?php echo esc_attr( $order->get_status() ); ?> order">
 					<?php foreach ( wc_get_account_orders_columns() as $column_id => $column_name ) : ?>
@@ -73,7 +75,14 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 										echo '<a href="' . esc_url( $action['url'] ) . '" class="afc-acoes-pedido ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>&nbsp;';
 									}
 								}
+
+								$NFSE = get_field('pedido_nfse', $order_id);
+								if($NFSE['arquivo'] && $NFSE['identificador']) {
+									echo '[<a style="color:var(--cor-afirmacao);" href="'.esc_url($NFSE['arquivo']).'" download>NFSe</a>]';
+								}
 								?>
+
+								
 							<?php endif; ?>
 						</td>
 					<?php endforeach; ?>

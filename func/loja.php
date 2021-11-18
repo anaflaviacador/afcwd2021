@@ -77,6 +77,9 @@ add_filter( 'woocommerce_show_page_title', '__return_false' );
 add_filter('woocommerce_sale_flash', 'afc_remove_selo_promo');
 function afc_remove_selo_promo() { return false; }
 
+// remove bt de comprar novamente
+remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
+
 // ========================================//
 // REDIRECIONAMENTOS PARA USER DA LOJA
 // ========================================// 

@@ -25,12 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <?php /* translators: %s: Customer first name */ ?>
-<p><?php printf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $order->get_billing_first_name() ) ); ?></p>
-<p>Segue o link de sua nota fiscal eletrônica:</p>
-
-<blockquote><?php echo wpautop( wptexturize( make_clickable( $customer_note ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></blockquote>
+<p><?php printf( esc_html( 'Oi %s, tudo bem?' ), esc_html( $order->get_billing_first_name() ) ); ?></p>
+<p><?php echo wpautop( wptexturize( make_clickable( $customer_note ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 <br>
-<p>Informações sobre a autenticidade da NFSe podem ser obtidas no site da prefeitura do município de Goiânia <a href="https://www2.goiania.go.gov.br/sistemas/snfse/asp/snfse00210f0.asp" target="_blank" rel="nofollow noopener">clicando aqui</a>.</p>
 
 <p>Essa nota é referente ao pedido abaixo:</p>
 
