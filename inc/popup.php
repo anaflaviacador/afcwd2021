@@ -1,7 +1,7 @@
 <?php
 
 $webp = strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' );
-$extensao = 'jpg';
+$extensao = 'png';
 if( $webp !== false ) $extensao = 'webp';
 
 $urlHome = esc_url(home_url('/'));
