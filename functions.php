@@ -252,6 +252,10 @@ function afc_load_scripts_head() {
       from { transform: translate(0); }
       to { transform: translate(-100vw);}
     }';
+    echo '@media (max-width: 680px) {
+      .blackfriday-faixa {font-size: 10px;}
+      .blackfriday-faixa.faixa-2 {display:none}
+    }';
   echo '</style>';
 
 
