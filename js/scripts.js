@@ -227,7 +227,6 @@ jQuery(document).ready(function($) {
   var popupTempo = $('#popupTempo'),
       popupScroll = $('#popupScroll'),
       popupSaida = $('#popupSaida');
-  // var popupDelay = popupTempo.data('tempo');
 
   // se eh por tempo
   if (popupTempo.length > 0 && sessionStorage.getItem('popupTempoAbriu') !== 'true') {
@@ -237,7 +236,7 @@ jQuery(document).ready(function($) {
           sessionStorage.setItem('popupTempoAbriu','true');
         }
       });
-    },8000);
+    },3000); // 3s
   }
 
   // se eh por rolagem
@@ -245,7 +244,7 @@ jQuery(document).ready(function($) {
     var popupScrollJaAbriu = false;
 
     janela.on("scroll", function () {
-       if ($(this).scrollTop() > 2500 && popupScrollJaAbriu === false) {
+       if ($(this).scrollTop() > 1500 && popupScrollJaAbriu === false) {
           popupScrollJaAbriu = true;
           $.fancybox.open(popupScroll, {
             afterClose: function(){

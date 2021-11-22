@@ -11,6 +11,10 @@ echo '<body class="'.join(' ',get_body_class()).'">';
 get_template_part('inc/menu','canvas');
 echo '<main>';
 
+$agora = strtotime(date('Y-m-d'));
+$fimBF = strtotime('2021-11-26');
+if($agora <= $fimBF) get_template_part('inc/mensagem-blackfriday');
+
 // mensagens de erro ao logar
 if (! is_user_logged_in()) { 
 	echo '<div id="afc-msg-login">'; 
