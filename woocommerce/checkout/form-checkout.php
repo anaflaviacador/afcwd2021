@@ -32,7 +32,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 <?php if (wc_coupons_enabled()): ?>
 <div class="col2-set" id="customer_details">
 	<div class="col-1">
-		<?php get_template_part('inc/aviso-checkout'); ?>
+		<blockquote class="azul" style="margin-bottom: 2.5em; font-size: .8em;"><p><span style="color:var(--cor-azul-escuro); font-weight:bold"><i class="fal fa-credit-card"></i> Pagará no cartão de crédito?</span> Dê preferência em fechar seu pedido com os <u>dados do titular do cartão</u>, que são: nome completo, CPF/CNPJ e telefone. Qualquer divergência de dados podem ser barrados pelo sistema anti-fraude do Paypal e impedir a conclusão do pedido.</p></blockquote>
+		
 	</div>
 
 	<div class="col-2">
@@ -61,6 +62,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 				
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+
+				<?php get_template_part('inc/aviso-checkout'); ?>
 			</div>
 
 			<div class="col-2">

@@ -353,7 +353,7 @@ function afc_mensagem_acima_pagamentos() {
             // $valorCart = WC()->cart->get_cart_subtotal();
             $valorCart = WC()->cart->subtotal; // valor sem $
 
-            echo '<blockquote class="verde" style="margin-bottom: 3em; font-size: 0.8em;"><p>';
+            echo '<blockquote class="verde" style="margin-bottom: 1em; font-size: 0.8em;"><p>';
                 echo '<span style="color:var(--cor-afirmacao);font-weight:bold"><i class="fas fa-info-circle"></i> Hey, sunshine!</span>&nbsp;'; 
                 if($valorCart < 90 ) echo 'Parcelamos compras acima de R$90 em até 6x sem juros e damos 10%OFF no Pix para compras acima de R$180!</p>';
                 elseif ($valorCart >= 90 && $valorCart < 180) echo 'Damos 10% de desconto no Pix para compras acima de R$180! Você pode parcelar sua compra no cartão de crédito em até 6x sem juros.</p>';
