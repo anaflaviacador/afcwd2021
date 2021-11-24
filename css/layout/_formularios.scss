@@ -197,7 +197,7 @@
 
 	.label {
 		border:0; font-size: 0.95em; background: var(--cor-verde-claro);
-		border-radius: 8px;
+		border-radius: 8px; border: 1px solid var(--cor-verde-medio);
 
 		&:not(.wpforms-field-html) {padding: 10px 20px 20px;}
 		&.wpforms-field-html { padding: 0;
@@ -206,11 +206,11 @@
 
 		h3 {display:none}
 
-		&.cinza {background: var(--cor-cinza);}
-		&.rosa {background: var(--cor-rosa-claro);}
-		&.roxo {background: var(--cor-roxo-claro);}
-		&.bege {background: var(--cor-bege-claro);}
-		&.azul {background: var(--cor-azul-claro);}	
+		&.cinza {background: var(--cor-cinza); border-color: #DDD;}
+		&.rosa {background: var(--cor-rosa-claro); border-color: var(--cor-rosa-medio);}
+		&.roxo {background: var(--cor-roxo-claro); border-color: var(--cor-roxo-medio);}
+		&.bege {background: var(--cor-bege-claro); border-color: var(--cor-bege-medio);}
+		&.azul {background: var(--cor-azul-claro); border-color: var(--cor-azul-medio);}	
 
 		p:not(:first-of-type) { margin-top: 1em;}
 	}
@@ -218,6 +218,12 @@
 	.wpforms-field-html {
 		p:not(:first-of-type) { margin-top: 1em;}
 	}
+
+
+	.escolha-checkbox { padding: 0; }
+	.escolha-checkbox + .escolha-checkbox { margin-top: 0; }
+
+	.colar-acima {padding-top:0; margin-top: 0}	
 
 	.choices { margin: 14px 0 !important;}
 
