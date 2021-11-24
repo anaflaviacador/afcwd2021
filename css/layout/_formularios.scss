@@ -248,7 +248,7 @@
 		&:not(.wpforms-list-3-columns):not(.wpforms-list-2-columns) {
 			ul li {
 				&:not(:first-of-type) {border-top: 1px solid var(--cor-roxo-medio)}
-				&:nth-of-type(odd) { background: var(--cor-roxo-claro); }
+				// &:nth-of-type(odd) { background: var(--cor-roxo-claro); }
 
 				&:first-of-type {border-radius: 8px 8px 0 0;}
 				&:last-of-type {border-radius: 0 0 8px 8px;}
@@ -260,13 +260,15 @@
 				li {
 					flex-grow: 1;
 					&:not(:first-of-type) {border-left: 1px solid var(--cor-roxo-medio)}
-					&:nth-of-type(odd) { background: var(--cor-roxo-claro); }
+					// &:nth-of-type(odd) { background: var(--cor-roxo-claro); }
 
 					&:first-of-type {border-radius: 8px 0 0 8px;}
 					&:last-of-type {border-radius: 0 8px 8px 0;}
 				}
 			}
 		}
+
+		&.alternado ul li:nth-of-type(odd) { background: var(--cor-roxo-claro); }
 	}
 
 	@media (min-width: 670px) {
