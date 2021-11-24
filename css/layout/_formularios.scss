@@ -228,7 +228,10 @@
 	.choices { margin: 14px 0 !important;}
 
 	ul {
-		li:before { display: none !important; }
+		li {
+			&:before { display: none !important; }
+			&.wpforms-selected label { font-weight: bold;}
+		}
 	}
 
 	label {cursor: pointer;}
