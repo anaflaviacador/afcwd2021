@@ -210,7 +210,10 @@
 		&.rosa {background: var(--cor-rosa-claro); border-color: var(--cor-rosa-medio);}
 		&.roxo {background: var(--cor-roxo-claro); border-color: var(--cor-roxo-medio);}
 		&.bege {background: var(--cor-bege-claro); border-color: var(--cor-bege-medio);}
-		&.azul {background: var(--cor-azul-claro); border-color: var(--cor-azul-medio);}	
+		&.azul {background: var(--cor-azul-claro); border-color: var(--cor-azul-medio);}
+		 
+		&.alerta-negacao {background: var(--cor-negacao); border-color: var(--cor-negacao); color: white}
+		&.alerta-afirmacao {background: var(--cor-afirmacao); border-color: var(--cor-afirmacao); color: white }
 
 		p:not(:first-of-type) { margin-top: 1em;}
 	}
