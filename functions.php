@@ -74,7 +74,7 @@ if (class_exists('acf') && class_exists('AF')) {
 }
 
 /////////////// AREA CLIENTE
-include_once(get_template_directory().'/func/config-cliente.php' );
+// include_once(get_template_directory().'/func/config-cliente.php' );
 
 
 /////////////// PINTEREST
@@ -134,7 +134,7 @@ function edit_admin_menus(){
     add_submenu_page( 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1', 'Clientes', 'Clientes VIPs', 'manage_options', 'users.php?role=cliente_vip');
 
     // logs do form de contato
-    add_menu_page('Contatos', 'Logs de contato', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5efb867474157&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-email', 30 );
+    // add_menu_page('Contatos', 'Logs de contato', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5efb867474157&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-email', 30 );
   }
 }
 add_action( 'admin_menu', 'edit_admin_menus', 999 );
