@@ -85,9 +85,9 @@ echo '<div class="modal" id="faq" aria-label="Perguntas frequentes">';
 	echo '<article>'; get_template_part('modais/faq'); echo '</article>'; 
 echo '</div>'; 
 
-$agora = strtotime(date('Y-m-d'));
-$fimBF = strtotime('2021-11-26');
-if($agora <= $fimBF && !is_user_logged_in()) get_template_part('inc/popup');
+// $agora = strtotime(date('Y-m-d'));
+// $fimBF = strtotime('2021-11-26');
+// if($agora <= $fimBF && !is_user_logged_in()) get_template_part('inc/popup');
 
 get_template_part('inc/whatsapp');
 

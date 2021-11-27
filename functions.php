@@ -230,33 +230,33 @@ function afc_cssnosync($tag, $handle) {
 
 function afc_load_scripts_head() {
   // BLACKFRIDAY
-  echo '<style>';
-    echo '.blackfriday-faixa {
-      z-index:100; position:relative;
-      border-top: 2px solid var(--cor-negacao); 
-      display:flex; background: var(--cor-grafite); color: white;
-      font-family: Avenir Rounded,sans-serif; text-transform: uppercase;
-      padding: 12px 0; font-size: 13px; letter-spacing: 1px; justify-content: center;
-    }';
-    echo '.blackfriday-faixa span {
-      flex-shrink: 0;
-    }';
-    echo '.blackfriday-faixa span.animado {
-      animation-name: blackfriday;
-      animation-duration: 40s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }';
-    echo '.blackfriday-faixa.faixa-2 {position:fixed; top: 0; z-index:99} ';
-    echo '@keyframes blackfriday {
-      from { transform: translate(0); }
-      to { transform: translate(-100vw);}
-    }';
-    echo '@media (max-width: 680px) {
-      .blackfriday-faixa {font-size: 10px;}
-      .blackfriday-faixa.faixa-2 {display:none}
-    }';
-  echo '</style>';
+  // echo '<style>';
+  //   echo '.blackfriday-faixa {
+  //     z-index:100; position:relative;
+  //     border-top: 2px solid var(--cor-negacao); 
+  //     display:flex; background: var(--cor-grafite); color: white;
+  //     font-family: Avenir Rounded,sans-serif; text-transform: uppercase;
+  //     padding: 12px 0; font-size: 13px; letter-spacing: 1px; justify-content: center;
+  //   }';
+  //   echo '.blackfriday-faixa span {
+  //     flex-shrink: 0;
+  //   }';
+  //   echo '.blackfriday-faixa span.animado {
+  //     animation-name: blackfriday;
+  //     animation-duration: 40s;
+  //     animation-timing-function: linear;
+  //     animation-iteration-count: infinite;
+  //   }';
+  //   echo '.blackfriday-faixa.faixa-2 {position:fixed; top: 0; z-index:99} ';
+  //   echo '@keyframes blackfriday {
+  //     from { transform: translate(0); }
+  //     to { transform: translate(-100vw);}
+  //   }';
+  //   echo '@media (max-width: 680px) {
+  //     .blackfriday-faixa {font-size: 10px;}
+  //     .blackfriday-faixa.faixa-2 {display:none}
+  //   }';
+  // echo '</style>';
 
 
   // SCRIPTS QUE NAO RODA PARA ADMIN
