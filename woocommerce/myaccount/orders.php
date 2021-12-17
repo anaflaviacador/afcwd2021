@@ -71,14 +71,17 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 								$actions = wc_get_account_orders_actions( $order );
 
 								if ( ! empty( $actions ) ) {
+									$count = 0;
 									foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-										echo '<a href="' . esc_url( $action['url'] ) . '" class="afc-acoes-pedido ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>&nbsp;';
+										$count++;
+										if($count > 1) echo '&nbsp;|&nbsp;';
+										echo '<a href="' . esc_url( $action['url'] ) . '" class="afc-acoes-pedido ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
 									}
 								}
 
 								$NFSE = get_field('pedido_nfse', $order_id);
 								if($NFSE['arquivo'] && $NFSE['identificador']) {
-									echo '[<a style="color:var(--cor-afirmacao);" href="'.esc_url($NFSE['arquivo']).'" download>NFSe</a>]';
+									echo '&nbsp;[<a style="color:var(--cor-afirmacao);" href="'.esc_url($NFSE['arquivo']).'" download>NFSe</a>]';
 								}
 								?>
 

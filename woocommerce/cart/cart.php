@@ -37,8 +37,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<?php /* ?><th class="product-thumbnail">&nbsp;</th><?php */ ?>
 						<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
 						<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-						<?php /* ?><th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-						<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th><?php */ ?>
+						<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
+						<?php /* ?><th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th><?php */ ?>
 					</tr>
 				</thead>
 				<tbody>
@@ -110,7 +110,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 									?>
 								</td>
 
-								<?php /* ?>
+								
 								<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 								<?php
 								if ( $_product->is_sold_individually() ) {
@@ -132,7 +132,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 								?>
 								</td>
-								
+								<?php /* ?>
 
 								<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
 									<?php

@@ -548,6 +548,15 @@ span.afc-pedido-status {
 
 
 // ========================================//
+// PAGAR PEDIDO
+// ========================================//
+body.woocommerce-order-pay .container .woocommerce {
+	width: $colmax; max-width: 100%; padding: 0 0 4em;
+	margin-left: auto; margin-right: auto;
+}
+
+
+// ========================================//
 // PAGINA BRIEFING
 // ========================================//
 #pagina-briefing {
