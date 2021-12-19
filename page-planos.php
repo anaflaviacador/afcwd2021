@@ -39,7 +39,7 @@ $url = home_url(('/'));
 						echo '<li>Revisão de banco de dados <span data-tooltip="Limpeza e exclusão de tabelas não usadas para otimizar o uso do banco de dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Supervisão de versão de PHP, atualizando-o quando aplicável</li>';
 						echo '<li>Supervisão e atualização de sistema CMS Wordpress</li>';
-						echo '<li>Supervisão e atualização de plugins auxiliares ao layout de licença lite / free <span data-tooltip="As atualizações dos plugins pagos são realizadas apenas se o cliente possuir licença de uso" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Supervisão e atualização de plugins auxiliares ao layout de licença lite / free <span data-tooltip="As atualizações dos plugins pro / premium são realizadas apenas se o cliente obter a licença de forma independente" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Supervisão de recursos utilizados no plano de hospedagem <span data-tooltip="Uso do espaço em disco, recurso de CPU, memória etc." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
 
@@ -83,7 +83,7 @@ $url = home_url(('/'));
 						echo '<li>Revisão de banco de dados <span data-tooltip="Limpeza e exclusão de tabelas não usadas para otimizar o uso do banco de dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Supervisão de versão de PHP, atualizando-o quando aplicável</li>';
 						echo '<li>Supervisão e atualização de sistema CMS Wordpress</li>';
-						echo '<li>Supervisão e atualização de plugins auxiliares ao layout de licença lite, pro / premium <span data-tooltip="O studio assume a licença de uso e atualizações dos plugins pagos que são essenciais para bom funcionamento do layout" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Supervisão e atualização de plugins auxiliares ao layout de licença lite / free, incluindo pro / premium <span data-tooltip="O studio assume a licença e atualizações dos plugins pagos que são essenciais para bom funcionamento do layout" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Supervisão de recursos utilizados no plano de hospedagem <span data-tooltip="Uso do espaço em disco, recurso de CPU, memória etc." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Otimização periódica de CMS e banco de dados <span data-tooltip="Promove redução de espaço e aumenta desempenho na leitura dos dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Backup completo semanalmente</li>';
@@ -136,7 +136,7 @@ $url = home_url(('/'));
 						echo '<li>Revisão de banco de dados <span data-tooltip="limpeza e exclusão de tabelas não usadas para otimizar o uso do banco de dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Supervisão de versão de PHP, atualizando-o quando aplicável</li>';
 						echo '<li>Supervisão e atualização de sistema CMS Wordpress</li>';
-						echo '<li>Supervisão e atualização de plugins auxiliares ao layout de licença lite, pro / premium <span data-tooltip="O studio assume a licença de uso e atualizações dos plugins pagos que são essenciais para bom funcionamento do layout" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Supervisão e atualização de plugins auxiliares ao layout de licença lite / free, incluindo pro / premium <span data-tooltip="O studio assume a licença e atualizações dos plugins pagos que são essenciais para bom funcionamento do layout" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Supervisão de recursos utilizados no plano de hospedagem <span data-tooltip="Uso do espaço em disco, recurso de CPU, memória etc." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Otimização periódica de CMS e banco de dados <span data-tooltip="Promove redução de espaço e aumenta desempenho na leitura dos dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Backup completo diariamente</li>';
