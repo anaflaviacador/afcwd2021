@@ -502,6 +502,48 @@ function filter_woocommerce_account_downloads_columns( $columns ) {
 add_filter( 'woocommerce_account_downloads_columns', 'filter_woocommerce_account_downloads_columns', 10, 1 );
 
 
+// mostrar / esconder meios de pgto dependendo do pedido - feito manualmente via painel
+add_filter( 'woocommerce_available_payment_gateways', 'conditionally_hide_payment_gateways', 100, 1 );
+function conditionally_hide_payment_gateways( $available_gateways ) {
+    
+    if( is_wc_endpoint_url( 'order-pay' ) ) {
+        $order = wc_get_order( get_query_var('order-pay') ); // pedido
+        $items = $order->get_items(); // get items do pedido
+        $total = $order->get_total();
+        $tags = [ ]; // registra array
+
+        // captura tags dos produtos no pedido
+        foreach ( $items as $item ) {
+            $product_id = $item->get_product_id();
+            $terms = get_the_terms( $product_id, 'product_tag' );
+            if ( ! empty( $terms ) ) {
+                foreach ( $terms as $term ) {
+                    $tags[] = $term->slug;
+                }
+            }
+        }
+
+        // revisa o loop do pedido 'pending', 'on-hold', 'processing' etc
+        foreach( $available_gateways as $gateways_id => $gateways ){
+
+            // definicoes apenas quando está no status aguardando pagamento
+            if($order->has_status('pending')) {
+                // mostra apenas mercado pago para projetos exclusivos (incluindo manutencoes)
+                if($total >= 800 && $gateways_id !== 'woo-mercado-pago-basic' ) unset($available_gateways[$gateways_id]);
+
+                // mostra apenas stripe para assinaturas
+                if(in_array('assinaturas', $tags ) && $gateways_id !== 'stripe_cc' ) unset($available_gateways[$gateways_id]);
+
+                // retira stripe para servicos gerais para cliente da loja
+                if(in_array('geral-loja', $tags ) && $gateways_id === 'stripe_cc' ) unset($available_gateways[$gateways_id]);
+            }
+        }
+    }
+
+    return $available_gateways;
+}
+
+
 // ========================================//
 // RETIRA EXCESSO DE CHAMADAS NAS PÁGINAS QUE NAO SAO DE LOJA
 // ========================================// 
