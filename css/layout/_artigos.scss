@@ -545,5 +545,7 @@ article {
 				box-shadow: 0 0 20px rgba(0,0,0,0.1);
 			}
 		}
+
+		& > .wp-block-image { margin-top: 1.4rem; }
 	}
 }
