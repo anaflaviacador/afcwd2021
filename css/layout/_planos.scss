@@ -151,6 +151,8 @@ $plano-cor: (
 					margin-right: 6px; font-size: 1.1em; vertical-align: middle; font-weight: 300;
 				}
 
+				&.plus:before { content: '\f5ff'; }
+
 				&:last-of-type { border-bottom: 0}
 
 				i.fa-info-circle { font-size: 1.1em; vertical-align: middle; display: inline-block;}

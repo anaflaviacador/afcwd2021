@@ -529,7 +529,7 @@ function conditionally_hide_payment_gateways( $available_gateways ) {
             // definicoes apenas quando está no status aguardando pagamento
             if($order->has_status('pending')) {
                 // mostra apenas mercado pago para projetos exclusivos (incluindo manutencoes)
-                if($total >= 800 && $gateways_id !== 'woo-mercado-pago-basic' ) unset($available_gateways[$gateways_id]);
+                if($total >= 999 && $gateways_id !== 'woo-mercado-pago-basic' ) unset($available_gateways[$gateways_id]);
                 if($total < 90 && $gateways_id == 'woo-mercado-pago-basic' ) unset($available_gateways[$gateways_id]);
 
                 // mostra apenas stripe para assinaturas
