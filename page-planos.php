@@ -146,7 +146,6 @@ $url = home_url(('/'));
 						echo '<p><strong>AÇÕES ISOLADAS</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li class="plus">Todas as ações isoladas dos planos anteriores</li>';
 						echo '<li>Implementação de certificado SSL <span data-tooltip="Inclui redirecionamento para endereço seguro + adequação de todos os links internos via banco de dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Ferramentas adicionais de baixa complexidade <span data-tooltip="Blocos de edição, popups e dentre outras funcionalidades para agregar ao layout." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						
 						echo '<p><strong>AÇÕES CORRETIVAS</strong><em>realizadas semanalmente e/ou sob solicitação</em></p>';
 						echo '<li class="plus">Todas as ações corretivas dos planos anteriores</li>';
