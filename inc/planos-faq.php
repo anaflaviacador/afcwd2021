@@ -81,6 +81,19 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '</div>';
 
 		echo '<div class="aba">';
+			echo '<div class="aba-titulo">Como acontece a atualização de plugins premiuns?</div>';
+			echo '<div class="aba-conteudo">';
+				echo '<p>Dependendo do site, para que o mesmo ofereça a melhor experiência possível ao visitante é necessário usar alguns plugins premium<span style="color:var(--cor-negacao);">*</span> de terceiros &mdash; o que é bem comum para lojas virtuais.</p>'; 
+				
+				echo '<p>Por contrato, no primeiro ano da implementação de um layout assinado pelo studio '.do_shortcode('[afc]').', fica sob nossa responsabilidade as atualizações destes plugins pagos. Após o término deste período, caso a cliente não assine o plano <em style="color:var(--cor-verde);">standard</em> a mesma precisará assumir a renovação das licenças para manter as atualizações recorrentes destes plugins.</p>';
+				
+				echo '<p>A partir do plano <em style="color:var(--cor-verde);">standard</em>, enquanto a assinatura estiver em vigor, o studio continua assumindo as atualizações dos plugins premium<span style="color:var(--cor-negacao);">*</span> essenciais ao layout, sem que a cliente precise assumir pessoalmente por estas licenças, que geralmente é em dolar.</p>';
+
+				echo '<p style="line-height:1.3"><small><span style="color:var(--cor-negacao);">* Alerta:</span> Os plugins premiuns retratados <u>são apenas os que vieram na implementação do layout</u>! Se posteriormente a cliente instalar algum plugin premium independente, a atualização do mesmo não será realizada pelo studio (independente do plano).</small></p>';
+			echo '</div>';
+		echo '</div>';
+
+		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Há prazo definido para serviços de design e de diagramação?</div>';
 			echo '<div class="aba-conteudo">';
 				echo '<p>Os serviços de design e de diagramação de conteúdo <strong>são realizados exclusivamente sob solicitação.</strong> O prazo de produção será combinado entre nós, dependendo do tipo de material que precisa ser produzido ou diagramado.</p>';

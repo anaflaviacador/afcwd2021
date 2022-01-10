@@ -44,15 +44,15 @@ $url = home_url(('/'));
 
 
 						echo '<p><strong>AÇÕES DE DESIGN</strong><em>realizadas sob solicitação</em></p>';
-						echo '<li>Template e-mail marketing <span data-tooltip="Aplicável quando o sistema que você utiliza permite customização." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(1 por ano)</em></li>';
-						echo '<li>Banner mídia social <span data-tooltip="Produção de peça gráfica avulsa. Não inclui gestão da mídia social." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 por ano)</em></li>';
+						echo '<li>Template e-mail mkt <span data-tooltip="Aplicável quando o sistema que você utiliza permite customização." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(1 / ano)</em></li>';
+						echo '<li>Capa para mídia social <span data-tooltip="Produção de peça gráfica avulsa. Não inclui gestão da mídia social." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 / ano)</em></li>';
 
 						echo '<p><strong>AÇÕES DE CONTEÚDO</strong><em>realizadas sob solicitação</em></p>';
-						echo '<li>Diagramação de e-mail marketing <span data-tooltip="Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(1 por semestre)</em></li>';
+						echo '<li>Diagramação de e-mail mkt <span data-tooltip="Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(1 / semestre)</em></li>';
 
 
 						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong></p>';
-						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2mil envios ao mês)</em></li>';
+						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2mil envios / mês)</em></li>';
 					echo '</ul>';
 					echo '<footer id="basic">';
 						echo $cancela;
@@ -80,34 +80,39 @@ $url = home_url(('/'));
 					echo '</header>';
 					echo '<ul>';
 						echo '<p><strong>AÇÕES PREVENTIVAS</strong><em>realizadas e monitoradas semanalmente</em></p>';
-						echo '<li>Revisão de banco de dados <span data-tooltip="Limpeza e exclusão de tabelas não usadas para otimizar o uso do banco de dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Supervisão de versão de PHP, atualizando-o quando aplicável</li>';
-						echo '<li>Supervisão e atualização de sistema CMS Wordpress</li>';
-						echo '<li>Supervisão e atualização de plugins auxiliares ao layout de licença lite / free, incluindo pro / premium <span data-tooltip="O studio assume a licença e atualizações dos plugins pagos que são essenciais para bom funcionamento do layout" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Supervisão de recursos utilizados no plano de hospedagem <span data-tooltip="Uso do espaço em disco, recurso de CPU, memória etc." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li class="plus">Todas as ações preventivas do plano anterior</li>';
+
+						echo '<li>Supervisão e atualização de plugins premium <span data-tooltip="O studio assume a licença e atualizações dos premiuns fornecidos na implementação de layout" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+
 						echo '<li>Otimização periódica de CMS e banco de dados <span data-tooltip="Promove redução de espaço e aumenta desempenho na leitura dos dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Backup completo semanalmente</li>';
+						echo '<li>Backup completo semanalmente <span data-tooltip="Aplicável apenas se o plano de hospedagem não tem este benefício." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Módulos de otimização do php.ini</li>';
 
 						echo '<p><strong>AÇÕES ISOLADAS</strong><em>realizadas sob solicitação</em></p>';
-						echo '<li>Criação de endereço de email e vinculação à Gmail</li>';
-						echo '<li>Configuração de cache <span data-tooltip="Cache comum, configurado no sistema Wordpress" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Criação de email + apontamentos DKIM e DMARC <span data-tooltip="Configuração adequada para o disparo de emails autenticados pelo seu domínio e mais confiáveis através de configuração SMTP no site" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Configuração de cache <span data-tooltip="Configurado para o CMS Wordpress" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						echo '<li>Implementação Cloudflare <span data-tooltip="Apontamento de DNS de domínio aos servidores Cloudflare, promove maior desempenho, cache avançado e segurança extra." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Módulos de otimização do php.ini</li>';
 						
 						echo '<p><strong>AÇÕES CORRETIVAS</strong><em>realizadas semanalmente e/ou sob solicitação</em></p>';
-						echo '<li>Supervisão dos logs de erro e alertas PHP, corrigindo-os quando aplicáveis</li>';
+						echo '<li>Supervisão dos logs de erro e alertas PHP de layout</li>';
 						echo '<li>Correção de bugs, mau funcionamento de elementos ou funcionalidades de layout</li>';
 						
 						echo '<p><strong>AÇÕES DE DESIGN</strong><em>realizadas sob solicitação</em></p>';
-						echo '<li>Template e-mail marketing <span data-tooltip="Aplicável quando o sistema que você utiliza permite customização." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 por ano)</em></li>';
-						echo '<li>Banner mídia social <span data-tooltip="Produção de peça gráfica avulsa. Não inclui gestão da mídia social." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 por semestre)</em></li>';
+						
+						echo '<li>Template e-mail marketing <em>(2 / ano)</em></li>';
+						echo '<li>Capa para mídia social <em>(2 / semestre)</em></li>';
+
+						echo '<li>Edições de <u>baixa</u> complexidade no layout <span data-tooltip="Mudanças finas no design como ajuste de cor, botões, espaçamentos etc" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						
+						
 
 						echo '<p><strong>AÇÕES DE CONTEÚDO</strong><em>realizadas sob solicitação</em></p>';
-						echo '<li>Diagramação de conteúdo <span data-tooltip="Construção de página ou publicação utilizando recursos inclusos do tema em atividade. Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 págs por mês)</em></li>';
-						echo '<li>Diagramação de e-mail marketing <span data-tooltip="Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(1 por mês)</em></li>';
+						echo '<li>Diagramação de e-mail mkt <em>(1 / mês)</em></li>';
+						echo '<li>Diagramação de conteúdo <span data-tooltip="Construção de página ou publicação utilizando recursos inclusos do tema em atividade. Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 pgs / mês)</em></li>';
+						
 
 						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong></p>';
-						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(10mil envios ao mês)</em></li>';
+						echo '<li>Sendy E-mail Marketing <em>(10mil envios / mês)</em></li>';
 
 					echo '</ul>';
 
@@ -133,39 +138,34 @@ $url = home_url(('/'));
 					echo '</header>';
 					echo '<ul>';
 						echo '<p><strong>AÇÕES PREVENTIVAS</strong><em>realizadas e monitoradas semanalmente</em></p>';
-						echo '<li>Revisão de banco de dados <span data-tooltip="limpeza e exclusão de tabelas não usadas para otimizar o uso do banco de dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Supervisão de versão de PHP, atualizando-o quando aplicável</li>';
-						echo '<li>Supervisão e atualização de sistema CMS Wordpress</li>';
-						echo '<li>Supervisão e atualização de plugins auxiliares ao layout de licença lite / free, incluindo pro / premium <span data-tooltip="O studio assume a licença e atualizações dos plugins pagos que são essenciais para bom funcionamento do layout" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Supervisão de recursos utilizados no plano de hospedagem <span data-tooltip="Uso do espaço em disco, recurso de CPU, memória etc." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Otimização periódica de CMS e banco de dados <span data-tooltip="Promove redução de espaço e aumenta desempenho na leitura dos dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Backup completo diariamente</li>';
+						echo '<li class="plus">Todas as ações preventivas dos planos anteriores</li>';
+						
 						echo '<li>Supervisão de desempenho de páginas principais</li>';
-						echo '<li>Supervisão e inserção de módulos de segurança <span data-tooltip="Proteção de arquivos e pastas, prevenção de ataque de força bruta." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Supervisão e inserção de módulos de segurança <span data-tooltip="Proteção de arquivos e pastas, prevenção de ataque de força bruta, inserção de reCaptcha contra bots" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
 						echo '<p><strong>AÇÕES ISOLADAS</strong><em>realizadas sob solicitação</em></p>';
-						echo '<li>Criação de endereço de email e vinculação à Gmail</li>';
-						echo '<li>Configuração de cache <span data-tooltip="Cache comum, configurado no sistema Wordpress" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Implementação Cloudflare <span data-tooltip="Apontamento de DNS de domínio aos servidores Cloudflare, promove maior desempenho, cache avançado e segurança extra." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
-						echo '<li>Módulos de otimização do php.ini</li>';
+						echo '<li class="plus">Todas as ações isoladas dos planos anteriores</li>';
 						echo '<li>Implementação de certificado SSL <span data-tooltip="Inclui redirecionamento para endereço seguro + adequação de todos os links internos via banco de dados." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Ferramentas adicionais de baixa complexidade <span data-tooltip="Blocos de edição, popups e dentre outras funcionalidades para agregar ao layout." aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 						
 						echo '<p><strong>AÇÕES CORRETIVAS</strong><em>realizadas semanalmente e/ou sob solicitação</em></p>';
-						echo '<li>Supervisão dos logs de erro e alertas PHP, corrigindo-os quando aplicáveis</li>';
-						echo '<li>Correção de bugs, mau funcionamento de elementos ou funcionalidades de layout</li>';
-						echo '<li>Correções visuais de plugins de terceiros quando influenciados em layout</li>';
+						echo '<li class="plus">Todas as ações corretivas dos planos anteriores</li>';
+						echo '<li>Adequações visuais de plugins de terceiros quando influenciados em layout</li>';
 						echo '<li>Checagem de links internos quebrados</li>';
 
 						echo '<p><strong>AÇÕES DE DESIGN</strong><em>realizadas sob solicitação</em></p>';
-						echo '<li>Template e-mail marketing <span data-tooltip="Aplicável quando o sistema que você utiliza permite customização." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(4 por ano)</em></li>';
-						echo '<li>Banner mídia social <span data-tooltip="Produção de peça gráfica avulsa. Não inclui gestão da mídia social." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 por mês)</em></li>';
+
+						echo '<li>Template e-mail marketing <em>(4 / ano)</em></li>';
+						echo '<li>Capa para mídia social <em>(2 / mês)</em></li>';
+
+						echo '<li>Edições de <u>média</u> complexidade no layout <span data-tooltip="Mudanças que afetam diretamente estrutura como adição de novas sessões, menus, remanejamento de elementos etc" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
 						echo '<p><strong>AÇÕES DE CONTEÚDO</strong><em>realizadas sob solicitação</em></p>';
-						echo '<li>Diagramação de conteúdo <span data-tooltip="Construção de página ou publicação utilizando recursos inclusos do tema em atividade. Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(4 págs por mês)</em></li>';
-						echo '<li>Diagramação de e-mail marketing <span data-tooltip="Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 por mês)</em></li>';
+						echo '<li>Diagramação de e-mail mkt <em>(2 / mês)</em></li>';
+						echo '<li>Diagramação de conteúdo <em>(4 pgs / mês)</em></li>';
 
 						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong></p>';
-						echo '<li>Sendy E-mail Marketing <span data-tooltip="Armazenamento ilimitado de leads, listas, autoresponders e segmentações. A cota é atribuída ao disparo de emails por mês." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(50mil envios ao mês)</em></li>';
+						echo '<li>Sendy E-mail Marketing <em>(50mil envios / mês)</em></li>';
 					echo '</ul>';
 
 					echo '<footer id="premium">';

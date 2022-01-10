@@ -149,7 +149,7 @@ function afc_load_styles() {
     $urlCDN = '//cdn.jsdelivr.net/npm';
 
     // layout
-    wp_enqueue_style('layout', $urltheme . '/css/layout.css?v=5LBD72', array(), '', 'all', null); 
+    wp_enqueue_style('layout', $urltheme . '/css/layout.css?v=8Wcsm6', array(), '', 'all', null); 
     if(! is_page_template('simples.php')) wp_enqueue_style('lazing', $urlCDN . '/aos@2.3.4/dist/aos.css', array(), '', 'all', null);
     
     // jquery

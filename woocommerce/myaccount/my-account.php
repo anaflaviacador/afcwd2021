@@ -39,7 +39,7 @@ do_action( 'woocommerce_account_navigation' ); ?>
 	if (class_exists('WC_Subscription') && is_account_page() && ! is_wc_endpoint_url()) {		
 		if (! has_active_subscription()) {
 			echo '<br><br>';
-			echo '<h5 class="has-text-align-center">'.do_shortcode('[icone prefixo="fal" nome="envelope" cor="roxo" tamanho="2"]').'<br>Chegou o serviço de email marketing do studio!</h5>';
+			echo '<h5 class="has-text-align-center">Chegou o serviço de email marketing do studio!</h5>';
 			echo '<p class="has-text-align-center" style="font-size:.9em">Um serviço exclusivo para clientes '.do_shortcode('[afc]').' engatar suas microempresas e engajar seu público.</p>';
 			echo '<br><br>';
 			get_template_part('inc/emailmkt','planos');
