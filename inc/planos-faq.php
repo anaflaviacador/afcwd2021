@@ -155,7 +155,7 @@ echo '<div class="wp-block-columns abinhas">';
 			echo '<div class="aba-conteudo">';
 				echo '<p><strong>Baixa complexidade:</strong> são mudanças finas no layout como ajuste de tonalidade de cor, botões, espaçamentos etc. São edições que não exigem criação de novas ferramentas ou edições na identidade. É um benefício ofertado a partir do plano <em style="color:var(--cor-verde);">standard</em>.</p>';
 				echo '<p><strong>Média complexidade:</strong> são mudanças que afetam diretamente estrutura do layout como adição de novas sessões numa página, criação de um bloco de conteúdo personalizado, adição de um novo menu, criação de popups, formulários de captura, remanejamento de elementos etc. São edições que geralmente exigem a criação de novas ferramentas com até 4h de produção. Pode haver algumas mudanças pontuais na identidade. É um benefício presente apenas no plano <em style="color:var(--cor-roxo);">premium</em>.</p>';
-				echo '<p>Mudanças significativas no design, como troca de identidade visual, paleta de cores e criação de ferramentas complexas (+4h de edição), o será considerado como um serviço avulso, cotado por hora, independente do plano.</p>';
+				echo '<p>Mudanças significativas no design, como troca de identidade visual, paleta completa de cores poderá implicar na criação de um novo projeto. E a criação de ferramentas complexas (+4h de edição), será considerado como um serviço avulso, cotado por hora, independente do plano.</p>';
 			echo '</div>';
 		echo '</div>';
 		echo '<div class="aba">';
