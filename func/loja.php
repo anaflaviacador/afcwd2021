@@ -81,33 +81,8 @@ function afc_remove_selo_promo() { return false; }
 remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
 
 // ========================================//
-// REDIRECIONAMENTOS PARA USER DA LOJA
+// REDIRECIONAMENTO DIRETO AO CHECKOUT
 // ========================================// 
-function afc_redireciona_qdo_loga( $redirect ) {
-    $minhaconta = wc_get_page_permalink( 'myaccount' );
-    $checkout = wc_get_page_permalink( 'checkout' );
-    $carrinho = wc_get_page_permalink( 'cart' );
-
-    // se eh pag de checkou ou carrinho permanece
-    if ($redirect == $checkout || $redirect == $carrinho) {
-        return $redirect;
-
-    // se eh outra pagina, vai pra conta de cliente
-    } else {
-        $redirect = $minhaconta;
-        return $redirect;
-    }
-}
-add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 1100, 2 );    
-
-// redireciona quando sai
-add_action('wp_logout','afc_redireciona_qdo_sai');
-function afc_redireciona_qdo_sai(){
-    wp_redirect( home_url() );
-    exit;
-}
-
-// redireciona direto ao carrinho quando add to cart
 add_filter('add_to_cart_redirect', 'afc_cart_redirect');
 function afc_cart_redirect() {
     global $woocommerce;

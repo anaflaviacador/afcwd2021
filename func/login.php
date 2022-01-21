@@ -3,6 +3,7 @@
 // REDIRECIONA AO LOGAR
 // ========================================// 
 function my_login_redirect( $redirect_to, $request, $user ) {
+  
     if (class_exists('Woocommerce')) {
       $redirect_to = wc_get_page_permalink( 'myaccount' );
     } else {
@@ -24,6 +25,39 @@ function my_login_redirect( $redirect_to, $request, $user ) {
 }
  
 add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
+
+
+// ========================================//
+// REDIRECIONAMENTOS PARA USER DA LOJA
+// ========================================// 
+function afc_redireciona_qdo_loga( $redirect ) {
+    $minhaconta = wc_get_page_permalink( 'myaccount' );
+    $checkout = wc_get_page_permalink( 'checkout' );
+    $carrinho = wc_get_page_permalink( 'cart' );
+
+    // se eh pag de checkou ou carrinho permanece
+    if ($redirect == $checkout || $redirect == $carrinho) {
+        return $redirect;
+
+    // se eh outra pagina, vai pra conta de cliente
+    } else {
+        $redirect = $minhaconta;
+        return $redirect;
+    }
+}
+add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 1100, 2 );    
+   
+
+
+// redireciona quando sai
+add_action('wp_logout','afc_redireciona_qdo_sai');
+function afc_redireciona_qdo_sai(){
+    wp_redirect( home_url() );
+    exit;
+}
+
+
+
 
 // ========================================//
 // ESTILO DA PAG DE LOGIN
