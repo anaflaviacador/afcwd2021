@@ -205,12 +205,28 @@
 		}
 
 		h3 {display:none}
+		.wpforms-payment-total {color: var(--cor-afirmacao)}
 
-		&.cinza {background: var(--cor-cinza); border-color: #DDD;}
-		&.rosa {background: var(--cor-rosa-claro); border-color: var(--cor-rosa-medio);}
-		&.roxo {background: var(--cor-roxo-claro); border-color: var(--cor-roxo-medio);}
-		&.bege {background: var(--cor-bege-claro); border-color: var(--cor-bege-medio);}
-		&.azul {background: var(--cor-azul-claro); border-color: var(--cor-azul-medio);}
+		&.cinza {
+			background: var(--cor-cinza); border-color: #DDD;
+			.wpforms-payment-total {color: var(--cor-texto)}
+		}
+		&.rosa {
+			background: var(--cor-rosa-claro); border-color: var(--cor-rosa-medio);
+			.wpforms-payment-total {color: var(--cor-rosa)}
+		}
+		&.roxo {
+			background: var(--cor-roxo-claro); border-color: var(--cor-roxo-medio);
+			.wpforms-payment-total {color: var(--cor-roxo)}
+		}
+		&.bege {
+			background: var(--cor-bege-claro); border-color: var(--cor-bege-medio);
+			.wpforms-payment-total {color: var(--cor-bege)}
+		}
+		&.azul {
+			background: var(--cor-azul-claro); border-color: var(--cor-azul-medio);
+			.wpforms-payment-total {color: var(--cor-azul)}
+		}
 		 
 		&.alerta-negacao {background: var(--cor-negacao); border-color: var(--cor-negacao); color: white}
 		&.alerta-afirmacao {background: var(--cor-afirmacao); border-color: var(--cor-afirmacao); color: white }
@@ -233,7 +249,9 @@
 	ul {
 		li {
 			&:before { display: none !important; }
-			&.wpforms-selected label { font-weight: bold;}
+			// &.wpforms-selected label { color: var(--cor-grafite); }
+			// &:not(.wpforms-selected) label {color: #7d748b }
+			&:not(.wpforms-selected) label { opacity: .75; }
 		}
 	}
 
@@ -301,6 +319,10 @@
 		border-radius: 100px !important;
 		text-shadow: 1px 1px 0 transparentize(black,0.9) !important; 
 		margin-left: 10px;
+	}
+
+	.wpforms-payment-total {
+		font-weight:bold !important; font-size: 1.85em !important
 	}
 
 }
