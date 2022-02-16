@@ -286,7 +286,7 @@
 			}
 		}
 
-		&.fundo-liso ul li:nth-of-type(odd) { background: none; }
+		&.fundo-liso ul li { background: none !important; }
 	}
 
 	@media (min-width: 670px) {
