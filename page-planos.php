@@ -132,7 +132,7 @@ $url = home_url(('/'));
 				echo '<div class="plano">';
 					echo '<header>';
 						echo '<h3>Plano Premium</h3>';
-						echo '<time data-tooltip="Previsão de tempo gasto por mês em ações preventivas, isoladas e corretivas.">8h</time>';
+						echo '<time data-tooltip="Previsão de tempo gasto por mês em ações preventivas, isoladas e corretivas.">10h</time>';
 						echo '<data><abbr title="BRL">R$</abbr><span class="valor-plano">320</span><span class="freq">/mês*</span></data>';
 						echo '<p><strong><span><i class="fas fa-heart"></i> ideal para</span></strong><br>sites e blogs de alto tráfego, lojas virtuais<br><br><a href="#premium" class="jump" title="assinar"><i style="font-size: 2em;" class="fal fa-angle-down"></i></a></p>';
 					echo '</header>';
