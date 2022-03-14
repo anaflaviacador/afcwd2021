@@ -108,7 +108,7 @@ $url = home_url(('/'));
 
 						echo '<p><strong>AÇÕES DE CONTEÚDO</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li>Diagramação de e-mail mkt <em>(1 / mês)</em></li>';
-						echo '<li>Diagramação de conteúdo <span data-tooltip="Construção de página ou publicação utilizando recursos inclusos do tema em atividade. Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 pgs / mês)</em></li>';
+						echo '<li>Diagramação de páginas internas <span data-tooltip="Construção de página ou publicação utilizando recursos inclusos do tema em atividade. Conteúdo enviado previamente pela cliente." aria-hidden="true"><i class="far fa-info-circle"></i></span> <em>(2 pgs / mês)</em></li>';
 						
 
 						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong></p>';
@@ -142,6 +142,7 @@ $url = home_url(('/'));
 						
 						echo '<li>Supervisão de desempenho de páginas principais</li>';
 						echo '<li>Supervisão e inserção de módulos de segurança <span data-tooltip="Proteção de arquivos e pastas, prevenção de ataque de força bruta, inserção de reCaptcha contra bots" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
+						echo '<li>Supervisão Woocommerce <span data-tooltip="Integrações com serviços terceiros, registro de logs, status de servidor e adequações às atualizações" aria-hidden="true"><i class="far fa-info-circle"></i></span></li>';
 
 						echo '<p><strong>AÇÕES ISOLADAS</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li class="plus">Todas as ações isoladas dos planos anteriores</li>';
@@ -161,7 +162,8 @@ $url = home_url(('/'));
 
 						echo '<p><strong>AÇÕES DE CONTEÚDO</strong><em>realizadas sob solicitação</em></p>';
 						echo '<li>Diagramação de e-mail mkt <em>(2 / mês)</em></li>';
-						echo '<li>Diagramação de conteúdo <em>(4 pgs / mês)</em></li>';
+						echo '<li>Diagramação de páginas internas <em>(4 pgs / mês)</em></li>';
+						echo '<li>Cadastro de produtos woocommerce <em>(30 itens / mês)</em></li>';
 
 						echo '<p style="color:var(--cor-negacao);"><strong>BONUS <i class="fas fa-badge-check" style="color:var(--cor-negacao);"></i></strong></p>';
 						echo '<li>Sendy E-mail Marketing <em>(50mil envios / mês)</em></li>';
