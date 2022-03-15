@@ -79,6 +79,7 @@
 			&[class*="--docs"] a:before { content: "\f0ea"; }
 			&[class*="--briefing"] a:before { content: "\f036"; }
 			&[class*="--briefing-novo"] a:before { content: "\f305"; }
+			&[class*="--plugins"] a:before { content: "\f005"; } // plugins premium
 
 			// afiliados
 			&[class*="--voltarpainel"] a:before { content: "\f177"; }
@@ -585,4 +586,6 @@ body.woocommerce-order-pay .container .woocommerce {
 	}
 	
 }
+
+
 

@@ -2,50 +2,56 @@
 // ========================================//
 // REDIRECIONA AO LOGAR
 // ========================================// 
-function my_login_redirect( $redirect_to, $request, $user ) {
+// function my_login_redirect( $redirect_to, $request, $user ) {
   
-    if (class_exists('Woocommerce')) {
-      $redirect_to = wc_get_page_permalink( 'myaccount' );
-    } else {
-      $redirect_to = home_url();
-    }
+//     if (class_exists('Woocommerce')) {
+//       $redirect_to = wc_get_page_permalink( 'myaccount' );
+//     } else {
+//       $redirect_to = home_url();
+//     }
 
-    //is there a user to check?
-    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-        //check for admins
-        if ( in_array( 'administrator', $user->roles ) ) {
-            // redirect them to the default place
-            return admin_url();
-        } else {
-            return $redirect_to;
-        }
-    } else {
-        return admin_url();
-    }
-}
- 
-add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
+//     //is there a user to check?
+//     if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+//         //check for admins
+//         if ( in_array( 'administrator', $user->roles ) ) {
+//             // redirect them to the default place
+//             return admin_url();
+//         } else {
+//             return $redirect_to;
+//         }
+//     } else {
+//         return admin_url();
+//     }
+// }
+// add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
+
+
+// ========================================//
+// REMOVE LINGUA
+// ========================================// 
+add_filter( 'login_display_language_dropdown', '__return_false' );
+
 
 
 // ========================================//
 // REDIRECIONAMENTOS PARA USER DA LOJA
 // ========================================// 
-function afc_redireciona_qdo_loga( $redirect ) {
-    $minhaconta = wc_get_page_permalink( 'myaccount' );
-    $checkout = wc_get_page_permalink( 'checkout' );
-    $carrinho = wc_get_page_permalink( 'cart' );
+// function afc_redireciona_qdo_loga( $redirect ) {
+//     $minhaconta = wc_get_page_permalink( 'myaccount' );
+//     $checkout = wc_get_page_permalink( 'checkout' );
+//     $carrinho = wc_get_page_permalink( 'cart' );
 
-    // se eh pag de checkou ou carrinho permanece
-    if ($redirect == $checkout || $redirect == $carrinho) {
-        return $redirect;
+//     // se eh pag de checkou ou carrinho permanece
+//     if ($redirect == $checkout || $redirect == $carrinho) {
+//         return $redirect;
 
-    // se eh outra pagina, vai pra conta de cliente
-    } else {
-        $redirect = $minhaconta;
-        return $redirect;
-    }
-}
-add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 1100, 2 );    
+//     // se eh outra pagina, vai pra conta de cliente
+//     } else {
+//         $redirect = $minhaconta;
+//         return $redirect;
+//     }
+// }
+// add_filter( 'woocommerce_login_redirect', 'afc_redireciona_qdo_loga', 1100, 2 );    
    
 
 
@@ -75,6 +81,7 @@ function afc_login_stylesheet() {
     wp_enqueue_style( 'afc-login', get_stylesheet_directory_uri() . '/css/admin.css' );
 }
 add_action( 'login_enqueue_scripts', 'afc_login_stylesheet' );
+
 
 // ========================================//
 // REGISTRO E POLITICA DE PRIVACIDADE

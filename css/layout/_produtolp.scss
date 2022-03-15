@@ -781,49 +781,49 @@
 
         p {position: relative;}
     }
+}
 
-    .item-servico {
-        width: 100%; position: relative;
-        background: white;
-        display: flex; margin-bottom: 2em;
-        cursor: pointer;
+.item-servico {
+    width: 100%; position: relative;
+    background: white;
+    display: flex; margin-bottom: 2em;
+    &:not(.bloco) { cursor: pointer; }
 
-        &:before {content: ''; @include blocoabsoluto; @extend %sombra-leve; @include transition(box-shadow .2s ease-in-out);}
-        &:hover:before { @extend %sombra-forte; }
+    &:before {content: ''; @include blocoabsoluto; @extend %sombra-leve; @include transition(box-shadow .2s ease-in-out);}
+    &:hover:before { @extend %sombra-forte; }
 
-        @media (min-width: $tablet + 1px) { width: calc(50% - 1em); }
+    @media (min-width: $tablet + 1px) { width: calc(50% - 1em); }
 
-        figure {
-            width: 110px; padding: 10px; flex-shrink: 0;
-            display: flex; flex-direction: column; position: relative;
-            align-items: center; justify-content: center;
+    figure {
+        width: 110px; padding: 10px; flex-shrink: 0;
+        display: flex; flex-direction: column; position: relative;
+        align-items: center; justify-content: center;
 
-            svg { width: auto; height: auto; max-width: 95px; max-height: 75px;}
+        svg, img { width: auto; height: auto; max-width: 95px; max-height: 75px;}
 
-            figcaption {
-                background: var(--cor-afirmacao); @extend %borda-redonda;
-                border: 2px solid white; padding: 2px 5px; font-size: 12px;
-                font-weight: bold; text-transform: uppercase; font-family: $fonte-redonda;
-                text-align: center; color: white; position: absolute; @extend %textshadow;
-                bottom: 10px; left: 10px; width: calc(100% - 20px); @extend %letterspacing;
-            }
-
-            @media (min-width: $celular + 1px) { width: 150px; }
+        figcaption {
+            background: var(--cor-afirmacao); @extend %borda-redonda;
+            border: 2px solid white; padding: 2px 5px; font-size: 12px;
+            font-weight: bold; text-transform: uppercase; font-family: $fonte-redonda;
+            text-align: center; color: white; position: absolute; @extend %textshadow;
+            bottom: 10px; left: 10px; width: calc(100% - 20px); @extend %letterspacing;
         }
 
-        aside {
-            flex-grow: 1; padding: 15px; position: relative;
-            display: flex; flex-direction: column; justify-content: space-between;
-
-            .intro { font-size: 12px; text-transform: uppercase; font-family: $fonte-redonda; opacity: .7;}
-            h3 { font-size: 1.2em; margin-bottom: 10px;}
-
-            p { font-size: .85em; line-height: 1.45; }
-
-        }
-
-        a.link { @include blocoabsoluto; }
+        @media (min-width: $celular + 1px) { width: 150px; }
     }
+
+    aside {
+        flex-grow: 1; padding: 15px; position: relative;
+        display: flex; flex-direction: column; justify-content: space-between;
+
+        .intro { font-size: 12px; text-transform: uppercase; font-family: $fonte-redonda; opacity: .7;}
+        h3 { font-size: 1.2em; margin-bottom: 10px;}
+
+        p { font-size: .85em; line-height: 1.45; }
+
+    }
+
+    a.link { @include blocoabsoluto; }
 }
 
 

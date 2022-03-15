@@ -43,3 +43,32 @@ function afc_autothumb($size) {
     return wp_get_attachment_url( $attachment->ID,$size);
 }
 
+
+
+// ========================================//
+// HABILITA FORMATOS DE ARQUIVOS EXTRAS
+// logo em alta definicao
+// ========================================//
+// habilita arquivos imagens svg
+if(!function_exists('afc_add_fonts_to_allowed_mimes')) { function afc_add_fonts_to_allowed_mimes( $mimes = array() ) {
+	$mimes['svg']  = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+	return $mimes;
+} } add_filter( 'upload_mimes', 'afc_add_fonts_to_allowed_mimes');
+
+// evita erros de alerta de seguranca na leitura do svg
+if(!function_exists('afc_add_fonts_fix_mime_type_svg')) { function afc_add_fonts_fix_mime_type_svg( $data = null, $file = null, $filename = null, $mimes = null ) {
+    $ext = isset( $data['ext'] ) ? $data['ext'] : '';
+    if ( strlen( $ext ) < 1 ) {
+        $exploded = explode( '.', $filename );
+        $ext      = strtolower( end( $exploded ) );
+    }
+    if ( $ext === 'svg' ) {
+        $data['type'] = 'image/svg+xml';
+        $data['ext']  = 'svg';
+    } elseif ( $ext === 'svgz' ) {
+        $data['type'] = 'image/svg+xml';
+        $data['ext']  = 'svgz';
+    }
+    return $data;
+} } add_filter( 'wp_check_filetype_and_ext', 'afc_add_fonts_fix_mime_type_svg' , 75, 4 );

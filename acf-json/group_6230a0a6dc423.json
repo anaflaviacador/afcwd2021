@@ -1,0 +1,213 @@
+{
+    "key": "group_6230a0a6dc423",
+    "title": "Bloco - bonus plugin",
+    "fields": [
+        {
+            "key": "field_6230a0bf42c76",
+            "label": "Nome do item",
+            "name": "nome",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6230a0d942c77",
+            "label": "Versão",
+            "name": "versao",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "Versao",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6230a0f742c78",
+            "label": "Site oficial",
+            "name": "site",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_6230a11842c79",
+            "label": "Fundo",
+            "name": "fundo",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_6230a14e42c7a",
+            "label": "Imagem",
+            "name": "imagem",
+            "type": "image",
+            "instructions": "Fundo transparente para usar com cor de fundo",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png,svg"
+        },
+        {
+            "key": "field_6230a16942c7b",
+            "label": "ou SVG inline",
+            "name": "svg",
+            "type": "textarea",
+            "instructions": "Código incorporado direto",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 5,
+            "new_lines": ""
+        },
+        {
+            "key": "field_6230a1a342c7c",
+            "label": "Descrição",
+            "name": "descricao",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_6230a1b842c7d",
+            "label": "Arquivo para download",
+            "name": "arquivo",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_6230a1e373904",
+            "label": "Cupom afiliada",
+            "name": "cupom",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6230a6411ebef",
+            "label": "Data de upload",
+            "name": "data",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/afcblock-bonus"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1647355552
+}

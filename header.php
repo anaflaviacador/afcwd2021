@@ -40,10 +40,9 @@ if (! is_user_logged_in()) {
 
 				$numItensCarrinho = WC()->cart->get_cart_contents_count();
 				$pgCarrinho = wc_get_page_permalink( 'cart' );
-				$pgSair = esc_url(wc_logout_url());
 
 				echo '<div class="menu-loja" aria-label="Menu de navegação para clientes do studio.">';
-					echo '<a'.(!is_user_logged_in() ? ' href="'.esc_url(home_url('/')).'wp-login.php" class="conta" title="Logar na conta de cliente"' : ' href="'.$pgAoLogar.'" class="conta" title="Conta de cliente"').'>';
+					echo '<a'.(!is_user_logged_in() ? ' href="'.esc_url( wp_login_url( get_permalink() ) ).'" class="conta" title="Logar na conta de cliente"' : ' href="'.$pgAoLogar.'" class="conta" title="Conta de cliente"').'>';
 						echo '<i class="fas fa-user-lock"></i><span>';
 						if (is_user_logged_in()) { echo ' Conta'; } else { echo ' Logar';}
 					echo '</span></a>';

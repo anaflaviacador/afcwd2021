@@ -54,6 +54,9 @@ echo '<nav class="woocommerce-MyAccount-navigation">';
 	    	echo '<li class="woocommerce-MyAccount-navigation-link--briefing'.(is_page('briefing')?' is-active':'').'">';
 				echo '<a href="'.$urlsite.'/minha-conta/briefing"><span class="nome">Briefing</span></a>';
 			echo '</li>';
+			echo '<li class="woocommerce-MyAccount-navigation-link--plugins'.(is_page('bonus')?' is-active':'').'">';
+				echo '<a href="'.$urlsite.'/minha-conta/bonus"><span class="nome">Acervo VIP</span></a>';
+			echo '</li>';
 
 		}
 		if (class_exists( 'Affiliate_WP' )) {
