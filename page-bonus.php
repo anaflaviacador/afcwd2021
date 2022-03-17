@@ -33,7 +33,7 @@ if (is_user_logged_in()) {
 
 				echo '<aside class="colmenor">';
 					echo '<p style="margin-bottom:20px; color:var(--cor-negacao); line-height:1.4">🙋🏻‍♀️ <strong>Primeira coisa, leia aqui com atenção '.$cliente.'!</strong> 👇🏻</p>';
-					echo '<p style="font-size:.8em;margin-bottom:10px">Os plugins e materiais ao lado são uma cortesia que o studio fornece apenas clientes que fazem uso de um layout exclusivo! São ferramentas de <em>categoria premium</em> podem ajudar o seu site a ser mais poderoso do que já é. 💜✨</p>';
+					echo '<p style="font-size:.8em;margin-bottom:10px">Os plugins e materiais ao lado são uma cortesia que o studio fornece apenas clientes que fazem uso de um layout exclusivo! São ferramentas de <em>categoria premium</em> que ajudam o seu site ser mais poderoso do que já é. 💜✨</p>';
 					
 					echo '<p style="font-size:.8em;margin-bottom:10px">Todos os plugins são cópias originais, adquiridas em nome do studio e se enquadram como <a href="https://www.gnu.org/philosophy/free-sw.pt-br.html" target="_blank" rel="external noopener nofollow">software livre</a>.</p>';
 					echo '<p style="font-size:.8em;margin-bottom:10px"><em style="color:var(--cor-negacao)">Embora sejam livres, não são gratuitos</em>. Por ser uma <strong>cortesia</strong>, os plugins ao lado não atualizam automaticamente em seu painel, '.$cliente.'. Para você garantir essa automação, <em style="color:var(--cor-negacao)">o ideal é comprar o plugin diretamente no site oficial do mesmo</em>, indicado pelo ícone <i style="color:var(--cor-roxo);" class="fas fa-link"></i>. Com isso, além de updates automáticos, você garante o privilégio do suporte do desenvolvedor original, que é uma maravilha! 🛠</p>';
