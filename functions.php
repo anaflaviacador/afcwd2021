@@ -341,6 +341,7 @@ function afc_load_scripts_footer() {
     echo '#wpadminbar {z-index: 9000; background: var(--cor-roxo-escuro)}';
     echo '@media screen and (max-width: 782px) { html{ margin-top: 0 !important; } body{ margin-top: 46px !important; } }';
     echo '@media screen and (max-width: 600px) { #wpadminbar {position: fixed} }';
+    echo '.cli-modal.cli-blowup {z-index: 2147483002}';
     echo '</style>'; 
   }
 }
