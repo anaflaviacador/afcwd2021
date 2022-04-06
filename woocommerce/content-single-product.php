@@ -394,24 +394,6 @@ if($demo_exemplos && count($demo_exemplos) > 1) {
 }
 
 
-echo '<section id="depoimentos-incriveis" class="no-rodape">';
-	echo '<div class="container">';
-		echo '<span class="gutter-sizer"></span><span class="grid-sizer"></span>';
-
-		echo '<div class="depoimento"><div class="intro">';
-			echo '<h2 class="cursivo assinado">Clientes</h2>';
-			echo '<p><strong>Depoimentos</strong> de clientes que compraram '.$nomeproduto.'!</p>';
-			echo '<p><a href="'.$urlHome.'depoimentos" class="button verde mini">+ depoimentos</a></p>';
-		echo '</div></div>';
-
-		afc_depoimentos(5,'template-aurora');
-	echo '</div>';
-
-
-	echo '<p data-aos="zoom-in" class="has-text-align-center cta"><a href="'.$urlHome.'contato" class="button rosa medio">Peça seu orçamento</a> <br> <a href="#faq" data-target="#faq" class="abre-modal"><small>Dúvidas? Veja o F.A.Q. do studio.</small></a></p>';
-echo '</section>';
-
-
 // ========================================//
 // PAG PADRAO DE PRODUTO
 // ========================================// 	
