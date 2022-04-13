@@ -57,7 +57,7 @@ function afc_depoimentos($num = '', $term = '') {
 									echo 'Projeto <a href="'.get_the_permalink($projeto).'" data-tooltip="Ver detalhes do projeto">'.get_the_title($projeto).'</a>';
 									if($site) echo '&nbsp;&nbsp;<a href="'.esc_url($site).'" target="_blank" rel="nofollow noopener" style="color:var(--cor-roxo)!important;" data-tooltip="Veja o site projetado!"><i class="fas fa-desktop-alt"></i></a>';
 								echo '</h4>';
-							} elseif ($produto) {
+							} elseif ($produto && !is_product()) {
 								echo '<h4 style="text-overflow: ellipsis; overflow: hidden"><a href="'.get_the_permalink($produto).'" data-tooltip="Ver tema na loja do studio">Template '.$nometema.'</a>'; 
 								if($site) echo '&nbsp;&nbsp;<a href="'.esc_url($site).'" target="_blank" rel="nofollow noopener" style="color:var(--cor-roxo)!important;" data-tooltip="Veja em ação nesse site"><i class="fas fa-desktop-alt"></i></a>';
 								echo '</h4>';
