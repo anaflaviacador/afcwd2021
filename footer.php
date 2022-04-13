@@ -30,7 +30,7 @@ if (is_front_page() || is_post_type_archive(array('etheme_portfolio')) || (is_si
 			$numDepo = '';
 			$taxDepo = '';
 			if (is_singular('product') && $ativa_LP == true) $taxDepo = 115;
-			if (is_front_page()) { $numDepo = 8; } else { $numDepo = 5; }
+			if (is_front_page()) { $numDepo = 8; } else { $numDepo = 4; }
 			afc_depoimentos($numDepo,$taxDepo);
 		echo '</div>';
 
