@@ -116,7 +116,7 @@ add_filter( 'woocommerce_product_additional_information_heading', '__return_null
 add_action( 'woocommerce_single_product_summary', 'custom_button_after_product_summary', 15 );
 function custom_button_after_product_summary() {
     global $product;
-    $ativa_LP = get_field('ativar_lp');
+    $ativa_LP = get_field('ativar_lp', $product->id);
     $demo_principal = get_field('demo_principal');
     $desc_addon = get_field('descricao_extensao');
     $resumo = get_the_excerpt();

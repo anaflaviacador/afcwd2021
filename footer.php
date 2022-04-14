@@ -7,8 +7,8 @@ $urlTema = get_template_directory_uri();
 // ========================================// 
 // if ((! is_post_type_archive('afc_depoimentos') && ! is_singular('private-page') && ! is_singular('etheme_portfolio') && ! is_page('contato') && ! is_page('briefing') && ! is_page('afiliacao') && ! is_page('planos')) && afc_nao_woocommerce()) {
 
-global $product;
-$ativa_LP = get_field('ativar_lp',$product->get_ID());
+global $post;
+$ativa_LP = get_field('ativar_lp',$post->ID);
 
 if (is_front_page() || is_post_type_archive(array('etheme_portfolio')) || (is_singular('product') && $ativa_LP == true) || is_page(array('servicos','sobre')) || is_singular('afc_blog')) {
 

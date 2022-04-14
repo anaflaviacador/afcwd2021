@@ -74,7 +74,8 @@ if (! is_user_logged_in()) {
 // ========================================//
 // TITULO DAS PAGINAS
 // ========================================// 
-$ativa_LP = get_field('ativar_lp');
+global $post;
+$ativa_LP = get_field('ativar_lp',$post->ID);
 
 if (! is_front_page() && ! (is_product() && $ativa_LP)) { 
 	get_template_part('inc/titulo','paginas');
