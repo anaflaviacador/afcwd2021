@@ -61,7 +61,7 @@ if (have_posts()) {
 								if($back) { echo '<strong>Back-end:</strong> '.$back.'<br />';}
 								if($coautoria) { echo '<strong>Co-autoria:</strong> '.$coautoria.'<br />';}
 								if($programacao) { echo '<strong>Programação:</strong> '.$programacao.'<br />';}
-								if($layout) { echo '<strong>Design de layout:</strong> '.$layout.'<br />';}
+								if($layout) { echo '<strong>Composição de layout:</strong> '.$layout.'<br />';}
 								if($impresso) { echo '<strong>Projeto de papelaria:</strong> '.$impresso.'<br />';}
 								if($ilustracao) { echo '<strong>Ilustração:</strong> '.$ilustracao.'<br />';}
 								if($idvisual) { echo '<strong>Criação de marca:</strong> '.$idvisual.'<br />';}
@@ -76,8 +76,8 @@ if (have_posts()) {
 							}
 
 							if($coautoria) { echo '<p class="obs"><strong>Co-autoria</strong> significa que a minha tarefa executada neste projeto foi em conjunto com outro profissional, seja nas concepções de ideias ou aplicações práticas.</small>';}
-							if($front) { echo '<p class="obs"><strong>Front-end</strong> é a parte visual da programação, responsável pelo  HTML e CSS de um layout. É onde cria-se os estilos e determina a estrutura dos elementos.</small>';}
-							if ($back) { echo '<p class="obs"><strong>Back-end</strong> é a parte responsável do código que faz o layout tornar-se um legítimo "tema Wordpress", com todas as funcionalidades rodando em pleno vapor. Utilizando a linguagem de programação PHP, é nesta fase que o layout passa a ser dinâmico e customizável pelo cliente, conectando-se com o servidor e atualizando-se automaticamente na medida que vai se inserindo conteúdo.</small>';
+							if($front) { echo '<p class="obs"><strong>Front-end</strong> é apenas a parte visual da fase de programação, responsável pelo  HTML e CSS de um layout. É onde cria-se os estilos e determina a estrutura dos elementos &mdash; enquanto a parte dinâmica, também chamada de back-end, que são as "engrenagens" que faz um layout funcionar e ser compatível à plataforma Wordpress é realizada pelo studio.</small>';}
+							if ($back) { echo '<p class="obs"><strong>Back-end</strong> é a parte responsável do código que faz o layout tornar-se um legítimo "tema Wordpress", com todas as funcionalidades rodando em pleno vapor. Utilizando a linguagem de programação PHP, é nesta fase que o layout passa a ser dinâmico e customizável pelo cliente via painel de controle, conectando-se com o servidor e atualizando-se automaticamente na medida que vai se inserindo conteúdo. Quando é assim caso, o studio fica apenas responsável pela programação da parte visual (HTML e CSS), também chamada de front-end, trazendo a base da estrutura dos elementos visuais de um projeto para receber a programação mais avançada posteriormente.</small>';
 							}
 							echo '</article>';
 						echo '</div>';
