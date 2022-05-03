@@ -166,8 +166,7 @@ echo '<div class="wp-block-columns abinhas">';
 		echo '<div class="aba">';
 			echo '<div class="aba-titulo">Os planos só servem para clientes que possuem layouts produzidos pelo studio?</div>';
 			echo '<div class="aba-conteudo">';
-				echo '<p>Não! Clientes do studio que fazem uso de um layout exclusivo ganham implementação de formulário dinâmico em seu layout. Quem faz uso de um template da loja já tem estrutura de captura preparada.</p>';
-				echo '<p>Para clientes que faz uso de temas de terceiros, não há o benefício da integração de formulário no layout. É recomendado o uso do plugin <a href="https://br.wordpress.org/plugins/embed-sendy/" target="_blank" rel="nofollow noopener">Embed Sendy</a>.</p>';
+				echo '<p>Sim, pois os layouts assinados pelo studio '.do_shortcode('[afc]').' desde 2020 são estruturados para integrar ao Sendy de forma nativa. E para clientes que possuem layouts entregues até 2019 e querem usar o Sendy não há cobrança adicional no suporte para solicitar adaptação dos formulários e listas! '.do_shortcode('[icone prefixo="fas" nome="heart" cor="rosa"]').'</p>';
 			echo '</div>';
 		echo '</div>';
 		
