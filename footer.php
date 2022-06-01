@@ -98,7 +98,7 @@ echo '</div>';
 // $fimBF = strtotime('2021-11-26');
 // if($agora <= $fimBF && !is_user_logged_in()) get_template_part('inc/popup');
 
-get_template_part('inc/whatsapp'); // whats
+// get_template_part('inc/whatsapp'); // whats
 
 wp_footer(); // scripts e tudo mais
 

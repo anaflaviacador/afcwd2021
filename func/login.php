@@ -74,7 +74,7 @@ add_filter( 'login_headerurl', 'afc_login_logo_url' );
 
 // texto alt da logo
 function afc_login_logo_url_title() { return get_bloginfo('name').' - '.get_bloginfo('description'); }
-add_filter( 'login_headertitle', 'afc_login_logo_url_title' );
+add_filter( 'login_headertext', 'afc_login_logo_url_title' );
 
 // css
 function afc_login_stylesheet() {
