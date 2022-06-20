@@ -120,21 +120,27 @@ function edit_admin_menus(){
   $admin = wp_get_current_user();
 
   remove_menu_page( 'edit.php' );
-
-  // todos adms menos Ana
-  if ( in_array( 'administrator', (array) $admin->roles ) && $admin->user_login !== 'aninha' && $admin->user_login !== 'admin') {
-    remove_menu_page( 'edit.php?post_type=acf-field-group' );
-    remove_menu_page( 'edit.php?post_type=af_form' );
-  }
+  remove_menu_page( 'edit-comments.php' );
 
   // somente para Ana
-  if ( in_array( 'administrator', (array) $admin->roles ) && ($admin->user_login === 'aninha' || $admin->user_login === 'admin')) {
-    add_menu_page('Clientes', 'Briefings', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-star-filled', 31 );
-    // add_submenu_page( 'edit.php?post_type=private-page', 'Paineis', 'Paineis','manage_options', 'edit.php?post_type=private-page');
-    add_submenu_page( 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5cc98ff56cee8&filter_action=Filtrar&paged=1&action2=-1', 'Clientes', 'Clientes VIPs', 'manage_options', 'users.php?role=cliente_vip');
+  if ($admin->user_login === 'aninha') {
+  }
 
-    // logs do form de contato
-    // add_menu_page('Contatos', 'Logs de contato', 'manage_options', 'edit.php?s&post_status=all&post_type=af_entry&action=-1&m=0&entry_form=form_5efb867474157&filter_action=Filtrar&paged=1&action2=-1', '', 'dashicons-email', 30 );
+  // somente para full stackagency
+  if ( $admin->user_login === 'fullstackagency' ) {
+    remove_menu_page( 'edit.php?post_type=acf-field-group' );
+    remove_menu_page( 'pprh-plugin-settings' );
+    remove_menu_page( 'c4wp-admin-captcha' );
+    remove_menu_page( 'wp-mail-smtp');
+    remove_menu_page( 'edit.php?post_type=pretty-link');
+    remove_menu_page( 'woocommerce-extra-checkout-fields-for-brazil');
+    remove_menu_page( 'mercadopago-settings');
+    remove_menu_page( 'edit.php?post_type=swp_forms');
+    remove_menu_page( 'cookie-law-info');
+    remove_menu_page( 'edit.php?post_type=afc_depoimentos');
+    remove_menu_page( 'edit.php?post_type=etheme_portfolio');
+    remove_menu_page( 'webp_express_conversion_page');
+    remove_menu_page( 'edit.php?post_type=afc_blog');
   }
 }
 add_action( 'admin_menu', 'edit_admin_menus', 999 );
