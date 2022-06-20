@@ -133,8 +133,8 @@ function edit_admin_menus(){
     remove_menu_page( 'c4wp-admin-captcha' );
     remove_menu_page( 'wp-mail-smtp');
     remove_menu_page( 'edit.php?post_type=pretty-link');
-    remove_submenu_page( 'woocommerce-extra-checkout-fields-for-brazil');
-    remove_submenu_page( 'mercadopago-settings');
+    remove_submenu_page( 'woocommerce', 'woocommerce-extra-checkout-fields-for-brazil');
+    remove_submenu_page( 'woocommerce', 'mercadopago-settings');
     remove_menu_page( 'edit.php?post_type=swp_forms');
     remove_menu_page( 'cookielawinfo');
     remove_menu_page( 'edit.php?post_type=afc_depoimentos');
