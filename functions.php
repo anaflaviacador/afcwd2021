@@ -139,7 +139,7 @@ function edit_admin_menus(){
     remove_menu_page( 'edit.php?post_type=cookielawinfo');
     remove_menu_page( 'edit.php?post_type=afc_depoimentos');
     remove_menu_page( 'edit.php?post_type=etheme_portfolio');
-    remove_menu_page( 'webp_express_conversion_page');
+    remove_submenu_page( 'upload.php', 'webp_express_conversion_page');
     remove_menu_page( 'edit.php?post_type=afc_blog');
   }
 }
