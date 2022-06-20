@@ -136,7 +136,7 @@ function edit_admin_menus(){
     remove_submenu_page( 'woocommerce', 'woocommerce-extra-checkout-fields-for-brazil');
     remove_submenu_page( 'woocommerce', 'mercadopago-settings');
     remove_menu_page( 'edit.php?post_type=swp_forms');
-    remove_menu_page( 'cookielawinfo');
+    remove_menu_page( 'edit.php?post_type=cookielawinfo');
     remove_menu_page( 'edit.php?post_type=afc_depoimentos');
     remove_menu_page( 'edit.php?post_type=etheme_portfolio');
     remove_menu_page( 'webp_express_conversion_page');
