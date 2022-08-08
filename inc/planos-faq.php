@@ -139,7 +139,7 @@ echo '<div class="wp-block-columns abinhas">';
 			echo '<div class="aba-titulo">Como os planos são cotados?</div>';
 			echo '<div class="aba-conteudo">';
 				echo '<p>Os planos são baseados em estimativas de horas de serviço, que vai de 2h até 8h aproximadamente, dependendo do plano.</p>';
-				echo '<p>Por ser constante, a hora do serviço tende a ficar mais acessível, com economia de até 50% se comparado a um serviço equivalente <em>(em horas trabalhadas)</em> fora do plano.</p>';
+				echo '<p>Por ser constante, a hora do serviço fica mais acessível, com economia de 10% a 35% se comparado a um serviço equivalente <em>(em horas trabalhadas)</em> fora do plano.</p>';
 			echo '</div>';
 		echo '</div>';
 		echo '<div class="aba">';
