@@ -235,6 +235,7 @@ function afc_cssnosync($tag, $handle) {
 
 
 function afc_load_scripts_head() {
+    echo '<style>.hidden{display:none!important}</style>';
   // BLACKFRIDAY
   // echo '<style>';
   //   echo '.blackfriday-faixa {
@@ -262,7 +263,7 @@ function afc_load_scripts_head() {
   //     .blackfriday-faixa {font-size: 10px;}
   //     .blackfriday-faixa.faixa-2 {display:none}
   //   }';
-  // echo '</style>';
+  // echo '</>';
 
 
   // SCRIPTS QUE NAO RODA PARA ADMIN
@@ -328,16 +329,20 @@ function afc_load_scripts_head() {
 
 
 function afc_load_scripts_footer() { 
+  $classes = get_body_class();
   // if(is_singular('etheme_portfolio')) { echo '<script async defer src="//assets.pinterest.com/js/pinit.js"></>'; }
   if(is_front_page()) echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'o site\',\'a loja\',\'o blog\'],delay: 120,autoStart: true,loop: true});</script>';
 
   if(is_post_type_archive('afc_blog')) echo '<script type="text/javascript" defer data-deferred="1">const instance = new Typewriter(\'#foco-frase\', { strings: [\'site\',\'e-commerce\',\'blog\'],delay: 120,autoStart: true,loop: true});</script>';
   
   if(! is_page_template('simples.php') && ! is_page_template('links.php')) {
-    echo '<script type="text/javascript">jQuery(document).ready(function(e){AOS.init({duration:600,easing:"ease-out",once:!0})});</script>';
-    // freshdesk - helpdesk da loja
-    echo '<script>window.fwSettings = { \'widget_id\':70000001417 }; !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() </script>';
-    echo '<script type=\'text/javascript\' src=\'https://widget.freshworks.com/widgets/70000001417.js\' async defer></script>';
+    
+    if (! in_array('wpforms-conversational-form-custom-logo',$classes)) {
+      echo '<script type="text/javascript">jQuery(document).ready(function(e){AOS.init({duration:600,easing:"ease-out",once:!0})});</script>';
+      // freshdesk - helpdesk da loja
+      echo '<script>window.fwSettings = { \'widget_id\':70000001417 }; !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() </script>';
+      echo '<script type=\'text/javascript\' src=\'https://widget.freshworks.com/widgets/70000001417.js\' async defer></script>';
+    }
   }
 
 
@@ -350,6 +355,9 @@ function afc_load_scripts_footer() {
     echo '.cli-modal.cli-blowup {z-index: 2147483002}';
     echo '</style>'; 
   }
+
+  
+  if (in_array('wpforms-conversational-form-custom-logo',$classes)) echo '<link rel="stylesheet" href="'.get_template_directory_uri(  ).'/css/wpforms-color-scheme-purple.css" type="text/css" media="all" />';
 }
 
 
