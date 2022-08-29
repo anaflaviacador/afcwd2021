@@ -54,6 +54,8 @@ echo '<div class="container" id="pagina-servicos">';
 				// echo '<footer><a href="'.$urlHome.'contato" title="" class="button pequeno bege">solicite</a></footer>';
 			echo '</li>';
 
+			
+
 			echo '<li class="verde" data-aos="fade-up" data-aos-delay="250">';
 				echo '<header><i class="icone fab fa-wordpress"></i>';
 				echo '<h3 class="marca-dagua">Manutenção <span aria-hidden="true">suporte e auxílio</span></h3></header>';
@@ -77,9 +79,10 @@ echo '<div class="container" id="pagina-servicos">';
 			echo '<li class="rosa" data-aos="fade-up" data-aos-delay="350">';
 				echo '<header><i class="icone fal fa-envelope"></i>';
 				echo '<h3 class="marca-dagua">E-mail Marketing <span aria-hidden="true">newsletter</span></h3></header>';
-					echo '<p>Listas, automações, segmentações e leads ilimitados a partir de R$9,90 para clientes '.do_shortcode('[afc]').' integrar com site ou e-commerce.</p>';
-					echo '<footer><a href="'.$urlHome.'servicos/email-marketing" class="button pequeno rosa">saiba mais</a></footer>';
+					echo '<p>Listas, automações, segmentações e leads ilimitados a partir de R$12,90 para clientes '.do_shortcode('[afc]').' com layout exclusivo.</p>';
+					// echo '<footer><a href="'.$urlHome.'servicos/email-marketing" class="button pequeno rosa">saiba mais</a></footer>';
 			echo '</li>';
+
 
 			echo '<li class="roxo" data-aos="fade-up" data-aos-delay="350">';
 				echo '<header><i class="icone fal fa-cart-plus"></i>';
