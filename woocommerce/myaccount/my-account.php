@@ -36,18 +36,18 @@ do_action( 'woocommerce_account_navigation' ); ?>
 </div>
 
 <?php
-	if (class_exists('WC_Subscription') && is_account_page() && ! is_wc_endpoint_url()) {		
-		if (! has_active_subscription()) {
-			echo '<br><br>';
-			echo '<h5 class="has-text-align-center">Chegou o serviço de email marketing do studio!</h5>';
-			echo '<p class="has-text-align-center" style="font-size:.9em">Um serviço exclusivo para clientes '.do_shortcode('[afc]').' engatar suas microempresas e engajar seu público.</p>';
-			echo '<br><br>';
-			get_template_part('inc/emailmkt','planos');
+	// if (class_exists('WC_Subscription') && is_account_page() && ! is_wc_endpoint_url()) {		
+	// 	if (! has_active_subscription()) {
+	// 		echo '<br><br>';
+	// 		echo '<h5 class="has-text-align-center">Chegou o serviço de email marketing do studio!</h5>';
+	// 		echo '<p class="has-text-align-center" style="font-size:.9em">Um serviço exclusivo para clientes '.do_shortcode('[afc]').' engatar suas microempresas e engajar seu público.</p>';
+	// 		echo '<br><br>';
+	// 		get_template_part('inc/emailmkt','planos');
 
-			echo '<p class="has-text-align-center" style="margin-bottom:10px"></p>';
-			echo '<p class="has-text-align-center"><a href="'.esc_url(home_url('/')).'servicos/email-marketing" class="button grafite">Clique aqui e saiba mais</a></p>';
-		}
-	}
+	// 		echo '<p class="has-text-align-center" style="margin-bottom:10px"></p>';
+	// 		echo '<p class="has-text-align-center"><a href="'.esc_url(home_url('/')).'servicos/email-marketing" class="button grafite">Clique aqui e saiba mais</a></p>';
+	// 	}
+	// }
 
 	if( is_wc_endpoint_url('downloads') || is_wc_endpoint_url('orders') || is_wc_endpoint_url('view-order') ) {
 		echo '<div class="has-text-align-center" style="margin-top:1em">';
