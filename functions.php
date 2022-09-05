@@ -143,8 +143,9 @@ function edit_admin_menus(){
     remove_menu_page( 'edit.php?post_type=afc_blog');
     remove_menu_page( 'edit.php?post_type=page');
     remove_menu_page( 'affiliate-wp');
-    remove_menu_page( 'wc-admin');
+    remove_menu_page( 'WooCommerce');
     remove_menu_page( 'edit.php?post_type=product');
+    remove_menu_page( 'upload.php');
     remove_menu_page( 'themes.php');
     remove_menu_page( 'ai1wm_export');
   }
