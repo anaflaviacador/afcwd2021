@@ -141,6 +141,12 @@ function edit_admin_menus(){
     remove_menu_page( 'edit.php?post_type=etheme_portfolio');
     remove_submenu_page( 'upload.php', 'webp_express_conversion_page');
     remove_menu_page( 'edit.php?post_type=afc_blog');
+    remove_menu_page( 'edit.php?post_type=page');
+    remove_menu_page( 'affiliate-wp');
+    remove_menu_page( 'wc-admin');
+    remove_menu_page( 'edit.php?post_type=product');
+    remove_menu_page( 'themes.php');
+    remove_menu_page( 'ai1wm_export');
   }
 }
 add_action( 'admin_menu', 'edit_admin_menus', 999 );
@@ -511,4 +517,3 @@ function afc_admin_css_simples() {
       echo '}';
     echo '</style>';
 }
-
