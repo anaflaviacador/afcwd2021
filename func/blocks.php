@@ -149,7 +149,7 @@ function afcblock_bonus( $block, $content = '', $is_preview = false ) {
 				if($data) echo '&nbsp;&nbsp;&bull;&nbsp; Em '.$data;
 				echo '</div>';
 				echo '<h3>'.$nome; 
-					if($site) echo '&nbsp;&nbsp;<a href="'.esc_url($site).'" data-tooltip="Visitar site oficial deste plugin" target="_blank" rel="external noopener nofollow"><i style="color:var(--cor-roxo);" class="fas fa-link"></i></a>';
+					if($site) echo '&nbsp;&nbsp;<a href="'.esc_url($site).'" data-tooltip="Visitar site oficial / revendedor deste plugin" target="_blank" rel="external noopener nofollow"><i style="color:var(--cor-roxo);" class="fas fa-link"></i></a>';
 				echo '</h3>';
 			echo '</header>';
 
